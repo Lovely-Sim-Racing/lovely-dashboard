@@ -24,7 +24,7 @@ This is a SimHub Dashboard, therefore **SimHub Dash** app is required to run it 
 If you were wondering why this is the best SimHub dashboard out there, wonder no more. Here's the complete feature set.
 
 ### Primary Screen
-[![Primary Screen](images/primary.jpg)](primary.md)
+[![Primary Screen](images/Primary.jpg)](primary.md)
 
 👉 **[Primary Screen Feature](primary.md)**
 
