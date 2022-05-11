@@ -1,6 +1,6 @@
 # Primary Screen
 
-![Primary Screen](images/primary.jpg)
+![Primary Screen](images/Primary.jpg)
 
 ### Top Left Module
 1. Light Stages (Off, On, High Beam & Flashing)
