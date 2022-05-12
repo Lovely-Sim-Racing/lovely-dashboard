@@ -4,15 +4,11 @@
 
 ### Left Module
 1. Class Standings
-	1. Top 11 shown
-	* Gap to leader
-	* Driver is in yellow
-	* If driver is below P11, then driver is displayed in the last position
+2. Gap to Leader
+4. If Driver is below P11, then the Driver is Displayed in the bottom
 
 ### Center Module
 1. Relative Timetable
-	1. Driver is in yellow
-	* Driver is positioned in the center
-	* Blue driver highlights backmarkers
-	* Red driver highlights leaders
-	* Purple time for best lap time of session
+2. Blue Color Highlights Backmarkers
+3. Red Color Highlights Leaders
+4. Purple Time for Best Lap of Session

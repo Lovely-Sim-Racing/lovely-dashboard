@@ -4,45 +4,45 @@
 
 ### Top Left Module
 1. Light Stages (Off, On, High Beam & Flashing)
-* Rain Light (Off, On)
-* Wipers (Off, On Level)
-* Ignition (Off, On)
+2. Rain Light (Off, On)
+3. Wipers (Off, On Level)
+4. Ignition (Off, On)
 
 ### Top Right Module
 1. Time Remaining
-* Session Type
-* Current Position
-* Current Lap Number
+2. Session Type
+3. Current Position
+4. Current Lap Number
 
 ### Center Module
 1. Live Lap Time Diff to your Session Best
-* Gear
-* RPM
-* Speed
+2. Gear
+3. RPM
+4. Speed
 
 ### Left Module 
 1. Tyre Pressure (FL, FR, RL, RR)
-* Tyre Temp & color (FL, FR, RL, RR)
-* Brake Temp & color (FL, FR, RL, RR)
-* Tyre Type & Set Number
+2. Tyre Temp & Color (FL, FR, RL, RR)
+3. Brake Temp & Color (FL, FR, RL, RR)
+4. Tyre Type & Set Number
 
 👉 [+ Action A modules](#Available-Actions)
 
 ### Right Module
 1. Predicted Lap (White, Red when invalidated)
-* Last lap
-* Session best Lap
+2. Last Lap
+3. Session Best Lap
 
 ### Bottom Module
-1. TC Level (flashes when active)
-* TC2 level (flashes when active)
-* ABS Level (flashes when active)
-* Brake Bias
-* Map Level
-* Fuel Information
-	1. Live fuel Load
-	* Average fuel consumption per lap
-	* Estimated laps left with current fuel load
+1. TC Level (Flashes when active)
+2. TC2 Level (Flashes when active)
+3. ABS Level (Flashes when active)
+4. Brake Bias
+5. Map Level
+6. Fuel Information
+	1. Live Fuel Load
+	2. Average Fuel Consumption per Lap
+	3. Estimated Laps Left with current Fuel Load
 
 👉 [+ Action B modules](#Available-Actions)
 
@@ -54,11 +54,11 @@
 Assigned **Action A** scrolls through each below
 
 1. Tyre Status
-* Relative Timetable
-* Class Standings Timetable
+2. Relative Timetable
+3. Class Standings Timetable
 
 ### Bottom Module
 Assigned **Action B** scrolls through each below
 
-1. Essential fuel info
-* Estimated remaining time
+1. Essential Fuel Info
+2. Estimated Remaining Time
