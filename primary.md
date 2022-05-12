@@ -46,7 +46,7 @@
 
 👉 [+ Action B modules](#Available-Actions)
 
-# Available Actions
+# Available Options
 
 ![Primary Screen](images/PrimaryActions.jpg)
 

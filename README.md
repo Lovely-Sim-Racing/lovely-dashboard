@@ -26,7 +26,7 @@ If you were wondering why this is the best SimHub dashboard out there, wonder no
 ### Primary Screen
 [![Primary Screen](images/Primary.jpg)](primary.md)
 
-👉 **[Primary Screen Features](primary.md)**
+👉 **[Primary Screen Features + Options](primary.md)**
 
 ### Timetables
 [![Timetables](images/AlternateTimetables.jpg)](timetables.md)
