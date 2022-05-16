@@ -25,6 +25,9 @@
 2. Gear
 3. RPM
 4. Speed
+5. Air Temp
+6. Track Temp
+7. Track Status
 
 ### Left Module 
 1. Tyre Pressure (FL, FR, RL, RR)
