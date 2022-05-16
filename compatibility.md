@@ -8,7 +8,7 @@ Dashboard has been adjusted to accomodate
 
 ### GT3 2018
 * Aston Martin Vantage V12 GT3 2013
-* 12 Audi R8 LMS 2015
+* Audi R8 LMS 2015
 * Bentley Continental GT3 2015
 * Bentley Continental GT3 2018
 * BMW M6 GT3 2017
