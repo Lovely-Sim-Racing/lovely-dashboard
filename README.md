@@ -11,9 +11,9 @@ You can download this dashboard from **GitHub** or **Race Department**. Make sur
 
 ## Game Compatibility
 
-1. Assetto Corsa Competizione
+* Assetto Corsa Competizione
 
-🧬 [Full Compatibitlity List](compatibility.md)
+🧬 [Full Compatibility List](compatibility.md)
 
 ## Requirements
 This is a SimHub Dashboard, therefore **SimHub Dash** app is required to run it (Doh!). Also, since the UI was a considerate design, you will also need to download and install the **Roboto Font Family** from Google.
