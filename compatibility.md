@@ -1,10 +1,6 @@
 # Compatibility
 
 ## Assetto Corsa Competizione
-Dashboard has been adjusted to accomodate
-
-1. Brake Bias
-2. RPM
 
 ### GT3 2018
 * Aston Martin Vantage V12 GT3 2013
