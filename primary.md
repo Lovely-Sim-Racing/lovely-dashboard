@@ -7,6 +7,12 @@
 2. Rain Light (Off, On)
 3. Wipers (Off, On Level)
 4. Ignition (Off, On)
+5. Flags
+	* Yellow (Global, Sector)
+	* Green
+	* Blue
+	* White
+	* Checkered
 
 ### Top Right Module
 1. Time Remaining
