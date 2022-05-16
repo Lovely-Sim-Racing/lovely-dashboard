@@ -11,8 +11,9 @@ You can download this dashboard from **GitHub** or **Race Department**. Make sur
 
 ## Game Compatibility
 
-* Assetto Corsa Competizione
-	* All vehicles are supported
+1. Assetto Corsa Competizione
+
+🧬 [Full Compatibitlity List](compatibility.md)
 
 ## Requirements
 This is a SimHub Dashboard, therefore **SimHub Dash** app is required to run it (Doh!). Also, since the UI was a considerate design, you will also need to download and install the **Roboto Font Family** from Google.
@@ -26,15 +27,15 @@ If you were wondering why this is the best SimHub dashboard out there, wonder no
 ### Primary Screen
 [![Primary Screen](images/Primary.jpg)](primary.md)
 
-👉 **[Primary Screen Features + Options](primary.md)**
+🖥 **[Primary Screen Features + Options](primary.md)**
 
 ### Timetables
 [![Timetables](images/AlternateTimetables.jpg)](timetables.md)
 
-👉 **[Timetables Screen Features](timetables.md)**
+🖥 **[Timetables Screen Features](timetables.md)**
 
 
 ### Track Map
 [![Primary Screen](images/AlternateMap.jpg)](track-map.md)
 
-👉 **[Track Map Screen Features](track-map.md)**
+🖥 **[Track Map Screen Features](track-map.md)**
