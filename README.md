@@ -13,17 +13,18 @@ A multifunctional feature packed SimHub dashboard (DDU), specifically for Sim Ra
 > ### If you like this dashboard, please consider subscribing to my Youtube channel [Lovely Sim Racing](http://j76.me/LSR), where I stream as often as I can. You'll even see this Dashboard in action too.
 
 ## Download & Install
-You can download this dashboard from **GitHub** or **Race Department**. Make sure you've got the fonts installed, otherwise the dashboard will look like crap sitting in front of your eyes. When the fonts are ready, just double click on the dashboard file. If you've used SimHub before, it should work out of the box with ACC.
+You can download this dashboard from **GitHub** or **Race Department**. Make sure you've got the fonts installed, otherwise the dashboard will look like crap sitting in front of your eyes. When the fonts are installed, just **double click on the dashboard file**. I've also included a 16 LED profile should you need one.
 
 * [Download from GitHub]()
 * [Download from Race Department]()
 
 ## Compatibility
+This is an ongoing project, so I will add more Screen Sizes and Sims as time progresses, but these are the ones I use so it's where I started.
 
 ### Screen Size
 * 5" 850x480
 
-### Game
+### Sims
 * Assetto Corsa Competizione
 
 🧬 [Detialed Compatibility List](compatibility.md)
