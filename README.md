@@ -15,9 +15,13 @@ A multifunctional feature packed SimHub dashboard (DDU), specifically for Sim Ra
 <br/>
 
 ## Download & Install
-Download the [**latest release from GitHub**](https://github.com/cdemetriadis/lovely-dashboard/releases). *First*, make sure you've got the [fonts](#requirements) installed, otherwise the dashboard will look like crap sitting in front of your eyes. *Second*, **double click on the dashboard file** in the latest release. PS: I've also included a 16 LED profile should you need one.
+This is a SimHub Dashboard, therefore **SimHub Dash** app is required to run it (Doh!). Also, since the UI was a considerate design, you will also need to download and install the **Roboto Font Family** from Google (free).
 
-* 💾 [Download from GitHub](https://github.com/cdemetriadis/lovely-dashboard/releases)
+Finally, download the [**Latest Release**](https://github.com/cdemetriadis/lovely-dashboard/releases). PS: I've also included a 16 LED profile should you need one.
+
+1. [SimHub Dash](https://www.simhubdash.com) app
+* [Roboto Font Family](https://fonts.google.com/specimen/Roboto) by Christian Robertson
+* [**Download latest release**](https://github.com/cdemetriadis/lovely-dashboard/releases)
 
 ## Compatibility
 This is an ongoing project, so I will add more Screen Sizes and Sims as time progresses, but these are the ones I use so it's where I started.
@@ -29,12 +33,6 @@ This is an ongoing project, so I will add more Screen Sizes and Sims as time pro
 * Assetto Corsa Competizione
 
 🧬 [Detailed Compatibility List](compatibility.md)
-
-## Requirements
-This is a SimHub Dashboard, therefore **SimHub Dash** app is required to run it (Doh!). Also, since the UI was a considerate design, you will also need to download and install the **Roboto Font Family** from Google.
-
-* [SimHub Dash](https://www.simhubdash.com) app
-* [Roboto Font Family](https://fonts.google.com/specimen/Roboto) by Christian Robertson
 
 ## Features
 If you were wondering why this is the best SimHub dashboard out there, wonder no more. Here's the complete feature set.
