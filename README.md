@@ -8,26 +8,27 @@
 A multifunctional feature packed SimHub dashboard (DDU), specifically for Sim Racing.
 </p>
 
+<br/>
 
+### 🔌 If you like this dashboard, please consider subscribing to my Youtube channel [Lovely Sim Racing](http://j76.me/LSR), where I stream as often as I can. You'll even see this Dashboard in action too.
 
-> ### If you like this dashboard, please consider subscribing to my Youtube channel [Lovely Sim Racing](http://j76.me/LSR), where I stream as often as I can. You'll even see this Dashboard in action too.
+<br/>
 
 ## Download & Install
-You can download this dashboard from **GitHub** or **Race Department**. Make sure you've got the fonts installed, otherwise the dashboard will look like crap sitting in front of your eyes. When the fonts are installed, just **double click on the dashboard file**. I've also included a 16 LED profile should you need one.
+Download the [**latest release from GitHub**](https://github.com/cdemetriadis/lovely-dashboard/releases). *First*, make sure you've got the [fonts](#requirements) installed, otherwise the dashboard will look like crap sitting in front of your eyes. *Second*, **double click on the dashboard file** in the latest release. PS: I've also included a 16 LED profile should you need one.
 
-* [Download from GitHub]()
-* [Download from Race Department]()
+* 💾 [Download from GitHub](https://github.com/cdemetriadis/lovely-dashboard/releases)
 
 ## Compatibility
 This is an ongoing project, so I will add more Screen Sizes and Sims as time progresses, but these are the ones I use so it's where I started.
 
 ### Screen Size
-* 5" 850x480
+* 5" 850x480 (VoCore)
 
 ### Sims
 * Assetto Corsa Competizione
 
-🧬 [Detialed Compatibility List](compatibility.md)
+🧬 [Detailed Compatibility List](compatibility.md)
 
 ## Requirements
 This is a SimHub Dashboard, therefore **SimHub Dash** app is required to run it (Doh!). Also, since the UI was a considerate design, you will also need to download and install the **Roboto Font Family** from Google.
