@@ -1,5 +1,14 @@
-# Lovely SimHub Dashboard
+<p align="center">
+<img width="150" height="150" alt="Lovely Sim Racing" src="images/lr-logo-small.png">
+</p>
+
+<h1 align="center">Lovely SimHub Dashboard</h1>
+
+<p align="center">
 A multifunctional feature packed SimHub dashboard (DDU), specifically for Sim Racing.
+</p>
+
+
 
 > ### If you like this dashboard, please consider subscribing to my Youtube channel [Lovely Sim Racing](http://j76.me/LSR), where I stream as often as I can. You'll even see this Dashboard in action too.
 
@@ -9,11 +18,15 @@ You can download this dashboard from **GitHub** or **Race Department**. Make sur
 * [Download from GitHub]()
 * [Download from Race Department]()
 
-## Game Compatibility
+## Compatibility
 
+### Screen Size
+* 5" 850x480
+
+### Game
 * Assetto Corsa Competizione
 
-🧬 [Full Compatibility List](compatibility.md)
+🧬 [Detialed Compatibility List](compatibility.md)
 
 ## Requirements
 This is a SimHub Dashboard, therefore **SimHub Dash** app is required to run it (Doh!). Also, since the UI was a considerate design, you will also need to download and install the **Roboto Font Family** from Google.
