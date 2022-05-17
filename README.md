@@ -20,8 +20,8 @@ This is a SimHub Dashboard, therefore **SimHub Dash** app is required to run it 
 Finally, download the [**Latest Release**](https://github.com/cdemetriadis/lovely-dashboard/releases). PS: I've also included a 16 LED profile should you need one.
 
 1. [SimHub Dash](https://www.simhubdash.com) app
-* [Roboto Font Family](https://fonts.google.com/specimen/Roboto) by Christian Robertson
-* [**Download latest release**](https://github.com/cdemetriadis/lovely-dashboard/releases)
+2. [Roboto Font Family](https://fonts.google.com/specimen/Roboto) by Christian Robertson
+3. [**Download latest release**](https://github.com/cdemetriadis/lovely-dashboard/releases)
 
 ## Compatibility
 This is an ongoing project, so I will add more Screen Sizes and Sims as time progresses, but these are the ones I use so it's where I started.
