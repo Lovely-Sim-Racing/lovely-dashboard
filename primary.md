@@ -35,7 +35,7 @@
 3. Brake Temp & Color (FL, FR, RL, RR)
 4. Tyre Type & Set Number
 
-👉 [+ Action A modules](#Available-Actions)
+👉 [+ Action A modules](#available-options)
 
 ### Right Module
 1. Predicted Lap (White, Red when invalidated)
@@ -53,7 +53,7 @@
 	2. Average Fuel Consumption per Lap
 	3. Estimated Laps Left with current Fuel Load
 
-👉 [+ Action B modules](#Available-Actions)
+👉 [+ Action B modules](#available-options)
 
 # Available Options
 
