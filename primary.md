@@ -71,3 +71,4 @@ Assigned **Action B** scrolls through each below
 
 1. Essential Fuel Info
 2. Estimated Remaining Time
+3. Fuel Calculator
