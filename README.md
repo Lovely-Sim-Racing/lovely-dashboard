@@ -27,7 +27,8 @@ Finally, download the [**Latest Release**](https://github.com/cdemetriadis/lovel
 This is an ongoing project, so I will add more Screen Sizes and Sims as time progresses, but these are the ones I use so it's where I started.
 
 ### Screen Size
-* 5" 850x480 (VoCore)
+* Native 5" 850x480 (VoCore)
+* 16:9 screen ratio
 
 ### Sims
 * Assetto Corsa Competizione
