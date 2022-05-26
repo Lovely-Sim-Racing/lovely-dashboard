@@ -15,7 +15,7 @@ A multifunctional feature packed SimHub dashboard (DDU), specifically for Sim Ra
 <br/>
 
 <h4 align="center">
-<a href="https://youtu.be/_XAIlmhVY0s" target="_blank">
+<a href="https://youtu.be/_XAIlmhVY0s">
 <img src="https://img.youtube.com/vi/_XAIlmhVY0s/0.jpg" /><br/>
 Watch the introductory video
 </a>
