@@ -14,7 +14,7 @@ A multifunctional feature packed SimHub dashboard (DDU), specifically for Sim Ra
 
 <br/>
 
-[![Lovely Dashboard](https://img.youtube.com/vi/_XAIlmhVY0s/0.jpg)](https://www.youtube.com/watch?v=_XAIlmhVY0s)
+https://www.youtube.com/watch?v=_XAIlmhVY0s
 
 ## Download & Install
 This is a SimHub Dashboard, therefore **SimHub Dash** app is required to run it (Doh!). Also, since the UI was a considerate design, you will also need to download and install the **Roboto Font Family** from Google (free).
