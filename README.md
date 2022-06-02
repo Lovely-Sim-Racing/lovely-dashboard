@@ -8,9 +8,13 @@
 A multifunctional feature packed SimHub dashboard (DDU), specifically for Sim Racing.
 </p>
 
+<p align="center">
+<strong>NEW UPDATE: Stream Overlay Added!</strong>
+</p>
+ 
 <br/>
 
-### 🔌 If you like this dashboard, please consider subscribing to my Youtube channel [Lovely Sim Racing](http://j76.me/LSR), where I stream as often as I can. You'll even see this Dashboard in action too.
+### 🔌 If you like this dashboard & overlay, please consider subscribing to my Youtube channel [Lovely Sim Racing](http://j76.me/LSR), where I stream as often as I can. You'll even see them both in action.
 
 <br/>
 
@@ -19,7 +23,14 @@ A multifunctional feature packed SimHub dashboard (DDU), specifically for Sim Ra
 <img src="images/youtube-cover.png" /><br/>
 Watch the introductory video
 </a>
-</h4>
+</h4> 
+
+## What's Included
+When you download the zip file, you will get a few things. 
+
+1. [**Lovely Dashboard**](#dashboard) - A custom designed dashboard to use on your phone or dedicated DDU screen
+2. [**Lovely Overlay**](#stream-overlay) - If you're a streamer, you can use this overlay in OBS or any other broadcasting software
+3. **LED Profile** - A 16x LED profile for your DDU
 
 ## Download & Install
 This is a SimHub Dashboard, therefore **SimHub Dash** app is required to run it (Doh!). Also, since the UI was a considerate design, you will also need to download and install the **Roboto Font Family** from Google (free).
@@ -29,6 +40,7 @@ Finally, download the [**Latest Release**](https://github.com/cdemetriadis/lovel
 1. [SimHub Dash](https://www.simhubdash.com) app
 2. [Roboto Font Family](https://fonts.google.com/specimen/Roboto) by Christian Robertson
 3. [**Download latest release**](https://github.com/cdemetriadis/lovely-dashboard/releases)
+4. **Double-click** on the `.simhubdash` files (Dashboard & Overlay) to install in SimHub
 
 ## Compatibility
 This is an ongoing project, so I will add more Screen Sizes and Sims as time progresses, but these are the ones I use so it's where I started.
@@ -42,7 +54,7 @@ This is an ongoing project, so I will add more Screen Sizes and Sims as time pro
 
 🧬 [Detailed Compatibility List](compatibility.md)
 
-## Features
+## Dashboard
 If you were wondering why this is the best SimHub dashboard out there, wonder no more. Here's the complete feature set.
 
 🖥 **View the [Full Feature Set](features.md)**
@@ -62,3 +74,10 @@ If you were wondering why this is the best SimHub dashboard out there, wonder no
 [![Primary Screen](images/AlternateMap.jpg)](track-map.md)
 
 🖥 **[Track Map Screen Features](track-map.md)**
+
+## Stream Overlay
+If you're a streamer I bet you'll find this matching Overlay a perfect fit. 
+
+[![Lovely Overlay](images/Overlay.jpg)](overlay.md)
+
+🖥 **[Stream Overlay](overlay.md)**
