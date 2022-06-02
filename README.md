@@ -5,7 +5,7 @@
 <h1 align="center">Lovely SimHub Dashboard</h1>
 
 <p align="center">
-A multifunctional feature packed SimHub dashboard (DDU), specifically for Sim Racing.
+A multifunctional feature packed SimHub Dashboard (DDU) and a matching Stream Overlay.
 </p>
  
 <br/>
