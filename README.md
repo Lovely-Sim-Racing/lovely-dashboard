@@ -7,9 +7,11 @@
 <p align="center">
 A multifunctional feature packed SimHub dashboard (DDU), specifically for Sim Racing.
 </p>
+ 
+<br/>
 
-<p align="center">
-<strong>NEW UPDATE: Stream Overlay Added!</strong>
+<p align="center" style="background-color:#B3EBFD; border-radius:5px; padding:10px;">
+<strong>NEW Addition: <a href="#stream-overlay">Stream Overlay</a></strong>
 </p>
  
 <br/>
