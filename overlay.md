@@ -2,13 +2,20 @@
 
 ![Overlay](images/Overlay.jpg)
 
-### Left Module
+### Damage Module
+1. Front (Light, Medium and Heavy)
+2. Left
+3. Right
+4. Rear 
+5. Estimated Pit time required
+
+### Timetable Module
 1. Relative Timetable
 2. Blue Color Highlights Backmarkers
 3. Red Color Highlights Leaders
 4. Purple Time for Best Lap of Session
 
-### Right Module
+### Gear Module
 1. Live Lap Time Diff to your Session Best
 2. Gear
 3. RPM
@@ -21,6 +28,7 @@
 1. Air Temp
 2. Track Temp
 3. Track Status
+4. Rain Forecast **(NEW)**
 
 ### Bottom Right Module
 1. Time Remaining

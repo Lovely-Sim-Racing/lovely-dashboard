@@ -12,6 +12,7 @@
 	* Green
 	* Blue
 	* White
+	* Orange **(NEW)**
 	* Checkered
 
 ### Top Right Module
@@ -29,6 +30,7 @@
 6. Air Temp
 7. Track Temp
 8. Track Status
+9. Rain Forecast **(NEW)**
 
 ### Left Module 
 1. Tyre Pressure (FL, FR, RL, RR)
@@ -36,12 +38,14 @@
 3. Brake Temp & Color (FL, FR, RL, RR)
 4. Tyre Type & Set Number
 
-👉 [+ Action A modules](#available-options)
+👉 [+ Action A modules](actions.md)
 
 ### Right Module
 1. Predicted Lap (White, Red when invalidated)
 2. Last Lap
 3. Session Best Lap
+
+👉 [+ Action B modules](actions.md)
 
 ### Bottom Module
 1. TC Level (Flashes when active)
@@ -54,22 +58,4 @@
 	2. Average Fuel Consumption per Lap
 	3. Estimated Laps Left with current Fuel Load
 
-👉 [+ Action B modules](#available-options)
-
-# Available Options
-
-![Primary Screen](images/PrimaryActions.jpg)
-
-### Left Module 
-Assigned **Action A** scrolls through each below
-
-1. Tyre Status
-2. Relative Timetable
-3. Class Standings Timetable
-
-### Bottom Module
-Assigned **Action B** scrolls through each below
-
-1. Essential Fuel Info
-2. Estimated Remaining Time
-3. Fuel Calculator
+👉 [+ Action C modules](actions.md)
