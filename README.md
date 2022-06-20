@@ -11,9 +11,13 @@ A multifunctional feature packed SimHub Dashboard (DDU) and a matching Stream Ov
 <br/>
 
 <div align="center">
-<strong><em>NEW v1.4.0:</em> Now with Car Damage & Rain Forecast</strong><br/>
+<p><strong><em>NEW v1.4.0:</em> Now with Car Damage & Rain Forecast</strong><br/>
 New version has changes to the assigned Actions, please make sure you update your settings.<br/>
-👉 <a href="actions.md">Learn more about the available Actions</a>
+ 👉 <a href="actions.md">Learn more about the available Actions</a></p>
+ 
+<p><strong><em>NEW Discord Server</em></strong><br/>
+Join the Lovely Sim Racing Discord Server and help develop a better version.<br/>
+👉 <a href="http://j76.me/LSRDiscord">Discord Server</a></p>
 </div>
  
 <br/>
