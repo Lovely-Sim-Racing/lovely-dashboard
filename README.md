@@ -17,7 +17,7 @@ New version has changes to the assigned Actions, please make sure you update you
  
 <p><strong><em>NEW Discord Server</em></strong><br/>
 Join the Lovely Sim Racing Discord Server and help develop a better version.<br/>
-👉 <a href="https://discord.gg/G7TCZHHMBk">Discord Server</a></p>
+👉 <a href="http://j76.me/LSRDiscord">Discord Server</a></p>
 </div>
  
 <br/>
