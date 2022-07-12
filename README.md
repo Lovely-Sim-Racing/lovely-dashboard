@@ -11,9 +11,8 @@ A multifunctional feature packed SimHub Dashboard (DDU) and a matching Stream Ov
 <br/>
 
 <div align="center">
-<p><strong><em>NEW v1.4.0:</em> Now with Car Damage & Rain Forecast</strong><br/>
-New version has changes to the assigned Actions, please make sure you update your settings.<br/>
- 👉 <a href="actions.md">Learn more about the available Actions</a></p>
+<p><strong><em>NEW v1.5.0:</em> Now with iRacing support!</strong><br/>
+New version brings support for the most popular sim racing software on the market and a bunch of new features.</p>
  
 <p><strong><em>NEW Discord Server</em></strong><br/>
 Join the Lovely Sim Racing Discord Server and help develop a better version.<br/>
@@ -36,14 +35,14 @@ Watch the introductory video
 ## What's Included
 When you download the zip file, you will get a few things. 
 
-1. [**Lovely Dashboard**](#dashboard) - A custom designed dashboard to use on your phone or dedicated DDU screen
-2. [**Lovely Overlay**](#stream-overlay) - If you're a streamer, you can use this overlay in OBS or any other broadcasting software
+1. [**Lovely Dashboard**](#the-lovely-dashboard) - A custom designed dashboard to use on your phone or dedicated DDU screen
+2. **Lovely Overlay** - If you're a streamer, you can use this overlay in OBS or any other broadcasting software
 3. **LED Profile** - A 16x & 18x LED profile for your DDU
 
 ## Download & Install
 This is a SimHub Dashboard, therefore **SimHub Dash** app is required to run it (Doh!). Also, since the UI was a considerate design, you will also need to download and install the **Roboto Font Family** from Google (free).
 
-Finally, download the [**Latest Release**](https://github.com/cdemetriadis/lovely-dashboard/releases). PS: I've also included a 16 LED profile should you need one.
+Finally, download the [**Latest Release**](https://github.com/cdemetriadis/lovely-dashboard/releases). 
 
 1. [SimHub Dash](https://www.simhubdash.com) app
 2. [Roboto Font Family](https://fonts.google.com/specimen/Roboto) by Christian Robertson
@@ -59,38 +58,21 @@ This is an ongoing project, so I will add more Screen Sizes and Sims as time pro
 * Any device compatible with SimHub is fine
 
 ### Compatible Sims
-* Assetto Corsa Competizione
+* [Assetto Corsa Competizione](#assetto-corsa-competizione)
+* [iRacing](#iracing)
 
 
-## The Lovely Dashboard
+# The Lovely Dashboard
 If you were wondering why this is the best SimHub dashboard out there, wonder no more. It's good looking and feature packed but with considerate design and proper information architecture. 
 
-### Basic Feature Set
+## Assetto Corsa Competizione
 
-[![Basic Feature Set](images/AllFeatures.jpg)](features.md)
+[![Basic Feature Set](images/AllFeatures-ACC.jpg)](acc/features-acc.md)
 
-🖥 **View the [Basic Feature Set](features.md)**
+🖥 **View the [ACC Full Feature Set](acc/features-acc.md)**
 
-### Primary Screen
+## iRacing
 
-[![Primary Screen](images/Primary.jpg)](primary.md)
+[![iRacinf Full Feature Set](images/AllFeatures-iRacing.jpg)](iracing/features-iracing.md)
 
-🖥 **[Primary Screen Features](primary.md)**
-
-### Timetables
-[![Timetables](images/AlternateTimetables.jpg)](timetables.md)
-
-🖥 **[Timetables Screen Features](timetables.md)**
-
-
-### Track Map
-[![Primary Screen](images/AlternateMap.jpg)](track-map.md)
-
-🖥 **[Track Map Screen Features](track-map.md)**
-
-## The Lovely Stream Overlay
-If you're a streamer I bet you'll find this matching Overlay a perfect fit. 
-
-[![Lovely Overlay](images/Overlay.jpg)](overlay.md)
-
-🖥 **[Stream Overlay](overlay.md)**
+🖥 **View the [iRacing Full Feature Set](iracing/features-iracing.md)**

@@ -1,13 +1,14 @@
-# Overlay
+# *iRacing* / Stream Overlay
 
-![Overlay](images/Overlay.jpg)
+![Overlay](../images/Overlay-iRacing.jpg)
 
-### Damage Module
-1. Front (Light, Medium and Heavy)
-2. Left
-3. Right
-4. Rear 
-5. Estimated Pit time required
+### Vehicle Status Module
+1. Oil Temperature
+2. Oil Pressure
+3. Oil Level
+4. Fuel Pressure
+5. Water Temperature
+6. Battery Voltage
 
 ### Timetable Module
 1. Relative Timetable
@@ -27,8 +28,11 @@
 ### Bottom Left Module
 1. Air Temp
 2. Track Temp
-3. Track Status
-4. Rain Forecast **(NEW)**
+3. Track Conditions
+
+### Bottom Center Module
+1. Incident Count / Limit
+2. Strength of Field
 
 ### Bottom Right Module
 1. Time Remaining

@@ -1,23 +1,24 @@
-# Primary Screen
+# *iRacing* / Primary Screen
 
-![Primary Screen](images/Primary.jpg)
+![Primary Screen](../images/Primary-iRacing.jpg)
 
 ### Top Left Module
 1. Light Stages (Off, On, High Beam & Flashing)
-2. Rain Light (Off, On)
-3. Wipers (Off, On Level)
+2. Incident Count / Limit
+3. Strength of Field
 4. Ignition (Off, On)
 5. Flags
 	* Yellow (Global, Sector)
 	* Green
 	* Blue
 	* White
-	* Orange **(NEW)**
+	* Orange
 	* Checkered
 
 ### Top Right Module
 1. Time Remaining
 2. Session Type
+3. Track Time
 3. Current Position
 4. Current Lap Number
 
@@ -29,27 +30,28 @@
 5. Throttle/Brake Input
 6. Air Temp
 7. Track Temp
-8. Track Status
-9. Rain Forecast **(NEW)**
+8. Track Conditions
 
 ### Left Module 
-1. Tyre Pressure (FL, FR, RL, RR)
-2. Tyre Temp & Color (FL, FR, RL, RR)
-3. Brake Temp & Color (FL, FR, RL, RR)
-4. Tyre Type & Set Number
+1. Oil Temperature
+2. Oil Pressure
+3. Oil Level
+4. Fuel Pressure
+5. Water Temperature
+6. Battery Voltage
 
-👉 [+ Action A modules](actions.md)
+👉 [+ Action A & B modules](actions-iracing.md)
 
 ### Right Module
 1. Predicted Lap (White, Red when invalidated)
 2. Last Lap
 3. Session Best Lap
 
-👉 [+ Action B modules](actions.md)
+👉 [+ Action A & B modules](actions-iracing.md)
 
 ### Bottom Module
-1. TC Level (Flashes when active)
-2. TC2 Level (Flashes when active)
+1. TC Level
+2. TC2 Level
 3. ABS Level (Flashes when active)
 4. Brake Bias
 5. Map Level
@@ -58,4 +60,4 @@
 	2. Average Fuel Consumption per Lap
 	3. Estimated Laps Left with current Fuel Load
 
-👉 [+ Action C modules](actions.md)
+👉 [+ Action C modules](actions-iracing.md)

@@ -6,25 +6,20 @@ In Simhub, you will need to assign the actions to buttons on your Wheel, Button 
 
 Here's a really short thread on [setting the Action Buttons in SimHub](https://www.simhubdash.com/community-2/postid/1392/) 
 
-### Lovely Dashboard Actions
+## Assetto Corsa Competzione
 
-![Primary Screen](images/PrimaryActions.jpg)
+![Primary Screen](../images/PrimaryActions-ACC.jpg)
 
-#### Action A (Left Module)
-Assigned **Action A** scrolls through each below
-
-1. Tyre Status
-2. Car Damage **(NEW)**
-
-> **Note** - Car damage is an approximate estimation. It does not take into account any suspension damage (not shared by ACC). 
-
-
-#### Action B (Right Module)
-Assigned **Action B** scrolls through each below
+#### Action A & B
+Assigned **Action A** and **Action B** scrolls through each below
 
 1. Session Lap Times
 2. Relative Timetable
 3. Class Standings Timetable
+4. Tyre Status
+5. Car Damage
+
+> **Note** - Car damage is an approximate estimation. It does not take into account any suspension damage (not shared by ACC).
 
 
 #### Action C (Bottom Module)
