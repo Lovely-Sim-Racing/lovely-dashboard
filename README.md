@@ -76,3 +76,14 @@ If you were wondering why this is the best SimHub dashboard out there, wonder no
 [![iRacinf Full Feature Set](images/AllFeatures-iRacing.jpg)](iracing/features-iracing.md)
 
 🖥 **View the [iRacing Full Feature Set](iracing/features-iracing.md)**
+
+
+### Disclaimer
+
+All trademarks, logos and brand names are the property of their respective owners. All company, product and service names used in this application are for identification purposes only. Use of these names, trademarks and brands does not imply endorsement.
+
+<br/><br/>
+
+![](https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-nc-sa.svg)
+
+This work is licensed under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-nc-sa/4.0/)
