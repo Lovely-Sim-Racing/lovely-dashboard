@@ -62,7 +62,7 @@ This is an ongoing project, so I will add more Screen Sizes and Sims as time pro
 
 ### Compatible Sims
 * [Assetto Corsa Competizione](#assetto-corsa-competizione)
-* [iRacing](#iracing) **(NEW)**
+* [iRacing](#iracing-new) **(NEW)**
 
 
 # The Lovely Dashboard
