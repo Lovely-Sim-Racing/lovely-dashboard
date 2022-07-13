@@ -70,15 +70,15 @@ If you were wondering why this is the best SimHub dashboard out there, wonder no
 
 ## Assetto Corsa Competizione
 
-[![Basic Feature Set](images/AllFeatures-ACC.jpg)](acc/features-acc.md)
+[![Basic Feature Set](images/AllFeatures-ACC.jpg)](./acc/features-acc.md)
 
-🖥 **View the [ACC Full Feature Set](acc/features-acc.md)**
+🖥 **View the [ACC Full Feature Set](./acc/features-acc.md)**
 
 ## iRacing (**NEW**)
 
-[![iRacinf Full Feature Set](images/AllFeatures-iRacing.jpg)](iracing/features-iracing.md)
+[![iRacinf Full Feature Set](images/AllFeatures-iRacing.jpg)](./iracing/features-iracing.md)
 
-🖥 **View the [iRacing Full Feature Set](iracing/features-iracing.md)**
+🖥 **View the [iRacing Full Feature Set](./iracing/features-iracing.md)**
 
 <br/><br/>
 
