@@ -44,10 +44,13 @@ This is a SimHub Dashboard, therefore **SimHub Dash** app is required to run it 
 
 Finally, download the [**Latest Release**](https://github.com/cdemetriadis/lovely-dashboard/releases). 
 
-1. [SimHub Dash](https://www.simhubdash.com) app
+1. [SimHub Dash v8.0+](https://www.simhubdash.com) app
 2. [Roboto Font Family](https://fonts.google.com/specimen/Roboto) by Christian Robertson
-3. [**Download latest release**](https://github.com/cdemetriadis/lovely-dashboard/releases)
-4. **Double-click** on the `.simhubdash` files (Dashboard & Overlay) to install in SimHub
+3. *[Optional for iRacing]* Romainrob's [iRacing Extra Propeties DLL](https://drive.google.com/drive/folders/1AiIWHviD4j-_D-zgRrjJU1AFhJ_xmass) - I only use this for the SoF display
+4. [**Download latest release**](https://github.com/cdemetriadis/lovely-dashboard/releases)
+5. **Double-click** on the `.simhubdash` files (Dashboard & Overlay) to install in SimHub
+
+:warning: **Warning: Simhub Dash v8.0+** is required to run the Lovely Dashboard 1.5.0+
  
 ## Compatibility
 This is an ongoing project, so I will add more Screen Sizes and Sims as time progresses, but these are the ones I use so it's where I started.
