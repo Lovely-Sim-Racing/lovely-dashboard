@@ -1,6 +1,6 @@
-# Timetables
+# *ACC* / Timetables
 
-![Primary Screen](images/AlternateTimetables.jpg)
+![Primary Screen](../images/AlternateTimetables-ACC.jpg)
 
 ### Left Module
 1. Class Standings
