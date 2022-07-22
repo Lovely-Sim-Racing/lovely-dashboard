@@ -11,7 +11,7 @@ A multifunctional feature packed SimHub Dashboard (DDU) and a matching Stream Ov
 <br/>
 
 <div align="center">
-<p><strong><em>NEW v1.5.0:</em> Now with iRacing support!</strong><br/>
+<p><strong><em>NEW v1.5:</em> Now with iRacing support!</strong><br/>
 New version brings support for the most popular sim racing software on the market and a bunch of new features.</p>
  
 <p><strong><em>NEW Discord Server</em></strong><br/>

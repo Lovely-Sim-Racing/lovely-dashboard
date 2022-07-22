@@ -21,7 +21,7 @@ This special Alert box shows up only in **Qualifying** and **Practice** sessions
 ### Timetables
 [![Timetables](../images/AlternateTimetables-iRacing.jpg)](timetables-iracing.md)
 
-🖥 **[Timetables Screen Features](timetables-iracing.md)**
+🖥 **[Timetables Screen Features](timetables-iracing.md)** 
 
 
 ### Track Map

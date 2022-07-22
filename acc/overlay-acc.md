@@ -35,3 +35,4 @@
 2. Session Type
 3. Current Position
 4. Current Lap Number
+5. Track Time
