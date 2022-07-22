@@ -18,9 +18,9 @@
 ### Top Right Module
 1. Time Remaining
 2. Session Type
-3. Track Time
 3. Current Position
 4. Current Lap Number
+5. Track Time
 
 ### Center Module
 1. Live Lap Time Diff to your Session Best
