@@ -1,5 +1,5 @@
 <p align="center">
-<img width="150" height="150" alt="Lovely Sim Racing" src="images/lr-logo-small.png">
+<img width="150" height="150" alt="Lovely Sim Racing" src="docs/images/lr-logo-small.png">
 </p>
 
 <h1 align="center">Lovely SimHub Dashboard</h1>
@@ -27,7 +27,7 @@ Join the Lovely Sim Racing Discord Server and help develop a better version.<br/
 
 <h4 align="center">
 <a href="https://youtu.be/_XAIlmhVY0s">
-<img src="images/youtube-cover.png" /><br/>
+<img src="docs/images/youtube-cover.png" /><br/>
 Watch the introductory video
 </a>
 </h4> 
@@ -70,15 +70,15 @@ If you were wondering why this is the best SimHub dashboard out there, wonder no
 
 ## Assetto Corsa Competizione
 
-[![Basic Feature Set](images/AllFeatures-ACC.jpg)](acc/features-acc.md)
+[![Basic Feature Set](docs/images/AllFeatures-ACC.jpg)](docs/acc/features-acc.md)
 
-🖥 **View the [ACC Full Feature Set](acc/features-acc.md)**
+🖥 **View the [ACC Full Feature Set](docs/acc/features-acc.md)**
 
 ## iRacing (**NEW**)
 
-[![iRacinf Full Feature Set](images/AllFeatures-iRacing.jpg)](iRacing/features-iracing.md)
+[![iRacinf Full Feature Set](docs/images/AllFeatures-iRacing.jpg)](docs/iRacing/features-iracing.md)
 
-🖥 **View the [iRacing Full Feature Set](iRacing/features-iracing.md)**
+🖥 **View the [iRacing Full Feature Set](docs/iRacing/features-iracing.md)**
 
 <br/><br/>
 
