@@ -80,7 +80,7 @@ This is an ongoing project, so I will add more Screen Sizes and Sims as time pro
 
 ### Compatible Sims
 * [Assetto Corsa Competizione](#assetto-corsa-competizione)
-* [iRacing](#iracing-new) **(NEW)**
+* [iRacing](#iracing-new)
 
 
 # The Lovely Dashboard
@@ -92,7 +92,7 @@ If you were wondering why this is the best SimHub dashboard out there, wonder no
 
 🖥 **View the [ACC Full Feature Set](docs/acc/features-acc.md)**
 
-## iRacing (**NEW**)
+## iRacing
 
 [![iRacinf Full Feature Set](docs/images/AllFeatures-iRacing.jpg)](docs/iRacing/features-iracing.md)
 
