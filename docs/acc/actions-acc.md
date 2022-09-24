@@ -28,3 +28,9 @@ Assigned **Action C** scrolls through each below
 1. Essential Fuel Info
 2. Estimated Remaining Time
 3. Refuel Calculator
+
+#### Action D (Center Module)
+Assigned **Action D** scrolls through each below
+
+1. Personal session lap delta on 
+2. Personal session lap delta off

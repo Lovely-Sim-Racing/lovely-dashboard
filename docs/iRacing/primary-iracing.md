@@ -32,6 +32,8 @@
 7. Track Temp
 8. Track Conditions
 
+👉 [+ Action D module](actions-iracing.md)
+
 ### Left Module 
 1. Oil Temperature
 2. Oil Pressure

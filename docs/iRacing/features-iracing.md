@@ -4,13 +4,13 @@
 
 ![Full Feature Set](../images/AllFeatures-iRacing.jpg)
 
-### Quali Lap Review Alert
+### Lap Review Alert
 
-[![Quali Lap Recap](../images/QualiLapReview.jpg)](quali-iracing.md)
+[![Lap Review Alert](../images/QualiLapReview.jpg)](quali-iracing.md)
 
-This special Alert box shows up only in **Qualifying** and **Practice** sessions, and essentially displays information regarding your lap time progress.
+This special Lap Review Alert box displays information regarding your lap time progress.
 
-🖥 **View the [Quali Lap Review](quali-iracing.md)**
+🖥 **View the [Lap Review Alert](quali-iracing.md)**
 
 ### Primary Screen
 

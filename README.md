@@ -11,10 +11,7 @@ A multifunctional feature packed SimHub Dashboard (DDU) and a matching Stream Ov
 <br/>
 
 <div align="center">
-<p><strong><em>NEW v1.5:</em> Now with iRacing support!</strong><br/>
-New version brings support for the most popular sim racing software on the market and a bunch of new features.</p>
- 
-<p><strong><em>NEW Discord Server</em></strong><br/>
+<p><strong><em>JOIN the Discord Server</em></strong><br/>
 Join the Lovely Sim Racing Discord Server and help develop a better version.<br/>
 👉 <a href="http://j76.me/LSRDiscord">Discord Server</a></p>
 </div>
@@ -42,16 +39,37 @@ When you download the zip file, you will get a few things.
 ## Download & Install
 This is a SimHub Dashboard, therefore **SimHub Dash** app is required to run it (Doh!). Also, since the UI was a considerate design, you will also need to download and install the **Roboto Font Family** from Google (free).
 
-Finally, download the [**Latest Release**](https://github.com/cdemetriadis/lovely-dashboard/releases). 
+1. Download & Install [SimHub Dash v8.0+](https://www.simhubdash.com) app
+2. Download & Install [Roboto Font Family](https://fonts.google.com/specimen/Roboto) by Christian Robertson
+3. Download & Install the [**Lovely Dashboard Latest Release**](https://github.com/cdemetriadis/lovely-dashboard/releases)
 
-1. [SimHub Dash v8.0+](https://www.simhubdash.com) app
-2. [Roboto Font Family](https://fonts.google.com/specimen/Roboto) by Christian Robertson
-3. *[Optional for iRacing]* Romainrob's [iRacing Extra Propeties DLL](https://drive.google.com/drive/folders/1AiIWHviD4j-_D-zgRrjJU1AFhJ_xmass) - I only use this for the SoF display
-4. [**Download latest release**](https://github.com/cdemetriadis/lovely-dashboard/releases)
-5. **Double-click** on the `.simhubdash` files (Dashboard & Overlay) to install in SimHub
+#### For iRacing
+If you want to use the Lovely Dashboard with iRacing, you will also need to install a library by Romainrob.
+
+1. Download & Install Romainrob's [iRacing Extra Propeties DLL](https://drive.google.com/drive/folders/1AiIWHviD4j-_D-zgRrjJU1AFhJ_xmass)
 
 :warning: **Warning: Simhub Dash v8.0+** is required to run the Lovely Dashboard 1.5.0+
  
+## Settings (NEW)
+As of version 1.5.4, the Lovely Dashboard can also be setup to your liking. You will need to copy the file `Lovely-Dashboard_settings.json` into `./SimHub/JavascriptExtensions`. 
+
+![Copy the settings file into the JavascriptExtensions folder](docs/images/settings-file.png)
+
+To change your personal settings, you will need to edit the `Lovely-Dashboard_settings.json` file in any text editor. The available settings:
+
+#### Driver Name format
+- `driverName: 0` (Default) Will display names as "**F. Lastname**"
+- `driverName: 1` Will display names as "**Firstname L.**"
+
+#### Lap Review Display
+- `lapReview: 0` Will never show the Lap Review Alert
+- `lapReview: 1` (Default) Will only show the Lap Review Alert during **Qualifying** & **Practice** sessions
+- `lapReview: 2` Will always show the Lap Review Alert
+
+- `lapReviewDelay: 5000` Set how much time (in milliseconds) to display the Lap Review Alert. (5000 = 5 seconds)
+
+**:information_source: If you do not copy the setings file, the default values will be used.**
+  
 ## Compatibility
 This is an ongoing project, so I will add more Screen Sizes and Sims as time progresses, but these are the ones I use so it's where I started.
 

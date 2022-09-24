@@ -4,13 +4,13 @@
 
 ![Full Feature Set](../images/AllFeatures-ACC.jpg)
 
-### Quali Lap Review Alert
+### Lap Review Alert
 
-[![Quali Lap Recap](../images/QualiLapReview.jpg)](quali-acc.md)
+[![Lap Review Alert](../images/QualiLapReview.jpg)](quali-acc.md)
 
-This special Alert box shows up only in **Qualifying** and **Practice** sessions, and essentially displays information regarding your lap time progress.
+This special Lap Review Alert box displays information regarding your lap time progress.
 
-🖥 **View the [Quali Lap Review](quali-acc.md)**
+🖥 **View the [Lap Review Alert](quali-acc.md)**
 
 ### Primary Screen
 
