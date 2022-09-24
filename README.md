@@ -65,7 +65,6 @@ To change your personal settings, you will need to edit the `Lovely-Dashboard_se
 - `lapReview: 0` Will never show the Lap Review Alert
 - `lapReview: 1` (Default) Will only show the Lap Review Alert during **Qualifying** & **Practice** sessions
 - `lapReview: 2` Will always show the Lap Review Alert
-
 - `lapReviewDelay: 5000` Set how much time (in milliseconds) to display the Lap Review Alert. (5000 = 5 seconds)
 
 **:information_source: If you do not copy the settings file, the default values will be used.**
