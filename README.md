@@ -68,7 +68,7 @@ To change your personal settings, you will need to edit the `Lovely-Dashboard_se
 
 - `lapReviewDelay: 5000` Set how much time (in milliseconds) to display the Lap Review Alert. (5000 = 5 seconds)
 
-**:information_source: If you do not copy the setings file, the default values will be used.**
+**:information_source: If you do not copy the settings file, the default values will be used.**
   
 ## Compatibility
 This is an ongoing project, so I will add more Screen Sizes and Sims as time progresses, but these are the ones I use so it's where I started.
