@@ -30,11 +30,11 @@ You can change the way the Driver Name is formatted and displayed.
 - `1` Will display names as "**Firstname L.**"
 
 #### `lapReview`
-Choose how often the Lap Review Alert will display.
+Choose when the Lap Review Alert should appear.
 
-- `0` Never show the Lap Review Alert
-- `1` (Default) - Will only show the Lap Review Alert during **Qualifying** & **Practice** sessions
-- `2` Will always show the Lap Review Alert, on every lap
+- `0` **Never** show the Lap Review Alert
+- `1` (Default) - **Qualifying** & **Practice** - This will only show the Lap Review Alert during **Qualifying** & **Practice** sessions
+- `2` **Always** - Will show the Lap Review Alert on every lap
 
 #### `lapReviewDelay`
 Set how much time in milliseconds to display the Lap Review Alert. (eg. 1000 = 1 second)
@@ -42,19 +42,3 @@ Set how much time in milliseconds to display the Lap Review Alert. (eg. 1000 = 1
 - `5000` (Default) - Display the Lap Review Alert for 5 seconds
 
 **:information_source: If you do not copy the settings file, the default values will be used.**
-  
-<br/><br/>
-
----
-
-<br/><br/>
-
-### Disclaimer
-
-All trademarks, logos and brand names are the property of their respective owners. All company, product and service names used in this application are for identification purposes only. Use of these names, trademarks and brands does not imply endorsement.
-
-<br/>
-
-![cc-by-nc-sa](https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-nc-sa.svg)
-
-This work is licensed under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-nc-sa/4.0/)
