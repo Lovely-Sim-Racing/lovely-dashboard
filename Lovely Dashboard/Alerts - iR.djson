@@ -1,44 +1,68 @@
 {
+  "BackgroundColor": "#FF000000",
+  "BackgroundOpacity": 100,
+  "BaseHeight": 480,
+  "BaseWidth": 850,
   "DashboardDebugManager": {
     "Maximized": false
   },
-  "Version": 2,
+  "EnableClickThroughOverlay": true,
+  "EnableOnDashboardMessaging": true,
+  "ForegroundOpacity": 100,
+  "GridSize": 10,
+  "HideLabels": false,
   "Id": "8c34c523-5432-4a6e-9002-25abd75f41d1",
-  "BaseHeight": 480,
-  "BaseWidth": 850,
-  "BackgroundColor": "#FF000000",
+  "Images": [
+    {
+      "Extension": ".png",
+      "Height": 14,
+      "Length": 120,
+      "MD5": "2e3cc2ab3912da0883c2d4640414c77b",
+      "Modified": false,
+      "Name": "icon-left",
+      "Optimized": true,
+      "Width": 14
+    },
+    {
+      "Extension": ".png",
+      "Height": 14,
+      "Length": 126,
+      "MD5": "11f47293a092fd15fc18635e1be2ac34",
+      "Modified": false,
+      "Name": "icon-right",
+      "Optimized": true,
+      "Width": 14
+    }
+  ],
+  "IsOverlay": false,
+  "Metadata": {
+    "EnableOnDashboardMessaging": true,
+    "Height": 480,
+    "IdleScreensIndexs": [],
+    "InGameScreensIndexs": [
+      0
+    ],
+    "IsOverlay": false,
+    "MainPreviewIndex": 0,
+    "MetadataVersion": 2,
+    "OverlaySizeWarning": false,
+    "PitScreensIndexs": [],
+    "ScreenCount": 1,
+    "Width": 850
+  },
   "Screens": [
     {
-      "Name": "Screen1",
-      "InGameScreen": true,
-      "IdleScreen": false,
-      "PitScreen": false,
-      "ScreenId": "59e667d3-917a-451a-b050-141bb1cf3357",
       "AllowOverlays": true,
+      "BackgroundColor": "#FF000000",
+      "IdleScreen": false,
+      "InGameScreen": true,
+      "IsBackgroundLayer": false,
       "IsForegroundLayer": false,
       "IsOverlayLayer": false,
-      "OverlayTriggerExpression": {
-        "Expression": ""
-      },
-      "ScreenEnabledExpression": {
-        "Expression": ""
-      },
-      "OverlayMaxDuration": 0,
-      "OverlayMinDuration": 0,
-      "IsBackgroundLayer": false,
-      "BackgroundColor": "#FF000000",
       "Items": [
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
-          "IsRectangleItem": true,
           "BackgroundColor": "#82000000",
-          "Height": 480,
-          "Left": 0,
-          "Top": 0,
-          "Visible": false,
-          "Width": 850,
-          "IsFreezed": true,
-          "Name": "RectangleItem",
           "Bindings": {
             "Visible": {
               "Formula": {
@@ -47,41 +71,20 @@
               "Mode": 2,
               "TargetPropertyName": "Visible"
             }
-          }
+          },
+          "Height": 480,
+          "IsFreezed": true,
+          "IsRectangleItem": true,
+          "Left": 0,
+          "Name": "RectangleItem",
+          "Top": 0,
+          "Visible": false,
+          "Width": 850
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "IsTextItem": true,
-          "Font": "Roboto",
-          "FontWeight": "Bold",
-          "FontSize": 50,
-          "Text": "MAP 0",
-          "TextColor": "#FF000000",
-          "HorizontalAlignment": 1,
-          "VerticalAlignment": 1,
           "BackgroundColor": "#FF00FF02",
-          "BorderStyle": {
-            "BorderColor": "#FF00FF02",
-            "RadiusTopLeft": 10,
-            "RadiusTopRight": 10,
-            "RadiusBottomLeft": 10,
-            "RadiusBottomRight": 10
-          },
-          "Height": 220,
-          "Left": 20,
-          "Top": 130,
-          "Visible": false,
-          "Width": 810,
-          "IsFreezed": true,
-          "Name": "Map",
           "Bindings": {
-            "Visible": {
-              "Formula": {
-                "Expression": "if (changed(1000, [DataCorePlugin.GameRawData.Telemetry.dcThrottleShape]), 1, 0)"
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
-            },
             "Text": {
               "FormatString": "0.0",
               "Formula": {
@@ -89,168 +92,168 @@
               },
               "Mode": 2,
               "TargetPropertyName": "Text"
-            }
-          }
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "IsTextItem": true,
-          "Font": "Roboto",
-          "FontWeight": "Bold",
-          "FontSize": 50,
-          "Text": "ABS 0",
-          "TextColor": "#FF000000",
-          "HorizontalAlignment": 1,
-          "VerticalAlignment": 1,
-          "BackgroundColor": "#FFFFE04C",
-          "BorderStyle": {
-            "BorderColor": "#FFFFE04C",
-            "RadiusTopLeft": 10,
-            "RadiusTopRight": 10,
-            "RadiusBottomLeft": 10,
-            "RadiusBottomRight": 10
-          },
-          "Height": 220,
-          "Left": 20,
-          "Top": 130,
-          "Visible": false,
-          "Width": 810,
-          "IsFreezed": true,
-          "Name": "ABS",
-          "Bindings": {
+            },
             "Visible": {
               "Formula": {
-                "Expression": "if (changed(1000, [ABSLevel]), 1, 0)"
+                "Expression": "if (changed(1000, [DataCorePlugin.GameRawData.Telemetry.dcThrottleShape]), 1, 0)"
               },
               "Mode": 2,
               "TargetPropertyName": "Visible"
-            },
+            }
+          },
+          "BorderStyle": {
+            "BorderColor": "#FF00FF02",
+            "RadiusBottomLeft": 10,
+            "RadiusBottomRight": 10,
+            "RadiusTopLeft": 10,
+            "RadiusTopRight": 10
+          },
+          "Font": "Roboto",
+          "FontSize": 50,
+          "FontWeight": "Bold",
+          "Height": 220,
+          "HorizontalAlignment": 1,
+          "IsFreezed": true,
+          "IsTextItem": true,
+          "Left": 20,
+          "Name": "Map",
+          "Text": "MAP 0",
+          "TextColor": "#FF000000",
+          "Top": 130,
+          "VerticalAlignment": 1,
+          "Visible": false,
+          "Width": 810
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FFFFE04C",
+          "Bindings": {
             "Text": {
               "Formula": {
                 "Expression": "'ABS ' + [ABSLevel]"
               },
               "Mode": 2,
               "TargetPropertyName": "Text"
-            }
-          }
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "IsTextItem": true,
-          "Font": "Roboto",
-          "FontWeight": "Bold",
-          "FontSize": 50,
-          "Text": "TC CUT 0",
-          "TextColor": "#FF000000",
-          "HorizontalAlignment": 1,
-          "VerticalAlignment": 1,
-          "BackgroundColor": "#FF00BFFF",
-          "BorderStyle": {
-            "BorderColor": "#FF00BFFF",
-            "RadiusTopLeft": 10,
-            "RadiusTopRight": 10,
-            "RadiusBottomLeft": 10,
-            "RadiusBottomRight": 10
-          },
-          "Height": 220,
-          "Left": 20,
-          "Top": 130,
-          "Visible": false,
-          "Width": 810,
-          "IsFreezed": true,
-          "Name": "TC2",
-          "Bindings": {
+            },
             "Visible": {
               "Formula": {
-                "Expression": "if (changed(1000, [DataCorePlugin.GameRawData.Telemetry.dcTractionControl]), 1, 0)"
+                "Expression": "if (changed(1000, [ABSLevel]), 1, 0)"
               },
               "Mode": 2,
               "TargetPropertyName": "Visible"
-            },
+            }
+          },
+          "BorderStyle": {
+            "BorderColor": "#FFFFE04C",
+            "RadiusBottomLeft": 10,
+            "RadiusBottomRight": 10,
+            "RadiusTopLeft": 10,
+            "RadiusTopRight": 10
+          },
+          "Font": "Roboto",
+          "FontSize": 50,
+          "FontWeight": "Bold",
+          "Height": 220,
+          "HorizontalAlignment": 1,
+          "IsFreezed": true,
+          "IsTextItem": true,
+          "Left": 20,
+          "Name": "ABS",
+          "Text": "ABS 0",
+          "TextColor": "#FF000000",
+          "Top": 130,
+          "VerticalAlignment": 1,
+          "Visible": false,
+          "Width": 810
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FF00BFFF",
+          "Bindings": {
             "Text": {
               "Formula": {
                 "Expression": "'TC CUT ' + [DataCorePlugin.GameRawData.Telemetry.dcTractionControl]"
               },
               "Mode": 2,
               "TargetPropertyName": "Text"
-            }
-          }
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "IsTextItem": true,
-          "Font": "Roboto",
-          "FontWeight": "Bold",
-          "FontSize": 50,
-          "Text": "TC 0",
-          "TextColor": "#FF000000",
-          "HorizontalAlignment": 1,
-          "VerticalAlignment": 1,
-          "BackgroundColor": "#FF00BFFF",
-          "BorderStyle": {
-            "BorderColor": "#FF00BFFF",
-            "RadiusTopLeft": 10,
-            "RadiusTopRight": 10,
-            "RadiusBottomLeft": 10,
-            "RadiusBottomRight": 10
-          },
-          "Height": 220,
-          "Left": 20,
-          "Top": 130,
-          "Visible": false,
-          "Width": 810,
-          "IsFreezed": true,
-          "Name": "TC",
-          "Bindings": {
+            },
             "Visible": {
               "Formula": {
                 "Expression": "if (changed(1000, [DataCorePlugin.GameRawData.Telemetry.dcTractionControl]), 1, 0)"
               },
               "Mode": 2,
               "TargetPropertyName": "Visible"
-            },
+            }
+          },
+          "BorderStyle": {
+            "BorderColor": "#FF00BFFF",
+            "RadiusBottomLeft": 10,
+            "RadiusBottomRight": 10,
+            "RadiusTopLeft": 10,
+            "RadiusTopRight": 10
+          },
+          "Font": "Roboto",
+          "FontSize": 50,
+          "FontWeight": "Bold",
+          "Height": 220,
+          "HorizontalAlignment": 1,
+          "IsFreezed": true,
+          "IsTextItem": true,
+          "Left": 20,
+          "Name": "TC2",
+          "Text": "TC CUT 0",
+          "TextColor": "#FF000000",
+          "Top": 130,
+          "VerticalAlignment": 1,
+          "Visible": false,
+          "Width": 810
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FF00BFFF",
+          "Bindings": {
             "Text": {
               "Formula": {
                 "Expression": "'TC ' + [DataCorePlugin.GameRawData.Telemetry.dcTractionControl]"
               },
               "Mode": 2,
               "TargetPropertyName": "Text"
-            }
-          }
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "IsTextItem": true,
-          "Font": "Roboto",
-          "FontWeight": "Bold",
-          "FontSize": 50,
-          "Text": "BB 0.0%",
-          "TextColor": "#FF000000",
-          "HorizontalAlignment": 1,
-          "VerticalAlignment": 1,
-          "BackgroundColor": "#FFFA0000",
-          "BorderStyle": {
-            "BorderColor": "#FFFA0000",
-            "RadiusTopLeft": 10,
-            "RadiusTopRight": 10,
-            "RadiusBottomLeft": 10,
-            "RadiusBottomRight": 10
-          },
-          "Height": 220,
-          "Left": 20,
-          "Top": 130,
-          "Visible": false,
-          "Width": 810,
-          "IsFreezed": true,
-          "Name": "BB",
-          "Bindings": {
+            },
             "Visible": {
               "Formula": {
-                "Expression": "if (changed(1000, [DataCorePlugin.GameData.BrakeBias]), 1, 0)"
+                "Expression": "if (changed(1000, [DataCorePlugin.GameRawData.Telemetry.dcTractionControl]), 1, 0)"
               },
               "Mode": 2,
               "TargetPropertyName": "Visible"
-            },
+            }
+          },
+          "BorderStyle": {
+            "BorderColor": "#FF00BFFF",
+            "RadiusBottomLeft": 10,
+            "RadiusBottomRight": 10,
+            "RadiusTopLeft": 10,
+            "RadiusTopRight": 10
+          },
+          "Font": "Roboto",
+          "FontSize": 50,
+          "FontWeight": "Bold",
+          "Height": 220,
+          "HorizontalAlignment": 1,
+          "IsFreezed": true,
+          "IsTextItem": true,
+          "Left": 20,
+          "Name": "TC",
+          "Text": "TC 0",
+          "TextColor": "#FF000000",
+          "Top": 130,
+          "VerticalAlignment": 1,
+          "Visible": false,
+          "Width": 810
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FFFA0000",
+          "Bindings": {
             "Text": {
               "FormatString": "BB 0.0 ",
               "Formula": {
@@ -258,99 +261,109 @@
               },
               "Mode": 2,
               "TargetPropertyName": "Text"
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "if (changed(1000, [DataCorePlugin.GameData.BrakeBias]), 1, 0)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
             }
-          }
+          },
+          "BorderStyle": {
+            "BorderColor": "#FFFA0000",
+            "RadiusBottomLeft": 10,
+            "RadiusBottomRight": 10,
+            "RadiusTopLeft": 10,
+            "RadiusTopRight": 10
+          },
+          "Font": "Roboto",
+          "FontSize": 50,
+          "FontWeight": "Bold",
+          "Height": 220,
+          "HorizontalAlignment": 1,
+          "IsFreezed": true,
+          "IsTextItem": true,
+          "Left": 20,
+          "Name": "BB",
+          "Text": "BB 0.0%",
+          "TextColor": "#FF000000",
+          "Top": 130,
+          "VerticalAlignment": 1,
+          "Visible": false,
+          "Width": 810
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "Top": 0,
-          "Left": 0,
-          "Height": 480,
-          "Width": 850,
           "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tlapReview = 1\r\n\tlapReviewDelay = 5000\r\n} else {\r\n\tlapReview = settings.lapReview\r\n\tlapReviewDelay = settings.lapReviewDelay\r\n}\r\n\r\nif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && $prop('DataCorePlugin.GameRawData.Telemetry.LapCurrentLapTime') < lapReviewDelay/1000 ) {\r\n\r\n\tif ( lapReview == 2) {\r\n\t\t// Always On\r\n\t\treturn 1\r\n\t} else if (lapReview == 1) {\r\n\t\t// Quali Only\r\n\t\tif ( \r\n\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Qualify' || \r\n\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Lone Qualify' || \r\n\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Practice' || \r\n\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice' || \r\n\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Offline Testing'\r\n\t\t) {\r\n\t\t\treturn 1\r\n\t\t} else {\r\n\t\t\treturn 0\r\n\t\t}\r\n\t} else {\r\n\t\t// Always Off\r\n\t\treturn 0\r\n\t}\r\n\r\n} else {\r\n\r\n\treturn 0\r\n\r\n}\r\n\r\n",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
           "Childrens": [
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
-              "IsRectangleItem": true,
               "BackgroundColor": "#82000000",
               "Height": 480,
+              "IsRectangleItem": true,
               "Left": 0,
+              "Name": "RectangleItem2",
               "Top": 0,
               "Visible": true,
-              "Width": 850,
-              "Name": "RectangleItem2"
+              "Width": 850
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
-              "IsRectangleItem": true,
               "BackgroundColor": "#FFFFFFFF",
               "BorderStyle": {
-                "RadiusTopLeft": 10,
-                "RadiusTopRight": 10,
                 "RadiusBottomLeft": 10,
-                "RadiusBottomRight": 10
+                "RadiusBottomRight": 10,
+                "RadiusTopLeft": 10,
+                "RadiusTopRight": 10
               },
               "Height": 220,
+              "IsRectangleItem": true,
               "Left": 20,
+              "Name": "RectangleItem2",
               "Top": 130,
               "Visible": true,
-              "Width": 810,
-              "Name": "RectangleItem2"
+              "Width": 810
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
-              "IsRectangleItem": true,
               "BackgroundColor": "#FF000000",
               "Height": 220,
+              "IsRectangleItem": true,
               "Left": 260,
+              "Name": "RectangleItem2",
               "Top": 130,
               "Visible": true,
-              "Width": 1,
-              "Name": "RectangleItem2"
+              "Width": 1
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
-              "IsRectangleItem": true,
               "BackgroundColor": "#FF000000",
               "Height": 1,
+              "IsRectangleItem": true,
               "Left": 260,
+              "Name": "RectangleItem2",
               "Top": 270,
               "Visible": true,
-              "Width": 570,
-              "Name": "RectangleItem2"
+              "Width": 570
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-              "Top": 284,
-              "Left": 300,
-              "Height": 52,
-              "Width": 490,
               "BackgroundColor": "#00FFFFFF",
               "Childrens": [
                 {
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                  "IsTextItem": true,
-                  "Font": "Roboto",
-                  "FontWeight": "Bold",
-                  "FontSize": 25,
-                  "Text": "+0.000",
-                  "TextColor": "#FF000000",
-                  "HorizontalAlignment": 1,
-                  "VerticalAlignment": 1,
                   "BackgroundColor": "#00FFFFFF",
-                  "BorderStyle": {
-                    "BorderColor": "#FFFA0000",
-                    "RadiusTopLeft": 10,
-                    "RadiusTopRight": 10,
-                    "RadiusBottomLeft": 10,
-                    "RadiusBottomRight": 10
-                  },
-                  "Height": 40,
-                  "Left": 490,
-                  "Top": 284,
-                  "Visible": true,
-                  "Width": 110,
-                  "Name": "Lap Recap2",
                   "Bindings": {
                     "Text": {
                       "FormatString": "0.000",
@@ -360,32 +373,32 @@
                       "Mode": 2,
                       "TargetPropertyName": "Text"
                     }
-                  }
+                  },
+                  "BorderStyle": {
+                    "BorderColor": "#FFFA0000",
+                    "RadiusBottomLeft": 10,
+                    "RadiusBottomRight": 10,
+                    "RadiusTopLeft": 10,
+                    "RadiusTopRight": 10
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 25,
+                  "FontWeight": "Bold",
+                  "Height": 40,
+                  "HorizontalAlignment": 1,
+                  "IsTextItem": true,
+                  "Left": 490,
+                  "Name": "Lap Recap2",
+                  "Text": "+0.000",
+                  "TextColor": "#FF000000",
+                  "Top": 284,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 110
                 },
                 {
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                  "IsTextItem": true,
-                  "Font": "Roboto",
-                  "FontWeight": "Bold",
-                  "FontSize": 35,
-                  "Text": "0:00.000",
-                  "TextColor": "#FF000000",
-                  "HorizontalAlignment": 2,
-                  "VerticalAlignment": 1,
                   "BackgroundColor": "#00FFFFFF",
-                  "BorderStyle": {
-                    "BorderColor": "#FFFA0000",
-                    "RadiusTopLeft": 10,
-                    "RadiusTopRight": 10,
-                    "RadiusBottomLeft": 10,
-                    "RadiusBottomRight": 10
-                  },
-                  "Height": 40,
-                  "Left": 630,
-                  "Top": 284,
-                  "Visible": true,
-                  "Width": 160,
-                  "Name": "Lap Recap9",
                   "Bindings": {
                     "Text": {
                       "FormatString": "m\\:ss\\.fff",
@@ -395,53 +408,53 @@
                       "Mode": 2,
                       "TargetPropertyName": "Text"
                     }
-                  }
+                  },
+                  "BorderStyle": {
+                    "BorderColor": "#FFFA0000",
+                    "RadiusBottomLeft": 10,
+                    "RadiusBottomRight": 10,
+                    "RadiusTopLeft": 10,
+                    "RadiusTopRight": 10
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 35,
+                  "FontWeight": "Bold",
+                  "Height": 40,
+                  "HorizontalAlignment": 2,
+                  "IsTextItem": true,
+                  "Left": 630,
+                  "Name": "Lap Recap9",
+                  "Text": "0:00.000",
+                  "TextColor": "#FF000000",
+                  "Top": 284,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 160
                 },
                 {
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                  "IsTextItem": true,
-                  "Font": "Roboto",
-                  "FontWeight": "Bold",
-                  "FontSize": 12,
-                  "Text": "MY SESSION BEST",
-                  "TextColor": "#FF878787",
-                  "HorizontalAlignment": 2,
-                  "VerticalAlignment": 1,
                   "BackgroundColor": "#00FFFFFF",
                   "BorderStyle": {
                     "BorderColor": "#FFFA0000"
                   },
+                  "Font": "Roboto",
+                  "FontSize": 12,
+                  "FontWeight": "Bold",
                   "Height": 14,
+                  "HorizontalAlignment": 2,
+                  "IsTextItem": true,
                   "Left": 640,
+                  "Name": "Lap Recap10",
+                  "Text": "MY SESSION BEST",
+                  "TextColor": "#FF878787",
                   "Top": 322,
+                  "VerticalAlignment": 1,
                   "Visible": true,
-                  "Width": 150,
-                  "Name": "Lap Recap10"
+                  "Width": 150
                 },
                 {
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                  "IsTextItem": true,
-                  "Font": "Roboto",
-                  "FontWeight": "Bold",
-                  "FontSize": 35,
-                  "Text": "0:00.000",
-                  "TextColor": "#FFC500CE",
-                  "HorizontalAlignment": 0,
-                  "VerticalAlignment": 1,
                   "BackgroundColor": "#00FFFFFF",
-                  "BorderStyle": {
-                    "BorderColor": "#FFFA0000",
-                    "RadiusTopLeft": 10,
-                    "RadiusTopRight": 10,
-                    "RadiusBottomLeft": 10,
-                    "RadiusBottomRight": 10
-                  },
-                  "Height": 40,
-                  "Left": 300,
-                  "Top": 284,
-                  "Visible": true,
-                  "Width": 160,
-                  "Name": "Lap Recap11",
                   "Bindings": {
                     "Text": {
                       "FormatString": "m\\:ss\\.fff",
@@ -451,79 +464,83 @@
                       "Mode": 2,
                       "TargetPropertyName": "Text"
                     }
-                  }
+                  },
+                  "BorderStyle": {
+                    "BorderColor": "#FFFA0000",
+                    "RadiusBottomLeft": 10,
+                    "RadiusBottomRight": 10,
+                    "RadiusTopLeft": 10,
+                    "RadiusTopRight": 10
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 35,
+                  "FontWeight": "Bold",
+                  "Height": 40,
+                  "HorizontalAlignment": 0,
+                  "IsTextItem": true,
+                  "Left": 300,
+                  "Name": "Lap Recap11",
+                  "Text": "0:00.000",
+                  "TextColor": "#FFC500CE",
+                  "Top": 284,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 160
                 },
                 {
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                  "IsTextItem": true,
+                  "BackgroundColor": "#00FFFFFF",
                   "Font": "Roboto",
-                  "FontWeight": "Bold",
                   "FontSize": 12,
+                  "FontWeight": "Bold",
+                  "Height": 14,
+                  "HorizontalAlignment": 0,
+                  "IsTextItem": true,
+                  "Left": 300,
+                  "Name": "TextItem19",
                   "Text": "OVERALL SESSION BEST",
                   "TextColor": "#FF878787",
-                  "HorizontalAlignment": 0,
-                  "VerticalAlignment": 1,
-                  "BackgroundColor": "#00FFFFFF",
-                  "Height": 14,
-                  "Left": 300,
                   "Top": 321,
+                  "VerticalAlignment": 1,
                   "Visible": true,
-                  "Width": 150,
-                  "Name": "TextItem19"
+                  "Width": 150
                 },
                 {
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                  "AutoSize": true,
+                  "BackgroundColor": "#00FFFFFF",
+                  "Height": 14,
                   "Image": "icon-left",
-                  "AutoSize": true,
-                  "BackgroundColor": "#00FFFFFF",
-                  "Height": 14,
                   "Left": 470,
+                  "Name": "ImageItem",
                   "Top": 297,
                   "Visible": true,
-                  "Width": 14,
-                  "Name": "ImageItem"
+                  "Width": 14
                 },
                 {
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
-                  "Image": "icon-right",
                   "AutoSize": true,
                   "BackgroundColor": "#00FFFFFF",
                   "Height": 14,
+                  "Image": "icon-right",
                   "Left": 606,
+                  "Name": "ImageItem",
                   "Top": 297,
                   "Visible": true,
-                  "Width": 14,
-                  "Name": "ImageItem"
+                  "Width": 14
                 }
               ],
               "Group": true,
+              "Height": 52,
+              "Left": 300,
+              "Name": "Layer",
+              "Top": 284,
               "Visible": true,
-              "Name": "Layer"
+              "Width": 490
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "IsTextItem": true,
-              "Font": "Roboto",
-              "FontWeight": "Bold",
-              "FontSize": 50,
-              "Text": "0:00.000",
-              "TextColor": "#FF000000",
-              "HorizontalAlignment": 1,
-              "VerticalAlignment": 1,
               "BackgroundColor": "#00FFFFFF",
-              "BorderStyle": {
-                "BorderColor": "#FFFA0000",
-                "RadiusTopLeft": 10,
-                "RadiusTopRight": 10,
-                "RadiusBottomLeft": 10,
-                "RadiusBottomRight": 10
-              },
-              "Height": 50,
-              "Left": 405,
-              "Top": 160,
-              "Visible": true,
-              "Width": 280,
-              "Name": "Lap Recap",
               "Bindings": {
                 "Text": {
                   "FormatString": "m\\:ss\\.fff",
@@ -540,32 +557,32 @@
                   "Mode": 2,
                   "TargetPropertyName": "TextColor"
                 }
-              }
+              },
+              "BorderStyle": {
+                "BorderColor": "#FFFA0000",
+                "RadiusBottomLeft": 10,
+                "RadiusBottomRight": 10,
+                "RadiusTopLeft": 10,
+                "RadiusTopRight": 10
+              },
+              "Font": "Roboto",
+              "FontSize": 50,
+              "FontWeight": "Bold",
+              "Height": 50,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 405,
+              "Name": "Lap Recap",
+              "Text": "0:00.000",
+              "TextColor": "#FF000000",
+              "Top": 160,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 280
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "IsTextItem": true,
-              "Font": "Roboto",
-              "FontWeight": "Bold",
-              "FontSize": 25,
-              "Text": "(0.000)",
-              "TextColor": "#FF000000",
-              "HorizontalAlignment": 1,
-              "VerticalAlignment": 1,
               "BackgroundColor": "#00FFFFFF",
-              "BorderStyle": {
-                "BorderColor": "#FFFA0000",
-                "RadiusTopLeft": 10,
-                "RadiusTopRight": 10,
-                "RadiusBottomLeft": 10,
-                "RadiusBottomRight": 10
-              },
-              "Height": 40,
-              "Left": 490,
-              "Top": 210,
-              "Visible": true,
-              "Width": 110,
-              "Name": "Lap Recap4",
               "Bindings": {
                 "Text": {
                   "FormatString": "s\\.fff",
@@ -582,32 +599,32 @@
                   "Mode": 2,
                   "TargetPropertyName": "TextColor"
                 }
-              }
+              },
+              "BorderStyle": {
+                "BorderColor": "#FFFA0000",
+                "RadiusBottomLeft": 10,
+                "RadiusBottomRight": 10,
+                "RadiusTopLeft": 10,
+                "RadiusTopRight": 10
+              },
+              "Font": "Roboto",
+              "FontSize": 25,
+              "FontWeight": "Bold",
+              "Height": 40,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 490,
+              "Name": "Lap Recap4",
+              "Text": "(0.000)",
+              "TextColor": "#FF000000",
+              "Top": 210,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 110
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "IsTextItem": true,
-              "Font": "Roboto",
-              "FontWeight": "Black",
-              "FontSize": 100,
-              "Text": "P00",
-              "TextColor": "#FF000000",
-              "HorizontalAlignment": 1,
-              "VerticalAlignment": 1,
               "BackgroundColor": "#00FFFFFF",
-              "BorderStyle": {
-                "BorderColor": "#FFFA0000",
-                "RadiusTopLeft": 10,
-                "RadiusTopRight": 10,
-                "RadiusBottomLeft": 10,
-                "RadiusBottomRight": 10
-              },
-              "Height": 90,
-              "Left": 46,
-              "Top": 195,
-              "Visible": true,
-              "Width": 186,
-              "Name": "Lap Recap5",
               "Bindings": {
                 "Text": {
                   "FormatString": "m\\:ss\\.fff",
@@ -624,73 +641,56 @@
                   "Mode": 2,
                   "TargetPropertyName": "TextColor"
                 }
-              }
+              },
+              "BorderStyle": {
+                "BorderColor": "#FFFA0000",
+                "RadiusBottomLeft": 10,
+                "RadiusBottomRight": 10,
+                "RadiusTopLeft": 10,
+                "RadiusTopRight": 10
+              },
+              "Font": "Roboto",
+              "FontSize": 100,
+              "FontWeight": "Black",
+              "Height": 90,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 46,
+              "Name": "Lap Recap5",
+              "Text": "P00",
+              "TextColor": "#FF000000",
+              "Top": 195,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 186
             }
           ],
           "Group": true,
-          "Visible": false,
+          "Height": 480,
+          "Left": 0,
           "Name": "Lap Review",
-          "Bindings": {
-            "Visible": {
-              "Formula": {
-                "Interpreter": 1,
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tlapReview = 1\r\n\tlapReviewDelay = 5000\r\n} else {\r\n\tlapReview = settings.lapReview\r\n\tlapReviewDelay = settings.lapReviewDelay\r\n}\r\n\r\nif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && $prop('DataCorePlugin.GameRawData.Telemetry.LapCurrentLapTime') < lapReviewDelay/1000 ) {\r\n\r\n\tif ( lapReview == 2) {\r\n\t\t// Always On\r\n\t\treturn 1\r\n\t} else if (lapReview == 1) {\r\n\t\t// Quali Only\r\n\t\tif ( \r\n\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Qualify' || \r\n\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Lone Qualify' || \r\n\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Practice' || \r\n\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice' || \r\n\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Offline Testing'\r\n\t\t) {\r\n\t\t\treturn 1\r\n\t\t} else {\r\n\t\t\treturn 0\r\n\t\t}\r\n\t} else {\r\n\t\t// Always Off\r\n\t\treturn 0\r\n\t}\r\n\r\n} else {\r\n\r\n\treturn 0\r\n\r\n}\r\n\r\n"
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
-            }
-          }
+          "Top": 0,
+          "Visible": false,
+          "Width": 850
         }
-      ]
+      ],
+      "Name": "Screen1",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": ""
+      },
+      "PitScreen": false,
+      "ScreenEnabledExpression": {
+        "Expression": ""
+      },
+      "ScreenId": "59e667d3-917a-451a-b050-141bb1cf3357"
     }
   ],
-  "SnapToGrid": false,
-  "HideLabels": false,
-  "ShowForeground": true,
-  "ForegroundOpacity": 100,
   "ShowBackground": true,
-  "BackgroundOpacity": 100,
   "ShowBoundingRectangles": false,
-  "GridSize": 10,
-  "Images": [
-    {
-      "Name": "icon-left",
-      "Extension": ".png",
-      "Modified": false,
-      "Optimized": true,
-      "Width": 14,
-      "Height": 14,
-      "Length": 120,
-      "MD5": "2e3cc2ab3912da0883c2d4640414c77b"
-    },
-    {
-      "Name": "icon-right",
-      "Extension": ".png",
-      "Modified": false,
-      "Optimized": true,
-      "Width": 14,
-      "Height": 14,
-      "Length": 126,
-      "MD5": "11f47293a092fd15fc18635e1be2ac34"
-    }
-  ],
-  "Metadata": {
-    "ScreenCount": 1,
-    "InGameScreensIndexs": [
-      0
-    ],
-    "IdleScreensIndexs": [],
-    "MainPreviewIndex": 0,
-    "IsOverlay": false,
-    "Width": 850,
-    "Height": 480,
-    "OverlaySizeWarning": false,
-    "MetadataVersion": 2,
-    "EnableOnDashboardMessaging": true,
-    "PitScreensIndexs": []
-  },
+  "ShowForeground": true,
   "ShowOnScreenControls": true,
-  "IsOverlay": false,
-  "EnableClickThroughOverlay": true,
-  "EnableOnDashboardMessaging": true
+  "SnapToGrid": false,
+  "Version": 2
 }
