@@ -2,20 +2,16 @@
 <img width="150" height="150" alt="Lovely Sim Racing" src="docs/images/lr-logo-small.png">
 </p>
 
-<h1 align="center">Lovely SimHub Dashboard</h1>
+<h1 align="center">Lovely Developers</h1>
 
 <p align="center">
-A multifunctional feature packed SimHub Dashboard (DDU) and a matching Stream Overlay.
+The <strong>Lovely Dashboard</strong> is an open source project, based on the very popular SimHub.<br/>As such, anyone who wants to contribute, can do so by follwoing the instructions below.
 </p>
  
 <br/>
 
-## Collaborating
-The **Lovely Dashboard** is an open source project, based on the very popular SimHub. As such, anyone who wants to make changes and advance it, can do so.
-
-
 ## Requirements
-SimHub exports the **Sim Dash** code in a zipped file named `{filename}.simhubdash`, which is a collection of `JSON` files and resources. To maintain a properly versioned codebase, I've implemented a required `pre-commit` script, that will prettify the JSON files and thus properly track changes to them.
+SimHub exports the **Sim Dash** code in a zipped file named `{filename}.simhubdash`, which is a collection of `JSON` files and resources. To maintain a properly versioned codebase, I've implemented and0 require a `pre-commit` script, that will prettify the JSON files and thus properly track changes to them.
 
 ### 1. Install Pre-Commit Hook
 Before you can run hooks, you need to have the pre-commit package manager installed. You can do so by following the instructions on the [official pre-commit website](https://pre-commit.com/#installation), or just install it using the following command:
@@ -47,5 +43,5 @@ check json...............................................................Passed
 pretty format json.......................................................Passed
 ```
 
-## Contributing
+## Contributing Files
 To maintain a versioned repository, you will need to commit **ONLY the source files** of the dashboard which can be found in the SimHub folder. You can right click on the Dashboard in SimHub and select `Open Folder`. You should copy all those files into the repository, and let GitHub do it's thing when you commit.

@@ -2,19 +2,15 @@
 <img width="150" height="150" alt="Lovely Sim Racing" src="docs/images/lr-logo-small.png">
 </p>
 
-<h1 align="center">Lovely SimHub Dashboard</h1>
+<h1 align="center">Lovely Dashboard Settings</h1>
 
 <p align="center">
-A multifunctional feature packed SimHub Dashboard (DDU) and a matching Stream Overlay.
+As of version 1.5.4, the <strong>Lovely Dashboard</strong> can be setup to your personal preferences.
 </p>
  
 <br/>
 
-## Settings
-As of version 1.5.4, the Lovely Dashboard can also be setup to your liking. 
-
-
-## Installing
+## Settings File
 You will need to copy the file `Lovely-Dashboard_settings.json` into `./SimHub/JavascriptExtensions`. 
 
 ![Copy the settings file into the JavascriptExtensions folder](docs/images/settings-file.png)

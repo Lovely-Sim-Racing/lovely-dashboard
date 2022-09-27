@@ -90,20 +90,24 @@ This is an ongoing project, so I will add more Screen Sizes and Sims as time pro
 * [iRacing](#iracing-new)
 
 
-# The Lovely Dashboard
+## The Lovely Dashboard
 If you were wondering why this is the best SimHub dashboard out there, wonder no more. It's good looking and feature packed but with considerate design and proper information architecture. 
 
-## Assetto Corsa Competizione
+### Assetto Corsa Competizione
 
 [![Basic Feature Set](docs/images/AllFeatures-ACC.jpg)](docs/acc/features-acc.md)
 
 🖥 **View the [ACC Full Feature Set](docs/acc/features-acc.md)**
 
-## iRacing
+### iRacing
 
 [![iRacinf Full Feature Set](docs/images/AllFeatures-iRacing.jpg)](docs/iRacing/features-iracing.md)
 
 🖥 **View the [iRacing Full Feature Set](docs/iRacing/features-iracing.md)**
+
+## Contributing
+Would you like to contribute to the **Lovely Dashboard & Overlay**? If yes, then head on over to the [**Developers Doc**](developers.md) and find out how you can get started.
+
 
 <br/><br/>
 
