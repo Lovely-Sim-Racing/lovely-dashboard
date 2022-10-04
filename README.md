@@ -46,7 +46,7 @@ This is a SimHub Dashboard, therefore **SimHub Dash** app is required to run it 
 #### For iRacing
 If you want to use the Lovely Dashboard with iRacing, you will also need to install a library by Romainrob.
 
-1. Download & Install Romainrob's [iRacing Extra Propeties DLL](https://drive.google.com/drive/folders/1AiIWHviD4j-_D-zgRrjJU1AFhJ_xmass)
+1. Download & Install Romainrob's [iRacing Extra Properties DLL](https://drive.google.com/drive/folders/1AiIWHviD4j-_D-zgRrjJU1AFhJ_xmass)
 
 :warning: **Warning: Simhub Dash v8.0+** is required to run the Lovely Dashboard 1.5.0+
  
