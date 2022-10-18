@@ -24,7 +24,7 @@ Join the Lovely Sim Racing Discord Server and help develop a better version.<br/
 
 #### Check out my other project: [**Lovely Stream Deck Icons**](http://j76.me/LSRIcons)
 
---
+---
 
 <br/>
 <h4 align="center">
