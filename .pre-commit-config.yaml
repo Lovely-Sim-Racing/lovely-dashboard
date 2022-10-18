@@ -1,0 +1,11 @@
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.3.0
+  hooks:
+  - id: check-json
+    types: [file]  # override `types: [json]`
+    files: \.(djson|ledsprofile)$
+  - id: pretty-format-json
+    args: [--autofix]
+    types: [file]  # override `types: [json]`
+    files: \.(djson|ledsprofile)$

@@ -1,1 +1,290 @@
-{"DashboardDebugManager":{"Maximized":false},"Version":2,"Id":"77e7660f-444a-438b-8761-b0ae54c150cb","BaseHeight":70,"BaseWidth":150,"BackgroundColor":"#FF000000","Screens":[{"Name":"Screen","InGameScreen":true,"IdleScreen":true,"PitScreen":false,"ScreenId":"582d3bb9-ba41-4ea1-b304-8c247e67c591","AllowOverlays":true,"IsForegroundLayer":false,"IsOverlayLayer":false,"OverlayTriggerExpression":{"Expression":""},"OverlayMaxDuration":0,"OverlayMinDuration":0,"IsBackgroundLayer":false,"BackgroundColor":"#FF000000","Items":[{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"Font":"Segoe UI","FontSize":20.0,"Text":"0.0 m/s","TextColor":"#FFFFFFFF","HorizontalAlignment":0,"VerticalAlignment":1,"BackgroundColor":"#00FFFFFF","Height":20.0,"Left":60.0,"Top":50.0,"Visible":true,"Width":90.0,"Name":"TextItem","Bindings":{"Text":{"FormatString":"0.0","Formula":{"Expression":"'' + format([DataCorePlugin.GameRawData.Telemetry.WindVel], '0.0') + ' m/s'"},"Mode":2,"TargetPropertyName":"Text"}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.EllipseItem, SimHub.Plugins","FillColor":"#00FFFFFF","EllipseColor":"#FF808080","EllipseThickness":2.0,"BackgroundColor":"#00FFFFFF","Height":30.0,"Left":20.0,"Top":20.0,"Visible":true,"Width":30.0,"Name":"EllipseItem"},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.DialGaugeItem, SimHub.Plugins","Name":"DialGaugeItem","Left":15.0,"Top":15.0,"Width":40.0,"Height":40.0,"BackgroundColor":"#00FFFFFF","Visible":true,"IsFreezed":true,"OuterRadius":20.0,"ShowDialGlassEffect":false,"InnerRadius":0.0,"OuterStrokeThickness":0.0,"InnerStrokeThickness":0.0,"DialStrokeColor":{"SolidColorBrush":{"@xmlns":"http://schemas.microsoft.com/winfx/2006/xaml/presentation","#text":"#FF808080"}},"RadialGaugeStartOffset":0.0,"ScaleGlowRadius":0.0,"ScaleGlowColor":"#FFFF0000","Minimum":0.0,"Maximum":360.0,"Value":0.0,"StartAngle":-90.0,"SweepAngle":360.0,"DialBackgroundColor":{"SolidColorBrush":{"@xmlns":"http://schemas.microsoft.com/winfx/2006/xaml/presentation","#text":"#00FFFFFF"}},"MajorTickRadius":0.0,"MajorTickColor":"#FFFFFFFF","MajorTickSize":"20,4","MajorDivisionsCount":0.0,"MinorTickRadius":0.0,"MinorTickColor":"#FFFFFFFF","MinorTickSize":"20,2","MinorDivisionsCount":0.0,"CapRadius":0.0,"NeedleLength":20.0,"NeedleThickness":15.0,"NeedleOffset":0.0,"ShowNeedle":true,"RangeIndicatorThickness":10.0,"RangeIndicatorRadius":110.0,"RangeOptimalStartValue":3.0,"RangeOptimalEndValue":4.0,"TicksPerLabel":1.0,"LabelCircleRotation":false,"LabelAngleOffset":0.0,"ShowRadialGauge":true,"RadialGaugeRadius":110.0,"RadialGaugeThickness":20.0,"RadialGaugeColor":"#FFFFFF00","ScaleLabelStyle":{"LabelFont":"Segoe UI","LabelFontSize":20.0,"LabelFontWeight":"Normal","LabelFontStyle":"Normal","LabelColor":"#FFFFFFFF","LabelRadius":100.0,"LabelSize":"80,30"},"AlternateScaleLabelStyle":{"Enabled":false,"LabelFont":"Segoe UI","LabelFontSize":20.0,"LabelFontWeight":"Normal","LabelFontStyle":"Normal","LabelColor":"#FFFFFFFF","LabelRadius":100.0,"LabelSize":"80,30"},"AboveOptimalStyle":{"EnableLabelColor":false,"LabelColor":"#FFFF0000","EnableMajorColor":false,"MajorColor":"#FFFF0000","EnableMinorColor":false,"MinorColor":"#FFFF0000","ArcColor":"#00FFFFFF"},"OptimalStyle":{"EnableLabelColor":false,"LabelColor":"#FFFF0000","EnableMajorColor":false,"MajorColor":"#FFFF0000","EnableMinorColor":false,"MinorColor":"#FFFF0000","ArcColor":"#00FFFFFF"},"BelowOptimalStyle":{"EnableLabelColor":false,"LabelColor":"#FFFF0000","EnableMajorColor":false,"MajorColor":"#FFFF0000","EnableMinorColor":false,"MinorColor":"#FFFF0000","ArcColor":"#00FFFFFF"},"HorizontalAlignment":1,"VerticalAlignment":1,"Bindings":{"Value":{"Formula":{"Expression":"([DataCorePlugin.GameRawData.Telemetry.WindDir] * 180/3.14) + 180"},"Mode":2,"TargetPropertyName":"Value"}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"Font":"Roboto","FontWeight":"Bold","FontSize":12.0,"Text":"N","TextColor":"#FF878787","HorizontalAlignment":1,"VerticalAlignment":1,"BackgroundColor":"#00FFFFFF","Height":10.0,"Left":15.0,"Top":0.0,"Visible":true,"Width":40.0,"Name":"TextItem2"},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"Font":"Roboto","FontWeight":"Bold","FontSize":12.0,"Text":"S","TextColor":"#FF878787","HorizontalAlignment":1,"VerticalAlignment":1,"BackgroundColor":"#00FFFFFF","Height":10.0,"Left":15.0,"Top":60.0,"Visible":true,"Width":40.0,"Name":"TextItem3"},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"Font":"Roboto","FontWeight":"Bold","FontSize":12.0,"Text":"E","TextColor":"#FF878787","HorizontalAlignment":1,"VerticalAlignment":1,"BackgroundColor":"#00FFFFFF","Height":40.0,"Left":65.0,"Top":15.0,"Visible":true,"Width":10.0,"Name":"TextItem5"},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"Font":"Roboto","FontWeight":"Bold","FontSize":12.0,"Text":"W","TextColor":"#FF878787","HorizontalAlignment":1,"VerticalAlignment":1,"BackgroundColor":"#00FFFFFF","Height":40.0,"Left":0.0,"Top":15.0,"Visible":true,"Width":10.0,"Name":"TextItem6"}]}],"SnapToGrid":false,"HideLabels":false,"ShowForeground":true,"ForegroundOpacity":100.0,"ShowBackground":true,"BackgroundOpacity":100.0,"ShowBoundingRectangles":false,"GridSize":10,"Images":[],"Metadata":{"ScreenCount":1.0,"InGameScreensIndexs":[0],"IdleScreensIndexs":[0],"MainPreviewIndex":0,"IsOverlay":false,"Width":150.0,"Height":70.0,"OverlaySizeWarning":false,"MetadataVersion":2.0,"EnableOnDashboardMessaging":true,"PitScreensIndexs":[]},"ShowOnScreenControls":true,"IsOverlay":false,"EnableClickThroughOverlay":true,"EnableOnDashboardMessaging":true}
+{
+  "BackgroundColor": "#FF000000",
+  "BackgroundOpacity": 100.0,
+  "BaseHeight": 70,
+  "BaseWidth": 150,
+  "DashboardDebugManager": {
+    "Maximized": false
+  },
+  "EnableClickThroughOverlay": true,
+  "EnableOnDashboardMessaging": true,
+  "ForegroundOpacity": 100.0,
+  "GridSize": 10,
+  "HideLabels": false,
+  "Id": "77e7660f-444a-438b-8761-b0ae54c150cb",
+  "Images": [],
+  "IsOverlay": false,
+  "Metadata": {
+    "EnableOnDashboardMessaging": true,
+    "Height": 70.0,
+    "IdleScreensIndexs": [
+      0
+    ],
+    "InGameScreensIndexs": [
+      0
+    ],
+    "IsOverlay": false,
+    "MainPreviewIndex": 0,
+    "MetadataVersion": 2.0,
+    "OverlaySizeWarning": false,
+    "PitScreensIndexs": [],
+    "ScreenCount": 1.0,
+    "Width": 150.0
+  },
+  "Screens": [
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#FF000000",
+      "IdleScreen": true,
+      "InGameScreen": true,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": false,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Text": {
+              "FormatString": "0.0",
+              "Formula": {
+                "Expression": "'' + format([DataCorePlugin.GameRawData.Telemetry.WindVel], '0.0') + ' m/s'"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Text"
+            }
+          },
+          "Font": "Segoe UI",
+          "FontSize": 20.0,
+          "Height": 20.0,
+          "HorizontalAlignment": 0,
+          "IsTextItem": true,
+          "Left": 60.0,
+          "Name": "TextItem",
+          "Text": "0.0 m/s",
+          "TextColor": "#FFFFFFFF",
+          "Top": 50.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 90.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.EllipseItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "EllipseColor": "#FF808080",
+          "EllipseThickness": 2.0,
+          "FillColor": "#00FFFFFF",
+          "Height": 30.0,
+          "Left": 20.0,
+          "Name": "EllipseItem",
+          "Top": 20.0,
+          "Visible": true,
+          "Width": 30.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.DialGaugeItem, SimHub.Plugins",
+          "AboveOptimalStyle": {
+            "ArcColor": "#00FFFFFF",
+            "EnableLabelColor": false,
+            "EnableMajorColor": false,
+            "EnableMinorColor": false,
+            "LabelColor": "#FFFF0000",
+            "MajorColor": "#FFFF0000",
+            "MinorColor": "#FFFF0000"
+          },
+          "AlternateScaleLabelStyle": {
+            "Enabled": false,
+            "LabelColor": "#FFFFFFFF",
+            "LabelFont": "Segoe UI",
+            "LabelFontSize": 20.0,
+            "LabelFontStyle": "Normal",
+            "LabelFontWeight": "Normal",
+            "LabelRadius": 100.0,
+            "LabelSize": "80,30"
+          },
+          "BackgroundColor": "#00FFFFFF",
+          "BelowOptimalStyle": {
+            "ArcColor": "#00FFFFFF",
+            "EnableLabelColor": false,
+            "EnableMajorColor": false,
+            "EnableMinorColor": false,
+            "LabelColor": "#FFFF0000",
+            "MajorColor": "#FFFF0000",
+            "MinorColor": "#FFFF0000"
+          },
+          "Bindings": {
+            "Value": {
+              "Formula": {
+                "Expression": "([DataCorePlugin.GameRawData.Telemetry.WindDir] * 180/3.14) + 180"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Value"
+            }
+          },
+          "CapRadius": 0.0,
+          "DialBackgroundColor": {
+            "SolidColorBrush": {
+              "#text": "#00FFFFFF",
+              "@xmlns": "http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            }
+          },
+          "DialStrokeColor": {
+            "SolidColorBrush": {
+              "#text": "#FF808080",
+              "@xmlns": "http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            }
+          },
+          "Height": 40.0,
+          "HorizontalAlignment": 1,
+          "InnerRadius": 0.0,
+          "InnerStrokeThickness": 0.0,
+          "IsFreezed": true,
+          "LabelAngleOffset": 0.0,
+          "LabelCircleRotation": false,
+          "Left": 15.0,
+          "MajorDivisionsCount": 0.0,
+          "MajorTickColor": "#FFFFFFFF",
+          "MajorTickRadius": 0.0,
+          "MajorTickSize": "20,4",
+          "Maximum": 360.0,
+          "Minimum": 0.0,
+          "MinorDivisionsCount": 0.0,
+          "MinorTickColor": "#FFFFFFFF",
+          "MinorTickRadius": 0.0,
+          "MinorTickSize": "20,2",
+          "Name": "DialGaugeItem",
+          "NeedleLength": 20.0,
+          "NeedleOffset": 0.0,
+          "NeedleThickness": 15.0,
+          "OptimalStyle": {
+            "ArcColor": "#00FFFFFF",
+            "EnableLabelColor": false,
+            "EnableMajorColor": false,
+            "EnableMinorColor": false,
+            "LabelColor": "#FFFF0000",
+            "MajorColor": "#FFFF0000",
+            "MinorColor": "#FFFF0000"
+          },
+          "OuterRadius": 20.0,
+          "OuterStrokeThickness": 0.0,
+          "RadialGaugeColor": "#FFFFFF00",
+          "RadialGaugeRadius": 110.0,
+          "RadialGaugeStartOffset": 0.0,
+          "RadialGaugeThickness": 20.0,
+          "RangeIndicatorRadius": 110.0,
+          "RangeIndicatorThickness": 10.0,
+          "RangeOptimalEndValue": 4.0,
+          "RangeOptimalStartValue": 3.0,
+          "ScaleGlowColor": "#FFFF0000",
+          "ScaleGlowRadius": 0.0,
+          "ScaleLabelStyle": {
+            "LabelColor": "#FFFFFFFF",
+            "LabelFont": "Segoe UI",
+            "LabelFontSize": 20.0,
+            "LabelFontStyle": "Normal",
+            "LabelFontWeight": "Normal",
+            "LabelRadius": 100.0,
+            "LabelSize": "80,30"
+          },
+          "ShowDialGlassEffect": false,
+          "ShowNeedle": true,
+          "ShowRadialGauge": true,
+          "StartAngle": -90.0,
+          "SweepAngle": 360.0,
+          "TicksPerLabel": 1.0,
+          "Top": 15.0,
+          "Value": 0.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 40.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Font": "Roboto",
+          "FontSize": 12.0,
+          "FontWeight": "Bold",
+          "Height": 10.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 15.0,
+          "Name": "TextItem2",
+          "Text": "N",
+          "TextColor": "#FF878787",
+          "Top": 0.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 40.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Font": "Roboto",
+          "FontSize": 12.0,
+          "FontWeight": "Bold",
+          "Height": 10.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 15.0,
+          "Name": "TextItem3",
+          "Text": "S",
+          "TextColor": "#FF878787",
+          "Top": 60.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 40.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Font": "Roboto",
+          "FontSize": 12.0,
+          "FontWeight": "Bold",
+          "Height": 40.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 65.0,
+          "Name": "TextItem5",
+          "Text": "E",
+          "TextColor": "#FF878787",
+          "Top": 15.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 10.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Font": "Roboto",
+          "FontSize": 12.0,
+          "FontWeight": "Bold",
+          "Height": 40.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 0.0,
+          "Name": "TextItem6",
+          "Text": "W",
+          "TextColor": "#FF878787",
+          "Top": 15.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 10.0
+        }
+      ],
+      "Name": "Screen",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": ""
+      },
+      "PitScreen": false,
+      "ScreenId": "582d3bb9-ba41-4ea1-b304-8c247e67c591"
+    }
+  ],
+  "ShowBackground": true,
+  "ShowBoundingRectangles": false,
+  "ShowForeground": true,
+  "ShowOnScreenControls": true,
+  "SnapToGrid": false,
+  "Version": 2
+}

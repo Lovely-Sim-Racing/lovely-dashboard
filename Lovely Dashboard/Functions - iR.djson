@@ -1,1 +1,567 @@
-{"DashboardDebugManager":{"Maximized":false},"Version":2,"Id":"aa94f7d2-811e-4c5b-baa3-d959eb58c775","BaseHeight":50,"BaseWidth":286,"BackgroundColor":"#FF000000","Screens":[{"Name":"Screen1","InGameScreen":true,"IdleScreen":false,"PitScreen":false,"ScreenId":"6b9481e0-7349-478b-8bed-6f6367a5a41e","AllowOverlays":true,"IsForegroundLayer":false,"IsOverlayLayer":false,"OverlayTriggerExpression":{"Expression":""},"ScreenEnabledExpression":{"Expression":""},"OverlayMaxDuration":0,"OverlayMinDuration":0,"IsBackgroundLayer":false,"BackgroundColor":"#FF000000","Items":[{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins","Image":"lights off","AutoSize":false,"BackgroundColor":"#00FFFFFF","Height":50.0,"Left":0.0,"Top":0.0,"Visible":true,"Width":64.0,"Name":"lights-off"},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins","Image":"high on","AutoSize":false,"BackgroundColor":"#00FFFFFF","Height":50.0,"Left":0.0,"Top":0.0,"Visible":false,"Width":64.0,"Name":"flashing","Bindings":{"Visible":{"Formula":{"Expression":"blink('flasher', 300, [DataCorePlugin.GameRawData.Telemetry.dcHeadlightFlash])\r\n\r\n"},"Mode":2,"TargetPropertyName":"Visible"}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins","Image":"Rain off","AutoSize":false,"BackgroundColor":"#00FFFFFF","Height":50.0,"Left":74.0,"Top":0.0,"Visible":false,"BlinkDelay":249.0,"Width":64.0,"IsFreezed":true,"Name":"rain-off"},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins","Image":"Wipers off","AutoSize":false,"BackgroundColor":"#00FFFFFF","Height":50.0,"Left":148.0,"Top":0.0,"Visible":false,"Width":64.0,"IsFreezed":true,"Name":"wiper-off"},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins","Image":"ignition off","AutoSize":false,"BackgroundColor":"#00FFFFFF","Height":50.0,"Left":222.0,"Top":0.0,"Visible":true,"Width":64.0,"Name":"ignition-off"},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins","Image":"ignition on","AutoSize":false,"BackgroundColor":"#00FFFFFF","Height":50.0,"Left":222.0,"Top":0.0,"Visible":false,"Width":64.0,"Name":"ignition-on","Bindings":{"Visible":{"Formula":{"Expression":"[DataCorePlugin.GameData.EngineIgnitionOn]"},"Mode":2,"TargetPropertyName":"Visible"}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins","Image":"starter on","AutoSize":false,"BackgroundColor":"#00FFFFFF","Height":50.0,"Left":222.0,"Top":0.0,"Visible":false,"Width":64.0,"Name":"starter-on","Bindings":{"Visible":{"Formula":{"Expression":"[DataCorePlugin.GameData.EngineStarted]"},"Mode":2,"TargetPropertyName":"Visible"}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins","Top":0.0,"Left":74.0,"Height":50.0,"Width":64.0,"BackgroundColor":"#00FFFFFF","Childrens":[{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins","IsRectangleItem":true,"BackgroundColor":"#FF2B2B2B","BorderStyle":{"RadiusTopLeft":5,"RadiusTopRight":5,"RadiusBottomLeft":5,"RadiusBottomRight":5},"Height":50.0,"Left":74.0,"Top":0.0,"Visible":true,"BlinkDelay":100.0,"Width":64.0,"Name":"RectangleItem","Bindings":{"BackgroundColor":{"Formula":{"Expression":"if (changed(350, [DataCorePlugin.GameRawData.SessionData.DriverInfo.DriverIncidentCount]), 'Lime', '#2b2b2b')"},"Mode":2,"TargetPropertyName":"BackgroundColor"},"BlinkEnabled":{"Formula":{"Expression":"if (changed(350, [DataCorePlugin.GameRawData.SessionData.DriverInfo.DriverIncidentCount]), 1, 0)"},"Mode":2,"TargetPropertyName":"BlinkEnabled"}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"Font":"Roboto","FontWeight":"Bold","FontSize":20.0,"Text":"0x","TextColor":"#FF00FF00","HorizontalAlignment":1,"VerticalAlignment":1,"BackgroundColor":"#00FFFFFF","Height":35.0,"Left":74.0,"Top":0.0,"Visible":false,"Width":64.0,"Name":"TextItem","Bindings":{"Text":{"FormatString":"0","Formula":{"Expression":"[DataCorePlugin.GameRawData.SessionData.DriverInfo.DriverIncidentCount] + 'x'"},"Mode":2,"TargetPropertyName":"Text"},"Visible":{"Formula":{"Expression":"if ([DataCorePlugin.GameRawData.SessionData.WeekendInfo.WeekendOptions.IncidentLimit]=='unlimited', 0, 1)"},"Mode":2,"TargetPropertyName":"Visible"}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"Font":"Roboto","FontWeight":"Bold","FontSize":12.0,"Text":"OF 15x","TextColor":"#FF808080","HorizontalAlignment":1,"VerticalAlignment":1,"BackgroundColor":"#00FFFFFF","Height":25.0,"Left":74.0,"Top":25.0,"Visible":false,"Width":64.0,"Name":"TextItem2","Bindings":{"Visible":{"Formula":{"Expression":"if ([DataCorePlugin.GameRawData.SessionData.WeekendInfo.WeekendOptions.IncidentLimit]=='unlimited', 0, 1)"},"Mode":2,"TargetPropertyName":"Visible"},"Text":{"Formula":{"Expression":"'OF ' + [DataCorePlugin.GameRawData.SessionData.WeekendInfo.WeekendOptions.IncidentLimit] +'x'"},"Mode":2,"TargetPropertyName":"Text"}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"Font":"Roboto","FontWeight":"Medium","FontSize":24.0,"Text":"0x","TextColor":"#FF00FF00","HorizontalAlignment":1,"VerticalAlignment":1,"BackgroundColor":"#00FFFFFF","Height":50.0,"Left":74.0,"Top":0.0,"Visible":true,"Width":64.0,"Name":"TextItem3","Bindings":{"Text":{"FormatString":"0","Formula":{"Expression":"[DataCorePlugin.GameRawData.SessionData.DriverInfo.DriverIncidentCount] + 'x'"},"Mode":2,"TargetPropertyName":"Text"},"Visible":{"Formula":{"Expression":"if ([DataCorePlugin.GameRawData.SessionData.WeekendInfo.WeekendOptions.IncidentLimit]=='unlimited', 1, 0)"},"Mode":2,"TargetPropertyName":"Visible"}}}],"Group":true,"Visible":true,"Name":"0x2"},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins","Top":0.0,"Left":148.0,"Height":50.0,"Width":64.0,"BackgroundColor":"#00FFFFFF","Childrens":[{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins","IsRectangleItem":true,"BackgroundColor":"#FF2B2B2B","BorderStyle":{"RadiusTopLeft":5,"RadiusTopRight":5,"RadiusBottomLeft":5,"RadiusBottomRight":5},"Height":50.0,"Left":148.0,"Top":0.0,"Visible":true,"BlinkDelay":100.0,"Width":64.0,"Name":"RectangleItem"},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"Font":"Roboto","FontWeight":"Bold","FontSize":20.0,"Text":"0k","TextColor":"#FFFFFFFF","HorizontalAlignment":1,"VerticalAlignment":1,"BackgroundColor":"#00FFFFFF","Height":35.0,"Left":148.0,"Top":0.0,"Visible":true,"Width":64.0,"Name":"TextItem","Bindings":{"Text":{"FormatString":"0","Formula":{"Expression":"[IRacingExtraProperties.iRacing_Class_SoFk]"},"Mode":2,"TargetPropertyName":"Text"}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"Font":"Roboto","FontWeight":"Bold","FontSize":12.0,"Text":"SoF","TextColor":"#FF808080","HorizontalAlignment":1,"VerticalAlignment":1,"BackgroundColor":"#00FFFFFF","Height":25.0,"Left":148.0,"Top":25.0,"Visible":true,"Width":64.0,"Name":"TextItem2"}],"Group":true,"Visible":false,"Name":"SoF"},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins","Top":0.0,"Left":148.0,"Height":50.0,"Width":64.0,"BackgroundColor":"#00FFFFFF","Childrens":[{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins","IsRectangleItem":true,"BackgroundColor":"#FF2B2B2B","BorderStyle":{"RadiusTopLeft":5,"RadiusTopRight":5,"RadiusBottomLeft":5,"RadiusBottomRight":5},"Height":50.0,"Left":148.0,"Top":0.0,"Visible":true,"BlinkDelay":100.0,"Width":64.0,"Name":"RectangleItem"},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"Font":"Roboto","FontWeight":"Medium","FontSize":24.0,"Text":"+000","TextColor":"#FFFFFFFF","HorizontalAlignment":1,"VerticalAlignment":1,"BackgroundColor":"#00FFFFFF","Height":50.0,"Left":148.0,"Top":0.0,"Visible":true,"Width":64.0,"Name":"TextItem","Bindings":{"Text":{"FormatString":"0","Formula":{"Expression":"[IRacingExtraProperties.iRacing_Player_iRGainEstimation]"},"Mode":2,"TargetPropertyName":"Text"},"TextColor":{"Formula":{"Expression":"if ( sign([IRacingExtraProperties.iRacing_Player_iRGainEstimation])=='-1', '#FFFA0000', \r\n\tif ( sign([IRacingExtraProperties.iRacing_Player_iRGainEstimation])=='1', '#FF00FF02', 'White')\r\n)"},"Mode":2,"TargetPropertyName":"TextColor"}}}],"Group":true,"Visible":true,"Name":"iRating Gain Estimation"}]}],"SnapToGrid":false,"HideLabels":true,"ShowForeground":true,"ForegroundOpacity":100.0,"ShowBackground":true,"BackgroundOpacity":100.0,"ShowBoundingRectangles":false,"GridSize":10,"Images":[{"Name":"high on","Extension":".png","Modified":false,"Optimized":true,"Width":64,"Height":50,"Length":790,"MD5":"bba8b6447bfd3b724411a55e10f676bc"},{"Name":"lights off","Extension":".png","Modified":false,"Optimized":true,"Width":64,"Height":50,"Length":815,"MD5":"a67ce2dee64e34dbcc86675184b4b97d"},{"Name":"lights on","Extension":".png","Modified":false,"Optimized":true,"Length":891,"MD5":"79abcf8b0cd76dee04369171a42cd575"},{"Name":"Rain off","Extension":".png","Modified":false,"Optimized":true,"Width":64,"Height":50,"Length":221,"MD5":"a60aaa1dddbce59d443410ec2a97bcf7"},{"Name":"Rain on","Extension":".png","Modified":false,"Optimized":true,"Length":221,"MD5":"5eb0e08dad2773a5b556df5b69fc3330"},{"Name":"Wipers off","Extension":".png","Modified":false,"Optimized":true,"Width":64,"Height":50,"Length":880,"MD5":"e5d37e25f2071a7e76275f8163d74a99"},{"Name":"Wipers on","Extension":".png","Modified":false,"Optimized":true,"Width":64,"Height":50,"Length":1020,"MD5":"bdafed5f4ee19692a1ae621ab01901a5"},{"Name":"ignition off","Extension":".png","Modified":false,"Optimized":true,"Width":64,"Height":50,"Length":770,"MD5":"5d6ff629bf4e17cd42b86b692502b6ca"},{"Name":"ignition on","Extension":".png","Modified":false,"Optimized":true,"Width":64,"Height":50,"Length":896,"MD5":"802965b8a4a1a0d9dc6f0a8180aad451"},{"Name":"starter on","Extension":".png","Modified":false,"Optimized":true,"Width":64,"Height":50,"Length":921,"MD5":"ca2983fa50b86b93bfed873c9826eebe"}],"Metadata":{"ScreenCount":1.0,"InGameScreensIndexs":[0],"IdleScreensIndexs":[],"MainPreviewIndex":0,"IsOverlay":false,"Width":286.0,"Height":50.0,"OverlaySizeWarning":false,"MetadataVersion":2.0,"EnableOnDashboardMessaging":true,"PitScreensIndexs":[]},"ShowOnScreenControls":true,"IsOverlay":false,"EnableClickThroughOverlay":true,"EnableOnDashboardMessaging":true}
+{
+  "BackgroundColor": "#FF000000",
+  "BackgroundOpacity": 100.0,
+  "BaseHeight": 50,
+  "BaseWidth": 286,
+  "DashboardDebugManager": {
+    "Maximized": false
+  },
+  "EnableClickThroughOverlay": true,
+  "EnableOnDashboardMessaging": true,
+  "ForegroundOpacity": 100.0,
+  "GridSize": 10,
+  "HideLabels": true,
+  "Id": "aa94f7d2-811e-4c5b-baa3-d959eb58c775",
+  "Images": [
+    {
+      "Extension": ".png",
+      "Height": 50,
+      "Length": 790,
+      "MD5": "bba8b6447bfd3b724411a55e10f676bc",
+      "Modified": false,
+      "Name": "high on",
+      "Optimized": true,
+      "Width": 64
+    },
+    {
+      "Extension": ".png",
+      "Height": 50,
+      "Length": 815,
+      "MD5": "a67ce2dee64e34dbcc86675184b4b97d",
+      "Modified": false,
+      "Name": "lights off",
+      "Optimized": true,
+      "Width": 64
+    },
+    {
+      "Extension": ".png",
+      "Length": 891,
+      "MD5": "79abcf8b0cd76dee04369171a42cd575",
+      "Modified": false,
+      "Name": "lights on",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Height": 50,
+      "Length": 221,
+      "MD5": "a60aaa1dddbce59d443410ec2a97bcf7",
+      "Modified": false,
+      "Name": "Rain off",
+      "Optimized": true,
+      "Width": 64
+    },
+    {
+      "Extension": ".png",
+      "Length": 221,
+      "MD5": "5eb0e08dad2773a5b556df5b69fc3330",
+      "Modified": false,
+      "Name": "Rain on",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Height": 50,
+      "Length": 880,
+      "MD5": "e5d37e25f2071a7e76275f8163d74a99",
+      "Modified": false,
+      "Name": "Wipers off",
+      "Optimized": true,
+      "Width": 64
+    },
+    {
+      "Extension": ".png",
+      "Height": 50,
+      "Length": 1020,
+      "MD5": "bdafed5f4ee19692a1ae621ab01901a5",
+      "Modified": false,
+      "Name": "Wipers on",
+      "Optimized": true,
+      "Width": 64
+    },
+    {
+      "Extension": ".png",
+      "Height": 50,
+      "Length": 770,
+      "MD5": "5d6ff629bf4e17cd42b86b692502b6ca",
+      "Modified": false,
+      "Name": "ignition off",
+      "Optimized": true,
+      "Width": 64
+    },
+    {
+      "Extension": ".png",
+      "Height": 50,
+      "Length": 896,
+      "MD5": "802965b8a4a1a0d9dc6f0a8180aad451",
+      "Modified": false,
+      "Name": "ignition on",
+      "Optimized": true,
+      "Width": 64
+    },
+    {
+      "Extension": ".png",
+      "Height": 50,
+      "Length": 921,
+      "MD5": "ca2983fa50b86b93bfed873c9826eebe",
+      "Modified": false,
+      "Name": "starter on",
+      "Optimized": true,
+      "Width": 64
+    }
+  ],
+  "IsOverlay": false,
+  "Metadata": {
+    "EnableOnDashboardMessaging": true,
+    "Height": 50.0,
+    "IdleScreensIndexs": [],
+    "InGameScreensIndexs": [
+      0
+    ],
+    "IsOverlay": false,
+    "MainPreviewIndex": 0,
+    "MetadataVersion": 2.0,
+    "OverlaySizeWarning": false,
+    "PitScreensIndexs": [],
+    "ScreenCount": 1.0,
+    "Width": 286.0
+  },
+  "Screens": [
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#FF000000",
+      "IdleScreen": false,
+      "InGameScreen": true,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": false,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+          "AutoSize": false,
+          "BackgroundColor": "#00FFFFFF",
+          "Height": 50.0,
+          "Image": "lights off",
+          "Left": 0.0,
+          "Name": "lights-off",
+          "Top": 0.0,
+          "Visible": true,
+          "Width": 64.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+          "AutoSize": false,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "blink('flasher', 300, [DataCorePlugin.GameRawData.Telemetry.dcHeadlightFlash])\r\n\r\n"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Height": 50.0,
+          "Image": "high on",
+          "Left": 0.0,
+          "Name": "flashing",
+          "Top": 0.0,
+          "Visible": false,
+          "Width": 64.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+          "AutoSize": false,
+          "BackgroundColor": "#00FFFFFF",
+          "BlinkDelay": 249.0,
+          "Height": 50.0,
+          "Image": "Rain off",
+          "IsFreezed": true,
+          "Left": 74.0,
+          "Name": "rain-off",
+          "Top": 0.0,
+          "Visible": false,
+          "Width": 64.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+          "AutoSize": false,
+          "BackgroundColor": "#00FFFFFF",
+          "Height": 50.0,
+          "Image": "Wipers off",
+          "IsFreezed": true,
+          "Left": 148.0,
+          "Name": "wiper-off",
+          "Top": 0.0,
+          "Visible": false,
+          "Width": 64.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+          "AutoSize": false,
+          "BackgroundColor": "#00FFFFFF",
+          "Height": 50.0,
+          "Image": "ignition off",
+          "Left": 222.0,
+          "Name": "ignition-off",
+          "Top": 0.0,
+          "Visible": true,
+          "Width": 64.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+          "AutoSize": false,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "[DataCorePlugin.GameData.EngineIgnitionOn]"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Height": 50.0,
+          "Image": "ignition on",
+          "Left": 222.0,
+          "Name": "ignition-on",
+          "Top": 0.0,
+          "Visible": false,
+          "Width": 64.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+          "AutoSize": false,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "[DataCorePlugin.GameData.EngineStarted]"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Height": 50.0,
+          "Image": "starter on",
+          "Left": 222.0,
+          "Name": "starter-on",
+          "Top": 0.0,
+          "Visible": false,
+          "Width": 64.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF2B2B2B",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "if (changed(350, [DataCorePlugin.GameRawData.SessionData.DriverInfo.DriverIncidentCount]), 'Lime', '#2b2b2b')"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "BackgroundColor"
+                },
+                "BlinkEnabled": {
+                  "Formula": {
+                    "Expression": "if (changed(350, [DataCorePlugin.GameRawData.SessionData.DriverInfo.DriverIncidentCount]), 1, 0)"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "BlinkEnabled"
+                }
+              },
+              "BlinkDelay": 100.0,
+              "BorderStyle": {
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Height": 50.0,
+              "IsRectangleItem": true,
+              "Left": 74.0,
+              "Name": "RectangleItem",
+              "Top": 0.0,
+              "Visible": true,
+              "Width": 64.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "0",
+                  "Formula": {
+                    "Expression": "[DataCorePlugin.GameRawData.SessionData.DriverInfo.DriverIncidentCount] + 'x'"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "if ([DataCorePlugin.GameRawData.SessionData.WeekendInfo.WeekendOptions.IncidentLimit]=='unlimited', 0, 1)"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Visible"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 35.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 74.0,
+              "Name": "TextItem",
+              "Text": "0x",
+              "TextColor": "#FF00FF00",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": false,
+              "Width": 64.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "'OF ' + [DataCorePlugin.GameRawData.SessionData.WeekendInfo.WeekendOptions.IncidentLimit] +'x'"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "if ([DataCorePlugin.GameRawData.SessionData.WeekendInfo.WeekendOptions.IncidentLimit]=='unlimited', 0, 1)"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Visible"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 12.0,
+              "FontWeight": "Bold",
+              "Height": 25.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 74.0,
+              "Name": "TextItem2",
+              "Text": "OF 15x",
+              "TextColor": "#FF808080",
+              "Top": 25.0,
+              "VerticalAlignment": 1,
+              "Visible": false,
+              "Width": 64.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "0",
+                  "Formula": {
+                    "Expression": "[DataCorePlugin.GameRawData.SessionData.DriverInfo.DriverIncidentCount] + 'x'"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "if ([DataCorePlugin.GameRawData.SessionData.WeekendInfo.WeekendOptions.IncidentLimit]=='unlimited', 1, 0)"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Visible"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 24.0,
+              "FontWeight": "Medium",
+              "Height": 50.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 74.0,
+              "Name": "TextItem3",
+              "Text": "0x",
+              "TextColor": "#FF00FF00",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 64.0
+            }
+          ],
+          "Group": true,
+          "Height": 50.0,
+          "Left": 74.0,
+          "Name": "0x2",
+          "Top": 0.0,
+          "Visible": true,
+          "Width": 64.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF2B2B2B",
+              "BlinkDelay": 100.0,
+              "BorderStyle": {
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Height": 50.0,
+              "IsRectangleItem": true,
+              "Left": 148.0,
+              "Name": "RectangleItem",
+              "Top": 0.0,
+              "Visible": true,
+              "Width": 64.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "0",
+                  "Formula": {
+                    "Expression": "[IRacingExtraProperties.iRacing_Class_SoFk]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 35.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 148.0,
+              "Name": "TextItem",
+              "Text": "0k",
+              "TextColor": "#FFFFFFFF",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 64.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Font": "Roboto",
+              "FontSize": 12.0,
+              "FontWeight": "Bold",
+              "Height": 25.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 148.0,
+              "Name": "TextItem2",
+              "Text": "SoF",
+              "TextColor": "#FF808080",
+              "Top": 25.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 64.0
+            }
+          ],
+          "Group": true,
+          "Height": 50.0,
+          "Left": 148.0,
+          "Name": "SoF",
+          "Top": 0.0,
+          "Visible": false,
+          "Width": 64.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF2B2B2B",
+              "BlinkDelay": 100.0,
+              "BorderStyle": {
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Height": 50.0,
+              "IsRectangleItem": true,
+              "Left": 148.0,
+              "Name": "RectangleItem",
+              "Top": 0.0,
+              "Visible": true,
+              "Width": 64.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "0",
+                  "Formula": {
+                    "Expression": "[IRacingExtraProperties.iRacing_Player_iRGainEstimation]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "if ( sign([IRacingExtraProperties.iRacing_Player_iRGainEstimation])=='-1', '#FFFA0000', \r\n\tif ( sign([IRacingExtraProperties.iRacing_Player_iRGainEstimation])=='1', '#FF00FF02', 'White')\r\n)"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 24.0,
+              "FontWeight": "Medium",
+              "Height": 50.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 148.0,
+              "Name": "TextItem",
+              "Text": "+000",
+              "TextColor": "#FFFFFFFF",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 64.0
+            }
+          ],
+          "Group": true,
+          "Height": 50.0,
+          "Left": 148.0,
+          "Name": "iRating Gain Estimation",
+          "Top": 0.0,
+          "Visible": true,
+          "Width": 64.0
+        }
+      ],
+      "Name": "Screen1",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": ""
+      },
+      "PitScreen": false,
+      "ScreenEnabledExpression": {
+        "Expression": ""
+      },
+      "ScreenId": "6b9481e0-7349-478b-8bed-6f6367a5a41e"
+    }
+  ],
+  "ShowBackground": true,
+  "ShowBoundingRectangles": false,
+  "ShowForeground": true,
+  "ShowOnScreenControls": true,
+  "SnapToGrid": false,
+  "Version": 2
+}

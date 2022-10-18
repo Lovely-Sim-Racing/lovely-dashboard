@@ -48,7 +48,7 @@ This is a SimHub Dashboard, therefore **SimHub Dash** app is required to run it 
 #### For iRacing
 If you want to use the Lovely Dashboard with iRacing, you will also need to install a library by Romainrob.
 
-1. Download & Install Romainrob's [iRacing Extra Propeties DLL](https://drive.google.com/drive/folders/1AiIWHviD4j-_D-zgRrjJU1AFhJ_xmass)
+1. Download & Install Romainrob's [iRacing Extra Properties DLL](https://drive.google.com/drive/folders/1AiIWHviD4j-_D-zgRrjJU1AFhJ_xmass)
 
 :warning: **Warning: Simhub Dash v8.0+** is required to run the Lovely Dashboard 1.5.0+
  
@@ -57,17 +57,25 @@ As of version 1.5.4, the Lovely Dashboard can also be setup to your liking. You 
 
 ![Copy the settings file into the JavascriptExtensions folder](docs/images/settings-file.png)
 
-To change your personal settings, you will need to edit the `Lovely-Dashboard_settings.json` file in any text editor. The available settings:
+To change your personal settings, you will need to edit the file `Lovely-Dashboard_settings.json` in any text editor. The available settings are:
 
-#### Driver Name format
-- `driverName: 0` (Default) Will display names as "**F. Lastname**"
-- `driverName: 1` Will display names as "**Firstname L.**"
+#### `driverName`
+You can change the way the Driver Name is formatted and displayed.
 
-#### Lap Review Display
-- `lapReview: 0` Will never show the Lap Review Alert
-- `lapReview: 1` (Default) Will only show the Lap Review Alert during **Qualifying** & **Practice** sessions
-- `lapReview: 2` Will always show the Lap Review Alert
-- `lapReviewDelay: 5000` Set how much time (in milliseconds) to display the Lap Review Alert. (5000 = 5 seconds)
+- `0` (Default) - Will display names as "**F. Lastname**"
+- `1` Will display names as "**Firstname L.**"
+
+#### `lapReview`
+Choose when the Lap Review Alert should appear.
+
+- `0` **Never** show the Lap Review Alert
+- `1` (Default) - **Qualifying** & **Practice** - This will only show the Lap Review Alert during **Qualifying** & **Practice** sessions
+- `2` **Always** - Will show the Lap Review Alert on every lap
+
+#### `lapReviewDelay`
+Set how much time in milliseconds to display the Lap Review Alert. (eg. 1000 = 1 second)
+
+- `5000` (Default) - Display the Lap Review Alert for 5 seconds
 
 **:information_source: If you do not copy the settings file, the default values will be used.**
   
@@ -84,20 +92,24 @@ This is an ongoing project, so I will add more Screen Sizes and Sims as time pro
 * [iRacing](#iracing-new)
 
 
-# The Lovely Dashboard
+## The Lovely Dashboard
 If you were wondering why this is the best SimHub dashboard out there, wonder no more. It's good looking and feature packed but with considerate design and proper information architecture. 
 
-## Assetto Corsa Competizione
+### Assetto Corsa Competizione
 
 [![Basic Feature Set](docs/images/AllFeatures-ACC.jpg)](docs/acc/features-acc.md)
 
 🖥 **View the [ACC Full Feature Set](docs/acc/features-acc.md)**
 
-## iRacing
+### iRacing
 
 [![iRacinf Full Feature Set](docs/images/AllFeatures-iRacing.jpg)](docs/iRacing/features-iracing.md)
 
 🖥 **View the [iRacing Full Feature Set](docs/iRacing/features-iracing.md)**
+
+## Contributing
+Would you like to contribute to the **Lovely Dashboard & Overlay**? If yes, then head on over to the [**Developers Doc**](developers.md) and find out how you can get started.
+
 
 <br/><br/>
 

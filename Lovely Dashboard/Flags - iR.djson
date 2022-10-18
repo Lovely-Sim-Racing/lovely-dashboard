@@ -1,1 +1,272 @@
-{"DashboardDebugManager":{"Maximized":false},"Version":2,"Id":"7f5c6e59-25fc-4073-8471-107fb2f1f234","BaseHeight":50,"BaseWidth":286,"BackgroundColor":"#FF000000","Screens":[{"Name":"Screen1","InGameScreen":true,"IdleScreen":false,"PitScreen":false,"ScreenId":"d4cc121d-3983-4d40-a9e5-6f432a5dca3d","AllowOverlays":true,"IsForegroundLayer":false,"IsOverlayLayer":false,"OverlayTriggerExpression":{"Expression":""},"OverlayMaxDuration":0,"OverlayMinDuration":0,"IsBackgroundLayer":false,"BackgroundColor":"#FF000000","Items":[{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins","IsRectangleItem":true,"BackgroundColor":"#FFFFFFFF","BorderStyle":{"RadiusTopLeft":25,"RadiusTopRight":5,"RadiusBottomLeft":5,"RadiusBottomRight":5},"Height":50.0,"Left":0.0,"Top":0.0,"Visible":false,"Width":286.0,"Name":"White","Bindings":{"Visible":{"Formula":{"Expression":"[DataCorePlugin.GameRawData.Telemetry.SessionFlagsDetails.Iswhite]"},"Mode":2,"TargetPropertyName":"Visible"}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins","Image":"flag-orange","AutoSize":true,"BackgroundColor":"#00FFFFFF","Height":50.0,"Left":0.0,"Top":0.0,"Visible":false,"Width":286.0,"Name":"Orange","Bindings":{"Visible":{"Formula":{"Expression":"[DataCorePlugin.GameRawData.Telemetry.SessionFlagsDetails.Isrepair]"},"Mode":2,"TargetPropertyName":"Visible"}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins","IsRectangleItem":true,"BackgroundColor":"#FF00D901","BorderStyle":{"RadiusTopLeft":25,"RadiusTopRight":5,"RadiusBottomLeft":5,"RadiusBottomRight":5},"Height":50.0,"Left":0.0,"Top":0.0,"Visible":false,"Width":286.0,"Name":"Green","Bindings":{"Visible":{"Formula":{"Expression":"[DataCorePlugin.GameRawData.Telemetry.SessionFlagsDetails.IsstartGo]"},"Mode":2,"TargetPropertyName":"Visible"}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins","IsRectangleItem":true,"BackgroundColor":"#FF00BFFF","BorderStyle":{"RadiusTopLeft":25,"RadiusTopRight":5,"RadiusBottomLeft":5,"RadiusBottomRight":5},"Height":50.0,"Left":0.0,"Top":0.0,"Visible":false,"Width":286.0,"Name":"Blue","Bindings":{"Visible":{"Formula":{"Expression":"[DataCorePlugin.GameRawData.Telemetry.SessionFlagsDetails.Isblue]"},"Mode":2,"TargetPropertyName":"Visible"}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins","Top":0.0,"Left":0.0,"Height":50.0,"Width":286.0,"BackgroundColor":"#00FFFFFF","Childrens":[{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins","IsRectangleItem":true,"BackgroundColor":"#FFFFE04C","BorderStyle":{"RadiusTopLeft":25,"RadiusTopRight":5,"RadiusBottomLeft":5,"RadiusBottomRight":5},"Height":50.0,"Left":0.0,"Top":0.0,"Visible":false,"Width":286.0,"Name":"Yellow","Bindings":{"Visible":{"Formula":{"Expression":"[DataCorePlugin.GameRawData.Telemetry.SessionFlagsDetails.Isyellow]"},"Mode":2,"TargetPropertyName":"Visible"}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"Font":"Roboto","FontWeight":"Bold","FontSize":20.0,"Text":"SECTOR","TextColor":"#FF000000","HorizontalAlignment":1,"VerticalAlignment":1,"BackgroundColor":"#FFFFE04C","BorderStyle":{"RadiusTopLeft":25,"RadiusTopRight":5,"RadiusBottomLeft":5,"RadiusBottomRight":5},"Height":50.0,"Left":0.0,"Top":0.0,"Visible":false,"Width":286.0,"Name":"Sector 1","Bindings":{"Text":{"Formula":{"Expression":"if ([DataCorePlugin.GameRawData.Graphics.globalYellow1], 'SECTOR 1', \r\n\r\n\tif ([DataCorePlugin.GameRawData.Graphics.globalYellow2], 'SECTOR 2', \r\n\t\r\n\t\tif ([DataCorePlugin.GameRawData.Graphics.globalYellow3], 'SECTOR 3', '' \r\n\t\t\r\n\t\t)\r\n\t)\r\n)"},"Mode":2,"TargetPropertyName":"Text"}}}],"Group":true,"Visible":true,"Name":"Layer"},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins","Image":"Checkered Flag","AutoSize":true,"BackgroundColor":"#00FFFFFF","Height":50.0,"Left":0.0,"Top":0.0,"Visible":false,"Width":286.0,"Name":"Checkered","Bindings":{"Visible":{"Formula":{"Expression":"[DataCorePlugin.GameRawData.Telemetry.SessionFlagsDetails.Ischeckered]"},"Mode":2,"TargetPropertyName":"Visible"}}}]}],"SnapToGrid":false,"HideLabels":false,"ShowForeground":true,"ForegroundOpacity":100.0,"ShowBackground":true,"BackgroundOpacity":100.0,"ShowBoundingRectangles":false,"GridSize":10,"Images":[{"Name":"Checkered Flag","Extension":".png","Modified":false,"Optimized":true,"Width":286,"Height":50,"Length":679,"MD5":"9efe4ed066fbf6ed001ad1851353d914"},{"Name":"flag-orange","Extension":".png","Modified":false,"Optimized":true,"Width":286,"Height":50,"Length":410,"MD5":"e749a06e0589500fc162e7a8d434c8ad"}],"Metadata":{"ScreenCount":1.0,"InGameScreensIndexs":[0],"IdleScreensIndexs":[],"MainPreviewIndex":0,"IsOverlay":false,"Width":286.0,"Height":50.0,"OverlaySizeWarning":false,"MetadataVersion":2.0,"EnableOnDashboardMessaging":true,"PitScreensIndexs":[]},"ShowOnScreenControls":true,"IsOverlay":false,"EnableClickThroughOverlay":true,"EnableOnDashboardMessaging":true}
+{
+  "BackgroundColor": "#FF000000",
+  "BackgroundOpacity": 100.0,
+  "BaseHeight": 50,
+  "BaseWidth": 286,
+  "DashboardDebugManager": {
+    "Maximized": false
+  },
+  "EnableClickThroughOverlay": true,
+  "EnableOnDashboardMessaging": true,
+  "ForegroundOpacity": 100.0,
+  "GridSize": 10,
+  "HideLabels": false,
+  "Id": "7f5c6e59-25fc-4073-8471-107fb2f1f234",
+  "Images": [
+    {
+      "Extension": ".png",
+      "Height": 50,
+      "Length": 679,
+      "MD5": "9efe4ed066fbf6ed001ad1851353d914",
+      "Modified": false,
+      "Name": "Checkered Flag",
+      "Optimized": true,
+      "Width": 286
+    },
+    {
+      "Extension": ".png",
+      "Height": 50,
+      "Length": 410,
+      "MD5": "e749a06e0589500fc162e7a8d434c8ad",
+      "Modified": false,
+      "Name": "flag-orange",
+      "Optimized": true,
+      "Width": 286
+    }
+  ],
+  "IsOverlay": false,
+  "Metadata": {
+    "EnableOnDashboardMessaging": true,
+    "Height": 50.0,
+    "IdleScreensIndexs": [],
+    "InGameScreensIndexs": [
+      0
+    ],
+    "IsOverlay": false,
+    "MainPreviewIndex": 0,
+    "MetadataVersion": 2.0,
+    "OverlaySizeWarning": false,
+    "PitScreensIndexs": [],
+    "ScreenCount": 1.0,
+    "Width": 286.0
+  },
+  "Screens": [
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#FF000000",
+      "IdleScreen": false,
+      "InGameScreen": true,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": false,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "BackgroundColor": "#FFFFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "[DataCorePlugin.GameRawData.Telemetry.SessionFlagsDetails.Iswhite]"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 5,
+            "RadiusBottomRight": 5,
+            "RadiusTopLeft": 25,
+            "RadiusTopRight": 5
+          },
+          "Height": 50.0,
+          "IsRectangleItem": true,
+          "Left": 0.0,
+          "Name": "White",
+          "Top": 0.0,
+          "Visible": false,
+          "Width": 286.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+          "AutoSize": true,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "[DataCorePlugin.GameRawData.Telemetry.SessionFlagsDetails.Isrepair]"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Height": 50.0,
+          "Image": "flag-orange",
+          "Left": 0.0,
+          "Name": "Orange",
+          "Top": 0.0,
+          "Visible": false,
+          "Width": 286.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "BackgroundColor": "#FF00D901",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "[DataCorePlugin.GameRawData.Telemetry.SessionFlagsDetails.IsstartGo]"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 5,
+            "RadiusBottomRight": 5,
+            "RadiusTopLeft": 25,
+            "RadiusTopRight": 5
+          },
+          "Height": 50.0,
+          "IsRectangleItem": true,
+          "Left": 0.0,
+          "Name": "Green",
+          "Top": 0.0,
+          "Visible": false,
+          "Width": 286.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "BackgroundColor": "#FF00BFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "[DataCorePlugin.GameRawData.Telemetry.SessionFlagsDetails.Isblue]"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 5,
+            "RadiusBottomRight": 5,
+            "RadiusTopLeft": 25,
+            "RadiusTopRight": 5
+          },
+          "Height": 50.0,
+          "IsRectangleItem": true,
+          "Left": 0.0,
+          "Name": "Blue",
+          "Top": 0.0,
+          "Visible": false,
+          "Width": 286.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FFFFE04C",
+              "Bindings": {
+                "Visible": {
+                  "Formula": {
+                    "Expression": "[DataCorePlugin.GameRawData.Telemetry.SessionFlagsDetails.Isyellow]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Visible"
+                }
+              },
+              "BorderStyle": {
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 25,
+                "RadiusTopRight": 5
+              },
+              "Height": 50.0,
+              "IsRectangleItem": true,
+              "Left": 0.0,
+              "Name": "Yellow",
+              "Top": 0.0,
+              "Visible": false,
+              "Width": 286.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FFFFE04C",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "if ([DataCorePlugin.GameRawData.Graphics.globalYellow1], 'SECTOR 1', \r\n\r\n\tif ([DataCorePlugin.GameRawData.Graphics.globalYellow2], 'SECTOR 2', \r\n\t\r\n\t\tif ([DataCorePlugin.GameRawData.Graphics.globalYellow3], 'SECTOR 3', '' \r\n\t\t\r\n\t\t)\r\n\t)\r\n)"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "BorderStyle": {
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 25,
+                "RadiusTopRight": 5
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 50.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 0.0,
+              "Name": "Sector 1",
+              "Text": "SECTOR",
+              "TextColor": "#FF000000",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": false,
+              "Width": 286.0
+            }
+          ],
+          "Group": true,
+          "Height": 50.0,
+          "Left": 0.0,
+          "Name": "Layer",
+          "Top": 0.0,
+          "Visible": true,
+          "Width": 286.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+          "AutoSize": true,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "[DataCorePlugin.GameRawData.Telemetry.SessionFlagsDetails.Ischeckered]"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Height": 50.0,
+          "Image": "Checkered Flag",
+          "Left": 0.0,
+          "Name": "Checkered",
+          "Top": 0.0,
+          "Visible": false,
+          "Width": 286.0
+        }
+      ],
+      "Name": "Screen1",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": ""
+      },
+      "PitScreen": false,
+      "ScreenId": "d4cc121d-3983-4d40-a9e5-6f432a5dca3d"
+    }
+  ],
+  "ShowBackground": true,
+  "ShowBoundingRectangles": false,
+  "ShowForeground": true,
+  "ShowOnScreenControls": true,
+  "SnapToGrid": false,
+  "Version": 2
+}
