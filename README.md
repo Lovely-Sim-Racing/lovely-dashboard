@@ -20,6 +20,8 @@ Join the Lovely Sim Racing Discord Server and help develop a better version.<br/
 
 ### 🔌 If you like this dashboard & overlay, please consider subscribing to my Youtube channel [Lovely Sim Racing](http://j76.me/LSR), where I stream as often as I can. You'll even see them both in action.
 
+### You may also consider [buying me a coffee](http://j76.me/BuyMeCoffee) :coffee:
+
 <br/>
 
 <h4 align="center">
