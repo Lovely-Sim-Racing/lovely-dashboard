@@ -22,8 +22,11 @@ Join the Lovely Sim Racing Discord Server and help develop a better version.<br/
 
 ### You may also consider [buying me a coffee](http://j76.me/BuyMeCoffee) :coffee:
 
-<br/>
+#### Check out my other project: [**Lovely Stream Deck Icons**](http://j76.me/LSRIcons)
 
+--
+
+<br/>
 <h4 align="center">
 <a href="https://youtu.be/_XAIlmhVY0s">
 <img src="docs/images/youtube-cover.png" /><br/>
