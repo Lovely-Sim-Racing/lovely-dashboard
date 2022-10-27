@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "f1192fef-477c-45cd-bca3-211b7b79fa81",
+  "Id": "922be501-d8de-4b26-a1c4-6993042917a5",
   "Images": [
     {
       "Extension": ".png",
@@ -446,12 +446,54 @@
           "IsTextItem": true,
           "Left": 420.0,
           "Name": "TextItem0",
-          "Text": "Lovely Overlay v1.5.4",
+          "Text": "Lovely Overlay v1.5.5",
           "TextColor": "#FFFFFFFF",
           "Top": 252.0,
           "VerticalAlignment": 1,
           "Visible": true,
           "Width": 240.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FFFF0000",
+          "Bindings": {
+            "Text": {
+              "FormatString": "",
+              "Formula": {
+                "Expression": "'NEW VERSION AVAILABLE: ' + downloadstring(86400, 'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Text"
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "var currentVer = '1.5.5'\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\n//return latestVer\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 10,
+            "RadiusBottomRight": 10,
+            "RadiusTopLeft": 10,
+            "RadiusTopRight": 10
+          },
+          "Font": "Roboto",
+          "FontSize": 16.0,
+          "FontWeight": "Bold",
+          "Height": 25.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 410.0,
+          "Name": "New Version",
+          "Text": "NEW VERSION AVAILABLE: 0.0.0",
+          "TextColor": "#FFFFFFFF",
+          "Top": 248.0,
+          "VerticalAlignment": 1,
+          "Visible": false,
+          "Width": 260.0
         }
       ],
       "Name": "Idle",
