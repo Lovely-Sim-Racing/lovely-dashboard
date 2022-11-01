@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "0de6e9ca-72d8-44d2-9cc6-90f02167ef97",
+  "Id": "0b98fa47-f297-4085-b9a3-61684e48955a",
   "Images": [
     {
       "Extension": ".png",
@@ -2912,7 +2912,7 @@
               "Left": 545.0,
               "Name": "Time Based",
               "Top": 7.0,
-              "Visible": false,
+              "Visible": true,
               "Width": 285.0
             },
             {
@@ -2992,7 +2992,7 @@
               "Left": 545.0,
               "Name": "Lap Based iR",
               "Top": 7.0,
-              "Visible": true,
+              "Visible": false,
               "Width": 285.0
             },
             {
@@ -3001,7 +3001,7 @@
               "Bindings": {
                 "Visible": {
                   "Formula": {
-                    "Expression": "// [DataCorePlugin.GameData.CompletedLaps]<2\r\n\r\nif ( $prop('DataCorePlugin.GameData.BestLapTime') == '00:00:00' && $prop('DataCorePlugin.GameData.LastLapTime') == '00:00:00' ) {\r\n\treturn 1\r\n} else {\r\n\treturn 0\r\n}\r\n\r\n",
+                    "Expression": "if ( $prop('DataCorePlugin.GameData.BestLapTime') == '00:00:00' && $prop('DataCorePlugin.GameData.LastLapTime') == '00:00:00' ) {\r\n\treturn 1\r\n} else {\r\n\treturn 0\r\n}\r\n\r\n",
                     "Interpreter": 1
                   },
                   "Mode": 2,

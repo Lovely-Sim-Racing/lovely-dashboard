@@ -12,7 +12,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "d257083c-a63b-4d1b-8f0f-bbdda5e234a6",
+  "Id": "a14013e9-c74c-4a85-b098-462cebb4936c",
   "Images": [
     {
       "Extension": ".png",
@@ -413,7 +413,7 @@
           "IsTextItem": true,
           "Left": 305.0,
           "Name": "TextItem0",
-          "Text": "Lovely Dashboard v1.5.4",
+          "Text": "Lovely Dashboard v1.5.5",
           "TextColor": "#FFFFFFFF",
           "Top": 335.0,
           "VerticalAlignment": 1,
@@ -434,7 +434,7 @@
             },
             "Visible": {
               "Formula": {
-                "Expression": "var currentVer = '1.5.4'\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\n//return latestVer\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
+                "Expression": "var currentVer = '1.5.5'\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\n//return latestVer\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -1087,6 +1087,158 @@
           "Top": 37.0,
           "Visible": false,
           "Width": 501.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "if([DataCorePlugin.GameData.BestLapOpponentPosition]>=0, 1, 0)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF000000",
+              "Height": 35.0,
+              "IsRectangleItem": true,
+              "Left": 148.0,
+              "Name": "RectangleItem",
+              "Top": 323.0,
+              "Visible": true,
+              "Width": 508.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FFC500CE",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "[DataCorePlugin.GameData.BestLapOpponentPosition]+1"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "BorderStyle": {
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Font": "Roboto",
+              "FontSize": 15.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 365.0,
+              "Name": "TextItem0",
+              "Text": "00",
+              "TextColor": "#FF000000",
+              "Top": 333.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 24.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = drivername($prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1);\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 0,
+              "IsTextItem": true,
+              "Left": 400.0,
+              "Name": "TextItem6",
+              "Text": "A Driver",
+              "TextColor": "#FFC500CE",
+              "Top": 333.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 160.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "m\\.ss\\.fff",
+                  "Formula": {
+                    "Expression": "isnull(driverbestlap([DataCorePlugin.GameData.BestLapOpponentPosition]+1), '0:00.000')"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 568.0,
+              "Name": "TextItem8",
+              "Text": "0:00.000",
+              "TextColor": "#FFC500CE",
+              "Top": 333.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 82.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 0,
+              "IsTextItem": true,
+              "Left": 240.0,
+              "Name": "TextItem6",
+              "Text": "Fastest Lap",
+              "TextColor": "#FFFFFFFF",
+              "Top": 333.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 110.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FFFFFFFF",
+              "Height": 1.0,
+              "IsRectangleItem": true,
+              "Left": 148.0,
+              "Name": "RectangleItem",
+              "Top": 328.0,
+              "Visible": true,
+              "Width": 508.0
+            }
+          ],
+          "Group": true,
+          "Height": 35.0,
+          "Left": 148.0,
+          "Name": "Fastest Lap",
+          "RepeatTopOffset": 0.0,
+          "Top": 323.0,
+          "Visible": true,
+          "Width": 508.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",

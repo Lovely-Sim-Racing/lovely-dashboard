@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "ef85c2fe-c129-43c7-b43f-7c55de6d40e6",
+  "Id": "b8c51362-9aa9-468d-8345-2c75dff59b2a",
   "Images": [
     {
       "Extension": ".png",
@@ -98,7 +98,7 @@
             },
             "Visible": {
               "Formula": {
-                "Expression": "if (changed(1000, [DataCorePlugin.GameData.EngineMap]), 1, 0)"
+                "Expression": "if (changed(1000, [DataCorePlugin.GameData.EngineMap]), 1, 0)\r\n"
               },
               "Mode": 2,
               "TargetPropertyName": "Visible"
@@ -674,7 +674,7 @@
           "Left": 0.0,
           "Name": "Lap Review",
           "Top": 0.0,
-          "Visible": false,
+          "Visible": true,
           "Width": 850.0
         }
       ],

@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "c707c0ff-5124-45ac-a26c-4097974ec25c",
+  "Id": "0d7e04d6-e2b2-40c6-bb42-1c17d5b1b0fb",
   "Images": [
     {
       "Extension": ".png",
@@ -376,6 +376,14 @@
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "var timeDiffOverall = timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') ) - timespantoseconds( driverbestlap(1) )\r\n\r\nif ( timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime'))==0) {\r\n\treturn '#444444'\r\n} else {\r\n\r\n\tif ( timeDiffOverall > 0 ) {\r\n\t\r\n\t\treturn '#00ff02' // Green\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn '#C500CE' // Purple\r\n\t\r\n\t}\r\n\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
                 }
               },
               "CharWidth": 33.0,
@@ -405,6 +413,14 @@
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "var timeDiffMine = timespantoseconds( $prop('DataCorePlugin.GameData.LastLapTime') ) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\r\nvar timeDiffOverall = timespantoseconds( $prop('DataCorePlugin.GameData.LastLapTime') ) - timespantoseconds( driverbestlap(1) )\r\n\r\nif ( timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime'))==0) {\r\n\treturn '#444444'\r\n} else {\r\n\r\n\tif ( timeDiffMine > 0 ) {\r\n\t\r\n\t\treturn '#ffe04c' // Yellow\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( timeDiffOverall > 0 ) {\r\n\t\r\n\t\t\treturn '#00ff02' // Green\r\n\t\t\r\n\t\t} else {\r\n\t\r\n\t\t\treturn '#C500CE' // Purple\r\n\t\t\r\n\t\t}\r\n\t\t\r\n\t}\r\n\t\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
                 }
               },
               "CharWidth": 33.0,
@@ -698,7 +714,8 @@
                     },
                     "TextColor": {
                       "Formula": {
-                        "Expression": "if ([PersistantTrackerPlugin.DriverBehind_02_Position] < [DataCorePlugin.GameData.Position], '#FA0000', '#FFFFFF')"
+                        "Expression": "var driver_rel = 'DriverBehind_02';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') >= 2 ) {\r\n\t\r\n\treturn '#FFA500' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FFA500'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                        "Interpreter": 1
                       },
                       "Mode": 2,
                       "TargetPropertyName": "TextColor"
@@ -733,7 +750,8 @@
                     },
                     "TextColor": {
                       "Formula": {
-                        "Expression": "if ([PersistantTrackerPlugin.DriverBehind_02_Position] < [DataCorePlugin.GameData.Position], '#FA0000', '#FFFFFF')"
+                        "Expression": "var driver_rel = 'DriverBehind_02';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') >= 2 ) {\r\n\t\r\n\treturn '#FFA500' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FFA500'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                        "Interpreter": 1
                       },
                       "Mode": 2,
                       "TargetPropertyName": "TextColor"
@@ -768,7 +786,8 @@
                     },
                     "TextColor": {
                       "Formula": {
-                        "Expression": "if ([PersistantTrackerPlugin.DriverBehind_02_Position] < [DataCorePlugin.GameData.Position], '#FA0000', '#FFFFFF')"
+                        "Expression": "var driver_rel = 'DriverBehind_02';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') >= 2 ) {\r\n\t\r\n\treturn '#FFA500' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FFA500'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                        "Interpreter": 1
                       },
                       "Mode": 2,
                       "TargetPropertyName": "TextColor"
@@ -858,7 +877,8 @@
                     },
                     "TextColor": {
                       "Formula": {
-                        "Expression": "if ([PersistantTrackerPlugin.DriverBehind_01_Position] < [DataCorePlugin.GameData.Position], '#FA0000', '#FFFFFF')"
+                        "Expression": "var driver_rel = 'DriverBehind_01';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') >= 2 ) {\r\n\t\r\n\treturn '#FFA500' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FFA500'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                        "Interpreter": 1
                       },
                       "Mode": 2,
                       "TargetPropertyName": "TextColor"
@@ -893,7 +913,8 @@
                     },
                     "TextColor": {
                       "Formula": {
-                        "Expression": "if ([PersistantTrackerPlugin.DriverBehind_01_Position] < [DataCorePlugin.GameData.Position], '#FA0000', '#FFFFFF')"
+                        "Expression": "var driver_rel = 'DriverBehind_01';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') >= 2 ) {\r\n\t\r\n\treturn '#FFA500' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FFA500'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                        "Interpreter": 1
                       },
                       "Mode": 2,
                       "TargetPropertyName": "TextColor"
@@ -928,7 +949,8 @@
                     },
                     "TextColor": {
                       "Formula": {
-                        "Expression": "if ([PersistantTrackerPlugin.DriverBehind_01_Position] < [DataCorePlugin.GameData.Position], '#FA0000', '#FFFFFF')"
+                        "Expression": "var driver_rel = 'DriverBehind_01';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') >= 2 ) {\r\n\t\r\n\treturn '#FFA500' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FFA500'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                        "Interpreter": 1
                       },
                       "Mode": 2,
                       "TargetPropertyName": "TextColor"
@@ -1018,7 +1040,8 @@
                     },
                     "TextColor": {
                       "Formula": {
-                        "Expression": "if ([PersistantTrackerPlugin.DriverBehind_00_Position] < [DataCorePlugin.GameData.Position], '#FA0000', '#FFFFFF')"
+                        "Expression": "var driver_rel = 'DriverBehind_00';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') >= 2 ) {\r\n\t\r\n\treturn '#FFA500' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FFA500'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                        "Interpreter": 1
                       },
                       "Mode": 2,
                       "TargetPropertyName": "TextColor"
@@ -1053,7 +1076,8 @@
                     },
                     "TextColor": {
                       "Formula": {
-                        "Expression": "if ([PersistantTrackerPlugin.DriverBehind_00_Position] < [DataCorePlugin.GameData.Position], '#FA0000', '#FFFFFF')"
+                        "Expression": "var driver_rel = 'DriverBehind_00';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') >= 2 ) {\r\n\t\r\n\treturn '#FFA500' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FFA500'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                        "Interpreter": 1
                       },
                       "Mode": 2,
                       "TargetPropertyName": "TextColor"
@@ -1088,7 +1112,8 @@
                     },
                     "TextColor": {
                       "Formula": {
-                        "Expression": "if ([PersistantTrackerPlugin.DriverBehind_00_Position] < [DataCorePlugin.GameData.Position], '#FA0000', '#FFFFFF')"
+                        "Expression": "var driver_rel = 'DriverBehind_00';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') >= 2 ) {\r\n\t\r\n\treturn '#FFA500' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FFA500'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                        "Interpreter": 1
                       },
                       "Mode": 2,
                       "TargetPropertyName": "TextColor"
@@ -1344,7 +1369,8 @@
                     },
                     "TextColor": {
                       "Formula": {
-                        "Expression": "if ([PersistantTrackerPlugin.DriverAhead_00_Position] > [DataCorePlugin.GameData.Position], \r\n\tif ([PersistantTrackerPlugin.DriverAhead_00_CurrentLap] = [DataCorePlugin.GameData.CurrentLap]-1, '#FFFFFF', '#00BFFF'), '#FFFFFF' )"
+                        "Expression": "var driver_rel = 'DriverAhead_00';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') >= 2 ) {\r\n\t\r\n\treturn '#FFA500' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FFA500'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                        "Interpreter": 1
                       },
                       "Mode": 2,
                       "TargetPropertyName": "TextColor"
@@ -1379,7 +1405,8 @@
                     },
                     "TextColor": {
                       "Formula": {
-                        "Expression": "if ([PersistantTrackerPlugin.DriverAhead_00_Position] > [DataCorePlugin.GameData.Position], \r\n\tif ([PersistantTrackerPlugin.DriverAhead_00_CurrentLap] = [DataCorePlugin.GameData.CurrentLap]-1, '#FFFFFF', '#00BFFF'), '#FFFFFF' )"
+                        "Expression": "var driver_rel = 'DriverAhead_00';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') >= 2 ) {\r\n\t\r\n\treturn '#FFA500' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FFA500'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                        "Interpreter": 1
                       },
                       "Mode": 2,
                       "TargetPropertyName": "TextColor"
@@ -1414,7 +1441,8 @@
                     },
                     "TextColor": {
                       "Formula": {
-                        "Expression": "if ([PersistantTrackerPlugin.DriverAhead_00_Position] > [DataCorePlugin.GameData.Position], \r\n\tif ([PersistantTrackerPlugin.DriverAhead_00_CurrentLap] = [DataCorePlugin.GameData.CurrentLap]-1, '#FFFFFF', '#00BFFF'), '#FFFFFF' )"
+                        "Expression": "var driver_rel = 'DriverAhead_00';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') >= 2 ) {\r\n\t\r\n\treturn '#FFA500' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FFA500'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                        "Interpreter": 1
                       },
                       "Mode": 2,
                       "TargetPropertyName": "TextColor"
@@ -1504,7 +1532,8 @@
                     },
                     "TextColor": {
                       "Formula": {
-                        "Expression": "if ([PersistantTrackerPlugin.DriverAhead_01_Position] > [DataCorePlugin.GameData.Position], \r\n\tif ([PersistantTrackerPlugin.DriverAhead_01_CurrentLap] = [DataCorePlugin.GameData.CurrentLap]-1, '#FFFFFF', '#00BFFF'), '#FFFFFF' )"
+                        "Expression": "var driver_rel = 'DriverAhead_01';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') >= 2 ) {\r\n\t\r\n\treturn '#FFA500' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FFA500'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                        "Interpreter": 1
                       },
                       "Mode": 2,
                       "TargetPropertyName": "TextColor"
@@ -1539,7 +1568,8 @@
                     },
                     "TextColor": {
                       "Formula": {
-                        "Expression": "if ([PersistantTrackerPlugin.DriverAhead_01_Position] > [DataCorePlugin.GameData.Position], \r\n\tif ([PersistantTrackerPlugin.DriverAhead_01_CurrentLap] = [DataCorePlugin.GameData.CurrentLap]-1, '#FFFFFF', '#00BFFF'), '#FFFFFF' )"
+                        "Expression": "var driver_rel = 'DriverAhead_01';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') >= 2 ) {\r\n\t\r\n\treturn '#FFA500' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FFA500'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                        "Interpreter": 1
                       },
                       "Mode": 2,
                       "TargetPropertyName": "TextColor"
@@ -1574,7 +1604,8 @@
                     },
                     "TextColor": {
                       "Formula": {
-                        "Expression": "if ([PersistantTrackerPlugin.DriverAhead_01_Position] > [DataCorePlugin.GameData.Position], \r\n\tif ([PersistantTrackerPlugin.DriverAhead_01_CurrentLap] = [DataCorePlugin.GameData.CurrentLap]-1, '#FFFFFF', '#00BFFF'), '#FFFFFF' )"
+                        "Expression": "var driver_rel = 'DriverAhead_01';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') >= 2 ) {\r\n\t\r\n\treturn '#FFA500' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FFA500'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                        "Interpreter": 1
                       },
                       "Mode": 2,
                       "TargetPropertyName": "TextColor"
@@ -1664,7 +1695,8 @@
                     },
                     "TextColor": {
                       "Formula": {
-                        "Expression": "if ([PersistantTrackerPlugin.DriverAhead_02_Position] > [DataCorePlugin.GameData.Position], \r\n\tif ([PersistantTrackerPlugin.DriverAhead_02_CurrentLap] = [DataCorePlugin.GameData.CurrentLap]-1, '#FFFFFF', '#00BFFF'), '#FFFFFF' )"
+                        "Expression": "var driver_rel = 'DriverAhead_02';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') >= 2 ) {\r\n\t\r\n\treturn '#FFA500' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FFA500'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                        "Interpreter": 1
                       },
                       "Mode": 2,
                       "TargetPropertyName": "TextColor"
@@ -1699,7 +1731,8 @@
                     },
                     "TextColor": {
                       "Formula": {
-                        "Expression": "if ([PersistantTrackerPlugin.DriverAhead_02_Position] > [DataCorePlugin.GameData.Position], \r\n\tif ([PersistantTrackerPlugin.DriverAhead_02_CurrentLap] = [DataCorePlugin.GameData.CurrentLap]-1, '#FFFFFF', '#00BFFF'), '#FFFFFF' )"
+                        "Expression": "var driver_rel = 'DriverAhead_02';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') >= 2 ) {\r\n\t\r\n\treturn '#FFA500' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FFA500'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                        "Interpreter": 1
                       },
                       "Mode": 2,
                       "TargetPropertyName": "TextColor"
@@ -1734,7 +1767,8 @@
                     },
                     "TextColor": {
                       "Formula": {
-                        "Expression": "if ([PersistantTrackerPlugin.DriverAhead_02_Position] > [DataCorePlugin.GameData.Position], \r\n\tif ([PersistantTrackerPlugin.DriverAhead_02_CurrentLap] = [DataCorePlugin.GameData.CurrentLap]-1, '#FFFFFF', '#00BFFF'), '#FFFFFF' )"
+                        "Expression": "var driver_rel = 'DriverAhead_02';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') >= 2 ) {\r\n\t\r\n\treturn '#FFA500' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FFA500'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                        "Interpreter": 1
                       },
                       "Mode": 2,
                       "TargetPropertyName": "TextColor"
@@ -3555,6 +3589,15 @@
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
           "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "if([GameRawData.Graphics.TyreCompound]='dry_compound', '1', '0')"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
           "Childrens": [
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
@@ -4048,12 +4091,12 @@
                     "BackgroundColor": {
                       "EnableMiddleColor": true,
                       "EndColor": "#FFFF0000",
-                      "EndColorValue": 130.0,
+                      "EndColorValue": 120.0,
                       "Formula": {
                         "Expression": "[TyreTemperatureFrontLeft]"
                       },
                       "MiddleColor": "#FF00FF00",
-                      "MiddleColorValue": 85.0,
+                      "MiddleColorValue": 80.0,
                       "Mode": 4,
                       "StartColor": "#FF00BFFF",
                       "StartColorValue": 40.0,
@@ -4114,12 +4157,12 @@
                     "BackgroundColor": {
                       "EnableMiddleColor": true,
                       "EndColor": "#FFFF0000",
-                      "EndColorValue": 130.0,
+                      "EndColorValue": 120.0,
                       "Formula": {
                         "Expression": "[TyreTemperatureFrontRight]"
                       },
                       "MiddleColor": "#FF00FF00",
-                      "MiddleColorValue": 85.0,
+                      "MiddleColorValue": 80.0,
                       "Mode": 4,
                       "StartColor": "#FF00BFFF",
                       "StartColorValue": 40.0,
@@ -4180,12 +4223,12 @@
                     "BackgroundColor": {
                       "EnableMiddleColor": true,
                       "EndColor": "#FFFF0000",
-                      "EndColorValue": 130.0,
+                      "EndColorValue": 120.0,
                       "Formula": {
                         "Expression": "[TyreTemperatureRearLeft]"
                       },
                       "MiddleColor": "#FF00FF00",
-                      "MiddleColorValue": 85.0,
+                      "MiddleColorValue": 80.0,
                       "Mode": 4,
                       "StartColor": "#FF00BFFF",
                       "StartColorValue": 40.0,
@@ -4246,12 +4289,12 @@
                     "BackgroundColor": {
                       "EnableMiddleColor": true,
                       "EndColor": "#FFFF0000",
-                      "EndColorValue": 130.0,
+                      "EndColorValue": 120.0,
                       "Formula": {
                         "Expression": "[TyreTemperatureRearRight]"
                       },
                       "MiddleColor": "#FF00FF00",
-                      "MiddleColorValue": 85.0,
+                      "MiddleColorValue": 80.0,
                       "Mode": 4,
                       "StartColor": "#FF00BFFF",
                       "StartColorValue": 40.0,
@@ -4352,9 +4395,823 @@
           "Group": true,
           "Height": 245.0,
           "Left": -1.0,
-          "Name": "Tyre/Wheel Status",
+          "Name": "Dry Tyre/Wheel Status",
           "Top": 2.0,
           "Visible": true,
+          "Width": 326.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "if([GameRawData.Graphics.TyreCompound]='wet_compound', '1', '0')"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Childrens": [
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                  "AutoSize": true,
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Image": {
+                      "Formula": {
+                        "Expression": "if ([DataCorePlugin.GameRawData.Physics.WheelSlip01]>1, \r\n\tif ( isincreasing(50, [DataCorePlugin.GameData.SpeedLocal]), 'slip', \r\n\t\tif ( [DataCorePlugin.GameRawData.Physics.WheelAngularSpeed01]==0, 'lock', '')\r\n\t),\r\n\t''\r\n)"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Image"
+                    }
+                  },
+                  "Height": 12.0,
+                  "Left": 15.0,
+                  "Name": "FL",
+                  "Top": 40.0,
+                  "Visible": true,
+                  "Width": 131.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                  "AutoSize": true,
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Image": {
+                      "Formula": {
+                        "Expression": "if ([DataCorePlugin.GameRawData.Physics.WheelSlip02]>1, \r\n\tif ( isincreasing(50, [DataCorePlugin.GameData.SpeedLocal]), 'slip', \r\n\t\tif ( [DataCorePlugin.GameRawData.Physics.WheelAngularSpeed02]==0, 'lock', '')\r\n\t),\r\n\t''\r\n)"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Image"
+                    }
+                  },
+                  "Height": 12.0,
+                  "Left": 177.0,
+                  "Name": "FR",
+                  "Top": 40.0,
+                  "Visible": true,
+                  "Width": 131.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                  "AutoSize": true,
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Image": {
+                      "Formula": {
+                        "Expression": "if ([DataCorePlugin.GameRawData.Physics.WheelSlip03]>1, \r\n\tif ( isincreasing(50, [DataCorePlugin.GameData.SpeedLocal]), 'slip', \r\n\t\tif ( [DataCorePlugin.GameRawData.Physics.WheelAngularSpeed03]==0, 'lock', '')\r\n\t),\r\n\t''\r\n)"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Image"
+                    }
+                  },
+                  "Height": 12.0,
+                  "Left": 15.0,
+                  "Name": "RL",
+                  "Top": 207.0,
+                  "Visible": true,
+                  "Width": 131.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                  "AutoSize": true,
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Image": {
+                      "Formula": {
+                        "Expression": "if ([DataCorePlugin.GameRawData.Physics.WheelSlip04]>1, \r\n\tif ( isincreasing(50, [DataCorePlugin.GameData.SpeedLocal]), 'slip', \r\n\t\tif ( [DataCorePlugin.GameRawData.Physics.WheelAngularSpeed04]==0, 'lock', '')\r\n\t),\r\n\t''\r\n)"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Image"
+                    }
+                  },
+                  "Height": 12.0,
+                  "Left": 177.0,
+                  "Name": "RR",
+                  "Top": 207.0,
+                  "Visible": true,
+                  "Width": 131.0
+                }
+              ],
+              "Group": true,
+              "Height": 179.0,
+              "Left": 15.0,
+              "Name": "Slip/Lock",
+              "Top": 40.0,
+              "Visible": true,
+              "Width": 293.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF353535",
+              "Height": 1.0,
+              "IsFreezed": true,
+              "IsRectangleItem": true,
+              "Left": 2.0,
+              "Name": "RectangleItem",
+              "Top": 129.5,
+              "Visible": true,
+              "Width": 321.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF353535",
+              "Height": 245.0,
+              "IsFreezed": true,
+              "IsRectangleItem": true,
+              "Left": 162.0,
+              "Name": "RectangleItem2",
+              "Top": 2.0,
+              "Visible": true,
+              "Width": 1.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Childrens": [
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0.0",
+                      "Formula": {
+                        "Expression": "[TyrePressureFrontLeft]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    },
+                    "TextColor": {
+                      "Formula": {
+                        "Expression": "if ([DataCorePlugin.GameRawData.Physics.WheelSlip01]>1, \r\n\tif ( isincreasing(50, [DataCorePlugin.GameData.SpeedLocal]), '#00BFFF', \r\n\t\tif ( [DataCorePlugin.GameRawData.Physics.WheelAngularSpeed01]==0, '#FFE04C', '#FFFFFF')\r\n\t),\r\n\t'#FFFFFF'\r\n)"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "TextColor"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 45.0,
+                  "FontWeight": "Bold",
+                  "Height": 58.0,
+                  "HorizontalAlignment": 1,
+                  "IsTextItem": true,
+                  "Left": -1.0,
+                  "Name": "TextItem25",
+                  "Text": "00.0",
+                  "TextColor": "#FFFFFFFF",
+                  "Top": 17.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 163.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0.0",
+                      "Formula": {
+                        "Expression": "[TyrePressureFrontRight]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    },
+                    "TextColor": {
+                      "Formula": {
+                        "Expression": "if ([DataCorePlugin.GameRawData.Physics.WheelSlip02]>1, \r\n\tif ( isincreasing(50, [DataCorePlugin.GameData.SpeedLocal]), '#00BFFF', \r\n\t\tif ( [DataCorePlugin.GameRawData.Physics.WheelAngularSpeed02]==0, '#FFE04C', '#FFFFFF')\r\n\t),\r\n\t'#FFFFFF'\r\n)"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "TextColor"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 45.0,
+                  "FontWeight": "Bold",
+                  "Height": 58.0,
+                  "HorizontalAlignment": 1,
+                  "IsTextItem": true,
+                  "Left": 162.0,
+                  "Name": "TextItem26",
+                  "Text": "00.0",
+                  "TextColor": "#FFFFFFFF",
+                  "Top": 17.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 163.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0.0",
+                      "Formula": {
+                        "Expression": "[TyrePressureRearLeft]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    },
+                    "TextColor": {
+                      "Formula": {
+                        "Expression": "if ([DataCorePlugin.GameRawData.Physics.WheelSlip03]>1, \r\n\tif ( isincreasing(50, [DataCorePlugin.GameData.SpeedLocal]), '#00BFFF', \r\n\t\tif ( [DataCorePlugin.GameRawData.Physics.WheelAngularSpeed03]==0, '#FFE04C', '#FFFFFF')\r\n\t),\r\n\t'#FFFFFF'\r\n)"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "TextColor"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 45.0,
+                  "FontWeight": "Bold",
+                  "Height": 58.0,
+                  "HorizontalAlignment": 1,
+                  "IsTextItem": true,
+                  "Left": -1.0,
+                  "Name": "TextItem27",
+                  "Text": "00.0",
+                  "TextColor": "#FFFFFFFF",
+                  "Top": 183.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 163.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0.0",
+                      "Formula": {
+                        "Expression": "[TyrePressureRearRight]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    },
+                    "TextColor": {
+                      "Formula": {
+                        "Expression": "if ([DataCorePlugin.GameRawData.Physics.WheelSlip04]>1, \r\n\tif ( isincreasing(50, [DataCorePlugin.GameData.SpeedLocal]), '#00BFFF', \r\n\t\tif ( [DataCorePlugin.GameRawData.Physics.WheelAngularSpeed04]==0, '#FFE04C', '#FFFFFF')\r\n\t),\r\n\t'#FFFFFF'\r\n)"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "TextColor"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 45.0,
+                  "FontWeight": "Bold",
+                  "Height": 58.0,
+                  "HorizontalAlignment": 1,
+                  "IsTextItem": true,
+                  "Left": 162.0,
+                  "Name": "TextItem28",
+                  "Text": "00.0",
+                  "TextColor": "#FFFFFFFF",
+                  "Top": 184.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 163.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0\u00b0",
+                      "Formula": {
+                        "Expression": "[TyreTemperatureFrontLeft]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 18.0,
+                  "FontWeight": "Bold",
+                  "Height": 20.0,
+                  "HorizontalAlignment": 2,
+                  "IsTextItem": true,
+                  "Left": 9.0,
+                  "Name": "TextItem29",
+                  "Text": "00\u00b0",
+                  "TextColor": "#FF878787",
+                  "Top": 81.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 50.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0\u00b0",
+                      "Formula": {
+                        "Expression": "[TyreTemperatureFrontRight]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 18.0,
+                  "FontWeight": "Bold",
+                  "Height": 20.0,
+                  "HorizontalAlignment": 0,
+                  "IsTextItem": true,
+                  "Left": 272.0,
+                  "Name": "TextItem30",
+                  "Text": "00\u00b0",
+                  "TextColor": "#FF878787",
+                  "Top": 81.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 50.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0\u00b0",
+                      "Formula": {
+                        "Expression": "[TyreTemperatureRearLeft]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 18.0,
+                  "FontWeight": "Bold",
+                  "Height": 20.0,
+                  "HorizontalAlignment": 2,
+                  "IsTextItem": true,
+                  "Left": 9.0,
+                  "Name": "TextItem31",
+                  "Text": "00\u00b0",
+                  "TextColor": "#FF878787",
+                  "Top": 159.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 50.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0\u00b0",
+                      "Formula": {
+                        "Expression": "[TyreTemperatureRearRight]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 18.0,
+                  "FontWeight": "Bold",
+                  "Height": 20.0,
+                  "HorizontalAlignment": 0,
+                  "IsTextItem": true,
+                  "Left": 272.0,
+                  "Name": "TextItem32",
+                  "Text": "00\u00b0",
+                  "TextColor": "#FF878787",
+                  "Top": 159.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 50.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0\u00b0",
+                      "Formula": {
+                        "Expression": "[DataCorePlugin.GameData.BrakeTemperatureFrontLeft]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 18.0,
+                  "FontWeight": "Bold",
+                  "Height": 20.0,
+                  "HorizontalAlignment": 0,
+                  "IsTextItem": true,
+                  "Left": 103.0,
+                  "Name": "TextItem34",
+                  "Text": "00\u00b0",
+                  "TextColor": "#FF878787",
+                  "Top": 81.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 50.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0\u00b0",
+                      "Formula": {
+                        "Expression": "[DataCorePlugin.GameData.BrakeTemperatureRearLeft]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 18.0,
+                  "FontWeight": "Bold",
+                  "Height": 20.0,
+                  "HorizontalAlignment": 0,
+                  "IsTextItem": true,
+                  "Left": 103.0,
+                  "Name": "TextItem35",
+                  "Text": "00\u00b0",
+                  "TextColor": "#FF878787",
+                  "Top": 159.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 50.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0\u00b0",
+                      "Formula": {
+                        "Expression": "[DataCorePlugin.GameData.BrakeTemperatureFrontRight]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 18.0,
+                  "FontWeight": "Bold",
+                  "Height": 20.0,
+                  "HorizontalAlignment": 2,
+                  "IsTextItem": true,
+                  "Left": 179.0,
+                  "Name": "TextItem36",
+                  "Text": "00\u00b0",
+                  "TextColor": "#FF878787",
+                  "Top": 81.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 50.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0\u00b0",
+                      "Formula": {
+                        "Expression": "[DataCorePlugin.GameData.BrakeTemperatureRearRight]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 18.0,
+                  "FontWeight": "Bold",
+                  "Height": 20.0,
+                  "HorizontalAlignment": 2,
+                  "IsTextItem": true,
+                  "Left": 179.0,
+                  "Name": "TextItem37",
+                  "Text": "00\u00b0",
+                  "TextColor": "#FF878787",
+                  "Top": 159.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 50.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF7FFF00",
+                  "Bindings": {
+                    "BackgroundColor": {
+                      "EnableMiddleColor": true,
+                      "EndColor": "#FFFF0000",
+                      "EndColorValue": 100.0,
+                      "Formula": {
+                        "Expression": "[TyreTemperatureFrontLeft]"
+                      },
+                      "MiddleColor": "#FF00FF00",
+                      "MiddleColorValue": 50.0,
+                      "Mode": 4,
+                      "StartColor": "#FF00BFFF",
+                      "StartColorValue": 0.0,
+                      "TargetPropertyName": "BackgroundColor"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 2,
+                    "RadiusBottomRight": 2,
+                    "RadiusTopLeft": 2,
+                    "RadiusTopRight": 2
+                  },
+                  "Height": 35.0,
+                  "IsRectangleItem": true,
+                  "Left": 67.0,
+                  "Name": "RectangleItem0",
+                  "Top": 73.0,
+                  "Visible": true,
+                  "Width": 20.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF7FFF00",
+                  "Bindings": {
+                    "BackgroundColor": {
+                      "EnableMiddleColor": true,
+                      "EndColor": "#FFFF0000",
+                      "EndColorValue": 1000.0,
+                      "Formula": {
+                        "Expression": "[BrakeTemperatureFrontLeft]"
+                      },
+                      "MiddleColor": "#FF00FF00",
+                      "MiddleColorValue": 550.0,
+                      "Mode": 4,
+                      "StartColor": "#FF4169E1",
+                      "StartColorValue": 50.0,
+                      "TargetPropertyName": "BackgroundColor"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 1,
+                    "RadiusBottomRight": 1,
+                    "RadiusTopLeft": 1,
+                    "RadiusTopRight": 1
+                  },
+                  "Height": 31.0,
+                  "IsRectangleItem": true,
+                  "Left": 90.0,
+                  "Name": "RectangleItem1",
+                  "Top": 75.0,
+                  "Visible": true,
+                  "Width": 7.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF7FFF00",
+                  "Bindings": {
+                    "BackgroundColor": {
+                      "EnableMiddleColor": true,
+                      "EndColor": "#FFFF0000",
+                      "EndColorValue": 100.0,
+                      "Formula": {
+                        "Expression": "[TyreTemperatureFrontRight]"
+                      },
+                      "MiddleColor": "#FF00FF00",
+                      "MiddleColorValue": 50.0,
+                      "Mode": 4,
+                      "StartColor": "#FF00BFFF",
+                      "StartColorValue": 0.0,
+                      "TargetPropertyName": "BackgroundColor"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 2,
+                    "RadiusBottomRight": 2,
+                    "RadiusTopLeft": 2,
+                    "RadiusTopRight": 2
+                  },
+                  "Height": 35.0,
+                  "IsRectangleItem": true,
+                  "Left": 244.0,
+                  "Name": "RectangleItem2",
+                  "Top": 73.0,
+                  "Visible": true,
+                  "Width": 20.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF7FFF00",
+                  "Bindings": {
+                    "BackgroundColor": {
+                      "EnableMiddleColor": true,
+                      "EndColor": "#FFFF0000",
+                      "EndColorValue": 1000.0,
+                      "Formula": {
+                        "Expression": "[BrakeTemperatureFrontRight]"
+                      },
+                      "MiddleColor": "#FF00FF00",
+                      "MiddleColorValue": 550.0,
+                      "Mode": 4,
+                      "StartColor": "#FF4169E1",
+                      "StartColorValue": 50.0,
+                      "TargetPropertyName": "BackgroundColor"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 1,
+                    "RadiusBottomRight": 1,
+                    "RadiusTopLeft": 1,
+                    "RadiusTopRight": 1
+                  },
+                  "Height": 31.0,
+                  "IsRectangleItem": true,
+                  "Left": 234.0,
+                  "Name": "RectangleItem3",
+                  "Top": 75.0,
+                  "Visible": true,
+                  "Width": 7.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF7FFF00",
+                  "Bindings": {
+                    "BackgroundColor": {
+                      "EnableMiddleColor": true,
+                      "EndColor": "#FFFF0000",
+                      "EndColorValue": 100.0,
+                      "Formula": {
+                        "Expression": "[TyreTemperatureRearLeft]"
+                      },
+                      "MiddleColor": "#FF00FF00",
+                      "MiddleColorValue": 50.0,
+                      "Mode": 4,
+                      "StartColor": "#FF00BFFF",
+                      "StartColorValue": 0.0,
+                      "TargetPropertyName": "BackgroundColor"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 2,
+                    "RadiusBottomRight": 2,
+                    "RadiusTopLeft": 2,
+                    "RadiusTopRight": 2
+                  },
+                  "Height": 35.0,
+                  "IsRectangleItem": true,
+                  "Left": 67.0,
+                  "Name": "RectangleItem4",
+                  "Top": 151.5,
+                  "Visible": true,
+                  "Width": 20.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF7FFF00",
+                  "Bindings": {
+                    "BackgroundColor": {
+                      "EnableMiddleColor": true,
+                      "EndColor": "#FFFF0000",
+                      "EndColorValue": 1000.0,
+                      "Formula": {
+                        "Expression": "[BrakeTemperatureRearLeft]"
+                      },
+                      "MiddleColor": "#FF00FF00",
+                      "MiddleColorValue": 550.0,
+                      "Mode": 4,
+                      "StartColor": "#FF4169E1",
+                      "StartColorValue": 50.0,
+                      "TargetPropertyName": "BackgroundColor"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 1,
+                    "RadiusBottomRight": 1,
+                    "RadiusTopLeft": 1,
+                    "RadiusTopRight": 1
+                  },
+                  "Height": 31.0,
+                  "IsRectangleItem": true,
+                  "Left": 90.0,
+                  "Name": "RectangleItem5",
+                  "Top": 153.5,
+                  "Visible": true,
+                  "Width": 7.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF7FFF00",
+                  "Bindings": {
+                    "BackgroundColor": {
+                      "EnableMiddleColor": true,
+                      "EndColor": "#FFFF0000",
+                      "EndColorValue": 100.0,
+                      "Formula": {
+                        "Expression": "[TyreTemperatureRearRight]"
+                      },
+                      "MiddleColor": "#FF00FF00",
+                      "MiddleColorValue": 50.0,
+                      "Mode": 4,
+                      "StartColor": "#FF00BFFF",
+                      "StartColorValue": 0.0,
+                      "TargetPropertyName": "BackgroundColor"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 2,
+                    "RadiusBottomRight": 2,
+                    "RadiusTopLeft": 2,
+                    "RadiusTopRight": 2
+                  },
+                  "Height": 35.0,
+                  "IsRectangleItem": true,
+                  "Left": 244.0,
+                  "Name": "RectangleItem6",
+                  "Top": 151.5,
+                  "Visible": true,
+                  "Width": 20.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF7FFF00",
+                  "Bindings": {
+                    "BackgroundColor": {
+                      "EnableMiddleColor": true,
+                      "EndColor": "#FFFF0000",
+                      "EndColorValue": 1000.0,
+                      "Formula": {
+                        "Expression": "[BrakeTemperatureRearRight]"
+                      },
+                      "MiddleColor": "#FF00FF00",
+                      "MiddleColorValue": 550.0,
+                      "Mode": 4,
+                      "StartColor": "#FF4169E1",
+                      "StartColorValue": 50.0,
+                      "TargetPropertyName": "BackgroundColor"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 1,
+                    "RadiusBottomRight": 1,
+                    "RadiusTopLeft": 1,
+                    "RadiusTopRight": 1
+                  },
+                  "Height": 31.0,
+                  "IsRectangleItem": true,
+                  "Left": 234.0,
+                  "Name": "RectangleItem7",
+                  "Top": 153.5,
+                  "Visible": true,
+                  "Width": 7.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF353535",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0",
+                      "Formula": {
+                        "Expression": "if([GameRawData.Graphics.TyreCompound]='dry_compound', 'DRY', 'WET') + ' ' + [GameRawData.Graphics.currentTyreSet]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 15,
+                    "RadiusBottomRight": 15,
+                    "RadiusTopLeft": 15,
+                    "RadiusTopRight": 15
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 18.0,
+                  "FontWeight": "Bold",
+                  "Height": 30.0,
+                  "HorizontalAlignment": 1,
+                  "IsTextItem": true,
+                  "Left": 122.0,
+                  "Name": "TextItem33",
+                  "Text": "SET",
+                  "TextColor": "#FFFFFFFF",
+                  "Top": 115.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 80.0
+                }
+              ],
+              "Group": true,
+              "Height": 225.0,
+              "Left": -1.0,
+              "Name": "Layer",
+              "Top": 17.5,
+              "Visible": true,
+              "Width": 326.0
+            }
+          ],
+          "Group": true,
+          "Height": 245.0,
+          "Left": -1.0,
+          "Name": "Wet Tyre/Wheel Status",
+          "Top": 2.0,
+          "Visible": false,
           "Width": 326.0
         }
       ],

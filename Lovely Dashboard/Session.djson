@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "d5f0ec02-4739-476e-bf1e-af70b7e7293e",
+  "Id": "56f2f3bd-a001-4258-9e93-648c0dcd0901",
   "Images": [],
   "IsOverlay": false,
   "Metadata": {
@@ -617,7 +617,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": " if ([DataCorePlugin.GameRawData.SessionData.SessionInfo.Sessions01.IsLimitedSessionLaps] &&[DataCorePlugin.CurrentGame]='IRacing', 1, 0)"
+                "Expression": " if ([IRacingExtraProperties.iRacing_CurrentSession_IsLimitedSessionLaps] &&[DataCorePlugin.CurrentGame]='IRacing', 1, 0)"
               },
               "Mode": 2,
               "TargetPropertyName": "Visible"
@@ -767,7 +767,7 @@
           "Left": 0.0,
           "Name": "Lap Based iR",
           "Top": 0.0,
-          "Visible": false,
+          "Visible": true,
           "Width": 210.0
         }
       ],
