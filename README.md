@@ -89,6 +89,26 @@ Set how much time in milliseconds to display the Lap Review Alert. (eg. 1000 = 1
 
 - `5000` (Default) - Display the Lap Review Alert for 5 seconds
 
+#### `showFlags`
+You can enable or disable the track flags in the top left module.
+
+- `0` (Default) Show Flags
+- `1` Hide Flags
+
+#### `mapType`
+Change the map type, between two avaialble options
+
+- `0` (Default) Static Map
+- `1` Animated Map
+
+#### `uiMode`
+Set the UI mode intensity and change the line brightness throughout the dashbaord.
+
+- `0` Low
+- `1` Medium
+- `2` (Default) High
+
+
 **:information_source: If you do not copy the settings file, the default values will be used.**
   
 ## Compatibility
@@ -102,6 +122,8 @@ This is an ongoing project, so I will add more Screen Sizes and Sims as time pro
 ### Compatible Sims
 * [Assetto Corsa Competizione](#assetto-corsa-competizione)
 * [iRacing](#iracing-new)
+* [Automobilista 2](#automobilista-2)
+* [rFactor 2](#rfactor-2)
 
 
 ## The Lovely Dashboard
@@ -118,6 +140,18 @@ If you were wondering why this is the best SimHub dashboard out there, wonder no
 [![iRacinf Full Feature Set](docs/images/AllFeatures-iRacing.jpg)](docs/iRacing/features-iracing.md)
 
 🖥 **View the [iRacing Full Feature Set](docs/iRacing/features-iracing.md)**
+
+### Automobilista 2
+
+[![Basic Feature Set](docs/images/AllFeatures-ams2.jpg)](docs/ams2/features-ams2.md)
+
+🖥 **View the [Automobilista 2 Full Feature Set](docs/ams2/features-ams2.md)** 
+
+### rFactor 2
+
+[![Basic Feature Set](docs/images/AllFeatures-rf2.jpg)](docs/rf2/features-rf2.md)
+
+🖥 **View the [rFactor 2 Full Feature Set](docs/rf2/features-rf2.md)**
 
 ## Contributing
 Would you like to contribute to the **Lovely Dashboard & Overlay**? If yes, then head on over to the [**Developers Doc**](developers.md) and find out how you can get started.

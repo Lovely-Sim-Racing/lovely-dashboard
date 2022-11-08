@@ -37,4 +37,23 @@ Set how much time in milliseconds to display the Lap Review Alert. (eg. 1000 = 1
 
 - `5000` (Default) - Display the Lap Review Alert for 5 seconds
 
+#### `showFlags`
+You can enable or disable the track flags in the top left module.
+
+- `0` (Default) Show Flags
+- `1` Hide Flags
+
+#### `mapType`
+Change the map type, between two avaialble options
+
+- `0` (Default) Static Map
+- `1` Animated Map
+
+#### `uiMode`
+Set the UI mode intensity and change the line brightness throughout the dashbaord.
+
+- `0` Low
+- `1` Medium
+- `2` (Default) High
+
 **:information_source: If you do not copy the settings file, the default values will be used.**
