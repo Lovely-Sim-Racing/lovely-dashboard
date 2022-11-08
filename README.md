@@ -15,6 +15,8 @@ A multifunctional feature packed SimHub Dashboard (DDU) and a matching Stream Ov
 <img width="80" height="80" alt="rFactor 2" src="docs/images/icon-rf2.png">
 </p>
  
+---
+ 
 <br/>
 
 <div align="center">
