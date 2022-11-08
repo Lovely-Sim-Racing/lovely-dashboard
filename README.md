@@ -7,6 +7,13 @@
 <p align="center">
 A multifunctional feature packed SimHub Dashboard (DDU) and a matching Stream Overlay.
 </p>
+
+<p align="center">
+<img width="80" height="80" alt="Assetto Corsa Competizione" src="docs/images/icon-acc.jpg">
+<img width="80" height="80" alt="iRacing" src="docs/images/icon-iracing.jpg">
+<img width="80" height="80" alt="Automobilista 2" src="docs/images/icon-ams2.jpg">
+<img width="80" height="80" alt="rFactor 2" src="docs/images/icon-rf2.jpg">
+</p>
  
 <br/>
 
