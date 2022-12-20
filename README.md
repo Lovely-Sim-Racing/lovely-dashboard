@@ -12,7 +12,8 @@ A multifunctional feature packed SimHub Dashboard (DDU) and a matching Stream Ov
 <img width="80" height="80" alt="Assetto Corsa Competizione" src="docs/images/icon-acc.png">
 <img width="80" height="80" alt="iRacing" src="docs/images/icon-iracing.png">
 <img width="80" height="80" alt="Automobilista 2" src="docs/images/icon-ams2.png">
-<img width="80" height="80" alt="rFactor 2" src="docs/images/icon-rf2.png">
+<img width="80" height="80" alt="rFactor 2" src="docs/images/icon-rf2.png"></br>
+<span>Works with the most popular simulators</span>
 </p>
  
 ---
