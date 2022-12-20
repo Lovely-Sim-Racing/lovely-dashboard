@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": false,
-  "Id": "7f5c6e59-25fc-4073-8471-107fb2f1f234",
+  "Id": "e6391f55-ed32-4dbc-8b0d-d3b970f91701",
   "Images": [
     {
       "Extension": ".png",
@@ -160,75 +160,29 @@
           "Width": 286.0
         },
         {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
-          "Childrens": [
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
-              "BackgroundColor": "#FFFFE04C",
-              "Bindings": {
-                "Visible": {
-                  "Formula": {
-                    "Expression": "[DataCorePlugin.GameRawData.Telemetry.SessionFlagsDetails.Isyellow]"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Visible"
-                }
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "BackgroundColor": "#FFFFE04C",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "[DataCorePlugin.GameRawData.Telemetry.SessionFlagsDetails.Isyellow]"
               },
-              "BorderStyle": {
-                "RadiusBottomLeft": 5,
-                "RadiusBottomRight": 5,
-                "RadiusTopLeft": 25,
-                "RadiusTopRight": 5
-              },
-              "Height": 50.0,
-              "IsRectangleItem": true,
-              "Left": 0.0,
-              "Name": "Yellow",
-              "Top": 0.0,
-              "Visible": false,
-              "Width": 286.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#FFFFE04C",
-              "Bindings": {
-                "Text": {
-                  "Formula": {
-                    "Expression": "if ([DataCorePlugin.GameRawData.Graphics.globalYellow1], 'SECTOR 1', \r\n\r\n\tif ([DataCorePlugin.GameRawData.Graphics.globalYellow2], 'SECTOR 2', \r\n\t\r\n\t\tif ([DataCorePlugin.GameRawData.Graphics.globalYellow3], 'SECTOR 3', '' \r\n\t\t\r\n\t\t)\r\n\t)\r\n)"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                }
-              },
-              "BorderStyle": {
-                "RadiusBottomLeft": 5,
-                "RadiusBottomRight": 5,
-                "RadiusTopLeft": 25,
-                "RadiusTopRight": 5
-              },
-              "Font": "Roboto",
-              "FontSize": 20.0,
-              "FontWeight": "Bold",
-              "Height": 50.0,
-              "HorizontalAlignment": 1,
-              "IsTextItem": true,
-              "Left": 0.0,
-              "Name": "Sector 1",
-              "Text": "SECTOR",
-              "TextColor": "#FF000000",
-              "Top": 0.0,
-              "VerticalAlignment": 1,
-              "Visible": false,
-              "Width": 286.0
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
             }
-          ],
-          "Group": true,
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 5,
+            "RadiusBottomRight": 5,
+            "RadiusTopLeft": 25,
+            "RadiusTopRight": 5
+          },
           "Height": 50.0,
+          "IsRectangleItem": true,
           "Left": 0.0,
-          "Name": "Layer",
+          "Name": "Yellow",
           "Top": 0.0,
-          "Visible": true,
+          "Visible": false,
           "Width": 286.0
         },
         {
@@ -260,6 +214,9 @@
         "Expression": ""
       },
       "PitScreen": false,
+      "ScreenEnabledExpression": {
+        "Expression": ""
+      },
       "ScreenId": "d4cc121d-3983-4d40-a9e5-6f432a5dca3d"
     }
   ],

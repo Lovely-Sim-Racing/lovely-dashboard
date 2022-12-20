@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": false,
-  "Id": "78b453df-1454-48e8-8b1b-99772da41f8b",
+  "Id": "74a49df3-ee09-46ad-8763-fbc9e96e9f8a",
   "Images": [
     {
       "Extension": ".png",
@@ -1260,8 +1260,8 @@
                 "RadiusTopRight": 5
               },
               "Font": "Roboto",
-              "FontSize": 15.0,
-              "FontWeight": "Bold",
+              "FontSize": 17.0,
+              "FontWeight": "Black",
               "Height": 24.0,
               "HorizontalAlignment": 1,
               "IsTextItem": true,
@@ -1288,7 +1288,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverAhead_04';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FF7400'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                    "Expression": "var driver_rel = 'DriverAhead_04';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -1324,7 +1324,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverAhead_04';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FF7400'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                    "Expression": "var driver_rel = 'DriverAhead_04';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -1360,7 +1360,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverAhead_04';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FF7400'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                    "Expression": "var driver_rel = 'DriverAhead_04';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -1396,7 +1396,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverAhead_04_Position]) = 0, '#C500CE', '#FFFFFF')"
+                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverAhead_04_Position]) == 0, '#C500CE', '#FFFFFF')"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "TextColor"
@@ -1452,7 +1452,7 @@
               "Bindings": {
                 "Image": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverAhead_04'\r\n\r\nvar carName = $prop('PersistantTrackerPlugin.'+driver_rel+'_CarName')\r\nvar carBrand = carName.split(' ')\r\nvar color = ''\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\tcolor = '' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\tcolor = '-red' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\tcolor = '-blue' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\tcolor = '-red'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\tcolor = '-blue'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tcolor =  '' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+color\r\n",
+                    "Expression": "var driver_rel = 'DriverAhead_04'\r\n\r\nvar carName = $prop('PersistantTrackerPlugin.'+driver_rel+'_CarName')\r\nvar carBrand = carName.split(' ')\r\nvar color = ''\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\tcolor = 'red' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\tcolor = '-blue' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\tcolor = '-red' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\tcolor = '-blue' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\tcolor = '' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\tcolor = ''\r\n\r\n}\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+color\r\n",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -1509,8 +1509,8 @@
                 "RadiusTopRight": 5
               },
               "Font": "Roboto",
-              "FontSize": 15.0,
-              "FontWeight": "Bold",
+              "FontSize": 17.0,
+              "FontWeight": "Black",
               "Height": 24.0,
               "HorizontalAlignment": 1,
               "IsTextItem": true,
@@ -1536,7 +1536,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverAhead_03';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FF7400'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                    "Expression": "var driver_rel = 'DriverAhead_03';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -1572,7 +1572,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverAhead_03';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FF7400'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                    "Expression": "var driver_rel = 'DriverAhead_03';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -1608,7 +1608,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverAhead_03';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FF7400'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                    "Expression": "var driver_rel = 'DriverAhead_03';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -1644,7 +1644,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverAhead_03_Position]) = 0, '#C500CE', '#FFFFFF')"
+                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverAhead_03_Position]) == 0, '#C500CE', '#FFFFFF')"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "TextColor"
@@ -1700,7 +1700,7 @@
               "Bindings": {
                 "Image": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverAhead_03'\r\n\r\nvar carName = $prop('PersistantTrackerPlugin.'+driver_rel+'_CarName')\r\nvar carBrand = carName.split(' ')\r\nvar color = ''\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\tcolor = '' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\tcolor = '-red' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\tcolor = '-blue' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\tcolor = '-red'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\tcolor = '-blue'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tcolor =  '' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+color\r\n",
+                    "Expression": "var driver_rel = 'DriverAhead_03'\r\n\r\nvar carName = $prop('PersistantTrackerPlugin.'+driver_rel+'_CarName')\r\nvar carBrand = carName.split(' ')\r\nvar color = ''\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\tcolor = 'red' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\tcolor = '-blue' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\tcolor = '-red' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\tcolor = '-blue' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\tcolor = '' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\tcolor = ''\r\n\r\n}\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+color\r\n",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -1757,8 +1757,8 @@
                 "RadiusTopRight": 5
               },
               "Font": "Roboto",
-              "FontSize": 15.0,
-              "FontWeight": "Bold",
+              "FontSize": 17.0,
+              "FontWeight": "Black",
               "Height": 24.0,
               "HorizontalAlignment": 1,
               "IsTextItem": true,
@@ -1784,7 +1784,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverAhead_02';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FF7400'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                    "Expression": "var driver_rel = 'DriverAhead_02';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -1820,7 +1820,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverAhead_02';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FF7400'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                    "Expression": "var driver_rel = 'DriverAhead_02';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -1856,7 +1856,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverAhead_02';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FF7400'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                    "Expression": "var driver_rel = 'DriverAhead_02';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -1892,7 +1892,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverAhead_02_Position]) = 0, '#C500CE', '#FFFFFF')"
+                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverAhead_02_Position]) == 0, '#C500CE', '#FFFFFF')"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "TextColor"
@@ -1948,7 +1948,7 @@
               "Bindings": {
                 "Image": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverAhead_02'\r\n\r\nvar carName = $prop('PersistantTrackerPlugin.'+driver_rel+'_CarName')\r\nvar carBrand = carName.split(' ')\r\nvar color = ''\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\tcolor = '' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\tcolor = '-red' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\tcolor = '-blue' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\tcolor = '-red'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\tcolor = '-blue'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tcolor =  '' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+color\r\n",
+                    "Expression": "var driver_rel = 'DriverAhead_02'\r\n\r\nvar carName = $prop('PersistantTrackerPlugin.'+driver_rel+'_CarName')\r\nvar carBrand = carName.split(' ')\r\nvar color = ''\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\tcolor = 'red' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\tcolor = '-blue' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\tcolor = '-red' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\tcolor = '-blue' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\tcolor = '' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\tcolor = ''\r\n\r\n}\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+color\r\n",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -2005,8 +2005,8 @@
                 "RadiusTopRight": 5
               },
               "Font": "Roboto",
-              "FontSize": 15.0,
-              "FontWeight": "Bold",
+              "FontSize": 17.0,
+              "FontWeight": "Black",
               "Height": 24.0,
               "HorizontalAlignment": 1,
               "IsTextItem": true,
@@ -2032,7 +2032,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverAhead_01';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FF7400'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                    "Expression": "var driver_rel = 'DriverAhead_01';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -2068,7 +2068,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverAhead_01';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FF7400'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                    "Expression": "var driver_rel = 'DriverAhead_01';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -2104,7 +2104,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverAhead_01';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FF7400'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                    "Expression": "var driver_rel = 'DriverAhead_01';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -2140,7 +2140,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverAhead_01_Position]) = 0, '#C500CE', '#FFFFFF')"
+                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverAhead_01_Position]) == 0, '#C500CE', '#FFFFFF')"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "TextColor"
@@ -2196,7 +2196,7 @@
               "Bindings": {
                 "Image": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverAhead_01'\r\n\r\nvar carName = $prop('PersistantTrackerPlugin.'+driver_rel+'_CarName')\r\nvar carBrand = carName.split(' ')\r\nvar color = ''\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\tcolor = '' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\tcolor = '-red' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\tcolor = '-blue' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\tcolor = '-red'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\tcolor = '-blue'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tcolor =  '' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+color\r\n",
+                    "Expression": "var driver_rel = 'DriverAhead_01'\r\n\r\nvar carName = $prop('PersistantTrackerPlugin.'+driver_rel+'_CarName')\r\nvar carBrand = carName.split(' ')\r\nvar color = ''\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\tcolor = 'red' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\tcolor = '-blue' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\tcolor = '-red' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\tcolor = '-blue' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\tcolor = '' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\tcolor = ''\r\n\r\n}\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+color\r\n",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -2253,8 +2253,8 @@
                 "RadiusTopRight": 5
               },
               "Font": "Roboto",
-              "FontSize": 15.0,
-              "FontWeight": "Bold",
+              "FontSize": 17.0,
+              "FontWeight": "Black",
               "Height": 24.0,
               "HorizontalAlignment": 1,
               "IsTextItem": true,
@@ -2280,7 +2280,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverAhead_00';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FF7400'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                    "Expression": "var driver_rel = 'DriverAhead_00';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -2316,7 +2316,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverAhead_00';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FF7400'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                    "Expression": "var driver_rel = 'DriverAhead_00';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -2352,7 +2352,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverAhead_00';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FF7400'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                    "Expression": "var driver_rel = 'DriverAhead_00';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -2388,7 +2388,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverAhead_00_Position]) = 0, '#C500CE', '#FFFFFF')"
+                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverAhead_00_Position]) == 0, '#C500CE', '#FFFFFF')"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "TextColor"
@@ -2444,7 +2444,7 @@
               "Bindings": {
                 "Image": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverAhead_00'\r\n\r\nvar carName = $prop('PersistantTrackerPlugin.'+driver_rel+'_CarName')\r\nvar carBrand = carName.split(' ')\r\nvar color = ''\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\tcolor = '' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\tcolor = '-red' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\tcolor = '-blue' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\tcolor = '-red'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\tcolor = '-blue'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tcolor =  '' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+color\r\n",
+                    "Expression": "var driver_rel = 'DriverAhead_00'\r\n\r\nvar carName = $prop('PersistantTrackerPlugin.'+driver_rel+'_CarName')\r\nvar carBrand = carName.split(' ')\r\nvar color = ''\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\tcolor = 'red' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\tcolor = '-blue' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\tcolor = '-red' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\tcolor = '-blue' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\tcolor = '' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\tcolor = ''\r\n\r\n}\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+color\r\n",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -2492,8 +2492,8 @@
                 "RadiusTopRight": 5
               },
               "Font": "Roboto",
-              "FontSize": 15.0,
-              "FontWeight": "Bold",
+              "FontSize": 17.0,
+              "FontWeight": "Black",
               "Height": 24.0,
               "HorizontalAlignment": 1,
               "IsTextItem": true,
@@ -2639,7 +2639,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "if (driverdeltatobest([DataCorePlugin.GameData.Position]) = 0, '#C500CE', '#FFE04C')\r\n\r\n"
+                    "Expression": "if (driverdeltatobest([DataCorePlugin.GameData.Position]) == 0, '#C500CE', '#FFE04C')\r\n\r\n"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "TextColor"
@@ -2752,8 +2752,8 @@
                 "RadiusTopRight": 5
               },
               "Font": "Roboto",
-              "FontSize": 15.0,
-              "FontWeight": "Bold",
+              "FontSize": 17.0,
+              "FontWeight": "Black",
               "Height": 24.0,
               "HorizontalAlignment": 1,
               "IsTextItem": true,
@@ -2779,7 +2779,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverBehind_00';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FF7400'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                    "Expression": "var driver_rel = 'DriverBehind_00';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -2815,7 +2815,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverBehind_00';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FF7400'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                    "Expression": "var driver_rel = 'DriverBehind_00';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -2851,7 +2851,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverBehind_00';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FF7400'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                    "Expression": "var driver_rel = 'DriverBehind_00';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -2887,7 +2887,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverBehind_00_Position]) = 0, '#C500CE', '#FFFFFF')"
+                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverBehind_00_Position]) == 0, '#C500CE', '#FFFFFF')"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "TextColor"
@@ -2943,7 +2943,7 @@
               "Bindings": {
                 "Image": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverBehind_00'\r\n\r\nvar carName = $prop('PersistantTrackerPlugin.'+driver_rel+'_CarName')\r\nvar carBrand = carName.split(' ')\r\nvar color = ''\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\tcolor = '' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\tcolor = '-red' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\tcolor = '-blue' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\tcolor = '-red'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\tcolor = '-blue'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tcolor =  '' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+color\r\n",
+                    "Expression": "var driver_rel = 'DriverBehind_00'\r\n\r\nvar carName = $prop('PersistantTrackerPlugin.'+driver_rel+'_CarName')\r\nvar carBrand = carName.split(' ')\r\nvar color = ''\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\tcolor = 'red' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\tcolor = '-blue' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\tcolor = '-red' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\tcolor = '-blue' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\tcolor = '' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\tcolor = ''\r\n\r\n}\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+color\r\n",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -3000,8 +3000,8 @@
                 "RadiusTopRight": 5
               },
               "Font": "Roboto",
-              "FontSize": 15.0,
-              "FontWeight": "Bold",
+              "FontSize": 17.0,
+              "FontWeight": "Black",
               "Height": 24.0,
               "HorizontalAlignment": 1,
               "IsTextItem": true,
@@ -3027,7 +3027,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverBehind_01';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FF7400'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                    "Expression": "var driver_rel = 'DriverBehind_01';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -3063,7 +3063,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverBehind_01';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FF7400'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                    "Expression": "var driver_rel = 'DriverBehind_01';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -3099,7 +3099,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverBehind_01';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FF7400'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                    "Expression": "var driver_rel = 'DriverBehind_01';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -3135,7 +3135,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverBehind_01_Position]) = 0, '#C500CE', '#FFFFFF')"
+                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverBehind_01_Position]) == 0, '#C500CE', '#FFFFFF')"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "TextColor"
@@ -3191,7 +3191,7 @@
               "Bindings": {
                 "Image": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverBehind_01'\r\n\r\nvar carName = $prop('PersistantTrackerPlugin.'+driver_rel+'_CarName')\r\nvar carBrand = carName.split(' ')\r\nvar color = ''\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\tcolor = '' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\tcolor = '-red' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\tcolor = '-blue' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\tcolor = '-red'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\tcolor = '-blue'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tcolor =  '' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+color\r\n",
+                    "Expression": "var driver_rel = 'DriverBehind_01'\r\n\r\nvar carName = $prop('PersistantTrackerPlugin.'+driver_rel+'_CarName')\r\nvar carBrand = carName.split(' ')\r\nvar color = ''\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\tcolor = 'red' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\tcolor = '-blue' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\tcolor = '-red' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\tcolor = '-blue' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\tcolor = '' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\tcolor = ''\r\n\r\n}\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+color\r\n",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -3248,8 +3248,8 @@
                 "RadiusTopRight": 5
               },
               "Font": "Roboto",
-              "FontSize": 15.0,
-              "FontWeight": "Bold",
+              "FontSize": 17.0,
+              "FontWeight": "Black",
               "Height": 24.0,
               "HorizontalAlignment": 1,
               "IsTextItem": true,
@@ -3275,7 +3275,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverBehind_02';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FF7400'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                    "Expression": "var driver_rel = 'DriverBehind_02';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -3311,7 +3311,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverBehind_02';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FF7400'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                    "Expression": "var driver_rel = 'DriverBehind_02';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -3347,7 +3347,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverBehind_02';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FF7400'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                    "Expression": "var driver_rel = 'DriverBehind_02';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -3383,7 +3383,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverBehind_02_Position]) = 0, '#C500CE', '#FFFFFF')"
+                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverBehind_02_Position]) == 0, '#C500CE', '#FFFFFF')"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "TextColor"
@@ -3439,7 +3439,7 @@
               "Bindings": {
                 "Image": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverBehind_02'\r\n\r\nvar carName = $prop('PersistantTrackerPlugin.'+driver_rel+'_CarName')\r\nvar carBrand = carName.split(' ')\r\nvar color = ''\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\tcolor = '' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\tcolor = '-red' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\tcolor = '-blue' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\tcolor = '-red'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\tcolor = '-blue'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tcolor =  '' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+color\r\n",
+                    "Expression": "var driver_rel = 'DriverBehind_02'\r\n\r\nvar carName = $prop('PersistantTrackerPlugin.'+driver_rel+'_CarName')\r\nvar carBrand = carName.split(' ')\r\nvar color = ''\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\tcolor = 'red' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\tcolor = '-blue' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\tcolor = '-red' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\tcolor = '-blue' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\tcolor = '' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\tcolor = ''\r\n\r\n}\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+color\r\n",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -3496,8 +3496,8 @@
                 "RadiusTopRight": 5
               },
               "Font": "Roboto",
-              "FontSize": 15.0,
-              "FontWeight": "Bold",
+              "FontSize": 17.0,
+              "FontWeight": "Black",
               "Height": 24.0,
               "HorizontalAlignment": 1,
               "IsTextItem": true,
@@ -3523,7 +3523,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverBehind_03';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FF7400'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                    "Expression": "var driver_rel = 'DriverBehind_03';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -3559,7 +3559,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverBehind_03';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FF7400'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                    "Expression": "var driver_rel = 'DriverBehind_03';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -3595,7 +3595,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverBehind_03';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FF7400'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                    "Expression": "var driver_rel = 'DriverBehind_03';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -3631,7 +3631,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverBehind_03_Position]) = 0, '#C500CE', '#FFFFFF')"
+                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverBehind_03_Position]) == 0, '#C500CE', '#FFFFFF')"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "TextColor"
@@ -3687,7 +3687,7 @@
               "Bindings": {
                 "Image": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverBehind_03'\r\n\r\nvar carName = $prop('PersistantTrackerPlugin.'+driver_rel+'_CarName')\r\nvar carBrand = carName.split(' ')\r\nvar color = ''\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\tcolor = '' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\tcolor = '-red' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\tcolor = '-blue' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\tcolor = '-red'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\tcolor = '-blue'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tcolor =  '' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+color\r\n",
+                    "Expression": "var driver_rel = 'DriverBehind_03'\r\n\r\nvar carName = $prop('PersistantTrackerPlugin.'+driver_rel+'_CarName')\r\nvar carBrand = carName.split(' ')\r\nvar color = ''\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\tcolor = 'red' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\tcolor = '-blue' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\tcolor = '-red' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\tcolor = '-blue' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\tcolor = '' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\tcolor = ''\r\n\r\n}\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+color\r\n",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -3744,8 +3744,8 @@
                 "RadiusTopRight": 5
               },
               "Font": "Roboto",
-              "FontSize": 15.0,
-              "FontWeight": "Bold",
+              "FontSize": 17.0,
+              "FontWeight": "Black",
               "Height": 24.0,
               "HorizontalAlignment": 1,
               "IsTextItem": true,
@@ -3771,7 +3771,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverBehind_04';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FF7400'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                    "Expression": "var driver_rel = 'DriverBehind_04';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -3807,7 +3807,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverBehind_04';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FF7400'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                    "Expression": "var driver_rel = 'DriverBehind_04';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -3843,7 +3843,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverBehind_04';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\treturn '#FFFFFF' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\treturn '#00BFFF' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\treturn '#FF7400'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\treturn '#00BFFF'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn '#FFFFFF' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}",
+                    "Expression": "var driver_rel = 'DriverBehind_04';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -3879,7 +3879,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverBehind_04_Position]) = 0, '#C500CE', '#FFFFFF')"
+                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverBehind_04_Position]) == 0, '#C500CE', '#FFFFFF')"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "TextColor"
@@ -3935,7 +3935,7 @@
               "Bindings": {
                 "Image": {
                   "Formula": {
-                    "Expression": "var driver_rel = 'DriverBehind_04'\r\n\r\nvar carName = $prop('PersistantTrackerPlugin.'+driver_rel+'_CarName')\r\nvar carBrand = carName.split(' ')\r\nvar color = ''\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ));\r\n\r\nif (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') == $prop('DataCorePlugin.GameData.CurrentLap') ) {\r\n\t\r\n\tcolor = '' // Same Lap\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\r\n\tcolor = '-red' // 2+ Laps Ahead\r\n\t\r\n} else if (\r\n\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\r\n\tcolor = '-blue' // 2- Laps Behind\r\n\t\r\n} else {\r\n\r\n\tif ( driver_lap + driver_gap < 0 ) {\r\n\t\t\r\n\t\tcolor = '-red'\r\n\t\t\r\n\t} else if ( driver_lap + driver_gap > 2 * driver_lap ) {\r\n\t\r\n\t\tcolor = '-blue'\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tcolor =  '' \r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n}\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+color\r\n",
+                    "Expression": "var driver_rel = 'DriverBehind_04'\r\n\r\nvar carName = $prop('PersistantTrackerPlugin.'+driver_rel+'_CarName')\r\nvar carBrand = carName.split(' ')\r\nvar color = ''\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\tcolor = 'red' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\tcolor = '-blue' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\tcolor = '-red' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\tcolor = '-blue' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\tcolor = '' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\tcolor = ''\r\n\r\n}\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+color\r\n",
                     "Interpreter": 1
                   },
                   "Mode": 2,

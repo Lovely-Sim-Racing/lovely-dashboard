@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": false,
-  "Id": "d0f09cd8-29f5-4f1f-af3d-1ba47c95beaa",
+  "Id": "2d7c7635-f68b-42e2-8fbe-3c8013e0e5a7",
   "Images": [
     {
       "Extension": ".png",
@@ -47,39 +47,63 @@
       "Extension": ".png",
       "Length": 252,
       "MD5": "f339b4cc0b71397a741c8d7e64239325",
-      "Modified": true,
+      "Modified": false,
       "Name": "icon-weather-clear-night",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Length": 306,
+      "MD5": "55cedbebfbabc49a48dba0614a46cb66",
+      "Modified": false,
+      "Name": "icon-weather-cloudy-day",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Length": 277,
+      "MD5": "64c5754afab1c6889619887228e08a13",
+      "Modified": false,
+      "Name": "icon-weather-cloudy-night",
       "Optimized": true
     },
     {
       "Extension": ".png",
       "Length": 313,
       "MD5": "75203ceec141546cadb6069c7fd2763d",
-      "Modified": true,
+      "Modified": false,
       "Name": "icon-weather-drizzle",
       "Optimized": true
     },
     {
       "Extension": ".png",
-      "Length": 328,
-      "MD5": "7022c729c052eb4d79dcb4ef4ed6697d",
-      "Modified": true,
+      "Length": 325,
+      "MD5": "c5d72ad98f6aa3424b30f5e2cb0ec301",
+      "Modified": false,
       "Name": "icon-weather-heavy",
       "Optimized": true
     },
     {
       "Extension": ".png",
-      "Length": 317,
-      "MD5": "3578eef511a624f6d0d349ac02802600",
-      "Modified": true,
+      "Length": 326,
+      "MD5": "4d0efd948fdbd81d7f99deee2f92ded9",
+      "Modified": false,
       "Name": "icon-weather-light",
       "Optimized": true
     },
     {
       "Extension": ".png",
-      "Length": 330,
-      "MD5": "358cdfd67666a89701d4f89167ceca57",
-      "Modified": true,
+      "Length": 293,
+      "MD5": "0741d595067e0508a47db8ff557c2411",
+      "Modified": false,
+      "Name": "icon-weather-m-cloudy",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Length": 322,
+      "MD5": "e355fba756d76bb8c0d2f33ddd3262a1",
+      "Modified": false,
       "Name": "icon-weather-medium",
       "Optimized": true
     },
@@ -87,15 +111,23 @@
       "Extension": ".png",
       "Length": 298,
       "MD5": "4c353ed48de20978da30ee4ee2ac8ef9",
-      "Modified": true,
+      "Modified": false,
       "Name": "icon-weather-no-rain",
       "Optimized": true
     },
     {
       "Extension": ".png",
-      "Length": 322,
-      "MD5": "69a425caab1dea39a039c3b6404e5b4c",
-      "Modified": true,
+      "Length": 358,
+      "MD5": "d71abc71ed42e9085172c67e294a51cc",
+      "Modified": false,
+      "Name": "icon-weather-overcast",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Length": 425,
+      "MD5": "a48dcfacce6807cd4f166ed76b033be1",
+      "Modified": false,
       "Name": "icon-weather-thunder",
       "Optimized": true
     }
@@ -106,15 +138,14 @@
     "Height": 58.0,
     "IdleScreensIndexs": [],
     "InGameScreensIndexs": [
-      0,
-      1
+      0
     ],
     "IsOverlay": false,
     "MainPreviewIndex": 0,
     "MetadataVersion": 2.0,
     "OverlaySizeWarning": false,
     "PitScreensIndexs": [],
-    "ScreenCount": 2.0,
+    "ScreenCount": 1.0,
     "Width": 160.0
   },
   "Screens": [
@@ -157,8 +188,8 @@
                 }
               },
               "Font": "Roboto",
-              "FontSize": 18.0,
-              "FontWeight": "Light",
+              "FontSize": 20.0,
+              "FontWeight": "SemiBold",
               "Height": 24.0,
               "HorizontalAlignment": 0,
               "IsTextItem": true,
@@ -197,8 +228,8 @@
                 }
               },
               "Font": "Roboto",
-              "FontSize": 18.0,
-              "FontWeight": "Light",
+              "FontSize": 20.0,
+              "FontWeight": "SemiBold",
               "Height": 24.0,
               "HorizontalAlignment": 0,
               "IsTextItem": true,
@@ -293,7 +324,8 @@
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "BackgroundColor": "#00FFFFFF",
               "Font": "Roboto",
-              "FontSize": 16.0,
+              "FontSize": 18.0,
+              "FontWeight": "SemiBold",
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
@@ -332,7 +364,8 @@
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "BackgroundColor": "#00FFFFFF",
               "Font": "Roboto",
-              "FontSize": 16.0,
+              "FontSize": 18.0,
+              "FontWeight": "SemiBold",
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
@@ -395,6 +428,9 @@
         "Expression": ""
       },
       "PitScreen": false,
+      "ScreenEnabledExpression": {
+        "Expression": ""
+      },
       "ScreenId": "fc3a26f7-d67f-4845-ad33-4fe1b716ff93"
     }
   ],
