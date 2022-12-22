@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "8bfaa831-85af-4c68-b9ff-e1b7b58ebb2a",
+  "Id": "b16c7bb4-4e23-4cf8-9e56-22d7742f31ad",
   "Images": [
     {
       "Extension": ".png",
@@ -446,7 +446,7 @@
           "IsTextItem": true,
           "Left": 420.0,
           "Name": "TextItem0",
-          "Text": "Lovely Overlay v1.5.5",
+          "Text": "Lovely Overlay v1.6.0",
           "TextColor": "#FFFFFFFF",
           "Top": 252.0,
           "VerticalAlignment": 1,
@@ -467,7 +467,7 @@
             },
             "Visible": {
               "Formula": {
-                "Expression": "var currentVer = '1.5.5'\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\n//return latestVer\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
+                "Expression": "var currentVer = '1.6.0'\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\n//return latestVer\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -541,7 +541,7 @@
           "Left": 350.0,
           "Name": "ir2",
           "Top": 310.0,
-          "Visible": true,
+          "Visible": false,
           "Width": 250.0
         },
         {
@@ -568,7 +568,7 @@
           "Left": 610.0,
           "Name": "ir",
           "Top": 310.0,
-          "Visible": true,
+          "Visible": false,
           "Width": 470.0
         },
         {
@@ -622,7 +622,7 @@
           "Left": 760.0,
           "Name": "acc",
           "Top": 310.0,
-          "Visible": false,
+          "Visible": true,
           "Width": 320.0
         },
         {
@@ -698,6 +698,30 @@
           "Bindings": {
             "Visible": {
               "Formula": {
+                "Expression": "if ([DataCorePlugin.CurrentGame]='Automobilista2', 1, 0)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "FileName": "Relative Native - AMS2.djson",
+          "Height": 300.0,
+          "IsFreezed": true,
+          "Left": 350.0,
+          "Name": "Relative Native AMS2",
+          "NextScreenCommand": 0,
+          "PreviousScreenCommand": 0,
+          "Top": 0.0,
+          "Visible": false,
+          "Width": 560.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
+          "AutoSize": true,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
                 "Expression": "if ([DataCorePlugin.CurrentGame]='AssettoCorsaCompetizione', 1, 0)"
               },
               "Mode": 2,
@@ -733,6 +757,30 @@
           "IsFreezed": true,
           "Left": 920.0,
           "Name": "Central iR",
+          "NextScreenCommand": 0,
+          "PreviousScreenCommand": 0,
+          "Top": 0.0,
+          "Visible": false,
+          "Width": 160.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
+          "AutoSize": true,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "if ([DataCorePlugin.CurrentGame]='Automobilista2', 1, 0)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "FileName": "Central - AMS2.djson",
+          "Height": 300.0,
+          "IsFreezed": true,
+          "Left": 920.0,
+          "Name": "Central AMS2",
           "NextScreenCommand": 0,
           "PreviousScreenCommand": 0,
           "Top": 0.0,
@@ -1244,7 +1292,7 @@
           "Group": true,
           "Height": 300.0,
           "Left": 0.0,
-          "Name": "Damage iR",
+          "Name": "Status iR",
           "Top": 0.0,
           "Visible": false,
           "Width": 340.0
@@ -1427,6 +1475,42 @@
           "Top": 317.0,
           "Visible": false,
           "Width": 64.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ChartItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "CurrentValue": {
+              "Formula": {
+                "Expression": "[DataCorePlugin.GameData.Throttle]"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "CurrentValue"
+            }
+          },
+          "CurrentValue": 33.0,
+          "Height": 40.0,
+          "Left": 12.0,
+          "LineColor": "#FF00FF00",
+          "LineTickness": 2,
+          "Maximum": 100.0,
+          "MaximumEx": 100.0,
+          "Minimum": 0.0,
+          "MinimumEx": 0.0,
+          "Name": "ChartItem",
+          "PointsCount": 100.0,
+          "ShowYAxis": false,
+          "Top": 322.0,
+          "UseMaximum": true,
+          "UseMinimum": true,
+          "Visible": false,
+          "Width": 316.0,
+          "YAxisFont": "Segoe UI",
+          "YAxisFontSize": 30.0,
+          "YAxisFontWeight": "Normal",
+          "YAxisTextColor": "#FFFF0000",
+          "YAxisTickColor": "#FFFF0000",
+          "YAxislineColor": "#FFFF0000"
         }
       ],
       "Name": "Overlay",

@@ -1,0 +1,486 @@
+{
+  "BackgroundColor": "#FF000000",
+  "BackgroundOpacity": 100.0,
+  "BaseHeight": 300,
+  "BaseWidth": 160,
+  "DashboardDebugManager": {
+    "Maximized": false
+  },
+  "EnableClickThroughOverlay": true,
+  "EnableOnDashboardMessaging": true,
+  "ForegroundOpacity": 100.0,
+  "GridSize": 10,
+  "HideLabels": true,
+  "Id": "c43de5ce-9d78-4497-a789-777e00844b3f",
+  "Images": [],
+  "IsOverlay": false,
+  "Metadata": {
+    "EnableOnDashboardMessaging": true,
+    "Height": 300.0,
+    "IdleScreensIndexs": [],
+    "InGameScreensIndexs": [
+      0
+    ],
+    "IsOverlay": false,
+    "MainPreviewIndex": 0,
+    "MetadataVersion": 2.0,
+    "OverlaySizeWarning": false,
+    "PitScreensIndexs": [],
+    "ScreenCount": 1.0,
+    "Width": 160.0
+  },
+  "Screens": [
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#FF000000",
+      "IdleScreen": false,
+      "InGameScreen": true,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": false,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "BackgroundColor": "#C8000000",
+          "BorderStyle": {
+            "RadiusBottomLeft": 5,
+            "RadiusBottomRight": 5,
+            "RadiusTopLeft": 5,
+            "RadiusTopRight": 5
+          },
+          "Height": 180.0,
+          "IsFreezed": true,
+          "IsRectangleItem": true,
+          "Left": 0.0,
+          "Name": "RectangleItem0",
+          "Top": 45.0,
+          "Visible": true,
+          "Width": 160.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Text": {
+              "Formula": {
+                "Expression": "[DataCorePlugin.GameData.Gear]"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Text"
+            }
+          },
+          "Font": "Roboto",
+          "FontSize": 150.0,
+          "FontWeight": "Bold",
+          "Height": 150.0,
+          "HorizontalAlignment": 1,
+          "IsFreezed": true,
+          "IsTextItem": true,
+          "Left": 0.0,
+          "Name": "TextItem0",
+          "Text": "N",
+          "TextColor": "#FFFFFFFF",
+          "Top": 45.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 160.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.RPMText, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Font": "Roboto",
+          "FontSize": 22.0,
+          "Format": "0",
+          "Height": 40.0,
+          "HorizontalAlignment": 1,
+          "IsFreezed": true,
+          "IsTextItem": true,
+          "Left": 0.0,
+          "Name": "RPMText0",
+          "NoDataText": "0",
+          "TextAfterValue": "",
+          "TextColor": "#FFFFFFFF",
+          "Top": 180.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 160.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.SpeedText, SimHub.Plugins",
+          "BackgroundColor": "#FFFFFFFF",
+          "BorderStyle": {
+            "RadiusBottomLeft": 5,
+            "RadiusBottomRight": 5,
+            "RadiusTopLeft": 5,
+            "RadiusTopRight": 5
+          },
+          "Font": "Roboto",
+          "FontSize": 30.0,
+          "FontWeight": "Bold",
+          "Format": "0",
+          "Height": 40.0,
+          "HorizontalAlignment": 1,
+          "IsFreezed": true,
+          "IsTextItem": true,
+          "Left": 0.0,
+          "Name": "SpeedText0",
+          "NoDataText": "0",
+          "ShadowColor": "#FF000000",
+          "TextColor": "#FF000000",
+          "Top": 260.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 160.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FF878787",
+          "Bindings": {
+            "BackgroundColor": {
+              "Formula": {
+                "Expression": "if ( [PersistantTrackerPlugin.SessionBestLiveDeltaSeconds] > 0 , '#FA0000', if ( [PersistantTrackerPlugin.SessionBestLiveDeltaSeconds] < 0 , '#00FF02', '#878787'))"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "BackgroundColor"
+            },
+            "Text": {
+              "FormatString": "0.000",
+              "Formula": {
+                "Expression": "if ($prop('PersistantTrackerPlugin.SessionBestLiveDeltaSeconds')>0) {\r\n\r\n\treturn '+'+$prop('PersistantTrackerPlugin.SessionBestLiveDeltaSeconds').toFixed(3)\r\n\r\n} else {\r\n\r\n\treturn $prop('PersistantTrackerPlugin.SessionBestLiveDeltaSeconds').toFixed(3)\r\n\r\n}\r\n\r\n",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Text"
+            },
+            "TextColor": {
+              "Formula": {
+                "Expression": "if ( [PersistantTrackerPlugin.SessionBestLiveDeltaSeconds] > 0 , '#000000', if ( [PersistantTrackerPlugin.SessionBestLiveDeltaSeconds] < 0 , '#000000', '#ffffff'))"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "TextColor"
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 5,
+            "RadiusBottomRight": 5,
+            "RadiusTopLeft": 5,
+            "RadiusTopRight": 15
+          },
+          "Font": "Roboto",
+          "FontSize": 30.0,
+          "FontWeight": "Bold",
+          "Height": 40.0,
+          "HorizontalAlignment": 1,
+          "IsFreezed": true,
+          "IsTextItem": true,
+          "Left": 0.0,
+          "Name": "TextItem",
+          "Text": "+0.000",
+          "TextColor": "#FFFFFFFF",
+          "Top": 0.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 160.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.LinearGaugeItem, SimHub.Plugins",
+          "AlternateGaugeColor": "#FF008000",
+          "AutoSize": false,
+          "BackgroundColor": "#C8000000",
+          "Bindings": {
+            "Value": {
+              "Formula": {
+                "Expression": "[DataCorePlugin.GameData.Throttle]"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Value"
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 5,
+            "RadiusBottomRight": 5,
+            "RadiusTopLeft": 5,
+            "RadiusTopRight": 5
+          },
+          "GaugeAlignment": 0,
+          "GaugeColor": "#FF00FF02",
+          "GaugeOrientation": 0,
+          "Height": 10.0,
+          "IsFreezed": true,
+          "IsLinearGauge": true,
+          "Left": 0.0,
+          "Maximum": 100.0,
+          "Minimum": 0.0,
+          "Name": "LinearGaugeItem0",
+          "PAW": 56.0,
+          "Steps": 0.0,
+          "Top": 245.0,
+          "UseAlternateStyle": false,
+          "Value": 35.0,
+          "Visible": true,
+          "Width": 160.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.LinearGaugeItem, SimHub.Plugins",
+          "AlternateGaugeColor": "#FF008000",
+          "AutoSize": false,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Value": {
+              "Formula": {
+                "Expression": "[DataCorePlugin.GameData.Brake]"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Value"
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 4,
+            "RadiusBottomRight": 4,
+            "RadiusTopLeft": 4,
+            "RadiusTopRight": 4
+          },
+          "GaugeAlignment": 2,
+          "GaugeColor": "#FFFA0000",
+          "GaugeOrientation": 0,
+          "Height": 10.0,
+          "IsFreezed": true,
+          "IsLinearGauge": true,
+          "Left": 0.0,
+          "Maximum": 100.0,
+          "Minimum": 0.0,
+          "Name": "LinearGaugeItem1",
+          "PAW": 14.0,
+          "Steps": 0.0,
+          "Top": 245.0,
+          "UseAlternateStyle": false,
+          "Value": 9.0,
+          "Visible": true,
+          "Width": 160.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "BackgroundColor": "#C8000000",
+          "BorderStyle": {
+            "RadiusBottomLeft": 5,
+            "RadiusBottomRight": 5,
+            "RadiusTopLeft": 5,
+            "RadiusTopRight": 5
+          },
+          "Height": 10.0,
+          "IsFreezed": true,
+          "IsRectangleItem": true,
+          "Left": 0.0,
+          "Name": "RectangleItem2",
+          "Top": 230.0,
+          "Visible": true,
+          "Width": 160.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.EllipseItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "BorderStyle": {
+            "BorderColor": "#FF7FFF00"
+          },
+          "EllipseColor": "#FF878787",
+          "EllipseThickness": 0.0,
+          "FillColor": "#FFFFFFFF",
+          "Height": 2.0,
+          "IsFreezed": true,
+          "Left": 4.0,
+          "Name": "EllipseItem1",
+          "Top": 234.0,
+          "Visible": true,
+          "Width": 2.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.EllipseItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "BorderStyle": {
+            "BorderColor": "#FF7FFF00"
+          },
+          "EllipseColor": "#FF878787",
+          "EllipseThickness": 0.0,
+          "FillColor": "#FFFFFFFF",
+          "Height": 2.0,
+          "IsFreezed": true,
+          "Left": 42.0,
+          "Name": "EllipseItem2",
+          "Top": 234.0,
+          "Visible": true,
+          "Width": 2.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.EllipseItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "BorderStyle": {
+            "BorderColor": "#FF7FFF00"
+          },
+          "EllipseColor": "#FF878787",
+          "EllipseThickness": 0.0,
+          "FillColor": "#FFFFFFFF",
+          "Height": 2.0,
+          "IsFreezed": true,
+          "Left": 79.0,
+          "Name": "EllipseItem3",
+          "Top": 234.0,
+          "Visible": true,
+          "Width": 2.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.EllipseItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "BorderStyle": {
+            "BorderColor": "#FF7FFF00"
+          },
+          "EllipseColor": "#FF878787",
+          "EllipseThickness": 0.0,
+          "FillColor": "#FFFFFFFF",
+          "Height": 2.0,
+          "IsFreezed": true,
+          "Left": 116.0,
+          "Name": "EllipseItem4",
+          "Top": 234.0,
+          "Visible": true,
+          "Width": 2.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.EllipseItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "BorderStyle": {
+            "BorderColor": "#FF7FFF00"
+          },
+          "EllipseColor": "#FF878787",
+          "EllipseThickness": 0.0,
+          "FillColor": "#FFFFFFFF",
+          "Height": 2.0,
+          "IsFreezed": true,
+          "Left": 154.0,
+          "Name": "EllipseItem5",
+          "Top": 234.0,
+          "Visible": true,
+          "Width": 2.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.LinearGaugeItem, SimHub.Plugins",
+          "AlternateGaugeColor": "#FF008000",
+          "AutoSize": false,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Value": {
+              "Formula": {
+                "Expression": "[DataCorePlugin.GameRawData.Physics.FinalFF]"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Value"
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 5,
+            "RadiusBottomRight": 5,
+            "RadiusTopLeft": 5,
+            "RadiusTopRight": 5
+          },
+          "GaugeAlignment": 0,
+          "GaugeColor": "#FFFFFFFF",
+          "GaugeOrientation": 0,
+          "Height": 2.0,
+          "IsLinearGauge": true,
+          "Left": 80.0,
+          "Maximum": -1.0,
+          "Minimum": 0.0,
+          "Name": "LinearGaugeItem2",
+          "Opacity": 99.0,
+          "PAW": 0.0,
+          "Steps": 0.0,
+          "Top": 234.0,
+          "UseAlternateStyle": false,
+          "Value": 20.0,
+          "Visible": true,
+          "Width": 80.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.LinearGaugeItem, SimHub.Plugins",
+          "AlternateGaugeColor": "#FF008000",
+          "AutoSize": false,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Value": {
+              "Formula": {
+                "Expression": "[DataCorePlugin.GameRawData.Physics.FinalFF]"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Value"
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 5,
+            "RadiusBottomRight": 5,
+            "RadiusTopLeft": 5,
+            "RadiusTopRight": 5
+          },
+          "GaugeAlignment": 2,
+          "GaugeColor": "#FFFFFFFF",
+          "GaugeOrientation": 0,
+          "Height": 2.0,
+          "IsLinearGauge": true,
+          "Left": 0.0,
+          "Maximum": 1.0,
+          "Minimum": 0.0,
+          "Name": "LinearGaugeItem3",
+          "Opacity": 99.0,
+          "PAW": 80.0,
+          "Steps": 0.0,
+          "Top": 234.0,
+          "UseAlternateStyle": false,
+          "Value": 20.0,
+          "Visible": true,
+          "Width": 80.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.EllipseItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Left": {
+              "Formula": {
+                "Expression": "([DataCorePlugin.GameRawData.mSteering]*75)+75"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Left"
+            }
+          },
+          "BorderStyle": {
+            "BorderColor": "#FF7FFF00"
+          },
+          "EllipseColor": "#FFFFFFFF",
+          "EllipseThickness": 0.0,
+          "FillColor": "#FFFFFFFF",
+          "Height": 10.0,
+          "IsFreezed": true,
+          "Left": 75.0,
+          "Name": "EllipseItem0",
+          "Top": 230.0,
+          "Visible": true,
+          "Width": 10.0
+        }
+      ],
+      "Name": "Screen1",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": ""
+      },
+      "PitScreen": false,
+      "ScreenEnabledExpression": {
+        "Expression": ""
+      },
+      "ScreenId": "4c571f6f-7a5b-4b63-a762-5680e937a779"
+    }
+  ],
+  "ShowBackground": true,
+  "ShowBoundingRectangles": false,
+  "ShowForeground": true,
+  "ShowOnScreenControls": true,
+  "SnapToGrid": false,
+  "Version": 2
+}
