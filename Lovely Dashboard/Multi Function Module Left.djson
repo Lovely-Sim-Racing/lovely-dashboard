@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "a7b62fa0-3f28-4f35-99fa-6a5f81008880",
+  "Id": "d762a419-9615-4d94-aa8f-f90c988c2b81",
   "Images": [
     {
       "Extension": ".png",
@@ -2822,7 +2822,7 @@
                 "Text": {
                   "FormatString": "mm\\:ss\\.fff",
                   "Formula": {
-                    "Expression": "secondstotimespan([DataCorePlugin.GameRawData.Graphics.iEstimatedLapTime]/1000)"
+                    "Expression": "if ( timespantoseconds([DataCorePlugin.GameData.BestLapTime]) == '0' ,\r\n\t[PersistantTrackerPlugin.EstimatedLapTime],\r\n\tsecondstotimespan([DataCorePlugin.GameRawData.Graphics.iEstimatedLapTime]/1000)\r\n)"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
