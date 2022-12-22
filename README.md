@@ -47,9 +47,10 @@ Watch the introductory video
 ## What's Included
 When you download the zip file, you will get a few things. 
 
-1. [**Lovely Dashboard**](#the-lovely-dashboard) - A custom designed dashboard to use on your phone or dedicated DDU screen
-2. **Lovely Overlay** - If you're a streamer, you can use this overlay in OBS or any other broadcasting software
-3. **LED Profile** - A 16x & 18x LED profile for your DDU
+1. [**Lovely Dashboard**](#the-lovely-dashboard) - A custom designed dashboard to use on your phone or dedicated DDU Screen
+2. **Lovely Dashboard XL** - An oversized version of the Lovely Dashboard for the new 10" DDU Screens.
+3. **Lovely Overlay** - If you're a streamer, you can use this overlay in OBS or any other broadcasting software
+4. **LED Profiles** - Multiple LED profiles for your DDU Screens
 
 ## Download & Install
 This is a SimHub Dashboard, therefore **SimHub Dash** app is required to run it (Doh!). Also, since the UI was a considerate design, you will also need to download and install the **Roboto Font Family** from Google (free).
@@ -59,103 +60,43 @@ This is a SimHub Dashboard, therefore **SimHub Dash** app is required to run it 
 3. Download & Install the [**Lovely Dashboard Latest Release**](https://github.com/cdemetriadis/lovely-dashboard/releases)
 
 #### For iRacing
-If you want to use the Lovely Dashboard with iRacing, you will also need to install a library by Romainrob.
+If you want to use the Lovely Dashboard with iRacing, you will need to copy the file `RSC.iRacingExtraProperties.dll` into the `./Simhub/` root folder.
 
-1. Download & Install Romainrob's [iRacing Extra Properties DLL](https://drive.google.com/drive/folders/1AiIWHviD4j-_D-zgRrjJU1AFhJ_xmass)
+1. Download Romainrob's [**RSC.iRacingExtraProperties.dll**](https://drive.google.com/drive/folders/1AiIWHviD4j-_D-zgRrjJU1AFhJ_xmass)
 
 :warning: **Warning: Simhub Dash v8.0+** is required to run the Lovely Dashboard 1.5.0+
  
 ## Settings (NEW)
-As of version 1.5.4, the Lovely Dashboard can also be setup to your liking. You will need to copy the file `Lovely-Dashboard_settings.json` into `./SimHub/JavascriptExtensions`. 
+As of version 1.5.4, the Lovely Dashboard can also be setup to your liking. You will need to copy the file `Lovely-Dashboard_settings.json` into the `./Simhub/JavascriptExtensions` folder. 
 
 ![Copy the settings file into the JavascriptExtensions folder](docs/images/settings-file.png)
 
-To change your personal settings, you will need to edit the file `Lovely-Dashboard_settings.json` in any text editor. The available settings are:
-
-#### `driverName`
-You can change the way the Driver Name is formatted and displayed.
-
-- `0` (Default) - Will display names as "**F. Lastname**"
-- `1` Will display names as "**Firstname L.**"
-
-#### `lapReview`
-Choose when the Lap Review Alert should appear.
-
-- `0` **Never** show the Lap Review Alert
-- `1` (Default) - **Qualifying** & **Practice** - This will only show the Lap Review Alert during **Qualifying** & **Practice** sessions
-- `2` **Always** - Will show the Lap Review Alert on every lap
-
-#### `lapReviewDelay`
-Set how much time in milliseconds to display the Lap Review Alert. (eg. 1000 = 1 second)
-
-- `5000` (Default) - Display the Lap Review Alert for 5 seconds
-
-#### `showFlags`
-You can enable or disable the track flags in the top left module.
-
-- `0` (Default) Show Flags
-- `1` Hide Flags
-
-#### `mapType`
-Change the map type, between two avaialble options
-
-- `0` (Default) Static Map
-- `1` Animated Map
-
-#### `uiMode`
-Set the UI mode intensity and change the line brightness throughout the dashbaord.
-
-- `0` Low
-- `1` Medium
-- `2` (Default) High
-
-
-**:information_source: If you do not copy the settings file, the default values will be used.**
+To change your personal settings, you can edit the file `Lovely-Dashboard_settings.json` in any text editor. The available settings are outlined in the dedicated [**Settings Page**](./docs/settings.md)
   
 ## Compatibility
 This is an ongoing project, so I will add more Screen Sizes and Sims as time progresses, but these are the ones I use so it's where I started.
 
 ### Screen Size
-* Native 5" 850x480 (VoCore)
-* Any 16:9 screen ratio is ideal, but...
+* Native **5" (850x480)** and **10" (1920x720)** DDU Screens 
+* Any 16:9 or 21:9 screen ratio is ideal, but...
 * Any device compatible with SimHub is fine
 
 ### Compatible Sims
-* [Assetto Corsa Competizione](#assetto-corsa-competizione)
-* [iRacing](#iracing-new)
-* [Automobilista 2](#automobilista-2)
-* [rFactor 2](#rfactor-2)
+* Assetto Corsa Competizione
+* iRacing
+* Automobilista 2 **(NEW)**
+* rFactor 2 **(NEW)**
 
 
 ## The Lovely Dashboard
 If you were wondering why this is the best SimHub dashboard out there, wonder no more. It's good looking and feature packed but with considerate design and proper information architecture. 
 
-### Assetto Corsa Competizione
+[![Basic Feature Set](docs/images/AllFeatures.jpg)](docs/features.md)
 
-[![Basic Feature Set](docs/images/AllFeatures-ACC.jpg)](docs/acc/features-acc.md)
-
-🖥 **View the [ACC Full Feature Set](docs/acc/features-acc.md)**
-
-### iRacing
-
-[![iRacinf Full Feature Set](docs/images/AllFeatures-iRacing.jpg)](docs/iRacing/features-iracing.md)
-
-🖥 **View the [iRacing Full Feature Set](docs/iRacing/features-iracing.md)**
-
-### Automobilista 2
-
-[![Basic Feature Set](docs/images/AllFeatures-ams2.jpg)](docs/ams2/features-ams2.md)
-
-🖥 **View the [Automobilista 2 Full Feature Set](docs/ams2/features-ams2.md)** 
-
-### rFactor 2
-
-[![Basic Feature Set](docs/images/AllFeatures-rf2.jpg)](docs/rf2/features-rf2.md)
-
-🖥 **View the [rFactor 2 Full Feature Set](docs/rf2/features-rf2.md)**
+🖥 **View the [Full Feature Set](docs/features.md)**
 
 ## Contributing
-Would you like to contribute to the **Lovely Dashboard & Overlay**? If yes, then head on over to the [**Developers Doc**](developers.md) and find out how you can get started.
+Would you like to contribute to the **Lovely Dashboard & Overlay**? If yes, then head on over to the [**Developers Doc**](docs/developers.md) and find out how you can get started.
 
 
 <br/><br/>

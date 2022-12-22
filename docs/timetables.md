@@ -1,6 +1,7 @@
-# *ACC* / Timetables
+# Timetables
+***Please note that each sim has slightly different features, depending on the data provided by SimHub.***
 
-![Primary Screen](../images/AlternateTimetables-ACC.jpg)
+![Primary Screen](./images/AlternateTimetables.jpg)
 
 ### Left Module
 1. Class Standings
