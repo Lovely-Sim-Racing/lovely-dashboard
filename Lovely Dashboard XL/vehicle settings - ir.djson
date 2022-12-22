@@ -1,0 +1,820 @@
+{
+  "BackgroundColor": "#FF000000",
+  "BackgroundOpacity": 100.0,
+  "BaseHeight": 97,
+  "BaseWidth": 850,
+  "DashboardDebugManager": {
+    "Maximized": false
+  },
+  "EnableClickThroughOverlay": true,
+  "EnableOnDashboardMessaging": true,
+  "ForegroundOpacity": 100.0,
+  "GridSize": 10,
+  "HideLabels": true,
+  "Id": "b7e77425-df2b-491f-a052-d33c5b1f5c74",
+  "Images": [
+    {
+      "Extension": ".png",
+      "Height": 80,
+      "Length": 364,
+      "MD5": "11b3eafdf04a5ab7ff546acd8bee0525",
+      "Modified": false,
+      "Name": "ABS Active Alert",
+      "Optimized": true,
+      "Width": 76
+    },
+    {
+      "Extension": ".png",
+      "Height": 80,
+      "Length": 607,
+      "MD5": "49d2516a35906aa2b1e484715f8342d8",
+      "Modified": false,
+      "Name": "TC Active Alert",
+      "Optimized": true,
+      "Width": 76
+    },
+    {
+      "Extension": ".png",
+      "Height": 80,
+      "Length": 373,
+      "MD5": "75635c1978af89c7eb5384fe2bade5b7",
+      "Modified": false,
+      "Name": "TC2 Active Alert",
+      "Optimized": true,
+      "Width": 76
+    },
+    {
+      "Extension": ".png",
+      "Length": 727,
+      "MD5": "21578a07521d8f8161f2a789d9975b47",
+      "Modified": false,
+      "Name": "Fuel Alert wide",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Height": 97,
+      "Length": 1625,
+      "MD5": "3e02499acd6326ad1f6a5d7baa01e118",
+      "Modified": false,
+      "Name": "Fuel Time",
+      "Optimized": true,
+      "Width": 329
+    },
+    {
+      "Extension": ".png",
+      "Height": 97,
+      "Length": 1349,
+      "MD5": "0dab5f50e7c914296a164a3d558a669e",
+      "Modified": false,
+      "Name": "Fuel",
+      "Optimized": true,
+      "Width": 329
+    },
+    {
+      "Extension": ".png",
+      "Height": 97,
+      "Length": 1532,
+      "MD5": "55e150e877c946d67217c134f87d426a",
+      "Modified": false,
+      "Name": "Refuel",
+      "Optimized": true,
+      "Width": 329
+    }
+  ],
+  "IsOverlay": false,
+  "Metadata": {
+    "EnableOnDashboardMessaging": true,
+    "Height": 97.0,
+    "IdleScreensIndexs": [],
+    "InGameScreensIndexs": [
+      0
+    ],
+    "IsOverlay": false,
+    "MainPreviewIndex": 0,
+    "MetadataVersion": 2.0,
+    "OverlaySizeWarning": false,
+    "PitScreensIndexs": [],
+    "ScreenCount": 1.0,
+    "Width": 850.0
+  },
+  "Screens": [
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#FF000000",
+      "IdleScreen": false,
+      "InGameScreen": true,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": false,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Opacity": {
+                  "Formula": {
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 0: return 25 // Low\r\n\t\tcase 1: return 45 // Medium\r\n\t\tcase 2: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Opacity"
+                }
+              },
+              "BorderStyle": {
+                "BorderBottom": 2,
+                "BorderColor": "#FF00BFFF",
+                "BorderLeft": 2,
+                "BorderRight": 2,
+                "BorderTop": 2,
+                "RadiusBottomLeft": 40,
+                "RadiusBottomRight": 12,
+                "RadiusTopLeft": 12,
+                "RadiusTopRight": 12
+              },
+              "Height": 90.0,
+              "IsRectangleItem": true,
+              "Left": 0.0,
+              "Name": "RectangleItem",
+              "Top": 7.0,
+              "Visible": true,
+              "Width": 86.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FF000000",
+              "BorderStyle": {
+                "RadiusBottomLeft": 8,
+                "RadiusBottomRight": 8,
+                "RadiusTopLeft": 8,
+                "RadiusTopRight": 8
+              },
+              "Font": "Roboto",
+              "FontSize": 12.0,
+              "FontWeight": "Bold",
+              "Height": 16.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 18.0,
+              "Name": "TextItem22",
+              "Text": "TC",
+              "TextColor": "#FF00BFFF",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 50.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Opacity": {
+                  "Formula": {
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 0: return 25 // Low\r\n\t\tcase 1: return 45 // Medium\r\n\t\tcase 2: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Opacity"
+                }
+              },
+              "BorderStyle": {
+                "BorderBottom": 2,
+                "BorderColor": "#FF00BFFF",
+                "BorderLeft": 2,
+                "BorderRight": 2,
+                "BorderTop": 2,
+                "RadiusBottomLeft": 12,
+                "RadiusBottomRight": 12,
+                "RadiusTopLeft": 12,
+                "RadiusTopRight": 12
+              },
+              "Height": 90.0,
+              "IsRectangleItem": true,
+              "Left": 96.0,
+              "Name": "RectangleItem2",
+              "Top": 7.0,
+              "Visible": true,
+              "Width": 86.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FF000000",
+              "BorderStyle": {
+                "RadiusBottomLeft": 8,
+                "RadiusBottomRight": 8,
+                "RadiusTopLeft": 8,
+                "RadiusTopRight": 8
+              },
+              "Font": "Roboto",
+              "FontSize": 12.0,
+              "FontWeight": "Bold",
+              "Height": 16.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 114.0,
+              "Name": "TextItem",
+              "Text": "TC CUT",
+              "TextColor": "#FF00BFFF",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 50.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Opacity": {
+                  "Formula": {
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 0: return 25 // Low\r\n\t\tcase 1: return 45 // Medium\r\n\t\tcase 2: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Opacity"
+                }
+              },
+              "BorderStyle": {
+                "BorderBottom": 2,
+                "BorderColor": "#FFFFE04C",
+                "BorderLeft": 2,
+                "BorderRight": 2,
+                "BorderTop": 2,
+                "RadiusBottomLeft": 12,
+                "RadiusBottomRight": 12,
+                "RadiusTopLeft": 12,
+                "RadiusTopRight": 12
+              },
+              "Height": 90.0,
+              "IsRectangleItem": true,
+              "Left": 192.0,
+              "Name": "RectangleItem3",
+              "Top": 7.0,
+              "Visible": true,
+              "Width": 86.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FF000000",
+              "BorderStyle": {
+                "RadiusBottomLeft": 8,
+                "RadiusBottomRight": 8,
+                "RadiusTopLeft": 8,
+                "RadiusTopRight": 8
+              },
+              "Font": "Roboto",
+              "FontSize": 12.0,
+              "FontWeight": "Bold",
+              "Height": 16.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 210.0,
+              "Name": "TextItem2",
+              "Text": "ABS",
+              "TextColor": "#FFFFE04C",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 50.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Opacity": {
+                  "Formula": {
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 0: return 25 // Low\r\n\t\tcase 1: return 45 // Medium\r\n\t\tcase 2: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Opacity"
+                }
+              },
+              "BorderStyle": {
+                "BorderBottom": 2,
+                "BorderColor": "#FFFA0000",
+                "BorderLeft": 2,
+                "BorderRight": 2,
+                "BorderTop": 2,
+                "RadiusBottomLeft": 12,
+                "RadiusBottomRight": 12,
+                "RadiusTopLeft": 12,
+                "RadiusTopRight": 12
+              },
+              "Height": 90.0,
+              "IsRectangleItem": true,
+              "Left": 288.0,
+              "Name": "RectangleItem4",
+              "Top": 7.0,
+              "Visible": true,
+              "Width": 127.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FF000000",
+              "BorderStyle": {
+                "RadiusBottomLeft": 8,
+                "RadiusBottomRight": 8,
+                "RadiusTopLeft": 8,
+                "RadiusTopRight": 8
+              },
+              "Font": "Roboto",
+              "FontSize": 12.0,
+              "FontWeight": "Bold",
+              "Height": 16.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 326.5,
+              "Name": "TextItem3",
+              "Text": "BB",
+              "TextColor": "#FFFA0000",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 50.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Opacity": {
+                  "Formula": {
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 0: return 25 // Low\r\n\t\tcase 1: return 45 // Medium\r\n\t\tcase 2: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Opacity"
+                }
+              },
+              "BorderStyle": {
+                "BorderBottom": 2,
+                "BorderColor": "#FF00FF02",
+                "BorderLeft": 2,
+                "BorderRight": 2,
+                "BorderTop": 2,
+                "RadiusBottomLeft": 12,
+                "RadiusBottomRight": 12,
+                "RadiusTopLeft": 12,
+                "RadiusTopRight": 12
+              },
+              "Height": 90.0,
+              "IsRectangleItem": true,
+              "Left": 425.0,
+              "Name": "RectangleItem5",
+              "Top": 7.0,
+              "Visible": true,
+              "Width": 86.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FF000000",
+              "Bindings": {
+                "Left": {
+                  "Formula": {
+                    "Expression": "if ( $prop('GameRawData.SessionData.CarSetup.Chassis.InCarDials.EngineMapSetting') != null ) {\r\n\t\r\n\treturn 443\r\n\t\r\n} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') != null ) {\r\n\t\r\n\treturn 435\r\n\t\r\n} else {\r\n\r\n\treturn 443\r\n\t\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Left"
+                },
+                "Text": {
+                  "Formula": {
+                    "Expression": "if ( $prop('GameRawData.SessionData.CarSetup.Chassis.InCarDials.EngineMapSetting') != null ) {\r\n\t\r\n\treturn 'ENGINE'\r\n\t\r\n} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') != null ) {\r\n\t\r\n\treturn 'THROTTLE'\r\n\t\r\n} else {\r\n\r\n\treturn 'ENGINE'\r\n\t\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "Width": {
+                  "Formula": {
+                    "Expression": "if ( $prop('GameRawData.SessionData.CarSetup.Chassis.InCarDials.EngineMapSetting') != null ) {\r\n\t\r\n\treturn 50\r\n\t\r\n} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') != null ) {\r\n\t\r\n\treturn 66\r\n\t\r\n} else {\r\n\r\n\treturn 50\r\n\t\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Width"
+                }
+              },
+              "BorderStyle": {
+                "RadiusBottomLeft": 8,
+                "RadiusBottomRight": 8,
+                "RadiusTopLeft": 8,
+                "RadiusTopRight": 8
+              },
+              "Font": "Roboto",
+              "FontSize": 12.0,
+              "FontWeight": "Bold",
+              "Height": 16.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 443.0,
+              "Name": "TextItem4",
+              "Text": "ENGINE",
+              "TextColor": "#FF00FF02",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 50.0
+            }
+          ],
+          "Group": true,
+          "Height": 97.0,
+          "Left": 0.0,
+          "Name": "Layer",
+          "Top": 0.0,
+          "Visible": true,
+          "Width": 511.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Opacity": {
+              "Formula": {
+                "Expression": "if ( [DataCorePlugin.GameData.NewData.TCLevel]==0, 35, 100)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Opacity"
+            },
+            "Text": {
+              "FormatString": "0",
+              "Formula": {
+                "Expression": "isnull([DataCorePlugin.GameData.NewData.TCLevel],0)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Text"
+            }
+          },
+          "Font": "Roboto",
+          "FontSize": 50.0,
+          "FontWeight": "Bold",
+          "Height": 90.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 0.0,
+          "Name": "TC",
+          "Text": "0",
+          "TextColor": "#FF00BFFF",
+          "Top": 7.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 86.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "if ( changed(300, [DataCorePlugin.GameData.TCActive]), 1, 0)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "AutoSize": false,
+              "BackgroundColor": "#00FFFFFF",
+              "Height": 80.0,
+              "Image": "TC Active Alert",
+              "Left": 5.0,
+              "Name": "ImageItem0",
+              "Top": 12.0,
+              "Visible": true,
+              "Width": 76.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "0",
+                  "Formula": {
+                    "Expression": "[DataCorePlugin.GameData.NewData.TCLevel]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 50.0,
+              "FontWeight": "Bold",
+              "Height": 90.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 0.0,
+              "Name": "TextItem5",
+              "Text": "0",
+              "TextColor": "#FF000000",
+              "Top": 7.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 86.0
+            }
+          ],
+          "Group": true,
+          "Height": 90.0,
+          "Left": 0.0,
+          "Name": "TC Active",
+          "Top": 7.0,
+          "Visible": false,
+          "Width": 86.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Opacity": {
+              "Formula": {
+                "Expression": "if ( isnull([DataCorePlugin.GameRawData.Telemetry.dcTractionControl2],0)==0, 35, 100)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Opacity"
+            },
+            "Text": {
+              "FormatString": "0",
+              "Formula": {
+                "Expression": "isnull([DataCorePlugin.GameRawData.Telemetry.dcTractionControl2],0)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Text"
+            }
+          },
+          "Font": "Roboto",
+          "FontSize": 50.0,
+          "FontWeight": "Bold",
+          "Height": 90.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 96.0,
+          "Name": "TC Cut",
+          "Text": "0",
+          "TextColor": "#FF00BFFF",
+          "Top": 7.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 86.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "if ( isnull([DataCorePlugin.GameRawData.Telemetry.dcTractionControl2],0)==0, \r\n\t0,\r\n\tif ( changed(300, [DataCorePlugin.GameData.TCActive]), 1, 0)\r\n)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "AutoSize": false,
+              "BackgroundColor": "#00FFFFFF",
+              "Height": 80.0,
+              "Image": "TC2 Active Alert",
+              "Left": 101.0,
+              "Name": "ImageItem0",
+              "Top": 12.0,
+              "Visible": true,
+              "Width": 76.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "0",
+                  "Formula": {
+                    "Expression": "isnull([DataCorePlugin.GameRawData.Telemetry.dcTractionControl2],0)"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 50.0,
+              "FontWeight": "Bold",
+              "Height": 90.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 96.0,
+              "Name": "TextItem5",
+              "Text": "0",
+              "TextColor": "#FF000000",
+              "Top": 7.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 86.0
+            }
+          ],
+          "Group": true,
+          "Height": 90.0,
+          "Left": 96.0,
+          "Name": "TC Cut Active",
+          "Top": 7.0,
+          "Visible": false,
+          "Width": 86.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Opacity": {
+              "Formula": {
+                "Expression": "if ( [DataCorePlugin.GameData.NewData.ABSLevel]==0, 35, 100)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Opacity"
+            },
+            "Text": {
+              "FormatString": "0",
+              "Formula": {
+                "Expression": "isnull([DataCorePlugin.GameData.NewData.ABSLevel],0)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Text"
+            }
+          },
+          "Font": "Roboto",
+          "FontSize": 50.0,
+          "FontWeight": "Bold",
+          "Height": 90.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 192.0,
+          "Name": "ABS",
+          "Text": "0",
+          "TextColor": "#FFFFE04C",
+          "Top": 7.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 86.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "if ( changed(300, [DataCorePlugin.GameData.ABSActive]), 1, 0)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "AutoSize": false,
+              "BackgroundColor": "#00FFFFFF",
+              "Height": 80.0,
+              "Image": "ABS Active Alert",
+              "Left": 197.0,
+              "Name": "ImageItem0",
+              "Top": 12.0,
+              "Visible": true,
+              "Width": 76.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "0",
+                  "Formula": {
+                    "Expression": "[DataCorePlugin.GameData.NewData.ABSLevel]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 50.0,
+              "FontWeight": "Bold",
+              "Height": 90.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 192.0,
+              "Name": "TextItem5",
+              "Text": "0",
+              "TextColor": "#FF000000",
+              "Top": 7.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 86.0
+            }
+          ],
+          "Group": true,
+          "Height": 90.0,
+          "Left": 192.0,
+          "Name": "ABS Active",
+          "Top": 7.0,
+          "Visible": false,
+          "Width": 86.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Text": {
+              "FormatString": "00.0",
+              "Formula": {
+                "Expression": "[DataCorePlugin.GameData.NewData.BrakeBias]"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Text"
+            }
+          },
+          "Font": "Roboto",
+          "FontSize": 50.0,
+          "FontWeight": "Bold",
+          "Height": 90.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 288.0,
+          "Name": "BB",
+          "Text": "00.0",
+          "TextColor": "#FFFA0000",
+          "Top": 7.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 127.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Opacity": {
+              "Formula": {
+                "Expression": "if ( $prop('GameRawData.SessionData.CarSetup.Chassis.InCarDials.EngineMapSetting') != null ) {\r\n\t\r\n\treturn 100\r\n\t\r\n} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') != null ) {\r\n\t\r\n\treturn 100\r\n\t\r\n} else {\r\n\r\n\treturn 35\r\n\t\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Opacity"
+            },
+            "Text": {
+              "FormatString": "0",
+              "Formula": {
+                "Expression": "if ( $prop('GameRawData.SessionData.CarSetup.Chassis.InCarDials.EngineMapSetting') != null ) {\r\n\t\r\n\treturn $prop('GameRawData.SessionData.CarSetup.Chassis.InCarDials.EngineMapSetting').substring(0, 2).replace(/\\s/g,'')\r\n\t\r\n} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') != null ) {\r\n\t\r\n\treturn $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape')\r\n\t\r\n} else {\r\n\r\n\treturn '-'\r\n\t\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Text"
+            }
+          },
+          "Font": "Roboto",
+          "FontSize": 50.0,
+          "FontWeight": "Bold",
+          "Height": 90.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 425.0,
+          "Name": "MAP",
+          "Text": "0",
+          "TextColor": "#FF00FF02",
+          "Top": 7.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 86.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
+          "AutoSize": true,
+          "BackgroundColor": "#00FFFFFF",
+          "FileName": "Fuel - iR.djson",
+          "Height": 97.0,
+          "Left": 521.0,
+          "Name": "Fuel iR",
+          "NextScreenCommand": 4,
+          "PreviousScreenCommand": 0,
+          "Top": 0.0,
+          "Visible": true,
+          "Width": 329.0
+        }
+      ],
+      "Name": "Fuel",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": ""
+      },
+      "PitScreen": false,
+      "ScreenEnabledExpression": {
+        "Expression": ""
+      },
+      "ScreenId": "59c2429b-b97a-4706-a4af-123e31523ee6"
+    }
+  ],
+  "ShowBackground": true,
+  "ShowBoundingRectangles": false,
+  "ShowForeground": true,
+  "ShowOnScreenControls": true,
+  "SnapToGrid": false,
+  "Version": 2
+}
