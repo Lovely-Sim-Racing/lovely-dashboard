@@ -1,0 +1,208 @@
+{
+  "BackgroundColor": "#FF000000",
+  "BackgroundOpacity": 100.0,
+  "BaseHeight": 50,
+  "BaseWidth": 286,
+  "DashboardDebugManager": {
+    "Maximized": false
+  },
+  "EnableClickThroughOverlay": true,
+  "EnableOnDashboardMessaging": true,
+  "ForegroundOpacity": 100.0,
+  "GridSize": 10,
+  "HideLabels": false,
+  "Id": "00d6f42f-7602-48c6-9c4e-16cdf91f4d97",
+  "Images": [
+    {
+      "Extension": ".png",
+      "Height": 50,
+      "Length": 410,
+      "MD5": "e749a06e0589500fc162e7a8d434c8ad",
+      "Modified": false,
+      "Name": "flag-orange",
+      "Optimized": true,
+      "Width": 286
+    },
+    {
+      "Extension": ".png",
+      "Height": 50,
+      "Length": 679,
+      "MD5": "9efe4ed066fbf6ed001ad1851353d914",
+      "Modified": false,
+      "Name": "Checkered Flag",
+      "Optimized": true,
+      "Width": 286
+    }
+  ],
+  "IsOverlay": false,
+  "Metadata": {
+    "EnableOnDashboardMessaging": true,
+    "Height": 50.0,
+    "IdleScreensIndexs": [],
+    "InGameScreensIndexs": [
+      0
+    ],
+    "IsOverlay": false,
+    "MainPreviewIndex": 0,
+    "MetadataVersion": 2.0,
+    "OverlaySizeWarning": false,
+    "PitScreensIndexs": [],
+    "ScreenCount": 1.0,
+    "Width": 286.0
+  },
+  "Screens": [
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#FF000000",
+      "IdleScreen": false,
+      "InGameScreen": true,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": false,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "BackgroundColor": "#FFFFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "[DataCorePlugin.GameData.Flag_White]"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 5,
+            "RadiusBottomRight": 5,
+            "RadiusTopLeft": 25,
+            "RadiusTopRight": 5
+          },
+          "Height": 50.0,
+          "IsRectangleItem": true,
+          "Left": 0.0,
+          "Name": "White",
+          "Top": 0.0,
+          "Visible": false,
+          "Width": 286.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "BackgroundColor": "#FF00D901",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "[DataCorePlugin.GameData.Flag_Green]"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 5,
+            "RadiusBottomRight": 5,
+            "RadiusTopLeft": 25,
+            "RadiusTopRight": 5
+          },
+          "Height": 50.0,
+          "IsRectangleItem": true,
+          "Left": 0.0,
+          "Name": "Geen",
+          "Top": 0.0,
+          "Visible": false,
+          "Width": 286.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "BackgroundColor": "#FF00BFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "[DataCorePlugin.GameData.Flag_Blue]"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 5,
+            "RadiusBottomRight": 5,
+            "RadiusTopLeft": 25,
+            "RadiusTopRight": 5
+          },
+          "Height": 50.0,
+          "IsRectangleItem": true,
+          "Left": 0.0,
+          "Name": "Blue",
+          "Top": 0.0,
+          "Visible": false,
+          "Width": 286.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "BackgroundColor": "#FFFFE04C",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "[DataCorePlugin.GameData.Flag_Yellow]"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 5,
+            "RadiusBottomRight": 5,
+            "RadiusTopLeft": 25,
+            "RadiusTopRight": 5
+          },
+          "Height": 50.0,
+          "IsRectangleItem": true,
+          "Left": 0.0,
+          "Name": "Yellow BG",
+          "Top": 0.0,
+          "Visible": false,
+          "Width": 286.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+          "AutoSize": true,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "[DataCorePlugin.GameData.Flag_Checkered]"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Height": 50.0,
+          "Image": "Checkered Flag",
+          "Left": 0.0,
+          "Name": "Checkered",
+          "Top": 0.0,
+          "Visible": false,
+          "Width": 286.0
+        }
+      ],
+      "Name": "Screen1",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": ""
+      },
+      "PitScreen": false,
+      "ScreenEnabledExpression": {
+        "Expression": ""
+      },
+      "ScreenId": "baba3972-695d-48f7-bc64-499cff309e27"
+    }
+  ],
+  "ShowBackground": true,
+  "ShowBoundingRectangles": false,
+  "ShowForeground": true,
+  "ShowOnScreenControls": true,
+  "SnapToGrid": false,
+  "Version": 2
+}

@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "b46593ee-36cb-48cc-9167-f79c57b715c9",
+  "Id": "baf1f89c-5c89-4743-899a-e5e3115bd633",
   "Images": [],
   "IsOverlay": false,
   "Metadata": {
@@ -39,6 +39,74 @@
       "IsForegroundLayer": false,
       "IsOverlayLayer": false,
       "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "if ([DataCorePlugin.GameRawData.Graphics.SessionTimeLeft]='-1', 0, 1)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Font": "Roboto",
+              "FontSize": 12.0,
+              "FontWeight": "Bold",
+              "Height": 14.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 215.0,
+              "Name": "TextItem16",
+              "Text": "TIME",
+              "TextColor": "#FF878787",
+              "Top": 35.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 65.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "hh\\:mm",
+                  "Formula": {
+                    "Expression": "secondstotimespan([DataCorePlugin.GameRawData.Graphics.clock])"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 24.0,
+              "FontWeight": "Bold",
+              "Height": 35.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 215.0,
+              "Name": "TextItem14",
+              "Text": "00:00",
+              "TextColor": "#FF878787",
+              "Top": 0.0,
+              "VerticalAlignment": 2,
+              "Visible": true,
+              "Width": 65.0
+            }
+          ],
+          "Group": true,
+          "Height": 49.0,
+          "Left": 215.0,
+          "Name": "Clock",
+          "Top": 0.0,
+          "Visible": true,
+          "Width": 65.0
+        },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
           "BackgroundColor": "#00FFFFFF",
@@ -160,147 +228,10 @@
           "Group": true,
           "Height": 48.0,
           "Left": 120.0,
-          "Name": "Pos",
+          "Name": "Pos2",
           "Top": 1.0,
           "Visible": true,
           "Width": 35.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
-          "Bindings": {
-            "Visible": {
-              "Formula": {
-                "Expression": "if ([DataCorePlugin.CurrentGame]='AssettoCorsaCompetizione', \r\n\tif ([DataCorePlugin.GameRawData.Graphics.SessionTimeLeft]='-1', 0, 1), 0)"
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
-            }
-          },
-          "Childrens": [
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Font": "Roboto",
-              "FontSize": 12.0,
-              "FontWeight": "Bold",
-              "Height": 14.0,
-              "HorizontalAlignment": 2,
-              "IsTextItem": true,
-              "Left": 215.0,
-              "Name": "TextItem16",
-              "Text": "TIME",
-              "TextColor": "#FF878787",
-              "Top": 35.0,
-              "VerticalAlignment": 1,
-              "Visible": true,
-              "Width": 65.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Text": {
-                  "FormatString": "hh\\:mm",
-                  "Formula": {
-                    "Expression": "secondstotimespan([DataCorePlugin.GameRawData.Graphics.clock])"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                }
-              },
-              "Font": "Roboto",
-              "FontSize": 24.0,
-              "FontWeight": "Bold",
-              "Height": 35.0,
-              "HorizontalAlignment": 2,
-              "IsTextItem": true,
-              "Left": 215.0,
-              "Name": "TextItem14",
-              "Text": "00:00",
-              "TextColor": "#FF878787",
-              "Top": 0.0,
-              "VerticalAlignment": 2,
-              "Visible": true,
-              "Width": 65.0
-            }
-          ],
-          "Group": true,
-          "Height": 49.0,
-          "Left": 215.0,
-          "Name": "Clock",
-          "Top": 0.0,
-          "Visible": true,
-          "Width": 65.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
-          "Bindings": {
-            "Visible": {
-              "Formula": {
-                "Expression": "if ([DataCorePlugin.CurrentGame]='IRacing', \r\n\tif ([DataCorePlugin.GameRawData.Graphics.SessionTimeLeft]='-1', 0, 1), 0)"
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
-            }
-          },
-          "Childrens": [
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Font": "Roboto",
-              "FontSize": 12.0,
-              "FontWeight": "Bold",
-              "Height": 14.0,
-              "HorizontalAlignment": 2,
-              "IsTextItem": true,
-              "Left": 215.0,
-              "Name": "TextItem16",
-              "Text": "TIME",
-              "TextColor": "#FF878787",
-              "Top": 35.0,
-              "VerticalAlignment": 1,
-              "Visible": true,
-              "Width": 65.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Text": {
-                  "FormatString": "hh\\:mm",
-                  "Formula": {
-                    "Expression": "secondstotimespan([DataCorePlugin.GameRawData.Telemetry.SessionTimeOfDay])"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                }
-              },
-              "Font": "Roboto",
-              "FontSize": 24.0,
-              "FontWeight": "Bold",
-              "Height": 35.0,
-              "HorizontalAlignment": 2,
-              "IsTextItem": true,
-              "Left": 215.0,
-              "Name": "TextItem14",
-              "ShadowColor": "#FF878787",
-              "Text": "00:00",
-              "TextColor": "#FF878787",
-              "Top": 0.0,
-              "VerticalAlignment": 2,
-              "Visible": true,
-              "Width": 65.0
-            }
-          ],
-          "Group": true,
-          "Height": 49.0,
-          "Left": 215.0,
-          "Name": "Clock iR",
-          "Top": 0.0,
-          "Visible": false,
-          "Width": 65.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
@@ -456,160 +387,6 @@
           "Top": 1.0,
           "Visible": true,
           "Width": 120.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
-          "Bindings": {
-            "Visible": {
-              "Formula": {
-                "Expression": "if ([DataCorePlugin.CurrentGame]='IRacing', 1, 0)"
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
-            }
-          },
-          "Childrens": [
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Text": {
-                  "Formula": {
-                    "Expression": "ucase([DataCorePlugin.GameData.SessionTypeName])\r\n\r\n"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                }
-              },
-              "Font": "Roboto",
-              "FontSize": 12.0,
-              "FontWeight": "Bold",
-              "Height": 14.0,
-              "HorizontalAlignment": 0,
-              "IsTextItem": true,
-              "Left": 0.0,
-              "Name": "TextItem18",
-              "Text": "SESSION",
-              "TextColor": "#FF878787",
-              "Top": 35.0,
-              "VerticalAlignment": 1,
-              "Visible": true,
-              "Width": 120.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Text": {
-                  "FormatString": "mm\\:ss",
-                  "Formula": {
-                    "Expression": "[DataCorePlugin.GameData.SessionTimeLeft]"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                },
-                "Visible": {
-                  "Formula": {
-                    "Expression": "if ([DataCorePlugin.GameRawData.Graphics.SessionTimeLeft]!='-1',\r\n\r\n\tif (format([DataCorePlugin.GameData.SessionTimeLeft], 'hh') == '00', 1, 0),\r\n\t\r\n0)"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Visible"
-                }
-              },
-              "Font": "Roboto",
-              "FontSize": 28.0,
-              "FontWeight": "Bold",
-              "Height": 35.0,
-              "HorizontalAlignment": 0,
-              "IsTextItem": true,
-              "Left": 0.0,
-              "Name": "Countdown < Hour",
-              "Text": "00:00",
-              "TextColor": "#FFFFFFFF",
-              "Top": 1.0,
-              "VerticalAlignment": 2,
-              "Visible": false,
-              "Width": 120.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Text": {
-                  "FormatString": "hh\\:mm\\:ss",
-                  "Formula": {
-                    "Expression": "[DataCorePlugin.GameData.SessionTimeLeft]"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                },
-                "Visible": {
-                  "Formula": {
-                    "Expression": "if ([DataCorePlugin.GameRawData.Graphics.SessionTimeLeft]!='-1',\r\n\r\n\tif (format([DataCorePlugin.GameData.SessionTimeLeft], 'hh') != '00', 1, 0),\r\n\t\r\n0)"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Visible"
-                }
-              },
-              "Font": "Roboto",
-              "FontSize": 28.0,
-              "FontWeight": "Bold",
-              "Height": 35.0,
-              "HorizontalAlignment": 0,
-              "IsTextItem": true,
-              "Left": 0.0,
-              "Name": "Countdown > Hour",
-              "Text": "00:00:00",
-              "TextColor": "#FFFFFFFF",
-              "Top": 1.0,
-              "VerticalAlignment": 2,
-              "Visible": true,
-              "Width": 120.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Text": {
-                  "FormatString": "hh\\:mm",
-                  "Formula": {
-                    "Expression": "secondstotimespan([DataCorePlugin.GameRawData.Graphics.clock])"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                },
-                "Visible": {
-                  "Formula": {
-                    "Expression": "if ([DataCorePlugin.GameRawData.Graphics.SessionTimeLeft]='-1', 1, 0)"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Visible"
-                }
-              },
-              "Font": "Roboto",
-              "FontSize": 28.0,
-              "FontWeight": "Bold",
-              "Height": 35.0,
-              "HorizontalAlignment": 0,
-              "IsTextItem": true,
-              "Left": 0.0,
-              "Name": "Time",
-              "Text": "00:00",
-              "TextColor": "#FFFFFFFF",
-              "Top": 1.0,
-              "VerticalAlignment": 2,
-              "Visible": false,
-              "Width": 120.0
-            }
-          ],
-          "Group": true,
-          "Height": 48.0,
-          "Left": 0.0,
-          "Name": "Session Time iR",
-          "Top": 1.0,
-          "Visible": false,
-          "Width": 120.0
         }
       ],
       "Name": "Screen1",
@@ -619,6 +396,9 @@
         "Expression": ""
       },
       "PitScreen": false,
+      "ScreenEnabledExpression": {
+        "Expression": ""
+      },
       "ScreenId": "eaa488d4-8a61-464f-b525-54bd7bf03f37"
     }
   ],

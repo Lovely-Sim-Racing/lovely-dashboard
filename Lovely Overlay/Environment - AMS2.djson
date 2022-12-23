@@ -1,0 +1,619 @@
+{
+  "BackgroundColor": "#FF000000",
+  "BackgroundOpacity": 100.0,
+  "BaseHeight": 58,
+  "BaseWidth": 160,
+  "DashboardDebugManager": {
+    "LastPlacement": "1786,735,167,25",
+    "Maximized": false
+  },
+  "EnableClickThroughOverlay": true,
+  "EnableOnDashboardMessaging": true,
+  "ForegroundOpacity": 100.0,
+  "GridSize": 10,
+  "HideLabels": true,
+  "Id": "9e3b8a75-e8da-4b39-b909-c0f49b5cde06",
+  "Images": [
+    {
+      "Extension": ".png",
+      "Height": 17,
+      "Length": 273,
+      "MD5": "2a483f656d34effb6a48ce795f6f0f74",
+      "Modified": false,
+      "Name": "air-temp",
+      "Optimized": true,
+      "Width": 20
+    },
+    {
+      "Extension": ".png",
+      "Height": 19,
+      "Length": 328,
+      "MD5": "de84363ffada443f172b161ec7ae2263",
+      "Modified": false,
+      "Name": "track-temp",
+      "Optimized": true,
+      "Width": 19
+    },
+    {
+      "Extension": ".png",
+      "Height": 20,
+      "Length": 218,
+      "MD5": "6570a8d57a498bb19aef4c2536f068ff",
+      "Modified": false,
+      "Name": "icon-weather-clear-day",
+      "Optimized": true,
+      "Width": 20
+    },
+    {
+      "Extension": ".png",
+      "Length": 252,
+      "MD5": "f339b4cc0b71397a741c8d7e64239325",
+      "Modified": false,
+      "Name": "icon-weather-clear-night",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Length": 306,
+      "MD5": "55cedbebfbabc49a48dba0614a46cb66",
+      "Modified": false,
+      "Name": "icon-weather-cloudy-day",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Length": 277,
+      "MD5": "64c5754afab1c6889619887228e08a13",
+      "Modified": false,
+      "Name": "icon-weather-cloudy-night",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Length": 313,
+      "MD5": "75203ceec141546cadb6069c7fd2763d",
+      "Modified": false,
+      "Name": "icon-weather-drizzle",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Height": 20,
+      "Length": 325,
+      "MD5": "c5d72ad98f6aa3424b30f5e2cb0ec301",
+      "Modified": false,
+      "Name": "icon-weather-heavy",
+      "Optimized": true,
+      "Width": 20
+    },
+    {
+      "Extension": ".png",
+      "Height": 20,
+      "Length": 326,
+      "MD5": "4d0efd948fdbd81d7f99deee2f92ded9",
+      "Modified": false,
+      "Name": "icon-weather-light",
+      "Optimized": true,
+      "Width": 20
+    },
+    {
+      "Extension": ".png",
+      "Length": 293,
+      "MD5": "0741d595067e0508a47db8ff557c2411",
+      "Modified": false,
+      "Name": "icon-weather-m-cloudy",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Height": 20,
+      "Length": 322,
+      "MD5": "e355fba756d76bb8c0d2f33ddd3262a1",
+      "Modified": false,
+      "Name": "icon-weather-medium",
+      "Optimized": true,
+      "Width": 20
+    },
+    {
+      "Extension": ".png",
+      "Length": 298,
+      "MD5": "4c353ed48de20978da30ee4ee2ac8ef9",
+      "Modified": false,
+      "Name": "icon-weather-no-rain",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Length": 358,
+      "MD5": "d71abc71ed42e9085172c67e294a51cc",
+      "Modified": false,
+      "Name": "icon-weather-overcast",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Height": 20,
+      "Length": 425,
+      "MD5": "a48dcfacce6807cd4f166ed76b033be1",
+      "Modified": false,
+      "Name": "icon-weather-thunder",
+      "Optimized": true,
+      "Width": 20
+    }
+  ],
+  "IsOverlay": false,
+  "Metadata": {
+    "EnableOnDashboardMessaging": true,
+    "Height": 58.0,
+    "IdleScreensIndexs": [],
+    "InGameScreensIndexs": [
+      0
+    ],
+    "IsOverlay": false,
+    "MainPreviewIndex": 0,
+    "MetadataVersion": 2.0,
+    "OverlaySizeWarning": false,
+    "PitScreensIndexs": [],
+    "ScreenCount": 1.0,
+    "Width": 160.0
+  },
+  "Screens": [
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#FF000000",
+      "IdleScreen": false,
+      "InGameScreen": true,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": false,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "AutoSize": true,
+              "BackgroundColor": "#00FFFFFF",
+              "Height": 17.0,
+              "Image": "air-temp",
+              "Left": 23.5,
+              "Name": "ImageItem0",
+              "Top": 4.0,
+              "Visible": true,
+              "Width": 20.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "0\u00b0",
+                  "Formula": {
+                    "Expression": "[DataCorePlugin.GameRawData.mAmbientTemperature]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "SemiBold",
+              "Height": 24.0,
+              "HorizontalAlignment": 0,
+              "IsTextItem": true,
+              "Left": 47.5,
+              "Name": "Air",
+              "Text": "00\u00b0",
+              "TextColor": "#FFFFFFFF",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 30.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "AutoSize": true,
+              "BackgroundColor": "#00FFFFFF",
+              "Height": 19.0,
+              "Image": "track-temp",
+              "Left": 84.5,
+              "Name": "ImageItem1",
+              "Top": 3.0,
+              "Visible": true,
+              "Width": 19.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "0\u00b0",
+                  "Formula": {
+                    "Expression": "[DataCorePlugin.GameRawData.mTrackTemperature]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "SemiBold",
+              "Height": 24.0,
+              "HorizontalAlignment": 0,
+              "IsTextItem": true,
+              "Left": 106.5,
+              "Name": "Track",
+              "Text": "00\u00b0",
+              "TextColor": "#FFFFFFFF",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 30.0
+            }
+          ],
+          "Group": true,
+          "Height": 24.0,
+          "Left": 23.5,
+          "Name": "Conditions",
+          "Top": 0.0,
+          "Visible": true,
+          "Width": 113.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "if([GameRawData.mRainDensity] >= 0, if([GameRawData.mRainDensity] < 0.2,1,0),0)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "AutoSize": true,
+              "BackgroundColor": "#00FFFFFF",
+              "Height": 20.0,
+              "Image": "icon-weather-light",
+              "Left": 140.0,
+              "Name": "ImageItem2",
+              "Top": 36.0,
+              "Visible": true,
+              "Width": 20.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.LinearGaugeItem, SimHub.Plugins",
+              "AlternateGaugeColor": "#FF008000",
+              "AutoSize": false,
+              "BackgroundColor": "#FF2D2D2D",
+              "Bindings": {
+                "Value": {
+                  "Formula": {
+                    "Expression": "[GameRawData.mRainDensity]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Value"
+                }
+              },
+              "BorderStyle": {
+                "BorderColor": "#FF000000",
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "GaugeAlignment": 0,
+              "GaugeColor": "#FF00BFFF",
+              "GaugeOrientation": 0,
+              "Height": 10.0,
+              "IsLinearGauge": true,
+              "Left": 30.0,
+              "Maximum": 0.2,
+              "Minimum": 0.0,
+              "Name": "Linear Light Rain",
+              "PAW": 0.0,
+              "Steps": 100.0,
+              "Top": 40.0,
+              "UseAlternateStyle": false,
+              "Value": 0.0,
+              "Visible": true,
+              "Width": 100.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "AutoSize": true,
+              "BackgroundColor": "#00FFFFFF",
+              "Height": 20.0,
+              "Image": "icon-weather-clear-day",
+              "Left": 0.0,
+              "Name": "ImageItem",
+              "Top": 36.0,
+              "Visible": true,
+              "Width": 20.0
+            }
+          ],
+          "Group": false,
+          "Height": 20.0,
+          "Left": 0.0,
+          "Name": "Drizzle",
+          "Top": 36.0,
+          "Visible": true,
+          "Width": 160.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "if([GameRawData.mRainDensity] >= 0.2, if([GameRawData.mRainDensity] < 0.4,1,0),0)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "AutoSize": true,
+              "BackgroundColor": "#00FFFFFF",
+              "Height": 20.0,
+              "Image": "icon-weather-medium",
+              "Left": 140.0,
+              "Name": "ImageItem2",
+              "Top": 36.0,
+              "Visible": true,
+              "Width": 20.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.LinearGaugeItem, SimHub.Plugins",
+              "AlternateGaugeColor": "#FF008000",
+              "AutoSize": false,
+              "BackgroundColor": "#FF2D2D2D",
+              "Bindings": {
+                "Value": {
+                  "Formula": {
+                    "Expression": "[GameRawData.mRainDensity]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Value"
+                }
+              },
+              "BorderStyle": {
+                "BorderColor": "#FF000000",
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "GaugeAlignment": 0,
+              "GaugeColor": "#FF00BFFF",
+              "GaugeOrientation": 0,
+              "Height": 10.0,
+              "IsLinearGauge": true,
+              "Left": 30.0,
+              "Maximum": 0.4,
+              "Minimum": 0.2,
+              "Name": "Linear Rain",
+              "PAW": 50.0,
+              "Steps": 100.0,
+              "Top": 40.0,
+              "UseAlternateStyle": false,
+              "Value": 0.3,
+              "Visible": true,
+              "Width": 100.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "AutoSize": true,
+              "BackgroundColor": "#00FFFFFF",
+              "Height": 20.0,
+              "Image": "icon-weather-light",
+              "Left": 0.0,
+              "Name": "ImageItem",
+              "Top": 36.0,
+              "Visible": true,
+              "Width": 20.0
+            }
+          ],
+          "Group": false,
+          "Height": 20.0,
+          "Left": 0.0,
+          "Name": "Rain",
+          "Top": 36.0,
+          "Visible": false,
+          "Width": 160.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "if([GameRawData.mRainDensity] >= 0.4, if([GameRawData.mRainDensity] < 0.6,1,0),0)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "AutoSize": true,
+              "BackgroundColor": "#00FFFFFF",
+              "Height": 20.0,
+              "Image": "icon-weather-heavy",
+              "Left": 140.0,
+              "Name": "ImageItem2",
+              "Top": 36.0,
+              "Visible": true,
+              "Width": 20.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.LinearGaugeItem, SimHub.Plugins",
+              "AlternateGaugeColor": "#FF008000",
+              "AutoSize": false,
+              "BackgroundColor": "#FF2D2D2D",
+              "Bindings": {
+                "Value": {
+                  "Formula": {
+                    "Expression": "[GameRawData.mRainDensity]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Value"
+                }
+              },
+              "BorderStyle": {
+                "BorderColor": "#FF000000",
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "GaugeAlignment": 0,
+              "GaugeColor": "#FF00BFFF",
+              "GaugeOrientation": 0,
+              "Height": 10.0,
+              "IsLinearGauge": true,
+              "Left": 30.0,
+              "Maximum": 0.6,
+              "Minimum": 0.4,
+              "Name": "Linear Storm",
+              "PAW": 40.0,
+              "Steps": 100.0,
+              "Top": 40.0,
+              "UseAlternateStyle": false,
+              "Value": 0.48,
+              "Visible": true,
+              "Width": 100.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "AutoSize": true,
+              "BackgroundColor": "#00FFFFFF",
+              "Height": 20.0,
+              "Image": "icon-weather-medium",
+              "Left": 0.0,
+              "Name": "ImageItem",
+              "Top": 36.0,
+              "Visible": true,
+              "Width": 20.0
+            }
+          ],
+          "Group": false,
+          "Height": 20.0,
+          "Left": 0.0,
+          "Name": "Storm",
+          "Top": 36.0,
+          "Visible": false,
+          "Width": 160.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "if([GameRawData.mRainDensity] >= 0.6, 1,0)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "AutoSize": true,
+              "BackgroundColor": "#00FFFFFF",
+              "Height": 20.0,
+              "Image": "icon-weather-thunder",
+              "Left": 140.0,
+              "Name": "ImageItem2",
+              "Top": 36.0,
+              "Visible": true,
+              "Width": 20.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.LinearGaugeItem, SimHub.Plugins",
+              "AlternateGaugeColor": "#FF008000",
+              "AutoSize": false,
+              "BackgroundColor": "#FF2D2D2D",
+              "Bindings": {
+                "Value": {
+                  "Formula": {
+                    "Expression": "[GameRawData.mRainDensity]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Value"
+                }
+              },
+              "BorderStyle": {
+                "BorderColor": "#FF000000",
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "GaugeAlignment": 0,
+              "GaugeColor": "#FFFFD700",
+              "GaugeOrientation": 0,
+              "Height": 10.0,
+              "IsLinearGauge": true,
+              "Left": 30.0,
+              "Maximum": 0.8,
+              "Minimum": 0.6,
+              "Name": "Linear Thunderstorm",
+              "PAW": 40.0,
+              "Steps": 100.0,
+              "Top": 40.0,
+              "UseAlternateStyle": false,
+              "Value": 0.68,
+              "Visible": true,
+              "Width": 100.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "AutoSize": true,
+              "BackgroundColor": "#00FFFFFF",
+              "Height": 20.0,
+              "Image": "icon-weather-heavy",
+              "Left": 0.0,
+              "Name": "ImageItem",
+              "Top": 36.0,
+              "Visible": true,
+              "Width": 20.0
+            }
+          ],
+          "Group": false,
+          "Height": 20.0,
+          "Left": 0.0,
+          "Name": "Storm",
+          "Top": 36.0,
+          "Visible": false,
+          "Width": 160.0
+        }
+      ],
+      "Name": "Environment",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": ""
+      },
+      "PitScreen": false,
+      "ScreenEnabledExpression": {
+        "Expression": ""
+      },
+      "ScreenId": "4967335d-a269-4256-873b-5e05063eeaf3"
+    }
+  ],
+  "ShowBackground": true,
+  "ShowBoundingRectangles": false,
+  "ShowForeground": true,
+  "ShowOnScreenControls": true,
+  "SnapToGrid": false,
+  "Version": 2
+}

@@ -1,0 +1,308 @@
+{
+  "BackgroundColor": "#FF000000",
+  "BackgroundOpacity": 100.0,
+  "BaseHeight": 24,
+  "BaseWidth": 160,
+  "DashboardDebugManager": {
+    "LastPlacement": "1786,735,167,25",
+    "Maximized": false
+  },
+  "EnableClickThroughOverlay": true,
+  "EnableOnDashboardMessaging": true,
+  "ForegroundOpacity": 100.0,
+  "GridSize": 10,
+  "HideLabels": true,
+  "Id": "007a19e1-58b9-4e62-9035-b6edb9568b89",
+  "Images": [
+    {
+      "Extension": ".png",
+      "Height": 20,
+      "Length": 218,
+      "MD5": "6570a8d57a498bb19aef4c2536f068ff",
+      "Modified": false,
+      "Name": "icon-weather-clear-day",
+      "Optimized": true,
+      "Width": 20
+    },
+    {
+      "Extension": ".png",
+      "Length": 252,
+      "MD5": "f339b4cc0b71397a741c8d7e64239325",
+      "Modified": false,
+      "Name": "icon-weather-clear-night",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Length": 306,
+      "MD5": "55cedbebfbabc49a48dba0614a46cb66",
+      "Modified": false,
+      "Name": "icon-weather-cloudy-day",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Length": 277,
+      "MD5": "64c5754afab1c6889619887228e08a13",
+      "Modified": false,
+      "Name": "icon-weather-cloudy-night",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Length": 313,
+      "MD5": "75203ceec141546cadb6069c7fd2763d",
+      "Modified": false,
+      "Name": "icon-weather-drizzle",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Length": 325,
+      "MD5": "c5d72ad98f6aa3424b30f5e2cb0ec301",
+      "Modified": false,
+      "Name": "icon-weather-heavy",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Length": 326,
+      "MD5": "4d0efd948fdbd81d7f99deee2f92ded9",
+      "Modified": false,
+      "Name": "icon-weather-light",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Length": 293,
+      "MD5": "0741d595067e0508a47db8ff557c2411",
+      "Modified": false,
+      "Name": "icon-weather-m-cloudy",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Length": 322,
+      "MD5": "e355fba756d76bb8c0d2f33ddd3262a1",
+      "Modified": false,
+      "Name": "icon-weather-medium",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Length": 298,
+      "MD5": "4c353ed48de20978da30ee4ee2ac8ef9",
+      "Modified": false,
+      "Name": "icon-weather-no-rain",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Length": 358,
+      "MD5": "d71abc71ed42e9085172c67e294a51cc",
+      "Modified": false,
+      "Name": "icon-weather-overcast",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Length": 425,
+      "MD5": "a48dcfacce6807cd4f166ed76b033be1",
+      "Modified": false,
+      "Name": "icon-weather-thunder",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Height": 17,
+      "Length": 273,
+      "MD5": "2a483f656d34effb6a48ce795f6f0f74",
+      "Modified": false,
+      "Name": "air-temp",
+      "Optimized": true,
+      "Width": 20
+    },
+    {
+      "Extension": ".png",
+      "Height": 19,
+      "Length": 328,
+      "MD5": "de84363ffada443f172b161ec7ae2263",
+      "Modified": false,
+      "Name": "track-temp",
+      "Optimized": true,
+      "Width": 19
+    }
+  ],
+  "IsOverlay": false,
+  "Metadata": {
+    "EnableOnDashboardMessaging": true,
+    "Height": 24.0,
+    "IdleScreensIndexs": [],
+    "InGameScreensIndexs": [
+      0
+    ],
+    "IsOverlay": false,
+    "MainPreviewIndex": 0,
+    "MetadataVersion": 2.0,
+    "OverlaySizeWarning": false,
+    "PitScreensIndexs": [],
+    "ScreenCount": 1.0,
+    "Width": 160.0
+  },
+  "Screens": [
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#FF000000",
+      "IdleScreen": false,
+      "InGameScreen": true,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": false,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "AutoSize": true,
+              "BackgroundColor": "#00FFFFFF",
+              "Height": 17.0,
+              "Image": "air-temp",
+              "Left": 23.5,
+              "Name": "ImageItem0",
+              "Top": 4.0,
+              "Visible": true,
+              "Width": 20.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "0\u00b0",
+                  "Formula": {
+                    "Expression": "[DataCorePlugin.GameData.AirTemperature]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "SemiBold",
+              "Height": 24.0,
+              "HorizontalAlignment": 0,
+              "IsTextItem": true,
+              "Left": 47.5,
+              "Name": "Air",
+              "Text": "0\u00b0",
+              "TextColor": "#FFFFFFFF",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 30.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "AutoSize": true,
+              "BackgroundColor": "#00FFFFFF",
+              "Height": 19.0,
+              "Image": "track-temp",
+              "Left": 84.5,
+              "Name": "ImageItem1",
+              "Top": 3.0,
+              "Visible": true,
+              "Width": 19.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "0\u00b0",
+                  "Formula": {
+                    "Expression": "[DataCorePlugin.GameData.RoadTemperature]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "SemiBold",
+              "Height": 24.0,
+              "HorizontalAlignment": 0,
+              "IsTextItem": true,
+              "Left": 106.5,
+              "Name": "Track",
+              "Text": "0\u00b0",
+              "TextColor": "#FFFFFFFF",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 30.0
+            }
+          ],
+          "Group": true,
+          "Height": 24.0,
+          "Left": 23.5,
+          "Name": "Layer1",
+          "Top": 0.0,
+          "Visible": true,
+          "Width": 113.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "BackgroundColor": "#FF808080",
+          "Height": 20.0,
+          "IsRectangleItem": true,
+          "Left": 32.0,
+          "Name": "RectangleItem1",
+          "Top": 2.0,
+          "Visible": false,
+          "Width": 1.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+          "AutoSize": true,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Image": {
+              "Formula": {
+                "Expression": "var sky = $prop('DataCorePlugin.GameRawData.Telemetry.Skies')\r\n\r\nswitch (sky) {\r\n\r\n\tcase 0:\r\n\t\tif ($prop('DataCorePlugin.GameRawData.Telemetry.SessionTimeOfDay') > 25200 && $prop('DataCorePlugin.GameRawData.Graphics.clock') < 75600   ) {\r\n\t\t\treturn 'icon-weather-clear-day';\r\n\t\t} else {\r\n\t\t\treturn 'icon-weather-clear-night';\r\n\t\t}\r\n\tcase 1:\r\n\t\tif ($prop('DataCorePlugin.GameRawData.Telemetry.SessionTimeOfDay') > 25200 && $prop('DataCorePlugin.GameRawData.Graphics.clock') < 75600   ) {\r\n\t\t\treturn 'icon-weather-cloudy-day';\r\n\t\t} else {\r\n\t\t\treturn 'icon-weather-cloudy-night';\r\n\t\t}\r\n\tcase 2:\r\n\t\treturn 'icon-weather-m-cloudy'\r\n\r\n\tcase 3:\r\n\t\treturn 'icon-weather-overcast'\r\n\r\n\tdefault:\r\n\t\treturn 'icon-weather-clear-day'\r\n\t\t\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Image"
+            }
+          },
+          "Height": 20.0,
+          "Image": "icon-weather-clear-day",
+          "Left": 0.0,
+          "Name": "ImageItem",
+          "Top": 2.0,
+          "Visible": false,
+          "Width": 20.0
+        }
+      ],
+      "Name": "Environment",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": ""
+      },
+      "PitScreen": false,
+      "ScreenEnabledExpression": {
+        "Expression": ""
+      },
+      "ScreenId": "4967335d-a269-4256-873b-5e05063eeaf3"
+    }
+  ],
+  "ShowBackground": true,
+  "ShowBoundingRectangles": false,
+  "ShowForeground": true,
+  "ShowOnScreenControls": true,
+  "SnapToGrid": false,
+  "Version": 2
+}

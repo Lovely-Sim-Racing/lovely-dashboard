@@ -1,0 +1,326 @@
+{
+  "BackgroundColor": "#FF000000",
+  "BackgroundOpacity": 100.0,
+  "BaseHeight": 49,
+  "BaseWidth": 360,
+  "DashboardDebugManager": {
+    "Maximized": false
+  },
+  "EnableClickThroughOverlay": true,
+  "EnableOnDashboardMessaging": true,
+  "ForegroundOpacity": 100.0,
+  "GridSize": 10,
+  "HideLabels": true,
+  "Id": "78069f75-e5b9-484b-8a11-2c3b5920a9f0",
+  "Images": [
+    {
+      "Extension": ".png",
+      "Length": 162,
+      "MD5": "10b36d8f9c7bba579e143cc46a7df21b",
+      "Modified": false,
+      "Name": "icon-left-red",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Height": 20,
+      "Length": 166,
+      "MD5": "9483206ec29dd8a61d4a2ca842499b5a",
+      "Modified": false,
+      "Name": "icon-right-green",
+      "Optimized": true,
+      "Width": 20
+    }
+  ],
+  "IsOverlay": false,
+  "Metadata": {
+    "Author": "Constantinos Demetriadis - Lovely Sim Racing - http://j76.me/LSR",
+    "EnableOnDashboardMessaging": true,
+    "Height": 49.0,
+    "IdleScreensIndexs": [
+      0
+    ],
+    "InGameScreensIndexs": [
+      0
+    ],
+    "IsOverlay": false,
+    "MainPreviewIndex": 0,
+    "MetadataVersion": 2.0,
+    "OverlaySizeWarning": false,
+    "PitScreensIndexs": [],
+    "ScreenCount": 1.0,
+    "Title": "Turn Racing Dashboard",
+    "Width": 360.0
+  },
+  "Screens": [
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#FF000000",
+      "IdleScreen": true,
+      "InGameScreen": true,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": false,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF727272",
+              "Height": 1.0,
+              "IsRectangleItem": true,
+              "Left": 85.0,
+              "Name": "RectangleItem2",
+              "Top": 13.0,
+              "Visible": true,
+              "Width": 190.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF727272",
+              "Height": 9.0,
+              "IsRectangleItem": true,
+              "Left": 274.0,
+              "Name": "RectangleItem",
+              "Top": 9.0,
+              "Visible": true,
+              "Width": 1.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF727272",
+              "Height": 9.0,
+              "IsRectangleItem": true,
+              "Left": 227.0,
+              "Name": "RectangleItem4",
+              "Top": 9.0,
+              "Visible": true,
+              "Width": 1.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF727272",
+              "Height": 9.0,
+              "IsRectangleItem": true,
+              "Left": 179.5,
+              "Name": "RectangleItem5",
+              "Top": 9.0,
+              "Visible": true,
+              "Width": 1.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF727272",
+              "Height": 9.0,
+              "IsRectangleItem": true,
+              "Left": 132.0,
+              "Name": "RectangleItem6",
+              "Top": 9.0,
+              "Visible": true,
+              "Width": 1.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF727272",
+              "Height": 9.0,
+              "IsRectangleItem": true,
+              "Left": 85.0,
+              "Name": "RectangleItem3",
+              "Top": 9.0,
+              "Visible": true,
+              "Width": 1.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "AutoSize": true,
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Image": {
+                  "Formula": {
+                    "Expression": "if ( \r\n\tisincreasing(250, ([PersistantTrackerPlugin.DriverBehind_00_Distance] /  \t([PersistantTrackerPlugin.DriverBehind_00_Distance] + abs\t([PersistantTrackerPlugin.DriverAhead_00_Distance])\t) ) * 100 ),\r\n\t'icon-right-green',\r\n\t\r\n\tif( isdecreasing(150, ([PersistantTrackerPlugin.DriverBehind_00_Distance] /  \t([PersistantTrackerPlugin.DriverBehind_00_Distance] + abs\t([PersistantTrackerPlugin.DriverAhead_00_Distance])\t) ) * 100 ),\r\n\t'icon-left-red',\r\n\t\r\n\t'icon-right-green')\r\n)"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Image"
+                },
+                "Left": {
+                  "Formula": {
+                    "Expression": "var totalDistance = $prop('PersistantTrackerPlugin.DriverBehind_00_Distance') + Math.abs($prop('PersistantTrackerPlugin.DriverAhead_00_Distance'))\r\nvar percentPosition = ($prop('PersistantTrackerPlugin.DriverBehind_00_Distance') / totalDistance) * 100\r\n\r\nreturn Math.round( (180 * (percentPosition / 100)) + 80 ) ",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Left"
+                }
+              },
+              "Height": 20.0,
+              "Image": "icon-right-green",
+              "Left": 170.0,
+              "Name": "ImageItem",
+              "Top": 3.0,
+              "Visible": true,
+              "Width": 20.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Left": {
+                  "Formula": {
+                    "Expression": "var totalDistance = $prop('PersistantTrackerPlugin.DriverBehind_00_Distance') + Math.abs($prop('PersistantTrackerPlugin.DriverAhead_00_Distance'))\r\nvar percentPosition = ($prop('PersistantTrackerPlugin.DriverBehind_00_Distance') / totalDistance) * 100\r\n\r\nreturn Math.round( (160 * (percentPosition / 100)) + 80 ) ",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Left"
+                },
+                "Text": {
+                  "FormatString": "00",
+                  "Formula": {
+                    "Expression": "'' + round(( [PersistantTrackerPlugin.DriverBehind_00_Distance] /  \t([PersistantTrackerPlugin.DriverBehind_00_Distance] + abs\t([PersistantTrackerPlugin.DriverAhead_00_Distance])\t)\r\n) * 100, '00') + '%'"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 14.0,
+              "FontWeight": "SemiBold",
+              "Height": 18.0,
+              "HorizontalAlignment": 1,
+              "IsFreezed": true,
+              "IsTextItem": true,
+              "Left": 160.0,
+              "Name": "TextItem5",
+              "Text": "00%",
+              "TextColor": "#FFFFFFFF",
+              "Top": 23.0,
+              "VerticalAlignment": 1,
+              "Visible": false,
+              "Width": 40.0
+            }
+          ],
+          "Group": true,
+          "Height": 38.0,
+          "Left": 85.0,
+          "Name": "Layer",
+          "Top": 3.0,
+          "Visible": true,
+          "Width": 190.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Text": {
+              "FormatString": "0.00",
+              "Formula": {
+                "Expression": "abs([PersistantTrackerPlugin.DriverBehind_00_Gap])"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Text"
+            }
+          },
+          "Font": "Roboto",
+          "FontSize": 30.0,
+          "FontWeight": "Bold",
+          "Height": 30.0,
+          "HorizontalAlignment": 0,
+          "IsFreezed": true,
+          "IsTextItem": true,
+          "Left": 0.0,
+          "Name": "TextItem",
+          "Text": "00.00",
+          "TextColor": "#FFFFFFFF",
+          "Top": 1.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 80.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Text": {
+              "FormatString": "0.00",
+              "Formula": {
+                "Expression": "abs([PersistantTrackerPlugin.DriverAhead_00_Gap])"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Text"
+            }
+          },
+          "Font": "Roboto",
+          "FontSize": 30.0,
+          "FontWeight": "Bold",
+          "Height": 30.0,
+          "HorizontalAlignment": 2,
+          "IsFreezed": true,
+          "IsTextItem": true,
+          "Left": 280.0,
+          "Name": "TextItem6",
+          "Text": "00.00",
+          "TextColor": "#FFFFFFFF",
+          "Top": 1.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 80.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Font": "Roboto",
+          "FontSize": 12.0,
+          "FontWeight": "Bold",
+          "Height": 15.0,
+          "HorizontalAlignment": 0,
+          "IsFreezed": true,
+          "IsTextItem": true,
+          "Left": 0.0,
+          "Name": "TextItem7",
+          "Text": "BEHIND",
+          "TextColor": "#FF878787",
+          "Top": 34.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 80.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Font": "Roboto",
+          "FontSize": 12.0,
+          "FontWeight": "Bold",
+          "Height": 15.0,
+          "HorizontalAlignment": 2,
+          "IsFreezed": true,
+          "IsTextItem": true,
+          "Left": 280.0,
+          "Name": "TextItem8",
+          "Text": "AHEAD",
+          "TextColor": "#FF878787",
+          "Top": 34.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 80.0
+        }
+      ],
+      "Name": "Screen",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": ""
+      },
+      "PitScreen": false,
+      "ScreenEnabledExpression": {
+        "Expression": ""
+      },
+      "ScreenId": "64d37f21-e978-412f-a018-8d552182d72f"
+    }
+  ],
+  "ShowBackground": true,
+  "ShowBoundingRectangles": false,
+  "ShowForeground": true,
+  "ShowOnScreenControls": true,
+  "SnapToGrid": false,
+  "Version": 2
+}
