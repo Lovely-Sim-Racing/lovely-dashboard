@@ -1,8 +1,8 @@
 {
   "BackgroundColor": "#FF000000",
   "BackgroundOpacity": 100.0,
-  "BaseHeight": 300,
-  "BaseWidth": 560,
+  "BaseHeight": 314,
+  "BaseWidth": 501,
   "DashboardDebugManager": {
     "Maximized": false
   },
@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": false,
-  "Id": "5979933c-e2e9-44d3-9d62-a78f6f71acc0",
+  "Id": "74a49df3-ee09-46ad-8763-fbc9e96e9f8a",
   "Images": [
     {
       "Extension": ".png",
@@ -1205,7 +1205,7 @@
   "IsOverlay": false,
   "Metadata": {
     "EnableOnDashboardMessaging": true,
-    "Height": 300.0,
+    "Height": 314.0,
     "IdleScreensIndexs": [],
     "InGameScreensIndexs": [
       0
@@ -1216,7 +1216,7 @@
     "OverlaySizeWarning": false,
     "PitScreensIndexs": [],
     "ScreenCount": 1.0,
-    "Width": 560.0
+    "Width": 501.0
   },
   "Screens": [
     {
@@ -1229,22 +1229,501 @@
       "IsOverlayLayer": false,
       "Items": [
         {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
-          "BackgroundColor": "#C8000000",
-          "BorderStyle": {
-            "RadiusBottomLeft": 5,
-            "RadiusBottomRight": 5,
-            "RadiusTopLeft": 5,
-            "RadiusTopRight": 5
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "if (isnull([PersistantTrackerPlugin.DriverAhead_04_CarNumber]), 0, 1)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
           },
-          "Height": 300.0,
-          "IsRectangleItem": true,
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FFFFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "[PersistantTrackerPlugin.DriverAhead_04_Position]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "BorderStyle": {
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Font": "Roboto",
+              "FontSize": 17.0,
+              "FontWeight": "Black",
+              "Height": 24.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 0.0,
+              "Name": "TextItem0",
+              "Text": "00",
+              "TextColor": "#FF000000",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 24.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "0",
+                  "Formula": {
+                    "Expression": "'#'+[PersistantTrackerPlugin.DriverAhead_04_CarNumber]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "var driver_rel = 'DriverAhead_04';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 18.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 28.0,
+              "Name": "TextItem5",
+              "Text": "#000",
+              "TextColor": "#FFFFFFFF",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 48.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = $prop('PersistantTrackerPlugin.DriverAhead_04_Name');\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "var driver_rel = 'DriverAhead_04';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 0,
+              "IsTextItem": true,
+              "Left": 110.0,
+              "Name": "TextItem6",
+              "Text": "A Driver",
+              "TextColor": "#FFFFFFFF",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 125.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "+0.0",
+                  "Formula": {
+                    "Expression": "abs([PersistantTrackerPlugin.DriverAhead_04_Gap])"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "var driver_rel = 'DriverAhead_04';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 240.0,
+              "Name": "TextItem7",
+              "Text": "+000.0",
+              "TextColor": "#FFFFFFFF",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 65.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "m\\.ss\\.fff",
+                  "Formula": {
+                    "Expression": "[PersistantTrackerPlugin.DriverAhead_04_BestLapTime]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverAhead_04_Position]) == 0, '#C500CE', '#FFFFFF')"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 320.0,
+              "Name": "TextItem8",
+              "Text": "0:00.000",
+              "TextColor": "#FFFFFFFF",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 82.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "m\\.ss\\.fff",
+                  "Formula": {
+                    "Expression": "[PersistantTrackerPlugin.DriverAhead_04_LastLapTime]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 419.0,
+              "Name": "TextItem9",
+              "Text": "0:00.000",
+              "TextColor": "#FFFFFFFF",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 82.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "AutoSize": true,
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Image": {
+                  "Formula": {
+                    "Expression": "var driver_rel = 'DriverAhead_04'\r\n\r\nvar carName = $prop('PersistantTrackerPlugin.'+driver_rel+'_CarName')\r\nvar carBrand = carName.split(' ')\r\nvar color = ''\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\tcolor = 'red' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\tcolor = '-blue' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\tcolor = '-red' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\tcolor = '-blue' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\tcolor = '' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\tcolor = ''\r\n\r\n}\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+color\r\n",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Image"
+                }
+              },
+              "Height": 20.0,
+              "Image": "logo-ferrari",
+              "Left": 82.0,
+              "Name": "ImageItem",
+              "Top": 3.0,
+              "Visible": true,
+              "Width": 20.0
+            }
+          ],
+          "Group": true,
+          "Height": 24.0,
           "Left": 0.0,
-          "Name": "RectangleItem0",
-          "RenderingSkip": 5,
+          "Name": "Ahead 04",
+          "RepeatTopOffset": 0.0,
           "Top": 0.0,
           "Visible": true,
-          "Width": 560.0
+          "Width": 501.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "if (isnull([PersistantTrackerPlugin.DriverAhead_03_CarNumber]), 0, 1)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FFFFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "[PersistantTrackerPlugin.DriverAhead_03_Position]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "BorderStyle": {
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Font": "Roboto",
+              "FontSize": 17.0,
+              "FontWeight": "Black",
+              "Height": 24.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 0.0,
+              "Name": "TextItem0",
+              "Text": "00",
+              "TextColor": "#FF000000",
+              "Top": 29.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 24.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "'#'+[PersistantTrackerPlugin.DriverAhead_03_CarNumber]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "var driver_rel = 'DriverAhead_03';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 18.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 28.0,
+              "Name": "TextItem5",
+              "Text": "#000",
+              "TextColor": "#FFFFFFFF",
+              "Top": 29.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 48.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = $prop('PersistantTrackerPlugin.DriverAhead_03_Name');\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "var driver_rel = 'DriverAhead_03';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 0,
+              "IsTextItem": true,
+              "Left": 110.0,
+              "Name": "TextItem6",
+              "Text": "A Driver",
+              "TextColor": "#FFFFFFFF",
+              "Top": 29.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 125.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "+0.0",
+                  "Formula": {
+                    "Expression": "abs([PersistantTrackerPlugin.DriverAhead_03_Gap])"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "var driver_rel = 'DriverAhead_03';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 240.0,
+              "Name": "TextItem7",
+              "Text": "+000.0",
+              "TextColor": "#FFFFFFFF",
+              "Top": 29.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 65.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "m\\.ss\\.fff",
+                  "Formula": {
+                    "Expression": "[PersistantTrackerPlugin.DriverAhead_03_BestLapTime]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverAhead_03_Position]) == 0, '#C500CE', '#FFFFFF')"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 320.0,
+              "Name": "TextItem8",
+              "Text": "0:00.000",
+              "TextColor": "#FFFFFFFF",
+              "Top": 29.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 82.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "m\\.ss\\.fff",
+                  "Formula": {
+                    "Expression": "[PersistantTrackerPlugin.DriverAhead_03_LastLapTime]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 419.0,
+              "Name": "TextItem9",
+              "Text": "0:00.000",
+              "TextColor": "#FFFFFFFF",
+              "Top": 29.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 82.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "AutoSize": true,
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Image": {
+                  "Formula": {
+                    "Expression": "var driver_rel = 'DriverAhead_03'\r\n\r\nvar carName = $prop('PersistantTrackerPlugin.'+driver_rel+'_CarName')\r\nvar carBrand = carName.split(' ')\r\nvar color = ''\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\tcolor = 'red' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\tcolor = '-blue' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\tcolor = '-red' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\tcolor = '-blue' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\tcolor = '' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\tcolor = ''\r\n\r\n}\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+color\r\n",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Image"
+                }
+              },
+              "Height": 20.0,
+              "Image": "logo-ferrari",
+              "Left": 82.0,
+              "Name": "ImageItem",
+              "Top": 31.0,
+              "Visible": true,
+              "Width": 20.0
+            }
+          ],
+          "Group": true,
+          "Height": 24.0,
+          "Left": 0.0,
+          "Name": "Ahead 03",
+          "RepeatTopOffset": 0.0,
+          "Top": 29.0,
+          "Visible": true,
+          "Width": 501.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
@@ -1278,16 +1757,16 @@
                 "RadiusTopRight": 5
               },
               "Font": "Roboto",
-              "FontSize": 15.0,
-              "FontWeight": "Bold",
+              "FontSize": 17.0,
+              "FontWeight": "Black",
               "Height": 24.0,
               "HorizontalAlignment": 1,
               "IsTextItem": true,
-              "Left": 30.0,
+              "Left": 0.0,
               "Name": "TextItem0",
               "Text": "00",
               "TextColor": "#FF000000",
-              "Top": 50.0,
+              "Top": 58.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 24.0
@@ -1318,11 +1797,11 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 55.0,
+              "Left": 28.0,
               "Name": "TextItem5",
               "Text": "#000",
               "TextColor": "#FFFFFFFF",
-              "Top": 50.0,
+              "Top": 58.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 48.0
@@ -1354,14 +1833,14 @@
               "Height": 24.0,
               "HorizontalAlignment": 0,
               "IsTextItem": true,
-              "Left": 134.0,
+              "Left": 110.0,
               "Name": "TextItem6",
               "Text": "A Driver",
               "TextColor": "#FFFFFFFF",
-              "Top": 50.0,
+              "Top": 58.0,
               "VerticalAlignment": 1,
               "Visible": true,
-              "Width": 130.0
+              "Width": 125.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -1390,11 +1869,11 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 270.0,
+              "Left": 240.0,
               "Name": "TextItem7",
               "Text": "+000.0",
               "TextColor": "#FFFFFFFF",
-              "Top": 50.0,
+              "Top": 58.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 65.0
@@ -1413,7 +1892,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverAhead_02_Position]) = 0, '#C500CE', '#FFFFFF')"
+                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverAhead_02_Position]) == 0, '#C500CE', '#FFFFFF')"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "TextColor"
@@ -1425,11 +1904,11 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 350.0,
+              "Left": 320.0,
               "Name": "TextItem8",
               "Text": "0:00.000",
               "TextColor": "#FFFFFFFF",
-              "Top": 50.0,
+              "Top": 58.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 82.0
@@ -1453,11 +1932,11 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 449.0,
+              "Left": 419.0,
               "Name": "TextItem9",
               "Text": "0:00.000",
               "TextColor": "#FFFFFFFF",
-              "Top": 50.0,
+              "Top": 58.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 82.0
@@ -1478,19 +1957,19 @@
               },
               "Height": 20.0,
               "Image": "logo-ferrari",
-              "Left": 108.0,
+              "Left": 82.0,
               "Name": "ImageItem",
-              "Top": 52.0,
+              "Top": 60.0,
               "Visible": true,
               "Width": 20.0
             }
           ],
           "Group": true,
           "Height": 24.0,
-          "Left": 30.0,
+          "Left": 0.0,
           "Name": "Ahead 02",
           "RepeatTopOffset": 0.0,
-          "Top": 50.0,
+          "Top": 58.0,
           "Visible": true,
           "Width": 501.0
         },
@@ -1526,16 +2005,16 @@
                 "RadiusTopRight": 5
               },
               "Font": "Roboto",
-              "FontSize": 15.0,
-              "FontWeight": "Bold",
+              "FontSize": 17.0,
+              "FontWeight": "Black",
               "Height": 24.0,
               "HorizontalAlignment": 1,
               "IsTextItem": true,
-              "Left": 30.0,
+              "Left": 0.0,
               "Name": "TextItem0",
               "Text": "00",
               "TextColor": "#FF000000",
-              "Top": 84.0,
+              "Top": 87.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 24.0
@@ -1566,11 +2045,11 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 55.0,
+              "Left": 28.0,
               "Name": "TextItem5",
               "Text": "#000",
               "TextColor": "#FFFFFFFF",
-              "Top": 84.0,
+              "Top": 87.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 48.0
@@ -1602,14 +2081,14 @@
               "Height": 24.0,
               "HorizontalAlignment": 0,
               "IsTextItem": true,
-              "Left": 134.0,
+              "Left": 110.0,
               "Name": "TextItem6",
               "Text": "A Driver",
               "TextColor": "#FFFFFFFF",
-              "Top": 84.0,
+              "Top": 87.0,
               "VerticalAlignment": 1,
               "Visible": true,
-              "Width": 130.0
+              "Width": 125.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -1638,11 +2117,11 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 270.0,
+              "Left": 240.0,
               "Name": "TextItem7",
               "Text": "+000.0",
               "TextColor": "#FFFFFFFF",
-              "Top": 84.0,
+              "Top": 87.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 65.0
@@ -1661,7 +2140,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverAhead_01_Position]) = 0, '#C500CE', '#FFFFFF')"
+                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverAhead_01_Position]) == 0, '#C500CE', '#FFFFFF')"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "TextColor"
@@ -1673,11 +2152,11 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 350.0,
+              "Left": 320.0,
               "Name": "TextItem8",
               "Text": "0:00.000",
               "TextColor": "#FFFFFFFF",
-              "Top": 84.0,
+              "Top": 87.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 82.0
@@ -1701,11 +2180,11 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 449.0,
+              "Left": 419.0,
               "Name": "TextItem9",
               "Text": "0:00.000",
               "TextColor": "#FFFFFFFF",
-              "Top": 84.0,
+              "Top": 87.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 82.0
@@ -1726,19 +2205,19 @@
               },
               "Height": 20.0,
               "Image": "logo-ferrari",
-              "Left": 108.0,
+              "Left": 82.0,
               "Name": "ImageItem",
-              "Top": 86.0,
+              "Top": 89.0,
               "Visible": true,
               "Width": 20.0
             }
           ],
           "Group": true,
           "Height": 24.0,
-          "Left": 30.0,
+          "Left": 0.0,
           "Name": "Ahead 01",
           "RepeatTopOffset": 0.0,
-          "Top": 84.0,
+          "Top": 87.0,
           "Visible": true,
           "Width": 501.0
         },
@@ -1774,16 +2253,16 @@
                 "RadiusTopRight": 5
               },
               "Font": "Roboto",
-              "FontSize": 15.0,
-              "FontWeight": "Bold",
+              "FontSize": 17.0,
+              "FontWeight": "Black",
               "Height": 24.0,
               "HorizontalAlignment": 1,
               "IsTextItem": true,
-              "Left": 30.0,
+              "Left": 0.0,
               "Name": "TextItem0",
               "Text": "00",
               "TextColor": "#FF000000",
-              "Top": 118.0,
+              "Top": 116.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 24.0
@@ -1814,11 +2293,11 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 55.0,
+              "Left": 28.0,
               "Name": "TextItem5",
               "Text": "#000",
               "TextColor": "#FFFFFFFF",
-              "Top": 118.0,
+              "Top": 116.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 48.0
@@ -1850,14 +2329,14 @@
               "Height": 24.0,
               "HorizontalAlignment": 0,
               "IsTextItem": true,
-              "Left": 134.0,
+              "Left": 110.0,
               "Name": "TextItem6",
               "Text": "A Driver",
               "TextColor": "#FFFFFFFF",
-              "Top": 118.0,
+              "Top": 116.0,
               "VerticalAlignment": 1,
               "Visible": true,
-              "Width": 130.0
+              "Width": 125.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -1886,11 +2365,11 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 270.0,
+              "Left": 240.0,
               "Name": "TextItem7",
               "Text": "+000.0",
               "TextColor": "#FFFFFFFF",
-              "Top": 118.0,
+              "Top": 116.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 65.0
@@ -1909,7 +2388,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverAhead_00_Position]) = 0, '#C500CE', '#FFFFFF')"
+                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverAhead_00_Position]) == 0, '#C500CE', '#FFFFFF')"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "TextColor"
@@ -1921,11 +2400,11 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 350.0,
+              "Left": 320.0,
               "Name": "TextItem8",
               "Text": "0:00.000",
               "TextColor": "#FFFFFFFF",
-              "Top": 118.0,
+              "Top": 116.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 82.0
@@ -1949,11 +2428,11 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 449.0,
+              "Left": 419.0,
               "Name": "TextItem9",
               "Text": "0:00.000",
               "TextColor": "#FFFFFFFF",
-              "Top": 118.0,
+              "Top": 116.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 82.0
@@ -1974,19 +2453,19 @@
               },
               "Height": 20.0,
               "Image": "logo-ferrari",
-              "Left": 108.0,
+              "Left": 82.0,
               "Name": "ImageItem",
-              "Top": 120.0,
+              "Top": 118.0,
               "Visible": true,
               "Width": 20.0
             }
           ],
           "Group": true,
           "Height": 24.0,
-          "Left": 30.0,
+          "Left": 0.0,
           "Name": "Ahead 00",
           "RepeatTopOffset": 0.0,
-          "Top": 118.0,
+          "Top": 116.0,
           "Visible": true,
           "Width": 501.0
         },
@@ -2013,16 +2492,16 @@
                 "RadiusTopRight": 5
               },
               "Font": "Roboto",
-              "FontSize": 15.0,
-              "FontWeight": "Bold",
+              "FontSize": 17.0,
+              "FontWeight": "Black",
               "Height": 24.0,
               "HorizontalAlignment": 1,
               "IsTextItem": true,
-              "Left": 30.0,
+              "Left": 0.0,
               "Name": "TextItem0",
               "Text": "00",
               "TextColor": "#FF000000",
-              "Top": 152.0,
+              "Top": 145.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 24.0
@@ -2036,11 +2515,11 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 60.0,
+              "Left": 30.0,
               "Name": "TextItem5",
               "Text": "##",
               "TextColor": "#FFFFE04C",
-              "Top": 152.0,
+              "Top": 145.0,
               "VerticalAlignment": 1,
               "Visible": false,
               "Width": 40.0
@@ -2068,7 +2547,7 @@
               "LeaderboardPosition": 1,
               "LeaderboardPositionRelativeToPlayer": false,
               "LeaderboardPositionRelativeToPlayerOnTrack": false,
-              "Left": 55.0,
+              "Left": 28.0,
               "Name": "LeaderboardOpponentCarNumberText0",
               "NameStyle": 0,
               "OpponentFontSize": 18.0,
@@ -2094,7 +2573,7 @@
               "PlayerTextColor": "#FFFFFFFF",
               "TextBeforeValue": " #",
               "TextColor": "#FFFFE04C",
-              "Top": 152.0,
+              "Top": 145.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 48.0
@@ -2119,14 +2598,14 @@
               "Height": 24.0,
               "HorizontalAlignment": 0,
               "IsTextItem": true,
-              "Left": 134.0,
+              "Left": 110.0,
               "Name": "TextItem6",
               "Text": "A Driver",
               "TextColor": "#FFFFE04C",
-              "Top": 152.0,
+              "Top": 145.0,
               "VerticalAlignment": 1,
               "Visible": true,
-              "Width": 165.0
+              "Width": 155.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -2137,11 +2616,11 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 270.0,
+              "Left": 240.0,
               "Name": "TextItem7",
               "Text": "0.0",
               "TextColor": "#FFFFE04C",
-              "Top": 152.0,
+              "Top": 145.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 65.0
@@ -2160,7 +2639,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "if (driverdeltatobest([DataCorePlugin.GameData.Position]) = 0, '#C500CE', '#FFE04C')"
+                    "Expression": "if (driverdeltatobest([DataCorePlugin.GameData.Position]) == 0, '#C500CE', '#FFE04C')\r\n\r\n"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "TextColor"
@@ -2172,11 +2651,11 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 350.0,
+              "Left": 320.0,
               "Name": "TextItem8",
               "Text": "0:00.000",
               "TextColor": "#FFFFE04C",
-              "Top": 152.0,
+              "Top": 145.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 82.0
@@ -2200,11 +2679,11 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 449.0,
+              "Left": 419.0,
               "Name": "TextItem9",
               "Text": "0:00.000",
               "TextColor": "#FFFFE04C",
-              "Top": 152.0,
+              "Top": 145.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 82.0
@@ -2216,7 +2695,7 @@
               "Bindings": {
                 "Image": {
                   "Formula": {
-                    "Expression": "var carName = $prop('DataCorePlugin.GameData.CarModel')\r\nvar carBrand = carName.split(' ')\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+'-yellow'",
+                    "Expression": "var carName = $prop('CarModel')\r\nvar carBrand = carName.split(' ')\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+'-yellow'",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -2225,19 +2704,19 @@
               },
               "Height": 20.0,
               "Image": "logo-ferrari-yellow",
-              "Left": 108.0,
+              "Left": 82.0,
               "Name": "ImageItem",
-              "Top": 154.0,
+              "Top": 147.0,
               "Visible": true,
               "Width": 20.0
             }
           ],
           "Group": true,
           "Height": 24.0,
-          "Left": 30.0,
+          "Left": 0.0,
           "Name": "Driver",
           "RepeatTopOffset": 0.0,
-          "Top": 152.0,
+          "Top": 145.0,
           "Visible": true,
           "Width": 501.0
         },
@@ -2273,16 +2752,16 @@
                 "RadiusTopRight": 5
               },
               "Font": "Roboto",
-              "FontSize": 15.0,
-              "FontWeight": "Bold",
+              "FontSize": 17.0,
+              "FontWeight": "Black",
               "Height": 24.0,
               "HorizontalAlignment": 1,
               "IsTextItem": true,
-              "Left": 30.0,
+              "Left": 0.0,
               "Name": "TextItem0",
               "Text": "00",
               "TextColor": "#FF000000",
-              "Top": 186.0,
+              "Top": 174.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 24.0
@@ -2313,11 +2792,11 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 55.0,
+              "Left": 28.0,
               "Name": "TextItem5",
               "Text": "#000",
               "TextColor": "#FFFFFFFF",
-              "Top": 186.0,
+              "Top": 174.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 48.0
@@ -2349,14 +2828,14 @@
               "Height": 24.0,
               "HorizontalAlignment": 0,
               "IsTextItem": true,
-              "Left": 134.0,
+              "Left": 110.0,
               "Name": "TextItem6",
               "Text": "A Driver",
               "TextColor": "#FFFFFFFF",
-              "Top": 186.0,
+              "Top": 174.0,
               "VerticalAlignment": 1,
               "Visible": true,
-              "Width": 130.0
+              "Width": 125.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -2385,11 +2864,11 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 270.0,
+              "Left": 240.0,
               "Name": "TextItem7",
               "Text": "+000.0",
               "TextColor": "#FFFFFFFF",
-              "Top": 186.0,
+              "Top": 174.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 65.0
@@ -2408,7 +2887,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverBehind_00_Position]) = 0, '#C500CE', '#FFFFFF')"
+                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverBehind_00_Position]) == 0, '#C500CE', '#FFFFFF')"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "TextColor"
@@ -2420,11 +2899,11 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 350.0,
+              "Left": 320.0,
               "Name": "TextItem8",
               "Text": "0:00.000",
               "TextColor": "#FFFFFFFF",
-              "Top": 186.0,
+              "Top": 174.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 82.0
@@ -2448,11 +2927,11 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 449.0,
+              "Left": 419.0,
               "Name": "TextItem9",
               "Text": "0:00.000",
               "TextColor": "#FFFFFFFF",
-              "Top": 186.0,
+              "Top": 174.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 82.0
@@ -2473,19 +2952,19 @@
               },
               "Height": 20.0,
               "Image": "logo-ferrari",
-              "Left": 108.0,
+              "Left": 82.0,
               "Name": "ImageItem",
-              "Top": 188.0,
+              "Top": 176.0,
               "Visible": true,
               "Width": 20.0
             }
           ],
           "Group": true,
           "Height": 24.0,
-          "Left": 30.0,
+          "Left": 0.0,
           "Name": "Behind 00",
           "RepeatTopOffset": 0.0,
-          "Top": 186.0,
+          "Top": 174.0,
           "Visible": true,
           "Width": 501.0
         },
@@ -2521,16 +3000,16 @@
                 "RadiusTopRight": 5
               },
               "Font": "Roboto",
-              "FontSize": 15.0,
-              "FontWeight": "Bold",
+              "FontSize": 17.0,
+              "FontWeight": "Black",
               "Height": 24.0,
               "HorizontalAlignment": 1,
               "IsTextItem": true,
-              "Left": 30.0,
+              "Left": 0.0,
               "Name": "TextItem0",
               "Text": "00",
               "TextColor": "#FF000000",
-              "Top": 220.0,
+              "Top": 203.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 24.0
@@ -2561,11 +3040,11 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 55.0,
+              "Left": 28.0,
               "Name": "TextItem5",
               "Text": "#000",
               "TextColor": "#FFFFFFFF",
-              "Top": 220.0,
+              "Top": 203.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 48.0
@@ -2597,14 +3076,14 @@
               "Height": 24.0,
               "HorizontalAlignment": 0,
               "IsTextItem": true,
-              "Left": 134.0,
+              "Left": 110.0,
               "Name": "TextItem6",
               "Text": "A Driver",
               "TextColor": "#FFFFFFFF",
-              "Top": 220.0,
+              "Top": 203.0,
               "VerticalAlignment": 1,
               "Visible": true,
-              "Width": 130.0
+              "Width": 125.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -2633,11 +3112,11 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 270.0,
+              "Left": 240.0,
               "Name": "TextItem7",
               "Text": "+000.0",
               "TextColor": "#FFFFFFFF",
-              "Top": 220.0,
+              "Top": 203.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 65.0
@@ -2656,7 +3135,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverBehind_01_Position]) = 0, '#C500CE', '#FFFFFF')"
+                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverBehind_01_Position]) == 0, '#C500CE', '#FFFFFF')"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "TextColor"
@@ -2668,11 +3147,11 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 350.0,
+              "Left": 320.0,
               "Name": "TextItem8",
               "Text": "0:00.000",
               "TextColor": "#FFFFFFFF",
-              "Top": 220.0,
+              "Top": 203.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 82.0
@@ -2696,11 +3175,11 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 449.0,
+              "Left": 419.0,
               "Name": "TextItem9",
               "Text": "0:00.000",
               "TextColor": "#FFFFFFFF",
-              "Top": 220.0,
+              "Top": 203.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 82.0
@@ -2721,19 +3200,19 @@
               },
               "Height": 20.0,
               "Image": "logo-ferrari",
-              "Left": 108.0,
+              "Left": 82.0,
               "Name": "ImageItem",
-              "Top": 222.0,
+              "Top": 205.0,
               "Visible": true,
               "Width": 20.0
             }
           ],
           "Group": true,
           "Height": 24.0,
-          "Left": 30.0,
+          "Left": 0.0,
           "Name": "Behind 01",
           "RepeatTopOffset": 0.0,
-          "Top": 220.0,
+          "Top": 203.0,
           "Visible": true,
           "Width": 501.0
         },
@@ -2769,16 +3248,16 @@
                 "RadiusTopRight": 5
               },
               "Font": "Roboto",
-              "FontSize": 15.0,
-              "FontWeight": "Bold",
+              "FontSize": 17.0,
+              "FontWeight": "Black",
               "Height": 24.0,
               "HorizontalAlignment": 1,
               "IsTextItem": true,
-              "Left": 30.0,
+              "Left": 0.0,
               "Name": "TextItem0",
               "Text": "00",
               "TextColor": "#FF000000",
-              "Top": 254.0,
+              "Top": 232.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 24.0
@@ -2809,11 +3288,11 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 55.0,
+              "Left": 28.0,
               "Name": "TextItem5",
               "Text": "#000",
               "TextColor": "#FFFFFFFF",
-              "Top": 254.0,
+              "Top": 232.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 48.0
@@ -2845,14 +3324,14 @@
               "Height": 24.0,
               "HorizontalAlignment": 0,
               "IsTextItem": true,
-              "Left": 134.0,
+              "Left": 110.0,
               "Name": "TextItem6",
               "Text": "A Driver",
               "TextColor": "#FFFFFFFF",
-              "Top": 254.0,
+              "Top": 232.0,
               "VerticalAlignment": 1,
               "Visible": true,
-              "Width": 130.0
+              "Width": 125.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -2881,11 +3360,11 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 270.0,
+              "Left": 240.0,
               "Name": "TextItem7",
               "Text": "+000.0",
               "TextColor": "#FFFFFFFF",
-              "Top": 254.0,
+              "Top": 232.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 65.0
@@ -2904,7 +3383,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverBehind_02_Position]) = 0, '#C500CE', '#FFFFFF')"
+                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverBehind_02_Position]) == 0, '#C500CE', '#FFFFFF')"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "TextColor"
@@ -2916,11 +3395,11 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 350.0,
+              "Left": 320.0,
               "Name": "TextItem8",
               "Text": "0:00.000",
               "TextColor": "#FFFFFFFF",
-              "Top": 254.0,
+              "Top": 232.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 82.0
@@ -2944,11 +3423,11 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 449.0,
+              "Left": 419.0,
               "Name": "TextItem9",
               "Text": "0:00.000",
               "TextColor": "#FFFFFFFF",
-              "Top": 254.0,
+              "Top": 232.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 82.0
@@ -2969,93 +3448,517 @@
               },
               "Height": 20.0,
               "Image": "logo-ferrari",
-              "Left": 108.0,
+              "Left": 82.0,
               "Name": "ImageItem",
-              "Top": 256.0,
+              "Top": 234.0,
               "Visible": true,
               "Width": 20.0
             }
           ],
           "Group": true,
           "Height": 24.0,
-          "Left": 30.0,
+          "Left": 0.0,
           "Name": "Behind 02",
           "RepeatTopOffset": 0.0,
-          "Top": 254.0,
+          "Top": 232.0,
           "Visible": true,
           "Width": 501.0
         },
         {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
           "BackgroundColor": "#00FFFFFF",
-          "Font": "Roboto",
-          "FontSize": 12.0,
-          "FontWeight": "Bold",
-          "Height": 14.0,
-          "HorizontalAlignment": 0,
-          "IsTextItem": true,
-          "Left": 30.0,
-          "Name": "TextItem23",
-          "Text": "RELATIVE",
-          "TextColor": "#FFFFFFFF",
-          "Top": 20.0,
-          "VerticalAlignment": 1,
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "if (isnull([PersistantTrackerPlugin.DriverBehind_03_CarNumber]), 0, 1)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FFFFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "[PersistantTrackerPlugin.DriverBehind_03_Position]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "BorderStyle": {
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Font": "Roboto",
+              "FontSize": 17.0,
+              "FontWeight": "Black",
+              "Height": 24.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 0.0,
+              "Name": "TextItem0",
+              "Text": "00",
+              "TextColor": "#FF000000",
+              "Top": 261.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 24.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "'#'+[PersistantTrackerPlugin.DriverBehind_03_CarNumber]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "var driver_rel = 'DriverBehind_03';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 18.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 28.0,
+              "Name": "TextItem5",
+              "Text": "#000",
+              "TextColor": "#FFFFFFFF",
+              "Top": 261.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 48.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = $prop('PersistantTrackerPlugin.DriverBehind_03_Name');\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "var driver_rel = 'DriverBehind_03';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 0,
+              "IsTextItem": true,
+              "Left": 110.0,
+              "Name": "TextItem6",
+              "Text": "A Driver",
+              "TextColor": "#FFFFFFFF",
+              "Top": 261.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 125.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "-0.0",
+                  "Formula": {
+                    "Expression": "abs([PersistantTrackerPlugin.DriverBehind_03_Gap])"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "var driver_rel = 'DriverBehind_03';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 240.0,
+              "Name": "TextItem7",
+              "Text": "+000.0",
+              "TextColor": "#FFFFFFFF",
+              "Top": 261.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 65.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "m\\.ss\\.fff",
+                  "Formula": {
+                    "Expression": "[PersistantTrackerPlugin.DriverBehind_03_BestLapTime]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverBehind_03_Position]) == 0, '#C500CE', '#FFFFFF')"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 320.0,
+              "Name": "TextItem8",
+              "Text": "0:00.000",
+              "TextColor": "#FFFFFFFF",
+              "Top": 261.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 82.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "m\\.ss\\.fff",
+                  "Formula": {
+                    "Expression": "[PersistantTrackerPlugin.DriverBehind_03_LastLapTime]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 419.0,
+              "Name": "TextItem9",
+              "Text": "0:00.000",
+              "TextColor": "#FFFFFFFF",
+              "Top": 261.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 82.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "AutoSize": true,
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Image": {
+                  "Formula": {
+                    "Expression": "var driver_rel = 'DriverBehind_03'\r\n\r\nvar carName = $prop('PersistantTrackerPlugin.'+driver_rel+'_CarName')\r\nvar carBrand = carName.split(' ')\r\nvar color = ''\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\tcolor = 'red' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\tcolor = '-blue' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\tcolor = '-red' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\tcolor = '-blue' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\tcolor = '' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\tcolor = ''\r\n\r\n}\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+color\r\n",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Image"
+                }
+              },
+              "Height": 20.0,
+              "Image": "logo-ferrari",
+              "Left": 82.0,
+              "Name": "ImageItem",
+              "Top": 263.0,
+              "Visible": true,
+              "Width": 20.0
+            }
+          ],
+          "Group": true,
+          "Height": 24.0,
+          "Left": 0.0,
+          "Name": "Behind 03",
+          "RepeatTopOffset": 0.0,
+          "Top": 261.0,
           "Visible": true,
-          "Width": 70.0
+          "Width": 501.0
         },
         {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
           "BackgroundColor": "#00FFFFFF",
-          "Font": "Roboto",
-          "FontSize": 12.0,
-          "FontWeight": "Bold",
-          "Height": 14.0,
-          "HorizontalAlignment": 2,
-          "IsTextItem": true,
-          "Left": 295.0,
-          "Name": "TextItem1",
-          "Text": "GAP",
-          "TextColor": "#FFFFFFFF",
-          "Top": 20.0,
-          "VerticalAlignment": 1,
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "if (isnull([PersistantTrackerPlugin.DriverBehind_04_CarNumber]), 0, 1)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FFFFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "[PersistantTrackerPlugin.DriverBehind_04_Position]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "BorderStyle": {
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Font": "Roboto",
+              "FontSize": 17.0,
+              "FontWeight": "Black",
+              "Height": 24.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 0.0,
+              "Name": "TextItem0",
+              "Text": "00",
+              "TextColor": "#FF000000",
+              "Top": 290.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 24.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "'#'+[PersistantTrackerPlugin.DriverBehind_04_CarNumber]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "var driver_rel = 'DriverBehind_04';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 18.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 28.0,
+              "Name": "TextItem5",
+              "Text": "#000",
+              "TextColor": "#FFFFFFFF",
+              "Top": 290.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 48.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = $prop('PersistantTrackerPlugin.DriverBehind_04_Name');\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "var driver_rel = 'DriverBehind_04';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 0,
+              "IsTextItem": true,
+              "Left": 110.0,
+              "Name": "TextItem6",
+              "Text": "A Driver",
+              "TextColor": "#FFFFFFFF",
+              "Top": 290.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 125.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "-0.0",
+                  "Formula": {
+                    "Expression": "abs([PersistantTrackerPlugin.DriverBehind_04_Gap])"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "var driver_rel = 'DriverBehind_04';\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\treturn '#FF7400' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\treturn '#00BFFF' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\treturn '#FF7400' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\treturn '#00BFFF' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\treturn '#FFFFFF' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn '#FFFFFF'\r\n\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 240.0,
+              "Name": "TextItem7",
+              "Text": "+000.0",
+              "TextColor": "#FFFFFFFF",
+              "Top": 290.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 65.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "m\\.ss\\.fff",
+                  "Formula": {
+                    "Expression": "[PersistantTrackerPlugin.DriverBehind_04_BestLapTime]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverBehind_04_Position]) == 0, '#C500CE', '#FFFFFF')"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 320.0,
+              "Name": "TextItem8",
+              "Text": "0:00.000",
+              "TextColor": "#FFFFFFFF",
+              "Top": 290.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 82.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "m\\.ss\\.fff",
+                  "Formula": {
+                    "Expression": "[PersistantTrackerPlugin.DriverBehind_04_LastLapTime]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 419.0,
+              "Name": "TextItem9",
+              "Text": "0:00.000",
+              "TextColor": "#FFFFFFFF",
+              "Top": 290.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 82.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "AutoSize": true,
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Image": {
+                  "Formula": {
+                    "Expression": "var driver_rel = 'DriverBehind_04'\r\n\r\nvar carName = $prop('PersistantTrackerPlugin.'+driver_rel+'_CarName')\r\nvar carBrand = carName.split(' ')\r\nvar color = ''\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\tcolor = 'red' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\tcolor = '-blue' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\tcolor = '-red' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\tcolor = '-blue' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\tcolor = '' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\tcolor = ''\r\n\r\n}\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+color\r\n",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Image"
+                }
+              },
+              "Height": 20.0,
+              "Image": "logo-ferrari",
+              "Left": 82.0,
+              "Name": "ImageItem",
+              "Top": 292.0,
+              "Visible": true,
+              "Width": 20.0
+            }
+          ],
+          "Group": true,
+          "Height": 24.0,
+          "Left": 0.0,
+          "Name": "Behind 04",
+          "RepeatTopOffset": 0.0,
+          "Top": 290.0,
           "Visible": true,
-          "Width": 40.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
-          "Font": "Roboto",
-          "FontSize": 12.0,
-          "FontWeight": "Bold",
-          "Height": 14.0,
-          "HorizontalAlignment": 2,
-          "IsTextItem": true,
-          "Left": 390.0,
-          "Name": "TextItem2",
-          "Text": "BEST",
-          "TextColor": "#FFFFFFFF",
-          "Top": 20.0,
-          "VerticalAlignment": 1,
-          "Visible": true,
-          "Width": 40.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
-          "Font": "Roboto",
-          "FontSize": 12.0,
-          "FontWeight": "Bold",
-          "Height": 14.0,
-          "HorizontalAlignment": 2,
-          "IsTextItem": true,
-          "Left": 489.0,
-          "Name": "TextItem3",
-          "Text": "LAST",
-          "TextColor": "#FFFFFFFF",
-          "Top": 20.0,
-          "VerticalAlignment": 1,
-          "Visible": true,
-          "Width": 40.0
+          "Width": 501.0
         }
       ],
       "Name": "Screen1",
@@ -3068,7 +3971,7 @@
       "ScreenEnabledExpression": {
         "Expression": ""
       },
-      "ScreenId": "162321a7-4524-4926-85a6-f6997d636ffc"
+      "ScreenId": "3606ed9d-0638-4225-a261-3863f7802dff"
     }
   ],
   "ShowBackground": true,

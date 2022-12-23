@@ -12,28 +12,8 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "40aceb1a-97a2-4a27-afc2-00b7cc6eb04e",
+  "Id": "007a19e1-58b9-4e62-9035-b6edb9568b89",
   "Images": [
-    {
-      "Extension": ".png",
-      "Height": 17,
-      "Length": 273,
-      "MD5": "2a483f656d34effb6a48ce795f6f0f74",
-      "Modified": false,
-      "Name": "air-temp",
-      "Optimized": true,
-      "Width": 20
-    },
-    {
-      "Extension": ".png",
-      "Height": 19,
-      "Length": 328,
-      "MD5": "de84363ffada443f172b161ec7ae2263",
-      "Modified": false,
-      "Name": "track-temp",
-      "Optimized": true,
-      "Width": 19
-    },
     {
       "Extension": ".png",
       "Height": 20,
@@ -131,6 +111,26 @@
       "Modified": false,
       "Name": "icon-weather-thunder",
       "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Height": 17,
+      "Length": 273,
+      "MD5": "2a483f656d34effb6a48ce795f6f0f74",
+      "Modified": false,
+      "Name": "air-temp",
+      "Optimized": true,
+      "Width": 20
+    },
+    {
+      "Extension": ".png",
+      "Height": 19,
+      "Length": 328,
+      "MD5": "de84363ffada443f172b161ec7ae2263",
+      "Modified": false,
+      "Name": "track-temp",
+      "Optimized": true,
+      "Width": 19
     }
   ],
   "IsOverlay": false,
@@ -169,7 +169,7 @@
               "BackgroundColor": "#00FFFFFF",
               "Height": 17.0,
               "Image": "air-temp",
-              "Left": 47.0,
+              "Left": 23.5,
               "Name": "ImageItem0",
               "Top": 4.0,
               "Visible": true,
@@ -194,7 +194,7 @@
               "Height": 24.0,
               "HorizontalAlignment": 0,
               "IsTextItem": true,
-              "Left": 71.0,
+              "Left": 47.5,
               "Name": "Air",
               "Text": "0\u00b0",
               "TextColor": "#FFFFFFFF",
@@ -209,7 +209,7 @@
               "BackgroundColor": "#00FFFFFF",
               "Height": 19.0,
               "Image": "track-temp",
-              "Left": 108.0,
+              "Left": 84.5,
               "Name": "ImageItem1",
               "Top": 3.0,
               "Visible": true,
@@ -234,7 +234,7 @@
               "Height": 24.0,
               "HorizontalAlignment": 0,
               "IsTextItem": true,
-              "Left": 130.0,
+              "Left": 106.5,
               "Name": "Track",
               "Text": "0\u00b0",
               "TextColor": "#FFFFFFFF",
@@ -246,7 +246,7 @@
           ],
           "Group": true,
           "Height": 24.0,
-          "Left": 47.0,
+          "Left": 23.5,
           "Name": "Layer1",
           "Top": 0.0,
           "Visible": true,
@@ -260,7 +260,7 @@
           "Left": 32.0,
           "Name": "RectangleItem1",
           "Top": 2.0,
-          "Visible": true,
+          "Visible": false,
           "Width": 1.0
         },
         {
@@ -282,7 +282,7 @@
           "Left": 0.0,
           "Name": "ImageItem",
           "Top": 2.0,
-          "Visible": true,
+          "Visible": false,
           "Width": 20.0
         }
       ],

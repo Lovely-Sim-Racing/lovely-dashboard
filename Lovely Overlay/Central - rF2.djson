@@ -1,7 +1,7 @@
 {
   "BackgroundColor": "#FF000000",
   "BackgroundOpacity": 100.0,
-  "BaseHeight": 300,
+  "BaseHeight": 330,
   "BaseWidth": 160,
   "DashboardDebugManager": {
     "Maximized": false
@@ -11,12 +11,12 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "5eb51673-f364-472d-81a5-76b97a4a4682",
+  "Id": "80242410-e0ee-46dc-9d6d-6be15384d47a",
   "Images": [],
   "IsOverlay": false,
   "Metadata": {
     "EnableOnDashboardMessaging": true,
-    "Height": 300.0,
+    "Height": 330.0,
     "IdleScreensIndexs": [],
     "InGameScreensIndexs": [
       0,
@@ -41,18 +41,8 @@
       "IsOverlayLayer": false,
       "Items": [
         {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.SpeedText, SimHub.Plugins",
           "BackgroundColor": "#FFFFFFFF",
-          "Bindings": {
-            "Text": {
-              "FormatString": "0",
-              "Formula": {
-                "Expression": "[DataCorePlugin.GameData.SpeedLocal]"
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Text"
-            }
-          },
           "BorderStyle": {
             "RadiusBottomLeft": 5,
             "RadiusBottomRight": 5,
@@ -62,15 +52,17 @@
           "Font": "Roboto",
           "FontSize": 30.0,
           "FontWeight": "Bold",
+          "Format": "0",
           "Height": 40.0,
           "HorizontalAlignment": 1,
           "IsFreezed": true,
           "IsTextItem": true,
           "Left": 0.0,
-          "Name": "Speed ",
-          "Text": "000",
+          "Name": "SpeedText0",
+          "NoDataText": "0",
+          "ShadowColor": "#FF000000",
           "TextColor": "#FF000000",
-          "Top": 260.0,
+          "Top": 290.0,
           "VerticalAlignment": 1,
           "Visible": true,
           "Width": 160.0
@@ -116,7 +108,7 @@
           "TextPadding": {
             "PaddingLeft": 55
           },
-          "Top": 260.0,
+          "Top": 290.0,
           "VerticalAlignment": 1,
           "Visible": true,
           "Width": 160.0
@@ -158,7 +150,7 @@
           "Name": "Clutch",
           "Text": "000",
           "TextColor": "#FF000000",
-          "Top": 268.0,
+          "Top": 298.0,
           "VerticalAlignment": 1,
           "Visible": true,
           "Width": 45.0
@@ -173,11 +165,11 @@
             "RadiusTopLeft": 5,
             "RadiusTopRight": 5
           },
-          "Height": 195.0,
+          "Height": 225.0,
           "IsFreezed": true,
           "IsRectangleItem": true,
           "Left": 0.0,
-          "Name": "RectangleItem0",
+          "Name": "RectangleItem",
           "Top": 45.0,
           "Visible": false,
           "Width": 160.0
@@ -207,7 +199,7 @@
             "RadiusTopLeft": 5,
             "RadiusTopRight": 5
           },
-          "Height": 195.0,
+          "Height": 225.0,
           "IsFreezed": true,
           "IsRectangleItem": true,
           "Left": 0.0,
@@ -228,11 +220,10 @@
               "TargetPropertyName": "Text"
             }
           },
-          "BlinkDelay": 200.0,
           "Font": "Roboto",
           "FontSize": 180.0,
           "FontWeight": "Bold",
-          "Height": 170.0,
+          "Height": 200.0,
           "HorizontalAlignment": 1,
           "IsFreezed": true,
           "IsTextItem": true,
@@ -260,26 +251,35 @@
           "NoDataText": "0",
           "TextAfterValue": "",
           "TextColor": "#FFFFFFFF",
-          "Top": 198.0,
+          "Top": 220.0,
           "VerticalAlignment": 1,
           "Visible": true,
           "Width": 160.0
         },
         {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.LiveDeltaToBestText, SimHub.Plugins",
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
           "BackgroundColor": "#FF878787",
           "Bindings": {
             "BackgroundColor": {
               "Formula": {
-                "Expression": "if ( $prop('DataCorePlugin.GameRawData.Graphics.isValidLap') == 1 ) {\r\n\t\r\n\tvar timeDiffMine = $prop('DataCorePlugin.GameRawData.Graphics.iEstimatedLapTime')/1000 - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\r\n\tvar timeDiffOverall = $prop('DataCorePlugin.GameRawData.Graphics.iEstimatedLapTime')/1000 - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\r\n\tif ( timeDiffMine > 0 ) {\r\n\t\r\n\t\treturn '#ffe04c' // Yellow\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( timeDiffOverall > 0 ) {\r\n\t\r\n\t\t\treturn '#00ff02' // Green\r\n\t\t\r\n\t\t} else {\r\n\t\r\n\t\t\treturn '#C500CE' // Purple\r\n\t\t\r\n\t\t}\r\n\t\t\r\n\t}\r\n\t\t\r\n\r\n} else {\r\n\r\n\treturn '#FA0000'\r\n\r\n}",
+                "Expression": "\r\nvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\r\nvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\r\nif ( timeDiffMine > 0 ) {\r\n\r\n\treturn '#ffe04c' // Yellow\r\n\t\r\n} else {\r\n\r\n\tif ( timeDiffOverall > 0 ) {\r\n\r\n\t\treturn '#00ff02' // Green\r\n\t\r\n\t} else {\r\n\r\n\t\treturn '#C500CE' // Purple\r\n\t\r\n\t}\r\n\t\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
               "TargetPropertyName": "BackgroundColor"
             },
+            "Text": {
+              "FormatString": "0.000",
+              "Formula": {
+                "Expression": "if ( timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime')) == 0 ) {\r\n\r\n\treturn 0\r\n\r\n} else {\r\n\r\n\treturn timespantoseconds( $prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime'))\r\n\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Text"
+            },
             "TextColor": {
               "Formula": {
-                "Expression": "if ( $prop('DataCorePlugin.GameRawData.Graphics.isValidLap') == 1 ) {\r\n\t\r\n\tvar timeDiffMine = $prop('DataCorePlugin.GameRawData.Graphics.iEstimatedLapTime')/1000 - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\r\n\tvar timeDiffOverall = $prop('DataCorePlugin.GameRawData.Graphics.iEstimatedLapTime')/1000 - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\r\n\tif ( timeDiffMine > 0 ) {\r\n\t\r\n\t\treturn '#000000' // Yellow\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( timeDiffOverall > 0 ) {\r\n\t\r\n\t\t\treturn '#000000' // Green\r\n\t\t\r\n\t\t} else {\r\n\t\r\n\t\t\treturn '#ffffff' // Purple\r\n\t\t\r\n\t\t}\r\n\t\t\r\n\t}\r\n\t\t\r\n\r\n} else {\r\n\r\n\treturn '#ffffff'\r\n\r\n}",
+                "Expression": "var timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\r\nvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\r\nif ( timeDiffMine > 0 ) {\r\n\r\n\treturn '#000000' // Yellow\r\n\t\r\n} else {\r\n\r\n\tif ( timeDiffOverall > 0 ) {\r\n\r\n\t\treturn '#000000' // Green\r\n\t\r\n\t} else {\r\n\r\n\t\treturn '#ffffff' // Purple\r\n\t\r\n\t}\r\n\t\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -295,15 +295,13 @@
           "Font": "Roboto",
           "FontSize": 30.0,
           "FontWeight": "Bold",
-          "Format": "0.000",
           "Height": 40.0,
           "HorizontalAlignment": 1,
-          "IsFreezed": true,
           "IsTextItem": true,
           "Left": 0.0,
-          "Name": "LiveDeltaToBestText0",
-          "NoDataText": "-",
-          "TextColor": "#FF000000",
+          "Name": "TextItem",
+          "Text": "+0.000",
+          "TextColor": "#FFFFFFFF",
           "Top": 0.0,
           "VerticalAlignment": 1,
           "Visible": true,
@@ -341,7 +339,7 @@
           "Name": "LinearGaugeItem0",
           "PAW": 88.0,
           "Steps": 0.0,
-          "Top": 245.0,
+          "Top": 275.0,
           "UseAlternateStyle": false,
           "Value": 55.0,
           "Visible": true,
@@ -379,7 +377,7 @@
           "Name": "LinearGaugeItem1",
           "PAW": 16.0,
           "Steps": 0.0,
-          "Top": 245.0,
+          "Top": 275.0,
           "UseAlternateStyle": false,
           "Value": 10.0,
           "Visible": true,
@@ -407,7 +405,7 @@
                 "RadiusTopLeft": 15,
                 "RadiusTopRight": 15
               },
-              "Height": 300.0,
+              "Height": 330.0,
               "IsRectangleItem": true,
               "Left": 0.0,
               "Name": "RectangleItem",
@@ -437,7 +435,7 @@
               "Name": "TextItem",
               "Text": "N",
               "TextColor": "#FFFFFFFF",
-              "Top": 196.0,
+              "Top": 211.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 140.0
@@ -471,7 +469,7 @@
               "Name": "99",
               "Text": "00",
               "TextColor": "#FFFFFFFF",
-              "Top": 60.0,
+              "Top": 80.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 160.0
@@ -505,7 +503,7 @@
               "Name": "100",
               "Text": "000",
               "TextColor": "#FFFFFFFF",
-              "Top": 60.0,
+              "Top": 80.0,
               "VerticalAlignment": 1,
               "Visible": false,
               "Width": 160.0
@@ -523,14 +521,14 @@
               "Name": "TextItem",
               "Text": "PIT LIMITER",
               "TextColor": "#FFFFFFFF",
-              "Top": 45.0,
+              "Top": 60.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 140.0
             }
           ],
           "Group": true,
-          "Height": 300.0,
+          "Height": 330.0,
           "Left": 0.0,
           "Name": "PL",
           "Top": 0.0,
@@ -559,7 +557,7 @@
                 "RadiusTopLeft": 15,
                 "RadiusTopRight": 15
               },
-              "Height": 300.0,
+              "Height": 330.0,
               "IsRectangleItem": true,
               "Left": 0.0,
               "Name": "RectangleItem",
@@ -589,7 +587,7 @@
               "Name": "TextItem",
               "Text": "N",
               "TextColor": "#FF000000",
-              "Top": 196.0,
+              "Top": 211.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 140.0
@@ -607,7 +605,7 @@
               "Name": "TextItem",
               "Text": "OFF",
               "TextColor": "#FF000000",
-              "Top": 110.0,
+              "Top": 128.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 140.0
@@ -625,14 +623,14 @@
               "Name": "TextItem",
               "Text": "ENG",
               "TextColor": "#FF000000",
-              "Top": 52.0,
+              "Top": 70.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 140.0
             }
           ],
           "Group": true,
-          "Height": 300.0,
+          "Height": 330.0,
           "Left": 0.0,
           "Name": "ENGOff",
           "Top": 0.0,
@@ -661,7 +659,7 @@
                 "RadiusTopLeft": 15,
                 "RadiusTopRight": 15
               },
-              "Height": 300.0,
+              "Height": 330.0,
               "IsRectangleItem": true,
               "Left": 0.0,
               "Name": "RectangleItem",
@@ -688,10 +686,10 @@
               "HorizontalAlignment": 1,
               "IsTextItem": true,
               "Left": 10.0,
-              "Name": "TextItem",
+              "Name": "TextItem2",
               "Text": "N",
               "TextColor": "#FFFFFFFF",
-              "Top": 196.0,
+              "Top": 211.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 140.0
@@ -709,7 +707,7 @@
               "Name": "TextItem",
               "Text": "OFF",
               "TextColor": "#FFFFFFFF",
-              "Top": 110.0,
+              "Top": 128.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 140.0
@@ -727,14 +725,14 @@
               "Name": "TextItem",
               "Text": "IGN",
               "TextColor": "#FFFFFFFF",
-              "Top": 52.0,
+              "Top": 70.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 140.0
             }
           ],
           "Group": true,
-          "Height": 300.0,
+          "Height": 330.0,
           "Left": 0.0,
           "Name": "IGN Off",
           "Top": 0.0,
@@ -752,7 +750,7 @@
       "ScreenEnabledExpression": {
         "Expression": ""
       },
-      "ScreenId": "6e12babf-9d62-43f0-90b9-769fc77341d2"
+      "ScreenId": "c46c9e6c-6a9a-47a5-9123-ff8fee4242aa"
     },
     {
       "AllowOverlays": true,
@@ -764,18 +762,8 @@
       "IsOverlayLayer": false,
       "Items": [
         {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.SpeedText, SimHub.Plugins",
           "BackgroundColor": "#FFFFFFFF",
-          "Bindings": {
-            "Text": {
-              "FormatString": "0",
-              "Formula": {
-                "Expression": "[DataCorePlugin.GameData.SpeedLocal]"
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Text"
-            }
-          },
           "BorderStyle": {
             "RadiusBottomLeft": 5,
             "RadiusBottomRight": 5,
@@ -785,14 +773,17 @@
           "Font": "Roboto",
           "FontSize": 30.0,
           "FontWeight": "Bold",
+          "Format": "0",
           "Height": 40.0,
           "HorizontalAlignment": 1,
+          "IsFreezed": true,
           "IsTextItem": true,
           "Left": 0.0,
-          "Name": "Speed",
-          "Text": "000",
+          "Name": "SpeedText0",
+          "NoDataText": "0",
+          "ShadowColor": "#FF000000",
           "TextColor": "#FF000000",
-          "Top": 260.0,
+          "Top": 290.0,
           "VerticalAlignment": 1,
           "Visible": true,
           "Width": 160.0
@@ -833,9 +824,9 @@
           "Name": "Clutch",
           "Text": "000",
           "TextColor": "#FF000000",
-          "Top": 268.0,
+          "Top": 298.0,
           "VerticalAlignment": 1,
-          "Visible": true,
+          "Visible": false,
           "Width": 45.0
         },
         {
@@ -848,11 +839,11 @@
             "RadiusTopLeft": 15,
             "RadiusTopRight": 15
           },
-          "Height": 240.0,
+          "Height": 270.0,
           "IsFreezed": true,
           "IsRectangleItem": true,
           "Left": 0.0,
-          "Name": "RectangleItem0",
+          "Name": "RectangleItem",
           "Top": 0.0,
           "Visible": true,
           "Width": 160.0
@@ -882,7 +873,7 @@
             "RadiusTopLeft": 15,
             "RadiusTopRight": 15
           },
-          "Height": 240.0,
+          "Height": 270.0,
           "IsFreezed": true,
           "IsRectangleItem": true,
           "Left": 0.0,
@@ -903,11 +894,10 @@
               "TargetPropertyName": "Text"
             }
           },
-          "BlinkDelay": 200.0,
           "Font": "Roboto",
           "FontSize": 180.0,
           "FontWeight": "Bold",
-          "Height": 170.0,
+          "Height": 200.0,
           "HorizontalAlignment": 1,
           "IsFreezed": true,
           "IsTextItem": true,
@@ -915,7 +905,7 @@
           "Name": "TextItem0",
           "Text": "N",
           "TextColor": "#FFFFFFFF",
-          "Top": 20.0,
+          "Top": 15.0,
           "VerticalAlignment": 1,
           "Visible": true,
           "Width": 160.0
@@ -935,9 +925,51 @@
           "NoDataText": "0",
           "TextAfterValue": "",
           "TextColor": "#FFFFFFFF",
-          "Top": 185.0,
+          "Top": 205.0,
           "VerticalAlignment": 1,
           "Visible": true,
+          "Width": 160.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.LiveDeltaToBestText, SimHub.Plugins",
+          "BackgroundColor": "#FF878787",
+          "Bindings": {
+            "BackgroundColor": {
+              "Formula": {
+                "Expression": "if ( [DeltaToSessionBest] > 0 , '#FA0000', if ( [DeltaToSessionBest] < 0 , '#00FF02', '#878787'))"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "BackgroundColor"
+            },
+            "TextColor": {
+              "Formula": {
+                "Expression": "if ( [DeltaToSessionBest] > 0 , '#000000', if ( [DeltaToSessionBest] < 0 , '#000000', '#ffffff'))"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "TextColor"
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 5,
+            "RadiusBottomRight": 5,
+            "RadiusTopLeft": 15,
+            "RadiusTopRight": 15
+          },
+          "Font": "Roboto",
+          "FontSize": 30.0,
+          "FontWeight": "Bold",
+          "Format": "0.000",
+          "Height": 40.0,
+          "HorizontalAlignment": 1,
+          "IsFreezed": true,
+          "IsTextItem": true,
+          "Left": 0.0,
+          "Name": "LiveDeltaToBestText0",
+          "NoDataText": "-",
+          "TextColor": "#FFFFFFFF",
+          "Top": 0.0,
+          "VerticalAlignment": 1,
+          "Visible": false,
           "Width": 160.0
         },
         {
@@ -972,7 +1004,7 @@
           "Name": "LinearGaugeItem0",
           "PAW": 56.0,
           "Steps": 0.0,
-          "Top": 245.0,
+          "Top": 275.0,
           "UseAlternateStyle": false,
           "Value": 35.0,
           "Visible": true,
@@ -1010,7 +1042,7 @@
           "Name": "LinearGaugeItem1",
           "PAW": 14.0,
           "Steps": 0.0,
-          "Top": 245.0,
+          "Top": 275.0,
           "UseAlternateStyle": false,
           "Value": 9.0,
           "Visible": true,
@@ -1038,7 +1070,7 @@
                 "RadiusTopLeft": 15,
                 "RadiusTopRight": 15
               },
-              "Height": 300.0,
+              "Height": 330.0,
               "IsRectangleItem": true,
               "Left": 0.0,
               "Name": "RectangleItem",
@@ -1068,7 +1100,7 @@
               "Name": "TextItem",
               "Text": "N",
               "TextColor": "#FFFFFFFF",
-              "Top": 196.0,
+              "Top": 211.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 140.0
@@ -1095,7 +1127,7 @@
               "Name": "TextItem",
               "Text": "00",
               "TextColor": "#FFFFFFFF",
-              "Top": 59.0,
+              "Top": 74.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 140.0
@@ -1113,14 +1145,14 @@
               "Name": "TextItem",
               "Text": "PIT LIMITER",
               "TextColor": "#FFFFFFFF",
-              "Top": 45.0,
+              "Top": 60.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 140.0
             }
           ],
           "Group": true,
-          "Height": 300.0,
+          "Height": 330.0,
           "Left": 0.0,
           "Name": "PL",
           "Top": 0.0,
@@ -1149,7 +1181,7 @@
                 "RadiusTopLeft": 15,
                 "RadiusTopRight": 15
               },
-              "Height": 300.0,
+              "Height": 330.0,
               "IsRectangleItem": true,
               "Left": 0.0,
               "Name": "RectangleItem",
@@ -1179,7 +1211,7 @@
               "Name": "TextItem",
               "Text": "N",
               "TextColor": "#FF000000",
-              "Top": 196.0,
+              "Top": 211.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 140.0
@@ -1197,7 +1229,7 @@
               "Name": "TextItem",
               "Text": "OFF",
               "TextColor": "#FF000000",
-              "Top": 110.0,
+              "Top": 128.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 140.0
@@ -1215,14 +1247,14 @@
               "Name": "TextItem",
               "Text": "ENG",
               "TextColor": "#FF000000",
-              "Top": 52.0,
+              "Top": 70.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 140.0
             }
           ],
           "Group": true,
-          "Height": 300.0,
+          "Height": 330.0,
           "Left": 0.0,
           "Name": "ENGOff",
           "Top": 0.0,
@@ -1251,7 +1283,7 @@
                 "RadiusTopLeft": 15,
                 "RadiusTopRight": 15
               },
-              "Height": 300.0,
+              "Height": 330.0,
               "IsRectangleItem": true,
               "Left": 0.0,
               "Name": "RectangleItem",
@@ -1278,10 +1310,10 @@
               "HorizontalAlignment": 1,
               "IsTextItem": true,
               "Left": 10.0,
-              "Name": "TextItem",
+              "Name": "TextItem2",
               "Text": "N",
               "TextColor": "#FFFFFFFF",
-              "Top": 196.0,
+              "Top": 211.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 140.0
@@ -1299,7 +1331,7 @@
               "Name": "TextItem",
               "Text": "OFF",
               "TextColor": "#FFFFFFFF",
-              "Top": 110.0,
+              "Top": 128.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 140.0
@@ -1317,14 +1349,14 @@
               "Name": "TextItem",
               "Text": "IGN",
               "TextColor": "#FFFFFFFF",
-              "Top": 52.0,
+              "Top": 70.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 140.0
             }
           ],
           "Group": true,
-          "Height": 300.0,
+          "Height": 330.0,
           "Left": 0.0,
           "Name": "IGN Off",
           "Top": 0.0,
@@ -1342,7 +1374,7 @@
       "ScreenEnabledExpression": {
         "Expression": ""
       },
-      "ScreenId": "89dd15fa-4877-4545-9847-52b893d2ed5d"
+      "ScreenId": "e3ca8a53-892f-41ed-b756-5291cb59b55c"
     }
   ],
   "ShowBackground": true,

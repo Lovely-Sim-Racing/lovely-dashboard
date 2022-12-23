@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "baf1f89c-5c89-4743-899a-e5e3115bd633",
+  "Id": "e4013f23-1b03-4e7c-bb3e-543be7a8fd6c",
   "Images": [],
   "IsOverlay": false,
   "Metadata": {
@@ -77,7 +77,7 @@
                 "Text": {
                   "FormatString": "hh\\:mm",
                   "Formula": {
-                    "Expression": "secondstotimespan([DataCorePlugin.GameRawData.Graphics.clock])"
+                    "Expression": "secondstotimespan([DataCorePlugin.GameRawData.Telemetry.SessionTimeOfDay])"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
@@ -91,6 +91,7 @@
               "IsTextItem": true,
               "Left": 215.0,
               "Name": "TextItem14",
+              "ShadowColor": "#FF878787",
               "Text": "00:00",
               "TextColor": "#FF878787",
               "Top": 0.0,
@@ -102,7 +103,7 @@
           "Group": true,
           "Height": 49.0,
           "Left": 215.0,
-          "Name": "Clock",
+          "Name": "Clock iR",
           "Top": 0.0,
           "Visible": true,
           "Width": 65.0
@@ -110,6 +111,15 @@
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
           "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": " if ([IRacingExtraProperties.iRacing_CurrentSession_IsLimitedSessionLaps], 0, 1)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
           "Childrens": [
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -177,6 +187,15 @@
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
           "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": " if ([IRacingExtraProperties.iRacing_CurrentSession_IsLimitedSessionLaps], 0, 1)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
           "Childrens": [
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -239,7 +258,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "if ([DataCorePlugin.CurrentGame]='AssettoCorsaCompetizione', 1, 0)"
+                "Expression": " if ([IRacingExtraProperties.iRacing_CurrentSession_IsLimitedSessionLaps], 0, 1)"
               },
               "Mode": 2,
               "TargetPropertyName": "Visible"
@@ -263,7 +282,6 @@
               "FontWeight": "Bold",
               "Height": 14.0,
               "HorizontalAlignment": 0,
-              "IsFreezed": true,
               "IsTextItem": true,
               "Left": 0.0,
               "Name": "TextItem18",
@@ -295,7 +313,7 @@
                 }
               },
               "Font": "Roboto",
-              "FontSize": 30.0,
+              "FontSize": 28.0,
               "FontWeight": "Bold",
               "Height": 35.0,
               "HorizontalAlignment": 0,
@@ -383,10 +401,169 @@
           "Group": true,
           "Height": 48.0,
           "Left": 0.0,
-          "Name": "Session Time",
+          "Name": "Session Time iR",
           "Top": 1.0,
           "Visible": true,
           "Width": 120.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": " if ([IRacingExtraProperties.iRacing_CurrentSession_IsLimitedSessionLaps], 1, 0)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF000000",
+              "Height": 50.0,
+              "IsRectangleItem": true,
+              "Left": 0.0,
+              "Name": "RectangleItem",
+              "Top": 0.0,
+              "Visible": false,
+              "Width": 210.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Childrens": [
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Font": "Roboto",
+                  "FontSize": 12.0,
+                  "FontWeight": "Bold",
+                  "Height": 14.0,
+                  "HorizontalAlignment": 1,
+                  "IsTextItem": true,
+                  "Left": 160.0,
+                  "Name": "TextItem16",
+                  "Text": "POS",
+                  "TextColor": "#FF878787",
+                  "Top": 35.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 35.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0",
+                      "Formula": {
+                        "Expression": "[DataCorePlugin.GameData.Position]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 28.0,
+                  "FontWeight": "Bold",
+                  "Height": 35.0,
+                  "HorizontalAlignment": 1,
+                  "IsTextItem": true,
+                  "Left": 160.0,
+                  "Name": "TextItem14",
+                  "Text": "00",
+                  "TextColor": "#FFFFFFFF",
+                  "Top": 1.0,
+                  "VerticalAlignment": 2,
+                  "Visible": true,
+                  "Width": 35.0
+                }
+              ],
+              "Group": true,
+              "Height": 48.0,
+              "Left": 160.0,
+              "Name": "Pos",
+              "Top": 1.0,
+              "Visible": true,
+              "Width": 35.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Childrens": [
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "Formula": {
+                        "Expression": "ucase([DataCorePlugin.GameData.SessionTypeName])"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 12.0,
+                  "FontWeight": "Bold",
+                  "Height": 14.0,
+                  "HorizontalAlignment": 0,
+                  "IsTextItem": true,
+                  "Left": 0.0,
+                  "Name": "TextItem17",
+                  "Text": "LAPS",
+                  "TextColor": "#FF878787",
+                  "Top": 35.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 55.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "Formula": {
+                        "Expression": "'' + [DataCorePlugin.GameData.CurrentLap] + ' of ' + [DataCorePlugin.GameData.TotalLaps] "
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 28.0,
+                  "FontWeight": "Bold",
+                  "Height": 35.0,
+                  "HorizontalAlignment": 0,
+                  "IsTextItem": true,
+                  "Left": 0.0,
+                  "Name": "TextItem15",
+                  "Text": "000 of 000",
+                  "TextColor": "#FFFFFFFF",
+                  "Top": 1.0,
+                  "VerticalAlignment": 2,
+                  "Visible": true,
+                  "Width": 140.0
+                }
+              ],
+              "Group": true,
+              "Height": 48.0,
+              "Left": 0.0,
+              "Name": "laps2",
+              "Top": 1.0,
+              "Visible": true,
+              "Width": 140.0
+            }
+          ],
+          "Group": true,
+          "Height": 50.0,
+          "Left": 0.0,
+          "Name": "Lap Based iR",
+          "Top": 0.0,
+          "Visible": false,
+          "Width": 210.0
         }
       ],
       "Name": "Screen1",
