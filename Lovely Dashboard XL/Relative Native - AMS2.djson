@@ -2,7 +2,7 @@
   "BackgroundColor": "#FF000000",
   "BackgroundOpacity": 100.0,
   "BaseHeight": 314,
-  "BaseWidth": 501,
+  "BaseWidth": 370,
   "DashboardDebugManager": {
     "Maximized": false
   },
@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": false,
-  "Id": "437277bf-12db-45a7-add8-134059359fdc",
+  "Id": "299667c0-3e0c-4120-9a13-75b900f8e805",
   "Images": [
     {
       "Extension": ".png",
@@ -1184,7 +1184,7 @@
     "OverlaySizeWarning": false,
     "PitScreensIndexs": [],
     "ScreenCount": 1.0,
-    "Width": 501.0
+    "Width": 370.0
   },
   "Screens": [
     {
@@ -1276,7 +1276,7 @@
               "Top": 0.0,
               "VerticalAlignment": 1,
               "Visible": true,
-              "Width": 165.0
+              "Width": 235.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -1305,7 +1305,7 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 240.0,
+              "Left": 305.0,
               "Name": "TextItem7",
               "Text": "+000.0",
               "TextColor": "#FFFFFFFF",
@@ -1313,69 +1313,6 @@
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 65.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Text": {
-                  "FormatString": "m\\.ss\\.fff",
-                  "Formula": {
-                    "Expression": "[PersistantTrackerPlugin.DriverAhead_04_BestLapTime]"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                },
-                "TextColor": {
-                  "Formula": {
-                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverAhead_04_Position]) == 0, '#C500CE', '#FFFFFF')"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
-                }
-              },
-              "Font": "Roboto",
-              "FontSize": 20.0,
-              "FontWeight": "Bold",
-              "Height": 24.0,
-              "HorizontalAlignment": 2,
-              "IsTextItem": true,
-              "Left": 320.0,
-              "Name": "TextItem8",
-              "Text": "0:00.000",
-              "TextColor": "#FFFFFFFF",
-              "Top": 0.0,
-              "VerticalAlignment": 1,
-              "Visible": true,
-              "Width": 82.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Text": {
-                  "FormatString": "m\\.ss\\.fff",
-                  "Formula": {
-                    "Expression": "[PersistantTrackerPlugin.DriverAhead_04_LastLapTime]"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                }
-              },
-              "Font": "Roboto",
-              "FontSize": 20.0,
-              "FontWeight": "Bold",
-              "Height": 24.0,
-              "HorizontalAlignment": 2,
-              "IsTextItem": true,
-              "Left": 419.0,
-              "Name": "TextItem9",
-              "Text": "0:00.000",
-              "TextColor": "#FFFFFFFF",
-              "Top": 0.0,
-              "VerticalAlignment": 1,
-              "Visible": true,
-              "Width": 82.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
@@ -1407,7 +1344,7 @@
           "RepeatTopOffset": 0.0,
           "Top": 0.0,
           "Visible": true,
-          "Width": 501.0
+          "Width": 370.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
@@ -1489,7 +1426,7 @@
               "Top": 29.0,
               "VerticalAlignment": 1,
               "Visible": true,
-              "Width": 165.0
+              "Width": 235.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -1518,7 +1455,7 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 240.0,
+              "Left": 305.0,
               "Name": "TextItem7",
               "Text": "+000.0",
               "TextColor": "#FFFFFFFF",
@@ -1526,69 +1463,6 @@
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 65.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Text": {
-                  "FormatString": "m\\.ss\\.fff",
-                  "Formula": {
-                    "Expression": "[PersistantTrackerPlugin.DriverAhead_03_BestLapTime]"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                },
-                "TextColor": {
-                  "Formula": {
-                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverAhead_03_Position]) == 0, '#C500CE', '#FFFFFF')"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
-                }
-              },
-              "Font": "Roboto",
-              "FontSize": 20.0,
-              "FontWeight": "Bold",
-              "Height": 24.0,
-              "HorizontalAlignment": 2,
-              "IsTextItem": true,
-              "Left": 320.0,
-              "Name": "TextItem8",
-              "Text": "0:00.000",
-              "TextColor": "#FFFFFFFF",
-              "Top": 29.0,
-              "VerticalAlignment": 1,
-              "Visible": true,
-              "Width": 82.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Text": {
-                  "FormatString": "m\\.ss\\.fff",
-                  "Formula": {
-                    "Expression": "[PersistantTrackerPlugin.DriverAhead_03_LastLapTime]"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                }
-              },
-              "Font": "Roboto",
-              "FontSize": 20.0,
-              "FontWeight": "Bold",
-              "Height": 24.0,
-              "HorizontalAlignment": 2,
-              "IsTextItem": true,
-              "Left": 419.0,
-              "Name": "TextItem9",
-              "Text": "0:00.000",
-              "TextColor": "#FFFFFFFF",
-              "Top": 29.0,
-              "VerticalAlignment": 1,
-              "Visible": true,
-              "Width": 82.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
@@ -1620,7 +1494,7 @@
           "RepeatTopOffset": 0.0,
           "Top": 29.0,
           "Visible": true,
-          "Width": 501.0
+          "Width": 370.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
@@ -1702,7 +1576,7 @@
               "Top": 58.0,
               "VerticalAlignment": 1,
               "Visible": true,
-              "Width": 165.0
+              "Width": 235.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -1731,7 +1605,7 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 240.0,
+              "Left": 305.0,
               "Name": "TextItem7",
               "Text": "+000.0",
               "TextColor": "#FFFFFFFF",
@@ -1739,69 +1613,6 @@
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 65.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Text": {
-                  "FormatString": "m\\.ss\\.fff",
-                  "Formula": {
-                    "Expression": "[PersistantTrackerPlugin.DriverAhead_02_BestLapTime]"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                },
-                "TextColor": {
-                  "Formula": {
-                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverAhead_02_Position]) == 0, '#C500CE', '#FFFFFF')"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
-                }
-              },
-              "Font": "Roboto",
-              "FontSize": 20.0,
-              "FontWeight": "Bold",
-              "Height": 24.0,
-              "HorizontalAlignment": 2,
-              "IsTextItem": true,
-              "Left": 320.0,
-              "Name": "TextItem8",
-              "Text": "0:00.000",
-              "TextColor": "#FFFFFFFF",
-              "Top": 58.0,
-              "VerticalAlignment": 1,
-              "Visible": true,
-              "Width": 82.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Text": {
-                  "FormatString": "m\\.ss\\.fff",
-                  "Formula": {
-                    "Expression": "[PersistantTrackerPlugin.DriverAhead_02_LastLapTime]"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                }
-              },
-              "Font": "Roboto",
-              "FontSize": 20.0,
-              "FontWeight": "Bold",
-              "Height": 24.0,
-              "HorizontalAlignment": 2,
-              "IsTextItem": true,
-              "Left": 419.0,
-              "Name": "TextItem9",
-              "Text": "0:00.000",
-              "TextColor": "#FFFFFFFF",
-              "Top": 58.0,
-              "VerticalAlignment": 1,
-              "Visible": true,
-              "Width": 82.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
@@ -1833,7 +1644,7 @@
           "RepeatTopOffset": 0.0,
           "Top": 58.0,
           "Visible": true,
-          "Width": 501.0
+          "Width": 370.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
@@ -1915,7 +1726,7 @@
               "Top": 87.0,
               "VerticalAlignment": 1,
               "Visible": true,
-              "Width": 165.0
+              "Width": 235.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -1944,7 +1755,7 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 240.0,
+              "Left": 305.0,
               "Name": "TextItem7",
               "Text": "+000.0",
               "TextColor": "#FFFFFFFF",
@@ -1952,69 +1763,6 @@
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 65.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Text": {
-                  "FormatString": "m\\.ss\\.fff",
-                  "Formula": {
-                    "Expression": "[PersistantTrackerPlugin.DriverAhead_01_BestLapTime]"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                },
-                "TextColor": {
-                  "Formula": {
-                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverAhead_01_Position]) == 0, '#C500CE', '#FFFFFF')"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
-                }
-              },
-              "Font": "Roboto",
-              "FontSize": 20.0,
-              "FontWeight": "Bold",
-              "Height": 24.0,
-              "HorizontalAlignment": 2,
-              "IsTextItem": true,
-              "Left": 320.0,
-              "Name": "TextItem8",
-              "Text": "0:00.000",
-              "TextColor": "#FFFFFFFF",
-              "Top": 87.0,
-              "VerticalAlignment": 1,
-              "Visible": true,
-              "Width": 82.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Text": {
-                  "FormatString": "m\\.ss\\.fff",
-                  "Formula": {
-                    "Expression": "[PersistantTrackerPlugin.DriverAhead_01_LastLapTime]"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                }
-              },
-              "Font": "Roboto",
-              "FontSize": 20.0,
-              "FontWeight": "Bold",
-              "Height": 24.0,
-              "HorizontalAlignment": 2,
-              "IsTextItem": true,
-              "Left": 419.0,
-              "Name": "TextItem9",
-              "Text": "0:00.000",
-              "TextColor": "#FFFFFFFF",
-              "Top": 87.0,
-              "VerticalAlignment": 1,
-              "Visible": true,
-              "Width": 82.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
@@ -2046,7 +1794,7 @@
           "RepeatTopOffset": 0.0,
           "Top": 87.0,
           "Visible": true,
-          "Width": 501.0
+          "Width": 370.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
@@ -2128,7 +1876,7 @@
               "Top": 116.0,
               "VerticalAlignment": 1,
               "Visible": true,
-              "Width": 165.0
+              "Width": 235.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -2157,7 +1905,7 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 240.0,
+              "Left": 305.0,
               "Name": "TextItem7",
               "Text": "+000.0",
               "TextColor": "#FFFFFFFF",
@@ -2165,69 +1913,6 @@
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 65.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Text": {
-                  "FormatString": "m\\.ss\\.fff",
-                  "Formula": {
-                    "Expression": "[PersistantTrackerPlugin.DriverAhead_00_BestLapTime]"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                },
-                "TextColor": {
-                  "Formula": {
-                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverAhead_00_Position]) == 0, '#C500CE', '#FFFFFF')"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
-                }
-              },
-              "Font": "Roboto",
-              "FontSize": 20.0,
-              "FontWeight": "Bold",
-              "Height": 24.0,
-              "HorizontalAlignment": 2,
-              "IsTextItem": true,
-              "Left": 320.0,
-              "Name": "TextItem8",
-              "Text": "0:00.000",
-              "TextColor": "#FFFFFFFF",
-              "Top": 116.0,
-              "VerticalAlignment": 1,
-              "Visible": true,
-              "Width": 82.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Text": {
-                  "FormatString": "m\\.ss\\.fff",
-                  "Formula": {
-                    "Expression": "[PersistantTrackerPlugin.DriverAhead_00_LastLapTime]"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                }
-              },
-              "Font": "Roboto",
-              "FontSize": 20.0,
-              "FontWeight": "Bold",
-              "Height": 24.0,
-              "HorizontalAlignment": 2,
-              "IsTextItem": true,
-              "Left": 419.0,
-              "Name": "TextItem9",
-              "Text": "0:00.000",
-              "TextColor": "#FFFFFFFF",
-              "Top": 116.0,
-              "VerticalAlignment": 1,
-              "Visible": true,
-              "Width": 82.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
@@ -2259,7 +1944,7 @@
           "RepeatTopOffset": 0.0,
           "Top": 116.0,
           "Visible": true,
-          "Width": 501.0
+          "Width": 370.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
@@ -2343,7 +2028,7 @@
               "Top": 145.0,
               "VerticalAlignment": 1,
               "Visible": true,
-              "Width": 165.0
+              "Width": 235.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -2354,7 +2039,7 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 240.0,
+              "Left": 305.0,
               "Name": "TextItem7",
               "Text": "0.0",
               "TextColor": "#FFFFE04C",
@@ -2362,69 +2047,6 @@
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 65.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Text": {
-                  "FormatString": "m\\.ss\\.fff",
-                  "Formula": {
-                    "Expression": "[DataCorePlugin.GameData.BestLapTime]"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                },
-                "TextColor": {
-                  "Formula": {
-                    "Expression": "if (driverdeltatobest([DataCorePlugin.GameData.Position]) == 0, '#C500CE', '#FFE04C')\r\n\r\n"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
-                }
-              },
-              "Font": "Roboto",
-              "FontSize": 20.0,
-              "FontWeight": "Bold",
-              "Height": 24.0,
-              "HorizontalAlignment": 2,
-              "IsTextItem": true,
-              "Left": 320.0,
-              "Name": "TextItem8",
-              "Text": "0:00.000",
-              "TextColor": "#FFFFE04C",
-              "Top": 145.0,
-              "VerticalAlignment": 1,
-              "Visible": true,
-              "Width": 82.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Text": {
-                  "FormatString": "m\\.ss\\.fff",
-                  "Formula": {
-                    "Expression": "[DataCorePlugin.GameData.LastLapTime]"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                }
-              },
-              "Font": "Roboto",
-              "FontSize": 20.0,
-              "FontWeight": "Bold",
-              "Height": 24.0,
-              "HorizontalAlignment": 2,
-              "IsTextItem": true,
-              "Left": 419.0,
-              "Name": "TextItem9",
-              "Text": "0:00.000",
-              "TextColor": "#FFFFE04C",
-              "Top": 145.0,
-              "VerticalAlignment": 1,
-              "Visible": true,
-              "Width": 82.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
@@ -2456,7 +2078,7 @@
           "RepeatTopOffset": 0.0,
           "Top": 145.0,
           "Visible": true,
-          "Width": 501.0
+          "Width": 370.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
@@ -2538,7 +2160,7 @@
               "Top": 174.0,
               "VerticalAlignment": 1,
               "Visible": true,
-              "Width": 165.0
+              "Width": 235.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -2567,7 +2189,7 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 240.0,
+              "Left": 305.0,
               "Name": "TextItem7",
               "Text": "+000.0",
               "TextColor": "#FFFFFFFF",
@@ -2575,69 +2197,6 @@
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 65.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Text": {
-                  "FormatString": "m\\.ss\\.fff",
-                  "Formula": {
-                    "Expression": "[PersistantTrackerPlugin.DriverBehind_00_BestLapTime]"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                },
-                "TextColor": {
-                  "Formula": {
-                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverBehind_00_Position]) == 0, '#C500CE', '#FFFFFF')"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
-                }
-              },
-              "Font": "Roboto",
-              "FontSize": 20.0,
-              "FontWeight": "Bold",
-              "Height": 24.0,
-              "HorizontalAlignment": 2,
-              "IsTextItem": true,
-              "Left": 320.0,
-              "Name": "TextItem8",
-              "Text": "0:00.000",
-              "TextColor": "#FFFFFFFF",
-              "Top": 174.0,
-              "VerticalAlignment": 1,
-              "Visible": true,
-              "Width": 82.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Text": {
-                  "FormatString": "m\\.ss\\.fff",
-                  "Formula": {
-                    "Expression": "[PersistantTrackerPlugin.DriverBehind_00_LastLapTime]"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                }
-              },
-              "Font": "Roboto",
-              "FontSize": 20.0,
-              "FontWeight": "Bold",
-              "Height": 24.0,
-              "HorizontalAlignment": 2,
-              "IsTextItem": true,
-              "Left": 419.0,
-              "Name": "TextItem9",
-              "Text": "0:00.000",
-              "TextColor": "#FFFFFFFF",
-              "Top": 174.0,
-              "VerticalAlignment": 1,
-              "Visible": true,
-              "Width": 82.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
@@ -2669,7 +2228,7 @@
           "RepeatTopOffset": 0.0,
           "Top": 174.0,
           "Visible": true,
-          "Width": 501.0
+          "Width": 370.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
@@ -2751,7 +2310,7 @@
               "Top": 203.0,
               "VerticalAlignment": 1,
               "Visible": true,
-              "Width": 165.0
+              "Width": 235.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -2780,7 +2339,7 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 240.0,
+              "Left": 305.0,
               "Name": "TextItem7",
               "Text": "+000.0",
               "TextColor": "#FFFFFFFF",
@@ -2788,69 +2347,6 @@
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 65.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Text": {
-                  "FormatString": "m\\.ss\\.fff",
-                  "Formula": {
-                    "Expression": "[PersistantTrackerPlugin.DriverBehind_01_BestLapTime]"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                },
-                "TextColor": {
-                  "Formula": {
-                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverBehind_01_Position]) == 0, '#C500CE', '#FFFFFF')"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
-                }
-              },
-              "Font": "Roboto",
-              "FontSize": 20.0,
-              "FontWeight": "Bold",
-              "Height": 24.0,
-              "HorizontalAlignment": 2,
-              "IsTextItem": true,
-              "Left": 320.0,
-              "Name": "TextItem8",
-              "Text": "0:00.000",
-              "TextColor": "#FFFFFFFF",
-              "Top": 203.0,
-              "VerticalAlignment": 1,
-              "Visible": true,
-              "Width": 82.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Text": {
-                  "FormatString": "m\\.ss\\.fff",
-                  "Formula": {
-                    "Expression": "[PersistantTrackerPlugin.DriverBehind_01_LastLapTime]"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                }
-              },
-              "Font": "Roboto",
-              "FontSize": 20.0,
-              "FontWeight": "Bold",
-              "Height": 24.0,
-              "HorizontalAlignment": 2,
-              "IsTextItem": true,
-              "Left": 419.0,
-              "Name": "TextItem9",
-              "Text": "0:00.000",
-              "TextColor": "#FFFFFFFF",
-              "Top": 203.0,
-              "VerticalAlignment": 1,
-              "Visible": true,
-              "Width": 82.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
@@ -2882,7 +2378,7 @@
           "RepeatTopOffset": 0.0,
           "Top": 203.0,
           "Visible": true,
-          "Width": 501.0
+          "Width": 370.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
@@ -2964,7 +2460,7 @@
               "Top": 232.0,
               "VerticalAlignment": 1,
               "Visible": true,
-              "Width": 165.0
+              "Width": 235.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -2993,7 +2489,7 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 240.0,
+              "Left": 305.0,
               "Name": "TextItem7",
               "Text": "+000.0",
               "TextColor": "#FFFFFFFF",
@@ -3001,69 +2497,6 @@
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 65.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Text": {
-                  "FormatString": "m\\.ss\\.fff",
-                  "Formula": {
-                    "Expression": "[PersistantTrackerPlugin.DriverBehind_02_BestLapTime]"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                },
-                "TextColor": {
-                  "Formula": {
-                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverBehind_02_Position]) == 0, '#C500CE', '#FFFFFF')"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
-                }
-              },
-              "Font": "Roboto",
-              "FontSize": 20.0,
-              "FontWeight": "Bold",
-              "Height": 24.0,
-              "HorizontalAlignment": 2,
-              "IsTextItem": true,
-              "Left": 320.0,
-              "Name": "TextItem8",
-              "Text": "0:00.000",
-              "TextColor": "#FFFFFFFF",
-              "Top": 232.0,
-              "VerticalAlignment": 1,
-              "Visible": true,
-              "Width": 82.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Text": {
-                  "FormatString": "m\\.ss\\.fff",
-                  "Formula": {
-                    "Expression": "[PersistantTrackerPlugin.DriverBehind_02_LastLapTime]"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                }
-              },
-              "Font": "Roboto",
-              "FontSize": 20.0,
-              "FontWeight": "Bold",
-              "Height": 24.0,
-              "HorizontalAlignment": 2,
-              "IsTextItem": true,
-              "Left": 419.0,
-              "Name": "TextItem9",
-              "Text": "0:00.000",
-              "TextColor": "#FFFFFFFF",
-              "Top": 232.0,
-              "VerticalAlignment": 1,
-              "Visible": true,
-              "Width": 82.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
@@ -3095,7 +2528,7 @@
           "RepeatTopOffset": 0.0,
           "Top": 232.0,
           "Visible": true,
-          "Width": 501.0
+          "Width": 370.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
@@ -3177,7 +2610,7 @@
               "Top": 261.0,
               "VerticalAlignment": 1,
               "Visible": true,
-              "Width": 165.0
+              "Width": 235.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -3206,7 +2639,7 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 240.0,
+              "Left": 305.0,
               "Name": "TextItem7",
               "Text": "+000.0",
               "TextColor": "#FFFFFFFF",
@@ -3214,69 +2647,6 @@
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 65.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Text": {
-                  "FormatString": "m\\.ss\\.fff",
-                  "Formula": {
-                    "Expression": "[PersistantTrackerPlugin.DriverBehind_03_BestLapTime]"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                },
-                "TextColor": {
-                  "Formula": {
-                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverBehind_03_Position]) == 0, '#C500CE', '#FFFFFF')"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
-                }
-              },
-              "Font": "Roboto",
-              "FontSize": 20.0,
-              "FontWeight": "Bold",
-              "Height": 24.0,
-              "HorizontalAlignment": 2,
-              "IsTextItem": true,
-              "Left": 320.0,
-              "Name": "TextItem8",
-              "Text": "0:00.000",
-              "TextColor": "#FFFFFFFF",
-              "Top": 261.0,
-              "VerticalAlignment": 1,
-              "Visible": true,
-              "Width": 82.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Text": {
-                  "FormatString": "m\\.ss\\.fff",
-                  "Formula": {
-                    "Expression": "[PersistantTrackerPlugin.DriverBehind_03_LastLapTime]"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                }
-              },
-              "Font": "Roboto",
-              "FontSize": 20.0,
-              "FontWeight": "Bold",
-              "Height": 24.0,
-              "HorizontalAlignment": 2,
-              "IsTextItem": true,
-              "Left": 419.0,
-              "Name": "TextItem9",
-              "Text": "0:00.000",
-              "TextColor": "#FFFFFFFF",
-              "Top": 261.0,
-              "VerticalAlignment": 1,
-              "Visible": true,
-              "Width": 82.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
@@ -3308,7 +2678,7 @@
           "RepeatTopOffset": 0.0,
           "Top": 261.0,
           "Visible": true,
-          "Width": 501.0
+          "Width": 370.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
@@ -3390,7 +2760,7 @@
               "Top": 290.0,
               "VerticalAlignment": 1,
               "Visible": true,
-              "Width": 165.0
+              "Width": 235.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -3419,7 +2789,7 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 240.0,
+              "Left": 305.0,
               "Name": "TextItem7",
               "Text": "+000.0",
               "TextColor": "#FFFFFFFF",
@@ -3427,69 +2797,6 @@
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 65.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Text": {
-                  "FormatString": "m\\.ss\\.fff",
-                  "Formula": {
-                    "Expression": "[PersistantTrackerPlugin.DriverBehind_04_BestLapTime]"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                },
-                "TextColor": {
-                  "Formula": {
-                    "Expression": "if (driverdeltatobest([PersistantTrackerPlugin.DriverBehind_04_Position]) == 0, '#C500CE', '#FFFFFF')"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
-                }
-              },
-              "Font": "Roboto",
-              "FontSize": 20.0,
-              "FontWeight": "Bold",
-              "Height": 24.0,
-              "HorizontalAlignment": 2,
-              "IsTextItem": true,
-              "Left": 320.0,
-              "Name": "TextItem8",
-              "Text": "0:00.000",
-              "TextColor": "#FFFFFFFF",
-              "Top": 290.0,
-              "VerticalAlignment": 1,
-              "Visible": true,
-              "Width": 82.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Text": {
-                  "FormatString": "m\\.ss\\.fff",
-                  "Formula": {
-                    "Expression": "[PersistantTrackerPlugin.DriverBehind_04_LastLapTime]"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                }
-              },
-              "Font": "Roboto",
-              "FontSize": 20.0,
-              "FontWeight": "Bold",
-              "Height": 24.0,
-              "HorizontalAlignment": 2,
-              "IsTextItem": true,
-              "Left": 419.0,
-              "Name": "TextItem9",
-              "Text": "0:00.000",
-              "TextColor": "#FFFFFFFF",
-              "Top": 290.0,
-              "VerticalAlignment": 1,
-              "Visible": true,
-              "Width": 82.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
@@ -3521,7 +2828,7 @@
           "RepeatTopOffset": 0.0,
           "Top": 290.0,
           "Visible": true,
-          "Width": 501.0
+          "Width": 370.0
         }
       ],
       "Name": "Screen1",

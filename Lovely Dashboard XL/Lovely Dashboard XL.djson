@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "67f62fd6-10d5-4907-b4f6-ff3007607396",
+  "Id": "d73c48b7-5876-4899-820f-5817fbce99e1",
   "Images": [
     {
       "Extension": ".png",
@@ -170,6 +170,7 @@
           "FontSize": 13.0,
           "Height": 20.0,
           "HorizontalAlignment": 1,
+          "IsFreezed": true,
           "IsTextItem": true,
           "Left": 260.0,
           "Name": "TextItem2",
@@ -188,6 +189,7 @@
           "FontSize": 13.0,
           "Height": 30.0,
           "HorizontalAlignment": 1,
+          "IsFreezed": true,
           "IsTextItem": true,
           "Left": 260.0,
           "Name": "TextItem",
@@ -206,10 +208,11 @@
           "FontSize": 16.0,
           "Height": 20.0,
           "HorizontalAlignment": 1,
+          "IsFreezed": true,
           "IsTextItem": true,
           "Left": 520.0,
           "Name": "TextItem0",
-          "Text": "Lovely Dashboard v1.6.0 (RC2)",
+          "Text": "Lovely Dashboard XL v1.6.0",
           "TextColor": "#FFFFFFFF",
           "Top": 340.0,
           "VerticalAlignment": 1,
@@ -248,6 +251,7 @@
           "FontWeight": "Bold",
           "Height": 25.0,
           "HorizontalAlignment": 1,
+          "IsFreezed": true,
           "IsTextItem": true,
           "Left": 510.0,
           "Name": "New Version",
@@ -275,6 +279,7 @@
           },
           "Height": 200.0,
           "Image": "lr-team-icon",
+          "IsFreezed": true,
           "Left": 540.0,
           "Name": "ImageItem",
           "Top": 70.0,
@@ -1473,6 +1478,75 @@
           "PreviousScreenCommand": 0,
           "Top": 146.0,
           "Visible": true,
+          "Width": 370.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
+          "AutoSize": true,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "if ([DataCorePlugin.CurrentGame]=='IRacing', 1, 0) \r\n\r\n"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "FileName": "Relative Native - iR.djson",
+          "Height": 314.0,
+          "Left": 890.0,
+          "Name": "Relative iR",
+          "NextScreenCommand": 0,
+          "PreviousScreenCommand": 0,
+          "Top": 146.0,
+          "Visible": false,
+          "Width": 370.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
+          "AutoSize": true,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "if ([DataCorePlugin.CurrentGame]=='Automobilista2', 1, 0)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "FileName": "Relative Native - AMS2.djson",
+          "Height": 314.0,
+          "Left": 890.0,
+          "Name": "Relative AMS2",
+          "NextScreenCommand": 0,
+          "PreviousScreenCommand": 0,
+          "Top": 146.0,
+          "Visible": false,
+          "Width": 370.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
+          "AutoSize": true,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "if ([DataCorePlugin.CurrentGame]=='RFactor2', 1, 0)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "FileName": "Relative Native - rF2.djson",
+          "Height": 314.0,
+          "Left": 890.0,
+          "Name": "Relative rF2",
+          "NextScreenCommand": 0,
+          "PreviousScreenCommand": 0,
+          "Top": 146.0,
+          "Visible": false,
           "Width": 370.0
         },
         {
