@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "b7e77425-df2b-491f-a052-d33c5b1f5c74",
+  "Id": "25561325-c193-409e-92d2-7b5f650c2afb",
   "Images": [
     {
       "Extension": ".png",
@@ -382,7 +382,7 @@
                 },
                 "Text": {
                   "Formula": {
-                    "Expression": "if ( $prop('GameRawData.SessionData.CarSetup.Chassis.InCarDials.EngineMapSetting') != null ) {\r\n\t\r\n\treturn 'ENGINE'\r\n\t\r\n} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') != null ) {\r\n\t\r\n\treturn 'THROTTLE'\r\n\t\r\n} else {\r\n\r\n\treturn 'ENGINE'\r\n\t\r\n}",
+                    "Expression": "if ( $prop('GameRawData.SessionData.CarSetup.Chassis.InCarDials.EngineMapSetting') != null ) {\r\n\t\r\n\treturn 'ENGINE'\r\n\t\r\n} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') != null ) {\r\n\t\r\n\treturn 'THROTTLE'\r\n} else if ( $prop('GameRawData.Telemetry.EnergyERSBattery') != null ) {\r\n\treturn 'ERS %'\r\n} else {\r\n\r\n\treturn 'ENGINE'\r\n\t\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -433,7 +433,7 @@
           "Bindings": {
             "Opacity": {
               "Formula": {
-                "Expression": "if ( [DataCorePlugin.GameData.NewData.TCLevel]==0, 35, 100)"
+                "Expression": "if ([GameRawData.Telemetry.dcTractionControl]==0, 35, 100)"
               },
               "Mode": 2,
               "TargetPropertyName": "Opacity"
@@ -441,7 +441,7 @@
             "Text": {
               "FormatString": "0",
               "Formula": {
-                "Expression": "isnull([DataCorePlugin.GameData.NewData.TCLevel],0)"
+                "Expression": "[GameRawData.Telemetry.dcTractionControl]"
               },
               "Mode": 2,
               "TargetPropertyName": "Text"
@@ -494,7 +494,7 @@
                 "Text": {
                   "FormatString": "0",
                   "Formula": {
-                    "Expression": "[DataCorePlugin.GameData.NewData.TCLevel]"
+                    "Expression": "[DataCorePlugin.GameData.TCLevel]"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
@@ -530,7 +530,7 @@
           "Bindings": {
             "Opacity": {
               "Formula": {
-                "Expression": "if ( isnull([DataCorePlugin.GameRawData.Telemetry.dcTractionControl2],0)==0, 35, 100)"
+                "Expression": "if ( isnull([GameRawData.Telemetry.dcTractionControl2],0)==0, 35, 100)"
               },
               "Mode": 2,
               "TargetPropertyName": "Opacity"
@@ -538,7 +538,7 @@
             "Text": {
               "FormatString": "0",
               "Formula": {
-                "Expression": "isnull([DataCorePlugin.GameRawData.Telemetry.dcTractionControl2],0)"
+                "Expression": "isnull([GameRawData.Telemetry.dcTractionControl2],0)"
               },
               "Mode": 2,
               "TargetPropertyName": "Text"
@@ -565,7 +565,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "if ( isnull([DataCorePlugin.GameRawData.Telemetry.dcTractionControl2],0)==0, \r\n\t0,\r\n\tif ( changed(300, [DataCorePlugin.GameData.TCActive]), 1, 0)\r\n)"
+                "Expression": "if ( isnull([DataCorePlugin.GameRawData.Graphics.TCCut],0)==0, \r\n\t0,\r\n\tif ( changed(300, [DataCorePlugin.GameData.TCActive]), 1, 0)\r\n)"
               },
               "Mode": 2,
               "TargetPropertyName": "Visible"
@@ -578,7 +578,7 @@
               "BackgroundColor": "#00FFFFFF",
               "Height": 80.0,
               "Image": "TC2 Active Alert",
-              "Left": 101.0,
+              "Left": 102.0,
               "Name": "ImageItem0",
               "Top": 12.0,
               "Visible": true,
@@ -591,7 +591,7 @@
                 "Text": {
                   "FormatString": "0",
                   "Formula": {
-                    "Expression": "isnull([DataCorePlugin.GameRawData.Telemetry.dcTractionControl2],0)"
+                    "Expression": "isnull([DataCorePlugin.GameRawData.Graphics.TCCut],0)"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
@@ -603,7 +603,7 @@
               "Height": 90.0,
               "HorizontalAlignment": 1,
               "IsTextItem": true,
-              "Left": 96.0,
+              "Left": 97.0,
               "Name": "TextItem5",
               "Text": "0",
               "TextColor": "#FF000000",
@@ -615,7 +615,7 @@
           ],
           "Group": true,
           "Height": 90.0,
-          "Left": 96.0,
+          "Left": 97.0,
           "Name": "TC Cut Active",
           "Top": 7.0,
           "Visible": false,
@@ -627,7 +627,7 @@
           "Bindings": {
             "Opacity": {
               "Formula": {
-                "Expression": "if ( [DataCorePlugin.GameData.NewData.ABSLevel]==0, 35, 100)"
+                "Expression": "if ( [DataCorePlugin.GameData.ABSLevel]==0, 35, 100)"
               },
               "Mode": 2,
               "TargetPropertyName": "Opacity"
@@ -635,7 +635,7 @@
             "Text": {
               "FormatString": "0",
               "Formula": {
-                "Expression": "isnull([DataCorePlugin.GameData.NewData.ABSLevel],0)"
+                "Expression": "[DataCorePlugin.GameData.ABSLevel]"
               },
               "Mode": 2,
               "TargetPropertyName": "Text"
@@ -688,7 +688,7 @@
                 "Text": {
                   "FormatString": "0",
                   "Formula": {
-                    "Expression": "[DataCorePlugin.GameData.NewData.ABSLevel]"
+                    "Expression": "[DataCorePlugin.GameData.ABSLevel]"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
@@ -725,7 +725,7 @@
             "Text": {
               "FormatString": "00.0",
               "Formula": {
-                "Expression": "[DataCorePlugin.GameData.NewData.BrakeBias]"
+                "Expression": "[DataCorePlugin.GameData.BrakeBias]"
               },
               "Mode": 2,
               "TargetPropertyName": "Text"
@@ -738,7 +738,7 @@
           "HorizontalAlignment": 1,
           "IsTextItem": true,
           "Left": 288.0,
-          "Name": "BB",
+          "Name": "BB2",
           "Text": "00.0",
           "TextColor": "#FFFA0000",
           "Top": 7.0,
@@ -750,9 +750,17 @@
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
+            "FontSize": {
+              "Formula": {
+                "Expression": "if ( $prop('GameRawData.SessionData.CarSetup.Chassis.InCarDials.EngineMapSetting') != null ) {\r\n\t\r\n\treturn 50\r\n\t\r\n} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') != null ) {\r\n\t\r\n\treturn 50\r\n} else if ( $prop('GameRawData.Telemetry.EnergyERSBattery') != null ) {\r\n\treturn 30\r\n} else {\r\n\r\n\treturn 50\r\n\t\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "FontSize"
+            },
             "Opacity": {
               "Formula": {
-                "Expression": "if ( $prop('GameRawData.SessionData.CarSetup.Chassis.InCarDials.EngineMapSetting') != null ) {\r\n\t\r\n\treturn 100\r\n\t\r\n} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') != null ) {\r\n\t\r\n\treturn 100\r\n\t\r\n} else {\r\n\r\n\treturn 35\r\n\t\r\n}",
+                "Expression": "if ( $prop('GameRawData.SessionData.CarSetup.Chassis.InCarDials.EngineMapSetting') != null ) {\r\n\t\r\n\treturn 100\r\n\t\r\n} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') != null ) {\r\n\t\r\n\treturn 100\r\n} else if ( $prop('GameRawData.Telemetry.EnergyERSBattery') != null ) {\r\n\treturn 100\r\n} else {\r\n\r\n\treturn 35\r\n\t\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -761,7 +769,7 @@
             "Text": {
               "FormatString": "0",
               "Formula": {
-                "Expression": "if ( $prop('GameRawData.SessionData.CarSetup.Chassis.InCarDials.EngineMapSetting') != null ) {\r\n\t\r\n\treturn $prop('GameRawData.SessionData.CarSetup.Chassis.InCarDials.EngineMapSetting').substring(0, 2).replace(/\\s/g,'')\r\n\t\r\n} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') != null ) {\r\n\t\r\n\treturn $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape')\r\n\t\r\n} else {\r\n\r\n\treturn '-'\r\n\t\r\n}",
+                "Expression": "if ( $prop('GameRawData.SessionData.CarSetup.Chassis.InCarDials.EngineMapSetting') != null ) {\r\n\t\r\n\treturn $prop('GameRawData.SessionData.CarSetup.Chassis.InCarDials.EngineMapSetting').substring(0, 2).replace(/\\s/g,'')\r\n\t\r\n} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') != null ) {\r\n\t\r\n\treturn $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape').substring(0, 2).replace(/\\s/g,'')\r\n} else if ( $prop('GameRawData.Telemetry.EnergyERSBattery') != null ) {\r\n\treturn format($prop('GameRawData.Telemetry.EnergyERSBatteryPct'), '0%')\r\n} else {\r\n\r\n\treturn '-'\r\n\t\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -769,7 +777,7 @@
             }
           },
           "Font": "Roboto",
-          "FontSize": 50.0,
+          "FontSize": 30.0,
           "FontWeight": "Bold",
           "Height": 90.0,
           "HorizontalAlignment": 1,
@@ -805,9 +813,6 @@
         "Expression": ""
       },
       "PitScreen": false,
-      "ScreenEnabledExpression": {
-        "Expression": ""
-      },
       "ScreenId": "59c2429b-b97a-4706-a4af-123e31523ee6"
     }
   ],

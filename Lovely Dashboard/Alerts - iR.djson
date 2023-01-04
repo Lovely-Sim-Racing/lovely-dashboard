@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "22697b9f-db34-435e-a440-94d2744296c7",
+  "Id": "f700d16a-5aa8-4634-828e-803334b64176",
   "Images": [
     {
       "Extension": ".png",
@@ -81,8 +81,7 @@
                 "Text": {
                   "FormatString": "0.0",
                   "Formula": {
-                    "Expression": "if ( $prop('GameRawData.SessionData.CarSetup.Chassis.InCarDials.EngineMapSetting') != null ) {\r\n\t\r\n\treturn 'MAP ' + $prop('GameRawData.SessionData.CarSetup.Chassis.InCarDials.EngineMapSetting').substring(0, 2).replace(/\\s/g,'')\r\n\t\r\n} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') != null ) {\r\n\t\r\n\treturn 'THR ' + $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape')\r\n\t\r\n}",
-                    "Interpreter": 1
+                    "Expression": "'MAP ' + [DataCorePlugin.GameRawData.Telemetry.dcThrottleShape]"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
@@ -125,14 +124,14 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "'ABS ' + [DataCorePlugin.GameData.NewData.ABSLevel]"
+                    "Expression": "'ABS ' + [ABSLevel]"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nfunction changed(delay, value) {\r\n\troot['abs_time'] = Math.floor($prop('DataCorePlugin.CustomExpression.CurrentDateTime').getTime())/1000;\r\n\troot['abs_oldstate'] = root['abs_oldstate'] == null ? value : root['abs_newstate'];\r\n\troot['abs_newstate'] = value;\r\n\tif (root['abs_newstate'] != root['abs_oldstate']) {\r\n\t\troot['abs_triggerTime'] = root['abs_time'];\r\n\t}\r\n\treturn root['abs_triggerTime'] == null ? false : root['abs_time'] - root['abs_triggerTime'] <= delay/1000;\r\n}\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn changed(alertDelay, $prop('DataCorePlugin.GameData.NewData.ABSLevel') )",
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nfunction changed(delay, value) {\r\n\troot['abs_time'] = Math.floor($prop('DataCorePlugin.CustomExpression.CurrentDateTime').getTime())/1000;\r\n\troot['abs_oldstate'] = root['abs_oldstate'] == null ? value : root['abs_newstate'];\r\n\troot['abs_newstate'] = value;\r\n\tif (root['abs_newstate'] != root['abs_oldstate']) {\r\n\t\troot['abs_triggerTime'] = root['abs_time'];\r\n\t}\r\n\treturn root['abs_triggerTime'] == null ? false : root['abs_time'] - root['abs_triggerTime'] <= delay/1000;\r\n}\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn changed(alertDelay, $prop('DataCorePlugin.GameData.ABSLevel') )",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -168,14 +167,14 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "'TC CUT ' + [DataCorePlugin.GameRawData.Telemetry.dcTractionControl2]"
+                    "Expression": "'TC CUT ' + [DataCorePlugin.GameData.TCLevel]"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nfunction changed(delay, value) {\r\n\troot['tc2_time'] = Math.floor($prop('DataCorePlugin.CustomExpression.CurrentDateTime').getTime())/1000;\r\n\troot['tc2_oldstate'] = root['tc2_oldstate'] == null ? value : root['tc2_newstate'];\r\n\troot['tc2_newstate'] = value;\r\n\tif (root['tc2_newstate'] != root['tc2_oldstate']) {\r\n\t\troot['tc2_triggerTime'] = root['tc2_time'];\r\n\t}\r\n\treturn root['tc2_triggerTime'] == null ? false : root['tc2_time'] - root['tc2_triggerTime'] <= delay/1000;\r\n}\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn changed(alertDelay, $prop('DataCorePlugin.GameRawData.Telemetry.dcTractionControl2') )",
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nfunction changed(delay, value) {\r\n\troot['tc2_time'] = Math.floor($prop('DataCorePlugin.CustomExpression.CurrentDateTime').getTime())/1000;\r\n\troot['tc2_oldstate'] = root['tc2_oldstate'] == null ? value : root['tc2_newstate'];\r\n\troot['tc2_newstate'] = value;\r\n\tif (root['tc2_newstate'] != root['tc2_oldstate']) {\r\n\t\troot['tc2_triggerTime'] = root['tc2_time'];\r\n\t}\r\n\treturn root['tc2_triggerTime'] == null ? false : root['tc2_time'] - root['tc2_triggerTime'] <= delay/1000;\r\n}\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn changed(alertDelay, $prop('DataCorePlugin.GameRawData.Graphics.TCLevel') )",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -211,14 +210,14 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "'TC ' + [DataCorePlugin.GameData.NewData.TCLevel]"
+                    "Expression": "'TC ' + [DataCorePlugin.GameData.TCLevel]"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nfunction changed(delay, value) {\r\n\troot['tc_time'] = Math.floor($prop('DataCorePlugin.CustomExpression.CurrentDateTime').getTime())/1000;\r\n\troot['tc_oldstate'] = root['tc_oldstate'] == null ? value : root['tc_newstate'];\r\n\troot['tc_newstate'] = value;\r\n\tif (root['tc_newstate'] != root['tc_oldstate']) {\r\n\t\troot['tc_triggerTime'] = root['tc_time'];\r\n\t}\r\n\treturn root['tc_triggerTime'] == null ? false : root['tc_time'] - root['tc_triggerTime'] <= delay/1000;\r\n}\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn changed(alertDelay, $prop('DataCorePlugin.GameData.NewData.TCLevel') )",
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nfunction changed(delay, value) {\r\n\troot['tc_time'] = Math.floor($prop('DataCorePlugin.CustomExpression.CurrentDateTime').getTime())/1000;\r\n\troot['tc_oldstate'] = root['tc_oldstate'] == null ? value : root['tc_newstate'];\r\n\troot['tc_newstate'] = value;\r\n\tif (root['tc_newstate'] != root['tc_oldstate']) {\r\n\t\troot['tc_triggerTime'] = root['tc_time'];\r\n\t}\r\n\treturn root['tc_triggerTime'] == null ? false : root['tc_time'] - root['tc_triggerTime'] <= delay/1000;\r\n}\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn changed(alertDelay, $prop('DataCorePlugin.GameData.TCLevel') )",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -255,14 +254,14 @@
                 "Text": {
                   "FormatString": "BB 0.0 ",
                   "Formula": {
-                    "Expression": "'BB ' + [DataCorePlugin.GameData.NewData.BrakeBias]"
+                    "Expression": "'BB ' + [DataCorePlugin.GameData.BrakeBias]"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nfunction changed(delay, value) {\r\n\troot['bb_time'] = Math.floor($prop('DataCorePlugin.CustomExpression.CurrentDateTime').getTime())/1000;\r\n\troot['bb_oldstate'] = root['bb_oldstate'] == null ? value : root['bb_newstate'];\r\n\troot['bb_newstate'] = value;\r\n\tif (root['bb_newstate'] != root['bb_oldstate']) {\r\n\t\troot['bb_triggerTime'] = root['bb_time'];\r\n\t}\r\n\treturn root['bb_triggerTime'] == null ? false : root['bb_time'] - root['bb_triggerTime'] <= delay/1000;\r\n}\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn changed(alertDelay, $prop('DataCorePlugin.GameData.NewData.BrakeBias') )",
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nfunction changed(delay, value) {\r\n\troot['bb_time'] = Math.floor($prop('DataCorePlugin.CustomExpression.CurrentDateTime').getTime())/1000;\r\n\troot['bb_oldstate'] = root['bb_oldstate'] == null ? value : root['bb_newstate'];\r\n\troot['bb_newstate'] = value;\r\n\tif (root['bb_newstate'] != root['bb_oldstate']) {\r\n\t\troot['bb_triggerTime'] = root['bb_time'];\r\n\t}\r\n\treturn root['bb_triggerTime'] == null ? false : root['bb_time'] - root['bb_triggerTime'] <= delay/1000;\r\n}\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn changed(alertDelay, $prop('DataCorePlugin.GameData.BrakeBias') )",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -317,13 +316,107 @@
           "Childrens": [
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FFFA0000",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "if(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=0,'Yellow',\r\nif(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=1,'Red',\r\nif(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=2,'#FFF05C00',\r\nif(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=3,'Green','Blue'))))"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "BackgroundColor"
+                },
+                "Text": {
+                  "FormatString": "",
+                  "Formula": {
+                    "Expression": "var mguMode = 0;\r\nif($prop('GameRawData.Telemetry.dcMGUKDeployMode') != null) {\r\n\tmguMode = $prop('GameRawData.Telemetry.dcMGUKDeployMode');\r\n}\r\n\r\n\r\nvar outputText = '';\r\n\r\nswitch(mguMode) {\r\n\tcase 0:\r\n\t\toutputText = 'NO DEPLOY';\r\n\t\tbreak;\r\n\tcase 1:\r\n\t\toutputText = 'QUAL';\r\n\t\tbreak;\r\n\tcase 2:\r\n\t\toutputText = 'ATTACK';\r\n\t\tbreak;\r\n\tcase 3:\r\n\t\toutputText = 'BALANCED';\r\n\t\tbreak;\r\n\tcase 4:\r\n\t\toutputText = 'BUILD';\r\n\t\tbreak;\r\n\tdefault:\r\n\t\toutputText = '';\r\n}\r\n\r\n\r\n\r\nroot['mgumode_oldstate'] = root['mgumode_oldstate'] == null ? $prop('GameRawData.Telemetry.dcMGUKDeployMode') : root['mgumode_newstate'];\r\nroot['mgumode_newstate'] = $prop('GameRawData.Telemetry.dcMGUKDeployMode');\r\nif (root['mgumode_newstate'] != root['mgumode_oldstate']) {\r\n\tif(root['mgumode_changecount'] == null) { root['mgumode_changecount'] = 0; }\r\n\troot['mgumode_changecount']++;\r\n}\r\n\r\nvar numChanges = 0;\r\nif (root['mgumode_changecount'] != null) {\r\n\tnumChanges = root['mgumode_changecount'];\r\n}\r\n\r\nroot['prevlap'] = root['prevlap'] == null ? $prop('CurrentLap') : root['currentlap'];\r\nroot['currentlap'] = $prop('CurrentLap');\r\nif(root['currentlap'] != root['prevlap']) { \r\n\troot['mgumode_changecount'] = 0;\r\n}\r\n\r\nvar remainingChanges = (3-numChanges); \r\nif(remainingChanges < 0) { remainingChanges = 0; }\r\n\r\nreturn outputText;\r\n",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nfunction changed(delay, value) {\r\n\troot['mgumode_time'] = Math.floor($prop('DataCorePlugin.CustomExpression.CurrentDateTime').getTime())/1000;\r\n\troot['mgumode_oldstate'] = root['mgumode_oldstate'] == null ? value : root['mgumode_newstate'];\r\n\troot['mgumode_newstate'] = value;\r\n\tif (root['mgumode_newstate'] != root['mgumode_oldstate']) {\r\n\t\troot['mgumode_triggerTime'] = root['mgumode_time'];\r\n\t\tif(root['mgumode_changecount'] == null) { root['mgumode_changecount'] = 0; }\r\n\t\troot['mgumode_changecount']++;\r\n\t}\r\n\treturn root['mgumode_triggerTime'] == null ? false : root['mgumode_time'] - root['mgumode_triggerTime'] <= delay/1000;\r\n}\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn changed(alertDelay, $prop('GameRawData.Telemetry.dcMGUKDeployMode') )",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Visible"
+                }
+              },
+              "BorderStyle": {
+                "BorderColor": "#FFFA0000",
+                "RadiusBottomLeft": 10,
+                "RadiusBottomRight": 10,
+                "RadiusTopLeft": 10,
+                "RadiusTopRight": 10
+              },
+              "Font": "Roboto",
+              "FontSize": 100.0,
+              "FontWeight": "Bold",
+              "Height": 220.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 20.0,
+              "Name": "MGU",
+              "Text": "BALANCED",
+              "TextColor": "#FF000000",
+              "Top": 130.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 810.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "",
+                  "Formula": {
+                    "Expression": "var changesPerLap = 4;\r\nvar mguMode = 0;\r\nif($prop('GameRawData.Telemetry.dcMGUKDeployMode') != null) {\r\n\tmguMode = $prop('GameRawData.Telemetry.dcMGUKDeployMode');\r\n}\r\n\r\n\r\nroot['mgumode_oldstate'] = root['mgumode_oldstate'] == null ? mguMode : root['mgumode_newstate'];\r\nroot['mgumode_newstate'] = mguMode;\r\nif (root['mgumode_newstate'] != root['mgumode_oldstate']) {\r\n\tif(root['mgumode_changecount'] == null) { root['mgumode_changecount'] = 0; }\r\n\troot['mgumode_changecount']++;\r\n}\r\n\r\nvar numChanges = 0;\r\nif (root['mgumode_changecount'] != null) {\r\n\tnumChanges = root['mgumode_changecount'];\r\n}\r\n\r\nroot['prevlap'] = root['prevlap'] == null ? $prop('CurrentLap') : root['currentlap'];\r\nroot['currentlap'] = $prop('CurrentLap');\r\nif(root['currentlap'] != root['prevlap']) { \r\n\troot['mgumode_changecount'] = 0;\r\n}\r\n\r\nvar remainingChanges = (changesPerLap-numChanges-1); \r\n\r\nif(remainingChanges < 0) { remainingChanges = 0; }\r\n\r\nvar endText = ' CHANGES REMAINING';\r\nif (remainingChanges == 1) {\r\n\tendText = ' CHANGE REMAINING';\r\n}\r\n\r\nreturn remainingChanges + endText;\r\n",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nfunction changed(delay, value) {\r\n\troot['mgumode_time'] = Math.floor($prop('DataCorePlugin.CustomExpression.CurrentDateTime').getTime())/1000;\r\n\troot['mgumode_oldstate'] = root['mgumode_oldstate'] == null ? value : root['mgumode_newstate'];\r\n\troot['mgumode_newstate'] = value;\r\n\tif (root['mgumode_newstate'] != root['mgumode_oldstate']) {\r\n\t\troot['mgumode_triggerTime'] = root['mgumode_time'];\r\n\t\tif(root['mgumode_changecount'] == null) { root['mgumode_changecount'] = 0; }\r\n\t\troot['mgumode_changecount']++;\r\n\t}\r\n\treturn root['mgumode_triggerTime'] == null ? false : root['mgumode_time'] - root['mgumode_triggerTime'] <= delay/1000;\r\n}\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn changed(alertDelay, $prop('GameRawData.Telemetry.dcMGUKDeployMode') )",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Visible"
+                }
+              },
+              "BorderStyle": {
+                "BorderColor": "#FFFA0000",
+                "RadiusBottomLeft": 10,
+                "RadiusBottomRight": 10,
+                "RadiusTopLeft": 10,
+                "RadiusTopRight": 10
+              },
+              "Font": "Roboto",
+              "FontSize": 36.0,
+              "FontWeight": "Bold",
+              "Height": 100.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 20.0,
+              "Name": "MGU Changes",
+              "Text": "0 CHANGES REMAINING",
+              "TextColor": "#FF000000",
+              "Top": 260.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 810.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "BackgroundColor": "#FF00FF02",
               "Bindings": {
                 "Text": {
                   "FormatString": "0.0",
                   "Formula": {
-                    "Expression": "if ( $prop('GameRawData.SessionData.CarSetup.Chassis.InCarDials.EngineMapSetting') != null ) {\r\n\t\r\n\treturn 'MAP ' + $prop('GameRawData.SessionData.CarSetup.Chassis.InCarDials.EngineMapSetting').substring(0, 2).replace(/\\s/g,'')\r\n\t\r\n} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') != null ) {\r\n\t\r\n\treturn 'THR ' + $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape')\r\n\t\r\n}",
-                    "Interpreter": 1
+                    "Expression": "'MAP ' + [DataCorePlugin.GameRawData.Telemetry.dcThrottleShape]"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
@@ -366,14 +459,14 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "'ABS ' + [DataCorePlugin.GameData.NewData.ABSLevel]"
+                    "Expression": "'ABS ' + [ABSLevel]"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nfunction changed(delay, value) {\r\n\troot['abs_time'] = Math.floor($prop('DataCorePlugin.CustomExpression.CurrentDateTime').getTime())/1000;\r\n\troot['abs_oldstate'] = root['abs_oldstate'] == null ? value : root['abs_newstate'];\r\n\troot['abs_newstate'] = value;\r\n\tif (root['abs_newstate'] != root['abs_oldstate']) {\r\n\t\troot['abs_triggerTime'] = root['abs_time'];\r\n\t}\r\n\treturn root['abs_triggerTime'] == null ? false : root['abs_time'] - root['abs_triggerTime'] <= delay/1000;\r\n}\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn changed(alertDelay, $prop('DataCorePlugin.GameData.NewData.ABSLevel') )",
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nfunction changed(delay, value) {\r\n\troot['abs_time'] = Math.floor($prop('DataCorePlugin.CustomExpression.CurrentDateTime').getTime())/1000;\r\n\troot['abs_oldstate'] = root['abs_oldstate'] == null ? value : root['abs_newstate'];\r\n\troot['abs_newstate'] = value;\r\n\tif (root['abs_newstate'] != root['abs_oldstate']) {\r\n\t\troot['abs_triggerTime'] = root['abs_time'];\r\n\t}\r\n\treturn root['abs_triggerTime'] == null ? false : root['abs_time'] - root['abs_triggerTime'] <= delay/1000;\r\n}\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn changed(alertDelay, $prop('DataCorePlugin.GameData.ABSLevel') )",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -409,14 +502,14 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "'TC CUT ' + [DataCorePlugin.GameRawData.Telemetry.dcTractionControl2]"
+                    "Expression": "'TC CUT ' + [DataCorePlugin.GameData.TCLevel]"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nfunction changed(delay, value) {\r\n\troot['tc2_time'] = Math.floor($prop('DataCorePlugin.CustomExpression.CurrentDateTime').getTime())/1000;\r\n\troot['tc2_oldstate'] = root['tc2_oldstate'] == null ? value : root['tc2_newstate'];\r\n\troot['tc2_newstate'] = value;\r\n\tif (root['tc2_newstate'] != root['tc2_oldstate']) {\r\n\t\troot['tc2_triggerTime'] = root['tc2_time'];\r\n\t}\r\n\treturn root['tc2_triggerTime'] == null ? false : root['tc2_time'] - root['tc2_triggerTime'] <= delay/1000;\r\n}\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn changed(alertDelay, $prop('DataCorePlugin.GameRawData.Telemetry.dcTractionControl2') )",
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nfunction changed(delay, value) {\r\n\troot['tc2_time'] = Math.floor($prop('DataCorePlugin.CustomExpression.CurrentDateTime').getTime())/1000;\r\n\troot['tc2_oldstate'] = root['tc2_oldstate'] == null ? value : root['tc2_newstate'];\r\n\troot['tc2_newstate'] = value;\r\n\tif (root['tc2_newstate'] != root['tc2_oldstate']) {\r\n\t\troot['tc2_triggerTime'] = root['tc2_time'];\r\n\t}\r\n\treturn root['tc2_triggerTime'] == null ? false : root['tc2_time'] - root['tc2_triggerTime'] <= delay/1000;\r\n}\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn changed(alertDelay, $prop('DataCorePlugin.GameRawData.Graphics.TCLevel') )",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -452,14 +545,14 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "'TC ' + [DataCorePlugin.GameData.NewData.TCLevel]"
+                    "Expression": "'TC ' + [DataCorePlugin.GameData.TCLevel]"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nfunction changed(delay, value) {\r\n\troot['tc_time'] = Math.floor($prop('DataCorePlugin.CustomExpression.CurrentDateTime').getTime())/1000;\r\n\troot['tc_oldstate'] = root['tc_oldstate'] == null ? value : root['tc_newstate'];\r\n\troot['tc_newstate'] = value;\r\n\tif (root['tc_newstate'] != root['tc_oldstate']) {\r\n\t\troot['tc_triggerTime'] = root['tc_time'];\r\n\t}\r\n\treturn root['tc_triggerTime'] == null ? false : root['tc_time'] - root['tc_triggerTime'] <= delay/1000;\r\n}\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn changed(alertDelay, $prop('DataCorePlugin.GameData.NewData.TCLevel') )",
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nfunction changed(delay, value) {\r\n\troot['tc_time'] = Math.floor($prop('DataCorePlugin.CustomExpression.CurrentDateTime').getTime())/1000;\r\n\troot['tc_oldstate'] = root['tc_oldstate'] == null ? value : root['tc_newstate'];\r\n\troot['tc_newstate'] = value;\r\n\tif (root['tc_newstate'] != root['tc_oldstate']) {\r\n\t\troot['tc_triggerTime'] = root['tc_time'];\r\n\t}\r\n\treturn root['tc_triggerTime'] == null ? false : root['tc_time'] - root['tc_triggerTime'] <= delay/1000;\r\n}\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn changed(alertDelay, $prop('DataCorePlugin.GameData.TCLevel') )",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -496,14 +589,14 @@
                 "Text": {
                   "FormatString": "BB 0.0 ",
                   "Formula": {
-                    "Expression": "'BB ' + [DataCorePlugin.GameData.NewData.BrakeBias]"
+                    "Expression": "'BB ' + [DataCorePlugin.GameData.BrakeBias]"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nfunction changed(delay, value) {\r\n\troot['bb_time'] = Math.floor($prop('DataCorePlugin.CustomExpression.CurrentDateTime').getTime())/1000;\r\n\troot['bb_oldstate'] = root['bb_oldstate'] == null ? value : root['bb_newstate'];\r\n\troot['bb_newstate'] = value;\r\n\tif (root['bb_newstate'] != root['bb_oldstate']) {\r\n\t\troot['bb_triggerTime'] = root['bb_time'];\r\n\t}\r\n\treturn root['bb_triggerTime'] == null ? false : root['bb_time'] - root['bb_triggerTime'] <= delay/1000;\r\n}\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn changed(alertDelay, $prop('DataCorePlugin.GameData.NewData.BrakeBias') )",
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nfunction changed(delay, value) {\r\n\troot['bb_time'] = Math.floor($prop('DataCorePlugin.CustomExpression.CurrentDateTime').getTime())/1000;\r\n\troot['bb_oldstate'] = root['bb_oldstate'] == null ? value : root['bb_newstate'];\r\n\troot['bb_newstate'] = value;\r\n\tif (root['bb_newstate'] != root['bb_oldstate']) {\r\n\t\troot['bb_triggerTime'] = root['bb_time'];\r\n\t}\r\n\treturn root['bb_triggerTime'] == null ? false : root['bb_time'] - root['bb_triggerTime'] <= delay/1000;\r\n}\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn changed(alertDelay, $prop('DataCorePlugin.GameData.BrakeBias') )",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -535,11 +628,11 @@
             }
           ],
           "Group": false,
-          "Height": 220.0,
+          "Height": 230.0,
           "Left": 20.0,
           "Name": "Normal",
           "Top": 130.0,
-          "Visible": false,
+          "Visible": true,
           "Width": 810.0
         },
         {
@@ -708,7 +801,7 @@
                     "Text": {
                       "FormatString": "m\\:ss\\.fff",
                       "Formula": {
-                        "Expression": "isnull(driverbestlap([DataCorePlugin.GameData.BestLapOpponentPosition]+1), '0:00.000')"
+                        "Expression": "if (isnull(driverbestlap([DataCorePlugin.GameData.BestLapOpponentPosition]+1)), '0:00.000', driverbestlap([DataCorePlugin.GameData.BestLapOpponentPosition]+1))"
                       },
                       "Mode": 2,
                       "TargetPropertyName": "Text"
@@ -919,7 +1012,7 @@
           "Left": 0.0,
           "Name": "Lap Review",
           "Top": 0.0,
-          "Visible": true,
+          "Visible": false,
           "Width": 850.0
         }
       ],
@@ -930,9 +1023,6 @@
         "Expression": ""
       },
       "PitScreen": false,
-      "ScreenEnabledExpression": {
-        "Expression": ""
-      },
       "ScreenId": "59e667d3-917a-451a-b050-141bb1cf3357"
     }
   ],

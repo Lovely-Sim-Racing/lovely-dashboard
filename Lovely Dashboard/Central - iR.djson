@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "4ffe1c22-07a5-4e05-a6b0-6bd86d24bbc4",
+  "Id": "76450f2e-3296-4e86-af6f-2c08118b9089",
   "Images": [],
   "IsOverlay": false,
   "Metadata": {
@@ -41,18 +41,8 @@
       "IsOverlayLayer": false,
       "Items": [
         {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.SpeedText, SimHub.Plugins",
           "BackgroundColor": "#FFFFFFFF",
-          "Bindings": {
-            "Text": {
-              "FormatString": "0",
-              "Formula": {
-                "Expression": "[DataCorePlugin.GameData.SpeedLocal]"
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Text"
-            }
-          },
           "BorderStyle": {
             "RadiusBottomLeft": 5,
             "RadiusBottomRight": 5,
@@ -62,60 +52,16 @@
           "Font": "Roboto",
           "FontSize": 30.0,
           "FontWeight": "Bold",
+          "Format": "0",
           "Height": 40.0,
           "HorizontalAlignment": 1,
           "IsFreezed": true,
           "IsTextItem": true,
           "Left": 0.0,
-          "Name": "Speed ",
-          "Text": "000",
+          "Name": "SpeedText0",
+          "NoDataText": "0",
+          "ShadowColor": "#FF000000",
           "TextColor": "#FF000000",
-          "Top": 290.0,
-          "VerticalAlignment": 1,
-          "Visible": true,
-          "Width": 160.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "BackgroundColor": "#FFFFFFFF",
-          "Bindings": {
-            "Text": {
-              "FormatString": "0",
-              "Formula": {
-                "Expression": "[DataCorePlugin.GameData.SpeedLocal]"
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Text"
-            },
-            "Visible": {
-              "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tclutchMode = 1\r\n} else {\r\n\tclutchMode = settings.clutchMode\r\n}\r\n\r\n\r\nif (clutchMode == 2) {\r\n\t\r\n\treturn 1\r\n\t\r\n} else {\r\n\t\r\n\treturn 0\r\n\t\r\n}",
-                "Interpreter": 1
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
-            }
-          },
-          "BorderStyle": {
-            "RadiusBottomLeft": 5,
-            "RadiusBottomRight": 5,
-            "RadiusTopLeft": 5,
-            "RadiusTopRight": 5
-          },
-          "Font": "Roboto",
-          "FontSize": 30.0,
-          "FontWeight": "Bold",
-          "Height": 40.0,
-          "HorizontalAlignment": 1,
-          "IsFreezed": true,
-          "IsTextItem": true,
-          "Left": 0.0,
-          "Name": "Speed Padding",
-          "Text": "000",
-          "TextColor": "#FF000000",
-          "TextPadding": {
-            "PaddingLeft": 55
-          },
           "Top": 290.0,
           "VerticalAlignment": 1,
           "Visible": true,
@@ -134,8 +80,7 @@
             },
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tclutchMode = 1\r\n} else {\r\n\tclutchMode = settings.clutchMode\r\n}\r\n\r\n\r\nif ( clutchMode == 0) {\r\n\t\r\n\t// Always Off\r\n\treturn 0\r\n\t\r\n} else if (clutchMode == 1) {\r\n\t\r\n\treturn ($prop('DataCorePlugin.GameData.Clutch') >0) ? 1 : 0;\r\n\t\r\n} else {\r\n\t\r\n\t// Always On\r\n\treturn 1\r\n}",
-                "Interpreter": 1
+                "Expression": "[DataCorePlugin.GameData.Clutch]>0"
               },
               "Mode": 2,
               "TargetPropertyName": "Visible"
@@ -160,7 +105,7 @@
           "TextColor": "#FF000000",
           "Top": 298.0,
           "VerticalAlignment": 1,
-          "Visible": true,
+          "Visible": false,
           "Width": 45.0
         },
         {
@@ -241,6 +186,54 @@
           "TextColor": "#FFFFFFFF",
           "Top": 45.0,
           "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 160.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FFF05C00",
+          "Bindings": {
+            "BackgroundColor": {
+              "Formula": {
+                "Expression": "if(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=0,'Yellow',\r\nif(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=1,'Red',\r\nif(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=2,'#FFF05C00',\r\nif(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=3,'Green','Blue'))))"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "BackgroundColor"
+            },
+            "Text": {
+              "Formula": {
+                "Expression": "if(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=0,'NO DEPLOY',\r\nif(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=1,'QUAL',\r\nif(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=2,'ATTACK',\r\nif(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=3,'BALANCED','BUILD'))))"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Text"
+            },
+            "TextColor": {
+              "Formula": {
+                "Expression": "if(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=0,'Black',\r\nif(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=1,'White',\r\nif(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=2,'White',\r\nif(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=3,'White','White'))))"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "TextColor"
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "if(isnull([CarId],0)='bmwlmdh',true,false)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Font": "Roboto",
+          "FontSize": 16.0,
+          "FontWeight": "Bold",
+          "Height": 20.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 0.0,
+          "Name": "TextItem2",
+          "Text": "BALANCED",
+          "TextColor": "#FFFFFFFF",
+          "Top": 50.0,
+          "VerticalAlignment": 0,
           "Visible": true,
           "Width": 160.0
         },
@@ -748,9 +741,6 @@
         "Expression": ""
       },
       "PitScreen": false,
-      "ScreenEnabledExpression": {
-        "Expression": ""
-      },
       "ScreenId": "c46c9e6c-6a9a-47a5-9123-ff8fee4242aa"
     },
     {
@@ -1372,9 +1362,6 @@
         "Expression": ""
       },
       "PitScreen": false,
-      "ScreenEnabledExpression": {
-        "Expression": ""
-      },
       "ScreenId": "e3ca8a53-892f-41ed-b756-5291cb59b55c"
     }
   ],

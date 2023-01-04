@@ -11,11 +11,12 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "4cebe7de-9892-4119-85be-10914e3d30bd",
+  "Id": "58189bc8-dc70-46f6-9549-4d94eaaed894",
   "Images": [
     {
       "Extension": ".png",
       "Height": 12,
+      "Length": 0,
       "Modified": false,
       "Name": "line-front",
       "Optimized": true,
@@ -24,6 +25,7 @@
     {
       "Extension": ".png",
       "Height": 3,
+      "Length": 0,
       "Modified": false,
       "Name": "line-left",
       "Optimized": true,
@@ -32,6 +34,7 @@
     {
       "Extension": ".png",
       "Height": 12,
+      "Length": 0,
       "Modified": false,
       "Name": "line-rear",
       "Optimized": true,
@@ -40,6 +43,7 @@
     {
       "Extension": ".png",
       "Height": 3,
+      "Length": 0,
       "Modified": false,
       "Name": "line-right",
       "Optimized": true,
@@ -48,6 +52,7 @@
     {
       "Extension": ".png",
       "Height": 160,
+      "Length": 0,
       "Modified": false,
       "Name": "vehicle-status",
       "Optimized": true,
@@ -56,6 +61,7 @@
     {
       "Extension": ".png",
       "Height": 44,
+      "Length": 0,
       "Modified": false,
       "Name": "vehicle-status-front-heavy",
       "Optimized": true,
@@ -64,6 +70,7 @@
     {
       "Extension": ".png",
       "Height": 44,
+      "Length": 0,
       "Modified": false,
       "Name": "vehicle-status-front-light",
       "Optimized": true,
@@ -72,6 +79,7 @@
     {
       "Extension": ".png",
       "Height": 44,
+      "Length": 0,
       "Modified": false,
       "Name": "vehicle-status-front-medium",
       "Optimized": true,
@@ -80,6 +88,7 @@
     {
       "Extension": ".png",
       "Height": 72,
+      "Length": 0,
       "Modified": false,
       "Name": "vehicle-status-left-heavy",
       "Optimized": true,
@@ -88,6 +97,7 @@
     {
       "Extension": ".png",
       "Height": 72,
+      "Length": 0,
       "Modified": false,
       "Name": "vehicle-status-left-light",
       "Optimized": true,
@@ -96,6 +106,7 @@
     {
       "Extension": ".png",
       "Height": 72,
+      "Length": 0,
       "Modified": false,
       "Name": "vehicle-status-left-medium",
       "Optimized": true,
@@ -104,6 +115,7 @@
     {
       "Extension": ".png",
       "Height": 44,
+      "Length": 0,
       "Modified": false,
       "Name": "vehicle-status-rear-heavy",
       "Optimized": true,
@@ -112,6 +124,7 @@
     {
       "Extension": ".png",
       "Height": 44,
+      "Length": 0,
       "Modified": false,
       "Name": "vehicle-status-rear-light",
       "Optimized": true,
@@ -120,6 +133,7 @@
     {
       "Extension": ".png",
       "Height": 44,
+      "Length": 0,
       "Modified": false,
       "Name": "vehicle-status-rear-medium",
       "Optimized": true,
@@ -128,6 +142,7 @@
     {
       "Extension": ".png",
       "Height": 72,
+      "Length": 0,
       "Modified": false,
       "Name": "vehicle-status-right-heavy",
       "Optimized": true,
@@ -136,6 +151,7 @@
     {
       "Extension": ".png",
       "Height": 72,
+      "Length": 0,
       "Modified": false,
       "Name": "vehicle-status-right-light",
       "Optimized": true,
@@ -144,6 +160,7 @@
     {
       "Extension": ".png",
       "Height": 72,
+      "Length": 0,
       "Modified": false,
       "Name": "vehicle-status-right-medium",
       "Optimized": true,
@@ -151,12 +168,14 @@
     },
     {
       "Extension": ".png",
+      "Length": 0,
       "Modified": false,
       "Name": "lock",
       "Optimized": true
     },
     {
       "Extension": ".png",
+      "Length": 0,
       "Modified": false,
       "Name": "slip",
       "Optimized": true
@@ -1888,9 +1907,9 @@
               "BackgroundColor": "#00FFFFFF",
               "Bindings": {
                 "Text": {
-                  "FormatString": "0.0\u00b0",
+                  "FormatString": "0",
                   "Formula": {
-                    "Expression": "[DataCorePlugin.GameData.OilTemperature]"
+                    "Expression": "format([DataCorePlugin.GameData.OilTemperature],'0.0\u00b0')"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
@@ -1940,9 +1959,6 @@
         "Expression": ""
       },
       "PitScreen": false,
-      "ScreenEnabledExpression": {
-        "Expression": ""
-      },
       "ScreenId": "6a7f83c9-7fec-400f-b4dd-7e428d60cf3c"
     },
     {
@@ -2813,9 +2829,6 @@
         "Expression": ""
       },
       "PitScreen": false,
-      "ScreenEnabledExpression": {
-        "Expression": ""
-      },
       "ScreenId": "2b07ae57-8298-448f-8838-d5be9ab0cac0"
     },
     {
@@ -3108,9 +3121,6 @@
         "Expression": ""
       },
       "PitScreen": false,
-      "ScreenEnabledExpression": {
-        "Expression": ""
-      },
       "ScreenId": "0bf35db0-820b-4f3d-a637-69c7bbda70df"
     },
     {
@@ -3303,8 +3313,8 @@
                     "RadiusTopRight": 5
                   },
                   "Font": "Roboto",
-                  "FontSize": 17.0,
-                  "FontWeight": "Black",
+                  "FontSize": 15.0,
+                  "FontWeight": "Bold",
                   "Height": 24.0,
                   "HorizontalAlignment": 1,
                   "IsTextItem": true,
@@ -3488,8 +3498,8 @@
                     "RadiusTopRight": 5
                   },
                   "Font": "Roboto",
-                  "FontSize": 17.0,
-                  "FontWeight": "Black",
+                  "FontSize": 15.0,
+                  "FontWeight": "Bold",
                   "Height": 24.0,
                   "HorizontalAlignment": 1,
                   "IsTextItem": true,
@@ -3673,8 +3683,8 @@
                     "RadiusTopRight": 5
                   },
                   "Font": "Roboto",
-                  "FontSize": 17.0,
-                  "FontWeight": "Black",
+                  "FontSize": 15.0,
+                  "FontWeight": "Bold",
                   "Height": 24.0,
                   "HorizontalAlignment": 1,
                   "IsTextItem": true,
@@ -3849,8 +3859,8 @@
                     "RadiusTopRight": 5
                   },
                   "Font": "Roboto",
-                  "FontSize": 17.0,
-                  "FontWeight": "Black",
+                  "FontSize": 15.0,
+                  "FontWeight": "Bold",
                   "Height": 24.0,
                   "HorizontalAlignment": 1,
                   "IsTextItem": true,
@@ -4046,8 +4056,8 @@
                     "RadiusTopRight": 5
                   },
                   "Font": "Roboto",
-                  "FontSize": 17.0,
-                  "FontWeight": "Black",
+                  "FontSize": 15.0,
+                  "FontWeight": "Bold",
                   "Height": 24.0,
                   "HorizontalAlignment": 1,
                   "IsTextItem": true,
@@ -4231,8 +4241,8 @@
                     "RadiusTopRight": 5
                   },
                   "Font": "Roboto",
-                  "FontSize": 17.0,
-                  "FontWeight": "Black",
+                  "FontSize": 15.0,
+                  "FontWeight": "Bold",
                   "Height": 24.0,
                   "HorizontalAlignment": 1,
                   "IsTextItem": true,
@@ -4416,8 +4426,8 @@
                     "RadiusTopRight": 5
                   },
                   "Font": "Roboto",
-                  "FontSize": 17.0,
-                  "FontWeight": "Black",
+                  "FontSize": 15.0,
+                  "FontWeight": "Bold",
                   "Height": 24.0,
                   "HorizontalAlignment": 1,
                   "IsTextItem": true,
@@ -4586,9 +4596,6 @@
         "Expression": ""
       },
       "PitScreen": false,
-      "ScreenEnabledExpression": {
-        "Expression": ""
-      },
       "ScreenId": "083f6da1-c66e-4799-b24d-f371cf7750e0"
     },
     {
@@ -4763,8 +4770,8 @@
                     "RadiusTopRight": 5
                   },
                   "Font": "Roboto",
-                  "FontSize": 17.0,
-                  "FontWeight": "Black",
+                  "FontSize": 15.0,
+                  "FontWeight": "Bold",
                   "Height": 24.0,
                   "HorizontalAlignment": 1,
                   "IsTextItem": true,
@@ -4970,8 +4977,8 @@
                     "RadiusTopRight": 5
                   },
                   "Font": "Roboto",
-                  "FontSize": 17.0,
-                  "FontWeight": "Black",
+                  "FontSize": 15.0,
+                  "FontWeight": "Bold",
                   "Height": 24.0,
                   "HorizontalAlignment": 1,
                   "IsTextItem": true,
@@ -5177,8 +5184,8 @@
                     "RadiusTopRight": 5
                   },
                   "Font": "Roboto",
-                  "FontSize": 17.0,
-                  "FontWeight": "Black",
+                  "FontSize": 15.0,
+                  "FontWeight": "Bold",
                   "Height": 24.0,
                   "HorizontalAlignment": 1,
                   "IsTextItem": true,
@@ -5384,8 +5391,8 @@
                     "RadiusTopRight": 5
                   },
                   "Font": "Roboto",
-                  "FontSize": 17.0,
-                  "FontWeight": "Black",
+                  "FontSize": 15.0,
+                  "FontWeight": "Bold",
                   "Height": 24.0,
                   "HorizontalAlignment": 1,
                   "IsTextItem": true,
@@ -5591,8 +5598,8 @@
                     "RadiusTopRight": 5
                   },
                   "Font": "Roboto",
-                  "FontSize": 17.0,
-                  "FontWeight": "Black",
+                  "FontSize": 15.0,
+                  "FontWeight": "Bold",
                   "Height": 24.0,
                   "HorizontalAlignment": 1,
                   "IsTextItem": true,
@@ -5798,8 +5805,8 @@
                     "RadiusTopRight": 5
                   },
                   "Font": "Roboto",
-                  "FontSize": 17.0,
-                  "FontWeight": "Black",
+                  "FontSize": 15.0,
+                  "FontWeight": "Bold",
                   "Height": 24.0,
                   "HorizontalAlignment": 1,
                   "IsTextItem": true,
@@ -6005,8 +6012,8 @@
                     "RadiusTopRight": 5
                   },
                   "Font": "Roboto",
-                  "FontSize": 17.0,
-                  "FontWeight": "Black",
+                  "FontSize": 15.0,
+                  "FontWeight": "Bold",
                   "Height": 24.0,
                   "HorizontalAlignment": 1,
                   "IsTextItem": true,
@@ -6212,8 +6219,8 @@
                     "RadiusTopRight": 5
                   },
                   "Font": "Roboto",
-                  "FontSize": 17.0,
-                  "FontWeight": "Black",
+                  "FontSize": 15.0,
+                  "FontWeight": "Bold",
                   "Height": 24.0,
                   "HorizontalAlignment": 1,
                   "IsTextItem": true,
@@ -6405,9 +6412,6 @@
         "Expression": ""
       },
       "PitScreen": false,
-      "ScreenEnabledExpression": {
-        "Expression": ""
-      },
       "ScreenId": "42e8404d-3619-4107-944a-baa94aba1074"
     }
   ],
