@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "25561325-c193-409e-92d2-7b5f650c2afb",
+  "Id": "b2857340-02d8-4fde-9c6e-c05644822d0b",
   "Images": [
     {
       "Extension": ".png",
@@ -433,7 +433,7 @@
           "Bindings": {
             "Opacity": {
               "Formula": {
-                "Expression": "if ([GameRawData.Telemetry.dcTractionControl]==0, 35, 100)"
+                "Expression": "if ( isnull([GameRawData.Telemetry.dcTractionControl],0)==0, 35, 100)"
               },
               "Mode": 2,
               "TargetPropertyName": "Opacity"
@@ -441,7 +441,7 @@
             "Text": {
               "FormatString": "0",
               "Formula": {
-                "Expression": "[GameRawData.Telemetry.dcTractionControl]"
+                "Expression": "isnull([GameRawData.Telemetry.dcTractionControl],0)"
               },
               "Mode": 2,
               "TargetPropertyName": "Text"
@@ -494,7 +494,7 @@
                 "Text": {
                   "FormatString": "0",
                   "Formula": {
-                    "Expression": "[DataCorePlugin.GameData.TCLevel]"
+                    "Expression": "isnull([GameRawData.Telemetry.dcTractionControl],0)"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
