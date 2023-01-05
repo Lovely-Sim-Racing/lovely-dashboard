@@ -45,3 +45,6 @@ pretty format json.......................................................Passed
 
 ## Contributing Files
 To maintain a versioned repository, you will need to commit **ONLY the source files** of the dashboard which can be found in the SimHub folder. You can right click on the Dashboard in SimHub and select `Open Folder`. You should copy all those files into the repository, and let GitHub do it's thing when you commit.
+
+## Record and share a Simhub Replay
+To better review the chnages commited, it would be great if you could also share a pre-recorded Simhub replay demonstrating the events which are affected. This can be shared directly on Discord in the #developers channel.
