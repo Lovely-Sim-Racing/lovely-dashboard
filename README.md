@@ -67,8 +67,8 @@ If you want to use the Lovely Dashboard with iRacing, you will need to copy the 
 1. Download Romainrob's [**RSC.iRacingExtraProperties.dll**](https://drive.google.com/drive/folders/1AiIWHviD4j-_D-zgRrjJU1AFhJ_xmass)
 
 :warning: **Warning: Simhub Dash v8.0+** is required to run the Lovely Dashboard 1.5.0+
- 
-## Settings (NEW)
+
+## Settings
 As of version 1.5.4, the Lovely Dashboard can also be setup to your liking. You will need to copy the file `Lovely-Dashboard_settings.json` into the `./Simhub/JavascriptExtensions` folder. 
 
 ![Copy the settings file into the JavascriptExtensions folder](docs/images/settings-file.png)
