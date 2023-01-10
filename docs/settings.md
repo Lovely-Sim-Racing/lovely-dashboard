@@ -111,5 +111,5 @@ Set the UI mode intensity and change the line brightness throughout the dashbaor
 #### `nightMode` (NEW)
 For sims that support night races and provide info on Lights (currently ACC and AMS2), when you turn on the lights, it will activate a dimmer view of the dashboard. You can enable this or disable this feature:
 
-- `0` Off
-- `1` On
+- `0` Enabled: Will dim the screen when lights are on
+- `1` Disabled: Will always remain bright
