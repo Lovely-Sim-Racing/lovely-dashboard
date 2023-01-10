@@ -3,12 +3,17 @@
 
 ![Overlay](./images/Overlay.jpg)
 
-### Damage Module
-1. Front (Light, Medium and Heavy)
-2. Left
-3. Right
-4. Rear 
-5. Estimated Pit time required
+### Top Left Module
+1. Time Remaining
+2. Session Type
+3. Current Position
+4. Current Lap Number
+5. Track Time
+
+### Left Module
+1. Predicted Lap (White, Red when invalidated)
+2. Last Lap
+3. Session Best Lap
 
 ### Timetable Module
 1. Relative Timetable
@@ -20,20 +25,12 @@
 1. Live Lap Time Diff to your Session Best
 2. Gear
 3. RPM
-4. Steering Input Angle
 5. Force Feed Back
 6. Throttle/Brake Input
 7. Speed
 
-### Bottom Left Module
+### Bottom Right Module
 1. Air Temp
 2. Track Temp
 3. Track Status
 4. Rain Forecast
-
-### Bottom Right Module
-1. Time Remaining
-2. Session Type
-3. Current Position
-4. Current Lap Number
-5. Track Time

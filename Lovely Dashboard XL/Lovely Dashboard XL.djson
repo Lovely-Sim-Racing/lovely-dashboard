@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "d73c48b7-5876-4899-820f-5817fbce99e1",
+  "Id": "99844802-9bfe-47a9-8709-3a49e3ab18ec",
   "Images": [
     {
       "Extension": ".png",
@@ -72,6 +72,46 @@
       "Name": "Primary BG",
       "Optimized": true,
       "Width": 850
+    },
+    {
+      "Extension": ".png",
+      "Height": 80,
+      "Length": 959,
+      "MD5": "c65507b76e2d78d727cfbabcd6b3327c",
+      "Modified": false,
+      "Name": "icon-acc",
+      "Optimized": true,
+      "Width": 80
+    },
+    {
+      "Extension": ".png",
+      "Height": 80,
+      "Length": 2834,
+      "MD5": "14b09de0fd8c48d2f6174c86f7479703",
+      "Modified": false,
+      "Name": "icon-ams2",
+      "Optimized": true,
+      "Width": 80
+    },
+    {
+      "Extension": ".png",
+      "Height": 80,
+      "Length": 1439,
+      "MD5": "1596a522bfe43d688554ab43c19af5ca",
+      "Modified": false,
+      "Name": "icon-iracing",
+      "Optimized": true,
+      "Width": 80
+    },
+    {
+      "Extension": ".png",
+      "Height": 80,
+      "Length": 2269,
+      "MD5": "c952c901c3a7865f95c4c85d6d3eec39",
+      "Modified": false,
+      "Name": "icon-rf2",
+      "Optimized": true,
+      "Width": 80
     }
   ],
   "IsOverlay": false,
@@ -212,7 +252,7 @@
           "IsTextItem": true,
           "Left": 520.0,
           "Name": "TextItem0",
-          "Text": "Lovely Dashboard XL v1.6.0",
+          "Text": "Lovely Dashboard XL v1.6.1",
           "TextColor": "#FFFFFFFF",
           "Top": 340.0,
           "VerticalAlignment": 1,
@@ -233,7 +273,7 @@
             },
             "Visible": {
               "Formula": {
-                "Expression": "var currentVer = '1.6.0'\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\n//return latestVer\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
+                "Expression": "var currentVer = '1.6.1'\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\n//return latestVer\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -466,14 +506,24 @@
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
               "BackgroundColor": "#00FFFFFF",
               "BorderStyle": {
+                "Bindings": {
+                  "RadiusBottomRight": {
+                    "Formula": {
+                      "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                      "Interpreter": 1
+                    },
+                    "Mode": 2,
+                    "TargetPropertyName": "RadiusBottomRight"
+                  }
+                },
                 "BorderBottom": 2,
                 "BorderLeft": 2,
                 "BorderRight": 2,
                 "BorderTop": 2,
-                "RadiusBottomLeft": 15,
-                "RadiusBottomRight": 50,
-                "RadiusTopLeft": 15,
-                "RadiusTopRight": 15
+                "RadiusBottomLeft": 12,
+                "RadiusBottomRight": 45,
+                "RadiusTopLeft": 12,
+                "RadiusTopRight": 12
               },
               "Height": 370.0,
               "IsRectangleItem": true,
@@ -487,14 +537,24 @@
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
               "BackgroundColor": "#00FFFFFF",
               "BorderStyle": {
+                "Bindings": {
+                  "RadiusTopRight": {
+                    "Formula": {
+                      "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                      "Interpreter": 1
+                    },
+                    "Mode": 2,
+                    "TargetPropertyName": "RadiusTopRight"
+                  }
+                },
                 "BorderBottom": 2,
                 "BorderLeft": 2,
                 "BorderRight": 2,
                 "BorderTop": 2,
-                "RadiusBottomLeft": 15,
-                "RadiusBottomRight": 15,
-                "RadiusTopLeft": 15,
-                "RadiusTopRight": 50
+                "RadiusBottomLeft": 12,
+                "RadiusBottomRight": 12,
+                "RadiusTopLeft": 12,
+                "RadiusTopRight": 45
               },
               "Height": 90.0,
               "IsRectangleItem": true,
@@ -508,14 +568,24 @@
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
               "BackgroundColor": "#00FFFFFF",
               "BorderStyle": {
+                "Bindings": {
+                  "RadiusTopLeft": {
+                    "Formula": {
+                      "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                      "Interpreter": 1
+                    },
+                    "Mode": 2,
+                    "TargetPropertyName": "RadiusTopLeft"
+                  }
+                },
                 "BorderBottom": 2,
                 "BorderLeft": 2,
                 "BorderRight": 2,
                 "BorderTop": 2,
-                "RadiusBottomLeft": 15,
-                "RadiusBottomRight": 15,
-                "RadiusTopLeft": 50,
-                "RadiusTopRight": 15
+                "RadiusBottomLeft": 12,
+                "RadiusBottomRight": 12,
+                "RadiusTopLeft": 45,
+                "RadiusTopRight": 12
               },
               "Height": 90.0,
               "IsRectangleItem": true,
@@ -533,10 +603,10 @@
                 "BorderLeft": 2,
                 "BorderRight": 2,
                 "BorderTop": 2,
-                "RadiusBottomLeft": 15,
-                "RadiusBottomRight": 15,
-                "RadiusTopLeft": 15,
-                "RadiusTopRight": 15
+                "RadiusBottomLeft": 12,
+                "RadiusBottomRight": 12,
+                "RadiusTopLeft": 12,
+                "RadiusTopRight": 12
               },
               "Height": 260.0,
               "IsRectangleItem": true,
@@ -554,10 +624,10 @@
                 "BorderLeft": 2,
                 "BorderRight": 2,
                 "BorderTop": 2,
-                "RadiusBottomLeft": 15,
-                "RadiusBottomRight": 15,
-                "RadiusTopLeft": 15,
-                "RadiusTopRight": 15
+                "RadiusBottomLeft": 12,
+                "RadiusBottomRight": 12,
+                "RadiusTopLeft": 12,
+                "RadiusTopRight": 12
               },
               "Height": 90.0,
               "IsRectangleItem": true,
@@ -575,10 +645,10 @@
                 "BorderLeft": 2,
                 "BorderRight": 2,
                 "BorderTop": 2,
-                "RadiusBottomLeft": 15,
-                "RadiusBottomRight": 15,
-                "RadiusTopLeft": 15,
-                "RadiusTopRight": 15
+                "RadiusBottomLeft": 12,
+                "RadiusBottomRight": 12,
+                "RadiusTopLeft": 12,
+                "RadiusTopRight": 12
               },
               "Height": 260.0,
               "IsRectangleItem": true,
@@ -587,12 +657,163 @@
               "Top": 110.0,
               "Visible": true,
               "Width": 325.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "BorderStyle": {
+                "Bindings": {
+                  "RadiusBottomRight": {
+                    "Formula": {
+                      "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                      "Interpreter": 1
+                    },
+                    "Mode": 2,
+                    "TargetPropertyName": "RadiusBottomRight"
+                  }
+                },
+                "BorderBottom": 2,
+                "BorderLeft": 2,
+                "BorderRight": 2,
+                "BorderTop": 2,
+                "RadiusBottomLeft": 12,
+                "RadiusBottomRight": 45,
+                "RadiusTopLeft": 12,
+                "RadiusTopRight": 12
+              },
+              "Height": 90.0,
+              "IsRectangleItem": true,
+              "Left": 521.0,
+              "Name": "RectangleItem7",
+              "Top": 390.0,
+              "Visible": true,
+              "Width": 329.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "BorderStyle": {
+                "Bindings": {
+                  "RadiusBottomLeft": {
+                    "Formula": {
+                      "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                      "Interpreter": 1
+                    },
+                    "Mode": 2,
+                    "TargetPropertyName": "RadiusBottomLeft"
+                  }
+                },
+                "BorderBottom": 2,
+                "BorderColor": "#FF00BFFF",
+                "BorderLeft": 2,
+                "BorderRight": 2,
+                "BorderTop": 2,
+                "RadiusBottomLeft": 45,
+                "RadiusBottomRight": 12,
+                "RadiusTopLeft": 12,
+                "RadiusTopRight": 12
+              },
+              "Height": 90.0,
+              "IsRectangleItem": true,
+              "Left": 0.0,
+              "Name": "RectangleItem8",
+              "Top": 390.0,
+              "Visible": true,
+              "Width": 86.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "BorderStyle": {
+                "BorderBottom": 2,
+                "BorderColor": "#FF00BFFF",
+                "BorderLeft": 2,
+                "BorderRight": 2,
+                "BorderTop": 2,
+                "RadiusBottomLeft": 12,
+                "RadiusBottomRight": 12,
+                "RadiusTopLeft": 12,
+                "RadiusTopRight": 12
+              },
+              "Height": 90.0,
+              "IsRectangleItem": true,
+              "Left": 96.0,
+              "Name": "RectangleItem9",
+              "Top": 390.0,
+              "Visible": true,
+              "Width": 86.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "BorderStyle": {
+                "BorderBottom": 2,
+                "BorderColor": "#FFFFE04C",
+                "BorderLeft": 2,
+                "BorderRight": 2,
+                "BorderTop": 2,
+                "RadiusBottomLeft": 12,
+                "RadiusBottomRight": 12,
+                "RadiusTopLeft": 12,
+                "RadiusTopRight": 12
+              },
+              "Height": 90.0,
+              "IsRectangleItem": true,
+              "Left": 192.0,
+              "Name": "RectangleItem10",
+              "Top": 390.0,
+              "Visible": true,
+              "Width": 86.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "BorderStyle": {
+                "BorderBottom": 2,
+                "BorderColor": "#FFFA0000",
+                "BorderLeft": 2,
+                "BorderRight": 2,
+                "BorderTop": 2,
+                "RadiusBottomLeft": 12,
+                "RadiusBottomRight": 12,
+                "RadiusTopLeft": 12,
+                "RadiusTopRight": 12
+              },
+              "Height": 90.0,
+              "IsRectangleItem": true,
+              "Left": 288.0,
+              "Name": "RectangleItem11",
+              "Top": 390.0,
+              "Visible": true,
+              "Width": 127.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "BorderStyle": {
+                "BorderBottom": 2,
+                "BorderColor": "#FF00FF02",
+                "BorderLeft": 2,
+                "BorderRight": 2,
+                "BorderTop": 2,
+                "RadiusBottomLeft": 12,
+                "RadiusBottomRight": 12,
+                "RadiusTopLeft": 12,
+                "RadiusTopRight": 12
+              },
+              "Height": 90.0,
+              "IsRectangleItem": true,
+              "Left": 425.0,
+              "Name": "RectangleItem12",
+              "Top": 390.0,
+              "Visible": true,
+              "Width": 86.0
             }
           ],
           "Group": false,
           "Height": 480.0,
           "Left": 0.0,
-          "Name": "Layer",
+          "Name": "Outlines",
           "Top": 0.0,
           "Visible": true,
           "Width": 1280.0
@@ -603,6 +824,7 @@
           "BackgroundColor": "#00FFFFFF",
           "FileName": "Relative Graph.djson",
           "Height": 49.0,
+          "IsFreezed": true,
           "Left": 890.0,
           "Name": "Relative Graph",
           "NextScreenCommand": 0,
@@ -626,6 +848,7 @@
           },
           "FileName": "Functions.djson",
           "Height": 50.0,
+          "IsFreezed": true,
           "Left": 20.0,
           "Name": "Functions",
           "NextScreenCommand": 0,
@@ -649,6 +872,7 @@
           },
           "FileName": "Functions - iR.djson",
           "Height": 50.0,
+          "IsFreezed": true,
           "Left": 20.0,
           "Name": "Function iR",
           "NextScreenCommand": 0,
@@ -672,6 +896,7 @@
           },
           "FileName": "Functions - AMS2.djson",
           "Height": 50.0,
+          "IsFreezed": true,
           "Left": 20.0,
           "Name": "Function AMS2",
           "NextScreenCommand": 0,
@@ -695,6 +920,7 @@
           },
           "FileName": "Functions - rF2.djson",
           "Height": 50.0,
+          "IsFreezed": true,
           "Left": 20.0,
           "Name": "Functions rF2",
           "NextScreenCommand": 0,
@@ -718,6 +944,7 @@
           },
           "FileName": "Session.djson",
           "Height": 49.0,
+          "IsFreezed": true,
           "Left": 550.0,
           "Name": "Session",
           "NextScreenCommand": 0,
@@ -741,6 +968,7 @@
           },
           "FileName": "Session - iR.djson",
           "Height": 49.0,
+          "IsFreezed": true,
           "Left": 550.0,
           "Name": "Session iR",
           "NextScreenCommand": 0,
@@ -764,6 +992,7 @@
           },
           "FileName": "Session - AMS2.djson",
           "Height": 49.0,
+          "IsFreezed": true,
           "Left": 550.0,
           "Name": "Session AMS2",
           "NextScreenCommand": 0,
@@ -787,6 +1016,7 @@
           },
           "FileName": "Session - rF2.djson",
           "Height": 49.0,
+          "IsFreezed": true,
           "Left": 550.0,
           "Name": "Session rF2",
           "NextScreenCommand": 0,
@@ -810,6 +1040,7 @@
           },
           "FileName": "Multi Function Module Left.djson",
           "Height": 268.0,
+          "IsFreezed": true,
           "Left": 0.0,
           "Name": "Left MFM",
           "NextScreenCommand": 1,
@@ -833,6 +1064,7 @@
           },
           "FileName": "Multi Function Module Left - iR.djson",
           "Height": 268.0,
+          "IsFreezed": true,
           "Left": 0.0,
           "Name": "Left MFM iR",
           "NextScreenCommand": 1,
@@ -856,6 +1088,7 @@
           },
           "FileName": "Multi Function Module Left - AMS2.djson",
           "Height": 268.0,
+          "IsFreezed": true,
           "Left": 0.0,
           "Name": "Left MFM AMS2",
           "NextScreenCommand": 1,
@@ -879,6 +1112,7 @@
           },
           "FileName": "Multi Function Module Left - rF2.djson",
           "Height": 268.0,
+          "IsFreezed": true,
           "Left": 0.0,
           "Name": "Left MFM rF2",
           "NextScreenCommand": 1,
@@ -902,6 +1136,7 @@
           },
           "FileName": "Multi Function Module Right.djson",
           "Height": 268.0,
+          "IsFreezed": true,
           "Left": 525.0,
           "Name": "Right MFM",
           "NextScreenCommand": 2,
@@ -925,6 +1160,7 @@
           },
           "FileName": "Multi Function Module Right - iR.djson",
           "Height": 268.0,
+          "IsFreezed": true,
           "Left": 525.0,
           "Name": "Right MFM iR",
           "NextScreenCommand": 2,
@@ -948,6 +1184,7 @@
           },
           "FileName": "Multi Function Module Right - AMS2.djson",
           "Height": 268.0,
+          "IsFreezed": true,
           "Left": 525.0,
           "Name": "Right MFM AMS2",
           "NextScreenCommand": 2,
@@ -971,6 +1208,7 @@
           },
           "FileName": "Multi Function Module Right - rF2.djson",
           "Height": 268.0,
+          "IsFreezed": true,
           "Left": 525.0,
           "Name": "Right MFM rF2",
           "NextScreenCommand": 2,
@@ -994,6 +1232,7 @@
           },
           "FileName": "Central.djson",
           "Height": 300.0,
+          "IsFreezed": true,
           "Left": 345.0,
           "Name": "Central",
           "NextScreenCommand": 5,
@@ -1017,6 +1256,7 @@
           },
           "FileName": "Central - iR.djson",
           "Height": 330.0,
+          "IsFreezed": true,
           "Left": 345.0,
           "Name": "Central iR",
           "NextScreenCommand": 5,
@@ -1040,6 +1280,7 @@
           },
           "FileName": "Central - AMS2.djson",
           "Height": 300.0,
+          "IsFreezed": true,
           "Left": 345.0,
           "Name": "Central AMS2",
           "NextScreenCommand": 5,
@@ -1063,6 +1304,7 @@
           },
           "FileName": "Central - rF2.djson",
           "Height": 330.0,
+          "IsFreezed": true,
           "Left": 345.0,
           "Name": "Central rF2",
           "NextScreenCommand": 5,
@@ -1086,6 +1328,7 @@
           },
           "FileName": "Environment.djson",
           "Height": 58.0,
+          "IsFreezed": true,
           "Left": 345.0,
           "Name": "Environment",
           "NextScreenCommand": 0,
@@ -1109,6 +1352,7 @@
           },
           "FileName": "Environment - iR.djson",
           "Height": 24.0,
+          "IsFreezed": true,
           "Left": 345.0,
           "Name": "Environment iR",
           "NextScreenCommand": 0,
@@ -1132,6 +1376,7 @@
           },
           "FileName": "Environment - AMS2.djson",
           "Height": 58.0,
+          "IsFreezed": true,
           "Left": 345.0,
           "Name": "Environment AMS2",
           "NextScreenCommand": 0,
@@ -1155,6 +1400,7 @@
           },
           "FileName": "Environment - Rf2.djson",
           "Height": 24.0,
+          "IsFreezed": true,
           "Left": 345.0,
           "Name": "Environment rF2",
           "NextScreenCommand": 0,
@@ -1178,6 +1424,7 @@
           },
           "FileName": "Vehicle Settings.djson",
           "Height": 97.0,
+          "IsFreezed": true,
           "Left": 0.0,
           "Name": "Vehicle Settings",
           "NextScreenCommand": 0,
@@ -1201,6 +1448,7 @@
           },
           "FileName": "Vehicle Settings - iR.djson",
           "Height": 97.0,
+          "IsFreezed": true,
           "Left": 0.0,
           "Name": "Vehicle Settings iR",
           "NextScreenCommand": 4,
@@ -1224,6 +1472,7 @@
           },
           "FileName": "Vehicle Settings - AMS2.djson",
           "Height": 97.0,
+          "IsFreezed": true,
           "Left": 0.0,
           "Name": "Vehicle Settings AMS2",
           "NextScreenCommand": 4,
@@ -1247,6 +1496,7 @@
           },
           "FileName": "Vehicle Settings - rF2.djson",
           "Height": 97.0,
+          "IsFreezed": true,
           "Left": 0.0,
           "Name": "Vehicle Settings rF2",
           "NextScreenCommand": 0,
@@ -1271,6 +1521,7 @@
           },
           "FileName": "Flags.djson",
           "Height": 50.0,
+          "IsFreezed": true,
           "Left": 20.0,
           "Name": "Flags",
           "NextScreenCommand": 0,
@@ -1295,6 +1546,7 @@
           },
           "FileName": "Flags - iR.djson",
           "Height": 50.0,
+          "IsFreezed": true,
           "Left": 20.0,
           "Name": "Flags iR",
           "NextScreenCommand": 0,
@@ -1319,6 +1571,7 @@
           },
           "FileName": "Flags - AMS2.djson",
           "Height": 50.0,
+          "IsFreezed": true,
           "Left": 20.0,
           "Name": "Flags AMS2",
           "NextScreenCommand": 0,
@@ -1343,6 +1596,7 @@
           },
           "FileName": "Flags - rF2.djson",
           "Height": 50.0,
+          "IsFreezed": true,
           "Left": 20.0,
           "Name": "Flags rF2",
           "NextScreenCommand": 0,
@@ -1366,6 +1620,7 @@
           },
           "FileName": "Alerts.djson",
           "Height": 480.0,
+          "IsFreezed": true,
           "Left": 0.0,
           "Name": "Alerts",
           "NextScreenCommand": 0,
@@ -1389,6 +1644,7 @@
           },
           "FileName": "Alerts - iR.djson",
           "Height": 480.0,
+          "IsFreezed": true,
           "Left": 0.0,
           "Name": "Alerts iR",
           "NextScreenCommand": 0,
@@ -1412,6 +1668,7 @@
           },
           "FileName": "Alerts - AMS2.djson",
           "Height": 480.0,
+          "IsFreezed": true,
           "Left": 0.0,
           "Name": "Alerts AMS2",
           "NextScreenCommand": 0,
@@ -1435,6 +1692,7 @@
           },
           "FileName": "Alerts - rF2.djson",
           "Height": 480.0,
+          "IsFreezed": true,
           "Left": 0.0,
           "Name": "Alerts rF2",
           "NextScreenCommand": 0,
@@ -1442,20 +1700,6 @@
           "Top": 0.0,
           "Visible": false,
           "Width": 850.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
-          "AutoSize": true,
-          "BackgroundColor": "#00FFFFFF",
-          "FileName": "Turn Signals.djson",
-          "Height": 103.0,
-          "Left": 18.0,
-          "Name": "Turn Signals",
-          "NextScreenCommand": 0,
-          "PreviousScreenCommand": 0,
-          "Top": 50.0,
-          "Visible": true,
-          "Width": 814.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
@@ -1472,6 +1716,7 @@
           },
           "FileName": "Relative Native.djson",
           "Height": 314.0,
+          "IsFreezed": true,
           "Left": 890.0,
           "Name": "Relative ",
           "NextScreenCommand": 0,
@@ -1495,6 +1740,7 @@
           },
           "FileName": "Relative Native - iR.djson",
           "Height": 314.0,
+          "IsFreezed": true,
           "Left": 890.0,
           "Name": "Relative iR",
           "NextScreenCommand": 0,
@@ -1518,6 +1764,7 @@
           },
           "FileName": "Relative Native - AMS2.djson",
           "Height": 314.0,
+          "IsFreezed": true,
           "Left": 890.0,
           "Name": "Relative AMS2",
           "NextScreenCommand": 0,
@@ -1541,6 +1788,7 @@
           },
           "FileName": "Relative Native - rF2.djson",
           "Height": 314.0,
+          "IsFreezed": true,
           "Left": 890.0,
           "Name": "Relative rF2",
           "NextScreenCommand": 0,
@@ -1557,6 +1805,7 @@
           "FontWeight": "Bold",
           "Height": 14.0,
           "HorizontalAlignment": 0,
+          "IsFreezed": true,
           "IsTextItem": true,
           "Left": 890.0,
           "Name": "TextItem23",
@@ -1575,6 +1824,7 @@
           "FontWeight": "Bold",
           "Height": 14.0,
           "HorizontalAlignment": 2,
+          "IsFreezed": true,
           "IsTextItem": true,
           "Left": 1195.0,
           "Name": "TextItem1",
@@ -1584,6 +1834,199 @@
           "VerticalAlignment": 1,
           "Visible": true,
           "Width": 65.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "if ([DataCorePlugin.CurrentGame]=='AssettoCorsaCompetizione' ||\r\n\t[DataCorePlugin.CurrentGame]=='IRacing' || \r\n\t[DataCorePlugin.CurrentGame]=='Automobilista2' ||\r\n\t[DataCorePlugin.CurrentGame]=='RFactor2',\r\n\t\r\n\t0, 1\r\n)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF000000",
+              "Height": 480.0,
+              "IsFreezed": true,
+              "IsRectangleItem": true,
+              "Left": 0.0,
+              "Name": "RectangleItem",
+              "Top": 0.0,
+              "Visible": true,
+              "Width": 1280.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Font": "Roboto",
+              "FontSize": 18.0,
+              "FontWeight": "Bold",
+              "Height": 20.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 315.0,
+              "Name": "TextItem0",
+              "Text": "j76.me / LSR Discord",
+              "TextColor": "#FF00BFFF",
+              "TextWrapping": 0,
+              "Top": 352.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 650.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "'I\\'m so sorry, but it looks like ' + [DataCorePlugin.CurrentGame] + ' is not currently supported by the Lovely Dashboard. Please join the Lovely Discord and let me know how much you need this to happen.' "
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 18.0,
+              "Height": 80.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 315.0,
+              "Name": "TextItem0",
+              "Text": "Not Supported",
+              "TextColor": "#FFFFFFFF",
+              "TextWrapping": 0,
+              "Top": 268.0,
+              "VerticalAlignment": 0,
+              "Visible": true,
+              "Width": 650.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 20.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 315.0,
+              "Name": "TextItem0",
+              "Text": "Bummer!",
+              "TextColor": "#FFFFFFFF",
+              "TextWrapping": 0,
+              "Top": 240.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 650.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "AutoSize": false,
+              "BackgroundColor": "#00FFFFFF",
+              "BorderStyle": {
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Height": 100.0,
+              "Image": "icon-acc",
+              "Left": 410.0,
+              "Name": "ImageItem",
+              "Top": 100.0,
+              "Visible": true,
+              "Width": 100.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "AutoSize": false,
+              "BackgroundColor": "#00FFFFFF",
+              "BorderStyle": {
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Height": 100.0,
+              "Image": "icon-iracing",
+              "Left": 530.0,
+              "Name": "ImageItem2",
+              "Top": 100.0,
+              "Visible": true,
+              "Width": 100.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "AutoSize": false,
+              "BackgroundColor": "#00FFFFFF",
+              "BorderStyle": {
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Height": 100.0,
+              "Image": "icon-ams2",
+              "Left": 650.0,
+              "Name": "ImageItem3",
+              "Top": 100.0,
+              "Visible": true,
+              "Width": 100.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "AutoSize": false,
+              "BackgroundColor": "#00FFFFFF",
+              "BorderStyle": {
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Height": 100.0,
+              "Image": "icon-rf2",
+              "Left": 770.0,
+              "Name": "ImageItem4",
+              "Top": 100.0,
+              "Visible": true,
+              "Width": 100.0
+            }
+          ],
+          "Group": true,
+          "Height": 480.0,
+          "Left": 0.0,
+          "Name": "Not Supported",
+          "Top": 0.0,
+          "Visible": false,
+          "Width": 1280.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "BackgroundColor": "#6E000000",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('nightMode') ) {\r\n\tnightMode = 0\r\n} else {\r\n\tnightMode = settings.nightMode\r\n}\r\n\r\n\r\nif ( nightMode == 1) {\r\n\r\n\tif ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ) {\r\n\t\r\n\t\tif ($prop('DataCorePlugin.GameRawData.Graphics.LightsStage')>0 ) {\r\n\t\t\treturn 1\r\n\t\t} else {\t\r\n\t\t\treturn 0 \r\n\t\t}\r\n\t\r\n\t} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\t\r\n\t\tlet mCarFlags = $prop('DataCorePlugin.GameRawData.mCarFlags');\r\n\t\treturn mCarFlags.toString(2).substr(-1)\r\n\t\r\n\t}\r\n\t\r\n} else {\r\n\t\r\n\treturn 0\r\n\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Height": 480.0,
+          "IsFreezed": true,
+          "IsRectangleItem": true,
+          "Left": 0.0,
+          "Name": "Night Mode",
+          "Top": 0.0,
+          "Visible": false,
+          "Width": 1280.0
         }
       ],
       "Name": "Main",
