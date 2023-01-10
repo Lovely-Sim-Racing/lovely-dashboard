@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "22697b9f-db34-435e-a440-94d2744296c7",
+  "Id": "471b8d72-52c0-498a-ab82-e3c1bb55849f",
   "Images": [
     {
       "Extension": ".png",
@@ -81,7 +81,7 @@
                 "Text": {
                   "FormatString": "0.0",
                   "Formula": {
-                    "Expression": "if ( $prop('GameRawData.SessionData.CarSetup.Chassis.InCarDials.EngineMapSetting') != null ) {\r\n\t\r\n\treturn 'MAP ' + $prop('GameRawData.SessionData.CarSetup.Chassis.InCarDials.EngineMapSetting').substring(0, 2).replace(/\\s/g,'')\r\n\t\r\n} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') != null ) {\r\n\t\r\n\treturn 'THR ' + $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape')\r\n\t\r\n}",
+                    "Expression": "if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcFuelMixture') != null ) {\r\n\t\r\n\treturn 'MAP ' + $prop('DataCorePlugin.GameRawData.Telemetry.dcFuelMixture')\r\n\t\r\n} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') != null ) {\r\n\t\r\n\treturn 'THR ' + $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape')\r\n\t\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -89,7 +89,7 @@
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nfunction changed(delay, value) {\r\n\troot['map_time'] = Math.floor($prop('DataCorePlugin.CustomExpression.CurrentDateTime').getTime())/1000;\r\n\troot['map_oldstate'] = root['map_oldstate'] == null ? value : root['map_newstate'];\r\n\troot['map_newstate'] = value;\r\n\tif (root['map_newstate'] != root['map_oldstate']) {\r\n\t\troot['map_triggerTime'] = root['map_time'];\r\n\t}\r\n\treturn root['map_triggerTime'] == null ? false : root['map_time'] - root['map_triggerTime'] <= delay/1000;\r\n}\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nif ( $prop('GameRawData.SessionData.CarSetup.Chassis.InCarDials.EngineMapSetting') != null ) {\r\n\t\r\n\treturn changed(alertDelay, $prop('GameRawData.SessionData.CarSetup.Chassis.InCarDials.EngineMapSetting') )\r\n\t\r\n} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') != null ) {\r\n\t\r\n\treturn changed(alertDelay, $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') )\r\n\t\r\n} else {\r\n\r\n\treturn changed(alertDelay, $prop('GameRawData.SessionData.CarSetup.Chassis.InCarDials.EngineMapSetting') )\r\n\t\r\n}",
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nfunction changed(delay, value) {\r\n\troot['map_time'] = Math.floor($prop('DataCorePlugin.CustomExpression.CurrentDateTime').getTime())/1000;\r\n\troot['map_oldstate'] = root['map_oldstate'] == null ? value : root['map_newstate'];\r\n\troot['map_newstate'] = value;\r\n\tif (root['map_newstate'] != root['map_oldstate']) {\r\n\t\troot['map_triggerTime'] = root['map_time'];\r\n\t}\r\n\treturn root['map_triggerTime'] == null ? false : root['map_time'] - root['map_triggerTime'] <= delay/1000;\r\n}\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nif ( $prop('DataCorePlugin.GameRawData.Telemetry.dcFuelMixture') != null ) {\r\n\t\r\n\treturn changed(alertDelay, $prop('DataCorePlugin.GameRawData.Telemetry.dcFuelMixture') )\r\n\t\r\n} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') != null ) {\r\n\t\r\n\treturn changed(alertDelay, $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') )\r\n\t\r\n} else {\r\n\r\n\treturn changed(alertDelay, $prop('DataCorePlugin.GameRawData.Telemetry.dcFuelMixture') )\r\n\t\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -322,7 +322,7 @@
                 "Text": {
                   "FormatString": "0.0",
                   "Formula": {
-                    "Expression": "if ( $prop('GameRawData.SessionData.CarSetup.Chassis.InCarDials.EngineMapSetting') != null ) {\r\n\t\r\n\treturn 'MAP ' + $prop('GameRawData.SessionData.CarSetup.Chassis.InCarDials.EngineMapSetting').substring(0, 2).replace(/\\s/g,'')\r\n\t\r\n} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') != null ) {\r\n\t\r\n\treturn 'THR ' + $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape')\r\n\t\r\n}",
+                    "Expression": "if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcFuelMixture') != null ) {\r\n\t\r\n\treturn 'MAP ' + $prop('DataCorePlugin.GameRawData.Telemetry.dcFuelMixture')\r\n\t\r\n} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') != null ) {\r\n\t\r\n\treturn 'THR ' + $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape')\r\n\t\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -330,7 +330,7 @@
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nfunction changed(delay, value) {\r\n\troot['map_time'] = Math.floor($prop('DataCorePlugin.CustomExpression.CurrentDateTime').getTime())/1000;\r\n\troot['map_oldstate'] = root['map_oldstate'] == null ? value : root['map_newstate'];\r\n\troot['map_newstate'] = value;\r\n\tif (root['map_newstate'] != root['map_oldstate']) {\r\n\t\troot['map_triggerTime'] = root['map_time'];\r\n\t}\r\n\treturn root['map_triggerTime'] == null ? false : root['map_time'] - root['map_triggerTime'] <= delay/1000;\r\n}\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nif ( $prop('GameRawData.SessionData.CarSetup.Chassis.InCarDials.EngineMapSetting') != null ) {\r\n\t\r\n\treturn changed(alertDelay, $prop('GameRawData.SessionData.CarSetup.Chassis.InCarDials.EngineMapSetting') )\r\n\t\r\n} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') != null ) {\r\n\t\r\n\treturn changed(alertDelay, $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') )\r\n\t\r\n} else {\r\n\r\n\treturn changed(alertDelay, $prop('GameRawData.SessionData.CarSetup.Chassis.InCarDials.EngineMapSetting') )\r\n\t\r\n}",
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nfunction changed(delay, value) {\r\n\troot['map_time'] = Math.floor($prop('DataCorePlugin.CustomExpression.CurrentDateTime').getTime())/1000;\r\n\troot['map_oldstate'] = root['map_oldstate'] == null ? value : root['map_newstate'];\r\n\troot['map_newstate'] = value;\r\n\tif (root['map_newstate'] != root['map_oldstate']) {\r\n\t\troot['map_triggerTime'] = root['map_time'];\r\n\t}\r\n\treturn root['map_triggerTime'] == null ? false : root['map_time'] - root['map_triggerTime'] <= delay/1000;\r\n}\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nif ( $prop('DataCorePlugin.GameRawData.Telemetry.dcFuelMixture') != null ) {\r\n\t\r\n\treturn changed(alertDelay, $prop('DataCorePlugin.GameRawData.Telemetry.dcFuelMixture') )\r\n\t\r\n} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') != null ) {\r\n\t\r\n\treturn changed(alertDelay, $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') )\r\n\t\r\n} else {\r\n\r\n\treturn changed(alertDelay, $prop('DataCorePlugin.GameRawData.Telemetry.dcFuelMixture') )\r\n\t\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
