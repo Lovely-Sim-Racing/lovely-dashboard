@@ -32,7 +32,9 @@ Join the Lovely Sim Racing Discord Server and help develop a better version.<br/
 
 ### Please consider [buying me a coffee](http://j76.me/BuyMeCoffee) :coffee: or snagging some [Lovely Merch](http://j76.me/LSRStore) 
 
-#### Check out my other project: [**Lovely Stream Deck Icons**](http://j76.me/LSRIcons)
+#### Check out my other projects:
+* [**Lovely Stream Deck Icons**](http://j76.me/LSRIcons)
+* [**Lovely Sim Racing Liveries**](http://j76.me/LSRLivery)
 
 ---
 
