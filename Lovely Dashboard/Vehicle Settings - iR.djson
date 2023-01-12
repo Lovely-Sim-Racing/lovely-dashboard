@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "65fd5dd8-6310-4d29-a5a3-3406cd44bec7",
+  "Id": "5f1a032c-a7fc-4f91-878f-e53fdb045e16",
   "Images": [],
   "IsOverlay": false,
   "Metadata": {
@@ -483,9 +483,17 @@
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
+            "FontSize": {
+              "Formula": {
+                "Expression": "if ( $prop('GameRawData.Telemetry.EnergyERSBattery') != null ) {\r\n\treturn 30\r\n} else { \r\n\treturn 50\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "FontSize"
+            },
             "Opacity": {
               "Formula": {
-                "Expression": "if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcFuelMixture') != null ) {\r\n\t\r\n\treturn 100\r\n\t\r\n} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') != null ) {\r\n\t\r\n\treturn 100\r\n\t\r\n} else {\r\n\r\n\treturn 35\r\n\t\r\n}",
+                "Expression": "if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcFuelMixture') != null ) {\r\n\t\r\n\treturn 100\r\n\t\r\n} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') != null ) {\r\n\t\r\n\treturn 100\r\n\r\n} else if ( $prop('GameRawData.Telemetry.EnergyERSBattery') != null ) {\r\n\r\n\treturn 100\r\n\r\n} else {\r\n\r\n\treturn 35\r\n\t\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -494,7 +502,7 @@
             "Text": {
               "FormatString": "0",
               "Formula": {
-                "Expression": "if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcFuelMixture') != null ) {\r\n\t\r\n\treturn $prop('DataCorePlugin.GameRawData.Telemetry.dcFuelMixture')\r\n\t//return $prop('DataCorePlugin.GameRawData.Telemetry.dcFuelMixture').substring(0, 2).replace(/\\s/g,'')\r\n\t\r\n} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') != null ) {\r\n\t\r\n\treturn $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape')\r\n\t\r\n} else {\r\n\r\n\treturn '-'\r\n\t\r\n}",
+                "Expression": "if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcFuelMixture') != null ) {\r\n\t\r\n\treturn $prop('DataCorePlugin.GameRawData.Telemetry.dcFuelMixture')\r\n\t//return $prop('DataCorePlugin.GameRawData.Telemetry.dcFuelMixture').substring(0, 2).replace(/\\s/g,'')\r\n\t\r\n} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') != null ) {\r\n\t\r\n\treturn $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape')\r\n\t\r\n} else if ( $prop('GameRawData.Telemetry.EnergyERSBattery') != null ) {\r\n\t\r\n\treturn format($prop('GameRawData.Telemetry.EnergyERSBatteryPct'), '0%')\r\n\t\r\n} else {\r\n\r\n\treturn '-'\r\n\t\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -530,7 +538,7 @@
             },
             "Text": {
               "Formula": {
-                "Expression": "if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcFuelMixture') != null ) {\r\n\t\r\n\treturn 'ENGINE'\r\n\t\r\n} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') != null ) {\r\n\t\r\n\treturn 'THROTTLE'\r\n\t\r\n} else {\r\n\r\n\treturn 'ENGINE'\r\n\t\r\n}",
+                "Expression": "if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcFuelMixture') != null ) {\r\n\t\r\n\treturn 'ENGINE'\r\n\t\r\n} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') != null ) {\r\n\t\r\n\treturn 'THROTTLE'\r\n\t\r\n} else if ( $prop('GameRawData.Telemetry.EnergyERSBattery') != null ) {\r\n\t\r\n\treturn 'ERS %'\t\r\n\t\r\n} else {\r\n\r\n\treturn 'ENGINE'\r\n\t\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
