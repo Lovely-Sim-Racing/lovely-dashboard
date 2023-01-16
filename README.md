@@ -47,7 +47,7 @@ Watch the introductory video
 </h4> 
 
 ## What's Included
-When you download the zip file, you will get a few things. 
+In the [Releases](https://github.com/cdemetriadis/lovely-dashboard/releases) section, you will find:
 
 1. [**Lovely Dashboard**](#the-lovely-dashboard) - A custom designed dashboard to use on your phone or dedicated DDU Screen
 2. **Lovely Dashboard XL** - An oversized version of the Lovely Dashboard for the new 10" DDU Screens.
