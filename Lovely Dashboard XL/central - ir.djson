@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "4ffe1c22-07a5-4e05-a6b0-6bd86d24bbc4",
+  "Id": "4c6e57ff-c714-427a-a21c-abe51b7ed327",
   "Images": [],
   "IsOverlay": false,
   "Metadata": {
@@ -166,6 +166,22 @@
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
           "BackgroundColor": "#FF262626",
+          "Bindings": {
+            "Height": {
+              "Formula": {
+                "Expression": "if(isnull([GameRawData.Telemetry.EnergyERSBattery],0) > 0,200,225)\r\n"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Height"
+            },
+            "Top": {
+              "Formula": {
+                "Expression": "if(isnull([GameRawData.Telemetry.EnergyERSBattery],0) > 0,70,45)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Top"
+            }
+          },
           "BlinkDelay": 100.0,
           "BorderStyle": {
             "RadiusBottomLeft": 5,
@@ -186,6 +202,20 @@
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
           "BackgroundColor": "#FF800000",
           "Bindings": {
+            "Height": {
+              "Formula": {
+                "Expression": "if(isnull([GameRawData.Telemetry.EnergyERSBattery],0) > 0,200,225)\r\n"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Height"
+            },
+            "Top": {
+              "Formula": {
+                "Expression": "if(isnull([GameRawData.Telemetry.EnergyERSBattery],0) > 0,70,45)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Top"
+            },
             "Visible": {
               "Formula": {
                 "Expression": "[DataCorePlugin.GameData.CarSettings_RPMRedLineReached]>0"
@@ -217,6 +247,35 @@
           "Width": 160.0
         },
         {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.RPMText, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Top": {
+              "Formula": {
+                "Expression": "if(isnull([GameRawData.Telemetry.EnergyERSBattery],0) > 0,225,220)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Top"
+            }
+          },
+          "Font": "Roboto",
+          "FontSize": 22.0,
+          "Format": "0",
+          "Height": 40.0,
+          "HorizontalAlignment": 1,
+          "IsFreezed": true,
+          "IsTextItem": true,
+          "Left": 0.0,
+          "Name": "RPMText0",
+          "NoDataText": "0",
+          "TextAfterValue": "",
+          "TextColor": "#FFFFFFFF",
+          "Top": 220.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 160.0
+        },
+        {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
@@ -226,6 +285,13 @@
               },
               "Mode": 2,
               "TargetPropertyName": "Text"
+            },
+            "Top": {
+              "Formula": {
+                "Expression": "if(isnull([GameRawData.Telemetry.EnergyERSBattery],0) > 0,55,45)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Top"
             }
           },
           "Font": "Roboto",
@@ -245,21 +311,56 @@
           "Width": 160.0
         },
         {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.RPMText, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FF262626",
+          "Bindings": {
+            "BackgroundColor": {
+              "Formula": {
+                "Expression": "if(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=0,'#262626',\r\nif(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=1,'#A100A9',\r\nif(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=2,'#B20000',\r\nif(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=3,'#009F01','#0064CF'))))"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "BackgroundColor"
+            },
+            "Text": {
+              "Formula": {
+                "Expression": "if(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=0,'NO DEPLOY',\r\nif(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=1,'QUAL',\r\nif(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=2,'ATTACK',\r\nif(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=3,'BALANCED','BUILD'))))"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Text"
+            },
+            "TextColor": {
+              "Formula": {
+                "Expression": "if(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=0,'Black',\r\nif(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=1,'White',\r\nif(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=2,'White',\r\nif(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=3,'White','White'))))"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "TextColor"
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "if(isnull([GameRawData.Telemetry.EnergyERSBattery],0) > 0,true,false)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 5,
+            "RadiusBottomRight": 5,
+            "RadiusTopLeft": 5,
+            "RadiusTopRight": 5
+          },
           "Font": "Roboto",
-          "FontSize": 22.0,
-          "Format": "0",
-          "Height": 40.0,
+          "FontSize": 16.0,
+          "FontWeight": "Bold",
+          "Height": 20.0,
           "HorizontalAlignment": 1,
           "IsFreezed": true,
           "IsTextItem": true,
           "Left": 0.0,
-          "Name": "RPMText0",
-          "NoDataText": "0",
-          "TextAfterValue": "",
+          "Name": "ERS Deploy Mode",
+          "Text": "BALANCED",
           "TextColor": "#FFFFFFFF",
-          "Top": 220.0,
+          "Top": 45.0,
           "VerticalAlignment": 1,
           "Visible": true,
           "Width": 160.0
@@ -908,6 +1009,54 @@
           "TextColor": "#FFFFFFFF",
           "Top": 15.0,
           "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 160.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FFF05C00",
+          "Bindings": {
+            "BackgroundColor": {
+              "Formula": {
+                "Expression": "if(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=0,'Yellow',\r\nif(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=1,'Red',\r\nif(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=2,'#FFF05C00',\r\nif(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=3,'Green','Blue'))))"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "BackgroundColor"
+            },
+            "Text": {
+              "Formula": {
+                "Expression": "if(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=0,'NO DEPLOY',\r\nif(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=1,'QUAL',\r\nif(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=2,'ATTACK',\r\nif(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=3,'BALANCED','BUILD'))))"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Text"
+            },
+            "TextColor": {
+              "Formula": {
+                "Expression": "if(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=0,'Black',\r\nif(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=1,'White',\r\nif(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=2,'White',\r\nif(isnull([GameRawData.Telemetry.dcMGUKDeployMode],0)=3,'White','White'))))"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "TextColor"
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "if(isnull([GameRawData.Telemetry.EnergyERSBattery],0) > 0,true,false)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Font": "Roboto",
+          "FontSize": 16.0,
+          "FontWeight": "Bold",
+          "Height": 20.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 0.0,
+          "Name": "MGU Deploy Mode",
+          "Text": "BALANCED",
+          "TextColor": "#FFFFFFFF",
+          "Top": 15.0,
+          "VerticalAlignment": 0,
           "Visible": true,
           "Width": 160.0
         },

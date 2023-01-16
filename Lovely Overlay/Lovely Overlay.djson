@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "01d2b584-268a-4df3-818b-93ed09d1df9b",
+  "Id": "972d3046-07ef-40d8-b265-849d36016b43",
   "Images": [
     {
       "Extension": ".png",
@@ -278,8 +278,8 @@
   ],
   "IsOverlay": true,
   "Metadata": {
-    "Author": "Constantinos Demetriadis",
-    "Description": "A feature packed SimHub Stream Overlay.",
+    "Author": "Constantinos Demetriadis - Lovely Sim Racing",
+    "Description": "A feature packed SimHub Stream Overlay",
     "EnableOnDashboardMessaging": true,
     "Height": 414.0,
     "IdleScreensIndexs": [
@@ -325,20 +325,6 @@
           "Top": 0.0,
           "Visible": true,
           "Width": 1115.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
-          "AutoSize": true,
-          "AutoSizeScale": 0.25,
-          "BackgroundColor": "#00FFFFFF",
-          "Height": 200.0,
-          "Image": "lr-team-icon",
-          "IsFreezed": true,
-          "Left": 457.0,
-          "Name": "ImageItem0",
-          "Top": 35.0,
-          "Visible": true,
-          "Width": 200.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
@@ -450,7 +436,7 @@
           "IsTextItem": true,
           "Left": 437.0,
           "Name": "TextItem0",
-          "Text": "Lovely Overlay v1.6.0",
+          "Text": "Lovely Overlay v1.6.2",
           "TextColor": "#FFFFFFFF",
           "Top": 285.0,
           "VerticalAlignment": 1,
@@ -471,7 +457,7 @@
             },
             "Visible": {
               "Formula": {
-                "Expression": "var currentVer = '1.6.0'\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\n//return latestVer\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
+                "Expression": "var currentVer = '1.6.2'\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\n//return latestVer\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -499,6 +485,20 @@
           "VerticalAlignment": 1,
           "Visible": false,
           "Width": 260.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+          "AutoSize": true,
+          "AutoSizeScale": 0.25,
+          "BackgroundColor": "#00FFFFFF",
+          "Height": 200.0,
+          "Image": "lr-team-icon",
+          "IsFreezed": true,
+          "Left": 457.0,
+          "Name": "ImageItem0",
+          "Top": 35.0,
+          "Visible": true,
+          "Width": 200.0
         }
       ],
       "Name": "Idle",
@@ -771,7 +771,7 @@
           "Name": "Environment iR",
           "NextScreenCommand": 0,
           "PreviousScreenCommand": 0,
-          "Top": 360.0,
+          "Top": 352.0,
           "Visible": false,
           "Width": 160.0
         },
@@ -819,7 +819,7 @@
           "Name": "Environment rF2",
           "NextScreenCommand": 0,
           "PreviousScreenCommand": 0,
-          "Top": 360.0,
+          "Top": 352.0,
           "Visible": true,
           "Width": 160.0
         },
