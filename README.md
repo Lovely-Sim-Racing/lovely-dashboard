@@ -40,9 +40,9 @@ Join the Lovely Sim Racing Discord Server and help develop a better version.<br/
 
 <br/>
 <h4 align="center">
-<a href="https://youtu.be/_XAIlmhVY0s">
-<img src="docs/images/youtube-cover.png" /><br/>
-Watch the introductory video
+<a href="https://youtu.be/1XCZ4Z6RqOA">
+<img src="docs/images/LSRM - Lovely Dashboard Walkthrough.jpg" /><br/>
+Watch the Walkthrough video
 </a>
 </h4> 
 
@@ -62,9 +62,9 @@ This is a SimHub Dashboard, therefore **SimHub Dash** app is required to run it 
 3. Download & Install the [**Lovely Dashboard Latest Release**](https://github.com/cdemetriadis/lovely-dashboard/releases)
 
 #### For iRacing
-If you want to use the Lovely Dashboard with iRacing, you will need to copy the file `RSC.iRacingExtraProperties.dll` into the `./Simhub/` root folder.
+If you want to use the Lovely Dashboard with iRacing, you will need to copy the **iRacing Extra Properties Library** files into the `./Simhub/` root folder.
 
-1. Download Romainrob's [**RSC.iRacingExtraProperties.dll**](https://drive.google.com/drive/folders/1AiIWHviD4j-_D-zgRrjJU1AFhJ_xmass)
+1. Download Romainrob's [**iRacing Extra Properties Library Files**](https://drive.google.com/drive/folders/1AiIWHviD4j-_D-zgRrjJU1AFhJ_xmass)
 
 :warning: **Warning: Simhub Dash v8.0+** is required to run the Lovely Dashboard 1.5.0+
 
@@ -101,6 +101,13 @@ If you were wondering why this is the best SimHub dashboard out there, wonder no
 Would you like to contribute to the **Lovely Dashboard & Overlay**? If yes, then head on over to the [**Developers Doc**](docs/developers.md) and find out how you can get started.
 
 
+<br/><br/>
+
+---
+
+<br/><br/>
+### Marketing Inquiries
+For all marketing inquiries (eg, using the Lovely Dashboard on your marketing material) please send an email to [**marketing@ohmylovely.com**](mailto:marketing@ohmylovely.com).
 <br/><br/>
 
 ---
