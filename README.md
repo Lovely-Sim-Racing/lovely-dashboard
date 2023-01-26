@@ -106,6 +106,13 @@ Would you like to contribute to the **Lovely Dashboard & Overlay**? If yes, then
 ---
 
 <br/><br/>
+### Marketing Inquiries
+For all marketing inquiries (eg, using the Lovely Dashboard on your marketing material) please send an email to [**marketing@ohmylovely.com**](mailto:marketing@ohmylovely.com).
+<br/><br/>
+
+---
+
+<br/><br/>
 
 ### Disclaimer
 
