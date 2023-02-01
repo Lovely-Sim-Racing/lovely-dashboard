@@ -40,7 +40,7 @@ You can change the way the Driver Name is formatted and displayed.
 - `1` Will display names as "**Firstname L.**"
 - `2` Will display names as "**Firstname Lastname**"
 
----
+--- 
 
 #### `lfmID`
 Display your next session information on the Lovely Dashboard splash screen.
