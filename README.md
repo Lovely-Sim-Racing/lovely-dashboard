@@ -86,8 +86,8 @@ This is an ongoing project, so I will add more Screen Sizes and Sims as time pro
 ### Compatible Sims
 * Assetto Corsa Competizione
 * iRacing
-* Automobilista 2 **(NEW)**
-* rFactor 2 **(NEW)**
+* Automobilista 2
+* rFactor 2
 
 
 ## The Lovely Dashboard

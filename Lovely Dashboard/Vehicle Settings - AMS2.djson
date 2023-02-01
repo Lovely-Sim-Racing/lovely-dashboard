@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "c6609556-dcaa-451a-bf15-f869cf884f28",
+  "Id": "ccc311c6-d76f-4db4-8639-1245f7ce472d",
   "Images": [],
   "IsOverlay": false,
   "Metadata": {
@@ -81,7 +81,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "if ( [DataCorePlugin.GameData.TCLevel]==0, \r\n\t0,\r\n\tif ( changed(300, [DataCorePlugin.GameData.TCActive]), 1, 0)\r\n)"
+                "Expression": "if ( changed(300, [DataCorePlugin.GameData.TCActive]), 1, 0)"
               },
               "Mode": 2,
               "TargetPropertyName": "Visible"
@@ -218,7 +218,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "\r\n\r\nif ( isnull([GameRawData.Graphics.TCCut],0)==0, \r\n\t0,\r\n\tif ( changed(300, [DataCorePlugin.GameData.TCActive]), 1, 0)\r\n)"
+                "Expression": "if ( changed(300, [DataCorePlugin.GameData.TCActive]), 1, 0)"
               },
               "Mode": 2,
               "TargetPropertyName": "Visible"
