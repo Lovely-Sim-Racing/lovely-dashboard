@@ -12,7 +12,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "331644bd-d56e-489b-8329-a210be6cbea4",
+  "Id": "1f6e8248-e9b4-48a0-b06f-39082cccbd19",
   "Images": [
     {
       "Extension": ".png",
@@ -427,7 +427,7 @@
           "Text": "All trademarks, logos and brand names are the property of their respective owners. All company, product and service names used in this application are for identification purposes only. Use of these names, trademarks and brands does not imply endorsement.",
           "TextColor": "#FF878787",
           "TextWrapping": 0,
-          "Top": 370.0,
+          "Top": 375.0,
           "VerticalAlignment": 2,
           "Visible": true,
           "Width": 760.0
@@ -443,9 +443,9 @@
           "IsTextItem": true,
           "Left": 305.0,
           "Name": "TextItem0",
-          "Text": "Lovely Dashboard v1.6.2",
+          "Text": "Lovely Dashboard v1.6.3",
           "TextColor": "#FFFFFFFF",
-          "Top": 335.0,
+          "Top": 345.0,
           "VerticalAlignment": 1,
           "Visible": true,
           "Width": 240.0
@@ -464,7 +464,7 @@
             },
             "Visible": {
               "Formula": {
-                "Expression": "var currentVer = '1.6.2'\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\n//return latestVer\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
+                "Expression": "var currentVer = '1.6.3'\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\n//return latestVer\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -488,7 +488,7 @@
           "Name": "New Version",
           "Text": "NEW VERSION AVAILABLE: 0.0.0",
           "TextColor": "#FFFFFFFF",
-          "Top": 332.0,
+          "Top": 342.0,
           "VerticalAlignment": 1,
           "Visible": false,
           "Width": 260.0
@@ -513,7 +513,7 @@
           "IsFreezed": true,
           "Left": 325.0,
           "Name": "ImageItem",
-          "Top": 65.0,
+          "Top": 80.0,
           "Visible": true,
           "Width": 200.0
         },
@@ -540,7 +540,7 @@
               "Image": "lr-team-icon",
               "Left": 393.0,
               "Name": "ImageItem2",
-              "Top": 265.0,
+              "Top": 275.0,
               "Visible": true,
               "Width": 64.0
             },
@@ -577,7 +577,7 @@
               "Name": "Number",
               "Text": "00",
               "TextColor": "#FF2B98FB",
-              "Top": 15.0,
+              "Top": 40.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 840.0
@@ -610,7 +610,7 @@
               "ShadowDirection": 90,
               "Text": "F. Lastname",
               "TextColor": "#FF000000",
-              "Top": 119.0,
+              "Top": 144.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 840.0
@@ -643,19 +643,144 @@
               "ShadowDirection": 90,
               "Text": "F. Lastname",
               "TextColor": "#FFFFFFFF",
-              "Top": 115.0,
+              "Top": 140.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 840.0
             }
           ],
           "Group": true,
-          "Height": 314.0,
+          "Height": 299.0,
           "Left": -20.0,
           "Name": "Layer",
-          "Top": 15.0,
+          "Top": 40.0,
           "Visible": false,
           "Width": 869.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.TimeText, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Font": "Roboto",
+              "FontSize": 14.0,
+              "FontWeight": "Bold",
+              "Format": "hh:mm:ss",
+              "Height": 22.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 760.0,
+              "Name": "TimeText2",
+              "ShadowColor": "#FF696969",
+              "TextColor": "#FF808080",
+              "Top": 19.0,
+              "VerticalAlignment": 2,
+              "Visible": true,
+              "Width": 70.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.TimeText, SimHub.Plugins",
+              "BackgroundColor": "#FF000000",
+              "Font": "Roboto",
+              "FontSize": 18.0,
+              "FontWeight": "Bold",
+              "Format": "HH:mm",
+              "Height": 22.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 740.0,
+              "Name": "TimeText",
+              "ShadowColor": "#FF696969",
+              "TextColor": "#FFFFFFFF",
+              "TextPadding": {
+                "PaddingRight": 2
+              },
+              "Top": 20.0,
+              "VerticalAlignment": 2,
+              "Visible": true,
+              "Width": 70.0
+            }
+          ],
+          "Group": true,
+          "Height": 23.0,
+          "Left": 740.0,
+          "Name": "Time",
+          "Top": 19.0,
+          "Visible": true,
+          "Width": 90.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || settings.lfmID == 0 || !settings.lfmID ) {\r\n\treturn 0\r\n} else {\r\n\t\r\n\tconst url = 'https://api.lowfuelmotorsport.de/lfmlicense/'+settings.lfmID+'?size=sm'\r\n\tconst lfm_widget = downloadstring(5000, url)\r\n\tconst found = lfm_widget.search('<div class=\"nextrace\">')\r\n\treturn ( found != -1 ) ? 1 : 0\r\n\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Font": "Roboto",
+              "FontSize": 14.0,
+              "FontWeight": "Bold",
+              "Height": 22.0,
+              "HorizontalAlignment": 0,
+              "IsTextItem": true,
+              "Left": 20.0,
+              "Name": "TextItem4",
+              "ShadowColor": "#FF696969",
+              "Text": "Next Up:",
+              "TextColor": "#FF808080",
+              "Top": 19.0,
+              "VerticalAlignment": 2,
+              "Visible": true,
+              "Width": 55.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst url = 'https://api.lowfuelmotorsport.de/lfmlicense/'+settings.lfmID+'?size=sm'\r\n\r\nconst lfm_widget = downloadstring(1000, url)\r\nconst start = lfm_widget.search('<div class=\"nextrace\">')\r\nconst end = lfm_widget.search('<span class=\"drivers\">')\r\nconst length = end-start\r\n\r\nreturn lfm_widget.substr(start+27, length-27)\r\n",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 18.0,
+              "FontWeight": "Bold",
+              "Height": 22.0,
+              "HorizontalAlignment": 0,
+              "IsTextItem": true,
+              "Left": 79.0,
+              "Name": "TextItem3",
+              "ShadowColor": "#FF696969",
+              "Text": "Series",
+              "TextColor": "#FFFFFFFF",
+              "Top": 20.0,
+              "VerticalAlignment": 2,
+              "Visible": true,
+              "Width": 600.0
+            }
+          ],
+          "Group": true,
+          "Height": 23.0,
+          "Left": 20.0,
+          "Name": "Next Race",
+          "Top": 19.0,
+          "Visible": true,
+          "Width": 659.0
         }
       ],
       "Name": "Idle",
@@ -1170,7 +1295,7 @@
           "NextScreenCommand": 1,
           "PreviousScreenCommand": 0,
           "Top": 110.0,
-          "Visible": false,
+          "Visible": true,
           "Width": 325.0
         },
         {
@@ -1194,7 +1319,7 @@
           "NextScreenCommand": 1,
           "PreviousScreenCommand": 0,
           "Top": 110.0,
-          "Visible": true,
+          "Visible": false,
           "Width": 325.0
         },
         {
@@ -1575,7 +1700,7 @@
           "IsFreezed": true,
           "Left": 0.0,
           "Name": "Vehicle Settings iR",
-          "NextScreenCommand": 4,
+          "NextScreenCommand": 0,
           "PreviousScreenCommand": 0,
           "Top": 383.0,
           "Visible": false,
@@ -1599,7 +1724,7 @@
           "IsFreezed": true,
           "Left": 0.0,
           "Name": "Vehicle Settings AMS2",
-          "NextScreenCommand": 4,
+          "NextScreenCommand": 0,
           "PreviousScreenCommand": 0,
           "Top": 383.0,
           "Visible": false,
@@ -2633,7 +2758,7 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = drivername($prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1);\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = drivername($prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1);\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else if (driverName == 2) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1]\r\n}else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,

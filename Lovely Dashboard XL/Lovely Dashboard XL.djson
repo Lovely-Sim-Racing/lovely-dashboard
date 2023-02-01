@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "dc873efc-d562-4952-b123-834563ba7847",
+  "Id": "53eabd3e-e342-464f-8fc6-39d8e322b59f",
   "Images": [
     {
       "Extension": ".png",
@@ -255,7 +255,7 @@
           "IsTextItem": true,
           "Left": 520.0,
           "Name": "TextItem0",
-          "Text": "Lovely Dashboard XL v1.6.2",
+          "Text": "Lovely Dashboard XL v1.6.3",
           "TextColor": "#FFFFFFFF",
           "Top": 340.0,
           "VerticalAlignment": 1,
@@ -276,7 +276,7 @@
             },
             "Visible": {
               "Formula": {
-                "Expression": "var currentVer = '1.6.2'\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\n//return latestVer\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
+                "Expression": "var currentVer = '1.6.3'\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\n//return latestVer\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -389,7 +389,7 @@
               "Name": "Number",
               "Text": "00",
               "TextColor": "#FF2B98FB",
-              "Top": 15.0,
+              "Top": 42.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 840.0
@@ -422,7 +422,7 @@
               "ShadowDirection": 90,
               "Text": "F. Lastname",
               "TextColor": "#FF000000",
-              "Top": 119.0,
+              "Top": 146.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 840.0
@@ -455,19 +455,144 @@
               "ShadowDirection": 90,
               "Text": "F. Lastname",
               "TextColor": "#FFFFFFFF",
-              "Top": 115.0,
+              "Top": 142.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 840.0
             }
           ],
           "Group": true,
-          "Height": 314.0,
+          "Height": 287.0,
           "Left": 205.5,
           "Name": "Layer",
-          "Top": 15.0,
-          "Visible": false,
+          "Top": 42.0,
+          "Visible": true,
           "Width": 869.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.TimeText, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Font": "Roboto",
+              "FontSize": 14.0,
+              "FontWeight": "Bold",
+              "Format": "hh:mm:ss",
+              "Height": 22.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 1195.0,
+              "Name": "TimeText2",
+              "ShadowColor": "#FF696969",
+              "TextColor": "#FF808080",
+              "Top": 20.0,
+              "VerticalAlignment": 2,
+              "Visible": true,
+              "Width": 70.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.TimeText, SimHub.Plugins",
+              "BackgroundColor": "#FF000000",
+              "Font": "Roboto",
+              "FontSize": 18.0,
+              "FontWeight": "Bold",
+              "Format": "HH:mm",
+              "Height": 22.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 1175.0,
+              "Name": "TimeText",
+              "ShadowColor": "#FF696969",
+              "TextColor": "#FFFFFFFF",
+              "TextPadding": {
+                "PaddingRight": 2
+              },
+              "Top": 20.0,
+              "VerticalAlignment": 2,
+              "Visible": true,
+              "Width": 70.0
+            }
+          ],
+          "Group": true,
+          "Height": 22.0,
+          "Left": 1175.0,
+          "Name": "Time",
+          "Top": 20.0,
+          "Visible": true,
+          "Width": 90.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || settings.lfmID == 0 || !settings.lfmID ) {\r\n\treturn 0\r\n} else {\r\n\t\r\n\tconst url = 'https://api.lowfuelmotorsport.de/lfmlicense/'+settings.lfmID+'?size=sm'\r\n\tconst lfm_widget = downloadstring(5000, url)\r\n\tconst found = lfm_widget.search('<div class=\"nextrace\">')\r\n\treturn ( found != -1 ) ? 1 : 0\r\n\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Font": "Roboto",
+              "FontSize": 14.0,
+              "FontWeight": "Bold",
+              "Height": 22.0,
+              "HorizontalAlignment": 0,
+              "IsTextItem": true,
+              "Left": 20.0,
+              "Name": "TextItem4",
+              "ShadowColor": "#FF696969",
+              "Text": "Next Up:",
+              "TextColor": "#FF808080",
+              "Top": 19.0,
+              "VerticalAlignment": 2,
+              "Visible": true,
+              "Width": 55.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst url = 'https://api.lowfuelmotorsport.de/lfmlicense/'+settings.lfmID+'?size=sm'\r\n\r\nconst lfm_widget = downloadstring(1000, url)\r\nconst start = lfm_widget.search('<div class=\"nextrace\">')\r\nconst end = lfm_widget.search('<span class=\"drivers\">')\r\nconst length = end-start\r\n\r\nreturn lfm_widget.substr(start+27, length-27)\r\n",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 18.0,
+              "FontWeight": "Bold",
+              "Height": 22.0,
+              "HorizontalAlignment": 0,
+              "IsTextItem": true,
+              "Left": 79.0,
+              "Name": "TextItem3",
+              "ShadowColor": "#FF696969",
+              "Text": "Series",
+              "TextColor": "#FFFFFFFF",
+              "Top": 20.0,
+              "VerticalAlignment": 2,
+              "Visible": true,
+              "Width": 600.0
+            }
+          ],
+          "Group": true,
+          "Height": 23.0,
+          "Left": 20.0,
+          "Name": "Next Race",
+          "Top": 19.0,
+          "Visible": true,
+          "Width": 659.0
         }
       ],
       "Name": "Idle",
