@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "fdb2d64c-79d3-42ad-9b66-6ceb7b46e41b",
+  "Id": "c0d2455a-89fe-4004-a94a-52ff31036dd4",
   "Images": [
     {
       "Extension": ".png",
@@ -1978,7 +1978,7 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase($prop('PersistantTrackerPlugin.DriverAhead_02_Name'));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase($prop('PersistantTrackerPlugin.DriverAhead_02_Name'));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else if (driverName == 2) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1]\r\n}else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -2051,7 +2051,7 @@
                   "Bindings": {
                     "Image": {
                       "Formula": {
-                        "Expression": "var driver_rel = 'DriverAhead_02'\r\n\r\nvar carName = $prop('PersistantTrackerPlugin.'+driver_rel+'_CarName')\r\nvar carBrand = carName.split(' ')\r\nvar color = ''\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\tcolor = 'red' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\tcolor = '-blue' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\tcolor = '-red' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\tcolor = '-blue' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\tcolor = '' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\tcolor = ''\r\n\r\n}\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+color\r\n",
+                        "Expression": "var driver_rel = 'DriverAhead_02'\r\n\r\nvar carName = $prop('PersistantTrackerPlugin.'+driver_rel+'_CarName')\r\nvar carBrand = carName.split(' ')\r\nvar color = ''\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\tcolor = 'red' // 2+ Laps Ahead\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\tcolor = '-blue' // 2- Laps Behind\r\n\t} else {\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\tcolor = '-red' // Ahead\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\tcolor = '-blue' // Behind\r\n\t\t} else {\r\n\t\t\tcolor = '' // Same Lap\r\n\t\t}\r\n\t}\r\n} else {\r\n\tcolor = ''\r\n}\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+color",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -2163,7 +2163,7 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase($prop('PersistantTrackerPlugin.DriverAhead_01_Name'));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase($prop('PersistantTrackerPlugin.DriverAhead_01_Name'));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else if (driverName == 2) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1]\r\n}else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -2236,7 +2236,7 @@
                   "Bindings": {
                     "Image": {
                       "Formula": {
-                        "Expression": "var driver_rel = 'DriverAhead_01'\r\n\r\nvar carName = $prop('PersistantTrackerPlugin.'+driver_rel+'_CarName')\r\nvar carBrand = carName.split(' ')\r\nvar color = ''\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\tcolor = 'red' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\tcolor = '-blue' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\tcolor = '-red' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\tcolor = '-blue' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\tcolor = '' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\tcolor = ''\r\n\r\n}\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+color\r\n",
+                        "Expression": "var driver_rel = 'DriverAhead_01'\r\n\r\nvar carName = $prop('PersistantTrackerPlugin.'+driver_rel+'_CarName')\r\nvar carBrand = carName.split(' ')\r\nvar color = ''\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\tcolor = 'red' // 2+ Laps Ahead\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\tcolor = '-blue' // 2- Laps Behind\r\n\t} else {\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\tcolor = '-red' // Ahead\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\tcolor = '-blue' // Behind\r\n\t\t} else {\r\n\t\t\tcolor = '' // Same Lap\r\n\t\t}\r\n\t}\r\n} else {\r\n\tcolor = ''\r\n}\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+color",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -2348,7 +2348,7 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase($prop('PersistantTrackerPlugin.DriverAhead_00_Name'));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase($prop('PersistantTrackerPlugin.DriverAhead_00_Name'));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else if (driverName == 2) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1]\r\n}else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -2421,7 +2421,7 @@
                   "Bindings": {
                     "Image": {
                       "Formula": {
-                        "Expression": "var driver_rel = 'DriverAhead_00'\r\n\r\nvar carName = $prop('PersistantTrackerPlugin.'+driver_rel+'_CarName')\r\nvar carBrand = carName.split(' ')\r\nvar color = ''\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\tcolor = 'red' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\tcolor = '-blue' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\tcolor = '-red' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\tcolor = '-blue' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\tcolor = '' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\tcolor = ''\r\n\r\n}\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+color\r\n",
+                        "Expression": "var driver_rel = 'DriverAhead_00'\r\n\r\nvar carName = $prop('PersistantTrackerPlugin.'+driver_rel+'_CarName')\r\nvar carBrand = carName.split(' ')\r\nvar color = ''\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\tcolor = 'red' // 2+ Laps Ahead\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\tcolor = '-blue' // 2- Laps Behind\r\n\t} else {\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\tcolor = '-red' // Ahead\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\tcolor = '-blue' // Behind\r\n\t\t} else {\r\n\t\t\tcolor = '' // Same Lap\r\n\t\t}\r\n\t}\r\n} else {\r\n\tcolor = ''\r\n}\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+color",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -2562,7 +2562,7 @@
                     "Text": {
                       "FormatString": "",
                       "Formula": {
-                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase($prop('DataCorePlugin.GameData.PlayerName'));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase($prop('DataCorePlugin.GameData.PlayerName'));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else if (driverName == 2) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1]\r\n}else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -2721,7 +2721,7 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase($prop('PersistantTrackerPlugin.DriverBehind_00_Name'));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase($prop('PersistantTrackerPlugin.DriverBehind_00_Name'));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else if (driverName == 2) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1]\r\n}else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -2794,7 +2794,7 @@
                   "Bindings": {
                     "Image": {
                       "Formula": {
-                        "Expression": "var driver_rel = 'DriverBehind_00'\r\n\r\nvar carName = $prop('PersistantTrackerPlugin.'+driver_rel+'_CarName')\r\nvar carBrand = carName.split(' ')\r\nvar color = ''\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\tcolor = 'red' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\tcolor = '-blue' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\tcolor = '-red' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\tcolor = '-blue' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\tcolor = '' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\tcolor = ''\r\n\r\n}\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+color\r\n",
+                        "Expression": "var driver_rel = 'DriverBehind_00'\r\n\r\nvar carName = $prop('PersistantTrackerPlugin.'+driver_rel+'_CarName')\r\nvar carBrand = carName.split(' ')\r\nvar color = ''\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\tcolor = 'red' // 2+ Laps Ahead\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\tcolor = '-blue' // 2- Laps Behind\r\n\t} else {\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\tcolor = '-red' // Ahead\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\tcolor = '-blue' // Behind\r\n\t\t} else {\r\n\t\t\tcolor = '' // Same Lap\r\n\t\t}\r\n\t}\r\n} else {\r\n\tcolor = ''\r\n}\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+color",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -2906,7 +2906,7 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase($prop('PersistantTrackerPlugin.DriverBehind_01_Name'));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase($prop('PersistantTrackerPlugin.DriverBehind_01_Name'));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else if (driverName == 2) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1]\r\n}else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -2979,7 +2979,7 @@
                   "Bindings": {
                     "Image": {
                       "Formula": {
-                        "Expression": "var driver_rel = 'DriverBehind_01'\r\n\r\nvar carName = $prop('PersistantTrackerPlugin.'+driver_rel+'_CarName')\r\nvar carBrand = carName.split(' ')\r\nvar color = ''\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\tcolor = 'red' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\tcolor = '-blue' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\tcolor = '-red' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\tcolor = '-blue' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\tcolor = '' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\tcolor = ''\r\n\r\n}\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+color\r\n",
+                        "Expression": "var driver_rel = 'DriverBehind_01'\r\n\r\nvar carName = $prop('PersistantTrackerPlugin.'+driver_rel+'_CarName')\r\nvar carBrand = carName.split(' ')\r\nvar color = ''\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\tcolor = 'red' // 2+ Laps Ahead\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\tcolor = '-blue' // 2- Laps Behind\r\n\t} else {\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\tcolor = '-red' // Ahead\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\tcolor = '-blue' // Behind\r\n\t\t} else {\r\n\t\t\tcolor = '' // Same Lap\r\n\t\t}\r\n\t}\r\n} else {\r\n\tcolor = ''\r\n}\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+color",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -3091,7 +3091,7 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase($prop('PersistantTrackerPlugin.DriverBehind_02_Name'));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase($prop('PersistantTrackerPlugin.DriverBehind_02_Name'));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else if (driverName == 2) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1]\r\n}else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -3164,7 +3164,7 @@
                   "Bindings": {
                     "Image": {
                       "Formula": {
-                        "Expression": "var driver_rel = 'DriverBehind_02'\r\n\r\nvar carName = $prop('PersistantTrackerPlugin.'+driver_rel+'_CarName')\r\nvar carBrand = carName.split(' ')\r\nvar color = ''\r\n\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\n\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\n\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\t\r\n\t\tcolor = 'red' // 2+ Laps Ahead\r\n\t\t\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\t\r\n\t\tcolor = '-blue' // 2- Laps Behind\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\t\r\n\t\t\tcolor = '-red' // Ahead\r\n\t\t\t\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\r\n\t\t\tcolor = '-blue' // Behind\r\n\t\t\t\r\n\t\t} else {\r\n\t\t\r\n\t\t\tcolor = '' // Same Lap\r\n\t\t\t\r\n\t\t}\r\n\t\t\t\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\tcolor = ''\r\n\r\n}\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+color\r\n",
+                        "Expression": "var driver_rel = 'DriverBehind_02'\r\n\r\nvar carName = $prop('PersistantTrackerPlugin.'+driver_rel+'_CarName')\r\nvar carBrand = carName.split(' ')\r\nvar color = ''\r\nvar driver_gap = drivergaptoplayer( $prop('PersistantTrackerPlugin.'+driver_rel+'_Position'));\r\nvar driver_lap = timespantoseconds(driverlastlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition') ));\r\nif (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'Race') {\r\n\tif (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') >= 2 ) {\r\n\t\tcolor = 'red' // 2+ Laps Ahead\r\n\t} else if (\r\n\t\t$prop('PersistantTrackerPlugin.'+driver_rel+'_CurrentLap') - $prop('DataCorePlugin.GameData.CurrentLap') <= -2 ) {\r\n\t\tcolor = '-blue' // 2- Laps Behind\r\n\t} else {\r\n\t\tif ( driver_lap + driver_gap < (driver_lap * 0.15) ) {\r\n\t\t\tcolor = '-red' // Ahead\r\n\t\t} else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {\r\n\t\t\tcolor = '-blue' // Behind\r\n\t\t} else {\r\n\t\t\tcolor = '' // Same Lap\r\n\t\t}\r\n\t}\r\n} else {\r\n\tcolor = ''\r\n}\r\n\r\nreturn 'logo-'+lcase(carBrand[0])+color",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -3449,7 +3449,7 @@
                     "Text": {
                       "FormatString": "",
                       "Formula": {
-                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase(drivername(1));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase(drivername(1));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else if (driverName == 2) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1]\r\n}else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -3656,7 +3656,7 @@
                     "Text": {
                       "FormatString": "",
                       "Formula": {
-                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase(drivername(2));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase(drivername(2));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else if (driverName == 2) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1]\r\n}else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -3863,7 +3863,7 @@
                     "Text": {
                       "FormatString": "",
                       "Formula": {
-                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase(drivername(3));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase(drivername(3));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else if (driverName == 2) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1]\r\n}else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -4070,7 +4070,7 @@
                     "Text": {
                       "FormatString": "",
                       "Formula": {
-                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase(drivername(4));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase(drivername(4));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else if (driverName == 2) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1]\r\n}else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -4277,7 +4277,7 @@
                     "Text": {
                       "FormatString": "",
                       "Formula": {
-                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase(drivername(5));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase(drivername(5));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else if (driverName == 2) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1]\r\n}else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -4484,7 +4484,7 @@
                     "Text": {
                       "FormatString": "",
                       "Formula": {
-                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase(drivername(6));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase(drivername(6));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else if (driverName == 2) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1]\r\n}else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -4691,7 +4691,7 @@
                     "Text": {
                       "FormatString": "",
                       "Formula": {
-                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase(drivername(7));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase(drivername(7));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else if (driverName == 2) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1]\r\n}else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -4907,7 +4907,7 @@
                     "Text": {
                       "FormatString": "",
                       "Formula": {
-                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase($prop('DataCorePlugin.GameData.PlayerName'));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase($prop('DataCorePlugin.GameData.PlayerName'));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else if (driverName == 2) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1]\r\n}else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,

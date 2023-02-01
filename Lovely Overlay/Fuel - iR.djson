@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "e0ed0ab8-7ad9-4dcd-a12e-464374aafb65",
+  "Id": "46614442-6219-48a0-8646-4d16032b33bb",
   "Images": [],
   "IsOverlay": false,
   "Metadata": {
@@ -46,6 +46,37 @@
       "IsOverlayLayer": false,
       "Items": [
         {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Opacity": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 0: return 25 // Low\r\n\t\tcase 1: return 45 // Medium\r\n\t\tcase 2: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Opacity"
+            }
+          },
+          "BorderStyle": {
+            "BorderBottom": 2,
+            "BorderLeft": 2,
+            "BorderRight": 2,
+            "BorderTop": 2,
+            "RadiusBottomLeft": 12,
+            "RadiusBottomRight": 45,
+            "RadiusTopLeft": 12,
+            "RadiusTopRight": 12
+          },
+          "Height": 90.0,
+          "IsRectangleItem": true,
+          "Left": 0.0,
+          "Name": "RectangleItem6",
+          "Top": 7.0,
+          "Visible": false,
+          "Width": 329.0
+        },
+        {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
           "BackgroundColor": "#FF000000",
           "BorderStyle": {
@@ -60,7 +91,7 @@
           "Height": 16.0,
           "HorizontalAlignment": 1,
           "IsTextItem": true,
-          "Left": 139.0,
+          "Left": 141.0,
           "Name": "TextItem5",
           "Text": "FUEL",
           "TextColor": "#FFFFFFFF",
@@ -151,7 +182,7 @@
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "if ([DataCorePlugin.GameData.FuelPercent]<=10 && [DataCorePlugin.GameData.FuelPercent]>5, 1, 0)"
+                    "Expression": "if ([DataCorePlugin.Computed.Fuel_Percent]<=10 && [DataCorePlugin.Computed.Fuel_Percent]>5, 1, 0)"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Visible"
@@ -179,7 +210,7 @@
               "Bindings": {
                 "BlinkEnabled": {
                   "Formula": {
-                    "Expression": "if ([DataCorePlugin.GameData.FuelPercent]<=10 && [DataCorePlugin.GameData.FuelPercent]>5, 1, 0)"
+                    "Expression": "if ([DataCorePlugin.Computed.Fuel_Percent]<=10 && [DataCorePlugin.Computed.Fuel_Percent]>5, 1, 0)"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "BlinkEnabled"
@@ -195,7 +226,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "if ([DataCorePlugin.GameData.FuelPercent]<=10 && [DataCorePlugin.GameData.FuelPercent]>5, '#FA0000', '#FFFFFF')"
+                    "Expression": "if ([DataCorePlugin.Computed.Fuel_Percent]<=10 && [DataCorePlugin.Computed.Fuel_Percent]>5, '#FA0000', '#FFFFFF')"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "TextColor"
@@ -209,7 +240,7 @@
               "HorizontalAlignment": 1,
               "IsTextItem": true,
               "Left": 4.0,
-              "Name": "TextItem5",
+              "Name": "TextItem",
               "Text": "0",
               "TextColor": "#FFFFFFFF",
               "Top": 7.0,
@@ -272,7 +303,7 @@
                   "Height": 16.0,
                   "HorizontalAlignment": 1,
                   "IsTextItem": true,
-                  "Left": 138.5,
+                  "Left": 140.5,
                   "Name": "TextItem5",
                   "Text": "FUEL",
                   "TextColor": "#FFFFFFFF",
@@ -299,7 +330,7 @@
                   "Height": 14.0,
                   "HorizontalAlignment": 1,
                   "IsTextItem": true,
-                  "Left": 29.0,
+                  "Left": 31.0,
                   "Name": "TextItem22",
                   "Text": "LITRES",
                   "TextColor": "#FFFFFFFF",
@@ -317,7 +348,7 @@
                   "Height": 14.0,
                   "HorizontalAlignment": 1,
                   "IsTextItem": true,
-                  "Left": 239.0,
+                  "Left": 241.0,
                   "Name": "TextItem24",
                   "Text": "LAPS",
                   "TextColor": "#FFFFFFFF",
@@ -335,7 +366,7 @@
                   "Height": 14.0,
                   "HorizontalAlignment": 1,
                   "IsTextItem": true,
-                  "Left": 136.0,
+                  "Left": 138.0,
                   "Name": "TextItem23",
                   "Text": "AVG",
                   "TextColor": "#FFFFFFFF",
@@ -365,7 +396,7 @@
                   "Height": 90.0,
                   "HorizontalAlignment": 1,
                   "IsTextItem": true,
-                  "Left": 4.0,
+                  "Left": 6.0,
                   "Name": "TextItem5",
                   "Text": "0",
                   "TextColor": "#FFFFFFFF",
@@ -377,11 +408,41 @@
               ],
               "Group": true,
               "Height": 97.0,
-              "Left": 4.0,
-              "Name": "Alarm",
+              "Left": 6.0,
+              "Name": "Layer",
               "Top": 0.0,
               "Visible": false,
-              "Width": 320.0
+              "Width": 318.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "0",
+                  "Formula": {
+                    "Expression": "if ($prop('DataCorePlugin.GameData.Fuel')>9 || $prop('DataCorePlugin.GameData.Fuel')==0) {\r\n\treturn Math.round($prop('DataCorePlugin.GameData.Fuel'))\r\n} else {\r\n\treturn $prop('DataCorePlugin.GameData.Fuel').toFixed(1)\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 50.0,
+              "FontWeight": "Bold",
+              "Height": 90.0,
+              "HorizontalAlignment": 1,
+              "IsFreezed": true,
+              "IsTextItem": true,
+              "Left": 4.0,
+              "Name": "TextItem5",
+              "Text": "0",
+              "TextColor": "#FFFFFFFF",
+              "Top": 7.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 110.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -447,7 +508,7 @@
           "Group": true,
           "Height": 97.0,
           "Left": 4.0,
-          "Name": "Fuel2",
+          "Name": "Fuel",
           "Top": 0.0,
           "Visible": true,
           "Width": 320.0
@@ -506,6 +567,30 @@
           "Width": 329.0
         },
         {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FF000000",
+          "BorderStyle": {
+            "RadiusBottomLeft": 8,
+            "RadiusBottomRight": 8,
+            "RadiusTopLeft": 8,
+            "RadiusTopRight": 8
+          },
+          "Font": "Roboto",
+          "FontSize": 12.0,
+          "FontWeight": "Bold",
+          "Height": 16.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 126.0,
+          "Name": "TextItem5",
+          "Text": "FUEL TIME",
+          "TextColor": "#FFFFFFFF",
+          "Top": 0.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 80.0
+        },
+        {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
           "BackgroundColor": "#00FFFFFF",
           "Childrens": [
@@ -518,11 +603,11 @@
               "Height": 14.0,
               "HorizontalAlignment": 1,
               "IsTextItem": true,
-              "Left": 109.0,
+              "Left": 109.5,
               "Name": "TextItem23",
               "Text": "EST. TIME LEFT",
               "TextColor": "#FF878787",
-              "Top": 75.5,
+              "Top": 76.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 110.0
@@ -569,6 +654,30 @@
                 },
                 {
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF000000",
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 8,
+                    "RadiusBottomRight": 8,
+                    "RadiusTopLeft": 8,
+                    "RadiusTopRight": 8
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 12.0,
+                  "FontWeight": "Bold",
+                  "Height": 16.0,
+                  "HorizontalAlignment": 1,
+                  "IsTextItem": true,
+                  "Left": 126.0,
+                  "Name": "TextItem5",
+                  "Text": "FUEL TIME",
+                  "TextColor": "#FFFFFFFF",
+                  "Top": 0.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 80.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
                   "BackgroundColor": "#00FFFFFF",
                   "Font": "Roboto",
                   "FontSize": 12.0,
@@ -576,21 +685,21 @@
                   "Height": 14.0,
                   "HorizontalAlignment": 1,
                   "IsTextItem": true,
-                  "Left": 109.0,
+                  "Left": 110.5,
                   "Name": "TextItem22",
                   "Text": "EST. TIME LEFT",
                   "TextColor": "#FFFFFFFF",
-                  "Top": 75.5,
+                  "Top": 76.0,
                   "VerticalAlignment": 1,
                   "Visible": true,
                   "Width": 110.0
                 }
               ],
               "Group": true,
-              "Height": 80.0,
+              "Height": 92.0,
               "Left": 6.0,
-              "Name": "Alarm",
-              "Top": 12.0,
+              "Name": "Layer",
+              "Top": 0.0,
               "Visible": false,
               "Width": 318.0
             },
@@ -612,12 +721,13 @@
               "FontWeight": "Bold",
               "Height": 90.0,
               "HorizontalAlignment": 1,
+              "IsFreezed": true,
               "IsTextItem": true,
-              "Left": 52.5,
+              "Left": 53.0,
               "Name": "TextItem6",
               "Text": "00:00:00",
               "TextColor": "#FFFFFFFF",
-              "Top": 6.5,
+              "Top": 7.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 240.0
@@ -639,16 +749,16 @@
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
                   "BackgroundColor": "#FF000000",
                   "BorderStyle": {
-                    "RadiusBottomLeft": 8,
+                    "RadiusBottomLeft": 10,
                     "RadiusBottomRight": 40,
-                    "RadiusTopLeft": 8,
-                    "RadiusTopRight": 8
+                    "RadiusTopLeft": 10,
+                    "RadiusTopRight": 10
                   },
-                  "Height": 80.0,
+                  "Height": 71.0,
                   "IsRectangleItem": true,
-                  "Left": 6.0,
+                  "Left": 5.0,
                   "Name": "RectangleItem0",
-                  "Top": 12.0,
+                  "Top": 20.0,
                   "Visible": true,
                   "Width": 318.0
                 },
@@ -661,11 +771,11 @@
                   "Height": 14.0,
                   "HorizontalAlignment": 1,
                   "IsTextItem": true,
-                  "Left": 88.5,
+                  "Left": 89.0,
                   "Name": "TextItem22",
                   "Text": "INSUFFICIENT DATA",
                   "TextColor": "#FFFFFFFF",
-                  "Top": 31.5,
+                  "Top": 32.0,
                   "VerticalAlignment": 1,
                   "Visible": true,
                   "Width": 150.0
@@ -679,57 +789,33 @@
                   "Height": 30.0,
                   "HorizontalAlignment": 1,
                   "IsTextItem": true,
-                  "Left": 56.5,
+                  "Left": 57.0,
                   "Name": "TextItem23",
                   "Text": "  YOU NEED TO DRIVE SOME MORE BEFORE I CAN START CALCULATING",
                   "TextColor": "#FF878787",
                   "TextWrapping": 2,
-                  "Top": 47.5,
+                  "Top": 48.0,
                   "VerticalAlignment": 1,
                   "Visible": true,
                   "Width": 214.0
                 }
               ],
               "Group": true,
-              "Height": 80.0,
-              "Left": 6.0,
+              "Height": 71.0,
+              "Left": 5.0,
               "Name": "Insufficient Data",
-              "Top": 12.0,
+              "Top": 20.0,
               "Visible": false,
               "Width": 318.0
             }
           ],
           "Group": true,
-          "Height": 90.0,
-          "Left": 6.0,
-          "Name": "Fuel2",
-          "Top": 6.5,
+          "Height": 97.0,
+          "Left": 5.0,
+          "Name": "Fuel",
+          "Top": 0.0,
           "Visible": true,
-          "Width": 318.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "BackgroundColor": "#FF000000",
-          "BorderStyle": {
-            "RadiusBottomLeft": 8,
-            "RadiusBottomRight": 8,
-            "RadiusTopLeft": 8,
-            "RadiusTopRight": 8
-          },
-          "Font": "Roboto",
-          "FontSize": 12.0,
-          "FontWeight": "Bold",
-          "Height": 18.0,
-          "HorizontalAlignment": 1,
-          "IsTextItem": true,
-          "Left": 124.0,
-          "Name": "TextItem5",
-          "Text": "FUEL TIME",
-          "TextColor": "#FFFFFFFF",
-          "Top": -0.5,
-          "VerticalAlignment": 1,
-          "Visible": true,
-          "Width": 80.0
+          "Width": 319.0
         }
       ],
       "Name": "Fuel Time",
@@ -785,6 +871,30 @@
           "Width": 329.0
         },
         {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FF000000",
+          "BorderStyle": {
+            "RadiusBottomLeft": 8,
+            "RadiusBottomRight": 8,
+            "RadiusTopLeft": 8,
+            "RadiusTopRight": 8
+          },
+          "Font": "Roboto",
+          "FontSize": 12.0,
+          "FontWeight": "Bold",
+          "Height": 16.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 134.0,
+          "Name": "TextItem5",
+          "Text": "REFUEL",
+          "TextColor": "#FFFFFFFF",
+          "Top": 0.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 60.0
+        },
+        {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
           "BackgroundColor": "#00FFFFFF",
           "Childrens": [
@@ -797,7 +907,7 @@
               "Height": 14.0,
               "HorizontalAlignment": 1,
               "IsTextItem": true,
-              "Left": 33.5,
+              "Left": 34.0,
               "Name": "TextItem23",
               "Text": "REFUEL",
               "TextColor": "#FF878787",
@@ -815,7 +925,7 @@
               "Height": 14.0,
               "HorizontalAlignment": 1,
               "IsTextItem": true,
-              "Left": 188.5,
+              "Left": 189.0,
               "Name": "TextItem23",
               "Text": "FINISH",
               "TextColor": "#FF878787",
@@ -866,6 +976,30 @@
                 },
                 {
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF000000",
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 8,
+                    "RadiusBottomRight": 8,
+                    "RadiusTopLeft": 8,
+                    "RadiusTopRight": 8
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 12.0,
+                  "FontWeight": "Bold",
+                  "Height": 16.0,
+                  "HorizontalAlignment": 1,
+                  "IsTextItem": true,
+                  "Left": 134.0,
+                  "Name": "TextItem5",
+                  "Text": "REFUEL",
+                  "TextColor": "#FFFFFFFF",
+                  "Top": 0.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 60.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
                   "BackgroundColor": "#00FFFFFF",
                   "Font": "Roboto",
                   "FontSize": 12.0,
@@ -873,7 +1007,7 @@
                   "Height": 14.0,
                   "HorizontalAlignment": 1,
                   "IsTextItem": true,
-                  "Left": 33.5,
+                  "Left": 34.0,
                   "Name": "TextItem22",
                   "Text": "REFUEL",
                   "TextColor": "#FFFFFFFF",
@@ -891,7 +1025,7 @@
                   "Height": 14.0,
                   "HorizontalAlignment": 1,
                   "IsTextItem": true,
-                  "Left": 188.5,
+                  "Left": 189.0,
                   "Name": "TextItem23",
                   "Text": "FINISH",
                   "TextColor": "#FFFFFFFF",
@@ -902,10 +1036,10 @@
                 }
               ],
               "Group": true,
-              "Height": 80.0,
+              "Height": 92.0,
               "Left": 6.0,
               "Name": "Alarm",
-              "Top": 12.0,
+              "Top": 0.0,
               "Visible": false,
               "Width": 318.0
             },
@@ -915,7 +1049,7 @@
               "Bindings": {
                 "Visible": {
                   "Formula": {
-                    "Expression": "if ([DataCorePlugin.GameRawData.mLapsInEvent]>0, 0, 1)"
+                    "Expression": "if ([DataCorePlugin.GameRawData.SessionData.SessionInfo.Sessions01.IsLimitedSessionLaps], 0, 1)"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Visible"
@@ -929,7 +1063,7 @@
                     "Text": {
                       "FormatString": "0",
                       "Formula": {
-                        "Expression": "var estTotalLaps; // Estimated laps left for the race\r\nvar fuelRequired; // Fuel requried for the entire race\r\nvar reFuel; // Re Fuel amount, if required\r\nvar timeAgainst; // Best or Last lap\r\nvar carMaxFuel; // Max Fuel Capacity\r\n\r\nif ( $prop('DataCorePlugin.GameRawData.mSessionFastestLapTime') == '-1' ) {\r\n\ttimeAgainst = $prop('DataCorePlugin.GameRawData.mLastLapTime')\r\n} else {\r\n\ttimeAgainst = $prop('DataCorePlugin.GameRawData.mSessionFastestLapTime')\r\n}\r\n\r\ncarMaxFuel = $prop('DataCorePlugin.GameData.MaxFuel');\r\n\r\nestTotalLaps = timespantoseconds($prop('DataCorePlugin.GameData.SessionTimeLeft')) / timeAgainst\r\n\r\nfuelRequired = estTotalLaps * $prop('DataCorePlugin.Computed.Fuel_LitersPerLap')\r\n\r\nreFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel');\r\n\r\nif (reFuel > 0) {\r\n\tif (reFuel >= carMaxFuel) {\r\n\t\treturn carMaxFuel\r\n\t} else {\r\n\t\treturn Math.abs(reFuel)\r\n\t}\r\n} else {\r\n\treturn 0\r\n}",
+                        "Expression": "var estTotalLaps;\r\nvar fuelRequired;\r\nvar reFuel;\r\nvar timeAgainst;\r\n\r\nif ( $prop('DataCorePlugin.GameData.BestLapTime')=='00:00:00' ) {\r\n\ttimeAgainst = $prop('DataCorePlugin.GameRawData.Telemetry.LapLastLapTime');\r\n} else {\r\n\ttimeAgainst = $prop('DataCorePlugin.GameRawData.Telemetry.LapBestLapTime');\r\n}\r\n\r\nvar carMaxFuel = $prop('DataCorePlugin.GameData.CarSettings_MaxFUEL');\r\n\r\nestTotalLaps = $prop('DataCorePlugin.GameRawData.Telemetry.SessionTimeRemain') / timeAgainst;\r\n\r\nfuelRequired = estTotalLaps * $prop('DataCorePlugin.Computed.Fuel_LitersPerLap');\r\n\r\nreFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel');\r\n\r\nif (reFuel > 0) {\r\n\tif (reFuel >= carMaxFuel) {\r\n\t\treturn carMaxFuel\r\n\t} else {\r\n\t\treturn Math.abs(reFuel)\r\n\t}\r\n} else {\r\n\treturn 0\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -958,7 +1092,7 @@
                     "Text": {
                       "FormatString": "0.0",
                       "Formula": {
-                        "Expression": "var estTotalLaps; // Estimated laps left for the race\r\nvar fuelRequired; // Fuel requried for the entire race\r\nvar reFuel; // Re Fuel amount, if required\r\nvar timeAgainst; // Best or Last lap\r\n\r\nif ( $prop('DataCorePlugin.GameRawData.mSessionFastestLapTime') == '-1' ) {\r\n\ttimeAgainst = $prop('DataCorePlugin.GameRawData.mLastLapTime')\r\n} else {\r\n\ttimeAgainst = $prop('DataCorePlugin.GameRawData.mSessionFastestLapTime')\r\n}\r\n\r\nestTotalLaps = timespantoseconds($prop('DataCorePlugin.GameData.SessionTimeLeft')) / timeAgainst\r\n\r\nfuelRequired = estTotalLaps * $prop('DataCorePlugin.Computed.Fuel_LitersPerLap')\r\n\r\nreFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel')\r\n\r\nif (reFuel < 0) {\r\n\treturn Math.abs(reFuel)\r\n} else {\r\n\treturn 0\r\n}",
+                        "Expression": "var estTotalLaps; // Estimated laps left for the race\r\nvar fuelRequired; // Fuel requried for the entire race\r\nvar reFuel; // Re Fuel amount, if required\r\nvar timeAgainst; // Best or Last lap\r\n\r\nif ( $prop('DataCorePlugin.GameRawData.Telemetry.LapBestLapTime') == '-1' ) {\r\n\ttimeAgainst = $prop('DataCorePlugin.GameRawData.Telemetry.LapLastLapTime');\r\n} else {\r\n\ttimeAgainst = $prop('DataCorePlugin.GameRawData.Telemetry.LapBestLapTime');\r\n}\r\n\r\nestTotalLaps = $prop('DataCorePlugin.GameRawData.Telemetry.SessionTimeRemain') / timeAgainst;\r\n\r\nfuelRequired = estTotalLaps * $prop('DataCorePlugin.Computed.Fuel_LitersPerLap');\r\n\r\nreFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel');\r\n\r\nif (reFuel < 0) {\r\n\treturn Math.abs(reFuel)\r\n} else {\r\n\treturn 0\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -995,7 +1129,7 @@
               "Bindings": {
                 "Visible": {
                   "Formula": {
-                    "Expression": "if ([DataCorePlugin.GameRawData.mLapsInEvent]>0, 1, 0)"
+                    "Expression": "if ([DataCorePlugin.GameRawData.SessionData.SessionInfo.Sessions01.IsLimitedSessionLaps], 1, 0)"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Visible"
@@ -1009,7 +1143,7 @@
                     "Text": {
                       "FormatString": "0",
                       "Formula": {
-                        "Expression": "var carMaxFuel\r\nvar totalLaps\r\nvar fuelRequired\r\nvar reFuel\r\n\r\ncarMaxFuel = $prop('DataCorePlugin.GameData.CarSettings_MaxFUEL');\r\n\r\ntotalLaps = $prop('DataCorePlugin.GameData.TotalLaps');\r\n\r\nfuelRequired = totalLaps * $prop('DataCorePlugin.Computed.Fuel_LitersPerLap');\r\n\r\nreFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel');\r\n\r\nif (reFuel > 0) {\r\n\tif (reFuel >= carMaxFuel) {\r\n\t\treturn carMaxFuel\r\n\t} else {\r\n\t\treturn Math.abs(reFuel)\r\n\t}\r\n} else {\r\n\treturn 0\r\n}",
+                        "Expression": "var carMaxFuel\r\nvar totalLaps\r\nvar remainingLaps\r\nvar fuelRequired\r\nvar reFuel\r\n\r\ncarMaxFuel = $prop('DataCorePlugin.GameData.CarSettings_MaxFUEL');\r\n\r\n// Get Remaining Lap(s)\r\ntotalLaps = $prop('DataCorePlugin.GameRawData.Telemetry.SessionLapsRemain')\r\n\r\n// Get Current Lap\r\nremainingLaps = totalLaps + (1-$prop('DataCorePlugin.GameRawData.Telemetry.LapDistPct'))\r\n\r\n// Estimate Fuel for Remaining laps\r\nfuelRequired = remainingLaps * $prop('DataCorePlugin.Computed.Fuel_LitersPerLap');\r\n\r\n// Decide to Refuel or Not\r\nreFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel');\r\n\r\nif (reFuel > 0) {\r\n\tif (reFuel >= carMaxFuel) {\r\n\t\treturn carMaxFuel\r\n\t} else {\r\n\t\treturn Math.abs(reFuel)\r\n\t}\r\n} else {\r\n\treturn 0\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -1038,7 +1172,7 @@
                     "Text": {
                       "FormatString": "0.0",
                       "Formula": {
-                        "Expression": "var totalLaps\r\nvar remainingLaps\r\nvar fuelRequired\r\nvar reFuel\r\n\r\n// Get Remaining Lap(s)\r\ntotalLaps = $prop('DataCorePlugin.GameData.RemainingLaps')\r\n\r\n// Get Current Lap\r\nremainingLaps = totalLaps + (1-$prop('DataCorePlugin.GameRawData.Telemetry.LapDistPct'))\r\n\r\n// Estimate Fuel for Remaining laps\r\nfuelRequired = remainingLaps * $prop('DataCorePlugin.Computed.Fuel_LitersPerLap');\r\n\r\n// Decide to Refuel or Not\r\nreFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel');\r\n\r\nif (reFuel < 0) {\r\n\treturn Math.abs(reFuel)\r\n} else {\r\n\treturn 0\r\n}",
+                        "Expression": "var totalLaps;\r\nvar remainingLaps;\r\nvar fuelRequired;\r\nvar reFuel;\r\n\r\n// Get Remaining Lap(s)\r\ntotalLaps = $prop('DataCorePlugin.GameRawData.Telemetry.SessionLapsRemain')\r\n\r\n// Get Current Lap\r\nremainingLaps = totalLaps + (1-$prop('DataCorePlugin.GameRawData.Telemetry.LapDistPct'))\r\n\r\n// Estimate Fuel for Remaining laps\r\nfuelRequired = remainingLaps * $prop('DataCorePlugin.Computed.Fuel_LitersPerLap');\r\n\r\n// Decide to Refuel or Not\r\nreFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel');\r\n\r\nif (reFuel < 0) {\r\n\treturn Math.abs(reFuel)\r\n} else {\r\n\treturn 0\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -1075,7 +1209,7 @@
               "Bindings": {
                 "Visible": {
                   "Formula": {
-                    "Expression": "if ( timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) == '0' && $prop('DataCorePlugin.GameRawData.mLastLapTime') == '-1' ) {\r\n\treturn 1\r\n} else {\r\n\treturn 0\r\n}\r\n\r\n",
+                    "Expression": "if ( $prop('DataCorePlugin.GameData.BestLapTime') == '00:00:00' && $prop('DataCorePlugin.GameData.LastLapTime') == '00:00:00' ) {\r\n\treturn 1\r\n} else {\r\n\treturn 0\r\n}\r\n\r\n",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -1087,18 +1221,18 @@
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
                   "BackgroundColor": "#FF000000",
                   "BorderStyle": {
-                    "RadiusBottomLeft": 8,
+                    "RadiusBottomLeft": 10,
                     "RadiusBottomRight": 40,
-                    "RadiusTopLeft": 8,
-                    "RadiusTopRight": 8
+                    "RadiusTopLeft": 10,
+                    "RadiusTopRight": 10
                   },
-                  "Height": 80.0,
+                  "Height": 72.0,
                   "IsRectangleItem": true,
-                  "Left": 4.5,
+                  "Left": 5.0,
                   "Name": "RectangleItem0",
-                  "Top": 12.0,
+                  "Top": 20.0,
                   "Visible": true,
-                  "Width": 319.0
+                  "Width": 318.0
                 },
                 {
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -1109,7 +1243,7 @@
                   "Height": 14.0,
                   "HorizontalAlignment": 1,
                   "IsTextItem": true,
-                  "Left": 88.5,
+                  "Left": 89.0,
                   "Name": "TextItem22",
                   "Text": "INSUFFICIENT DATA",
                   "TextColor": "#FFFFFFFF",
@@ -1127,7 +1261,7 @@
                   "Height": 30.0,
                   "HorizontalAlignment": 1,
                   "IsTextItem": true,
-                  "Left": 56.5,
+                  "Left": 57.0,
                   "Name": "TextItem23",
                   "Text": "  YOU NEED TO DRIVE SOME MORE BEFORE I CAN START CALCULATING",
                   "TextColor": "#FF878787",
@@ -1139,45 +1273,21 @@
                 }
               ],
               "Group": true,
-              "Height": 80.0,
-              "Left": 4.5,
+              "Height": 72.0,
+              "Left": 5.0,
               "Name": "Insufficient Data",
-              "Top": 12.0,
+              "Top": 20.0,
               "Visible": false,
-              "Width": 319.0
+              "Width": 318.0
             }
           ],
           "Group": true,
-          "Height": 90.0,
-          "Left": 4.5,
-          "Name": "Fuel2",
-          "Top": 7.0,
-          "Visible": true,
-          "Width": 319.5
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "BackgroundColor": "#FF000000",
-          "BorderStyle": {
-            "RadiusBottomLeft": 8,
-            "RadiusBottomRight": 8,
-            "RadiusTopLeft": 8,
-            "RadiusTopRight": 8
-          },
-          "Font": "Roboto",
-          "FontSize": 12.0,
-          "FontWeight": "Bold",
-          "Height": 18.0,
-          "HorizontalAlignment": 1,
-          "IsTextItem": true,
-          "Left": 134.0,
-          "Name": "TextItem5",
-          "Text": "REFUEL",
-          "TextColor": "#FFFFFFFF",
+          "Height": 97.0,
+          "Left": 5.0,
+          "Name": "Fuel",
           "Top": 0.0,
-          "VerticalAlignment": 1,
           "Visible": true,
-          "Width": 60.0
+          "Width": 319.0
         }
       ],
       "Name": "Refuel",

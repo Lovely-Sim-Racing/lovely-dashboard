@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "a3941093-a547-4b8e-868c-854a2e2aa37e",
+  "Id": "04b1df8a-3400-4745-8c73-7354e34d75a4",
   "Images": [],
   "IsOverlay": false,
   "Metadata": {
@@ -45,7 +45,7 @@
           "Bindings": {
             "Opacity": {
               "Formula": {
-                "Expression": "if ( [DataCorePlugin.GameData.NewData.TCLevel]==0, 35, 100)"
+                "Expression": "if ( [DataCorePlugin.GameRawData.Graphics.TC]==0, 35, 100)"
               },
               "Mode": 2,
               "TargetPropertyName": "Opacity"
@@ -53,7 +53,7 @@
             "Text": {
               "FormatString": "0",
               "Formula": {
-                "Expression": "isnull([DataCorePlugin.GameData.NewData.TCLevel],0)"
+                "Expression": "[GameRawData.Graphics.TC]"
               },
               "Mode": 2,
               "TargetPropertyName": "Text"
@@ -64,9 +64,10 @@
           "FontWeight": "Bold",
           "Height": 90.0,
           "HorizontalAlignment": 1,
+          "IsFreezed": true,
           "IsTextItem": true,
           "Left": 0.0,
-          "Name": "TC",
+          "Name": "TC ACC",
           "Text": "0",
           "TextColor": "#FF00BFFF",
           "Top": 7.0,
@@ -121,7 +122,7 @@
                 "Text": {
                   "FormatString": "0",
                   "Formula": {
-                    "Expression": "[DataCorePlugin.GameData.NewData.TCLevel]"
+                    "Expression": "[GameRawData.Graphics.TC]"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
@@ -163,8 +164,9 @@
           "Font": "Roboto",
           "FontSize": 12.0,
           "FontWeight": "Bold",
-          "Height": 16.0,
+          "Height": 18.0,
           "HorizontalAlignment": 1,
+          "IsFreezed": true,
           "IsTextItem": true,
           "Left": 18.0,
           "Name": "TextItem22",
@@ -181,7 +183,7 @@
           "Bindings": {
             "Opacity": {
               "Formula": {
-                "Expression": "if ( isnull([DataCorePlugin.GameRawData.Telemetry.dcTractionControl2],0)==0, 35, 100)"
+                "Expression": "if ( [DataCorePlugin.GameRawData.Graphics.TCCut]==0, 35, 100)"
               },
               "Mode": 2,
               "TargetPropertyName": "Opacity"
@@ -189,7 +191,7 @@
             "Text": {
               "FormatString": "0",
               "Formula": {
-                "Expression": "isnull([DataCorePlugin.GameRawData.Telemetry.dcTractionControl2],0)"
+                "Expression": "isnull([GameRawData.Graphics.TCCut],0)"
               },
               "Mode": 2,
               "TargetPropertyName": "Text"
@@ -200,9 +202,10 @@
           "FontWeight": "Bold",
           "Height": 90.0,
           "HorizontalAlignment": 1,
+          "IsFreezed": true,
           "IsTextItem": true,
           "Left": 96.0,
-          "Name": "TC Cut",
+          "Name": "TC Cut ACC",
           "Text": "0",
           "TextColor": "#FF00BFFF",
           "Top": 7.0,
@@ -216,7 +219,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "if ( isnull([DataCorePlugin.GameRawData.Telemetry.dcTractionControl2],0)==0, \r\n\t0,\r\n\tif ( changed(300, [DataCorePlugin.GameData.TCActive]), 1, 0)\r\n)"
+                "Expression": "if ( [DataCorePlugin.GameRawData.Graphics.TCCut]==0, \r\n\t0,\r\n\tif ( changed(300, [DataCorePlugin.GameData.TCActive]), 1, 0)\r\n)"
               },
               "Mode": 2,
               "TargetPropertyName": "Visible"
@@ -247,7 +250,7 @@
                 "Text": {
                   "FormatString": "0",
                   "Formula": {
-                    "Expression": "isnull([DataCorePlugin.GameRawData.Telemetry.dcTractionControl2],0)"
+                    "Expression": "isnull([GameRawData.Graphics.TCCut],0)"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
@@ -272,7 +275,7 @@
           "Group": true,
           "Height": 90.0,
           "Left": 96.0,
-          "Name": "TC Cut Active",
+          "Name": "TC2 Active",
           "Top": 7.0,
           "Visible": false,
           "Width": 86.0
@@ -289,8 +292,9 @@
           "Font": "Roboto",
           "FontSize": 12.0,
           "FontWeight": "Bold",
-          "Height": 16.0,
+          "Height": 18.0,
           "HorizontalAlignment": 1,
+          "IsFreezed": true,
           "IsTextItem": true,
           "Left": 114.0,
           "Name": "TextItem",
@@ -307,7 +311,7 @@
           "Bindings": {
             "Opacity": {
               "Formula": {
-                "Expression": "if ( [DataCorePlugin.GameData.NewData.ABSLevel]==0, 35, 100)"
+                "Expression": "if ( [DataCorePlugin.GameData.ABSLevel]==0, 35, 100)"
               },
               "Mode": 2,
               "TargetPropertyName": "Opacity"
@@ -315,7 +319,7 @@
             "Text": {
               "FormatString": "0",
               "Formula": {
-                "Expression": "isnull([DataCorePlugin.GameData.NewData.ABSLevel],0)"
+                "Expression": "[DataCorePlugin.GameData.ABSLevel]"
               },
               "Mode": 2,
               "TargetPropertyName": "Text"
@@ -326,6 +330,7 @@
           "FontWeight": "Bold",
           "Height": 90.0,
           "HorizontalAlignment": 1,
+          "IsFreezed": true,
           "IsTextItem": true,
           "Left": 192.0,
           "Name": "ABS",
@@ -342,7 +347,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "if ( changed(300, [DataCorePlugin.GameData.ABSActive]), 1, 0)"
+                "Expression": "if ( [DataCorePlugin.GameRawData.Graphics.ABS]==0, \r\n\t0,\r\n\tif ( changed(300, [DataCorePlugin.GameData.ABSActive]), 1, 0)\r\n)"
               },
               "Mode": 2,
               "TargetPropertyName": "Visible"
@@ -373,7 +378,7 @@
                 "Text": {
                   "FormatString": "0",
                   "Formula": {
-                    "Expression": "[DataCorePlugin.GameData.NewData.ABSLevel]"
+                    "Expression": "[DataCorePlugin.GameData.ABSLevel]"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
@@ -415,8 +420,9 @@
           "Font": "Roboto",
           "FontSize": 12.0,
           "FontWeight": "Bold",
-          "Height": 16.0,
+          "Height": 18.0,
           "HorizontalAlignment": 1,
+          "IsFreezed": true,
           "IsTextItem": true,
           "Left": 210.0,
           "Name": "TextItem2",
@@ -434,7 +440,8 @@
             "Text": {
               "FormatString": "00.0",
               "Formula": {
-                "Expression": "[DataCorePlugin.GameData.NewData.BrakeBias]"
+                "Expression": "var bb = $prop('DataCorePlugin.GameData.BrakeBias');\r\nvar bb_comp;\r\nvar bb_final;\r\n\r\nswitch ( $prop('DataCorePlugin.GameData.CarModel') ) {\r\n\r\n  // GT3 2018\r\n  case 'amr_v12_vantage_gt3':\r\n    bb_comp = 0; //-17\r\n    break;\r\n  case 'audi_r8_lms':\r\n    bb_comp = 0; // -14\r\n    break;\r\n  case 'bentley_continental_gt3_2016':\r\n    bb_comp = 0; // -7\r\n    break;\r\n  case 'bentley_continental_gt3_2018':\r\n    bb_comp = 0; // -7\r\n    break;\r\n  case 'bmw_m6_gt3':\r\n    bb_comp = 0; // -15\r\n    break;\r\n  case 'jaguar_g3':\r\n    bb_comp = 0; // -7\r\n    break;\r\n  case 'ferrari_488_gt3':\r\n    bb_comp = 0; // -17\r\n    break;\r\n  case 'honda_nsx_gt3':\r\n    bb_comp = 0; // -14\r\n    break;\r\n  case 'lamborghini_gallardo_rex':\r\n    bb_comp = 0; // -14\r\n    break;\r\n  case 'lamborghini_huracan_gt3':\r\n    bb_comp = 0; // -14\r\n    break;\r\n  case 'lamborghini_huracan_st':\r\n    bb_comp = 0; // -14\r\n    break;\r\n  case 'lexus_rc_f_gt3':\r\n    bb_comp = 0; // -14\r\n    break;\r\n  case 'mclaren_650s_gt3':\r\n    bb_comp = 0; // -17\r\n    break;\r\n  case 'mercedes_amg_gt3':\r\n    bb_comp = 0; // -14\r\n    break;\r\n  case 'nissan_gt_r_gt3_2017':\r\n    bb_comp = 0; // -15\r\n    break;\r\n  case 'nissan_gt_r_gt3_2018':\r\n    bb_comp = 0; // -15\r\n    break;\r\n  case 'porsche_991_gt3_r':\r\n    bb_comp = 0; // -21\r\n    break;\r\n  case 'porsche_991ii_gt3_cup':\r\n    bb_comp = 0; // -5\r\n    break;\r\n\r\n  // GT3 2019\r\n  case 'amr_v8_vantage_gt3':\r\n    bb_comp = 0; // -7\r\n    break;\r\n  case 'audi_r8_lms_evo':\r\n    bb_comp = 0; // -14\r\n    break;\r\n  case 'honda_nsx_gt3_evo':\r\n    bb_comp = -6; // -14\r\n    break;\r\n  case 'lamborghini_huracan_gt3_evo':\r\n    bb_comp = 0; // -14\r\n    break;\r\n  case 'mclaren_720s_gt3':\r\n    bb_comp = 0; // -17\r\n    break;\r\n  case 'porsche_991ii_gt3_r':\r\n    bb_comp = 0; // -21\r\n    break;\r\n\r\n  // GT4\r\n  case 'alpine_a110_gt4':\r\n    bb_comp = 0; // -15\r\n    break;\r\n  case 'amr_v8_vantage_gt4':\r\n    bb_comp = 0; // -20\r\n    break;\r\n  case 'audi_r8_gt4':\r\n    bb_comp = 0; // -15\r\n    break;\r\n  case 'bmw_m4_gt4':\r\n    bb_comp = 0; // -22\r\n    break;\r\n  case 'chevrolet_camaro_gt4r':\r\n    bb_comp = 0; // -18\r\n    break;\r\n  case 'ginetta_g55_gt4':\r\n    bb_comp = 0; // -18\r\n    break;\r\n  case 'ktm_xbow_gt4':\r\n    bb_comp = 0; // -20\r\n    break;\r\n  case 'maserati_mc_gt4':\r\n    bb_comp = 0; // -15\r\n    break;\r\n  case 'mclaren_570s_gt4':\r\n    bb_comp = 0; // -9\r\n    break;\r\n  case 'mercedes_amg_gt4':\r\n    bb_comp = 0; // -20\r\n    break;\r\n  case 'porsche_718_cayman_gt4_mr':\r\n    bb_comp = 0; // -20\r\n    break;\r\n\r\n  // GT3 2020\r\n  case 'ferrari_488_gt3_evo':\r\n    bb_comp = 0; //-17\r\n    break;\r\n  case 'mercedes_amg_gt3_evo':\r\n    bb_comp = 0; // -14\r\n    break;\r\n\r\n  // GT3 2021\r\n  case 'bmw_m4_gt3':\r\n    bb_comp = 0; // -14\r\n    break;\r\n\r\n  // Challengers Pack 2022\r\n  case 'audi_r8_lms_evo_ii':\r\n    bb_comp = 0; // -14;\r\n    break;\r\n  case 'bmw_m2_cs_racing':\r\n    bb_comp = 0; // -17;\r\n    break;\r\n  case 'ferrari_488_challenge_evo':\r\n    bb_comp = 0; // -13;\r\n    break;\r\n  case 'lamborghini_huracan_st_evo2':\r\n    bb_comp = 0; // -14;\r\n    break;\r\n  case 'porsche_992_gt3_cup':\r\n    bb_comp = 0; // -5;\r\n    break;\r\n\r\n  default:\r\n    bb_comp = 0;\r\n}\r\n\r\nif (bb <= 0) {\r\n\tbb_final = 0\r\n} else {\r\n\tbb_final = bb + bb_comp\r\n}\r\n\r\nreturn bb_final.toFixed(1)",
+                "Interpreter": 1
               },
               "Mode": 2,
               "TargetPropertyName": "Text"
@@ -445,6 +452,7 @@
           "FontWeight": "Bold",
           "Height": 90.0,
           "HorizontalAlignment": 1,
+          "IsFreezed": true,
           "IsTextItem": true,
           "Left": 288.0,
           "Name": "BB",
@@ -469,6 +477,7 @@
           "FontWeight": "Bold",
           "Height": 16.0,
           "HorizontalAlignment": 1,
+          "IsFreezed": true,
           "IsTextItem": true,
           "Left": 326.5,
           "Name": "TextItem3",
@@ -483,41 +492,28 @@
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
-            "FontSize": {
-              "Formula": {
-                "Expression": "if ( $prop('DataCorePlugin.GameRawData.Telemetry.EnergyERSBatteryPct')*100 >= 100 ) {\r\n\treturn 43\r\n} else { \r\n\treturn 50\r\n}",
-                "Interpreter": 1
-              },
-              "Mode": 2,
-              "TargetPropertyName": "FontSize"
-            },
-            "Opacity": {
-              "Formula": {
-                "Expression": "if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcFuelMixture') != null ) {\r\n\t\r\n\treturn 100\r\n\t\r\n} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') != null ) {\r\n\t\r\n\treturn 100\r\n\r\n} else if ( $prop('GameRawData.Telemetry.EnergyERSBattery') != null ) {\r\n\r\n\treturn 100\r\n\r\n} else {\r\n\r\n\treturn 35\r\n\t\r\n}",
-                "Interpreter": 1
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Opacity"
-            },
             "Text": {
               "FormatString": "0",
               "Formula": {
-                "Expression": "if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcFuelMixture') != null ) {\r\n\t\r\n\treturn $prop('DataCorePlugin.GameRawData.Telemetry.dcFuelMixture')\r\n\t//return $prop('DataCorePlugin.GameRawData.Telemetry.dcFuelMixture').substring(0, 2).replace(/\\s/g,'')\r\n\t\r\n} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') != null ) {\r\n\t\r\n\treturn $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape')\r\n\t\r\n} else if ( $prop('GameRawData.Telemetry.EnergyERSBattery') != null ) {\r\n\t\r\n\t//return format($prop('GameRawData.Telemetry.EnergyERSBatteryPct'), '0')\r\n\treturn $prop('GameRawData.Telemetry.EnergyERSBatteryPct')*100\r\n\t\r\n} else {\r\n\r\n\treturn '-'\r\n\t\r\n}",
-                "Interpreter": 1
+                "Expression": "[DataCorePlugin.GameData.EngineMap]"
               },
               "Mode": 2,
               "TargetPropertyName": "Text"
             }
+          },
+          "BorderStyle": {
+            "BorderColor": "#FF00FF02"
           },
           "Font": "Roboto",
           "FontSize": 50.0,
           "FontWeight": "Bold",
           "Height": 90.0,
           "HorizontalAlignment": 1,
+          "IsFreezed": true,
           "IsTextItem": true,
           "Left": 425.0,
           "Name": "MAP",
-          "Text": "00",
+          "Text": "0",
           "TextColor": "#FF00FF02",
           "Top": 7.0,
           "VerticalAlignment": 1,
@@ -527,16 +523,6 @@
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
           "BackgroundColor": "#FF000000",
-          "Bindings": {
-            "Text": {
-              "Formula": {
-                "Expression": "if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcFuelMixture') != null ) {\r\n\t\r\n\treturn 'ENGINE'\r\n\t\r\n} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') != null ) {\r\n\t\r\n\treturn 'THROTTLE'\r\n\t\r\n} else if ( $prop('GameRawData.Telemetry.EnergyERSBattery') != null ) {\r\n\t\r\n\treturn 'ERS %'\t\r\n\t\r\n} else {\r\n\r\n\treturn 'ENGINE'\r\n\t\r\n}",
-                "Interpreter": 1
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Text"
-            }
-          },
           "BorderStyle": {
             "RadiusBottomLeft": 8,
             "RadiusBottomRight": 8,
@@ -548,24 +534,26 @@
           "FontWeight": "Bold",
           "Height": 16.0,
           "HorizontalAlignment": 1,
+          "IsFreezed": true,
           "IsTextItem": true,
-          "Left": 435.0,
+          "Left": 443.0,
           "Name": "TextItem4",
-          "Text": "THROTTLE",
+          "Text": "MAP",
           "TextColor": "#FF00FF02",
           "Top": 0.0,
           "VerticalAlignment": 1,
           "Visible": true,
-          "Width": 66.0
+          "Width": 50.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
-          "FileName": "Fuel - iR.djson",
+          "FileName": "Fuel.djson",
           "Height": 97.0,
+          "IsFreezed": true,
           "Left": 521.0,
-          "Name": "Fuel iR",
+          "Name": "Fuel",
           "NextScreenCommand": 4,
           "PreviousScreenCommand": 0,
           "Top": 0.0,
@@ -583,7 +571,7 @@
       "ScreenEnabledExpression": {
         "Expression": ""
       },
-      "ScreenId": "59c2429b-b97a-4706-a4af-123e31523ee6"
+      "ScreenId": "b335dce5-fcd0-4337-83c6-116aaaec2d0e"
     }
   ],
   "ShowBackground": true,
