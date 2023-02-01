@@ -38,6 +38,14 @@ You can change the way the Driver Name is formatted and displayed.
 
 - `0` (Default) - Will display names as "**F. Lastname**"
 - `1` Will display names as "**Firstname L.**"
+- `2` Will display names as "**Firstname Lastname**"
+
+---
+
+#### `lfmID`
+Display your next session information on the Lovely Dashboard splash screen.
+
+- You can find your LFM ID in the URL of your profile page on [Low Fuel Motorsports](https://lowfuelmotorsport.com)
 
 ---
 
