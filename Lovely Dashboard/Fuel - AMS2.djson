@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "e0ed0ab8-7ad9-4dcd-a12e-464374aafb65",
+  "Id": "b67789f8-5e91-482f-9e95-51d46ef1c175",
   "Images": [],
   "IsOverlay": false,
   "Metadata": {
@@ -45,30 +45,6 @@
       "IsForegroundLayer": false,
       "IsOverlayLayer": false,
       "Items": [
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "BackgroundColor": "#FF000000",
-          "BorderStyle": {
-            "RadiusBottomLeft": 8,
-            "RadiusBottomRight": 8,
-            "RadiusTopLeft": 8,
-            "RadiusTopRight": 8
-          },
-          "Font": "Roboto",
-          "FontSize": 12.0,
-          "FontWeight": "Bold",
-          "Height": 16.0,
-          "HorizontalAlignment": 1,
-          "IsTextItem": true,
-          "Left": 139.0,
-          "Name": "TextItem5",
-          "Text": "FUEL",
-          "TextColor": "#FFFFFFFF",
-          "Top": 0.0,
-          "VerticalAlignment": 1,
-          "Visible": true,
-          "Width": 50.0
-        },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
           "BackgroundColor": "#00FFFFFF",
@@ -259,30 +235,6 @@
                 },
                 {
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                  "BackgroundColor": "#FF000000",
-                  "BorderStyle": {
-                    "RadiusBottomLeft": 8,
-                    "RadiusBottomRight": 8,
-                    "RadiusTopLeft": 8,
-                    "RadiusTopRight": 8
-                  },
-                  "Font": "Roboto",
-                  "FontSize": 12.0,
-                  "FontWeight": "Bold",
-                  "Height": 16.0,
-                  "HorizontalAlignment": 1,
-                  "IsTextItem": true,
-                  "Left": 138.5,
-                  "Name": "TextItem5",
-                  "Text": "FUEL",
-                  "TextColor": "#FFFFFFFF",
-                  "Top": 0.0,
-                  "VerticalAlignment": 1,
-                  "Visible": true,
-                  "Width": 50.0
-                },
-                {
-                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
                   "BackgroundColor": "#00FFFFFF",
                   "Bindings": {
                     "Text": {
@@ -376,10 +328,10 @@
                 }
               ],
               "Group": true,
-              "Height": 97.0,
+              "Height": 90.0,
               "Left": 4.0,
               "Name": "Alarm",
-              "Top": 0.0,
+              "Top": 7.0,
               "Visible": false,
               "Width": 320.0
             },
@@ -442,6 +394,30 @@
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 110.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FF000000",
+              "BorderStyle": {
+                "RadiusBottomLeft": 8,
+                "RadiusBottomRight": 8,
+                "RadiusTopLeft": 8,
+                "RadiusTopRight": 8
+              },
+              "Font": "Roboto",
+              "FontSize": 12.0,
+              "FontWeight": "Bold",
+              "Height": 16.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 139.0,
+              "Name": "TextItem5",
+              "Text": "FUEL",
+              "TextColor": "#FFFFFFFF",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 50.0
             }
           ],
           "Group": true,
@@ -474,37 +450,6 @@
       "IsForegroundLayer": false,
       "IsOverlayLayer": false,
       "Items": [
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
-          "Bindings": {
-            "Opacity": {
-              "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 0: return 25 // Low\r\n\t\tcase 1: return 45 // Medium\r\n\t\tcase 2: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
-                "Interpreter": 1
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Opacity"
-            }
-          },
-          "BorderStyle": {
-            "BorderBottom": 2,
-            "BorderLeft": 2,
-            "BorderRight": 2,
-            "BorderTop": 2,
-            "RadiusBottomLeft": 12,
-            "RadiusBottomRight": 45,
-            "RadiusTopLeft": 12,
-            "RadiusTopRight": 12
-          },
-          "Height": 90.0,
-          "IsRectangleItem": true,
-          "Left": -0.5,
-          "Name": "RectangleItem6",
-          "Top": 7.0,
-          "Visible": false,
-          "Width": 329.0
-        },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
           "BackgroundColor": "#00FFFFFF",
@@ -639,6 +584,16 @@
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
                   "BackgroundColor": "#FF000000",
                   "BorderStyle": {
+                    "Bindings": {
+                      "RadiusBottomRight": {
+                        "Formula": {
+                          "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius-5",
+                          "Interpreter": 1
+                        },
+                        "Mode": 2,
+                        "TargetPropertyName": "RadiusBottomRight"
+                      }
+                    },
                     "RadiusBottomLeft": 8,
                     "RadiusBottomRight": 40,
                     "RadiusTopLeft": 8,
@@ -697,39 +652,39 @@
               "Top": 12.0,
               "Visible": false,
               "Width": 318.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FF000000",
+              "BorderStyle": {
+                "RadiusBottomLeft": 8,
+                "RadiusBottomRight": 8,
+                "RadiusTopLeft": 8,
+                "RadiusTopRight": 8
+              },
+              "Font": "Roboto",
+              "FontSize": 12.0,
+              "FontWeight": "Bold",
+              "Height": 18.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 124.0,
+              "Name": "TextItem5",
+              "Text": "FUEL TIME",
+              "TextColor": "#FFFFFFFF",
+              "Top": -0.5,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 80.0
             }
           ],
           "Group": true,
-          "Height": 90.0,
+          "Height": 97.0,
           "Left": 6.0,
           "Name": "Fuel2",
-          "Top": 6.5,
+          "Top": -0.5,
           "Visible": true,
           "Width": 318.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "BackgroundColor": "#FF000000",
-          "BorderStyle": {
-            "RadiusBottomLeft": 8,
-            "RadiusBottomRight": 8,
-            "RadiusTopLeft": 8,
-            "RadiusTopRight": 8
-          },
-          "Font": "Roboto",
-          "FontSize": 12.0,
-          "FontWeight": "Bold",
-          "Height": 18.0,
-          "HorizontalAlignment": 1,
-          "IsTextItem": true,
-          "Left": 124.0,
-          "Name": "TextItem5",
-          "Text": "FUEL TIME",
-          "TextColor": "#FFFFFFFF",
-          "Top": -0.5,
-          "VerticalAlignment": 1,
-          "Visible": true,
-          "Width": 80.0
         }
       ],
       "Name": "Fuel Time",
@@ -753,37 +708,6 @@
       "IsForegroundLayer": false,
       "IsOverlayLayer": false,
       "Items": [
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
-          "Bindings": {
-            "Opacity": {
-              "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 0: return 25 // Low\r\n\t\tcase 1: return 45 // Medium\r\n\t\tcase 2: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
-                "Interpreter": 1
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Opacity"
-            }
-          },
-          "BorderStyle": {
-            "BorderBottom": 2,
-            "BorderLeft": 2,
-            "BorderRight": 2,
-            "BorderTop": 2,
-            "RadiusBottomLeft": 12,
-            "RadiusBottomRight": 45,
-            "RadiusTopLeft": 12,
-            "RadiusTopRight": 12
-          },
-          "Height": 90.0,
-          "IsRectangleItem": true,
-          "Left": -0.5,
-          "Name": "RectangleItem6",
-          "Top": 7.0,
-          "Visible": false,
-          "Width": 329.0
-        },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
           "BackgroundColor": "#00FFFFFF",
@@ -1087,6 +1011,16 @@
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
                   "BackgroundColor": "#FF000000",
                   "BorderStyle": {
+                    "Bindings": {
+                      "RadiusBottomRight": {
+                        "Formula": {
+                          "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius-5",
+                          "Interpreter": 1
+                        },
+                        "Mode": 2,
+                        "TargetPropertyName": "RadiusBottomRight"
+                      }
+                    },
                     "RadiusBottomLeft": 8,
                     "RadiusBottomRight": 40,
                     "RadiusTopLeft": 8,
@@ -1094,11 +1028,11 @@
                   },
                   "Height": 80.0,
                   "IsRectangleItem": true,
-                  "Left": 4.5,
+                  "Left": 6.0,
                   "Name": "RectangleItem0",
                   "Top": 12.0,
                   "Visible": true,
-                  "Width": 319.0
+                  "Width": 318.0
                 },
                 {
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -1140,44 +1074,44 @@
               ],
               "Group": true,
               "Height": 80.0,
-              "Left": 4.5,
+              "Left": 6.0,
               "Name": "Insufficient Data",
               "Top": 12.0,
               "Visible": false,
-              "Width": 319.0
+              "Width": 318.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FF000000",
+              "BorderStyle": {
+                "RadiusBottomLeft": 8,
+                "RadiusBottomRight": 8,
+                "RadiusTopLeft": 8,
+                "RadiusTopRight": 8
+              },
+              "Font": "Roboto",
+              "FontSize": 12.0,
+              "FontWeight": "Bold",
+              "Height": 18.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 134.0,
+              "Name": "TextItem5",
+              "Text": "REFUEL",
+              "TextColor": "#FFFFFFFF",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 60.0
             }
           ],
           "Group": true,
-          "Height": 90.0,
-          "Left": 4.5,
+          "Height": 97.0,
+          "Left": 6.0,
           "Name": "Fuel2",
-          "Top": 7.0,
-          "Visible": true,
-          "Width": 319.5
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "BackgroundColor": "#FF000000",
-          "BorderStyle": {
-            "RadiusBottomLeft": 8,
-            "RadiusBottomRight": 8,
-            "RadiusTopLeft": 8,
-            "RadiusTopRight": 8
-          },
-          "Font": "Roboto",
-          "FontSize": 12.0,
-          "FontWeight": "Bold",
-          "Height": 18.0,
-          "HorizontalAlignment": 1,
-          "IsTextItem": true,
-          "Left": 134.0,
-          "Name": "TextItem5",
-          "Text": "REFUEL",
-          "TextColor": "#FFFFFFFF",
           "Top": 0.0,
-          "VerticalAlignment": 1,
           "Visible": true,
-          "Width": 60.0
+          "Width": 318.0
         }
       ],
       "Name": "Refuel",

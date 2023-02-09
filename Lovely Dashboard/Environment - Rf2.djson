@@ -12,7 +12,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "007a19e1-58b9-4e62-9035-b6edb9568b89",
+  "Id": "ff179acd-f040-4e18-802c-fc904ab5cef2",
   "Images": [
     {
       "Extension": ".png",
@@ -169,7 +169,7 @@
               "BackgroundColor": "#00FFFFFF",
               "Height": 17.0,
               "Image": "air-temp",
-              "Left": 23.5,
+              "Left": 12.0,
               "Name": "ImageItem0",
               "Top": 4.0,
               "Visible": true,
@@ -194,14 +194,14 @@
               "Height": 24.0,
               "HorizontalAlignment": 0,
               "IsTextItem": true,
-              "Left": 47.5,
+              "Left": 37.0,
               "Name": "Air",
-              "Text": "0\u00b0",
+              "Text": "00\u00b0",
               "TextColor": "#FFFFFFFF",
               "Top": 0.0,
               "VerticalAlignment": 1,
               "Visible": true,
-              "Width": 30.0
+              "Width": 42.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
@@ -209,7 +209,7 @@
               "BackgroundColor": "#00FFFFFF",
               "Height": 19.0,
               "Image": "track-temp",
-              "Left": 84.5,
+              "Left": 84.0,
               "Name": "ImageItem1",
               "Top": 3.0,
               "Visible": true,
@@ -234,56 +234,258 @@
               "Height": 24.0,
               "HorizontalAlignment": 0,
               "IsTextItem": true,
-              "Left": 106.5,
+              "Left": 106.0,
               "Name": "Track",
-              "Text": "0\u00b0",
+              "Text": "00\u00b0",
               "TextColor": "#FFFFFFFF",
               "Top": 0.0,
               "VerticalAlignment": 1,
               "Visible": true,
-              "Width": 30.0
+              "Width": 42.0
             }
           ],
           "Group": true,
           "Height": 24.0,
-          "Left": 23.5,
+          "Left": 12.0,
           "Name": "Layer1",
           "Top": 0.0,
           "Visible": true,
-          "Width": 113.0
+          "Width": 136.0
         },
         {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
-          "BackgroundColor": "#FF808080",
-          "Height": 20.0,
-          "IsRectangleItem": true,
-          "Left": 32.0,
-          "Name": "RectangleItem1",
-          "Top": 2.0,
-          "Visible": false,
-          "Width": 1.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
-          "AutoSize": true,
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
           "BackgroundColor": "#00FFFFFF",
-          "Bindings": {
-            "Image": {
-              "Formula": {
-                "Expression": "var sky = $prop('DataCorePlugin.GameRawData.Telemetry.Skies')\r\n\r\nswitch (sky) {\r\n\r\n\tcase 0:\r\n\t\tif ($prop('DataCorePlugin.GameRawData.Telemetry.SessionTimeOfDay') > 25200 && $prop('DataCorePlugin.GameRawData.Graphics.clock') < 75600   ) {\r\n\t\t\treturn 'icon-weather-clear-day';\r\n\t\t} else {\r\n\t\t\treturn 'icon-weather-clear-night';\r\n\t\t}\r\n\tcase 1:\r\n\t\tif ($prop('DataCorePlugin.GameRawData.Telemetry.SessionTimeOfDay') > 25200 && $prop('DataCorePlugin.GameRawData.Graphics.clock') < 75600   ) {\r\n\t\t\treturn 'icon-weather-cloudy-day';\r\n\t\t} else {\r\n\t\t\treturn 'icon-weather-cloudy-night';\r\n\t\t}\r\n\tcase 2:\r\n\t\treturn 'icon-weather-m-cloudy'\r\n\r\n\tcase 3:\r\n\t\treturn 'icon-weather-overcast'\r\n\r\n\tdefault:\r\n\t\treturn 'icon-weather-clear-day'\r\n\t\t\r\n}",
-                "Interpreter": 1
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Visible": {
+                  "Formula": {
+                    "Expression": "changed(5000, round([AirTemperature], 1))"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Visible"
+                }
               },
-              "Mode": 2,
-              "TargetPropertyName": "Image"
+              "Childrens": [
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF000000",
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 5,
+                    "RadiusBottomRight": 5,
+                    "RadiusTopLeft": 5,
+                    "RadiusTopRight": 5
+                  },
+                  "Height": 58.0,
+                  "IsRectangleItem": true,
+                  "Left": 0.0,
+                  "Name": "RectangleItem",
+                  "Top": 0.0,
+                  "Visible": true,
+                  "Width": 160.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                  "AutoSize": true,
+                  "AutoSizeScale": 1.2,
+                  "BackgroundColor": "#00FFFFFF",
+                  "BlinkDelay": 500.0,
+                  "Height": 20.4,
+                  "Image": "air-temp",
+                  "Left": 20.0,
+                  "Name": "ImageItem0",
+                  "Top": 1.8000000000000007,
+                  "Visible": true,
+                  "Width": 24.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0.0\u00b0",
+                      "Formula": {
+                        "Expression": "[AirTemperature]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 30.0,
+                  "FontWeight": "SemiBold",
+                  "Height": 24.0,
+                  "HorizontalAlignment": 1,
+                  "IsTextItem": true,
+                  "Left": 50.0,
+                  "Name": "Track",
+                  "Text": "000.0\u00b0",
+                  "TextColor": "#FF808080",
+                  "Top": 0.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 100.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0.0\u00b0",
+                      "Formula": {
+                        "Expression": "[AirTemperature]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "BlinkDelay": 500.0,
+                  "BlinkEnabled": true,
+                  "Font": "Roboto",
+                  "FontSize": 30.0,
+                  "FontWeight": "SemiBold",
+                  "Height": 24.0,
+                  "HorizontalAlignment": 1,
+                  "IsTextItem": true,
+                  "Left": 50.0,
+                  "Name": "Track",
+                  "Text": "000.0\u00b0",
+                  "TextColor": "#FFFFFFFF",
+                  "Top": 0.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 100.0
+                }
+              ],
+              "Group": true,
+              "Height": 58.0,
+              "Left": 0.0,
+              "Name": "Air Temp",
+              "Top": 0.0,
+              "Visible": false,
+              "Width": 160.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Visible": {
+                  "Formula": {
+                    "Expression": "changed(5000, round([RoadTemperature], 1))"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Visible"
+                }
+              },
+              "Childrens": [
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF000000",
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 5,
+                    "RadiusBottomRight": 5,
+                    "RadiusTopLeft": 5,
+                    "RadiusTopRight": 5
+                  },
+                  "Height": 24.0,
+                  "IsRectangleItem": true,
+                  "Left": 0.0,
+                  "Name": "RectangleItem",
+                  "Top": 0.0,
+                  "Visible": true,
+                  "Width": 160.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                  "AutoSize": true,
+                  "AutoSizeScale": 1.2,
+                  "BackgroundColor": "#00FFFFFF",
+                  "BlinkDelay": 500.0,
+                  "Height": 22.8,
+                  "Image": "track-temp",
+                  "Left": 20.0,
+                  "Name": "ImageItem1",
+                  "Top": 0.5999999999999996,
+                  "Visible": true,
+                  "Width": 22.8
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0.0\u00b0",
+                      "Formula": {
+                        "Expression": "[RoadTemperature]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 30.0,
+                  "FontWeight": "SemiBold",
+                  "Height": 24.0,
+                  "HorizontalAlignment": 1,
+                  "IsTextItem": true,
+                  "Left": 50.0,
+                  "Name": "Track",
+                  "Text": "000.0\u00b0",
+                  "TextColor": "#FF696969",
+                  "Top": 0.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 100.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0.0\u00b0",
+                      "Formula": {
+                        "Expression": "[RoadTemperature]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "BlinkDelay": 500.0,
+                  "BlinkEnabled": true,
+                  "Font": "Roboto",
+                  "FontSize": 30.0,
+                  "FontWeight": "SemiBold",
+                  "Height": 24.0,
+                  "HorizontalAlignment": 1,
+                  "IsTextItem": true,
+                  "Left": 50.0,
+                  "Name": "Track",
+                  "Text": "000.0\u00b0",
+                  "TextColor": "#FFFFFFFF",
+                  "Top": 0.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 100.0
+                }
+              ],
+              "Group": true,
+              "Height": 24.0,
+              "Left": 0.0,
+              "Name": "Track Temp",
+              "Top": 0.0,
+              "Visible": false,
+              "Width": 160.0
             }
-          },
-          "Height": 20.0,
-          "Image": "icon-weather-clear-day",
+          ],
+          "Group": true,
+          "Height": 58.0,
           "Left": 0.0,
-          "Name": "ImageItem",
-          "Top": 2.0,
-          "Visible": false,
-          "Width": 20.0
+          "Name": "Environment Alerts",
+          "Top": 0.0,
+          "Visible": true,
+          "Width": 160.0
         }
       ],
       "Name": "Environment",

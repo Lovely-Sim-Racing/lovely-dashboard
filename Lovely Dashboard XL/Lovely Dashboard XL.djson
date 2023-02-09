@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "53eabd3e-e342-464f-8fc6-39d8e322b59f",
+  "Id": "5b4e7a3f-38bb-4414-916e-5ca980985287",
   "Images": [
     {
       "Extension": ".png",
@@ -255,7 +255,7 @@
           "IsTextItem": true,
           "Left": 520.0,
           "Name": "TextItem0",
-          "Text": "Lovely Dashboard XL v1.6.3",
+          "Text": "Lovely Dashboard XL v1.6.4",
           "TextColor": "#FFFFFFFF",
           "Top": 340.0,
           "VerticalAlignment": 1,
@@ -276,7 +276,7 @@
             },
             "Visible": {
               "Formula": {
-                "Expression": "var currentVer = '1.6.3'\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\n//return latestVer\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
+                "Expression": "var currentVer = '1.6.4'\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\n//return latestVer\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -466,7 +466,7 @@
           "Left": 205.5,
           "Name": "Layer",
           "Top": 42.0,
-          "Visible": true,
+          "Visible": false,
           "Width": 869.0
         },
         {
@@ -790,22 +790,12 @@
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
               "BackgroundColor": "#00FFFFFF",
               "BorderStyle": {
-                "Bindings": {
-                  "RadiusBottomRight": {
-                    "Formula": {
-                      "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
-                      "Interpreter": 1
-                    },
-                    "Mode": 2,
-                    "TargetPropertyName": "RadiusBottomRight"
-                  }
-                },
                 "BorderBottom": 2,
                 "BorderLeft": 2,
                 "BorderRight": 2,
                 "BorderTop": 2,
                 "RadiusBottomLeft": 12,
-                "RadiusBottomRight": 45,
+                "RadiusBottomRight": 12,
                 "RadiusTopLeft": 12,
                 "RadiusTopRight": 12
               },
