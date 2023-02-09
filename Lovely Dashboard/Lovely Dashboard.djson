@@ -12,7 +12,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "1f6e8248-e9b4-48a0-b06f-39082cccbd19",
+  "Id": "c049a5e6-71ba-4b88-bb4a-b09a4bc72630",
   "Images": [
     {
       "Extension": ".png",
@@ -443,7 +443,7 @@
           "IsTextItem": true,
           "Left": 305.0,
           "Name": "TextItem0",
-          "Text": "Lovely Dashboard v1.6.3",
+          "Text": "Lovely Dashboard v1.6.4",
           "TextColor": "#FFFFFFFF",
           "Top": 345.0,
           "VerticalAlignment": 1,
@@ -464,7 +464,7 @@
             },
             "Visible": {
               "Formula": {
-                "Expression": "var currentVer = '1.6.3'\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\n//return latestVer\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
+                "Expression": "var currentVer = '1.6.4'\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\n//return latestVer\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -603,45 +603,14 @@
               "FontWeight": "ExtraBlack",
               "Height": 50.0,
               "HorizontalAlignment": 1,
-              "IsTextItem": true,
-              "Left": 9.0,
-              "Name": "Name",
-              "ShadowColor": "#FF000000",
-              "ShadowDirection": 90,
-              "Text": "F. Lastname",
-              "TextColor": "#FF000000",
-              "Top": 144.0,
-              "VerticalAlignment": 1,
-              "Visible": true,
-              "Width": 840.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Text": {
-                  "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nreturn ucase(settings.yourName)",
-                    "Interpreter": 1
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                }
-              },
-              "BorderStyle": {
-                "BorderColor": "#00FFFFFF"
-              },
-              "Font": "Eurostar",
-              "FontSize": 45.0,
-              "FontWeight": "ExtraBlack",
-              "Height": 50.0,
-              "HorizontalAlignment": 1,
+              "IsFreezed": true,
               "IsTextItem": true,
               "Left": 5.0,
               "Name": "Name",
               "ShadowColor": "#FF000000",
-              "ShadowDirection": 90,
-              "Text": "F. Lastname",
+              "ShadowDepth": 5,
+              "ShadowDirection": -45,
+              "Text": "F. LASTNAME",
               "TextColor": "#FFFFFFFF",
               "Top": 140.0,
               "VerticalAlignment": 1,
@@ -654,8 +623,8 @@
           "Left": -20.0,
           "Name": "Layer",
           "Top": 40.0,
-          "Visible": false,
-          "Width": 869.0
+          "Visible": true,
+          "Width": 865.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
@@ -3784,6 +3753,24 @@
           "Width": 250.0
         },
         {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Font": "Roboto",
+          "FontSize": 12.0,
+          "FontWeight": "Bold",
+          "Height": 14.0,
+          "HorizontalAlignment": 2,
+          "IsTextItem": true,
+          "Left": 70.0,
+          "Name": "TextItem",
+          "Text": "GAP",
+          "TextColor": "#FF878787",
+          "Top": 18.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 30.0
+        },
+        {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
@@ -4150,6 +4137,14 @@
           "BackgroundColor": "#00FFFFFF",
           "BaseMapScale": 2.0,
           "Bindings": {
+            "SpeedUnzoomPercent": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('mapZoom') ) {\r\n\tmapZoom = 30\r\n} else {\r\n\tmapZoom = settings.mapZoom\r\n}\r\n\r\nreturn mapZoom",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "SpeedUnzoomPercent"
+            },
             "Visible": {
               "Formula": {
                 "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\treturn 0\r\n} else {\r\n\tswitch (settings.mapType) {\r\n\t\tcase 0: return 0\r\n\t\tcase 1: return 1\r\n\t\tdefault: return 0\r\n\t}\r\n}",
@@ -4193,8 +4188,8 @@
           "RenderImageHeight": 731.1020284622495,
           "RenderImageWidth": 1030.1437610343596,
           "SpeedUnzoomEnabled": true,
-          "SpeedUnzoomPercent": 50.0,
-          "SpeedUnzoomStartSpeed": 60.0,
+          "SpeedUnzoomPercent": 30.0,
+          "SpeedUnzoomStartSpeed": 100.0,
           "StartLine": {
             "Color": "#FFFFFFFF",
             "Enabled": true,

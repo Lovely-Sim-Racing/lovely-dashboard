@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "32a848a5-7ebf-4afa-9ceb-1a02e1380558",
+  "Id": "ecad74fd-dda8-4296-bf84-57fdee271549",
   "Images": [],
   "IsOverlay": false,
   "Metadata": {
@@ -20,14 +20,15 @@
     "IdleScreensIndexs": [],
     "InGameScreensIndexs": [
       0,
-      1
+      1,
+      2
     ],
     "IsOverlay": false,
     "MainPreviewIndex": 0,
     "MetadataVersion": 2.0,
     "OverlaySizeWarning": false,
     "PitScreensIndexs": [],
-    "ScreenCount": 2.0,
+    "ScreenCount": 3.0,
     "Width": 160.0
   },
   "Screens": [
@@ -1375,6 +1376,730 @@
         "Expression": ""
       },
       "ScreenId": "e3ca8a53-892f-41ed-b756-5291cb59b55c"
+    },
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#FF000000",
+      "IdleScreen": false,
+      "InGameScreen": true,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": false,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.SpeedText, SimHub.Plugins",
+          "BackgroundColor": "#FFFFFFFF",
+          "BorderStyle": {
+            "RadiusBottomLeft": 5,
+            "RadiusBottomRight": 5,
+            "RadiusTopLeft": 5,
+            "RadiusTopRight": 5
+          },
+          "Font": "Roboto",
+          "FontSize": 30.0,
+          "FontWeight": "Bold",
+          "Format": "0",
+          "Height": 40.0,
+          "HorizontalAlignment": 1,
+          "IsFreezed": true,
+          "IsTextItem": true,
+          "Left": 0.0,
+          "Name": "SpeedText0",
+          "NoDataText": "0",
+          "ShadowColor": "#FF000000",
+          "TextColor": "#FF000000",
+          "Top": 290.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 160.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FFFFFFFF",
+          "Bindings": {
+            "Text": {
+              "FormatString": "0",
+              "Formula": {
+                "Expression": "[DataCorePlugin.GameData.SpeedLocal]"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Text"
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tclutchMode = 1\r\n} else {\r\n\tclutchMode = settings.clutchMode\r\n}\r\n\r\n\r\nif (clutchMode == 2) {\r\n\t\r\n\treturn 1\r\n\t\r\n} else {\r\n\t\r\n\treturn 0\r\n\t\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 5,
+            "RadiusBottomRight": 5,
+            "RadiusTopLeft": 5,
+            "RadiusTopRight": 5
+          },
+          "Font": "Roboto",
+          "FontSize": 30.0,
+          "FontWeight": "Bold",
+          "Height": 40.0,
+          "HorizontalAlignment": 1,
+          "IsFreezed": true,
+          "IsTextItem": true,
+          "Left": 0.0,
+          "Name": "Speed Padding",
+          "Text": "000",
+          "TextColor": "#FF000000",
+          "TextPadding": {
+            "PaddingLeft": 55
+          },
+          "Top": 290.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 160.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FFFFD700",
+          "Bindings": {
+            "Text": {
+              "Formula": {
+                "Expression": "round([DataCorePlugin.GameData.Clutch],0)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Text"
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tclutchMode = 1\r\n} else {\r\n\tclutchMode = settings.clutchMode\r\n}\r\n\r\n\r\nif ( clutchMode == 0) {\r\n\t\r\n\t// Always Off\r\n\treturn 0\r\n\t\r\n} else if (clutchMode == 1) {\r\n\t\r\n\treturn ($prop('DataCorePlugin.GameData.Clutch') >0) ? 1 : 0;\r\n\t\r\n} else {\r\n\t\r\n\t// Always On\r\n\treturn 1\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 5,
+            "RadiusBottomRight": 5,
+            "RadiusTopLeft": 5,
+            "RadiusTopRight": 5
+          },
+          "Font": "Roboto",
+          "FontSize": 20.0,
+          "FontWeight": "Bold",
+          "Height": 24.0,
+          "HorizontalAlignment": 1,
+          "IsFreezed": true,
+          "IsTextItem": true,
+          "Left": 8.0,
+          "Name": "Clutch",
+          "Text": "000",
+          "TextColor": "#FF000000",
+          "Top": 298.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 45.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "BackgroundColor": "#FF262626",
+          "BlinkDelay": 100.0,
+          "BorderStyle": {
+            "RadiusBottomLeft": 5,
+            "RadiusBottomRight": 5,
+            "RadiusTopLeft": 15,
+            "RadiusTopRight": 15
+          },
+          "Height": 225.0,
+          "IsFreezed": true,
+          "IsRectangleItem": true,
+          "Left": 0.0,
+          "Name": "RectangleItem",
+          "Top": 45.0,
+          "Visible": true,
+          "Width": 160.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "BackgroundColor": "#FF800000",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "[DataCorePlugin.GameData.CarSettings_RPMRedLineReached]>0"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "BlinkDelay": 200.0,
+          "BlinkEnabled": true,
+          "BorderStyle": {
+            "BorderBottom": 2,
+            "BorderColor": "#FFFF0000",
+            "BorderLeft": 2,
+            "BorderRight": 2,
+            "BorderTop": 2,
+            "RadiusBottomLeft": 5,
+            "RadiusBottomRight": 5,
+            "RadiusTopLeft": 15,
+            "RadiusTopRight": 15
+          },
+          "Height": 225.0,
+          "IsFreezed": true,
+          "IsRectangleItem": true,
+          "Left": 0.0,
+          "Name": "Redline",
+          "Top": 45.0,
+          "Visible": false,
+          "Width": 160.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Text": {
+              "Formula": {
+                "Expression": "[DataCorePlugin.GameData.Gear]"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Text"
+            }
+          },
+          "Font": "Roboto",
+          "FontSize": 180.0,
+          "FontWeight": "Bold",
+          "Height": 200.0,
+          "HorizontalAlignment": 1,
+          "IsFreezed": true,
+          "IsTextItem": true,
+          "Left": 0.0,
+          "Name": "TextItem0",
+          "Text": "N",
+          "TextColor": "#FFFFFFFF",
+          "Top": 45.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 160.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.RPMText, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Font": "Roboto",
+          "FontSize": 22.0,
+          "Format": "0",
+          "Height": 40.0,
+          "HorizontalAlignment": 1,
+          "IsFreezed": true,
+          "IsTextItem": true,
+          "Left": 0.0,
+          "Name": "RPMText0",
+          "NoDataText": "0",
+          "TextAfterValue": "",
+          "TextColor": "#FFFFFFFF",
+          "Top": 220.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 160.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.LinearGaugeItem, SimHub.Plugins",
+          "AlternateGaugeColor": "#FF008000",
+          "AutoSize": false,
+          "BackgroundColor": "#FF262626",
+          "Bindings": {
+            "Value": {
+              "Formula": {
+                "Expression": "[DataCorePlugin.GameData.Throttle]"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Value"
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 5,
+            "RadiusBottomRight": 5,
+            "RadiusTopLeft": 5,
+            "RadiusTopRight": 5
+          },
+          "GaugeAlignment": 0,
+          "GaugeColor": "#FF00FF02",
+          "GaugeOrientation": 0,
+          "Height": 10.0,
+          "IsFreezed": true,
+          "IsLinearGauge": true,
+          "Left": 0.0,
+          "Maximum": 100.0,
+          "Minimum": 0.0,
+          "Name": "LinearGaugeItem0",
+          "PAW": 88.0,
+          "Steps": 0.0,
+          "Top": 275.0,
+          "UseAlternateStyle": false,
+          "Value": 55.0,
+          "Visible": true,
+          "Width": 160.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.LinearGaugeItem, SimHub.Plugins",
+          "AlternateGaugeColor": "#FF008000",
+          "AutoSize": false,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Value": {
+              "Formula": {
+                "Expression": "[DataCorePlugin.GameData.Brake]"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Value"
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 4,
+            "RadiusBottomRight": 4,
+            "RadiusTopLeft": 4,
+            "RadiusTopRight": 4
+          },
+          "GaugeAlignment": 2,
+          "GaugeColor": "#FFFA0000",
+          "GaugeOrientation": 0,
+          "Height": 10.0,
+          "IsFreezed": true,
+          "IsLinearGauge": true,
+          "Left": 0.0,
+          "Maximum": 100.0,
+          "Minimum": 0.0,
+          "Name": "LinearGaugeItem1",
+          "PAW": 16.0,
+          "Steps": 0.0,
+          "Top": 275.0,
+          "UseAlternateStyle": false,
+          "Value": 10.0,
+          "Visible": true,
+          "Width": 160.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "[PitLimiterOn]>0"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF0000FF",
+              "BorderStyle": {
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 15,
+                "RadiusTopRight": 15
+              },
+              "Height": 285.0,
+              "IsRectangleItem": true,
+              "Left": 0.0,
+              "Name": "RectangleItem",
+              "Top": 45.0,
+              "Visible": true,
+              "Width": 160.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "[DataCorePlugin.GameData.Gear]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 50.0,
+              "FontWeight": "Bold",
+              "Height": 71.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 10.0,
+              "Name": "TextItem",
+              "Text": "N",
+              "TextColor": "#FFFFFFFF",
+              "Top": 231.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 140.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "round([DataCorePlugin.GameData.SpeedLocal], 0)"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "if ( round([DataCorePlugin.GameData.SpeedLocal],0) <100 , 1, 0)"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Visible"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 98.0,
+              "FontWeight": "Bold",
+              "Height": 117.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 0.0,
+              "Name": "99",
+              "Text": "00",
+              "TextColor": "#FFFFFFFF",
+              "Top": 100.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 160.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "round([DataCorePlugin.GameData.SpeedLocal], 0)"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "if ( round([DataCorePlugin.GameData.SpeedLocal],0) >=100 , 1, 0)"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Visible"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 80.0,
+              "FontWeight": "Bold",
+              "Height": 117.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 0.0,
+              "Name": "100",
+              "Text": "000",
+              "TextColor": "#FFFFFFFF",
+              "Top": 100.0,
+              "VerticalAlignment": 1,
+              "Visible": false,
+              "Width": 160.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 10.0,
+              "Name": "TextItem",
+              "Text": "PIT LIMITER",
+              "TextColor": "#FFFFFFFF",
+              "Top": 80.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 140.0
+            }
+          ],
+          "Group": true,
+          "Height": 285.0,
+          "Left": 0.0,
+          "Name": "PL",
+          "Top": 45.0,
+          "Visible": false,
+          "Width": 160.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "if ([DataCorePlugin.GameData.EngineStarted], 0, 1)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FFFFE04C",
+              "BorderStyle": {
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 15,
+                "RadiusTopRight": 15
+              },
+              "Height": 285.0,
+              "IsRectangleItem": true,
+              "Left": 0.0,
+              "Name": "RectangleItem",
+              "Top": 45.0,
+              "Visible": true,
+              "Width": 160.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "[DataCorePlugin.GameData.Gear]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 50.0,
+              "FontWeight": "Bold",
+              "Height": 71.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 10.0,
+              "Name": "TextItem",
+              "Text": "N",
+              "TextColor": "#FF000000",
+              "Top": 226.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 140.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Font": "Roboto",
+              "FontSize": 70.0,
+              "FontWeight": "Bold",
+              "Height": 55.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 10.0,
+              "Name": "TextItem",
+              "Text": "OFF",
+              "TextColor": "#FF000000",
+              "Top": 143.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 140.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Font": "Roboto",
+              "FontSize": 70.0,
+              "FontWeight": "Bold",
+              "Height": 55.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 10.0,
+              "Name": "TextItem",
+              "Text": "ENG",
+              "TextColor": "#FF000000",
+              "Top": 85.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 140.0
+            }
+          ],
+          "Group": true,
+          "Height": 285.0,
+          "Left": 0.0,
+          "Name": "ENGOff",
+          "Top": 45.0,
+          "Visible": false,
+          "Width": 160.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "if ([DataCorePlugin.GameData.EngineIgnitionOn], 0, 1)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FFFA0000",
+              "BorderStyle": {
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 15,
+                "RadiusTopRight": 15
+              },
+              "Height": 285.0,
+              "IsRectangleItem": true,
+              "Left": 0.0,
+              "Name": "RectangleItem",
+              "Top": 45.0,
+              "Visible": true,
+              "Width": 160.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "[DataCorePlugin.GameData.Gear]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 50.0,
+              "FontWeight": "Bold",
+              "Height": 71.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 10.0,
+              "Name": "TextItem2",
+              "Text": "N",
+              "TextColor": "#FFFFFFFF",
+              "Top": 226.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 140.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Font": "Roboto",
+              "FontSize": 70.0,
+              "FontWeight": "Bold",
+              "Height": 55.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 10.0,
+              "Name": "TextItem",
+              "Text": "OFF",
+              "TextColor": "#FFFFFFFF",
+              "Top": 143.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 140.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Font": "Roboto",
+              "FontSize": 70.0,
+              "FontWeight": "Bold",
+              "Height": 55.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 10.0,
+              "Name": "TextItem",
+              "Text": "IGN",
+              "TextColor": "#FFFFFFFF",
+              "Top": 85.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 140.0
+            }
+          ],
+          "Group": true,
+          "Height": 285.0,
+          "Left": 0.0,
+          "Name": "IGN Off",
+          "Top": 45.0,
+          "Visible": false,
+          "Width": 160.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.TimeText, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Format": "hh:mm:ss",
+              "Height": 40.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 68.0,
+              "Name": "TimeText2",
+              "ShadowColor": "#FF696969",
+              "TextColor": "#FF808080",
+              "Top": 4.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 70.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.TimeText, SimHub.Plugins",
+              "BackgroundColor": "#FF000000",
+              "Font": "Roboto",
+              "FontSize": 30.0,
+              "FontWeight": "Bold",
+              "Format": "HH:mm",
+              "Height": 40.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 0.0,
+              "Name": "TimeText",
+              "ShadowColor": "#FF696969",
+              "TextColor": "#FFFFFFFF",
+              "TextPadding": {
+                "PaddingRight": 2
+              },
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 110.0
+            }
+          ],
+          "Group": true,
+          "Height": 44.0,
+          "Left": 0.0,
+          "Name": "Time2",
+          "Top": 0.0,
+          "Visible": true,
+          "Width": 138.0
+        }
+      ],
+      "Name": "Time",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": ""
+      },
+      "PitScreen": false,
+      "ScreenEnabledExpression": {
+        "Expression": ""
+      },
+      "ScreenId": "76c07be5-98a1-4ce1-8b8d-cc3a6dfa560b"
     }
   ],
   "ShowBackground": true,
