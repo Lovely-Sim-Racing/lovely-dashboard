@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "bc70f0eb-051a-4a37-8439-6cd75d3b9cb3",
+  "Id": "f2abdff3-380b-48cf-9874-1da588be36f8",
   "Images": [
     {
       "Extension": ".png",
@@ -286,6 +286,94 @@
               "Left": 15.0,
               "Name": "BB",
               "Text": "BB 0.0",
+              "TextColor": "#FF000000",
+              "Top": 125.0,
+              "VerticalAlignment": 1,
+              "Visible": false,
+              "Width": 295.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FFFF8C00",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "0",
+                  "Formula": {
+                    "Expression": "'F ARB ' + [DataCorePlugin.GameRawData.Telemetry.dcAntiRollFront]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nfunction changed(delay, value) {\r\n\troot['farb_time'] = Math.floor($prop('DataCorePlugin.CustomExpression.CurrentDateTime').getTime())/1000;\r\n\troot['farb_oldstate'] = root['farb_oldstate'] == null ? value : root['farb_newstate'];\r\n\troot['farb_newstate'] = value;\r\n\tif (root['farb_newstate'] != root['farb_oldstate']) {\r\n\t\troot['farb_triggerTime'] = root['farb_time'];\r\n\t}\r\n\treturn root['farb_triggerTime'] == null ? false : root['farb_time'] - root['farb_triggerTime'] <= delay/1000;\r\n}\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn changed(alertDelay, $prop('DataCorePlugin.GameRawData.Telemetry.dcAntiRollFront') )",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Visible"
+                }
+              },
+              "BorderStyle": {
+                "BorderColor": "#FFFA0000",
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Font": "Roboto",
+              "FontSize": 60.0,
+              "FontWeight": "Bold",
+              "Height": 230.0,
+              "HorizontalAlignment": 1,
+              "IsFreezed": true,
+              "IsTextItem": true,
+              "Left": 15.0,
+              "Name": "FARB",
+              "Text": "F ARB 0",
+              "TextColor": "#FF000000",
+              "Top": 125.0,
+              "VerticalAlignment": 1,
+              "Visible": false,
+              "Width": 295.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FFFF8C00",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "0",
+                  "Formula": {
+                    "Expression": "'R ARB ' + [DataCorePlugin.GameRawData.Telemetry.dcAntiRollRear]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nfunction changed(delay, value) {\r\n\troot['rarb_time'] = Math.floor($prop('DataCorePlugin.CustomExpression.CurrentDateTime').getTime())/1000;\r\n\troot['rarb_oldstate'] = root['rarb_oldstate'] == null ? value : root['rarb_newstate'];\r\n\troot['rarb_newstate'] = value;\r\n\tif (root['rarb_newstate'] != root['rarb_oldstate']) {\r\n\t\troot['rarb_triggerTime'] = root['rarb_time'];\r\n\t}\r\n\treturn root['rarb_triggerTime'] == null ? false : root['rarb_time'] - root['rarb_triggerTime'] <= delay/1000;\r\n}\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn changed(alertDelay, $prop('DataCorePlugin.GameRawData.Telemetry.dcAntiRollRear') )",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Visible"
+                }
+              },
+              "BorderStyle": {
+                "BorderColor": "#FFFA0000",
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Font": "Roboto",
+              "FontSize": 60.0,
+              "FontWeight": "Bold",
+              "Height": 230.0,
+              "HorizontalAlignment": 1,
+              "IsFreezed": true,
+              "IsTextItem": true,
+              "Left": 15.0,
+              "Name": "RARB",
+              "Text": "R ARB 0",
               "TextColor": "#FF000000",
               "Top": 125.0,
               "VerticalAlignment": 1,
@@ -648,6 +736,94 @@
               "Left": 15.0,
               "Name": "BB",
               "Text": "BB 0.0",
+              "TextColor": "#FF000000",
+              "Top": 125.0,
+              "VerticalAlignment": 1,
+              "Visible": false,
+              "Width": 820.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FFFF8C00",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "0",
+                  "Formula": {
+                    "Expression": "'F ARB ' + [DataCorePlugin.GameRawData.Telemetry.dcAntiRollFront]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nfunction changed(delay, value) {\r\n\troot['farb_time'] = Math.floor($prop('DataCorePlugin.CustomExpression.CurrentDateTime').getTime())/1000;\r\n\troot['farb_oldstate'] = root['farb_oldstate'] == null ? value : root['farb_newstate'];\r\n\troot['farb_newstate'] = value;\r\n\tif (root['farb_newstate'] != root['farb_oldstate']) {\r\n\t\troot['farb_triggerTime'] = root['farb_time'];\r\n\t}\r\n\treturn root['farb_triggerTime'] == null ? false : root['farb_time'] - root['farb_triggerTime'] <= delay/1000;\r\n}\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn changed(alertDelay, $prop('DataCorePlugin.GameRawData.Telemetry.dcAntiRollFront') )",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Visible"
+                }
+              },
+              "BorderStyle": {
+                "BorderColor": "#FFFA0000",
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Font": "Roboto",
+              "FontSize": 100.0,
+              "FontWeight": "Bold",
+              "Height": 230.0,
+              "HorizontalAlignment": 1,
+              "IsFreezed": true,
+              "IsTextItem": true,
+              "Left": 15.0,
+              "Name": "FARB",
+              "Text": "F ARB 0",
+              "TextColor": "#FF000000",
+              "Top": 125.0,
+              "VerticalAlignment": 1,
+              "Visible": false,
+              "Width": 820.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FFFF8C00",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "0",
+                  "Formula": {
+                    "Expression": "'R ARB ' + [DataCorePlugin.GameRawData.Telemetry.dcAntiRollRear]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nfunction changed(delay, value) {\r\n\troot['rarb_time'] = Math.floor($prop('DataCorePlugin.CustomExpression.CurrentDateTime').getTime())/1000;\r\n\troot['rarb_oldstate'] = root['rarb_oldstate'] == null ? value : root['rarb_newstate'];\r\n\troot['rarb_newstate'] = value;\r\n\tif (root['rarb_newstate'] != root['rarb_oldstate']) {\r\n\t\troot['rarb_triggerTime'] = root['rarb_time'];\r\n\t}\r\n\treturn root['rarb_triggerTime'] == null ? false : root['rarb_time'] - root['rarb_triggerTime'] <= delay/1000;\r\n}\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn changed(alertDelay, $prop('DataCorePlugin.GameRawData.Telemetry.dcAntiRollRear') )",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Visible"
+                }
+              },
+              "BorderStyle": {
+                "BorderColor": "#FFFA0000",
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Font": "Roboto",
+              "FontSize": 100.0,
+              "FontWeight": "Bold",
+              "Height": 230.0,
+              "HorizontalAlignment": 1,
+              "IsFreezed": true,
+              "IsTextItem": true,
+              "Left": 15.0,
+              "Name": "RARB",
+              "Text": "R ARB 0",
               "TextColor": "#FF000000",
               "Top": 125.0,
               "VerticalAlignment": 1,
