@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "acee1918-d8bb-4fe5-bab2-f19b97283abd",
+  "Id": "eaf2ee14-f2d6-4cdb-9b05-a7a3511b4f52",
   "Images": [
     {
       "Extension": ".png",
@@ -1478,14 +1478,15 @@
       1,
       2,
       3,
-      4
+      4,
+      5
     ],
     "IsOverlay": false,
     "MainPreviewIndex": 0,
     "MetadataVersion": 2.0,
     "OverlaySizeWarning": false,
     "PitScreensIndexs": [],
-    "ScreenCount": 5.0,
+    "ScreenCount": 6.0,
     "Width": 325.0
   },
   "Screens": [
@@ -1513,11 +1514,11 @@
               },
               "Height": 16.0,
               "IsRectangleItem": true,
-              "Left": 113.0,
+              "Left": 103.0,
               "Name": "RectangleItem2",
               "Top": 252.0,
               "Visible": true,
-              "Width": 98.0
+              "Width": 118.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.EllipseItem, SimHub.Plugins",
@@ -1526,7 +1527,7 @@
               "EllipseThickness": 0.0,
               "FillColor": "#FFFFFFFF",
               "Height": 12.0,
-              "Left": 121.0,
+              "Left": 111.0,
               "Name": "Page 1",
               "Top": 253.0,
               "Visible": true,
@@ -1539,7 +1540,7 @@
               "EllipseThickness": 0.0,
               "FillColor": "#5AFFFFFF",
               "Height": 8.0,
-              "Left": 141.0,
+              "Left": 131.0,
               "Name": "Page 2",
               "Top": 255.0,
               "Visible": true,
@@ -1552,7 +1553,7 @@
               "EllipseThickness": 0.0,
               "FillColor": "#5AFFFFFF",
               "Height": 8.0,
-              "Left": 159.0,
+              "Left": 149.0,
               "Name": "Page 3",
               "Top": 255.0,
               "Visible": true,
@@ -1565,7 +1566,7 @@
               "EllipseThickness": 0.0,
               "FillColor": "#5AFFFFFF",
               "Height": 8.0,
-              "Left": 177.0,
+              "Left": 167.0,
               "Name": "Page 4",
               "Top": 255.0,
               "Visible": true,
@@ -1578,7 +1579,20 @@
               "EllipseThickness": 0.0,
               "FillColor": "#5AFFFFFF",
               "Height": 8.0,
-              "Left": 195.0,
+              "Left": 185.0,
+              "Name": "Page 5",
+              "Top": 255.0,
+              "Visible": true,
+              "Width": 8.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.EllipseItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "EllipseColor": "#FFFFFFFF",
+              "EllipseThickness": 0.0,
+              "FillColor": "#5AFFFFFF",
+              "Height": 8.0,
+              "Left": 204.0,
               "Name": "Page 5",
               "Top": 255.0,
               "Visible": true,
@@ -1587,11 +1601,11 @@
           ],
           "Group": true,
           "Height": 16.0,
-          "Left": 113.0,
+          "Left": 103.0,
           "Name": "Paging",
           "Top": 252.0,
           "Visible": true,
-          "Width": 98.0
+          "Width": 118.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
@@ -1648,7 +1662,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "var timeDiffOverall = timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') ) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\r\nif ( timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime'))==0) {\r\n\treturn '#808080'\r\n} else {\r\n\r\n\tif ( timeDiffOverall > 0 ) {\r\n\t\r\n\t\treturn '#00ff02' // Green\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn '#C500CE' // Purple\r\n\t\r\n\t}\r\n\r\n}",
+                    "Expression": "var timeDiffOverall = timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') ) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\r\nif ( timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime'))==0) {\r\n\treturn '#444444'\r\n} else {\r\n\r\n\tif ( timeDiffOverall > 0 ) {\r\n\t\r\n\t\treturn '#00ff02' // Green\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn '#C500CE' // Purple\r\n\t\r\n\t}\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -1685,7 +1699,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "var timeDiffMine = timespantoseconds( $prop('DataCorePlugin.GameData.LastLapTime') ) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\r\nvar timeDiffOverall = timespantoseconds( $prop('DataCorePlugin.GameData.LastLapTime') ) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\r\nif ( timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime'))==0) {\r\n\treturn '#808080'\r\n} else {\r\n\r\n\tif ( timeDiffMine > 0 ) {\r\n\t\r\n\t\treturn '#ffe04c' // Yellow\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( timeDiffOverall > 0 ) {\r\n\t\r\n\t\t\treturn '#00ff02' // Green\r\n\t\t\r\n\t\t} else {\r\n\t\r\n\t\t\treturn '#C500CE' // Purple\r\n\t\t\r\n\t\t}\r\n\t\t\r\n\t}\r\n\t\r\n}",
+                    "Expression": "var timeDiffMine = timespantoseconds( $prop('DataCorePlugin.GameData.LastLapTime') ) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\r\nvar timeDiffOverall = timespantoseconds( $prop('DataCorePlugin.GameData.LastLapTime') ) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\r\nif ( timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime'))==0) {\r\n\treturn '#444444'\r\n} else {\r\n\r\n\tif ( timeDiffMine > 0 ) {\r\n\t\r\n\t\treturn '#ffe04c' // Yellow\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\tif ( timeDiffOverall > 0 ) {\r\n\t\r\n\t\t\treturn '#00ff02' // Green\r\n\t\t\r\n\t\t} else {\r\n\t\r\n\t\t\treturn '#C500CE' // Purple\r\n\t\t\r\n\t\t}\r\n\t\t\r\n\t}\r\n\t\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -1808,11 +1822,11 @@
               },
               "Height": 16.0,
               "IsRectangleItem": true,
-              "Left": 113.0,
+              "Left": 103.0,
               "Name": "RectangleItem2",
               "Top": 252.0,
               "Visible": true,
-              "Width": 98.0
+              "Width": 118.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.EllipseItem, SimHub.Plugins",
@@ -1821,7 +1835,7 @@
               "EllipseThickness": 0.0,
               "FillColor": "#5AFFFFFF",
               "Height": 8.0,
-              "Left": 123.0,
+              "Left": 113.0,
               "Name": "Page 1",
               "Top": 255.0,
               "Visible": true,
@@ -1834,7 +1848,7 @@
               "EllipseThickness": 0.0,
               "FillColor": "#FFFFFFFF",
               "Height": 12.0,
-              "Left": 139.0,
+              "Left": 129.0,
               "Name": "Page 2",
               "Top": 253.0,
               "Visible": true,
@@ -1847,7 +1861,7 @@
               "EllipseThickness": 0.0,
               "FillColor": "#5AFFFFFF",
               "Height": 8.0,
-              "Left": 159.0,
+              "Left": 149.0,
               "Name": "Page 3",
               "Top": 255.0,
               "Visible": true,
@@ -1860,7 +1874,7 @@
               "EllipseThickness": 0.0,
               "FillColor": "#5AFFFFFF",
               "Height": 8.0,
-              "Left": 177.0,
+              "Left": 167.0,
               "Name": "Page 4",
               "Top": 255.0,
               "Visible": true,
@@ -1873,7 +1887,20 @@
               "EllipseThickness": 0.0,
               "FillColor": "#5AFFFFFF",
               "Height": 8.0,
-              "Left": 195.0,
+              "Left": 185.0,
+              "Name": "Page 5",
+              "Top": 255.0,
+              "Visible": true,
+              "Width": 8.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.EllipseItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "EllipseColor": "#FFFFFFFF",
+              "EllipseThickness": 0.0,
+              "FillColor": "#5AFFFFFF",
+              "Height": 8.0,
+              "Left": 204.0,
               "Name": "Page 5",
               "Top": 255.0,
               "Visible": true,
@@ -1882,11 +1909,11 @@
           ],
           "Group": true,
           "Height": 16.0,
-          "Left": 113.0,
+          "Left": 103.0,
           "Name": "Paging",
           "Top": 252.0,
           "Visible": true,
-          "Width": 98.0
+          "Width": 118.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
@@ -1994,7 +2021,7 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase($prop('PersistantTrackerPlugin.DriverAhead_02_Name'));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase($prop('PersistantTrackerPlugin.DriverAhead_02_Name'));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else if (driverName == 2) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1]\r\n}else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -2144,7 +2171,7 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase($prop('PersistantTrackerPlugin.DriverAhead_01_Name'));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase($prop('PersistantTrackerPlugin.DriverAhead_01_Name'));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else if (driverName == 2) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1]\r\n}else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -2294,7 +2321,7 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase($prop('PersistantTrackerPlugin.DriverAhead_00_Name'));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase($prop('PersistantTrackerPlugin.DriverAhead_00_Name'));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else if (driverName == 2) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1]\r\n}else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -2454,7 +2481,7 @@
                     "Text": {
                       "FormatString": "",
                       "Formula": {
-                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase($prop('DataCorePlugin.GameData.PlayerName'));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase($prop('DataCorePlugin.GameData.PlayerName'));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else if (driverName == 2) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1]\r\n}else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -2578,7 +2605,7 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase($prop('PersistantTrackerPlugin.DriverBehind_00_Name'));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase($prop('PersistantTrackerPlugin.DriverBehind_00_Name'));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else if (driverName == 2) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1]\r\n}else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -2728,7 +2755,7 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase($prop('PersistantTrackerPlugin.DriverBehind_01_Name'));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase($prop('PersistantTrackerPlugin.DriverBehind_01_Name'));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else if (driverName == 2) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1]\r\n}else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -2878,7 +2905,7 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase($prop('PersistantTrackerPlugin.DriverBehind_02_Name'));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase($prop('PersistantTrackerPlugin.DriverBehind_02_Name'));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else if (driverName == 2) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1]\r\n}else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -3022,11 +3049,11 @@
               },
               "Height": 16.0,
               "IsRectangleItem": true,
-              "Left": 113.0,
+              "Left": 103.0,
               "Name": "RectangleItem2",
               "Top": 252.0,
               "Visible": true,
-              "Width": 98.0
+              "Width": 118.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.EllipseItem, SimHub.Plugins",
@@ -3035,7 +3062,7 @@
               "EllipseThickness": 0.0,
               "FillColor": "#5AFFFFFF",
               "Height": 8.0,
-              "Left": 123.0,
+              "Left": 113.0,
               "Name": "Page 1",
               "Top": 255.0,
               "Visible": true,
@@ -3048,7 +3075,7 @@
               "EllipseThickness": 0.0,
               "FillColor": "#5AFFFFFF",
               "Height": 8.0,
-              "Left": 141.0,
+              "Left": 131.0,
               "Name": "Page 2",
               "Top": 255.0,
               "Visible": true,
@@ -3061,7 +3088,7 @@
               "EllipseThickness": 0.0,
               "FillColor": "#FFFFFFFF",
               "Height": 12.0,
-              "Left": 157.0,
+              "Left": 147.0,
               "Name": "Page 3",
               "Top": 253.0,
               "Visible": true,
@@ -3074,7 +3101,7 @@
               "EllipseThickness": 0.0,
               "FillColor": "#5AFFFFFF",
               "Height": 8.0,
-              "Left": 177.0,
+              "Left": 167.0,
               "Name": "Page 4",
               "Top": 255.0,
               "Visible": true,
@@ -3087,7 +3114,20 @@
               "EllipseThickness": 0.0,
               "FillColor": "#5AFFFFFF",
               "Height": 8.0,
-              "Left": 195.0,
+              "Left": 185.0,
+              "Name": "Page 5",
+              "Top": 255.0,
+              "Visible": true,
+              "Width": 8.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.EllipseItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "EllipseColor": "#FFFFFFFF",
+              "EllipseThickness": 0.0,
+              "FillColor": "#5AFFFFFF",
+              "Height": 8.0,
+              "Left": 204.0,
               "Name": "Page 5",
               "Top": 255.0,
               "Visible": true,
@@ -3096,11 +3136,11 @@
           ],
           "Group": true,
           "Height": 16.0,
-          "Left": 113.0,
+          "Left": 103.0,
           "Name": "Paging",
           "Top": 252.0,
           "Visible": true,
-          "Width": 98.0
+          "Width": 118.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
@@ -3191,7 +3231,7 @@
                     "Text": {
                       "FormatString": "",
                       "Formula": {
-                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase(drivername(1));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase(drivername(1));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else if (driverName == 2) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1]\r\n}else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -3353,7 +3393,7 @@
                     "Text": {
                       "FormatString": "",
                       "Formula": {
-                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase(drivername(2));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase(drivername(2));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else if (driverName == 2) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1]\r\n}else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -3515,7 +3555,7 @@
                     "Text": {
                       "FormatString": "",
                       "Formula": {
-                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase(drivername(3));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase(drivername(3));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else if (driverName == 2) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1]\r\n}else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -3677,7 +3717,7 @@
                     "Text": {
                       "FormatString": "",
                       "Formula": {
-                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase(drivername(4));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase(drivername(4));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else if (driverName == 2) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1]\r\n}else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -3839,7 +3879,7 @@
                     "Text": {
                       "FormatString": "",
                       "Formula": {
-                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase(drivername(5));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase(drivername(5));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else if (driverName == 2) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1]\r\n}else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -4001,7 +4041,7 @@
                     "Text": {
                       "FormatString": "",
                       "Formula": {
-                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase(drivername(6));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase(drivername(6));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else if (driverName == 2) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1]\r\n}else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -4163,7 +4203,7 @@
                     "Text": {
                       "FormatString": "",
                       "Formula": {
-                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase(drivername(7));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase(drivername(7));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else if (driverName == 2) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1]\r\n}else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -4325,7 +4365,7 @@
                     "Text": {
                       "FormatString": "",
                       "Formula": {
-                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase($prop('DataCorePlugin.GameData.PlayerName'));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = tcase($prop('DataCorePlugin.GameData.PlayerName'));\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else if (driverName == 2) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1]\r\n}else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -4472,11 +4512,11 @@
               },
               "Height": 16.0,
               "IsRectangleItem": true,
-              "Left": 113.0,
+              "Left": 103.0,
               "Name": "RectangleItem2",
               "Top": 252.0,
               "Visible": true,
-              "Width": 98.0
+              "Width": 118.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.EllipseItem, SimHub.Plugins",
@@ -4485,7 +4525,7 @@
               "EllipseThickness": 0.0,
               "FillColor": "#5AFFFFFF",
               "Height": 8.0,
-              "Left": 123.0,
+              "Left": 113.0,
               "Name": "Page 1",
               "Top": 255.0,
               "Visible": true,
@@ -4498,7 +4538,7 @@
               "EllipseThickness": 0.0,
               "FillColor": "#5AFFFFFF",
               "Height": 8.0,
-              "Left": 141.0,
+              "Left": 131.0,
               "Name": "Page 2",
               "Top": 255.0,
               "Visible": true,
@@ -4511,7 +4551,7 @@
               "EllipseThickness": 0.0,
               "FillColor": "#5AFFFFFF",
               "Height": 8.0,
-              "Left": 159.0,
+              "Left": 149.0,
               "Name": "Page 3",
               "Top": 255.0,
               "Visible": true,
@@ -4524,7 +4564,7 @@
               "EllipseThickness": 0.0,
               "FillColor": "#FFFFFFFF",
               "Height": 12.0,
-              "Left": 175.0,
+              "Left": 165.0,
               "Name": "Page 4",
               "Top": 253.0,
               "Visible": true,
@@ -4537,7 +4577,20 @@
               "EllipseThickness": 0.0,
               "FillColor": "#5AFFFFFF",
               "Height": 8.0,
-              "Left": 195.0,
+              "Left": 185.0,
+              "Name": "Page 5",
+              "Top": 255.0,
+              "Visible": true,
+              "Width": 8.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.EllipseItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "EllipseColor": "#FFFFFFFF",
+              "EllipseThickness": 0.0,
+              "FillColor": "#5AFFFFFF",
+              "Height": 8.0,
+              "Left": 204.0,
               "Name": "Page 5",
               "Top": 255.0,
               "Visible": true,
@@ -4546,11 +4599,11 @@
           ],
           "Group": true,
           "Height": 16.0,
-          "Left": 113.0,
+          "Left": 103.0,
           "Name": "Paging",
           "Top": 252.0,
           "Visible": true,
-          "Width": 98.0
+          "Width": 118.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
@@ -4567,7 +4620,7 @@
                   "Bindings": {
                     "Image": {
                       "Formula": {
-                        "Expression": "if ([DataCorePlugin.GameRawData.Physics.WheelSlip01]>1, \r\n\tif ( isincreasing(50, [DataCorePlugin.GameData.SpeedLocal]), 'slip', \r\n\t\tif ( [DataCorePlugin.GameRawData.Physics.WheelAngularSpeed01]==0, 'lock', '')\r\n\t),\r\n\t''\r\n)"
+                        "Expression": "if ([DataCorePlugin.GameRawData.mTyreSlipSpeed01]>1, \r\n\tif ( isincreasing(50, [DataCorePlugin.GameData.SpeedLocal]), 'slip', \r\n\t\tif ( [DataCorePlugin.GameRawData.Physics.WheelAngularSpeed01]==0, 'lock', '')\r\n\t),\r\n\t''\r\n)"
                       },
                       "Mode": 2,
                       "TargetPropertyName": "Image"
@@ -4587,7 +4640,7 @@
                   "Bindings": {
                     "Image": {
                       "Formula": {
-                        "Expression": "if ([DataCorePlugin.GameRawData.Physics.WheelSlip02]>1, \r\n\tif ( isincreasing(50, [DataCorePlugin.GameData.SpeedLocal]), 'slip', \r\n\t\tif ( [DataCorePlugin.GameRawData.Physics.WheelAngularSpeed02]==0, 'lock', '')\r\n\t),\r\n\t''\r\n)"
+                        "Expression": "if ([DataCorePlugin.GameRawData.mTyreSlipSpeed02]>1, \r\n\tif ( isincreasing(50, [DataCorePlugin.GameData.SpeedLocal]), 'slip', \r\n\t\tif ( [DataCorePlugin.GameRawData.Physics.WheelAngularSpeed02]==0, 'lock', '')\r\n\t),\r\n\t''\r\n)"
                       },
                       "Mode": 2,
                       "TargetPropertyName": "Image"
@@ -4607,7 +4660,7 @@
                   "Bindings": {
                     "Image": {
                       "Formula": {
-                        "Expression": "if ([DataCorePlugin.GameRawData.Physics.WheelSlip03]>1, \r\n\tif ( isincreasing(50, [DataCorePlugin.GameData.SpeedLocal]), 'slip', \r\n\t\tif ( [DataCorePlugin.GameRawData.Physics.WheelAngularSpeed03]==0, 'lock', '')\r\n\t),\r\n\t''\r\n)"
+                        "Expression": "if ([DataCorePlugin.GameRawData.mTyreSlipSpeed03]>1, \r\n\tif ( isincreasing(50, [DataCorePlugin.GameData.SpeedLocal]), 'slip', \r\n\t\tif ( [DataCorePlugin.GameRawData.Physics.WheelAngularSpeed03]==0, 'lock', '')\r\n\t),\r\n\t''\r\n)"
                       },
                       "Mode": 2,
                       "TargetPropertyName": "Image"
@@ -4627,7 +4680,7 @@
                   "Bindings": {
                     "Image": {
                       "Formula": {
-                        "Expression": "if ([DataCorePlugin.GameRawData.Physics.WheelSlip04]>1, \r\n\tif ( isincreasing(50, [DataCorePlugin.GameData.SpeedLocal]), 'slip', \r\n\t\tif ( [DataCorePlugin.GameRawData.Physics.WheelAngularSpeed04]==0, 'lock', '')\r\n\t),\r\n\t''\r\n)"
+                        "Expression": "if ([DataCorePlugin.GameRawData.mTyreSlipSpeed04]>1, \r\n\tif ( isincreasing(50, [DataCorePlugin.GameData.SpeedLocal]), 'slip', \r\n\t\tif ( [DataCorePlugin.GameRawData.Physics.WheelAngularSpeed04]==0, 'lock', '')\r\n\t),\r\n\t''\r\n)"
                       },
                       "Mode": 2,
                       "TargetPropertyName": "Image"
@@ -4700,7 +4753,7 @@
                   "Name": "TextItem25",
                   "Text": "00.0",
                   "TextColor": "#FFFFFFFF",
-                  "Top": 17.5,
+                  "Top": 12.5,
                   "VerticalAlignment": 1,
                   "Visible": true,
                   "Width": 163.0
@@ -4728,7 +4781,7 @@
                   "Name": "TextItem26",
                   "Text": "00.0",
                   "TextColor": "#FFFFFFFF",
-                  "Top": 17.5,
+                  "Top": 12.5,
                   "VerticalAlignment": 1,
                   "Visible": true,
                   "Width": 163.0
@@ -4756,7 +4809,7 @@
                   "Name": "TextItem27",
                   "Text": "00.0",
                   "TextColor": "#FFFFFFFF",
-                  "Top": 183.5,
+                  "Top": 188.5,
                   "VerticalAlignment": 1,
                   "Visible": true,
                   "Width": 163.0
@@ -4784,7 +4837,7 @@
                   "Name": "TextItem28",
                   "Text": "00.0",
                   "TextColor": "#FFFFFFFF",
-                  "Top": 184.5,
+                  "Top": 189.5,
                   "VerticalAlignment": 1,
                   "Visible": true,
                   "Width": 163.0
@@ -4812,7 +4865,63 @@
                   "Name": "TextItem29",
                   "Text": "00\u00b0",
                   "TextColor": "#FF878787",
-                  "Top": 81.5,
+                  "Top": 70.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 50.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0\u00b0",
+                      "Formula": {
+                        "Expression": "format([TyreWearFrontLeft], '0') + '%'"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 18.0,
+                  "FontWeight": "Bold",
+                  "Height": 20.0,
+                  "HorizontalAlignment": 2,
+                  "IsTextItem": true,
+                  "Left": 9.0,
+                  "Name": "TextItem29",
+                  "Text": "00%",
+                  "TextColor": "#FF878787",
+                  "Top": 91.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 50.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0\u00b0",
+                      "Formula": {
+                        "Expression": "format([TyreWearFrontRight], '0') + '%'"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 18.0,
+                  "FontWeight": "Bold",
+                  "Height": 20.0,
+                  "HorizontalAlignment": 0,
+                  "IsTextItem": true,
+                  "Left": 272.0,
+                  "Name": "TextItem30",
+                  "Text": "00%",
+                  "TextColor": "#FF878787",
+                  "Top": 91.5,
                   "VerticalAlignment": 1,
                   "Visible": true,
                   "Width": 50.0
@@ -4840,7 +4949,7 @@
                   "Name": "TextItem30",
                   "Text": "00\u00b0",
                   "TextColor": "#FF878787",
-                  "Top": 81.5,
+                  "Top": 70.5,
                   "VerticalAlignment": 1,
                   "Visible": true,
                   "Width": 50.0
@@ -4868,7 +4977,35 @@
                   "Name": "TextItem31",
                   "Text": "00\u00b0",
                   "TextColor": "#FF878787",
-                  "Top": 159.5,
+                  "Top": 147.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 50.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0\u00b0",
+                      "Formula": {
+                        "Expression": "format([TyreWearRearLeft], '0') + '%'"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 18.0,
+                  "FontWeight": "Bold",
+                  "Height": 20.0,
+                  "HorizontalAlignment": 2,
+                  "IsTextItem": true,
+                  "Left": 9.0,
+                  "Name": "TextItem29",
+                  "Text": "00%",
+                  "TextColor": "#FF878787",
+                  "Top": 168.5,
                   "VerticalAlignment": 1,
                   "Visible": true,
                   "Width": 50.0
@@ -4896,7 +5033,35 @@
                   "Name": "TextItem32",
                   "Text": "00\u00b0",
                   "TextColor": "#FF878787",
-                  "Top": 159.5,
+                  "Top": 147.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 50.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0\u00b0",
+                      "Formula": {
+                        "Expression": "format([TyreWearRearRight], '0') + '%'"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 18.0,
+                  "FontWeight": "Bold",
+                  "Height": 20.0,
+                  "HorizontalAlignment": 0,
+                  "IsTextItem": true,
+                  "Left": 272.0,
+                  "Name": "TextItem30",
+                  "Text": "00%",
+                  "TextColor": "#FF878787",
+                  "Top": 168.5,
                   "VerticalAlignment": 1,
                   "Visible": true,
                   "Width": 50.0
@@ -5030,6 +5195,13 @@
                       "StartColor": "#FF00BFFF",
                       "StartColorValue": 40.0,
                       "TargetPropertyName": "BackgroundColor"
+                    },
+                    "Height": {
+                      "Formula": {
+                        "Expression": "round(([TyreWearFrontLeft]*35)/100, 0)"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Height"
                     }
                   },
                   "BorderStyle": {
@@ -5096,6 +5268,13 @@
                       "StartColor": "#FF00BFFF",
                       "StartColorValue": 40.0,
                       "TargetPropertyName": "BackgroundColor"
+                    },
+                    "Height": {
+                      "Formula": {
+                        "Expression": "round(([TyreWearFrontRight]*35)/100, 0)"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Height"
                     }
                   },
                   "BorderStyle": {
@@ -5162,6 +5341,13 @@
                       "StartColor": "#FF00BFFF",
                       "StartColorValue": 40.0,
                       "TargetPropertyName": "BackgroundColor"
+                    },
+                    "Height": {
+                      "Formula": {
+                        "Expression": "round(([TyreWearRearLeft]*35)/100, 0)"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Height"
                     }
                   },
                   "BorderStyle": {
@@ -5228,6 +5414,13 @@
                       "StartColor": "#FF00BFFF",
                       "StartColorValue": 40.0,
                       "TargetPropertyName": "BackgroundColor"
+                    },
+                    "Height": {
+                      "Formula": {
+                        "Expression": "round(([TyreWearRearRight]*35)/100, 0)"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Height"
                     }
                   },
                   "BorderStyle": {
@@ -5276,53 +5469,19 @@
                   "Top": 153.5,
                   "Visible": true,
                   "Width": 7.0
-                },
-                {
-                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                  "BackgroundColor": "#FF353535",
-                  "Bindings": {
-                    "Text": {
-                      "FormatString": "0",
-                      "Formula": {
-                        "Expression": "if([GameRawData.Graphics.TyreCompound]='dry_compound', 'DRY', 'WET') + ' ' + [GameRawData.Graphics.currentTyreSet]"
-                      },
-                      "Mode": 2,
-                      "TargetPropertyName": "Text"
-                    }
-                  },
-                  "BorderStyle": {
-                    "RadiusBottomLeft": 15,
-                    "RadiusBottomRight": 15,
-                    "RadiusTopLeft": 15,
-                    "RadiusTopRight": 15
-                  },
-                  "Font": "Roboto",
-                  "FontSize": 18.0,
-                  "FontWeight": "Bold",
-                  "Height": 30.0,
-                  "HorizontalAlignment": 1,
-                  "IsTextItem": true,
-                  "Left": 122.0,
-                  "Name": "TextItem33",
-                  "Text": "SET",
-                  "TextColor": "#FFFFFFFF",
-                  "Top": 115.5,
-                  "VerticalAlignment": 1,
-                  "Visible": false,
-                  "Width": 80.0
                 }
               ],
               "Group": true,
-              "Height": 225.0,
+              "Height": 235.0,
               "Left": -1.0,
               "Name": "Layer",
-              "Top": 17.5,
+              "Top": 12.5,
               "Visible": true,
               "Width": 326.0
             }
           ],
           "Group": true,
-          "Height": 245.0,
+          "Height": 245.5,
           "Left": -1.0,
           "Name": "Dry Tyre/Wheel Status",
           "Top": 2.0,
@@ -5366,11 +5525,11 @@
               },
               "Height": 16.0,
               "IsRectangleItem": true,
-              "Left": 113.0,
+              "Left": 103.0,
               "Name": "RectangleItem2",
               "Top": 252.0,
               "Visible": true,
-              "Width": 98.0
+              "Width": 118.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.EllipseItem, SimHub.Plugins",
@@ -5379,7 +5538,7 @@
               "EllipseThickness": 0.0,
               "FillColor": "#5AFFFFFF",
               "Height": 8.0,
-              "Left": 123.0,
+              "Left": 113.0,
               "Name": "Page 1",
               "Top": 255.0,
               "Visible": true,
@@ -5392,7 +5551,7 @@
               "EllipseThickness": 0.0,
               "FillColor": "#5AFFFFFF",
               "Height": 8.0,
-              "Left": 141.0,
+              "Left": 131.0,
               "Name": "Page 2",
               "Top": 255.0,
               "Visible": true,
@@ -5405,7 +5564,7 @@
               "EllipseThickness": 0.0,
               "FillColor": "#5AFFFFFF",
               "Height": 8.0,
-              "Left": 159.0,
+              "Left": 149.0,
               "Name": "Page 3",
               "Top": 255.0,
               "Visible": true,
@@ -5418,7 +5577,7 @@
               "EllipseThickness": 0.0,
               "FillColor": "#5AFFFFFF",
               "Height": 8.0,
-              "Left": 177.0,
+              "Left": 167.0,
               "Name": "Page 4",
               "Top": 255.0,
               "Visible": true,
@@ -5431,7 +5590,1133 @@
               "EllipseThickness": 0.0,
               "FillColor": "#FFFFFFFF",
               "Height": 12.0,
-              "Left": 193.0,
+              "Left": 183.0,
+              "Name": "Page 5",
+              "Top": 253.0,
+              "Visible": true,
+              "Width": 12.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.EllipseItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "EllipseColor": "#FFFFFFFF",
+              "EllipseThickness": 0.0,
+              "FillColor": "#5AFFFFFF",
+              "Height": 8.0,
+              "Left": 204.0,
+              "Name": "Page 5",
+              "Top": 255.0,
+              "Visible": true,
+              "Width": 8.0
+            }
+          ],
+          "Group": true,
+          "Height": 16.0,
+          "Left": 103.0,
+          "Name": "Paging",
+          "Top": 252.0,
+          "Visible": true,
+          "Width": 118.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "if([GameRawData.Graphics.TyreCompound]!='wet_compound', '1', '0')"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Childrens": [
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                  "AutoSize": true,
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Image": {
+                      "Formula": {
+                        "Expression": "if ([DataCorePlugin.GameRawData.Physics.WheelSlip01]>1, \r\n\tif ( isincreasing(50, [DataCorePlugin.GameData.SpeedLocal]), 'slip', \r\n\t\tif ( [DataCorePlugin.GameRawData.Physics.WheelAngularSpeed01]==0, 'lock', '')\r\n\t),\r\n\t''\r\n)"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Image"
+                    }
+                  },
+                  "Height": 12.0,
+                  "Left": 15.0,
+                  "Name": "FL",
+                  "Top": 40.0,
+                  "Visible": true,
+                  "Width": 131.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                  "AutoSize": true,
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Image": {
+                      "Formula": {
+                        "Expression": "if ([DataCorePlugin.GameRawData.Physics.WheelSlip02]>1, \r\n\tif ( isincreasing(50, [DataCorePlugin.GameData.SpeedLocal]), 'slip', \r\n\t\tif ( [DataCorePlugin.GameRawData.Physics.WheelAngularSpeed02]==0, 'lock', '')\r\n\t),\r\n\t''\r\n)"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Image"
+                    }
+                  },
+                  "Height": 12.0,
+                  "Left": 177.0,
+                  "Name": "FR",
+                  "Top": 40.0,
+                  "Visible": true,
+                  "Width": 131.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                  "AutoSize": true,
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Image": {
+                      "Formula": {
+                        "Expression": "if ([DataCorePlugin.GameRawData.Physics.WheelSlip03]>1, \r\n\tif ( isincreasing(50, [DataCorePlugin.GameData.SpeedLocal]), 'slip', \r\n\t\tif ( [DataCorePlugin.GameRawData.Physics.WheelAngularSpeed03]==0, 'lock', '')\r\n\t),\r\n\t''\r\n)"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Image"
+                    }
+                  },
+                  "Height": 12.0,
+                  "Left": 15.0,
+                  "Name": "RL",
+                  "Top": 207.0,
+                  "Visible": true,
+                  "Width": 131.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                  "AutoSize": true,
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Image": {
+                      "Formula": {
+                        "Expression": "if ([DataCorePlugin.GameRawData.Physics.WheelSlip04]>1, \r\n\tif ( isincreasing(50, [DataCorePlugin.GameData.SpeedLocal]), 'slip', \r\n\t\tif ( [DataCorePlugin.GameRawData.Physics.WheelAngularSpeed04]==0, 'lock', '')\r\n\t),\r\n\t''\r\n)"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Image"
+                    }
+                  },
+                  "Height": 12.0,
+                  "Left": 177.0,
+                  "Name": "RR",
+                  "Top": 207.0,
+                  "Visible": true,
+                  "Width": 131.0
+                }
+              ],
+              "Group": true,
+              "Height": 179.0,
+              "Left": 15.0,
+              "Name": "Slip/Lock",
+              "Top": 40.0,
+              "Visible": false,
+              "Width": 293.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF353535",
+              "Height": 1.0,
+              "IsFreezed": true,
+              "IsRectangleItem": true,
+              "Left": 2.0,
+              "Name": "RectangleItem",
+              "Top": 129.5,
+              "Visible": true,
+              "Width": 321.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF353535",
+              "Height": 245.0,
+              "IsFreezed": true,
+              "IsRectangleItem": true,
+              "Left": 162.0,
+              "Name": "RectangleItem2",
+              "Top": 2.0,
+              "Visible": true,
+              "Width": 1.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Childrens": [
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0.0",
+                      "Formula": {
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\ttireLapAvg = 2\r\n\ttireLapAvgResetKey = \"A\"\r\n} else {\r\n\ttireLapAvg = settings.tireLapAvg\r\n\ttireLapAvgResetKey = settings.tireLapAvgResetKey\r\n}\r\n\r\nfunction getAverage(array) {\r\n    var total = 0;\r\n    var count = 0;\r\n    array.forEach(function(item, index) {\r\n        total += item;\r\n        count++;\r\n    });\r\n    return total / count;\r\n}\r\n\r\nif(root[\"currentLap\"] == null){\r\n\troot[\"currentLap\"] = $prop('DataCorePlugin.GameData.CurrentLap')\r\n}\r\n\r\nvar tyre = $prop('DataCorePlugin.GameData.TyrePressureFrontLeft')\r\n\r\nif(root[\"pressureByLapFL\"]==null){\r\n   root[\"pressureByLapFL\"] = []\r\n}\r\n\r\nif (!$prop('DataCorePlugin.GamePaused') && !$prop('DataCorePlugin.GameData.PitLimiterOn') && !$prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible') && tyre != 0) {\r\n\tif ($prop('DataCorePlugin.GameData.CurrentLap') - root[\"currentLap\"] <= tireLapAvg) {\r\n\t\troot[\"pressureByLapFL\"].push(tyre)\r\n\t} else {\r\n\t\troot[\"pressureByLapFL\"].push(tyre)\r\n\t\troot[\"pressureByLapFL\"].shift()\r\n\t}\r\n}\r\n\r\nif ($prop('DataCorePlugin.GameData.IsInPitLane') && $prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible')) {\r\n\troot[\"currentLap\"] = null // Reset laps\r\n\ttyre = 0 // Reset Tyre\r\n}\r\n\r\nif ($prop('InputStatus.KeyboardReaderPlugin.'+settings.tireLapAvgResetKey) ) {\r\n\troot[\"pressureByLapFL\"] = []\r\n}\r\n\r\nreturn getAverage(root[\"pressureByLapFL\"])",
+                        "Interpreter": 1
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 45.0,
+                  "FontWeight": "Bold",
+                  "Height": 58.0,
+                  "HorizontalAlignment": 1,
+                  "IsTextItem": true,
+                  "Left": -1.0,
+                  "Name": "TextItem",
+                  "RenderingSkip": 100,
+                  "Text": "0.0",
+                  "TextColor": "#FFFFFFFF",
+                  "Top": 12.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 163.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0.0",
+                      "Formula": {
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\ttireLapAvg = 2\r\n\ttireLapAvgResetKey = \"A\"\r\n} else {\r\n\ttireLapAvg = settings.tireLapAvg\r\n\ttireLapAvgResetKey = settings.tireLapAvgResetKey\r\n}\r\n\r\nfunction getAverage(array) {\r\n    var total = 0;\r\n    var count = 0;\r\n    array.forEach(function(item, index) {\r\n        total += item;\r\n        count++;\r\n    });\r\n    return total / count;\r\n}\r\n\r\nif(root[\"currentLap\"] == null){\r\n\troot[\"currentLap\"] = $prop('DataCorePlugin.GameData.CurrentLap')\r\n}\r\n\r\nvar tyre = $prop('DataCorePlugin.GameData.TyrePressureFrontRight')\r\n\r\nif(root[\"pressureByLapFR\"]==null){\r\n   root[\"pressureByLapFR\"] = []\r\n}\r\n\r\nif (!$prop('DataCorePlugin.GamePaused') && !$prop('DataCorePlugin.GameData.PitLimiterOn') && !$prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible') && tyre != 0) {\r\n\tif ($prop('DataCorePlugin.GameData.CurrentLap') - root[\"currentLap\"] <= tireLapAvg) {\r\n\t\troot[\"pressureByLapFR\"].push(tyre)\r\n\t} else {\r\n\t\troot[\"pressureByLapFR\"].push(tyre)\r\n\t\troot[\"pressureByLapFR\"].shift()\r\n\t}\r\n}\r\n\r\nif ($prop('DataCorePlugin.GameData.IsInPitLane') && $prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible')) {\r\n\troot[\"currentLap\"] = null // Reset laps\r\n\ttyre = 0 // Reset Tyre\r\n}\r\n\r\nif ($prop('InputStatus.KeyboardReaderPlugin.'+settings.tireLapAvgResetKey) ) {\r\n\troot[\"pressureByLapFL\"] = []\r\n}\r\n\r\nreturn getAverage(root[\"pressureByLapFR\"])",
+                        "Interpreter": 1
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 45.0,
+                  "FontWeight": "Bold",
+                  "Height": 58.0,
+                  "HorizontalAlignment": 1,
+                  "IsTextItem": true,
+                  "Left": 162.0,
+                  "Name": "TextItem2",
+                  "RenderingSkip": 100,
+                  "Text": "0.0",
+                  "TextColor": "#FFFFFFFF",
+                  "Top": 12.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 163.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0.0",
+                      "Formula": {
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\ttireLapAvg = 2\r\n\ttireLapAvgResetKey = \"A\"\r\n} else {\r\n\ttireLapAvg = settings.tireLapAvg\r\n\ttireLapAvgResetKey = settings.tireLapAvgResetKey\r\n}\r\n\r\nfunction getAverage(array) {\r\n    var total = 0;\r\n    var count = 0;\r\n    array.forEach(function(item, index) {\r\n        total += item;\r\n        count++;\r\n    });\r\n    return total / count;\r\n}\r\n\r\nif(root[\"currentLap\"] == null){\r\n\troot[\"currentLap\"] = $prop('DataCorePlugin.GameData.CurrentLap')\r\n}\r\n\r\nvar tyre = $prop('DataCorePlugin.GameData.TyrePressureRearLeft')\r\n\r\nif(root[\"pressureByLapRL\"]==null){\r\n   root[\"pressureByLapRL\"] = []\r\n}\r\n\r\nif (!$prop('DataCorePlugin.GamePaused') && !$prop('DataCorePlugin.GameData.PitLimiterOn') && !$prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible') && tyre != 0) {\r\n\tif ($prop('DataCorePlugin.GameData.CurrentLap') - root[\"currentLap\"] <= tireLapAvg) {\r\n\t\troot[\"pressureByLapRL\"].push(tyre)\r\n\t} else {\r\n\t\troot[\"pressureByLapRL\"].push(tyre)\r\n\t\troot[\"pressureByLapRL\"].shift()\r\n\t}\r\n}\r\n\r\nif ($prop('DataCorePlugin.GameData.IsInPitLane') && $prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible')) {\r\n\troot[\"currentLap\"] = null // Reset laps\r\n\ttyre = 0 // Reset Tyre\r\n}\r\n\r\nif ($prop('InputStatus.KeyboardReaderPlugin.'+settings.tireLapAvgResetKey) ) {\r\n\troot[\"pressureByLapFL\"] = []\r\n}\r\n\r\nreturn getAverage(root[\"pressureByLapRL\"])",
+                        "Interpreter": 1
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 45.0,
+                  "FontWeight": "Bold",
+                  "Height": 58.0,
+                  "HorizontalAlignment": 1,
+                  "IsTextItem": true,
+                  "Left": -1.0,
+                  "Name": "TextItem3",
+                  "RenderingSkip": 100,
+                  "Text": "0.0",
+                  "TextColor": "#FFFFFFFF",
+                  "Top": 188.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 163.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0.0",
+                      "Formula": {
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\ttireLapAvg = 2\r\n\ttireLapAvgResetKey = \"A\"\r\n} else {\r\n\ttireLapAvg = settings.tireLapAvg\r\n\ttireLapAvgResetKey = settings.tireLapAvgResetKey\r\n}\r\n\r\nfunction getAverage(array) {\r\n    var total = 0;\r\n    var count = 0;\r\n    array.forEach(function(item, index) {\r\n        total += item;\r\n        count++;\r\n    });\r\n    return total / count;\r\n}\r\n\r\nif(root[\"currentLap\"] == null){\r\n\troot[\"currentLap\"] = $prop('DataCorePlugin.GameData.CurrentLap')\r\n}\r\n\r\nvar tyre = $prop('DataCorePlugin.GameData.TyrePressureRearRight')\r\n\r\nif(root[\"pressureByLapRR\"]==null){\r\n   root[\"pressureByLapRR\"] = []\r\n}\r\n\r\nif (!$prop('DataCorePlugin.GamePaused') && !$prop('DataCorePlugin.GameData.PitLimiterOn') && !$prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible') && tyre != 0) {\r\n\tif ($prop('DataCorePlugin.GameData.CurrentLap') - root[\"currentLap\"] <= tireLapAvg) {\r\n\t\troot[\"pressureByLapRR\"].push(tyre)\r\n\t} else {\r\n\t\troot[\"pressureByLapRR\"].push(tyre)\r\n\t\troot[\"pressureByLapRR\"].shift()\r\n\t}\r\n}\r\n\r\nif ($prop('DataCorePlugin.GameData.IsInPitLane') && $prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible')) {\r\n\troot[\"currentLap\"] = null // Reset laps\r\n\ttyre = 0 // Reset Tyre\r\n}\r\n\r\nif ($prop('InputStatus.KeyboardReaderPlugin.'+settings.tireLapAvgResetKey) ) {\r\n\troot[\"pressureByLapFL\"] = []\r\n}\r\n\r\nreturn getAverage(root[\"pressureByLapRR\"])",
+                        "Interpreter": 1
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 45.0,
+                  "FontWeight": "Bold",
+                  "Height": 58.0,
+                  "HorizontalAlignment": 1,
+                  "IsTextItem": true,
+                  "Left": 162.0,
+                  "Name": "TextItem4",
+                  "RenderingSkip": 100,
+                  "Text": "0.0",
+                  "TextColor": "#FFFFFFFF",
+                  "Top": 188.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 163.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0\u00b0",
+                      "Formula": {
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\ttireLapAvg = 2\r\n\ttireLapAvgResetKey = \"A\"\r\n} else {\r\n\ttireLapAvg = settings.tireLapAvg\r\n\ttireLapAvgResetKey = settings.tireLapAvgResetKey\r\n}\r\n\r\nfunction getAverage(array) {\r\n    var total = 0;\r\n    var count = 0;\r\n    array.forEach(function(item, index) {\r\n        total += item;\r\n        count++;\r\n    });\r\n    return total / count;\r\n}\r\n\r\nif(root[\"currentLap\"] == null){\r\n\troot[\"currentLap\"] = $prop('DataCorePlugin.GameData.CurrentLap')\r\n}\r\n\r\nvar tyre = $prop('TyreTemperatureFrontLeft')\r\n\r\nif(root[\"tempByLapFL\"]==null){\r\n   root[\"tempByLapFL\"] = []\r\n}\r\n\r\nif (!$prop('DataCorePlugin.GamePaused') && !$prop('DataCorePlugin.GameData.PitLimiterOn') && !$prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible') && tyre != 0) {\r\n\tif ($prop('DataCorePlugin.GameData.CurrentLap') - root[\"currentLap\"] <= tireLapAvg) {\r\n\t\troot[\"tempByLapFL\"].push(tyre)\r\n\t} else {\r\n\t\troot[\"tempByLapFL\"].push(tyre)\r\n\t\troot[\"tempByLapFL\"].shift()\r\n\t}\r\n}\r\n\r\nif ($prop('DataCorePlugin.GameData.IsInPitLane') && $prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible')) {\r\n\troot[\"currentLap\"] = null // Reset laps\r\n\ttyre = 0 // Reset Tyre\r\n}\r\n\r\nif ($prop('InputStatus.KeyboardReaderPlugin.'+settings.tireLapAvgResetKey) ) {\r\n\troot[\"pressureByLapFL\"] = []\r\n}\r\n\r\nreturn getAverage(root[\"tempByLapFL\"])",
+                        "Interpreter": 1
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 18.0,
+                  "FontWeight": "Bold",
+                  "Height": 20.0,
+                  "HorizontalAlignment": 2,
+                  "IsTextItem": true,
+                  "Left": 9.0,
+                  "Name": "TextItem29",
+                  "RenderingSkip": 100,
+                  "Text": "00\u00b0",
+                  "TextColor": "#FF878787",
+                  "Top": 81.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 50.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0\u00b0",
+                      "Formula": {
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\ttireLapAvg = 2\r\n\ttireLapAvgResetKey = \"A\"\r\n} else {\r\n\ttireLapAvg = settings.tireLapAvg\r\n\ttireLapAvgResetKey = settings.tireLapAvgResetKey\r\n}\r\n\r\nfunction getAverage(array) {\r\n    var total = 0;\r\n    var count = 0;\r\n    array.forEach(function(item, index) {\r\n        total += item;\r\n        count++;\r\n    });\r\n    return total / count;\r\n}\r\n\r\nif(root[\"currentLap\"] == null){\r\n\troot[\"currentLap\"] = $prop('DataCorePlugin.GameData.CurrentLap')\r\n}\r\n\r\nvar tyre = $prop('TyreTemperatureFrontRight')\r\n\r\nif(root[\"tempByLapFR\"]==null){\r\n   root[\"tempByLapFR\"] = []\r\n}\r\n\r\nif (!$prop('DataCorePlugin.GamePaused') && !$prop('DataCorePlugin.GameData.PitLimiterOn') && !$prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible') && tyre != 0) {\r\n\tif ($prop('DataCorePlugin.GameData.CurrentLap') - root[\"currentLap\"] <= tireLapAvg) {\r\n\t\troot[\"tempByLapFR\"].push(tyre)\r\n\t} else {\r\n\t\troot[\"tempByLapFR\"].push(tyre)\r\n\t\troot[\"tempByLapFR\"].shift()\r\n\t}\r\n}\r\n\r\nif ($prop('DataCorePlugin.GameData.IsInPitLane') && $prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible')) {\r\n\troot[\"currentLap\"] = null // Reset laps\r\n\ttyre = 0 // Reset Tyre\r\n}\r\n\r\nif ($prop('InputStatus.KeyboardReaderPlugin.'+settings.tireLapAvgResetKey) ) {\r\n\troot[\"pressureByLapFL\"] = []\r\n}\r\n\r\nreturn getAverage(root[\"tempByLapFR\"])",
+                        "Interpreter": 1
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 18.0,
+                  "FontWeight": "Bold",
+                  "Height": 20.0,
+                  "HorizontalAlignment": 0,
+                  "IsTextItem": true,
+                  "Left": 272.0,
+                  "Name": "TextItem30",
+                  "RenderingSkip": 100,
+                  "Text": "00\u00b0",
+                  "TextColor": "#FF878787",
+                  "Top": 81.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 50.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0\u00b0",
+                      "Formula": {
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\ttireLapAvg = 2\r\n\ttireLapAvgResetKey = \"A\"\r\n} else {\r\n\ttireLapAvg = settings.tireLapAvg\r\n\ttireLapAvgResetKey = settings.tireLapAvgResetKey\r\n}\r\n\r\nfunction getAverage(array) {\r\n    var total = 0;\r\n    var count = 0;\r\n    array.forEach(function(item, index) {\r\n        total += item;\r\n        count++;\r\n    });\r\n    return total / count;\r\n}\r\n\r\nif(root[\"currentLap\"] == null){\r\n\troot[\"currentLap\"] = $prop('DataCorePlugin.GameData.CurrentLap')\r\n}\r\n\r\nvar tyre = $prop('TyreTemperatureRearLeft')\r\n\r\nif(root[\"tempByLapRL\"]==null){\r\n   root[\"tempByLapRL\"] = []\r\n}\r\n\r\nif (!$prop('DataCorePlugin.GamePaused') && !$prop('DataCorePlugin.GameData.PitLimiterOn') && !$prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible') && tyre != 0) {\r\n\tif ($prop('DataCorePlugin.GameData.CurrentLap') - root[\"currentLap\"] <= tireLapAvg) {\r\n\t\troot[\"tempByLapRL\"].push(tyre)\r\n\t} else {\r\n\t\troot[\"tempByLapRL\"].push(tyre)\r\n\t\troot[\"tempByLapRL\"].shift()\r\n\t}\r\n}\r\n\r\nif ($prop('DataCorePlugin.GameData.IsInPitLane') && $prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible')) {\r\n\troot[\"currentLap\"] = null // Reset laps\r\n\ttyre = 0 // Reset Tyre\r\n}\r\n\r\nif ($prop('InputStatus.KeyboardReaderPlugin.'+settings.tireLapAvgResetKey) ) {\r\n\troot[\"pressureByLapFL\"] = []\r\n}\r\n\r\nreturn getAverage(root[\"tempByLapRL\"])",
+                        "Interpreter": 1
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 18.0,
+                  "FontWeight": "Bold",
+                  "Height": 20.0,
+                  "HorizontalAlignment": 2,
+                  "IsTextItem": true,
+                  "Left": 9.0,
+                  "Name": "TextItem31",
+                  "RenderingSkip": 100,
+                  "Text": "00\u00b0",
+                  "TextColor": "#FF878787",
+                  "Top": 159.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 50.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0\u00b0",
+                      "Formula": {
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\ttireLapAvg = 2\r\n\ttireLapAvgResetKey = \"A\"\r\n} else {\r\n\ttireLapAvg = settings.tireLapAvg\r\n\ttireLapAvgResetKey = settings.tireLapAvgResetKey\r\n}\r\n\r\nfunction getAverage(array) {\r\n    var total = 0;\r\n    var count = 0;\r\n    array.forEach(function(item, index) {\r\n        total += item;\r\n        count++;\r\n    });\r\n    return total / count;\r\n}\r\n\r\nif(root[\"currentLap\"] == null){\r\n\troot[\"currentLap\"] = $prop('DataCorePlugin.GameData.CurrentLap')\r\n}\r\n\r\nvar tyre = $prop('TyreTemperatureRearRight')\r\n\r\nif(root[\"tempByLapRR\"]==null){\r\n   root[\"tempByLapRR\"] = []\r\n}\r\n\r\nif (!$prop('DataCorePlugin.GamePaused') && !$prop('DataCorePlugin.GameData.PitLimiterOn') && !$prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible') && tyre != 0) {\r\n\tif ($prop('DataCorePlugin.GameData.CurrentLap') - root[\"currentLap\"] <= tireLapAvg) {\r\n\t\troot[\"tempByLapRR\"].push(tyre)\r\n\t} else {\r\n\t\troot[\"tempByLapRR\"].push(tyre)\r\n\t\troot[\"tempByLapRR\"].shift()\r\n\t}\r\n}\r\n\r\nif ($prop('DataCorePlugin.GameData.IsInPitLane') && $prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible')) {\r\n\troot[\"currentLap\"] = null // Reset laps\r\n\ttyre = 0 // Reset Tyre\r\n}\r\n\r\nif ($prop('InputStatus.KeyboardReaderPlugin.'+settings.tireLapAvgResetKey) ) {\r\n\troot[\"pressureByLapFL\"] = []\r\n}\r\n\r\nreturn getAverage(root[\"tempByLapRR\"])",
+                        "Interpreter": 1
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 18.0,
+                  "FontWeight": "Bold",
+                  "Height": 20.0,
+                  "HorizontalAlignment": 0,
+                  "IsTextItem": true,
+                  "Left": 272.0,
+                  "Name": "TextItem32",
+                  "RenderingSkip": 100,
+                  "Text": "00\u00b0",
+                  "TextColor": "#FF878787",
+                  "Top": 159.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 50.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0\u00b0",
+                      "Formula": {
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\ttireLapAvg = 2\r\n\ttireLapAvgResetKey = \"A\"\r\n} else {\r\n\ttireLapAvg = settings.tireLapAvg\r\n\ttireLapAvgResetKey = settings.tireLapAvgResetKey\r\n}\r\n\r\nfunction getAverage(array) {\r\n    var total = 0;\r\n    var count = 0;\r\n    array.forEach(function(item, index) {\r\n        total += item;\r\n        count++;\r\n    });\r\n    return total / count;\r\n}\r\n\r\nif(root[\"currentLap\"] == null){\r\n\troot[\"currentLap\"] = $prop('DataCorePlugin.GameData.CurrentLap')\r\n}\r\n\r\nvar tyre = $prop('BrakeTemperatureFrontLeft')\r\n\r\nif(root[\"brakeByLapFL\"]==null){\r\n   root[\"brakeByLapFL\"] = []\r\n}\r\n\r\nif (!$prop('DataCorePlugin.GamePaused') && !$prop('DataCorePlugin.GameData.PitLimiterOn') && !$prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible') && tyre != 0 && $prop('Brake')>5) {\r\n\tif ($prop('DataCorePlugin.GameData.CurrentLap') - root[\"currentLap\"] <= tireLapAvg) {\r\n\t\troot[\"brakeByLapFL\"].push(tyre)\r\n\t} else {\r\n\t\troot[\"brakeByLapFL\"].push(tyre)\r\n\t\troot[\"brakeByLapFL\"].shift()\r\n\t}\r\n}\r\n\r\nif ($prop('DataCorePlugin.GameData.IsInPitLane') && $prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible')) {\r\n\troot[\"currentLap\"] = null // Reset laps\r\n\ttyre = 0 // Reset Tyre\r\n}\r\n\r\nif ($prop('InputStatus.KeyboardReaderPlugin.'+settings.tireLapAvgResetKey) ) {\r\n\troot[\"pressureByLapFL\"] = []\r\n}\r\n\r\nreturn getAverage(root[\"brakeByLapFL\"])",
+                        "Interpreter": 1
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 18.0,
+                  "FontWeight": "Bold",
+                  "Height": 20.0,
+                  "HorizontalAlignment": 0,
+                  "IsTextItem": true,
+                  "Left": 103.0,
+                  "Name": "TextItem34",
+                  "RenderingSkip": 100,
+                  "Text": "00\u00b0",
+                  "TextColor": "#FF878787",
+                  "Top": 81.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 50.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0\u00b0",
+                      "Formula": {
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\ttireLapAvg = 2\r\n\ttireLapAvgResetKey = \"A\"\r\n} else {\r\n\ttireLapAvg = settings.tireLapAvg\r\n\ttireLapAvgResetKey = settings.tireLapAvgResetKey\r\n}\r\n\r\nfunction getAverage(array) {\r\n    var total = 0;\r\n    var count = 0;\r\n    array.forEach(function(item, index) {\r\n        total += item;\r\n        count++;\r\n    });\r\n    return total / count;\r\n}\r\n\r\nif(root[\"currentLap\"] == null){\r\n\troot[\"currentLap\"] = $prop('DataCorePlugin.GameData.CurrentLap')\r\n}\r\n\r\nvar tyre = $prop('BrakeTemperatureRearLeft')\r\n\r\nif(root[\"brakeByLapRL\"]==null){\r\n   root[\"brakeByLapRL\"] = []\r\n}\r\n\r\nif (!$prop('DataCorePlugin.GamePaused') && !$prop('DataCorePlugin.GameData.PitLimiterOn') && !$prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible') && tyre != 0 && $prop('Brake')>5) {\r\n\tif ($prop('DataCorePlugin.GameData.CurrentLap') - root[\"currentLap\"] <= tireLapAvg) {\r\n\t\troot[\"brakeByLapRL\"].push(tyre)\r\n\t} else {\r\n\t\troot[\"brakeByLapRL\"].push(tyre)\r\n\t\troot[\"brakeByLapRL\"].shift()\r\n\t}\r\n}\r\n\r\nif ($prop('DataCorePlugin.GameData.IsInPitLane') && $prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible')) {\r\n\troot[\"currentLap\"] = null // Reset laps\r\n\ttyre = 0 // Reset Tyre\r\n}\r\n\r\nif ($prop('InputStatus.KeyboardReaderPlugin.'+settings.tireLapAvgResetKey) ) {\r\n\troot[\"pressureByLapFL\"] = []\r\n}\r\n\r\nreturn getAverage(root[\"brakeByLapRL\"])",
+                        "Interpreter": 1
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 18.0,
+                  "FontWeight": "Bold",
+                  "Height": 20.0,
+                  "HorizontalAlignment": 0,
+                  "IsTextItem": true,
+                  "Left": 103.0,
+                  "Name": "TextItem35",
+                  "RenderingSkip": 100,
+                  "Text": "00\u00b0",
+                  "TextColor": "#FF878787",
+                  "Top": 159.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 50.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0\u00b0",
+                      "Formula": {
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\ttireLapAvg = 2\r\n\ttireLapAvgResetKey = \"A\"\r\n} else {\r\n\ttireLapAvg = settings.tireLapAvg\r\n\ttireLapAvgResetKey = settings.tireLapAvgResetKey\r\n}\r\n\r\nfunction getAverage(array) {\r\n    var total = 0;\r\n    var count = 0;\r\n    array.forEach(function(item, index) {\r\n        total += item;\r\n        count++;\r\n    });\r\n    return total / count;\r\n}\r\n\r\nif(root[\"currentLap\"] == null){\r\n\troot[\"currentLap\"] = $prop('DataCorePlugin.GameData.CurrentLap')\r\n}\r\n\r\nvar tyre = $prop('BrakeTemperatureFrontRight')\r\n\r\nif(root[\"brakeByLapFR\"]==null){\r\n   root[\"brakeByLapFR\"] = []\r\n}\r\n\r\nif (!$prop('DataCorePlugin.GamePaused') && !$prop('DataCorePlugin.GameData.PitLimiterOn') && !$prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible') && tyre != 0 && $prop('Brake')>5) {\r\n\tif ($prop('DataCorePlugin.GameData.CurrentLap') - root[\"currentLap\"] <= tireLapAvg) {\r\n\t\troot[\"brakeByLapFR\"].push(tyre)\r\n\t} else {\r\n\t\troot[\"brakeByLapFR\"].push(tyre)\r\n\t\troot[\"brakeByLapFR\"].shift()\r\n\t}\r\n}\r\n\r\nif ($prop('DataCorePlugin.GameData.IsInPitLane') && $prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible')) {\r\n\troot[\"currentLap\"] = null // Reset laps\r\n\ttyre = 0 // Reset Tyre\r\n}\r\n\r\nif ($prop('InputStatus.KeyboardReaderPlugin.'+settings.tireLapAvgResetKey) ) {\r\n\troot[\"pressureByLapFL\"] = []\r\n}\r\n\r\nreturn getAverage(root[\"brakeByLapFR\"])",
+                        "Interpreter": 1
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 18.0,
+                  "FontWeight": "Bold",
+                  "Height": 20.0,
+                  "HorizontalAlignment": 2,
+                  "IsTextItem": true,
+                  "Left": 179.0,
+                  "Name": "TextItem36",
+                  "RenderingSkip": 100,
+                  "Text": "00\u00b0",
+                  "TextColor": "#FF878787",
+                  "Top": 81.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 50.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0\u00b0",
+                      "Formula": {
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\ttireLapAvg = 2\r\n\ttireLapAvgResetKey = \"A\"\r\n} else {\r\n\ttireLapAvg = settings.tireLapAvg\r\n\ttireLapAvgResetKey = settings.tireLapAvgResetKey\r\n}\r\n\r\nfunction getAverage(array) {\r\n    var total = 0;\r\n    var count = 0;\r\n    array.forEach(function(item, index) {\r\n        total += item;\r\n        count++;\r\n    });\r\n    return total / count;\r\n}\r\n\r\nif(root[\"currentLap\"] == null){\r\n\troot[\"currentLap\"] = $prop('DataCorePlugin.GameData.CurrentLap')\r\n}\r\n\r\nvar tyre = $prop('BrakeTemperatureRearRight')\r\n\r\nif(root[\"brakeByLapRR\"]==null){\r\n   root[\"brakeByLapRR\"] = []\r\n}\r\n\r\nif (!$prop('DataCorePlugin.GamePaused') && !$prop('DataCorePlugin.GameData.PitLimiterOn') && !$prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible') && tyre != 0 && $prop('Brake')>5) {\r\n\tif ($prop('DataCorePlugin.GameData.CurrentLap') - root[\"currentLap\"] <= tireLapAvg) {\r\n\t\troot[\"brakeByLapRR\"].push(tyre)\r\n\t} else {\r\n\t\troot[\"brakeByLapRR\"].push(tyre)\r\n\t\troot[\"brakeByLapRR\"].shift()\r\n\t}\r\n}\r\n\r\nif ($prop('DataCorePlugin.GameData.IsInPitLane') && $prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible')) {\r\n\troot[\"currentLap\"] = null // Reset laps\r\n\ttyre = 0 // Reset Tyre\r\n}\r\n\r\nif ($prop('InputStatus.KeyboardReaderPlugin.'+settings.tireLapAvgResetKey) ) {\r\n\troot[\"pressureByLapFL\"] = []\r\n}\r\n\r\nreturn getAverage(root[\"brakeByLapRR\"])",
+                        "Interpreter": 1
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 18.0,
+                  "FontWeight": "Bold",
+                  "Height": 20.0,
+                  "HorizontalAlignment": 2,
+                  "IsTextItem": true,
+                  "Left": 179.0,
+                  "Name": "TextItem37",
+                  "RenderingSkip": 100,
+                  "Text": "00\u00b0",
+                  "TextColor": "#FF878787",
+                  "Top": 159.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 50.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Childrens": [
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                      "BackgroundColor": "#FF333333",
+                      "BorderStyle": {
+                        "RadiusBottomLeft": 2,
+                        "RadiusBottomRight": 2,
+                        "RadiusTopLeft": 2,
+                        "RadiusTopRight": 2
+                      },
+                      "Height": 35.0,
+                      "IsRectangleItem": true,
+                      "Left": 67.0,
+                      "Name": "RectangleItem0",
+                      "RenderingSkip": 100,
+                      "Top": 73.0,
+                      "Visible": true,
+                      "Width": 20.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                      "BackgroundColor": "#FF333333",
+                      "BorderStyle": {
+                        "RadiusBottomLeft": 1,
+                        "RadiusBottomRight": 1,
+                        "RadiusTopLeft": 1,
+                        "RadiusTopRight": 1
+                      },
+                      "Height": 31.0,
+                      "IsRectangleItem": true,
+                      "Left": 90.0,
+                      "Name": "RectangleItem1",
+                      "RenderingSkip": 100,
+                      "Top": 75.0,
+                      "Visible": true,
+                      "Width": 7.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                      "BackgroundColor": "#FF333333",
+                      "BorderStyle": {
+                        "RadiusBottomLeft": 2,
+                        "RadiusBottomRight": 2,
+                        "RadiusTopLeft": 2,
+                        "RadiusTopRight": 2
+                      },
+                      "Height": 35.0,
+                      "IsRectangleItem": true,
+                      "Left": 244.0,
+                      "Name": "RectangleItem2",
+                      "RenderingSkip": 100,
+                      "Top": 73.0,
+                      "Visible": true,
+                      "Width": 20.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                      "BackgroundColor": "#FF333333",
+                      "BorderStyle": {
+                        "RadiusBottomLeft": 1,
+                        "RadiusBottomRight": 1,
+                        "RadiusTopLeft": 1,
+                        "RadiusTopRight": 1
+                      },
+                      "Height": 31.0,
+                      "IsRectangleItem": true,
+                      "Left": 234.0,
+                      "Name": "RectangleItem3",
+                      "RenderingSkip": 100,
+                      "Top": 75.0,
+                      "Visible": true,
+                      "Width": 7.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                      "BackgroundColor": "#FF333333",
+                      "BorderStyle": {
+                        "RadiusBottomLeft": 2,
+                        "RadiusBottomRight": 2,
+                        "RadiusTopLeft": 2,
+                        "RadiusTopRight": 2
+                      },
+                      "Height": 35.0,
+                      "IsRectangleItem": true,
+                      "Left": 67.0,
+                      "Name": "RectangleItem4",
+                      "RenderingSkip": 100,
+                      "Top": 151.5,
+                      "Visible": true,
+                      "Width": 20.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                      "BackgroundColor": "#FF333333",
+                      "BorderStyle": {
+                        "RadiusBottomLeft": 1,
+                        "RadiusBottomRight": 1,
+                        "RadiusTopLeft": 1,
+                        "RadiusTopRight": 1
+                      },
+                      "Height": 31.0,
+                      "IsRectangleItem": true,
+                      "Left": 90.0,
+                      "Name": "RectangleItem5",
+                      "RenderingSkip": 100,
+                      "Top": 153.5,
+                      "Visible": true,
+                      "Width": 7.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                      "BackgroundColor": "#FF333333",
+                      "BorderStyle": {
+                        "RadiusBottomLeft": 2,
+                        "RadiusBottomRight": 2,
+                        "RadiusTopLeft": 2,
+                        "RadiusTopRight": 2
+                      },
+                      "Height": 35.0,
+                      "IsRectangleItem": true,
+                      "Left": 244.0,
+                      "Name": "RectangleItem6",
+                      "RenderingSkip": 100,
+                      "Top": 151.5,
+                      "Visible": true,
+                      "Width": 20.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                      "BackgroundColor": "#FF333333",
+                      "BorderStyle": {
+                        "RadiusBottomLeft": 1,
+                        "RadiusBottomRight": 1,
+                        "RadiusTopLeft": 1,
+                        "RadiusTopRight": 1
+                      },
+                      "Height": 31.0,
+                      "IsRectangleItem": true,
+                      "Left": 234.0,
+                      "Name": "RectangleItem7",
+                      "RenderingSkip": 100,
+                      "Top": 153.5,
+                      "Visible": true,
+                      "Width": 7.0
+                    }
+                  ],
+                  "Group": true,
+                  "Height": 113.5,
+                  "Left": 67.0,
+                  "Name": "Layer",
+                  "Top": 73.0,
+                  "Visible": true,
+                  "Width": 197.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF7FFF00",
+                  "Bindings": {
+                    "BackgroundColor": {
+                      "EnableMiddleColor": true,
+                      "EndColor": "#FFFF0000",
+                      "EndColorValue": 120.0,
+                      "Formula": {
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\ttireLapAvg = 2\r\n} else {\r\n\ttireLapAvg = settings.tireLapAvg\r\n}\r\n\r\nfunction getAverage(array) {\r\n    var total = 0;\r\n    var count = 0;\r\n    array.forEach(function(item, index) {\r\n        total += item;\r\n        count++;\r\n    });\r\n    return total / count;\r\n}\r\n\r\nif(root[\"currentLap\"] == null){\r\n\troot[\"currentLap\"] = $prop('DataCorePlugin.GameData.CurrentLap')\r\n}\r\n\r\nvar tyre = $prop('TyreTemperatureFrontLeft')\r\n\r\nif(root[\"tempByLapFL\"]==null){\r\n   root[\"tempByLapFL\"] = []\r\n}\r\n\r\nif (!$prop('DataCorePlugin.GamePaused') && !$prop('DataCorePlugin.GameData.IsInPitLane') && !$prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible') && tyre != 0) {\r\n\tif ($prop('DataCorePlugin.GameData.CurrentLap') - root[\"currentLap\"] <= tireLapAvg) {\r\n\t\troot[\"tempByLapFL\"].push(tyre)\r\n\t} else {\r\n\t\troot[\"tempByLapFL\"].push(tyre)\r\n\t\troot[\"tempByLapFL\"].shift()\r\n\t}\r\n}\r\n\r\nif ($prop('DataCorePlugin.GameData.IsInPitLane') && $prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible')) {\r\n\troot[\"currentLap\"] = null // Reset laps\r\n\ttyre = 0 // Reset Tyre\r\n}\r\n\r\nreturn getAverage(root[\"tempByLapFL\"])",
+                        "Interpreter": 1
+                      },
+                      "MiddleColor": "#FF00FF00",
+                      "MiddleColorValue": 80.0,
+                      "Mode": 4,
+                      "StartColor": "#FF00BFFF",
+                      "StartColorValue": 40.0,
+                      "TargetPropertyName": "BackgroundColor"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 2,
+                    "RadiusBottomRight": 2,
+                    "RadiusTopLeft": 2,
+                    "RadiusTopRight": 2
+                  },
+                  "Height": 35.0,
+                  "IsRectangleItem": true,
+                  "Left": 67.0,
+                  "Name": "RectangleItem0",
+                  "RenderingSkip": 100,
+                  "Top": 73.0,
+                  "Visible": true,
+                  "Width": 20.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF7FFF00",
+                  "Bindings": {
+                    "BackgroundColor": {
+                      "EnableMiddleColor": true,
+                      "EndColor": "#FFFF0000",
+                      "EndColorValue": 1000.0,
+                      "Formula": {
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\ttireLapAvg = 2\r\n} else {\r\n\ttireLapAvg = settings.tireLapAvg\r\n}\r\n\r\nfunction getAverage(array) {\r\n    var total = 0;\r\n    var count = 0;\r\n    array.forEach(function(item, index) {\r\n        total += item;\r\n        count++;\r\n    });\r\n    return total / count;\r\n}\r\n\r\nif(root[\"currentLap\"] == null){\r\n\troot[\"currentLap\"] = $prop('DataCorePlugin.GameData.CurrentLap')\r\n}\r\n\r\nvar tyre = $prop('BrakeTemperatureFrontLeft')\r\n\r\nif(root[\"brakeByLapFL\"]==null){\r\n   root[\"brakeByLapFL\"] = []\r\n}\r\n\r\nif (!$prop('DataCorePlugin.GamePaused') && !$prop('DataCorePlugin.GameData.IsInPitLane') && !$prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible') && tyre != 0) {\r\n\tif ($prop('DataCorePlugin.GameData.CurrentLap') - root[\"currentLap\"] <= tireLapAvg) {\r\n\t\troot[\"brakeByLapFL\"].push(tyre)\r\n\t} else {\r\n\t\troot[\"brakeByLapFL\"].push(tyre)\r\n\t\troot[\"brakeByLapFL\"].shift()\r\n\t}\r\n}\r\n\r\nif ($prop('DataCorePlugin.GameData.IsInPitLane') && $prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible')) {\r\n\troot[\"currentLap\"] = null // Reset laps\r\n\ttyre = 0 // Reset Tyre\r\n}\r\n\r\nreturn getAverage(root[\"brakeByLapFL\"])",
+                        "Interpreter": 1
+                      },
+                      "MiddleColor": "#FF00FF00",
+                      "MiddleColorValue": 550.0,
+                      "Mode": 4,
+                      "StartColor": "#FF4169E1",
+                      "StartColorValue": 50.0,
+                      "TargetPropertyName": "BackgroundColor"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 1,
+                    "RadiusBottomRight": 1,
+                    "RadiusTopLeft": 1,
+                    "RadiusTopRight": 1
+                  },
+                  "Height": 31.0,
+                  "IsRectangleItem": true,
+                  "Left": 90.0,
+                  "Name": "RectangleItem1",
+                  "RenderingSkip": 100,
+                  "Top": 75.0,
+                  "Visible": true,
+                  "Width": 7.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF7FFF00",
+                  "Bindings": {
+                    "BackgroundColor": {
+                      "EnableMiddleColor": true,
+                      "EndColor": "#FFFF0000",
+                      "EndColorValue": 120.0,
+                      "Formula": {
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\ttireLapAvg = 2\r\n} else {\r\n\ttireLapAvg = settings.tireLapAvg\r\n}\r\n\r\nfunction getAverage(array) {\r\n    var total = 0;\r\n    var count = 0;\r\n    array.forEach(function(item, index) {\r\n        total += item;\r\n        count++;\r\n    });\r\n    return total / count;\r\n}\r\n\r\nif(root[\"currentLap\"] == null){\r\n\troot[\"currentLap\"] = $prop('DataCorePlugin.GameData.CurrentLap')\r\n}\r\n\r\nvar tyre = $prop('TyreTemperatureFrontRight')\r\n\r\nif(root[\"tempByLapFR\"]==null){\r\n   root[\"tempByLapFR\"] = []\r\n}\r\n\r\nif (!$prop('DataCorePlugin.GamePaused') && !$prop('DataCorePlugin.GameData.IsInPitLane') && !$prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible') && tyre != 0) {\r\n\tif ($prop('DataCorePlugin.GameData.CurrentLap') - root[\"currentLap\"] <= tireLapAvg) {\r\n\t\troot[\"tempByLapFR\"].push(tyre)\r\n\t} else {\r\n\t\troot[\"tempByLapFR\"].push(tyre)\r\n\t\troot[\"tempByLapFR\"].shift()\r\n\t}\r\n}\r\n\r\nif ($prop('DataCorePlugin.GameData.IsInPitLane') && $prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible')) {\r\n\troot[\"currentLap\"] = null // Reset laps\r\n\ttyre = 0 // Reset Tyre\r\n}\r\n\r\nreturn getAverage(root[\"tempByLapFR\"])",
+                        "Interpreter": 1
+                      },
+                      "MiddleColor": "#FF00FF00",
+                      "MiddleColorValue": 80.0,
+                      "Mode": 4,
+                      "StartColor": "#FF00BFFF",
+                      "StartColorValue": 40.0,
+                      "TargetPropertyName": "BackgroundColor"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 2,
+                    "RadiusBottomRight": 2,
+                    "RadiusTopLeft": 2,
+                    "RadiusTopRight": 2
+                  },
+                  "Height": 35.0,
+                  "IsRectangleItem": true,
+                  "Left": 244.0,
+                  "Name": "RectangleItem2",
+                  "RenderingSkip": 100,
+                  "Top": 73.0,
+                  "Visible": true,
+                  "Width": 20.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF7FFF00",
+                  "Bindings": {
+                    "BackgroundColor": {
+                      "EnableMiddleColor": true,
+                      "EndColor": "#FFFF0000",
+                      "EndColorValue": 1000.0,
+                      "Formula": {
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\ttireLapAvg = 2\r\n} else {\r\n\ttireLapAvg = settings.tireLapAvg\r\n}\r\n\r\nfunction getAverage(array) {\r\n    var total = 0;\r\n    var count = 0;\r\n    array.forEach(function(item, index) {\r\n        total += item;\r\n        count++;\r\n    });\r\n    return total / count;\r\n}\r\n\r\nif(root[\"currentLap\"] == null){\r\n\troot[\"currentLap\"] = $prop('DataCorePlugin.GameData.CurrentLap')\r\n}\r\n\r\nvar tyre = $prop('BrakeTemperatureFrontRight')\r\n\r\nif(root[\"brakeByLapFR\"]==null){\r\n   root[\"brakeByLapFR\"] = []\r\n}\r\n\r\nif (!$prop('DataCorePlugin.GamePaused') && !$prop('DataCorePlugin.GameData.IsInPitLane') && !$prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible') && tyre != 0) {\r\n\tif ($prop('DataCorePlugin.GameData.CurrentLap') - root[\"currentLap\"] <= tireLapAvg) {\r\n\t\troot[\"brakeByLapFR\"].push(tyre)\r\n\t} else {\r\n\t\troot[\"brakeByLapFR\"].push(tyre)\r\n\t\troot[\"brakeByLapFR\"].shift()\r\n\t}\r\n}\r\n\r\nif ($prop('DataCorePlugin.GameData.IsInPitLane') && $prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible')) {\r\n\troot[\"currentLap\"] = null // Reset laps\r\n\ttyre = 0 // Reset Tyre\r\n}\r\n\r\nreturn getAverage(root[\"brakeByLapFR\"])",
+                        "Interpreter": 1
+                      },
+                      "MiddleColor": "#FF00FF00",
+                      "MiddleColorValue": 550.0,
+                      "Mode": 4,
+                      "StartColor": "#FF4169E1",
+                      "StartColorValue": 50.0,
+                      "TargetPropertyName": "BackgroundColor"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 1,
+                    "RadiusBottomRight": 1,
+                    "RadiusTopLeft": 1,
+                    "RadiusTopRight": 1
+                  },
+                  "Height": 31.0,
+                  "IsRectangleItem": true,
+                  "Left": 234.0,
+                  "Name": "RectangleItem3",
+                  "RenderingSkip": 100,
+                  "Top": 75.0,
+                  "Visible": true,
+                  "Width": 7.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF7FFF00",
+                  "Bindings": {
+                    "BackgroundColor": {
+                      "EnableMiddleColor": true,
+                      "EndColor": "#FFFF0000",
+                      "EndColorValue": 120.0,
+                      "Formula": {
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\ttireLapAvg = 2\r\n} else {\r\n\ttireLapAvg = settings.tireLapAvg\r\n}\r\n\r\nfunction getAverage(array) {\r\n    var total = 0;\r\n    var count = 0;\r\n    array.forEach(function(item, index) {\r\n        total += item;\r\n        count++;\r\n    });\r\n    return total / count;\r\n}\r\n\r\nif(root[\"currentLap\"] == null){\r\n\troot[\"currentLap\"] = $prop('DataCorePlugin.GameData.CurrentLap')\r\n}\r\n\r\nvar tyre = $prop('TyreTemperatureRearLeft')\r\n\r\nif(root[\"tempByLapRL\"]==null){\r\n   root[\"tempByLapRL\"] = []\r\n}\r\n\r\nif (!$prop('DataCorePlugin.GamePaused') && !$prop('DataCorePlugin.GameData.IsInPitLane') && !$prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible') && tyre != 0) {\r\n\tif ($prop('DataCorePlugin.GameData.CurrentLap') - root[\"currentLap\"] <= tireLapAvg) {\r\n\t\troot[\"tempByLapRL\"].push(tyre)\r\n\t} else {\r\n\t\troot[\"tempByLapRL\"].push(tyre)\r\n\t\troot[\"tempByLapRL\"].shift()\r\n\t}\r\n}\r\n\r\nif ($prop('DataCorePlugin.GameData.IsInPitLane') && $prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible')) {\r\n\troot[\"currentLap\"] = null // Reset laps\r\n\ttyre = 0 // Reset Tyre\r\n}\r\n\r\nreturn getAverage(root[\"tempByLapRL\"])",
+                        "Interpreter": 1
+                      },
+                      "MiddleColor": "#FF00FF00",
+                      "MiddleColorValue": 80.0,
+                      "Mode": 4,
+                      "StartColor": "#FF00BFFF",
+                      "StartColorValue": 40.0,
+                      "TargetPropertyName": "BackgroundColor"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 2,
+                    "RadiusBottomRight": 2,
+                    "RadiusTopLeft": 2,
+                    "RadiusTopRight": 2
+                  },
+                  "Height": 35.0,
+                  "IsRectangleItem": true,
+                  "Left": 67.0,
+                  "Name": "RectangleItem4",
+                  "RenderingSkip": 100,
+                  "Top": 151.5,
+                  "Visible": true,
+                  "Width": 20.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF7FFF00",
+                  "Bindings": {
+                    "BackgroundColor": {
+                      "EnableMiddleColor": true,
+                      "EndColor": "#FFFF0000",
+                      "EndColorValue": 1000.0,
+                      "Formula": {
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\ttireLapAvg = 2\r\n} else {\r\n\ttireLapAvg = settings.tireLapAvg\r\n}\r\n\r\nfunction getAverage(array) {\r\n    var total = 0;\r\n    var count = 0;\r\n    array.forEach(function(item, index) {\r\n        total += item;\r\n        count++;\r\n    });\r\n    return total / count;\r\n}\r\n\r\nif(root[\"currentLap\"] == null){\r\n\troot[\"currentLap\"] = $prop('DataCorePlugin.GameData.CurrentLap')\r\n}\r\n\r\nvar tyre = $prop('BrakeTemperatureRearLeft')\r\n\r\nif(root[\"brakeByLapRL\"]==null){\r\n   root[\"brakeByLapRL\"] = []\r\n}\r\n\r\nif (!$prop('DataCorePlugin.GamePaused') && !$prop('DataCorePlugin.GameData.IsInPitLane') && !$prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible') && tyre != 0) {\r\n\tif ($prop('DataCorePlugin.GameData.CurrentLap') - root[\"currentLap\"] <= tireLapAvg) {\r\n\t\troot[\"brakeByLapRL\"].push(tyre)\r\n\t} else {\r\n\t\troot[\"brakeByLapRL\"].push(tyre)\r\n\t\troot[\"brakeByLapRL\"].shift()\r\n\t}\r\n}\r\n\r\nif ($prop('DataCorePlugin.GameData.IsInPitLane') && $prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible')) {\r\n\troot[\"currentLap\"] = null // Reset laps\r\n\ttyre = 0 // Reset Tyre\r\n}\r\n\r\nreturn getAverage(root[\"brakeByLapRL\"])",
+                        "Interpreter": 1
+                      },
+                      "MiddleColor": "#FF00FF00",
+                      "MiddleColorValue": 550.0,
+                      "Mode": 4,
+                      "StartColor": "#FF4169E1",
+                      "StartColorValue": 50.0,
+                      "TargetPropertyName": "BackgroundColor"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 1,
+                    "RadiusBottomRight": 1,
+                    "RadiusTopLeft": 1,
+                    "RadiusTopRight": 1
+                  },
+                  "Height": 31.0,
+                  "IsRectangleItem": true,
+                  "Left": 90.0,
+                  "Name": "RectangleItem5",
+                  "RenderingSkip": 100,
+                  "Top": 153.5,
+                  "Visible": true,
+                  "Width": 7.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF7FFF00",
+                  "Bindings": {
+                    "BackgroundColor": {
+                      "EnableMiddleColor": true,
+                      "EndColor": "#FFFF0000",
+                      "EndColorValue": 120.0,
+                      "Formula": {
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\ttireLapAvg = 2\r\n} else {\r\n\ttireLapAvg = settings.tireLapAvg\r\n}\r\n\r\nfunction getAverage(array) {\r\n    var total = 0;\r\n    var count = 0;\r\n    array.forEach(function(item, index) {\r\n        total += item;\r\n        count++;\r\n    });\r\n    return total / count;\r\n}\r\n\r\nif(root[\"currentLap\"] == null){\r\n\troot[\"currentLap\"] = $prop('DataCorePlugin.GameData.CurrentLap')\r\n}\r\n\r\nvar tyre = $prop('TyreTemperatureRearRight')\r\n\r\nif(root[\"tempByLapRR\"]==null){\r\n   root[\"tempByLapRR\"] = []\r\n}\r\n\r\nif (!$prop('DataCorePlugin.GamePaused') && !$prop('DataCorePlugin.GameData.IsInPitLane') && !$prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible') && tyre != 0) {\r\n\tif ($prop('DataCorePlugin.GameData.CurrentLap') - root[\"currentLap\"] <= tireLapAvg) {\r\n\t\troot[\"tempByLapRR\"].push(tyre)\r\n\t} else {\r\n\t\troot[\"tempByLapRR\"].push(tyre)\r\n\t\troot[\"tempByLapRR\"].shift()\r\n\t}\r\n}\r\n\r\nif ($prop('DataCorePlugin.GameData.IsInPitLane') && $prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible')) {\r\n\troot[\"currentLap\"] = null // Reset laps\r\n\ttyre = 0 // Reset Tyre\r\n}\r\n\r\nreturn getAverage(root[\"tempByLapRR\"])",
+                        "Interpreter": 1
+                      },
+                      "MiddleColor": "#FF00FF00",
+                      "MiddleColorValue": 80.0,
+                      "Mode": 4,
+                      "StartColor": "#FF00BFFF",
+                      "StartColorValue": 40.0,
+                      "TargetPropertyName": "BackgroundColor"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 2,
+                    "RadiusBottomRight": 2,
+                    "RadiusTopLeft": 2,
+                    "RadiusTopRight": 2
+                  },
+                  "Height": 35.0,
+                  "IsRectangleItem": true,
+                  "Left": 244.0,
+                  "Name": "RectangleItem6",
+                  "RenderingSkip": 100,
+                  "Top": 151.5,
+                  "Visible": true,
+                  "Width": 20.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF7FFF00",
+                  "Bindings": {
+                    "BackgroundColor": {
+                      "EnableMiddleColor": true,
+                      "EndColor": "#FFFF0000",
+                      "EndColorValue": 1000.0,
+                      "Formula": {
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\ttireLapAvg = 2\r\n} else {\r\n\ttireLapAvg = settings.tireLapAvg\r\n}\r\n\r\nfunction getAverage(array) {\r\n    var total = 0;\r\n    var count = 0;\r\n    array.forEach(function(item, index) {\r\n        total += item;\r\n        count++;\r\n    });\r\n    return total / count;\r\n}\r\n\r\nif(root[\"currentLap\"] == null){\r\n\troot[\"currentLap\"] = $prop('DataCorePlugin.GameData.CurrentLap')\r\n}\r\n\r\nvar tyre = $prop('BrakeTemperatureRearRight')\r\n\r\nif(root[\"brakeByLapRR\"]==null){\r\n   root[\"brakeByLapRR\"] = []\r\n}\r\n\r\nif (!$prop('DataCorePlugin.GamePaused') && !$prop('DataCorePlugin.GameData.IsInPitLane') && !$prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible') && tyre != 0) {\r\n\tif ($prop('DataCorePlugin.GameData.CurrentLap') - root[\"currentLap\"] <= tireLapAvg) {\r\n\t\troot[\"brakeByLapRR\"].push(tyre)\r\n\t} else {\r\n\t\troot[\"brakeByLapRR\"].push(tyre)\r\n\t\troot[\"brakeByLapRR\"].shift()\r\n\t}\r\n}\r\n\r\nif ($prop('DataCorePlugin.GameData.IsInPitLane') && $prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible')) {\r\n\troot[\"currentLap\"] = null // Reset laps\r\n\ttyre = 0 // Reset Tyre\r\n}\r\n\r\nreturn getAverage(root[\"brakeByLapRR\"])",
+                        "Interpreter": 1
+                      },
+                      "MiddleColor": "#FF00FF00",
+                      "MiddleColorValue": 550.0,
+                      "Mode": 4,
+                      "StartColor": "#FF4169E1",
+                      "StartColorValue": 50.0,
+                      "TargetPropertyName": "BackgroundColor"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 1,
+                    "RadiusBottomRight": 1,
+                    "RadiusTopLeft": 1,
+                    "RadiusTopRight": 1
+                  },
+                  "Height": 31.0,
+                  "IsRectangleItem": true,
+                  "Left": 234.0,
+                  "Name": "RectangleItem7",
+                  "RenderingSkip": 100,
+                  "Top": 153.5,
+                  "Visible": true,
+                  "Width": 7.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF353535",
+                  "Bindings": {
+                    "Text": {
+                      "Formula": {
+                        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\ttireLapAvg = 2\r\n\ttireLapAvgResetKey = \"A\"\r\n} else {\r\n\ttireLapAvg = settings.tireLapAvg\r\n\ttireLapAvgResetKey = settings.tireLapAvgResetKey\r\n}\r\n\r\nif ($prop('InputStatus.KeyboardReaderPlugin.'+settings.tireLapAvgResetKey)) {\r\n\treturn 'CLEARING'\r\n}\r\n\r\nreturn tireLapAvg + ' LAP AVG'",
+                        "Interpreter": 1
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 15,
+                    "RadiusBottomRight": 15,
+                    "RadiusTopLeft": 15,
+                    "RadiusTopRight": 15
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 18.0,
+                  "FontWeight": "Bold",
+                  "Height": 30.0,
+                  "HorizontalAlignment": 1,
+                  "IsTextItem": true,
+                  "Left": 102.0,
+                  "Name": "TextItem5",
+                  "Text": "2 LAP AVG",
+                  "TextColor": "#FFFFFFFF",
+                  "Top": 115.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 120.0
+                }
+              ],
+              "Group": true,
+              "Height": 234.0,
+              "Left": -1.0,
+              "Name": "Layer",
+              "Top": 12.5,
+              "Visible": true,
+              "Width": 326.0
+            }
+          ],
+          "Group": true,
+          "Height": 245.0,
+          "Left": -1.0,
+          "Name": "Lap AVG",
+          "Top": 2.0,
+          "Visible": true,
+          "Width": 326.0
+        }
+      ],
+      "Name": "Tyre/Wheel AVG",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": ""
+      },
+      "PitScreen": false,
+      "ScreenEnabledExpression": {
+        "Expression": ""
+      },
+      "ScreenId": "be80b42b-483d-4420-8a1d-d4b061e42471"
+    },
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#FF000000",
+      "IdleScreen": false,
+      "InGameScreen": true,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": false,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF000000",
+              "BorderStyle": {
+                "RadiusBottomLeft": 8,
+                "RadiusBottomRight": 8,
+                "RadiusTopLeft": 8,
+                "RadiusTopRight": 8
+              },
+              "Height": 16.0,
+              "IsRectangleItem": true,
+              "Left": 103.0,
+              "Name": "RectangleItem2",
+              "Top": 252.0,
+              "Visible": true,
+              "Width": 118.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.EllipseItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "EllipseColor": "#FFFFFFFF",
+              "EllipseThickness": 0.0,
+              "FillColor": "#5AFFFFFF",
+              "Height": 8.0,
+              "Left": 113.0,
+              "Name": "Page 1",
+              "Top": 255.0,
+              "Visible": true,
+              "Width": 8.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.EllipseItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "EllipseColor": "#41FFFFFF",
+              "EllipseThickness": 0.0,
+              "FillColor": "#5AFFFFFF",
+              "Height": 8.0,
+              "Left": 131.0,
+              "Name": "Page 2",
+              "Top": 255.0,
+              "Visible": true,
+              "Width": 8.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.EllipseItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "EllipseColor": "#FFFFFFFF",
+              "EllipseThickness": 0.0,
+              "FillColor": "#5AFFFFFF",
+              "Height": 8.0,
+              "Left": 149.0,
+              "Name": "Page 3",
+              "Top": 255.0,
+              "Visible": true,
+              "Width": 8.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.EllipseItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "EllipseColor": "#FFFFFFFF",
+              "EllipseThickness": 0.0,
+              "FillColor": "#5AFFFFFF",
+              "Height": 8.0,
+              "Left": 167.0,
+              "Name": "Page 4",
+              "Top": 255.0,
+              "Visible": true,
+              "Width": 8.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.EllipseItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "EllipseColor": "#FFFFFFFF",
+              "EllipseThickness": 0.0,
+              "FillColor": "#5AFFFFFF",
+              "Height": 8.0,
+              "Left": 185.0,
+              "Name": "Page 5",
+              "Top": 255.0,
+              "Visible": true,
+              "Width": 8.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.EllipseItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "EllipseColor": "#FFFFFFFF",
+              "EllipseThickness": 0.0,
+              "FillColor": "#FFFFFFFF",
+              "Height": 12.0,
+              "Left": 202.0,
               "Name": "Page 5",
               "Top": 253.0,
               "Visible": true,
@@ -5440,11 +6725,11 @@
           ],
           "Group": true,
           "Height": 16.0,
-          "Left": 113.0,
+          "Left": 103.0,
           "Name": "Paging",
           "Top": 252.0,
           "Visible": true,
-          "Width": 98.0
+          "Width": 118.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
