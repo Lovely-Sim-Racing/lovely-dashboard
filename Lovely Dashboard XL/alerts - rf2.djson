@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "d66eb4b7-b8db-43c3-a81d-20b1146f5897",
+  "Id": "1eec8f42-b332-4c28-9cc5-e7382a0203f5",
   "Images": [
     {
       "Extension": ".png",
@@ -465,7 +465,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tlapReview = 1\r\n\tlapReviewDelay = 5000\r\n} else {\r\n\tlapReview = settings.lapReview\r\n\tlapReviewDelay = settings.lapReviewDelay\r\n}\r\n\r\nif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime')) < lapReviewDelay && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime')) != 0) {\r\n\r\n\tif ( lapReview == 2) {\r\n\t\t// Always On\r\n\t\treturn 1\r\n\t} else if (lapReview == 1) {\r\n\t\t// Quali Only\r\n\t\tif ( \r\n\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Qualify' || \r\n\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice' \r\n\t\t) {\r\n\t\t\treturn 1\r\n\t\t} else {\r\n\t\t\treturn 0\r\n\t\t}\r\n\t} else {\r\n\t\t// Always Off\r\n\t\treturn 0\r\n\t}\r\n\r\n} else {\r\n\r\n\treturn 0\r\n\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tlapReview = 1\r\n\tlapReviewDelay = 5000\r\n} else {\r\n\tlapReview = settings.lapReview\r\n\tlapReviewDelay = settings.lapReviewDelay\r\n}\r\n\r\nif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 < lapReviewDelay && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 != 0) {\r\n\r\n\tif ( lapReview == 2) {\r\n\t\t// Always On\r\n\t\treturn 1\r\n\t} else if (lapReview == 1) {\r\n\t\t// Quali Only\r\n\t\tif ( \r\n\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Qualify' || \r\n\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice' \r\n\t\t) {\r\n\t\t\treturn 1\r\n\t\t} else {\r\n\t\t\treturn 0\r\n\t\t}\r\n\t} else {\r\n\t\t// Always Off\r\n\t\treturn 0\r\n\t}\r\n\r\n} else {\r\n\r\n\treturn 0\r\n\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,

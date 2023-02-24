@@ -12,7 +12,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "a3fee093-2703-4784-a17d-7892ff51021e",
+  "Id": "964f148c-3245-440f-b9a6-b8bfeca4d0b5",
   "Images": [
     {
       "Extension": ".png",
@@ -495,7 +495,7 @@
           "IsTextItem": true,
           "Left": 305.0,
           "Name": "TextItem0",
-          "Text": "Lovely Dashboard v1.6.5",
+          "Text": "Lovely Dashboard v1.6.6",
           "TextColor": "#FFFFFFFF",
           "Top": 345.0,
           "VerticalAlignment": 1,
@@ -516,7 +516,7 @@
             },
             "Visible": {
               "Formula": {
-                "Expression": "var currentVer = '1.6.5'\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
+                "Expression": "var currentVer = '1.6.6'\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
                 "Interpreter": 1
               },
               "Mode": 2,
