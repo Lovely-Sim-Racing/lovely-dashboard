@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "45fdffe3-1128-4ca1-b2a0-40d7e08c0d6e",
+  "Id": "e7188a14-add6-43ed-a81f-78910a25a367",
   "Images": [
     {
       "Extension": ".png",
@@ -2623,15 +2623,6 @@
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
           "BackgroundColor": "#00FFFFFF",
-          "Bindings": {
-            "Visible": {
-              "Formula": {
-                "Expression": "if([GameRawData.Graphics.TyreCompound]!='wet_compound', '1', '0')"
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
-            }
-          },
           "Childrens": [
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
