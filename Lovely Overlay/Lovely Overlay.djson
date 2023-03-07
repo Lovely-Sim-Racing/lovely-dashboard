@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "f23c6f9f-d7fc-4553-9c63-e39dc379b082",
+  "Id": "89f3f1f7-9a9f-4931-baae-a7b3f06decc5",
   "Images": [
     {
       "Extension": ".png",
@@ -399,7 +399,7 @@
           "IsTextItem": true,
           "Left": 370.0,
           "Name": "TextItem0",
-          "Text": "Lovely Dashboard v1.6.7",
+          "Text": "Lovely Overlay v1.7.0",
           "TextColor": "#FFFFFFFF",
           "Top": 395.0,
           "VerticalAlignment": 1,
@@ -436,7 +436,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json');\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.yourNumber.trim() == \"\" || settings.yourName.trim() == \"\" ) {\r\n\treturn 0\r\n} else {\r\n\treturn 1\r\n}",
+                "Expression": "var currentVer = '1.7.0'\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\n//return latestVer\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -721,7 +721,7 @@
               "Bindings": {
                 "Visible": {
                   "Formula": {
-                    "Expression": "var estTotalLaps; // Estimated laps left for the race\r\nvar fuelRequired; // Fuel requried for the entire race\r\nvar reFuel; // Re Fuel amount, if required\r\nvar timeAgainst; // Best or Last lap\r\nvar carMaxFuel; // Max Fuel Capacity\r\n\r\nif ( timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) == 0 ) {\r\n\ttimeAgainst = $prop('DataCorePlugin.GameRawData.Graphics.iLastTime');\r\n} else {\r\n\ttimeAgainst = $prop('DataCorePlugin.GameRawData.Graphics.iBestTime');\r\n}\r\n\r\ncarMaxFuel = $prop('DataCorePlugin.GameData.MaxFuel');\r\n\r\nestTotalLaps = $prop('DataCorePlugin.GameRawData.Graphics.SessionTimeLeft') / timeAgainst;\r\n\r\nfuelRequired = estTotalLaps * $prop('DataCorePlugin.GameRawData.Graphics.FuelXLap');\r\n\r\nreFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel');\r\n\r\nif (reFuel > 0) {\r\n\treturn 1\r\n} else {\r\n\treturn 0\r\n}",
+                    "Expression": "var estTotalLaps; // Estimated laps left for the race\r\nvar fuelRequired; // Fuel requried for the entire race\r\nvar reFuel; // Re Fuel amount, if required\r\nvar timeAgainst; // Best or Last lap\r\nvar carMaxFuel; // Max Fuel Capacity\r\n\r\n\r\nif ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\tif ( timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) == 0 ) {\r\n\t\ttimeAgainst = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime'));\r\n\t} else {\r\n\t\ttimeAgainst = timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime'));\r\n\t}\r\n\t\r\n\tcarMaxFuel = $prop('DataCorePlugin.GameData.MaxFuel');\r\n\t\r\n\testTotalLaps = $prop('GameRawData.PacketSessionData.m_sessionTimeLeft') / timeAgainst;\r\n\t\r\n\tfuelRequired = estTotalLaps * ($prop('GameRawData.PlayerCarSetup.m_fuelLoad')-$prop('GameRawData.PlayerCarStatusData.m_fuelInTank'))/$prop('CurrentLap');\r\n\t\r\n\treFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel');\r\n\t\r\n} else {\r\n\r\n\tif ( timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) == 0 ) {\r\n\t\ttimeAgainst = $prop('DataCorePlugin.GameRawData.Graphics.iLastTime');\r\n\t} else {\r\n\t\ttimeAgainst = $prop('DataCorePlugin.GameRawData.Graphics.iBestTime');\r\n\t}\r\n\t\r\n\tcarMaxFuel = $prop('DataCorePlugin.GameData.MaxFuel');\r\n\t\r\n\testTotalLaps = $prop('DataCorePlugin.GameRawData.Graphics.SessionTimeLeft') / timeAgainst;\r\n\t\r\n\tfuelRequired = estTotalLaps * $prop('DataCorePlugin.GameRawData.Graphics.FuelXLap');\r\n\t\r\n\treFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel');\r\n}\r\n\r\nif (reFuel > 0) {\r\n\treturn 1\r\n} else {\r\n\treturn 0\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -754,7 +754,7 @@
                     "Text": {
                       "FormatString": "0.0",
                       "Formula": {
-                        "Expression": "var estTotalLaps; // Estimated laps left for the race\r\nvar fuelRequired; // Fuel requried for the entire race\r\nvar reFuel; // Re Fuel amount, if required\r\nvar timeAgainst; // Best or Last lap\r\nvar carMaxFuel; // Max Fuel Capacity\r\n\r\nif ( timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) == 0 ) {\r\n\ttimeAgainst = $prop('DataCorePlugin.GameRawData.Graphics.iLastTime');\r\n} else {\r\n\ttimeAgainst = $prop('DataCorePlugin.GameRawData.Graphics.iBestTime');\r\n}\r\n\r\ncarMaxFuel = $prop('DataCorePlugin.GameData.MaxFuel');\r\n\r\nestTotalLaps = $prop('DataCorePlugin.GameRawData.Graphics.SessionTimeLeft') / timeAgainst;\r\n\r\nfuelRequired = estTotalLaps * $prop('DataCorePlugin.GameRawData.Graphics.FuelXLap');\r\n\r\nreFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel');\r\n\r\nif (reFuel > 0) {\r\n\tif (reFuel >= carMaxFuel) {\r\n\t\treturn carMaxFuel\r\n\t} else {\r\n\t\treturn Math.abs(reFuel)\r\n\t}\r\n} else {\r\n\treturn 0\r\n}",
+                        "Expression": "var estTotalLaps; // Estimated laps left for the race\r\nvar fuelRequired; // Fuel requried for the entire race\r\nvar reFuel; // Re Fuel amount, if required\r\nvar timeAgainst; // Best or Last lap\r\nvar carMaxFuel; // Max Fuel Capacity\r\n\r\n\r\nif ( timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) == 0 && timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) == 0 ) {\r\n\treturn '-'\r\n}\r\n\r\nif ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\tif ( timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) == 0 ) {\r\n\t\ttimeAgainst = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime'));\r\n\t} else {\r\n\t\ttimeAgainst = timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime'));\r\n\t}\r\n\t\r\n\tcarMaxFuel = $prop('DataCorePlugin.GameData.MaxFuel');\r\n\t\r\n\testTotalLaps = $prop('GameRawData.PacketSessionData.m_sessionTimeLeft') / timeAgainst;\r\n\t\r\n\tfuelRequired = estTotalLaps * ($prop('GameRawData.PlayerCarSetup.m_fuelLoad')-$prop('GameRawData.PlayerCarStatusData.m_fuelInTank'))/$prop('CurrentLap');\r\n\t\r\n\treFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel');\r\n\t\r\n} else {\r\n\tif ( timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) == 0 ) {\r\n\t\ttimeAgainst = $prop('DataCorePlugin.GameRawData.Graphics.iLastTime');\r\n\t} else {\r\n\t\ttimeAgainst = $prop('DataCorePlugin.GameRawData.Graphics.iBestTime');\r\n\t}\r\n\t\r\n\tcarMaxFuel = $prop('DataCorePlugin.GameData.MaxFuel');\r\n\t\r\n\testTotalLaps = $prop('DataCorePlugin.GameRawData.Graphics.SessionTimeLeft') / timeAgainst;\r\n\t\r\n\tfuelRequired = estTotalLaps * $prop('DataCorePlugin.GameRawData.Graphics.FuelXLap');\r\n\t\r\n\treFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel');\r\n}\r\n\r\nif (reFuel > 0) {\r\n\tif (reFuel >= carMaxFuel) {\r\n\t\treturn carMaxFuel\r\n\t} else {\r\n\t\treturn Math.abs(reFuel)\r\n\t}\r\n} else {\r\n\treturn 0\r\n}\r\n",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -791,7 +791,7 @@
               "Bindings": {
                 "Visible": {
                   "Formula": {
-                    "Expression": "var estTotalLaps; // Estimated laps left for the race\r\nvar fuelRequired; // Fuel requried for the entire race\r\nvar reFuel; // Re Fuel amount, if required\r\nvar timeAgainst; // Best or Last lap\r\n\r\nif ( timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) == 0 ) {\r\n\ttimeAgainst = $prop('DataCorePlugin.GameRawData.Graphics.iLastTime');\r\n} else {\r\n\ttimeAgainst = $prop('DataCorePlugin.GameRawData.Graphics.iBestTime');\r\n}\r\n\r\nestTotalLaps = $prop('DataCorePlugin.GameRawData.Graphics.SessionTimeLeft') / timeAgainst;\r\n\r\nfuelRequired = estTotalLaps * $prop('DataCorePlugin.GameRawData.Graphics.FuelXLap');\r\n\r\nreFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel');\r\n\r\nif (reFuel < 0) {\r\n\treturn 1\r\n} else {\r\n\treturn 0\r\n}",
+                    "Expression": "var estTotalLaps; // Estimated laps left for the race\r\nvar fuelRequired; // Fuel requried for the entire race\r\nvar reFuel; // Re Fuel amount, if required\r\nvar timeAgainst; // Best or Last lap\r\n\r\nif ( timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) == 0 && timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) == 0 ) {\r\n\treturn 0\r\n}\r\n\r\nif($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\tif ( timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) == 0 ) {\r\n\t\ttimeAgainst = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime'));\r\n\t} else {\r\n\t\ttimeAgainst = timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime'));\r\n\t}\r\n\t\r\n\testTotalLaps = $prop('GameRawData.PacketSessionData.m_sessionTimeLeft') / timeAgainst;\r\n\t\r\n\tfuelRequired = estTotalLaps * ($prop('GameRawData.PlayerCarSetup.m_fuelLoad')-$prop('GameRawData.PlayerCarStatusData.m_fuelInTank'))/$prop('CurrentLap');\r\n\t\r\n\treFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel');\r\n} else {\r\n\tif ( timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) == 0 ) {\r\n\t\ttimeAgainst = $prop('DataCorePlugin.GameRawData.Graphics.iLastTime');\r\n\t} else {\r\n\t\ttimeAgainst = $prop('DataCorePlugin.GameRawData.Graphics.iBestTime');\r\n\t}\r\n\t\r\n\testTotalLaps = $prop('DataCorePlugin.GameRawData.Graphics.SessionTimeLeft') / timeAgainst;\r\n\t\r\n\tfuelRequired = estTotalLaps * $prop('DataCorePlugin.GameRawData.Graphics.FuelXLap');\r\n\t\r\n\treFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel');\r\n}\r\n\r\nif (reFuel < 0) {\r\n\treturn 1\r\n} else {\r\n\treturn 0\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -824,7 +824,7 @@
                     "Text": {
                       "FormatString": "0.0",
                       "Formula": {
-                        "Expression": "var estTotalLaps; // Estimated laps left for the race\r\nvar fuelRequired; // Fuel requried for the entire race\r\nvar reFuel; // Re Fuel amount, if required\r\nvar timeAgainst; // Best or Last lap\r\n\r\nif ( timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) == 0 ) {\r\n\ttimeAgainst = $prop('DataCorePlugin.GameRawData.Graphics.iLastTime');\r\n} else {\r\n\ttimeAgainst = $prop('DataCorePlugin.GameRawData.Graphics.iBestTime');\r\n}\r\n\r\nestTotalLaps = $prop('DataCorePlugin.GameRawData.Graphics.SessionTimeLeft') / timeAgainst;\r\n\r\nfuelRequired = estTotalLaps * $prop('DataCorePlugin.GameRawData.Graphics.FuelXLap');\r\n\r\nreFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel');\r\n\r\nif (reFuel < 0) {\r\n\treturn Math.abs(reFuel)\r\n} else {\r\n\treturn 0\r\n}",
+                        "Expression": "var estTotalLaps; // Estimated laps left for the race\r\nvar fuelRequired; // Fuel requried for the entire race\r\nvar reFuel; // Re Fuel amount, if required\r\nvar timeAgainst; // Best or Last lap\r\n\r\nif ( timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) == 0 && timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) == 0 ) {\r\n\treturn '-'\r\n}\r\n\r\nif($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\tif ( timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) == 0 ) {\r\n\t\ttimeAgainst = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime'));\r\n\t} else {\r\n\t\ttimeAgainst = timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime'));\r\n\t}\r\n\t\r\n\testTotalLaps = $prop('GameRawData.PacketSessionData.m_sessionTimeLeft') / timeAgainst;\r\n\t\r\n\tfuelRequired = estTotalLaps * ($prop('GameRawData.PlayerCarSetup.m_fuelLoad')-$prop('GameRawData.PlayerCarStatusData.m_fuelInTank'))/$prop('CurrentLap');\r\n\t\r\n\treFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel');\r\n} else {\r\n\tif ( timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) == 0 ) {\r\n\t\ttimeAgainst = $prop('DataCorePlugin.GameRawData.Graphics.iLastTime');\r\n\t} else {\r\n\t\ttimeAgainst = $prop('DataCorePlugin.GameRawData.Graphics.iBestTime');\r\n\t}\r\n\t\r\n\testTotalLaps = $prop('DataCorePlugin.GameRawData.Graphics.SessionTimeLeft') / timeAgainst;\r\n\t\r\n\tfuelRequired = estTotalLaps * $prop('DataCorePlugin.GameRawData.Graphics.FuelXLap');\r\n\t\r\n\treFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel');\r\n}\r\n\r\nif (reFuel < 0) {\r\n\treturn Math.abs(reFuel)\r\n} else {\r\n\treturn 0\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -887,6 +887,31 @@
           "PreviousScreenCommand": 0,
           "Top": 382.0,
           "Visible": true,
+          "Width": 850.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
+          "AutoSize": true,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "return $prop('DataCorePlugin.CurrentGame').startsWith('F120')",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "FileName": "Vehicle Settings - F1.djson",
+          "Height": 97.0,
+          "IsFreezed": true,
+          "Left": 1.0,
+          "Name": "Vehicle Settings F1",
+          "NextScreenCommand": 0,
+          "PreviousScreenCommand": 0,
+          "Top": 382.0,
+          "Visible": false,
           "Width": 850.0
         },
         {
@@ -996,6 +1021,31 @@
           "Bindings": {
             "Visible": {
               "Formula": {
+                "Expression": "return $prop('DataCorePlugin.CurrentGame').startsWith('F120')",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "FileName": "Central - F1.djson",
+          "Height": 330.0,
+          "IsFreezed": true,
+          "Left": 840.0,
+          "Name": "Central F1",
+          "NextScreenCommand": 5,
+          "PreviousScreenCommand": 0,
+          "Top": 0.0,
+          "Visible": false,
+          "Width": 160.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
+          "AutoSize": true,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
                 "Expression": "if ([DataCorePlugin.CurrentGame]=='IRacing', 1,0)"
               },
               "Mode": 2,
@@ -1087,6 +1137,31 @@
           "PreviousScreenCommand": 0,
           "Top": 310.0,
           "Visible": true,
+          "Width": 160.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
+          "AutoSize": true,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "return $prop('DataCorePlugin.CurrentGame').startsWith('F120')",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "FileName": "Environment - F1.djson",
+          "Height": 24.0,
+          "IsFreezed": true,
+          "Left": 840.0,
+          "Name": "Environment F1",
+          "NextScreenCommand": 0,
+          "PreviousScreenCommand": 0,
+          "Top": 344.0,
+          "Visible": false,
           "Width": 160.0
         },
         {
@@ -1196,6 +1271,31 @@
           "Bindings": {
             "Visible": {
               "Formula": {
+                "Expression": "return $prop('DataCorePlugin.CurrentGame').startsWith('F120')",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "FileName": "Multi Function Module Right - F1.djson",
+          "Height": 250.0,
+          "IsFreezed": true,
+          "Left": -15.0,
+          "Name": "Right MFM F1",
+          "NextScreenCommand": 2,
+          "PreviousScreenCommand": 1,
+          "Top": 100.0,
+          "Visible": false,
+          "Width": 325.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
+          "AutoSize": false,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
                 "Expression": "if ([DataCorePlugin.CurrentGame]=='IRacing', 1, 0)"
               },
               "Mode": 2,
@@ -1287,6 +1387,31 @@
           "PreviousScreenCommand": 0,
           "Top": 10.0,
           "Visible": true,
+          "Width": 280.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
+          "AutoSize": true,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "return $prop('DataCorePlugin.CurrentGame').startsWith('F120')",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "FileName": "Session - F1.djson",
+          "Height": 85.0,
+          "IsFreezed": true,
+          "Left": 10.0,
+          "Name": "Session F1",
+          "NextScreenCommand": 0,
+          "PreviousScreenCommand": 0,
+          "Top": 10.0,
+          "Visible": false,
           "Width": 280.0
         },
         {
@@ -1394,6 +1519,38 @@
           "PreviousScreenCommand": 0,
           "Top": 30.0,
           "Visible": true,
+          "Width": 501.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
+          "AutoSize": false,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Height": {
+              "Formula": {
+                "Expression": "if([DataCorePlugin.GameData.BestLapOpponentPosition]>=0, '288', '314')"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Height"
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "return $prop('DataCorePlugin.CurrentGame').startsWith('F120')",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "FileName": "Relative Native - F1.djson",
+          "Height": 314.0,
+          "IsFreezed": true,
+          "Left": 320.0,
+          "Name": "Relative F1",
+          "NextScreenCommand": 0,
+          "PreviousScreenCommand": 0,
+          "Top": 30.0,
+          "Visible": false,
           "Width": 501.0
         },
         {
@@ -1629,7 +1786,7 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = drivername($prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1);\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = drivername($prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1)\r\n\r\nif ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\tname = name.replace('\ufffd0', 'E');\r\n}\r\n\r\nvar full_name = name.split(' ');\r\n\r\nif (full_name.len > 1) {\r\n\tif (driverName == 1) {\r\n\t\treturn full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n\t} else if (driverName == 2) {\r\n\t\treturn full_name[0] + ' ' + full_name[full_name.length-1]\r\n\t}else {\r\n\t\treturn full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n\t}\r\n} else {\r\n\treturn name\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,

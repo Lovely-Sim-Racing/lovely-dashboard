@@ -13,7 +13,8 @@ A multifunctional feature packed SimHub Dashboard (DDU) and a matching Stream Ov
 <img width="80" height="80" alt="Assetto Corsa Competizione" src="docs/images/icon-acc.png">
 <img width="80" height="80" alt="iRacing" src="docs/images/icon-iracing.png">
 <img width="80" height="80" alt="Automobilista 2" src="docs/images/icon-ams2.png">
-<img width="80" height="80" alt="rFactor 2" src="docs/images/icon-rf2.png"></br>
+<img width="80" height="80" alt="rFactor 2" src="docs/images/icon-rf2.png">
+<img width="80" height="80" alt="F1 20xx" src="docs/images/icon-f1.png"></br>
 <span>Works with the most popular simulators</span>
 </p>
  
@@ -89,6 +90,7 @@ This is an ongoing project, so I will add more Screen Sizes and Sims as time pro
 * iRacing
 * Automobilista 2
 * rFactor 2
+* F1 20xx
 
 
 ## The Lovely Dashboard

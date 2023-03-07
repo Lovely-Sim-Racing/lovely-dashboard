@@ -1,0 +1,295 @@
+{
+  "BackgroundColor": "#FF000000",
+  "BackgroundOpacity": 100.0,
+  "BaseHeight": 240,
+  "BaseWidth": 240,
+  "DashboardDebugManager": {
+    "LastPlacement": "-1790,130,342,342",
+    "Maximized": false
+  },
+  "EnableClickThroughOverlay": true,
+  "EnableOnDashboardMessaging": true,
+  "ForegroundOpacity": 100.0,
+  "GridSize": 10,
+  "HideLabels": true,
+  "Id": "c1b2602d-8378-4ddf-b4d7-1add67d64492",
+  "Images": [
+    {
+      "Extension": ".png",
+      "Height": 500,
+      "Length": 15792,
+      "MD5": "ee1cf86571be2e55063db6504778c3cc",
+      "Modified": false,
+      "Name": "alarm",
+      "Optimized": true,
+      "Width": 250
+    }
+  ],
+  "IsOverlay": false,
+  "Metadata": {
+    "EnableOnDashboardMessaging": true,
+    "Height": 240.0,
+    "IdleScreensIndexs": [
+      0
+    ],
+    "InGameScreensIndexs": [
+      0
+    ],
+    "IsOverlay": false,
+    "MainPreviewIndex": 0,
+    "MetadataVersion": 2.0,
+    "OverlaySizeWarning": false,
+    "PitScreensIndexs": [],
+    "ScreenCount": 1.0,
+    "Width": 240.0
+  },
+  "Screens": [
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#FF000000",
+      "IdleScreen": true,
+      "InGameScreen": true,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": false,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RadarItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "BorderStyle": {
+            "BorderColor": "#FFD3D3D3",
+            "RadiusBottomLeft": 100,
+            "RadiusBottomRight": 100,
+            "RadiusTopLeft": 100,
+            "RadiusTopRight": 100
+          },
+          "Height": 210.0,
+          "IsFreezed": true,
+          "Left": 15.0,
+          "Name": "Radar",
+          "OpponentStyle": {
+            "DotBorderThickness": 0.0,
+            "DotBordercolor": "#FF262626",
+            "DotColor": "#FFFFFFFF",
+            "DotRadius": 18.0,
+            "LabelColor": "#FFFFFFFF",
+            "LabelFont": "Roboto",
+            "LabelFontSize": 14.0
+          },
+          "PlayerStyle": {
+            "DotBorderThickness": 0.0,
+            "DotBordercolor": "#FF262626",
+            "DotColor": "#FFFF0000",
+            "DotRadius": 18.0,
+            "LabelColor": "#FFFFFFFF",
+            "LabelFont": "Roboto",
+            "LabelFontSize": 14.0
+          },
+          "Scale": 0.75,
+          "Top": 15.0,
+          "UseSmoothedPlayerAngle": true,
+          "Visible": true,
+          "WebVisible": true,
+          "Width": 210.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "BorderStyle": {
+            "BorderBottom": 1,
+            "BorderColor": "#FFD3D3D3",
+            "BorderLeft": 1,
+            "BorderRight": 1,
+            "BorderTop": 1
+          },
+          "Height": 2.0,
+          "IsFreezed": true,
+          "IsRectangleItem": true,
+          "Left": 15.0,
+          "Name": "X",
+          "Opacity": 20.0,
+          "Top": 120.0,
+          "Visible": false,
+          "Width": 210.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "BorderStyle": {
+            "BorderBottom": 1,
+            "BorderColor": "#FFD3D3D3",
+            "BorderLeft": 1,
+            "BorderRight": 1,
+            "BorderTop": 1
+          },
+          "Height": 210.0,
+          "IsFreezed": true,
+          "IsRectangleItem": true,
+          "Left": 120.0,
+          "Name": "Y",
+          "Opacity": 20.0,
+          "Top": 15.0,
+          "Visible": false,
+          "Width": 2.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+          "AutoSize": false,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "BlinkEnabled": {
+              "Formula": {
+                "Expression": "[SpotterCarRightDistance]<1"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "BlinkEnabled"
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "[SpotterCarRight]"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "BlinkDelay": 100.0,
+          "BlinkEnabled": true,
+          "Height": 210.0,
+          "Image": "alarm",
+          "IsFreezed": true,
+          "Left": 120.5,
+          "Name": "Spotter R",
+          "Opacity": 50.0,
+          "Rotation": 180.0,
+          "Top": 14.5,
+          "Visible": true,
+          "Width": 105.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+          "AutoSize": false,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "BlinkEnabled": {
+              "Formula": {
+                "Expression": "[SpotterCarLeftDistance]<2"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "BlinkEnabled"
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "[SpotterCarLeft]"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "BlinkDelay": 100.0,
+          "BlinkEnabled": true,
+          "Height": 210.0,
+          "Image": "alarm",
+          "IsFreezed": true,
+          "Left": 15.5,
+          "Name": "Spotter L",
+          "Opacity": 50.0,
+          "Top": 15.5,
+          "Visible": true,
+          "Width": 105.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.EllipseItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "EllipseColor": "#FFFFFFFF",
+          "EllipseThickness": 3.0,
+          "FillColor": "#FFFFFFFF",
+          "Height": 210.0,
+          "IsFreezed": true,
+          "Left": 15.0,
+          "Name": "210",
+          "Opacity": 10.0,
+          "Top": 15.0,
+          "Visible": true,
+          "Width": 210.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.EllipseItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "EllipseColor": "#FFFFFFFF",
+          "EllipseThickness": 3.0,
+          "FillColor": "#FFFFFFFF",
+          "Height": 168.0,
+          "IsFreezed": true,
+          "Left": 36.0,
+          "Name": "168",
+          "Opacity": 10.0,
+          "Top": 36.0,
+          "Visible": true,
+          "Width": 168.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.EllipseItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "EllipseColor": "#FFFFFFFF",
+          "EllipseThickness": 3.0,
+          "FillColor": "#FFFFFFFF",
+          "Height": 126.0,
+          "IsFreezed": true,
+          "Left": 57.0,
+          "Name": "126",
+          "Opacity": 10.0,
+          "Top": 57.0,
+          "Visible": true,
+          "Width": 126.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.EllipseItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "EllipseColor": "#FFFFFFFF",
+          "EllipseThickness": 5.0,
+          "FillColor": "#FFFFFFFF",
+          "Height": 84.0,
+          "IsFreezed": true,
+          "Left": 78.0,
+          "Name": "84",
+          "Opacity": 10.0,
+          "Top": 78.0,
+          "Visible": true,
+          "Width": 84.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.EllipseItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "EllipseColor": "#FFFFFFFF",
+          "EllipseThickness": 5.0,
+          "FillColor": "#FFFFFFFF",
+          "Height": 42.0,
+          "IsFreezed": true,
+          "Left": 99.0,
+          "Name": "42",
+          "Opacity": 10.0,
+          "Top": 99.0,
+          "Visible": true,
+          "Width": 42.0
+        }
+      ],
+      "Name": "Screen",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": ""
+      },
+      "PitScreen": false,
+      "ScreenEnabledExpression": {
+        "Expression": ""
+      },
+      "ScreenId": "fcc8f96b-f475-4ff2-8f25-ddae9808631b"
+    }
+  ],
+  "ShowBackground": true,
+  "ShowBoundingRectangles": false,
+  "ShowForeground": true,
+  "ShowOnScreenControls": true,
+  "SnapToGrid": false,
+  "Version": 2
+}
