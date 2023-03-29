@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "79a35452-304a-46ec-9ee1-03ae97d700a8",
+  "Id": "b888b4f4-2e35-4059-9c55-42afee34351d",
   "Images": [],
   "IsOverlay": false,
   "Metadata": {
@@ -42,136 +42,10 @@
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
           "BackgroundColor": "#00FFFFFF",
-          "Childrens": [
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Text": {
-                  "Formula": {
-                    "Expression": "if ([DataCorePlugin.GameData.CurrentLap]>1, 'LAPS', 'LAP')"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                }
-              },
-              "Font": "Roboto",
-              "FontSize": 12.0,
-              "FontWeight": "Bold",
-              "Height": 14.0,
-              "HorizontalAlignment": 1,
-              "IsTextItem": true,
-              "Left": 155.0,
-              "Name": "TextItem17",
-              "Text": "LAPS",
-              "TextColor": "#FF878787",
-              "Top": 35.0,
-              "VerticalAlignment": 1,
-              "Visible": true,
-              "Width": 55.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Text": {
-                  "Formula": {
-                    "Expression": "[DataCorePlugin.GameData.CurrentLap]"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                }
-              },
-              "Font": "Roboto",
-              "FontSize": 28.0,
-              "FontWeight": "Bold",
-              "Height": 35.0,
-              "HorizontalAlignment": 1,
-              "IsTextItem": true,
-              "Left": 155.0,
-              "Name": "TextItem15",
-              "Text": "000",
-              "TextColor": "#FFFFFFFF",
-              "Top": 1.0,
-              "VerticalAlignment": 2,
-              "Visible": true,
-              "Width": 55.0
-            }
-          ],
-          "Group": true,
-          "Height": 48.0,
-          "Left": 155.0,
-          "Name": "laps",
-          "Top": 1.0,
-          "Visible": true,
-          "Width": 55.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
-          "Childrens": [
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Font": "Roboto",
-              "FontSize": 12.0,
-              "FontWeight": "Bold",
-              "Height": 14.0,
-              "HorizontalAlignment": 1,
-              "IsTextItem": true,
-              "Left": 120.0,
-              "Name": "TextItem16",
-              "Text": "POS",
-              "TextColor": "#FF878787",
-              "Top": 35.0,
-              "VerticalAlignment": 1,
-              "Visible": true,
-              "Width": 35.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Text": {
-                  "FormatString": "0",
-                  "Formula": {
-                    "Expression": "[DataCorePlugin.GameData.Position]"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                }
-              },
-              "Font": "Roboto",
-              "FontSize": 28.0,
-              "FontWeight": "Bold",
-              "Height": 35.0,
-              "HorizontalAlignment": 1,
-              "IsTextItem": true,
-              "Left": 120.0,
-              "Name": "TextItem14",
-              "Text": "00",
-              "TextColor": "#FFFFFFFF",
-              "Top": 1.0,
-              "VerticalAlignment": 2,
-              "Visible": true,
-              "Width": 35.0
-            }
-          ],
-          "Group": true,
-          "Height": 48.0,
-          "Left": 120.0,
-          "Name": "Pos2",
-          "Top": 1.0,
-          "Visible": true,
-          "Width": 35.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "if ([DataCorePlugin.CurrentGame]='IRacing', \r\n\tif ([DataCorePlugin.GameRawData.Graphics.SessionTimeLeft]='-1', 0, 1), 0)"
+                "Expression": "if ([DataCorePlugin.GameRawData.SessionData.SessionInfo.Sessions01.IsLimitedTime]==True,\r\n\r\n\t1,\r\n\t0\r\n\r\n)"
               },
               "Mode": 2,
               "TargetPropertyName": "Visible"
@@ -237,15 +111,183 @@
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
           "BackgroundColor": "#00FFFFFF",
-          "Bindings": {
-            "Visible": {
-              "Formula": {
-                "Expression": "if ([DataCorePlugin.CurrentGame]='IRacing', 1, 0)"
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "if ([DataCorePlugin.GameData.CurrentLap]>1, 'LAPS', 'LAP')"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Font": "Roboto",
+              "FontSize": 12.0,
+              "FontWeight": "Bold",
+              "Height": 14.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 155.0,
+              "Name": "TextItem17",
+              "Text": "LAPS",
+              "TextColor": "#FF878787",
+              "Top": 35.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 55.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "[DataCorePlugin.GameData.CurrentLap]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 28.0,
+              "FontWeight": "Bold",
+              "Height": 35.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 155.0,
+              "Name": "TextItem15",
+              "Text": "000",
+              "TextColor": "#FFFFFFFF",
+              "Top": 1.0,
+              "VerticalAlignment": 2,
+              "Visible": true,
+              "Width": 55.0
             }
-          },
+          ],
+          "Group": true,
+          "Height": 48.0,
+          "Left": 155.0,
+          "Name": "Laps",
+          "Top": 1.0,
+          "Visible": true,
+          "Width": 55.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Left": {
+                  "Formula": {
+                    "Expression": "if ([OpponentsCount]<10 && [OpponentsCount]>1 && timespantoseconds([DataCorePlugin.GameData.SessionTimeLeft]) < 3600,\r\n\r\n\t82,\r\n\t95\r\n\t\r\n)\r\n\r\n"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Left"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 12.0,
+              "FontWeight": "Bold",
+              "Height": 14.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 95.0,
+              "Name": "TextItem16",
+              "Text": "POS",
+              "TextColor": "#FF878787",
+              "Top": 35.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 60.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "0",
+                  "Formula": {
+                    "Expression": "if ([DataCorePlugin.GameRawData.Graphics.SessionTimeLeft]!='-1',\r\n\r\n\t'/' + [OpponentsCount],\r\n\t''\r\n\t\r\n\t)\r\n\r\n"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "timespantoseconds([DataCorePlugin.GameData.SessionTimeLeft]) < 3600"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Visible"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 24.0,
+              "FontWeight": "Bold",
+              "Height": 35.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 119.0,
+              "Name": "TextItem14",
+              "Text": "/00",
+              "TextColor": "#FF878787",
+              "Top": 0.0,
+              "VerticalAlignment": 2,
+              "Visible": true,
+              "Width": 36.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Left": {
+                  "Formula": {
+                    "Expression": "if ( timespantoseconds([DataCorePlugin.GameData.SessionTimeLeft]) < 3600 && [OpponentsCount]>1,\r\n\r\n\t82,\r\n\t120\r\n\t\r\n)\r\n\r\n"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Left"
+                },
+                "Text": {
+                  "FormatString": "0",
+                  "Formula": {
+                    "Expression": "[DataCorePlugin.GameData.Position]\r\n\r\n"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 28.0,
+              "FontWeight": "Bold",
+              "Height": 35.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 82.0,
+              "Name": "TextItem14",
+              "Text": "00",
+              "TextColor": "#FFFFFFFF",
+              "Top": 1.0,
+              "VerticalAlignment": 2,
+              "Visible": true,
+              "Width": 35.0
+            }
+          ],
+          "Group": true,
+          "Height": 49.0,
+          "Left": 82.0,
+          "Name": "Pos",
+          "Top": 0.0,
+          "Visible": true,
+          "Width": 73.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
           "Childrens": [
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -264,6 +306,7 @@
               "FontWeight": "Bold",
               "Height": 14.0,
               "HorizontalAlignment": 0,
+              "IsFreezed": true,
               "IsTextItem": true,
               "Left": 0.0,
               "Name": "TextItem18",
@@ -279,16 +322,51 @@
               "BackgroundColor": "#00FFFFFF",
               "Bindings": {
                 "Text": {
-                  "FormatString": "mm\\:ss",
+                  "FormatString": "\\:ss",
                   "Formula": {
-                    "Expression": "[DataCorePlugin.GameData.SessionTimeLeft]"
+                    "Expression": "secondstotimespan(abs(timespantoseconds([DataCorePlugin.GameData.SessionTimeLeft])))"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "if ([DataCorePlugin.GameRawData.Graphics.SessionTimeLeft]!='-1',\r\n\r\n\tif (format([DataCorePlugin.GameData.SessionTimeLeft], 'hh') == '00', 1, 0),\r\n\t\r\n0)"
+                    "Expression": "if ([DataCorePlugin.GameRawData.Graphics.SessionTimeLeft]!='-1',\r\n\r\n\ttimespantoseconds([DataCorePlugin.GameData.SessionTimeLeft]) < 3600,\r\n\t0\r\n\t\r\n)"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Visible"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 24.0,
+              "FontWeight": "Bold",
+              "Height": 35.0,
+              "HorizontalAlignment": 0,
+              "IsTextItem": true,
+              "Left": 33.0,
+              "Name": "Countdown < Hour",
+              "Text": ":00",
+              "TextColor": "#FF878787",
+              "Top": 0.0,
+              "VerticalAlignment": 2,
+              "Visible": true,
+              "Width": 35.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "mm",
+                  "Formula": {
+                    "Expression": "secondstotimespan(abs(timespantoseconds([DataCorePlugin.GameData.SessionTimeLeft])))"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "if ([DataCorePlugin.GameRawData.Graphics.SessionTimeLeft]!='-1',\r\n\r\n\ttimespantoseconds([DataCorePlugin.GameData.SessionTimeLeft]) < 3600,\r\n\t0\r\n\t\r\n)"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Visible"
@@ -302,19 +380,19 @@
               "IsTextItem": true,
               "Left": 0.0,
               "Name": "Countdown < Hour",
-              "Text": "00:00",
+              "Text": "00",
               "TextColor": "#FFFFFFFF",
               "Top": 1.0,
               "VerticalAlignment": 2,
-              "Visible": false,
-              "Width": 120.0
+              "Visible": true,
+              "Width": 35.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "BackgroundColor": "#00FFFFFF",
               "Bindings": {
                 "Text": {
-                  "FormatString": "hh\\:mm\\:ss",
+                  "FormatString": "\\:ss",
                   "Formula": {
                     "Expression": "[DataCorePlugin.GameData.SessionTimeLeft]"
                   },
@@ -323,7 +401,42 @@
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "if ([DataCorePlugin.GameRawData.Graphics.SessionTimeLeft]!='-1',\r\n\r\n\tif (format([DataCorePlugin.GameData.SessionTimeLeft], 'hh') != '00', 1, 0),\r\n\t\r\n0)"
+                    "Expression": "if ([DataCorePlugin.GameRawData.SessionData.SessionInfo.Sessions01.IsLimitedTime]==True,\r\n\r\n\ttimespantoseconds([DataCorePlugin.GameData.SessionTimeLeft]) >= 3600,\r\n\t0\r\n\r\n)"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Visible"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 24.0,
+              "FontWeight": "Bold",
+              "Height": 35.0,
+              "HorizontalAlignment": 0,
+              "IsTextItem": true,
+              "Left": 72.0,
+              "Name": "Countdown > Hour",
+              "Text": ":00",
+              "TextColor": "#FF878787",
+              "Top": 0.0,
+              "VerticalAlignment": 2,
+              "Visible": false,
+              "Width": 39.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "hh\\:mm",
+                  "Formula": {
+                    "Expression": "[DataCorePlugin.GameData.SessionTimeLeft]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "if ([DataCorePlugin.GameRawData.SessionData.SessionInfo.Sessions01.IsLimitedTime]==True,\r\n\r\n\ttimespantoseconds([DataCorePlugin.GameData.SessionTimeLeft]) >= 3600,\r\n\t0\r\n\r\n)"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Visible"
@@ -337,12 +450,12 @@
               "IsTextItem": true,
               "Left": 0.0,
               "Name": "Countdown > Hour",
-              "Text": "00:00:00",
+              "Text": "00:00",
               "TextColor": "#FFFFFFFF",
               "Top": 1.0,
               "VerticalAlignment": 2,
-              "Visible": true,
-              "Width": 120.0
+              "Visible": false,
+              "Width": 75.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -351,14 +464,14 @@
                 "Text": {
                   "FormatString": "hh\\:mm",
                   "Formula": {
-                    "Expression": "secondstotimespan([DataCorePlugin.GameRawData.Graphics.clock])"
+                    "Expression": "secondstotimespan([DataCorePlugin.GameRawData.Telemetry.SessionTimeOfDay])"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "if ([DataCorePlugin.GameRawData.Graphics.SessionTimeLeft]='-1', 1, 0)"
+                    "Expression": "if ([DataCorePlugin.GameRawData.SessionData.SessionInfo.Sessions01.IsLimitedTime]==True,\r\n\r\n\t0,\r\n\t1\r\n\r\n)"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Visible"
@@ -381,10 +494,10 @@
             }
           ],
           "Group": true,
-          "Height": 48.0,
+          "Height": 49.0,
           "Left": 0.0,
-          "Name": "Session Time iR",
-          "Top": 1.0,
+          "Name": "Session Time",
+          "Top": 0.0,
           "Visible": true,
           "Width": 120.0
         },
@@ -419,20 +532,29 @@
                 {
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
                   "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Left": {
+                      "Formula": {
+                        "Expression": "if ([OpponentsCount]<10,\r\n\r\n\t135,\r\n\t148\r\n\t\r\n)\r\n\r\n"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Left"
+                    }
+                  },
                   "Font": "Roboto",
                   "FontSize": 12.0,
                   "FontWeight": "Bold",
                   "Height": 14.0,
-                  "HorizontalAlignment": 1,
+                  "HorizontalAlignment": 2,
                   "IsTextItem": true,
-                  "Left": 160.0,
+                  "Left": 148.0,
                   "Name": "TextItem16",
                   "Text": "POS",
                   "TextColor": "#FF878787",
                   "Top": 35.0,
                   "VerticalAlignment": 1,
                   "Visible": true,
-                  "Width": 35.0
+                  "Width": 60.0
                 },
                 {
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -441,7 +563,35 @@
                     "Text": {
                       "FormatString": "0",
                       "Formula": {
-                        "Expression": "[DataCorePlugin.GameData.Position]"
+                        "Expression": "if ([DataCorePlugin.GameRawData.Graphics.SessionTimeLeft]!='-1',\r\n\r\n\t'/' + [OpponentsCount],\r\n\t''\r\n\t\r\n)\r\n\r\n"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 24.0,
+                  "FontWeight": "Bold",
+                  "Height": 35.0,
+                  "HorizontalAlignment": 0,
+                  "IsTextItem": true,
+                  "Left": 172.0,
+                  "Name": "TextItem14",
+                  "Text": "/00",
+                  "TextColor": "#FF878787",
+                  "Top": 0.0,
+                  "VerticalAlignment": 2,
+                  "Visible": true,
+                  "Width": 36.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0",
+                      "Formula": {
+                        "Expression": "[DataCorePlugin.GameData.Position]\r\n\r\n"
                       },
                       "Mode": 2,
                       "TargetPropertyName": "Text"
@@ -451,9 +601,9 @@
                   "FontSize": 28.0,
                   "FontWeight": "Bold",
                   "Height": 35.0,
-                  "HorizontalAlignment": 1,
+                  "HorizontalAlignment": 2,
                   "IsTextItem": true,
-                  "Left": 160.0,
+                  "Left": 135.0,
                   "Name": "TextItem14",
                   "Text": "00",
                   "TextColor": "#FFFFFFFF",
@@ -464,12 +614,12 @@
                 }
               ],
               "Group": true,
-              "Height": 48.0,
-              "Left": 160.0,
+              "Height": 49.0,
+              "Left": 135.0,
               "Name": "Pos",
-              "Top": 1.0,
+              "Top": 0.0,
               "Visible": true,
-              "Width": 35.0
+              "Width": 73.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
@@ -522,7 +672,7 @@
                   "IsTextItem": true,
                   "Left": 0.0,
                   "Name": "TextItem15",
-                  "Text": "000 of 000",
+                  "Text": "00 of 00",
                   "TextColor": "#FFFFFFFF",
                   "Top": 1.0,
                   "VerticalAlignment": 2,
@@ -544,7 +694,7 @@
           "Left": 0.0,
           "Name": "Lap Based iR",
           "Top": 0.0,
-          "Visible": true,
+          "Visible": false,
           "Width": 210.0
         }
       ],

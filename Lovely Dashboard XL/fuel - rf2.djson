@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "3700c9a2-85a4-4d8b-96cc-f0800e4a8abb",
+  "Id": "2f64073b-4cd6-44f2-8f6d-7d3ee7dbb2b2",
   "Images": [],
   "IsOverlay": false,
   "Metadata": {
@@ -210,8 +210,18 @@
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
                   "BackgroundColor": "#FFFA0000",
                   "BorderStyle": {
+                    "Bindings": {
+                      "RadiusBottomRight": {
+                        "Formula": {
+                          "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius-5",
+                          "Interpreter": 1
+                        },
+                        "Mode": 2,
+                        "TargetPropertyName": "RadiusBottomRight"
+                      }
+                    },
                     "RadiusBottomLeft": 8,
-                    "RadiusBottomRight": 8,
+                    "RadiusBottomRight": 40,
                     "RadiusTopLeft": 8,
                     "RadiusTopRight": 8
                   },
@@ -480,8 +490,18 @@
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
                   "BackgroundColor": "#FFFA0000",
                   "BorderStyle": {
+                    "Bindings": {
+                      "RadiusBottomRight": {
+                        "Formula": {
+                          "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius-5",
+                          "Interpreter": 1
+                        },
+                        "Mode": 2,
+                        "TargetPropertyName": "RadiusBottomRight"
+                      }
+                    },
                     "RadiusBottomLeft": 8,
-                    "RadiusBottomRight": 8,
+                    "RadiusBottomRight": 40,
                     "RadiusTopLeft": 8,
                     "RadiusTopRight": 8
                   },
@@ -565,8 +585,18 @@
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
                   "BackgroundColor": "#FF000000",
                   "BorderStyle": {
+                    "Bindings": {
+                      "RadiusBottomRight": {
+                        "Formula": {
+                          "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius-5",
+                          "Interpreter": 1
+                        },
+                        "Mode": 2,
+                        "TargetPropertyName": "RadiusBottomRight"
+                      }
+                    },
                     "RadiusBottomLeft": 8,
-                    "RadiusBottomRight": 8,
+                    "RadiusBottomRight": 40,
                     "RadiusTopLeft": 8,
                     "RadiusTopRight": 8
                   },
@@ -737,8 +767,18 @@
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
                   "BackgroundColor": "#FFFA0000",
                   "BorderStyle": {
+                    "Bindings": {
+                      "RadiusBottomRight": {
+                        "Formula": {
+                          "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius-5",
+                          "Interpreter": 1
+                        },
+                        "Mode": 2,
+                        "TargetPropertyName": "RadiusBottomRight"
+                      }
+                    },
                     "RadiusBottomLeft": 8,
-                    "RadiusBottomRight": 8,
+                    "RadiusBottomRight": 40,
                     "RadiusTopLeft": 8,
                     "RadiusTopRight": 8
                   },
@@ -973,8 +1013,18 @@
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
                   "BackgroundColor": "#FF000000",
                   "BorderStyle": {
+                    "Bindings": {
+                      "RadiusBottomRight": {
+                        "Formula": {
+                          "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius-5",
+                          "Interpreter": 1
+                        },
+                        "Mode": 2,
+                        "TargetPropertyName": "RadiusBottomRight"
+                      }
+                    },
                     "RadiusBottomLeft": 8,
-                    "RadiusBottomRight": 8,
+                    "RadiusBottomRight": 40,
                     "RadiusTopLeft": 8,
                     "RadiusTopRight": 8
                   },

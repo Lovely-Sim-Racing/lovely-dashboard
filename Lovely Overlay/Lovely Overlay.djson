@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "358a1989-7684-46c9-883a-e35ab0bd3e90",
+  "Id": "f23c6f9f-d7fc-4553-9c63-e39dc379b082",
   "Images": [
     {
       "Extension": ".png",
@@ -308,6 +308,30 @@
       "IsOverlayLayer": false,
       "Items": [
         {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WebPageItem, SimHub.Plugins",
+          "AllowTransparency": true,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "StartAddress": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app=LovelyOverlay&screen=Idle'\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "StartAddress"
+            }
+          },
+          "ClickThrough": false,
+          "Height": 480.0,
+          "IsFreezed": true,
+          "Left": 0.0,
+          "Name": "Analytics",
+          "StartAddress": "",
+          "Top": 0.0,
+          "Visible": true,
+          "Width": 1000.0
+        },
+        {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
           "BackgroundColor": "#FF000000",
           "BorderStyle": {
@@ -327,173 +351,191 @@
           "Width": 1000.0
         },
         {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
-          "Childrens": [
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
-              "AutoSize": false,
-              "BackgroundColor": "#00FFFFFF",
-              "Height": 20.0,
-              "Image": "cc.xlarge",
-              "Left": 452.0,
-              "Name": "CC",
-              "Top": 443.0,
-              "Visible": true,
-              "Width": 20.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
-              "AutoSize": false,
-              "BackgroundColor": "#00FFFFFF",
-              "Height": 20.0,
-              "Image": "by.xlarge",
-              "Left": 478.0,
-              "Name": "BY",
-              "Top": 443.0,
-              "Visible": true,
-              "Width": 20.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
-              "AutoSize": false,
-              "BackgroundColor": "#00FFFFFF",
-              "Height": 20.0,
-              "Image": "nc.xlarge",
-              "Left": 503.0,
-              "Name": "NC",
-              "Top": 443.0,
-              "Visible": true,
-              "Width": 20.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
-              "AutoSize": false,
-              "BackgroundColor": "#00FFFFFF",
-              "Height": 20.0,
-              "Image": "sa.xlarge",
-              "Left": 528.0,
-              "Name": "SA",
-              "Top": 443.0,
-              "Visible": true,
-              "Width": 20.0
-            }
-          ],
-          "Group": true,
-          "Height": 20.0,
-          "Left": 452.0,
-          "Name": "Layer",
-          "Top": 443.0,
-          "Visible": true,
-          "Width": 96.0
-        },
-        {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
           "BackgroundColor": "#00FFFFFF",
           "Font": "Roboto",
-          "FontSize": 13.0,
+          "FontSize": 12.0,
           "Height": 20.0,
           "HorizontalAlignment": 1,
+          "IsFreezed": true,
           "IsTextItem": true,
-          "Left": 120.0,
+          "Left": 155.0,
           "Name": "TextItem2",
           "Text": "This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License",
           "TextColor": "#FF878787",
           "TextWrapping": 0,
-          "Top": 415.0,
+          "Top": 453.0,
           "VerticalAlignment": 1,
           "Visible": true,
-          "Width": 760.0
+          "Width": 690.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
           "BackgroundColor": "#00FFFFFF",
           "Font": "Roboto",
-          "FontSize": 13.0,
+          "FontSize": 12.0,
           "Height": 30.0,
           "HorizontalAlignment": 1,
+          "IsFreezed": true,
           "IsTextItem": true,
-          "Left": 120.0,
+          "Left": 155.0,
           "Name": "TextItem",
           "Text": "All trademarks, logos and brand names are the property of their respective owners. All company, product and service names used in this application are for identification purposes only. Use of these names, trademarks and brands does not imply endorsement.",
           "TextColor": "#FF878787",
           "TextWrapping": 0,
-          "Top": 381.0,
+          "Top": 423.0,
           "VerticalAlignment": 2,
           "Visible": true,
-          "Width": 760.0
+          "Width": 690.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
           "BackgroundColor": "#00FFFFFF",
           "Font": "Roboto",
           "FontSize": 16.0,
-          "Height": 20.0,
+          "Height": 25.0,
           "HorizontalAlignment": 1,
+          "IsFreezed": true,
           "IsTextItem": true,
-          "Left": 380.0,
+          "Left": 370.0,
           "Name": "TextItem0",
-          "Text": "Lovely Overlay v1.6.6",
+          "Text": "Lovely Dashboard v1.6.7",
           "TextColor": "#FFFFFFFF",
-          "Top": 351.0,
+          "Top": 395.0,
           "VerticalAlignment": 1,
           "Visible": true,
-          "Width": 240.0
+          "Width": 260.0
         },
         {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "BackgroundColor": "#FFFF0000",
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+          "AutoSize": true,
+          "AutoSizeScale": 0.3,
+          "BackgroundColor": "#00FFFFFF",
           "Bindings": {
-            "Text": {
-              "FormatString": "",
-              "Formula": {
-                "Expression": "'NEW VERSION AVAILABLE: ' + downloadstring(86400, 'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')"
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Text"
-            },
             "Visible": {
               "Formula": {
-                "Expression": "var currentVer = '1.6.6'\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\n//return latestVer\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.yourNumber.trim() == \"\" || settings.yourName.trim() == \"\" ) {\r\n\treturn 1\r\n} else {\r\n\treturn 0\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
               "TargetPropertyName": "Visible"
             }
           },
-          "BorderStyle": {
-            "RadiusBottomLeft": 10,
-            "RadiusBottomRight": 10,
-            "RadiusTopLeft": 10,
-            "RadiusTopRight": 10
-          },
-          "Font": "Roboto",
-          "FontSize": 16.0,
-          "FontWeight": "Bold",
-          "Height": 25.0,
-          "HorizontalAlignment": 1,
-          "IsTextItem": true,
-          "Left": 370.0,
-          "Name": "New Version",
-          "Text": "NEW VERSION AVAILABLE: 0.0.0",
-          "TextColor": "#FFFFFFFF",
-          "Top": 347.0,
-          "VerticalAlignment": 1,
-          "Visible": false,
-          "Width": 260.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
-          "AutoSize": true,
-          "AutoSizeScale": 0.25,
-          "BackgroundColor": "#00FFFFFF",
-          "Height": 200.0,
+          "Height": 240.0,
           "Image": "lr-team-icon",
-          "Left": 400.0,
-          "Name": "ImageItem0",
+          "IsFreezed": true,
+          "Left": 380.0,
+          "Name": "ImageItem",
           "Top": 70.0,
           "Visible": true,
-          "Width": 200.0
+          "Width": 240.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json');\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.yourNumber.trim() == \"\" || settings.yourName.trim() == \"\" ) {\r\n\treturn 0\r\n} else {\r\n\treturn 1\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "AutoSize": true,
+              "AutoSizeScale": 0.05,
+              "BackgroundColor": "#00FFFFFF",
+              "Height": 40.0,
+              "Image": "lr-team-icon",
+              "Left": 491.5,
+              "Name": "ImageItem2",
+              "Top": 350.0,
+              "Visible": true,
+              "Width": 40.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( settings.yourName ) {\r\n\treturn ucase(settings.yourName.trim())\r\n}\r\n",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "BorderStyle": {
+                "BorderColor": "#00FFFFFF"
+              },
+              "Font": "Eurostar",
+              "FontSize": 40.0,
+              "FontWeight": "ExtraBlack",
+              "Height": 50.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 92.5,
+              "Name": "Name",
+              "ShadowColor": "#FF000000",
+              "ShadowDirection": 0,
+              "Text": "F. LASTNAME",
+              "TextColor": "#FFFFFFFF",
+              "Top": 260.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 840.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( settings.yourNumber ) {\r\n\treturn settings.yourNumber.trim()\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( settings.yourColor.trim() == \"\" || !settings.yourColor) {\r\n\treturn \"#2B98FB\"\r\n} else {\r\n\treturn settings.yourColor.trim()\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "CharWidth": 62.0,
+              "Font": "Eurostar",
+              "FontSize": 240.0,
+              "FontStyle": "Italic",
+              "FontWeight": "ExtraBlack",
+              "Height": 210.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 67.5,
+              "Name": "Number",
+              "Text": "000",
+              "TextColor": "#FF2B98FB",
+              "Top": 65.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 840.0
+            }
+          ],
+          "Group": true,
+          "Height": 325.0,
+          "Left": 67.5,
+          "Name": "User name",
+          "Top": 65.0,
+          "Visible": false,
+          "Width": 865.0
         }
       ],
       "Name": "Idle",
@@ -517,6 +559,29 @@
       "IsForegroundLayer": false,
       "IsOverlayLayer": false,
       "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WebPageItem, SimHub.Plugins",
+          "AllowTransparency": true,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "StartAddress": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app=LovelyOverlay&screen=Primary'\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "StartAddress"
+            }
+          },
+          "ClickThrough": false,
+          "Height": 480.0,
+          "Left": 0.0,
+          "Name": "Analytics",
+          "StartAddress": "",
+          "Top": 0.0,
+          "Visible": true,
+          "Width": 1000.0
+        },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
           "BackgroundColor": "#FF000000",
@@ -814,6 +879,7 @@
           },
           "FileName": "Vehicle Settings.djson",
           "Height": 97.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 1.0,
           "Name": "Vehicle Settings",
@@ -838,6 +904,7 @@
           },
           "FileName": "Vehicle Settings - iR.djson",
           "Height": 97.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 1.0,
           "Name": "Vehicle Settings iR",
@@ -862,6 +929,7 @@
           },
           "FileName": "Vehicle Settings - AMS2.djson",
           "Height": 97.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 1.0,
           "Name": "Vehicle Settings AMS2",
@@ -886,6 +954,7 @@
           },
           "FileName": "Vehicle Settings - rF2.djson",
           "Height": 97.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 1.0,
           "Name": "Vehicle Settings rF2",
@@ -910,6 +979,7 @@
           },
           "FileName": "Central.djson",
           "Height": 300.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 840.0,
           "Name": "Central",
@@ -934,6 +1004,7 @@
           },
           "FileName": "Central - iR.djson",
           "Height": 330.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 840.0,
           "Name": "Central iR",
@@ -958,6 +1029,7 @@
           },
           "FileName": "Central - AMS2.djson",
           "Height": 300.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 840.0,
           "Name": "Central AMS2",
@@ -982,6 +1054,7 @@
           },
           "FileName": "Central - rF2.djson",
           "Height": 330.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 840.0,
           "Name": "Central rF2",
@@ -1006,6 +1079,7 @@
           },
           "FileName": "Environment.djson",
           "Height": 58.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 840.0,
           "Name": "Environment",
@@ -1030,6 +1104,7 @@
           },
           "FileName": "Environment - iR.djson",
           "Height": 24.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 840.0,
           "Name": "Environment iR",
@@ -1054,6 +1129,7 @@
           },
           "FileName": "Environment - AMS2.djson",
           "Height": 58.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 840.0,
           "Name": "Environment AMS2",
@@ -1078,6 +1154,7 @@
           },
           "FileName": "Environment - Rf2.djson",
           "Height": 24.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 840.0,
           "Name": "Environment rF2",
@@ -1102,6 +1179,7 @@
           },
           "FileName": "Multi Function Module Right.djson",
           "Height": 250.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": -15.0,
           "Name": "Right MFM",
@@ -1126,6 +1204,7 @@
           },
           "FileName": "Multi Function Module Right - iR.djson",
           "Height": 250.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": -15.0,
           "Name": "Right MFM iR",
@@ -1150,6 +1229,7 @@
           },
           "FileName": "Multi Function Module Right - AMS2.djson",
           "Height": 250.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": -15.0,
           "Name": "Right MFM AMS2",
@@ -1174,6 +1254,7 @@
           },
           "FileName": "Multi Function Module Right - rF2.djson",
           "Height": 250.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": -15.0,
           "Name": "Right MFM rF2",
@@ -1198,6 +1279,7 @@
           },
           "FileName": "Session.djson",
           "Height": 49.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 10.0,
           "Name": "Session",
@@ -1222,6 +1304,7 @@
           },
           "FileName": "Session - iR.djson",
           "Height": 49.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 10.0,
           "Name": "Session iR",
@@ -1246,6 +1329,7 @@
           },
           "FileName": "Session - AMS2.djson",
           "Height": 49.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 10.0,
           "Name": "Session AMS2",
@@ -1270,6 +1354,7 @@
           },
           "FileName": "Session - rF2.djson",
           "Height": 49.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 10.0,
           "Name": "Session rF2",
@@ -1301,6 +1386,7 @@
           },
           "FileName": "Relative Native.djson",
           "Height": 314.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 320.0,
           "Name": "Relative ",
@@ -1332,6 +1418,7 @@
           },
           "FileName": "Relative Native - iR.djson",
           "Height": 314.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 320.0,
           "Name": "Relative iR",
@@ -1363,6 +1450,7 @@
           },
           "FileName": "Relative Native - AMS2.djson",
           "Height": 314.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 320.0,
           "Name": "Relative AMS2",
@@ -1394,6 +1482,7 @@
           },
           "FileName": "Relative Native - rF2.djson",
           "Height": 314.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 320.0,
           "Name": "Relative rF2",
