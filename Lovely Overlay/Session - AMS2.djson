@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "015f43c3-b82e-4468-a843-84a41419f918",
+  "Id": "75ce56c7-959f-4f05-980c-e1b5f80e224f",
   "Images": [],
   "IsOverlay": false,
   "Metadata": {
@@ -42,15 +42,6 @@
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
           "BackgroundColor": "#00FFFFFF",
-          "Bindings": {
-            "Visible": {
-              "Formula": {
-                "Expression": "if ([DataCorePlugin.GameRawData.mLapsInEvent]>0 && [DataCorePlugin.GameRawData.mSessionDuration]==0, 0, 1)"
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
-            }
-          },
           "Childrens": [
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -110,7 +101,7 @@
           "Group": true,
           "Height": 48.0,
           "Left": 155.0,
-          "Name": "laps",
+          "Name": "Laps",
           "Top": 1.0,
           "Visible": true,
           "Width": 55.0
@@ -118,15 +109,6 @@
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
           "BackgroundColor": "#00FFFFFF",
-          "Bindings": {
-            "Visible": {
-              "Formula": {
-                "Expression": "if ([DataCorePlugin.GameRawData.mLapsInEvent]>0 && [DataCorePlugin.GameRawData.mSessionDuration]==0, 0, 1)"
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
-            }
-          },
           "Childrens": [
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -186,15 +168,6 @@
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
           "BackgroundColor": "#00FFFFFF",
-          "Bindings": {
-            "Visible": {
-              "Formula": {
-                "Expression": "if ([DataCorePlugin.GameRawData.mLapsInEvent]>0 && [DataCorePlugin.GameRawData.mSessionDuration]==0, 0, 1)"
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
-            }
-          },
           "Childrens": [
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -358,7 +331,7 @@
               "Left": 0.0,
               "Name": "RectangleItem",
               "Top": 0.0,
-              "Visible": false,
+              "Visible": true,
               "Width": 210.0
             },
             {

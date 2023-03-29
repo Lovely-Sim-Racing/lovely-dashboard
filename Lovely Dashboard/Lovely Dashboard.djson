@@ -12,15 +12,17 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "964f148c-3245-440f-b9a6-b8bfeca4d0b5",
+  "Id": "6c19daa5-b0b4-434f-80f9-0c0a7a8a0af7",
   "Images": [
     {
       "Extension": ".png",
+      "Height": 50,
       "Length": 610,
       "MD5": "0e643de10ec8cee27694de9a6990357d",
       "Modified": false,
       "Name": "high on",
-      "Optimized": true
+      "Optimized": true,
+      "Width": 64
     },
     {
       "Extension": ".png",
@@ -101,16 +103,6 @@
       "Modified": false,
       "Name": "Right",
       "Optimized": true
-    },
-    {
-      "Extension": ".png",
-      "Height": 480,
-      "Length": 3333,
-      "MD5": "136492327bac1c395ffac14608d817d4",
-      "Modified": false,
-      "Name": "Wide - Timetables BG",
-      "Optimized": true,
-      "Width": 850
     },
     {
       "Extension": ".png",
@@ -210,46 +202,6 @@
     },
     {
       "Extension": ".png",
-      "Height": 1024,
-      "Length": 42465,
-      "MD5": "a3d55f4e9688a95be54b4ee2775856af",
-      "Modified": false,
-      "Name": "by.xlarge",
-      "Optimized": true,
-      "Width": 1024
-    },
-    {
-      "Extension": ".png",
-      "Height": 1024,
-      "Length": 51235,
-      "MD5": "14c1883f51891286a9422166c03ad48a",
-      "Modified": false,
-      "Name": "cc.xlarge",
-      "Optimized": true,
-      "Width": 1024
-    },
-    {
-      "Extension": ".png",
-      "Height": 1024,
-      "Length": 50114,
-      "MD5": "93449b7c434bae22b967098b6dad9e9c",
-      "Modified": false,
-      "Name": "nc.xlarge",
-      "Optimized": true,
-      "Width": 1024
-    },
-    {
-      "Extension": ".png",
-      "Height": 1024,
-      "Length": 50397,
-      "MD5": "f3c10b33be6f568ed39f38e817ca8c31",
-      "Modified": false,
-      "Name": "sa.xlarge",
-      "Optimized": true,
-      "Width": 1024
-    },
-    {
-      "Extension": ".png",
       "Height": 800,
       "Length": 132792,
       "MD5": "4447f5c1f0e931b9c84946c156beb2b1",
@@ -334,6 +286,30 @@
       "IsOverlayLayer": false,
       "Items": [
         {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WebPageItem, SimHub.Plugins",
+          "AllowTransparency": true,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "StartAddress": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app=LovelyDashboard&screen=Idle'\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "StartAddress"
+            }
+          },
+          "ClickThrough": false,
+          "Height": 480.0,
+          "IsFreezed": true,
+          "Left": 0.0,
+          "Name": "Analytics",
+          "StartAddress": "",
+          "Top": 0.0,
+          "Visible": true,
+          "Width": 850.0
+        },
+        {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
           "BackgroundColor": "#FF000000",
           "BorderStyle": {
@@ -386,121 +362,60 @@
           "Width": 850.0
         },
         {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
-          "Childrens": [
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
-              "AutoSize": false,
-              "BackgroundColor": "#00FFFFFF",
-              "Height": 20.0,
-              "Image": "cc.xlarge",
-              "Left": 377.0,
-              "Name": "CC",
-              "Top": 440.0,
-              "Visible": true,
-              "Width": 20.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
-              "AutoSize": false,
-              "BackgroundColor": "#00FFFFFF",
-              "Height": 20.0,
-              "Image": "by.xlarge",
-              "Left": 403.0,
-              "Name": "BY",
-              "Top": 440.0,
-              "Visible": true,
-              "Width": 20.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
-              "AutoSize": false,
-              "BackgroundColor": "#00FFFFFF",
-              "Height": 20.0,
-              "Image": "nc.xlarge",
-              "Left": 428.0,
-              "Name": "NC",
-              "Top": 440.0,
-              "Visible": true,
-              "Width": 20.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
-              "AutoSize": false,
-              "BackgroundColor": "#00FFFFFF",
-              "Height": 20.0,
-              "Image": "sa.xlarge",
-              "Left": 453.0,
-              "Name": "SA",
-              "Top": 440.0,
-              "Visible": true,
-              "Width": 20.0
-            }
-          ],
-          "Group": true,
-          "Height": 20.0,
-          "Left": 377.0,
-          "Name": "Layer2",
-          "Top": 440.0,
-          "Visible": true,
-          "Width": 96.0
-        },
-        {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
           "BackgroundColor": "#00FFFFFF",
           "Font": "Roboto",
-          "FontSize": 13.0,
+          "FontSize": 12.0,
           "Height": 20.0,
           "HorizontalAlignment": 1,
           "IsFreezed": true,
           "IsTextItem": true,
-          "Left": 45.0,
+          "Left": 80.0,
           "Name": "TextItem2",
           "Text": "This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License",
           "TextColor": "#FF878787",
           "TextWrapping": 0,
-          "Top": 410.0,
+          "Top": 453.0,
           "VerticalAlignment": 1,
           "Visible": true,
-          "Width": 760.0
+          "Width": 690.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
           "BackgroundColor": "#00FFFFFF",
           "Font": "Roboto",
-          "FontSize": 13.0,
+          "FontSize": 12.0,
           "Height": 30.0,
           "HorizontalAlignment": 1,
           "IsFreezed": true,
           "IsTextItem": true,
-          "Left": 45.0,
+          "Left": 80.0,
           "Name": "TextItem",
           "Text": "All trademarks, logos and brand names are the property of their respective owners. All company, product and service names used in this application are for identification purposes only. Use of these names, trademarks and brands does not imply endorsement.",
           "TextColor": "#FF878787",
           "TextWrapping": 0,
-          "Top": 375.0,
+          "Top": 423.0,
           "VerticalAlignment": 2,
           "Visible": true,
-          "Width": 760.0
+          "Width": 690.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
           "BackgroundColor": "#00FFFFFF",
           "Font": "Roboto",
           "FontSize": 16.0,
-          "Height": 20.0,
+          "Height": 25.0,
           "HorizontalAlignment": 1,
           "IsFreezed": true,
           "IsTextItem": true,
-          "Left": 305.0,
+          "Left": 295.0,
           "Name": "TextItem0",
-          "Text": "Lovely Dashboard v1.6.6",
+          "Text": "Lovely Dashboard v1.6.7",
           "TextColor": "#FFFFFFFF",
-          "Top": 345.0,
+          "Top": 395.0,
           "VerticalAlignment": 1,
           "Visible": true,
-          "Width": 240.0
+          "Width": 260.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -516,7 +431,7 @@
             },
             "Visible": {
               "Formula": {
-                "Expression": "var currentVer = '1.6.6'\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
+                "Expression": "var currentVer = '1.6.7'\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -540,7 +455,7 @@
           "Name": "New Version",
           "Text": "NEW VERSION AVAILABLE: 0.0.0",
           "TextColor": "#FFFFFFFF",
-          "Top": 342.0,
+          "Top": 395.0,
           "VerticalAlignment": 1,
           "Visible": false,
           "Width": 260.0
@@ -548,26 +463,109 @@
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
           "AutoSize": true,
-          "AutoSizeScale": 0.25,
+          "AutoSizeScale": 0.3,
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( \t!settings ||\r\n\t\tsettings.yourNumber == \"\" ||\r\n\t\tsettings.yourName == \"\"\r\n\t) {\r\n\treturn 1\r\n} else {\r\n\treturn 0\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.yourNumber.trim() == \"\" || settings.yourName.trim() == \"\" ) {\r\n\treturn 1\r\n} else {\r\n\treturn 0\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
               "TargetPropertyName": "Visible"
             }
           },
-          "Height": 200.0,
+          "Height": 240.0,
           "Image": "lr-team-icon",
           "IsFreezed": true,
-          "Left": 325.0,
+          "Left": 305.0,
           "Name": "ImageItem",
-          "Top": 80.0,
+          "Top": 70.0,
           "Visible": true,
-          "Width": 200.0
+          "Width": 240.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Font": "Roboto",
+              "FontSize": 16.0,
+              "Height": 18.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 190.0,
+              "Name": "TextItem3",
+              "Text": "The Lovely Dashboard is brought to you by",
+              "TextColor": "#FF737373",
+              "Top": 320.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 305.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Font": "Roboto",
+              "FontSize": 16.0,
+              "FontWeight": "Medium",
+              "Height": 18.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 190.0,
+              "Name": "TextItem4",
+              "Text": "Sponsor Name / sponsor-website.com",
+              "TextColor": "#FFFFFFFF",
+              "Top": 341.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 305.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF1E1E1E",
+              "BorderStyle": {
+                "BorderColor": "#FF474747",
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Height": 50.0,
+              "IsRectangleItem": true,
+              "Left": 510.0,
+              "Name": "RectangleItem5",
+              "Top": 315.0,
+              "Visible": true,
+              "Width": 150.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Font": "Roboto",
+              "FontSize": 12.0,
+              "Height": 14.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 510.0,
+              "Name": "TextItem5",
+              "Text": "LOGO HERE",
+              "TextColor": "#FFFFFFFF",
+              "Top": 333.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 150.0
+            }
+          ],
+          "Group": true,
+          "Height": 50.0,
+          "Left": 190.0,
+          "Name": "Sponsor",
+          "Top": 315.0,
+          "Visible": false,
+          "Width": 470.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
@@ -575,7 +573,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( \t!settings ||\r\n\t\tsettings.yourNumber == \"\" ||\r\n\t\tsettings.yourName == \"\"\r\n\t) {\r\n\treturn 0\r\n} else {\r\n\treturn 1\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.yourNumber.trim() == \"\" || settings.yourName.trim() == \"\" ) {\r\n\treturn 0\r\n} else {\r\n\treturn 1\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -586,15 +584,15 @@
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
               "AutoSize": true,
-              "AutoSizeScale": 0.08,
+              "AutoSizeScale": 0.05,
               "BackgroundColor": "#00FFFFFF",
-              "Height": 64.0,
+              "Height": 40.0,
               "Image": "lr-team-icon",
-              "Left": 393.0,
+              "Left": 405.0,
               "Name": "ImageItem2",
-              "Top": 275.0,
+              "Top": 350.0,
               "Visible": true,
-              "Width": 64.0
+              "Width": 40.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -602,45 +600,7 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nreturn settings.yourNumber",
-                    "Interpreter": 1
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                },
-                "TextColor": {
-                  "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( settings.yourColor == \"\" || settings.yourColor == \" \" || !settings.yourColor) {\r\n\treturn \"#2B98FB\"\r\n} else {\r\n\treturn settings.yourColor\r\n}",
-                    "Interpreter": 1
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
-                }
-              },
-              "CharWidth": 62.0,
-              "Font": "Eurostar",
-              "FontSize": 270.0,
-              "FontStyle": "Italic",
-              "FontWeight": "ExtraBlack",
-              "Height": 250.0,
-              "HorizontalAlignment": 1,
-              "IsTextItem": true,
-              "Left": -20.0,
-              "Name": "Number",
-              "Text": "00",
-              "TextColor": "#FF2B98FB",
-              "Top": 40.0,
-              "VerticalAlignment": 1,
-              "Visible": true,
-              "Width": 840.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Text": {
-                  "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nreturn ucase(settings.yourName)",
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( settings.yourName ) {\r\n\treturn ucase(settings.yourName.trim())\r\n}\r\n",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -651,30 +611,66 @@
                 "BorderColor": "#00FFFFFF"
               },
               "Font": "Eurostar",
-              "FontSize": 45.0,
+              "FontSize": 40.0,
               "FontWeight": "ExtraBlack",
               "Height": 50.0,
               "HorizontalAlignment": 1,
-              "IsFreezed": true,
               "IsTextItem": true,
-              "Left": 5.0,
+              "Left": 6.0,
               "Name": "Name",
               "ShadowColor": "#FF000000",
-              "ShadowDepth": 5,
-              "ShadowDirection": -45,
+              "ShadowDirection": 0,
               "Text": "F. LASTNAME",
               "TextColor": "#FFFFFFFF",
-              "Top": 140.0,
+              "Top": 260.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 840.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( settings.yourNumber ) {\r\n\treturn settings.yourNumber.trim()\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( settings.yourColor.trim() == \"\" || !settings.yourColor) {\r\n\treturn \"#2B98FB\"\r\n} else {\r\n\treturn settings.yourColor.trim()\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "CharWidth": 62.0,
+              "Font": "Eurostar",
+              "FontSize": 240.0,
+              "FontStyle": "Italic",
+              "FontWeight": "ExtraBlack",
+              "Height": 210.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": -19.0,
+              "Name": "Number",
+              "Text": "000",
+              "TextColor": "#FF2B98FB",
+              "Top": 65.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 840.0
             }
           ],
           "Group": true,
-          "Height": 299.0,
-          "Left": -20.0,
-          "Name": "Layer",
-          "Top": 40.0,
+          "Height": 325.0,
+          "Left": -19.0,
+          "Name": "User name",
+          "Top": 65.0,
           "Visible": false,
           "Width": 865.0
         },
@@ -738,7 +734,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || settings.lfmID == 0 || !settings.lfmID ) {\r\n\treturn 0\r\n} else {\r\n\t\r\n\tconst url = 'https://api.lowfuelmotorsport.de/lfmlicense/'+settings.lfmID+'?size=sm'\r\n\tconst lfm_widget = downloadstring(5000, url)\r\n\tconst found = lfm_widget.search('<div class=\"nextrace\">')\r\n\treturn ( found != -1 ) ? 1 : 0\r\n\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.lfmID || settings.lfmID == '' ) {\r\n\treturn 0\r\n} else {\r\n\t\r\n\tconst url = 'https://api.lowfuelmotorsport.de/lfmlicense/'+settings.lfmID+'?size=sm'\r\n\tconst lfm_widget = downloadstring(5000, url)\r\n\tconst found = lfm_widget.search('<div class=\"nextrace\">')\r\n\t\r\n\treturn ( found != -1 ) ? 1 : 0\r\n\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -771,7 +767,7 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst url = 'https://api.lowfuelmotorsport.de/lfmlicense/'+settings.lfmID+'?size=sm'\r\n\r\nconst lfm_widget = downloadstring(1000, url)\r\nconst start = lfm_widget.search('<div class=\"nextrace\">')\r\nconst end = lfm_widget.search('<span class=\"drivers\">')\r\nconst length = end-start\r\n\r\nreturn lfm_widget.substr(start+27, length-27)\r\n",
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( settings && settings.lfmID && settings.lfmID != '' ) {\r\n\t\r\n\tconst url = 'https://api.lowfuelmotorsport.de/lfmlicense/'+settings.lfmID+'?size=sm'\r\n\t\t\t\r\n\tconst lfm_widget = downloadstring(1000, url)\r\n\tconst start = lfm_widget.search('<div class=\"nextrace\">')\r\n\tconst end = lfm_widget.search('<span class=\"drivers\">')\r\n\t\r\n\tif ( start > 0 && end > 0 ) {\r\n\t\tconst length = end-start\r\n\t\treturn lfm_widget.substr(start+27, length-27)\r\n\t}\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -812,7 +808,8 @@
       },
       "PitScreen": false,
       "ScreenEnabledExpression": {
-        "Expression": ""
+        "Expression": "",
+        "Interpreter": 1
       },
       "ScreenId": "fc4f16d6-277c-4e83-9351-d53189463ee6"
     },
@@ -825,6 +822,30 @@
       "IsForegroundLayer": false,
       "IsOverlayLayer": false,
       "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WebPageItem, SimHub.Plugins",
+          "AllowTransparency": true,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "StartAddress": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app=LovelyDashboard&screen=Primary'\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "StartAddress"
+            }
+          },
+          "ClickThrough": false,
+          "Height": 480.0,
+          "IsFreezed": true,
+          "Left": 0.0,
+          "Name": "Analytics",
+          "StartAddress": "",
+          "Top": 0.0,
+          "Visible": true,
+          "Width": 850.0
+        },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
           "BackgroundColor": "#FF000000",
@@ -869,6 +890,7 @@
             "RadiusTopRight": 45
           },
           "Height": 480.0,
+          "IsFreezed": true,
           "IsRectangleItem": true,
           "Left": 0.0,
           "Name": "RectangleItem",
@@ -887,6 +909,14 @@
               },
               "Mode": 2,
               "TargetPropertyName": "Opacity"
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED ) {\r\n\treturn 1\r\n} else {\r\n\treturn 0\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
             }
           },
           "Childrens": [
@@ -1155,10 +1185,955 @@
           "Width": 850.0
         },
         {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Opacity": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 0: return 20 // Low\r\n\t\tcase 1: return 45 // Medium\r\n\t\tcase 2: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Opacity"
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED ) {\r\n\treturn 0\r\n} else {\r\n\treturn 1\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "BorderStyle": {
+                "Bindings": {
+                  "RadiusBottomRight": {
+                    "Formula": {
+                      "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                      "Interpreter": 1
+                    },
+                    "Mode": 2,
+                    "TargetPropertyName": "RadiusBottomRight"
+                  }
+                },
+                "BorderBottom": 2,
+                "BorderLeft": 2,
+                "BorderRight": 2,
+                "BorderTop": 2,
+                "RadiusBottomLeft": 12,
+                "RadiusBottomRight": 45,
+                "RadiusTopLeft": 12,
+                "RadiusTopRight": 12
+              },
+              "Height": 90.0,
+              "IsRectangleItem": true,
+              "Left": 521.0,
+              "Name": "RectangleItem6",
+              "Top": 390.0,
+              "Visible": true,
+              "Width": 329.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "BorderStyle": {
+                "Bindings": {
+                  "RadiusBottomLeft": {
+                    "Formula": {
+                      "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                      "Interpreter": 1
+                    },
+                    "Mode": 2,
+                    "TargetPropertyName": "RadiusBottomLeft"
+                  }
+                },
+                "BorderBottom": 2,
+                "BorderColor": "#FF00BFFF",
+                "BorderLeft": 2,
+                "BorderRight": 2,
+                "BorderTop": 2,
+                "RadiusBottomLeft": 45,
+                "RadiusBottomRight": 12,
+                "RadiusTopLeft": 12,
+                "RadiusTopRight": 12
+              },
+              "Height": 90.0,
+              "IsRectangleItem": true,
+              "Left": 0.0,
+              "Name": "RectangleItem",
+              "Top": 390.0,
+              "Visible": true,
+              "Width": 86.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "BorderStyle": {
+                "BorderBottom": 2,
+                "BorderColor": "#FF00BFFF",
+                "BorderLeft": 2,
+                "BorderRight": 2,
+                "BorderTop": 2,
+                "RadiusBottomLeft": 12,
+                "RadiusBottomRight": 12,
+                "RadiusTopLeft": 12,
+                "RadiusTopRight": 12
+              },
+              "Height": 90.0,
+              "IsRectangleItem": true,
+              "Left": 96.0,
+              "Name": "RectangleItem2",
+              "Top": 390.0,
+              "Visible": true,
+              "Width": 86.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "BorderStyle": {
+                "BorderBottom": 2,
+                "BorderColor": "#FFFFE04C",
+                "BorderLeft": 2,
+                "BorderRight": 2,
+                "BorderTop": 2,
+                "RadiusBottomLeft": 12,
+                "RadiusBottomRight": 12,
+                "RadiusTopLeft": 12,
+                "RadiusTopRight": 12
+              },
+              "Height": 90.0,
+              "IsRectangleItem": true,
+              "Left": 192.0,
+              "Name": "RectangleItem3",
+              "Top": 390.0,
+              "Visible": true,
+              "Width": 86.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "BorderStyle": {
+                "BorderBottom": 2,
+                "BorderColor": "#FFFA0000",
+                "BorderLeft": 2,
+                "BorderRight": 2,
+                "BorderTop": 2,
+                "RadiusBottomLeft": 12,
+                "RadiusBottomRight": 12,
+                "RadiusTopLeft": 12,
+                "RadiusTopRight": 12
+              },
+              "Height": 90.0,
+              "IsRectangleItem": true,
+              "Left": 288.0,
+              "Name": "RectangleItem4",
+              "Top": 390.0,
+              "Visible": true,
+              "Width": 127.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "BorderStyle": {
+                "BorderBottom": 2,
+                "BorderColor": "#FF00FF02",
+                "BorderLeft": 2,
+                "BorderRight": 2,
+                "BorderTop": 2,
+                "RadiusBottomLeft": 12,
+                "RadiusBottomRight": 12,
+                "RadiusTopLeft": 12,
+                "RadiusTopRight": 12
+              },
+              "Height": 90.0,
+              "IsRectangleItem": true,
+              "Left": 425.0,
+              "Name": "RectangleItem5",
+              "Top": 390.0,
+              "Visible": true,
+              "Width": 86.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "BorderStyle": {
+                "BorderBottom": 2,
+                "BorderLeft": 2,
+                "BorderRight": 2,
+                "BorderTop": 2,
+                "RadiusBottomLeft": 12,
+                "RadiusBottomRight": 12,
+                "RadiusTopLeft": 12,
+                "RadiusTopRight": 12
+              },
+              "Height": 260.0,
+              "IsRectangleItem": true,
+              "Left": 525.0,
+              "Name": "RectangleItem3",
+              "Top": 115.0,
+              "Visible": true,
+              "Width": 325.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "BorderStyle": {
+                "Bindings": {
+                  "RadiusTopRight": {
+                    "Formula": {
+                      "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                      "Interpreter": 1
+                    },
+                    "Mode": 2,
+                    "TargetPropertyName": "RadiusTopRight"
+                  }
+                },
+                "BorderBottom": 2,
+                "BorderLeft": 2,
+                "BorderRight": 2,
+                "BorderTop": 2,
+                "RadiusBottomLeft": 12,
+                "RadiusBottomRight": 12,
+                "RadiusTopLeft": 12,
+                "RadiusTopRight": 45
+              },
+              "Height": 70.0,
+              "IsRectangleItem": true,
+              "Left": 525.0,
+              "Name": "RectangleItem4",
+              "Top": 35.0,
+              "Visible": true,
+              "Width": 325.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "BorderStyle": {
+                "BorderBottom": 2,
+                "BorderLeft": 2,
+                "BorderRight": 2,
+                "BorderTop": 2,
+                "RadiusBottomLeft": 12,
+                "RadiusBottomRight": 12,
+                "RadiusTopLeft": 12,
+                "RadiusTopRight": 12
+              },
+              "Height": 260.0,
+              "IsRectangleItem": true,
+              "Left": 0.0,
+              "Name": "RectangleItem2",
+              "Top": 115.0,
+              "Visible": true,
+              "Width": 325.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "BorderStyle": {
+                "Bindings": {
+                  "RadiusTopLeft": {
+                    "Formula": {
+                      "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                      "Interpreter": 1
+                    },
+                    "Mode": 2,
+                    "TargetPropertyName": "RadiusTopLeft"
+                  }
+                },
+                "BorderBottom": 2,
+                "BorderLeft": 2,
+                "BorderRight": 2,
+                "BorderTop": 2,
+                "RadiusBottomLeft": 12,
+                "RadiusBottomRight": 12,
+                "RadiusTopLeft": 45,
+                "RadiusTopRight": 12
+              },
+              "Height": 70.0,
+              "IsRectangleItem": true,
+              "Left": 0.0,
+              "Name": "RectangleItem",
+              "Top": 35.0,
+              "Visible": true,
+              "Width": 325.0
+            }
+          ],
+          "Group": true,
+          "Height": 445.0,
+          "Left": 0.0,
+          "Name": "Outlines LED",
+          "Top": 35.0,
+          "Visible": false,
+          "Width": 850.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED ) {\r\n\treturn 0\r\n} else {\r\n\treturn 1\r\n}\r\n",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Childrens": [
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF212121",
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 12,
+                    "RadiusBottomRight": 12,
+                    "RadiusTopLeft": 12,
+                    "RadiusTopRight": 12
+                  },
+                  "Height": 25.0,
+                  "IsRectangleItem": true,
+                  "Left": 18.0,
+                  "Name": "RectangleItem2",
+                  "Top": 0.0,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF212121",
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 10,
+                    "RadiusBottomRight": 10,
+                    "RadiusTopLeft": 10,
+                    "RadiusTopRight": 10
+                  },
+                  "Height": 25.0,
+                  "IsRectangleItem": true,
+                  "Left": 63.0,
+                  "Name": "RectangleItem3",
+                  "Top": 0.0,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF212121",
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 12,
+                    "RadiusBottomRight": 12,
+                    "RadiusTopLeft": 12,
+                    "RadiusTopRight": 12
+                  },
+                  "Height": 25.0,
+                  "IsRectangleItem": true,
+                  "Left": 108.0,
+                  "Name": "RectangleItem4",
+                  "Top": 0.0,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF212121",
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 12,
+                    "RadiusBottomRight": 12,
+                    "RadiusTopLeft": 12,
+                    "RadiusTopRight": 12
+                  },
+                  "Height": 25.0,
+                  "IsRectangleItem": true,
+                  "Left": 153.0,
+                  "Name": "RectangleItem5",
+                  "Top": 0.0,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF212121",
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 12,
+                    "RadiusBottomRight": 12,
+                    "RadiusTopLeft": 12,
+                    "RadiusTopRight": 12
+                  },
+                  "Height": 25.0,
+                  "IsRectangleItem": true,
+                  "Left": 198.0,
+                  "Name": "RectangleItem6",
+                  "Top": 0.0,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF212121",
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 12,
+                    "RadiusBottomRight": 12,
+                    "RadiusTopLeft": 12,
+                    "RadiusTopRight": 12
+                  },
+                  "Height": 25.0,
+                  "IsRectangleItem": true,
+                  "Left": 243.0,
+                  "Name": "RectangleItem7",
+                  "Top": 0.0,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF212121",
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 12,
+                    "RadiusBottomRight": 12,
+                    "RadiusTopLeft": 12,
+                    "RadiusTopRight": 12
+                  },
+                  "Height": 25.0,
+                  "IsRectangleItem": true,
+                  "Left": 288.0,
+                  "Name": "RectangleItem8",
+                  "Top": 0.0,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF212121",
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 12,
+                    "RadiusBottomRight": 12,
+                    "RadiusTopLeft": 12,
+                    "RadiusTopRight": 12
+                  },
+                  "Height": 25.0,
+                  "IsRectangleItem": true,
+                  "Left": 525.0,
+                  "Name": "RectangleItem13",
+                  "Top": 0.0,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF212121",
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 12,
+                    "RadiusBottomRight": 12,
+                    "RadiusTopLeft": 12,
+                    "RadiusTopRight": 12
+                  },
+                  "Height": 25.0,
+                  "IsRectangleItem": true,
+                  "Left": 570.0,
+                  "Name": "RectangleItem14",
+                  "Top": 0.0,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF212121",
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 12,
+                    "RadiusBottomRight": 12,
+                    "RadiusTopLeft": 12,
+                    "RadiusTopRight": 12
+                  },
+                  "Height": 25.0,
+                  "IsRectangleItem": true,
+                  "Left": 615.0,
+                  "Name": "RectangleItem15",
+                  "Top": 0.0,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF212121",
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 12,
+                    "RadiusBottomRight": 12,
+                    "RadiusTopLeft": 12,
+                    "RadiusTopRight": 12
+                  },
+                  "Height": 25.0,
+                  "IsRectangleItem": true,
+                  "Left": 660.0,
+                  "Name": "RectangleItem16",
+                  "Top": 0.0,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF212121",
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 12,
+                    "RadiusBottomRight": 12,
+                    "RadiusTopLeft": 12,
+                    "RadiusTopRight": 12
+                  },
+                  "Height": 25.0,
+                  "IsRectangleItem": true,
+                  "Left": 705.0,
+                  "Name": "RectangleItem17",
+                  "Top": 0.0,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF212121",
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 12,
+                    "RadiusBottomRight": 12,
+                    "RadiusTopLeft": 12,
+                    "RadiusTopRight": 12
+                  },
+                  "Height": 25.0,
+                  "IsRectangleItem": true,
+                  "Left": 750.0,
+                  "Name": "RectangleItem18",
+                  "Top": 0.0,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF212121",
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 12,
+                    "RadiusBottomRight": 12,
+                    "RadiusTopLeft": 12,
+                    "RadiusTopRight": 12
+                  },
+                  "Height": 25.0,
+                  "IsRectangleItem": true,
+                  "Left": 795.0,
+                  "Name": "RectangleItem19",
+                  "Top": 0.0,
+                  "Visible": true,
+                  "Width": 40.0
+                }
+              ],
+              "Group": true,
+              "Height": 25.0,
+              "Left": 18.0,
+              "Name": "Off",
+              "Top": 0.0,
+              "Visible": true,
+              "Width": 817.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Childrens": [
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FFFFD700",
+                  "Bindings": {
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "([DataCorePlugin.GameData.NewData.CarSettings_MaxRPM]*0.73)<=[DataCorePlugin.GameData.NewData.Rpms]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Visible"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 12,
+                    "RadiusBottomRight": 12,
+                    "RadiusTopLeft": 12,
+                    "RadiusTopRight": 12
+                  },
+                  "Height": 25.0,
+                  "IsRectangleItem": true,
+                  "Left": 18.0,
+                  "Name": "RectangleItem20",
+                  "Top": 0.0,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FFFFD700",
+                  "Bindings": {
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "([DataCorePlugin.GameData.NewData.CarSettings_MaxRPM]*0.75)<=[DataCorePlugin.GameData.NewData.Rpms]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Visible"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 10,
+                    "RadiusBottomRight": 10,
+                    "RadiusTopLeft": 10,
+                    "RadiusTopRight": 10
+                  },
+                  "Height": 25.0,
+                  "IsRectangleItem": true,
+                  "Left": 63.0,
+                  "Name": "RectangleItem21",
+                  "Top": 0.0,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FFFFD700",
+                  "Bindings": {
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "([DataCorePlugin.GameData.NewData.CarSettings_MaxRPM]*0.77)<=[DataCorePlugin.GameData.NewData.Rpms]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Visible"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 12,
+                    "RadiusBottomRight": 12,
+                    "RadiusTopLeft": 12,
+                    "RadiusTopRight": 12
+                  },
+                  "Height": 25.0,
+                  "IsRectangleItem": true,
+                  "Left": 108.0,
+                  "Name": "RectangleItem22",
+                  "Top": 0.0,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FFFFD700",
+                  "Bindings": {
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "([DataCorePlugin.GameData.NewData.CarSettings_MaxRPM]*0.79)<=[DataCorePlugin.GameData.NewData.Rpms]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Visible"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 12,
+                    "RadiusBottomRight": 12,
+                    "RadiusTopLeft": 12,
+                    "RadiusTopRight": 12
+                  },
+                  "Height": 25.0,
+                  "IsRectangleItem": true,
+                  "Left": 153.0,
+                  "Name": "RectangleItem23",
+                  "Top": 0.0,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FFFFD700",
+                  "Bindings": {
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "([DataCorePlugin.GameData.NewData.CarSettings_MaxRPM]*0.81)<=[DataCorePlugin.GameData.NewData.Rpms]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Visible"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 12,
+                    "RadiusBottomRight": 12,
+                    "RadiusTopLeft": 12,
+                    "RadiusTopRight": 12
+                  },
+                  "Height": 25.0,
+                  "IsRectangleItem": true,
+                  "Left": 198.0,
+                  "Name": "RectangleItem24",
+                  "Top": 0.0,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FFFF0000",
+                  "Bindings": {
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "([DataCorePlugin.GameData.NewData.CarSettings_MaxRPM]*0.83)<=[DataCorePlugin.GameData.NewData.Rpms]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Visible"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 12,
+                    "RadiusBottomRight": 12,
+                    "RadiusTopLeft": 12,
+                    "RadiusTopRight": 12
+                  },
+                  "Height": 25.0,
+                  "IsRectangleItem": true,
+                  "Left": 243.0,
+                  "Name": "RectangleItem25",
+                  "Top": 0.0,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FFFF0000",
+                  "Bindings": {
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "([DataCorePlugin.GameData.NewData.CarSettings_MaxRPM]*0.85)<=[DataCorePlugin.GameData.NewData.Rpms]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Visible"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 12,
+                    "RadiusBottomRight": 12,
+                    "RadiusTopLeft": 12,
+                    "RadiusTopRight": 12
+                  },
+                  "Height": 25.0,
+                  "IsRectangleItem": true,
+                  "Left": 288.0,
+                  "Name": "RectangleItem26",
+                  "Top": 0.0,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FFFF0000",
+                  "Bindings": {
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "([DataCorePlugin.GameData.NewData.CarSettings_MaxRPM]*0.87)<=[DataCorePlugin.GameData.NewData.Rpms]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Visible"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 12,
+                    "RadiusBottomRight": 12,
+                    "RadiusTopLeft": 12,
+                    "RadiusTopRight": 12
+                  },
+                  "Height": 25.0,
+                  "IsRectangleItem": true,
+                  "Left": 523.0,
+                  "Name": "RectangleItem31",
+                  "Top": 0.0,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FFFF0000",
+                  "Bindings": {
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "([DataCorePlugin.GameData.NewData.CarSettings_MaxRPM]*0.89)<=[DataCorePlugin.GameData.NewData.Rpms]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Visible"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 12,
+                    "RadiusBottomRight": 12,
+                    "RadiusTopLeft": 12,
+                    "RadiusTopRight": 12
+                  },
+                  "Height": 25.0,
+                  "IsRectangleItem": true,
+                  "Left": 568.0,
+                  "Name": "RectangleItem32",
+                  "Top": 0.0,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF0000FF",
+                  "Bindings": {
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "([DataCorePlugin.GameData.NewData.CarSettings_MaxRPM]*0.91)<=[DataCorePlugin.GameData.NewData.Rpms]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Visible"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 12,
+                    "RadiusBottomRight": 12,
+                    "RadiusTopLeft": 12,
+                    "RadiusTopRight": 12
+                  },
+                  "Height": 25.0,
+                  "IsRectangleItem": true,
+                  "Left": 613.0,
+                  "Name": "RectangleItem33",
+                  "Top": 0.0,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF0000FF",
+                  "Bindings": {
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "([DataCorePlugin.GameData.NewData.CarSettings_MaxRPM]*0.93)<=[DataCorePlugin.GameData.NewData.Rpms]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Visible"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 12,
+                    "RadiusBottomRight": 12,
+                    "RadiusTopLeft": 12,
+                    "RadiusTopRight": 12
+                  },
+                  "Height": 25.0,
+                  "IsRectangleItem": true,
+                  "Left": 658.0,
+                  "Name": "RectangleItem34",
+                  "Top": 0.0,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF0000FF",
+                  "Bindings": {
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "([DataCorePlugin.GameData.NewData.CarSettings_MaxRPM]*0.95)<=[DataCorePlugin.GameData.NewData.Rpms]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Visible"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 12,
+                    "RadiusBottomRight": 12,
+                    "RadiusTopLeft": 12,
+                    "RadiusTopRight": 12
+                  },
+                  "Height": 25.0,
+                  "IsRectangleItem": true,
+                  "Left": 703.0,
+                  "Name": "RectangleItem35",
+                  "Top": 0.0,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF0000FF",
+                  "Bindings": {
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "([DataCorePlugin.GameData.NewData.CarSettings_MaxRPM]*0.97)<=[DataCorePlugin.GameData.NewData.Rpms]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Visible"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 12,
+                    "RadiusBottomRight": 12,
+                    "RadiusTopLeft": 12,
+                    "RadiusTopRight": 12
+                  },
+                  "Height": 25.0,
+                  "IsRectangleItem": true,
+                  "Left": 748.0,
+                  "Name": "RectangleItem36",
+                  "Top": 0.0,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF0000FF",
+                  "Bindings": {
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "([DataCorePlugin.GameData.NewData.CarSettings_MaxRPM])<=[DataCorePlugin.GameData.NewData.Rpms]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Visible"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 12,
+                    "RadiusBottomRight": 12,
+                    "RadiusTopLeft": 12,
+                    "RadiusTopRight": 12
+                  },
+                  "Height": 25.0,
+                  "IsRectangleItem": true,
+                  "Left": 793.0,
+                  "Name": "RectangleItem37",
+                  "Top": 0.0,
+                  "Visible": true,
+                  "Width": 40.0
+                }
+              ],
+              "Group": true,
+              "Height": 25.0,
+              "Left": 18.0,
+              "Name": "On",
+              "Top": 0.0,
+              "Visible": true,
+              "Width": 815.0
+            }
+          ],
+          "Group": true,
+          "Height": 25.0,
+          "Left": 18.0,
+          "Name": "LED's",
+          "Top": 0.0,
+          "Visible": false,
+          "Width": 817.0
+        },
+        {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
+            "Top": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED ) {\r\n\treturn 20\r\n} else {\r\n\treturn 45\r\n}\r\n",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Top"
+            },
             "Visible": {
               "Formula": {
                 "Expression": "if ([DataCorePlugin.CurrentGame]=='AssettoCorsaCompetizione', 1, 0)"
@@ -1169,6 +2144,7 @@
           },
           "FileName": "Functions.djson",
           "Height": 50.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 20.0,
           "Name": "Functions",
@@ -1183,6 +2159,14 @@
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
+            "Top": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED ) {\r\n\treturn 20\r\n} else {\r\n\treturn 45\r\n}\r\n",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Top"
+            },
             "Visible": {
               "Formula": {
                 "Expression": "if ([DataCorePlugin.CurrentGame]=='IRacing', 1,0)"
@@ -1193,6 +2177,7 @@
           },
           "FileName": "Functions - iR.djson",
           "Height": 50.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 20.0,
           "Name": "Function iR",
@@ -1207,6 +2192,14 @@
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
+            "Top": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED ) {\r\n\treturn 20\r\n} else {\r\n\treturn 45\r\n}\r\n",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Top"
+            },
             "Visible": {
               "Formula": {
                 "Expression": "if ([DataCorePlugin.CurrentGame]=='Automobilista2', 1,0)"
@@ -1217,6 +2210,7 @@
           },
           "FileName": "Functions - AMS2.djson",
           "Height": 50.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 20.0,
           "Name": "Function AMS2",
@@ -1231,6 +2225,14 @@
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
+            "Top": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED ) {\r\n\treturn 20\r\n} else {\r\n\treturn 45\r\n}\r\n",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Top"
+            },
             "Visible": {
               "Formula": {
                 "Expression": "if ([DataCorePlugin.CurrentGame]=='RFactor2', 1, 0)"
@@ -1241,6 +2243,7 @@
           },
           "FileName": "Functions - rF2.djson",
           "Height": 50.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 20.0,
           "Name": "Functions rF2",
@@ -1255,6 +2258,14 @@
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
+            "Top": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED ) {\r\n\treturn 20\r\n} else {\r\n\treturn 45\r\n}\r\n",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Top"
+            },
             "Visible": {
               "Formula": {
                 "Expression": "if ([DataCorePlugin.CurrentGame]=='AssettoCorsaCompetizione', 1, 0)"
@@ -1265,6 +2276,7 @@
           },
           "FileName": "Session.djson",
           "Height": 49.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 550.0,
           "Name": "Session",
@@ -1279,6 +2291,14 @@
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
+            "Top": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED ) {\r\n\treturn 20\r\n} else {\r\n\treturn 45\r\n}\r\n",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Top"
+            },
             "Visible": {
               "Formula": {
                 "Expression": "if ([DataCorePlugin.CurrentGame]=='IRacing', 1,0)"
@@ -1289,6 +2309,7 @@
           },
           "FileName": "Session - iR.djson",
           "Height": 49.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 550.0,
           "Name": "Session iR",
@@ -1303,6 +2324,14 @@
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
+            "Top": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED ) {\r\n\treturn 20\r\n} else {\r\n\treturn 45\r\n}\r\n",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Top"
+            },
             "Visible": {
               "Formula": {
                 "Expression": "if ([DataCorePlugin.CurrentGame]=='Automobilista2', 1,0)"
@@ -1313,6 +2342,7 @@
           },
           "FileName": "Session - AMS2.djson",
           "Height": 49.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 550.0,
           "Name": "Session AMS2",
@@ -1327,6 +2357,14 @@
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
+            "Top": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED ) {\r\n\treturn 20\r\n} else {\r\n\treturn 45\r\n}\r\n",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Top"
+            },
             "Visible": {
               "Formula": {
                 "Expression": "if ([DataCorePlugin.CurrentGame]=='RFactor2', 1, 0)"
@@ -1337,6 +2375,7 @@
           },
           "FileName": "Session - rF2.djson",
           "Height": 49.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 550.0,
           "Name": "Session rF2",
@@ -1351,6 +2390,22 @@
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
+            "InitialScreenIndex": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings  || !settings.leftMFM) {\r\n\treturn 0\r\n} else {\r\n\treturn settings.leftMFM\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "InitialScreenIndex"
+            },
+            "Top": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED ) {\r\n\treturn 110\r\n} else {\r\n\treturn 115\r\n}\r\n",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Top"
+            },
             "Visible": {
               "Formula": {
                 "Expression": "if ([DataCorePlugin.CurrentGame]=='AssettoCorsaCompetizione', 1, 0)"
@@ -1361,9 +2416,10 @@
           },
           "FileName": "Multi Function Module Left.djson",
           "Height": 268.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 0.0,
-          "Name": "Left MFM",
+          "Name": "Left MFM2",
           "NextScreenCommand": 1,
           "PreviousScreenCommand": 0,
           "Top": 110.0,
@@ -1375,6 +2431,22 @@
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
+            "InitialScreenIndex": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings  || !settings.leftMFM) {\r\n\treturn 0\r\n} else {\r\n\treturn settings.leftMFM\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "InitialScreenIndex"
+            },
+            "Top": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED ) {\r\n\treturn 110\r\n} else {\r\n\treturn 115\r\n}\r\n",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Top"
+            },
             "Visible": {
               "Formula": {
                 "Expression": "if ([DataCorePlugin.CurrentGame]=='IRacing', 1, 0)"
@@ -1385,6 +2457,7 @@
           },
           "FileName": "Multi Function Module Left - iR.djson",
           "Height": 268.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 0.0,
           "Name": "Left MFM iR",
@@ -1399,6 +2472,22 @@
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
+            "InitialScreenIndex": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings  || !settings.leftMFM) {\r\n\treturn 0\r\n} else {\r\n\treturn settings.leftMFM\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "InitialScreenIndex"
+            },
+            "Top": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED ) {\r\n\treturn 110\r\n} else {\r\n\treturn 115\r\n}\r\n",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Top"
+            },
             "Visible": {
               "Formula": {
                 "Expression": "if ([DataCorePlugin.CurrentGame]=='Automobilista2', 1, 0)"
@@ -1409,6 +2498,7 @@
           },
           "FileName": "Multi Function Module Left - AMS2.djson",
           "Height": 268.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 0.0,
           "Name": "Left MFM AMS2",
@@ -1423,6 +2513,22 @@
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
+            "InitialScreenIndex": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings  || !settings.leftMFM) {\r\n\treturn 0\r\n} else {\r\n\treturn settings.leftMFM\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "InitialScreenIndex"
+            },
+            "Top": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED ) {\r\n\treturn 110\r\n} else {\r\n\treturn 115\r\n}\r\n",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Top"
+            },
             "Visible": {
               "Formula": {
                 "Expression": "if ([DataCorePlugin.CurrentGame]=='RFactor2', 1, 0)"
@@ -1433,6 +2539,7 @@
           },
           "FileName": "Multi Function Module Left - rF2.djson",
           "Height": 268.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 0.0,
           "Name": "Left MFM rF2",
@@ -1447,6 +2554,22 @@
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
+            "InitialScreenIndex": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.rightMFM) {\r\n\treturn 0\r\n} else {\r\n\treturn settings.rightMFM\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "InitialScreenIndex"
+            },
+            "Top": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED ) {\r\n\treturn 110\r\n} else {\r\n\treturn 115\r\n}\r\n",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Top"
+            },
             "Visible": {
               "Formula": {
                 "Expression": "if ([DataCorePlugin.CurrentGame]=='AssettoCorsaCompetizione', 1, 0)"
@@ -1457,9 +2580,10 @@
           },
           "FileName": "Multi Function Module Right.djson",
           "Height": 268.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 525.0,
-          "Name": "Right MFM",
+          "Name": "Right MFM2",
           "NextScreenCommand": 2,
           "PreviousScreenCommand": 0,
           "Top": 110.0,
@@ -1471,6 +2595,22 @@
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
+            "InitialScreenIndex": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.rightMFM) {\r\n\treturn 0\r\n} else {\r\n\treturn settings.rightMFM\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "InitialScreenIndex"
+            },
+            "Top": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED ) {\r\n\treturn 110\r\n} else {\r\n\treturn 115\r\n}\r\n",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Top"
+            },
             "Visible": {
               "Formula": {
                 "Expression": "if ([DataCorePlugin.CurrentGame]=='IRacing', 1, 0)"
@@ -1481,6 +2621,7 @@
           },
           "FileName": "Multi Function Module Right - iR.djson",
           "Height": 268.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 525.0,
           "Name": "Right MFM iR",
@@ -1495,6 +2636,22 @@
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
+            "InitialScreenIndex": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.rightMFM) {\r\n\treturn 0\r\n} else {\r\n\treturn settings.rightMFM\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "InitialScreenIndex"
+            },
+            "Top": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED ) {\r\n\treturn 110\r\n} else {\r\n\treturn 115\r\n}\r\n",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Top"
+            },
             "Visible": {
               "Formula": {
                 "Expression": "if ([DataCorePlugin.CurrentGame]=='Automobilista2', 1, 0)"
@@ -1505,6 +2662,7 @@
           },
           "FileName": "Multi Function Module Right - AMS2.djson",
           "Height": 268.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 525.0,
           "Name": "Right MFM AMS2",
@@ -1519,6 +2677,22 @@
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
+            "InitialScreenIndex": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.rightMFM) {\r\n\treturn 0\r\n} else {\r\n\treturn settings.rightMFM\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "InitialScreenIndex"
+            },
+            "Top": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED ) {\r\n\treturn 110\r\n} else {\r\n\treturn 115\r\n}\r\n",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Top"
+            },
             "Visible": {
               "Formula": {
                 "Expression": "if ([DataCorePlugin.CurrentGame]=='RFactor2', 1, 0)"
@@ -1529,6 +2703,7 @@
           },
           "FileName": "Multi Function Module Right - rF2.djson",
           "Height": 268.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 525.0,
           "Name": "Right MFM rF2",
@@ -1553,9 +2728,10 @@
           },
           "FileName": "Central.djson",
           "Height": 300.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 345.0,
-          "Name": "Central",
+          "Name": "Central2",
           "NextScreenCommand": 5,
           "PreviousScreenCommand": 0,
           "Top": 0.0,
@@ -1577,6 +2753,7 @@
           },
           "FileName": "Central - iR.djson",
           "Height": 330.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 345.0,
           "Name": "Central iR",
@@ -1601,6 +2778,7 @@
           },
           "FileName": "Central - AMS2.djson",
           "Height": 300.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 345.0,
           "Name": "Central AMS2",
@@ -1625,6 +2803,7 @@
           },
           "FileName": "Central - rF2.djson",
           "Height": 330.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 345.0,
           "Name": "Central rF2",
@@ -1649,6 +2828,7 @@
           },
           "FileName": "Environment.djson",
           "Height": 58.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 345.0,
           "Name": "Environment",
@@ -1673,12 +2853,13 @@
           },
           "FileName": "Environment - iR.djson",
           "Height": 24.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 345.0,
           "Name": "Environment iR",
           "NextScreenCommand": 0,
           "PreviousScreenCommand": 0,
-          "Top": 342.0,
+          "Top": 344.0,
           "Visible": false,
           "Width": 160.0
         },
@@ -1697,6 +2878,7 @@
           },
           "FileName": "Environment - AMS2.djson",
           "Height": 58.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 345.0,
           "Name": "Environment AMS2",
@@ -1721,12 +2903,13 @@
           },
           "FileName": "Environment - Rf2.djson",
           "Height": 24.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 345.0,
           "Name": "Environment rF2",
           "NextScreenCommand": 0,
           "PreviousScreenCommand": 0,
-          "Top": 342.0,
+          "Top": 344.0,
           "Visible": false,
           "Width": 160.0
         },
@@ -1745,6 +2928,7 @@
           },
           "FileName": "Vehicle Settings.djson",
           "Height": 97.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 0.0,
           "Name": "Vehicle Settings",
@@ -1769,6 +2953,7 @@
           },
           "FileName": "Vehicle Settings - iR.djson",
           "Height": 97.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 0.0,
           "Name": "Vehicle Settings iR",
@@ -1793,6 +2978,7 @@
           },
           "FileName": "Vehicle Settings - AMS2.djson",
           "Height": 97.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 0.0,
           "Name": "Vehicle Settings AMS2",
@@ -1817,6 +3003,7 @@
           },
           "FileName": "Vehicle Settings - rF2.djson",
           "Height": 97.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 0.0,
           "Name": "Vehicle Settings rF2",
@@ -1831,6 +3018,14 @@
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
+            "Top": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED ) {\r\n\treturn 20\r\n} else {\r\n\treturn 45\r\n}\r\n",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Top"
+            },
             "Visible": {
               "Formula": {
                 "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ) {\r\n\r\n\tconst json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\n\tconst settings = JSON.parse(json_settings);\r\n\t\r\n\tif ( !settings ) {\r\n\t\treturn 1\r\n\t} else {\r\n\t\tswitch (settings.showFlags) {\r\n\t\t\tcase 0: return 1\r\n\t\t\tcase 1: return 0\r\n\t\t\tdefault: return 1\r\n\t\t}\r\n\t}\r\n\r\n} else {\r\n\r\n\treturn 0\r\n\r\n}",
@@ -1842,6 +3037,7 @@
           },
           "FileName": "Flags.djson",
           "Height": 50.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 20.0,
           "Name": "Flags",
@@ -1856,6 +3052,14 @@
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
+            "Top": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED ) {\r\n\treturn 20\r\n} else {\r\n\treturn 45\r\n}\r\n",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Top"
+            },
             "Visible": {
               "Formula": {
                 "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\tconst json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\n\tconst settings = JSON.parse(json_settings);\r\n\t\r\n\tif ( !settings ) {\r\n\t\treturn 1\r\n\t} else {\r\n\t\tswitch (settings.showFlags) {\r\n\t\t\tcase 0: return 1\r\n\t\t\tcase 1: return 0\r\n\t\t\tdefault: return 1\r\n\t\t}\r\n\t}\r\n\r\n} else {\r\n\r\n\treturn 0\r\n\r\n}",
@@ -1867,6 +3071,7 @@
           },
           "FileName": "Flags - iR.djson",
           "Height": 50.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 20.0,
           "Name": "Flags iR",
@@ -1881,6 +3086,14 @@
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
+            "Top": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED ) {\r\n\treturn 20\r\n} else {\r\n\treturn 45\r\n}\r\n",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Top"
+            },
             "Visible": {
               "Formula": {
                 "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\tconst json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\n\tconst settings = JSON.parse(json_settings);\r\n\t\r\n\tif ( !settings ) {\r\n\t\treturn 1\r\n\t} else {\r\n\t\tswitch (settings.showFlags) {\r\n\t\t\tcase 0: return 1\r\n\t\t\tcase 1: return 0\r\n\t\t\tdefault: return 1\r\n\t\t}\r\n\t}\r\n\r\n} else {\r\n\r\n\treturn 0\r\n\r\n}",
@@ -1892,6 +3105,7 @@
           },
           "FileName": "Flags - AMS2.djson",
           "Height": 50.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 20.0,
           "Name": "Flags AMS2",
@@ -1906,6 +3120,14 @@
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
+            "Top": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED ) {\r\n\treturn 20\r\n} else {\r\n\treturn 45\r\n}\r\n",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Top"
+            },
             "Visible": {
               "Formula": {
                 "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\tconst json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\n\tconst settings = JSON.parse(json_settings);\r\n\t\r\n\tif ( !settings ) {\r\n\t\treturn 1\r\n\t} else {\r\n\t\tswitch (settings.showFlags) {\r\n\t\t\tcase 0: return 1\r\n\t\t\tcase 1: return 0\r\n\t\t\tdefault: return 1\r\n\t\t}\r\n\t}\r\n\r\n} else {\r\n\r\n\treturn 0\r\n\r\n}",
@@ -1917,6 +3139,7 @@
           },
           "FileName": "Flags - rF2.djson",
           "Height": 50.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 20.0,
           "Name": "Flags rF2",
@@ -1931,6 +3154,14 @@
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
+            "Top": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED ) {\r\n\treturn 0\r\n} else {\r\n\treturn 5\r\n}\r\n",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Top"
+            },
             "Visible": {
               "Formula": {
                 "Expression": "if ([DataCorePlugin.CurrentGame]=='AssettoCorsaCompetizione', 1, 0)"
@@ -1941,6 +3172,7 @@
           },
           "FileName": "Alerts.djson",
           "Height": 480.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 0.0,
           "Name": "Alerts",
@@ -1955,6 +3187,14 @@
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
+            "Top": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED ) {\r\n\treturn 0\r\n} else {\r\n\treturn 5\r\n}\r\n",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Top"
+            },
             "Visible": {
               "Formula": {
                 "Expression": "if ([DataCorePlugin.CurrentGame]=='IRacing', 1, 0) \r\n\r\n"
@@ -1965,13 +3205,14 @@
           },
           "FileName": "Alerts - iR.djson",
           "Height": 480.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 0.0,
           "Name": "Alerts iR",
           "NextScreenCommand": 0,
           "PreviousScreenCommand": 0,
           "Top": 0.0,
-          "Visible": true,
+          "Visible": false,
           "Width": 850.0
         },
         {
@@ -1979,6 +3220,14 @@
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
+            "Top": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED ) {\r\n\treturn 0\r\n} else {\r\n\treturn 5\r\n}\r\n",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Top"
+            },
             "Visible": {
               "Formula": {
                 "Expression": "if ([DataCorePlugin.CurrentGame]=='Automobilista2', 1, 0)"
@@ -1989,6 +3238,7 @@
           },
           "FileName": "Alerts - AMS2.djson",
           "Height": 480.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 0.0,
           "Name": "Alerts AMS2",
@@ -2003,6 +3253,14 @@
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
+            "Top": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED ) {\r\n\treturn 0\r\n} else {\r\n\treturn 5\r\n}\r\n",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Top"
+            },
             "Visible": {
               "Formula": {
                 "Expression": "if ([DataCorePlugin.CurrentGame]=='RFactor2', 1, 0)"
@@ -2013,6 +3271,7 @@
           },
           "FileName": "Alerts - rF2.djson",
           "Height": 480.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 0.0,
           "Name": "Alerts rF2",
@@ -2028,6 +3287,7 @@
           "BackgroundColor": "#00FFFFFF",
           "FileName": "Turn Signals.djson",
           "Height": 103.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 18.0,
           "Name": "Turn Signals",
@@ -2036,6 +3296,182 @@
           "Top": 50.0,
           "Visible": true,
           "Width": 814.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "BackgroundColor": "#4B000000",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.nightMode ) {\r\n\tnightMode = 0\r\n} else {\r\n\tnightMode = settings.nightMode\r\n}\r\n\r\nif ( nightMode == 1) {\r\n\r\n\tif ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ) {\r\n\t\r\n\t\tif ($prop('DataCorePlugin.GameRawData.Graphics.LightsStage')>0 ) {\r\n\t\t\treturn 1\r\n\t\t} else {\t\r\n\t\t\treturn 0 \r\n\t\t}\r\n\t\r\n\t} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\t\r\n\t\tlet mCarFlags = $prop('DataCorePlugin.GameRawData.mCarFlags');\r\n\t\treturn mCarFlags.toString(2).substr(-1)\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\t\r\n\treturn 0\r\n\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "BorderStyle": {
+            "Bindings": {
+              "RadiusBottomLeft": {
+                "Formula": {
+                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                  "Interpreter": 1
+                },
+                "Mode": 2,
+                "TargetPropertyName": "RadiusBottomLeft"
+              },
+              "RadiusBottomRight": {
+                "Formula": {
+                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                  "Interpreter": 1
+                },
+                "Mode": 2,
+                "TargetPropertyName": "RadiusBottomRight"
+              },
+              "RadiusTopLeft": {
+                "Formula": {
+                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                  "Interpreter": 1
+                },
+                "Mode": 2,
+                "TargetPropertyName": "RadiusTopLeft"
+              },
+              "RadiusTopRight": {
+                "Formula": {
+                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                  "Interpreter": 1
+                },
+                "Mode": 2,
+                "TargetPropertyName": "RadiusTopRight"
+              }
+            },
+            "RadiusBottomLeft": 45,
+            "RadiusBottomRight": 45,
+            "RadiusTopLeft": 45,
+            "RadiusTopRight": 45
+          },
+          "Height": 480.0,
+          "IsFreezed": true,
+          "IsRectangleItem": true,
+          "Left": 0.0,
+          "Name": "Night Mode",
+          "Top": 0.0,
+          "Visible": false,
+          "Width": 850.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ButtonItem, SimHub.Plugins",
+              "AutoSize": false,
+              "BackgroundColor": "#00FFFFFF",
+              "DisabledOpacity": 50,
+              "Height": 268.0,
+              "IsEnabled": true,
+              "IsFreezed": true,
+              "Left": 525.0,
+              "Name": "Right MFM",
+              "PressedOpacity": 100,
+              "SimulateKey": false,
+              "SimulatedKey": 0,
+              "SimulatedKeyV2": {
+                "Alt": false,
+                "Ctrl": false,
+                "KeyCode": 0,
+                "Shift": false,
+                "Win": false
+              },
+              "Top": 110.0,
+              "TriggerAction": "GraphicalDashPlugin.ActionB",
+              "TriggerSimHubInputName": "ButtonB",
+              "Visible": true,
+              "Width": 325.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ButtonItem, SimHub.Plugins",
+              "AutoSize": false,
+              "BackgroundColor": "#00FFFFFF",
+              "DisabledOpacity": 50,
+              "Height": 300.0,
+              "IsEnabled": true,
+              "IsFreezed": true,
+              "Left": 345.0,
+              "Name": "Central",
+              "PressedOpacity": 100,
+              "SimulateKey": false,
+              "SimulatedKey": 0,
+              "SimulatedKeyV2": {
+                "Alt": false,
+                "Ctrl": false,
+                "Shift": false,
+                "Win": false
+              },
+              "Top": 0.0,
+              "TriggerAction": "GraphicalDashPlugin.ActionD",
+              "TriggerSimHubInputName": "ButtonD",
+              "Visible": true,
+              "Width": 160.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ButtonItem, SimHub.Plugins",
+              "AutoSize": false,
+              "BackgroundColor": "#00FFFFFF",
+              "DisabledOpacity": 50,
+              "Height": 268.0,
+              "IsEnabled": true,
+              "IsFreezed": true,
+              "Left": 0.0,
+              "Name": "Left MFM",
+              "PressedOpacity": 100,
+              "SimulateKey": false,
+              "SimulatedKey": 0,
+              "SimulatedKeyV2": {
+                "Alt": false,
+                "Ctrl": false,
+                "Shift": false,
+                "Win": false
+              },
+              "Top": 110.0,
+              "TriggerAction": "GraphicalDashPlugin.ActionA",
+              "TriggerSimHubInputName": "ButtonA",
+              "Visible": true,
+              "Width": 325.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ButtonItem, SimHub.Plugins",
+              "AutoSize": false,
+              "BackgroundColor": "#00FFFFFF",
+              "DisabledOpacity": 50,
+              "Height": 92.0,
+              "IsEnabled": true,
+              "IsFreezed": true,
+              "Left": 521.0,
+              "Name": "Fuel",
+              "PressedOpacity": 100,
+              "SimulateKey": false,
+              "SimulatedKey": 0,
+              "SimulatedKeyV2": {
+                "Alt": false,
+                "Ctrl": false,
+                "Shift": false,
+                "Win": false
+              },
+              "Top": 388.0,
+              "TriggerAction": "GraphicalDashPlugin.ActionC",
+              "TriggerSimHubInputName": "ButtonC",
+              "Visible": true,
+              "Width": 329.0
+            }
+          ],
+          "Group": true,
+          "Height": 480.0,
+          "Left": 0.0,
+          "Name": "Touch Actions",
+          "Top": 0.0,
+          "Visible": true,
+          "Width": 850.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
@@ -2053,6 +3489,46 @@
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
               "BackgroundColor": "#FF000000",
+              "BorderStyle": {
+                "Bindings": {
+                  "RadiusBottomLeft": {
+                    "Formula": {
+                      "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiRadius || settings.uiRadius == '' ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                      "Interpreter": 1
+                    },
+                    "Mode": 2,
+                    "TargetPropertyName": "RadiusBottomLeft"
+                  },
+                  "RadiusBottomRight": {
+                    "Formula": {
+                      "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiRadius || settings.uiRadius == '' ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                      "Interpreter": 1
+                    },
+                    "Mode": 2,
+                    "TargetPropertyName": "RadiusBottomRight"
+                  },
+                  "RadiusTopLeft": {
+                    "Formula": {
+                      "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiRadius || settings.uiRadius == '' ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                      "Interpreter": 1
+                    },
+                    "Mode": 2,
+                    "TargetPropertyName": "RadiusTopLeft"
+                  },
+                  "RadiusTopRight": {
+                    "Formula": {
+                      "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiRadius || settings.uiRadius == '' ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                      "Interpreter": 1
+                    },
+                    "Mode": 2,
+                    "TargetPropertyName": "RadiusTopRight"
+                  }
+                },
+                "RadiusBottomLeft": 45,
+                "RadiusBottomRight": 45,
+                "RadiusTopLeft": 45,
+                "RadiusTopRight": 45
+              },
               "Height": 480.0,
               "IsFreezed": true,
               "IsRectangleItem": true,
@@ -2207,68 +3683,6 @@
           "Top": 0.0,
           "Visible": false,
           "Width": 850.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
-          "BackgroundColor": "#4B000000",
-          "Bindings": {
-            "Visible": {
-              "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('nightMode') ) {\r\n\tnightMode = 0\r\n} else {\r\n\tnightMode = settings.nightMode\r\n}\r\n\r\nif ( nightMode == 1) {\r\n\r\n\tif ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ) {\r\n\t\r\n\t\tif ($prop('DataCorePlugin.GameRawData.Graphics.LightsStage')>0 ) {\r\n\t\t\treturn 1\r\n\t\t} else {\t\r\n\t\t\treturn 0 \r\n\t\t}\r\n\t\r\n\t} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\t\r\n\t\tlet mCarFlags = $prop('DataCorePlugin.GameRawData.mCarFlags');\r\n\t\treturn mCarFlags.toString(2).substr(-1)\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\t\r\n\treturn 0\r\n\r\n}",
-                "Interpreter": 1
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
-            }
-          },
-          "BorderStyle": {
-            "Bindings": {
-              "RadiusBottomLeft": {
-                "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
-                  "Interpreter": 1
-                },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusBottomLeft"
-              },
-              "RadiusBottomRight": {
-                "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
-                  "Interpreter": 1
-                },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusBottomRight"
-              },
-              "RadiusTopLeft": {
-                "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
-                  "Interpreter": 1
-                },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusTopLeft"
-              },
-              "RadiusTopRight": {
-                "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
-                  "Interpreter": 1
-                },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusTopRight"
-              }
-            },
-            "RadiusBottomLeft": 45,
-            "RadiusBottomRight": 45,
-            "RadiusTopLeft": 45,
-            "RadiusTopRight": 45
-          },
-          "Height": 480.0,
-          "IsFreezed": true,
-          "IsRectangleItem": true,
-          "Left": 0.0,
-          "Name": "Night Mode",
-          "Top": 0.0,
-          "Visible": false,
-          "Width": 850.0
         }
       ],
       "Name": "Main",
@@ -2292,6 +3706,30 @@
       "IsForegroundLayer": false,
       "IsOverlayLayer": false,
       "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WebPageItem, SimHub.Plugins",
+          "AllowTransparency": true,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "StartAddress": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app=LovelyDashboard&screen=Leaderboard'\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "StartAddress"
+            }
+          },
+          "ClickThrough": false,
+          "Height": 480.0,
+          "IsFreezed": true,
+          "Left": 0.0,
+          "Name": "Analytics",
+          "StartAddress": "",
+          "Top": 0.0,
+          "Visible": true,
+          "Width": 850.0
+        },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
           "BackgroundColor": "#FF000000",
@@ -2336,6 +3774,7 @@
             "RadiusTopRight": 45
           },
           "Height": 480.0,
+          "IsFreezed": true,
           "IsRectangleItem": true,
           "Left": 0.0,
           "Name": "RectangleItem",
@@ -2607,6 +4046,7 @@
           "BackgroundColor": "#00FFFFFF",
           "FileName": "Standings Compact.djson",
           "Height": 314.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 20.0,
           "Name": "Standings Compact",
@@ -2701,6 +4141,7 @@
           },
           "FileName": "Relative Native.djson",
           "Height": 314.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 148.0,
           "Name": "Relative ",
@@ -2725,6 +4166,7 @@
           },
           "FileName": "Relative Native - iR.djson",
           "Height": 314.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 148.0,
           "Name": "Relative iR",
@@ -2749,6 +4191,7 @@
           },
           "FileName": "Relative Native - AMS2.djson",
           "Height": 314.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 148.0,
           "Name": "Relative AMS2",
@@ -2773,6 +4216,7 @@
           },
           "FileName": "Relative Native - rF2.djson",
           "Height": 314.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 148.0,
           "Name": "Relative rF2",
@@ -3025,9 +4469,10 @@
           },
           "FileName": "Central.djson",
           "Height": 300.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 690.0,
-          "Name": "Central",
+          "Name": "Central2",
           "NextScreenCommand": 5,
           "PreviousScreenCommand": 0,
           "Top": 0.0,
@@ -3049,6 +4494,7 @@
           },
           "FileName": "Central - iR.djson",
           "Height": 330.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 690.0,
           "Name": "Central iR",
@@ -3073,6 +4519,7 @@
           },
           "FileName": "Central - AMS2.djson",
           "Height": 300.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 690.0,
           "Name": "Central AMS2",
@@ -3097,6 +4544,7 @@
           },
           "FileName": "Central - rF2.djson",
           "Height": 330.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 690.0,
           "Name": "Central rF2",
@@ -3121,6 +4569,7 @@
           },
           "FileName": "Environment.djson",
           "Height": 58.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 690.0,
           "Name": "Environment",
@@ -3145,6 +4594,7 @@
           },
           "FileName": "Environment - iR.djson",
           "Height": 24.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 690.0,
           "Name": "Environment iR",
@@ -3169,6 +4619,7 @@
           },
           "FileName": "Environment - AMS2.djson",
           "Height": 58.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 690.0,
           "Name": "Environment AMS2",
@@ -3193,6 +4644,7 @@
           },
           "FileName": "Environment - Rf2.djson",
           "Height": 24.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 690.0,
           "Name": "Environment rF2",
@@ -3217,6 +4669,7 @@
           },
           "FileName": "Vehicle Settings.djson",
           "Height": 97.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 0.0,
           "Name": "Vehicle Settings",
@@ -3241,6 +4694,7 @@
           },
           "FileName": "Vehicle Settings - iR.djson",
           "Height": 97.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 0.0,
           "Name": "Vehicle Settings iR",
@@ -3265,6 +4719,7 @@
           },
           "FileName": "Vehicle Settings - AMS2.djson",
           "Height": 97.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 0.0,
           "Name": "Vehicle Settings AMS2",
@@ -3289,6 +4744,7 @@
           },
           "FileName": "Vehicle Settings - rF2.djson",
           "Height": 97.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 0.0,
           "Name": "Vehicle Settings rF2",
@@ -3313,6 +4769,7 @@
           },
           "FileName": "Alerts.djson",
           "Height": 480.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 0.0,
           "Name": "Alerts",
@@ -3337,6 +4794,7 @@
           },
           "FileName": "Alerts - iR.djson",
           "Height": 480.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 0.0,
           "Name": "Alerts iR",
@@ -3361,6 +4819,7 @@
           },
           "FileName": "Alerts - AMS2.djson",
           "Height": 480.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 0.0,
           "Name": "Alerts AMS2",
@@ -3385,6 +4844,7 @@
           },
           "FileName": "Alerts - rF2.djson",
           "Height": 480.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 0.0,
           "Name": "Alerts rF2",
@@ -3400,6 +4860,7 @@
           "BackgroundColor": "#00FFFFFF",
           "FileName": "Turn Signals.djson",
           "Height": 103.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 20.0,
           "Name": "Turn Signals",
@@ -3408,6 +4869,121 @@
           "Top": 50.0,
           "Visible": true,
           "Width": 814.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "BackgroundColor": "#4B000000",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('nightMode') ) {\r\n\tnightMode = 0\r\n} else {\r\n\tnightMode = settings.nightMode\r\n}\r\n\r\nif ( nightMode == 1) {\r\n\r\n\tif ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ) {\r\n\t\r\n\t\tif ($prop('DataCorePlugin.GameRawData.Graphics.LightsStage')>0 ) {\r\n\t\t\treturn 1\r\n\t\t} else {\t\r\n\t\t\treturn 0 \r\n\t\t}\r\n\t\r\n\t} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\t\r\n\t\tlet mCarFlags = $prop('DataCorePlugin.GameRawData.mCarFlags');\r\n\t\treturn mCarFlags.toString(2).substr(-1)\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\t\r\n\treturn 0\r\n\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "BorderStyle": {
+            "Bindings": {
+              "RadiusBottomLeft": {
+                "Formula": {
+                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                  "Interpreter": 1
+                },
+                "Mode": 2,
+                "TargetPropertyName": "RadiusBottomLeft"
+              },
+              "RadiusBottomRight": {
+                "Formula": {
+                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                  "Interpreter": 1
+                },
+                "Mode": 2,
+                "TargetPropertyName": "RadiusBottomRight"
+              },
+              "RadiusTopLeft": {
+                "Formula": {
+                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                  "Interpreter": 1
+                },
+                "Mode": 2,
+                "TargetPropertyName": "RadiusTopLeft"
+              }
+            },
+            "RadiusBottomLeft": 45,
+            "RadiusBottomRight": 45,
+            "RadiusTopLeft": 45,
+            "RadiusTopRight": 15
+          },
+          "Height": 480.0,
+          "IsFreezed": true,
+          "IsRectangleItem": true,
+          "Left": 0.0,
+          "Name": "Night Mode",
+          "Top": 0.0,
+          "Visible": false,
+          "Width": 850.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ButtonItem, SimHub.Plugins",
+              "AutoSize": false,
+              "BackgroundColor": "#00FFFFFF",
+              "DisabledOpacity": 50,
+              "Height": 92.0,
+              "IsEnabled": true,
+              "Left": 521.0,
+              "Name": "Fuel",
+              "PressedOpacity": 100,
+              "SimulateKey": false,
+              "SimulatedKey": 0,
+              "SimulatedKeyV2": {
+                "Alt": false,
+                "Ctrl": false,
+                "Shift": false,
+                "Win": false
+              },
+              "Top": 388.0,
+              "TriggerAction": "GraphicalDashPlugin.ActionC",
+              "TriggerSimHubInputName": "ButtonC",
+              "Visible": true,
+              "Width": 329.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ButtonItem, SimHub.Plugins",
+              "AutoSize": false,
+              "BackgroundColor": "#00FFFFFF",
+              "DisabledOpacity": 50,
+              "Height": 300.0,
+              "IsEnabled": true,
+              "Left": 690.0,
+              "Name": "Central",
+              "PressedOpacity": 100,
+              "SimulateKey": false,
+              "SimulatedKey": 0,
+              "SimulatedKeyV2": {
+                "Alt": false,
+                "Ctrl": false,
+                "Shift": false,
+                "Win": false
+              },
+              "Top": 0.0,
+              "TriggerAction": "GraphicalDashPlugin.ActionD",
+              "TriggerSimHubInputName": "ButtonD",
+              "Visible": true,
+              "Width": 160.0
+            }
+          ],
+          "Group": true,
+          "Height": 480.0,
+          "Left": 521.0,
+          "Name": "Touch Actions",
+          "Top": 0.0,
+          "Visible": true,
+          "Width": 329.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
@@ -3425,6 +5001,46 @@
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
               "BackgroundColor": "#FF000000",
+              "BorderStyle": {
+                "Bindings": {
+                  "RadiusBottomLeft": {
+                    "Formula": {
+                      "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiRadius || settings.uiRadius == '' ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                      "Interpreter": 1
+                    },
+                    "Mode": 2,
+                    "TargetPropertyName": "RadiusBottomLeft"
+                  },
+                  "RadiusBottomRight": {
+                    "Formula": {
+                      "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiRadius || settings.uiRadius == '' ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                      "Interpreter": 1
+                    },
+                    "Mode": 2,
+                    "TargetPropertyName": "RadiusBottomRight"
+                  },
+                  "RadiusTopLeft": {
+                    "Formula": {
+                      "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiRadius || settings.uiRadius == '' ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                      "Interpreter": 1
+                    },
+                    "Mode": 2,
+                    "TargetPropertyName": "RadiusTopLeft"
+                  },
+                  "RadiusTopRight": {
+                    "Formula": {
+                      "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiRadius || settings.uiRadius == '' ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                      "Interpreter": 1
+                    },
+                    "Mode": 2,
+                    "TargetPropertyName": "RadiusTopRight"
+                  }
+                },
+                "RadiusBottomLeft": 45,
+                "RadiusBottomRight": 45,
+                "RadiusTopLeft": 45,
+                "RadiusTopRight": 45
+              },
               "Height": 480.0,
               "IsFreezed": true,
               "IsRectangleItem": true,
@@ -3579,68 +5195,6 @@
           "Top": 0.0,
           "Visible": false,
           "Width": 850.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
-          "BackgroundColor": "#4B000000",
-          "Bindings": {
-            "Visible": {
-              "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('nightMode') ) {\r\n\tnightMode = 0\r\n} else {\r\n\tnightMode = settings.nightMode\r\n}\r\n\r\nif ( nightMode == 1) {\r\n\r\n\tif ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ) {\r\n\t\r\n\t\tif ($prop('DataCorePlugin.GameRawData.Graphics.LightsStage')>0 ) {\r\n\t\t\treturn 1\r\n\t\t} else {\t\r\n\t\t\treturn 0 \r\n\t\t}\r\n\t\r\n\t} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\t\r\n\t\tlet mCarFlags = $prop('DataCorePlugin.GameRawData.mCarFlags');\r\n\t\treturn mCarFlags.toString(2).substr(-1)\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\t\r\n\treturn 0\r\n\r\n}",
-                "Interpreter": 1
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
-            }
-          },
-          "BorderStyle": {
-            "Bindings": {
-              "RadiusBottomLeft": {
-                "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
-                  "Interpreter": 1
-                },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusBottomLeft"
-              },
-              "RadiusBottomRight": {
-                "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
-                  "Interpreter": 1
-                },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusBottomRight"
-              },
-              "RadiusTopLeft": {
-                "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
-                  "Interpreter": 1
-                },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusTopLeft"
-              },
-              "RadiusTopRight": {
-                "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
-                  "Interpreter": 1
-                },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusTopRight"
-              }
-            },
-            "RadiusBottomLeft": 45,
-            "RadiusBottomRight": 45,
-            "RadiusTopLeft": 45,
-            "RadiusTopRight": 45
-          },
-          "Height": 480.0,
-          "IsFreezed": true,
-          "IsRectangleItem": true,
-          "Left": 0.0,
-          "Name": "Night Mode",
-          "Top": 0.0,
-          "Visible": false,
-          "Width": 850.0
         }
       ],
       "Name": "Timetables",
@@ -3664,6 +5218,29 @@
       "IsForegroundLayer": false,
       "IsOverlayLayer": false,
       "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WebPageItem, SimHub.Plugins",
+          "AllowTransparency": true,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "StartAddress": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app=LovelyDashboard&screen=Map'\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "StartAddress"
+            }
+          },
+          "ClickThrough": false,
+          "Height": 480.0,
+          "Left": 0.0,
+          "Name": "Analytics",
+          "StartAddress": "",
+          "Top": 0.0,
+          "Visible": true,
+          "Width": 850.0
+        },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
           "BackgroundColor": "#FF000000",
@@ -3979,6 +5556,7 @@
           "BackgroundColor": "#00FFFFFF",
           "FileName": "Standings Compact.djson",
           "Height": 314.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 20.0,
           "Name": "Standings Compact",
@@ -4070,6 +5648,7 @@
           },
           "FileName": "Wind.djson",
           "Height": 70.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 150.0,
           "Name": "Wind",
@@ -4094,6 +5673,7 @@
           },
           "FileName": "Wind iR.djson",
           "Height": 70.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 150.0,
           "Name": "Wind iR",
@@ -4118,6 +5698,7 @@
           },
           "FileName": "Wind - AMS2.djson",
           "Height": 70.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 150.0,
           "Name": "Wind  AMS2",
@@ -4147,6 +5728,7 @@
           },
           "FileName": "Flags.djson",
           "Height": 35.5,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 150.0,
           "Name": "Flags",
@@ -4173,6 +5755,7 @@
           },
           "FileName": "Flags - iR.djson",
           "Height": 35.5,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 150.0,
           "Name": "Flags iR",
@@ -4199,6 +5782,7 @@
           },
           "FileName": "Flags - AMS2.djson",
           "Height": 35.5,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 150.0,
           "Name": "Flags AMS2",
@@ -4225,6 +5809,7 @@
           },
           "FileName": "Flags - rF2.djson",
           "Height": 35.5,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 150.0,
           "Name": "Flags rF2",
@@ -4261,6 +5846,7 @@
           },
           "FileName": "Session.djson",
           "Height": 49.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 150.0,
           "Name": "Session",
@@ -4285,6 +5871,7 @@
           },
           "FileName": "Session - iR.djson",
           "Height": 49.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 150.0,
           "Name": "Session iR",
@@ -4309,6 +5896,7 @@
           },
           "FileName": "Session - AMS2.djson",
           "Height": 49.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 150.0,
           "Name": "Session AMS2",
@@ -4333,6 +5921,7 @@
           },
           "FileName": "Session - rF2.djson",
           "Height": 49.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 150.0,
           "Name": "Session rF2",
@@ -4504,9 +6093,10 @@
           },
           "FileName": "Central.djson",
           "Height": 300.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 690.0,
-          "Name": "Central",
+          "Name": "Central2",
           "NextScreenCommand": 5,
           "PreviousScreenCommand": 0,
           "Top": 0.0,
@@ -4528,6 +6118,7 @@
           },
           "FileName": "Central - iR.djson",
           "Height": 330.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 690.0,
           "Name": "Central iR",
@@ -4552,6 +6143,7 @@
           },
           "FileName": "Central - AMS2.djson",
           "Height": 300.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 690.0,
           "Name": "Central AMS2",
@@ -4576,6 +6168,7 @@
           },
           "FileName": "Central - rF2.djson",
           "Height": 330.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 690.0,
           "Name": "Central rF2",
@@ -4600,6 +6193,7 @@
           },
           "FileName": "Environment.djson",
           "Height": 58.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 690.0,
           "Name": "Environment",
@@ -4624,6 +6218,7 @@
           },
           "FileName": "Environment - iR.djson",
           "Height": 24.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 690.0,
           "Name": "Environment iR",
@@ -4648,6 +6243,7 @@
           },
           "FileName": "Environment - AMS2.djson",
           "Height": 58.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 690.0,
           "Name": "Environment AMS2",
@@ -4672,6 +6268,7 @@
           },
           "FileName": "Environment - Rf2.djson",
           "Height": 24.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 690.0,
           "Name": "Environment rF2",
@@ -4696,6 +6293,7 @@
           },
           "FileName": "Vehicle Settings.djson",
           "Height": 97.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 0.0,
           "Name": "Vehicle Settings",
@@ -4720,6 +6318,7 @@
           },
           "FileName": "Vehicle Settings - iR.djson",
           "Height": 97.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 0.0,
           "Name": "Vehicle Settings iR",
@@ -4744,6 +6343,7 @@
           },
           "FileName": "Vehicle Settings - AMS2.djson",
           "Height": 97.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 0.0,
           "Name": "Vehicle Settings AMS2",
@@ -4768,6 +6368,7 @@
           },
           "FileName": "Vehicle Settings - rF2.djson",
           "Height": 97.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 0.0,
           "Name": "Vehicle Settings rF2",
@@ -4792,6 +6393,7 @@
           },
           "FileName": "Alerts.djson",
           "Height": 480.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 0.0,
           "Name": "Alerts",
@@ -4816,6 +6418,7 @@
           },
           "FileName": "Alerts - iR.djson",
           "Height": 480.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 0.0,
           "Name": "Alerts iR",
@@ -4840,6 +6443,7 @@
           },
           "FileName": "Alerts - AMS2.djson",
           "Height": 480.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 0.0,
           "Name": "Alerts AMS2",
@@ -4864,6 +6468,7 @@
           },
           "FileName": "Alerts - rF2.djson",
           "Height": 480.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 0.0,
           "Name": "Alerts rF2",
@@ -4879,6 +6484,7 @@
           "BackgroundColor": "#00FFFFFF",
           "FileName": "Turn Signals.djson",
           "Height": 103.0,
+          "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": 30.0,
           "Name": "Turn Signals",
@@ -4887,6 +6493,121 @@
           "Top": 50.0,
           "Visible": true,
           "Width": 814.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "BackgroundColor": "#4B000000",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('nightMode') ) {\r\n\tnightMode = 0\r\n} else {\r\n\tnightMode = settings.nightMode\r\n}\r\n\r\nif ( nightMode == 1) {\r\n\r\n\tif ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ) {\r\n\t\r\n\t\tif ($prop('DataCorePlugin.GameRawData.Graphics.LightsStage')>0 ) {\r\n\t\t\treturn 1\r\n\t\t} else {\t\r\n\t\t\treturn 0 \r\n\t\t}\r\n\t\r\n\t} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\t\r\n\t\tlet mCarFlags = $prop('DataCorePlugin.GameRawData.mCarFlags');\r\n\t\treturn mCarFlags.toString(2).substr(-1)\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\t\r\n\treturn 0\r\n\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "BorderStyle": {
+            "Bindings": {
+              "RadiusBottomLeft": {
+                "Formula": {
+                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                  "Interpreter": 1
+                },
+                "Mode": 2,
+                "TargetPropertyName": "RadiusBottomLeft"
+              },
+              "RadiusBottomRight": {
+                "Formula": {
+                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                  "Interpreter": 1
+                },
+                "Mode": 2,
+                "TargetPropertyName": "RadiusBottomRight"
+              },
+              "RadiusTopLeft": {
+                "Formula": {
+                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                  "Interpreter": 1
+                },
+                "Mode": 2,
+                "TargetPropertyName": "RadiusTopLeft"
+              }
+            },
+            "RadiusBottomLeft": 45,
+            "RadiusBottomRight": 45,
+            "RadiusTopLeft": 45,
+            "RadiusTopRight": 15
+          },
+          "Height": 480.0,
+          "IsFreezed": true,
+          "IsRectangleItem": true,
+          "Left": 0.0,
+          "Name": "Night Mode",
+          "Top": 0.0,
+          "Visible": false,
+          "Width": 850.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ButtonItem, SimHub.Plugins",
+              "AutoSize": false,
+              "BackgroundColor": "#00FFFFFF",
+              "DisabledOpacity": 50,
+              "Height": 92.0,
+              "IsEnabled": true,
+              "Left": 521.0,
+              "Name": "Fuel",
+              "PressedOpacity": 100,
+              "SimulateKey": false,
+              "SimulatedKey": 0,
+              "SimulatedKeyV2": {
+                "Alt": false,
+                "Ctrl": false,
+                "Shift": false,
+                "Win": false
+              },
+              "Top": 388.0,
+              "TriggerAction": "GraphicalDashPlugin.ActionC",
+              "TriggerSimHubInputName": "ButtonC",
+              "Visible": true,
+              "Width": 329.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ButtonItem, SimHub.Plugins",
+              "AutoSize": false,
+              "BackgroundColor": "#00FFFFFF",
+              "DisabledOpacity": 50,
+              "Height": 300.0,
+              "IsEnabled": true,
+              "Left": 690.0,
+              "Name": "Central",
+              "PressedOpacity": 100,
+              "SimulateKey": false,
+              "SimulatedKey": 0,
+              "SimulatedKeyV2": {
+                "Alt": false,
+                "Ctrl": false,
+                "Shift": false,
+                "Win": false
+              },
+              "Top": 0.0,
+              "TriggerAction": "GraphicalDashPlugin.ActionD",
+              "TriggerSimHubInputName": "ButtonD",
+              "Visible": true,
+              "Width": 160.0
+            }
+          ],
+          "Group": true,
+          "Height": 480.0,
+          "Left": 521.0,
+          "Name": "Touch Actions",
+          "Top": 0.0,
+          "Visible": true,
+          "Width": 329.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
@@ -4904,6 +6625,46 @@
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
               "BackgroundColor": "#FF000000",
+              "BorderStyle": {
+                "Bindings": {
+                  "RadiusBottomLeft": {
+                    "Formula": {
+                      "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiRadius || settings.uiRadius == '' ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                      "Interpreter": 1
+                    },
+                    "Mode": 2,
+                    "TargetPropertyName": "RadiusBottomLeft"
+                  },
+                  "RadiusBottomRight": {
+                    "Formula": {
+                      "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiRadius || settings.uiRadius == '' ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                      "Interpreter": 1
+                    },
+                    "Mode": 2,
+                    "TargetPropertyName": "RadiusBottomRight"
+                  },
+                  "RadiusTopLeft": {
+                    "Formula": {
+                      "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiRadius || settings.uiRadius == '' ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                      "Interpreter": 1
+                    },
+                    "Mode": 2,
+                    "TargetPropertyName": "RadiusTopLeft"
+                  },
+                  "RadiusTopRight": {
+                    "Formula": {
+                      "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiRadius || settings.uiRadius == '' ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                      "Interpreter": 1
+                    },
+                    "Mode": 2,
+                    "TargetPropertyName": "RadiusTopRight"
+                  }
+                },
+                "RadiusBottomLeft": 45,
+                "RadiusBottomRight": 45,
+                "RadiusTopLeft": 45,
+                "RadiusTopRight": 45
+              },
               "Height": 480.0,
               "IsFreezed": true,
               "IsRectangleItem": true,
@@ -5058,68 +6819,6 @@
           "Top": 0.0,
           "Visible": false,
           "Width": 850.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
-          "BackgroundColor": "#4B000000",
-          "Bindings": {
-            "Visible": {
-              "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('nightMode') ) {\r\n\tnightMode = 0\r\n} else {\r\n\tnightMode = settings.nightMode\r\n}\r\n\r\nif ( nightMode == 1) {\r\n\r\n\tif ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ) {\r\n\t\r\n\t\tif ($prop('DataCorePlugin.GameRawData.Graphics.LightsStage')>0 ) {\r\n\t\t\treturn 1\r\n\t\t} else {\t\r\n\t\t\treturn 0 \r\n\t\t}\r\n\t\r\n\t} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\t\r\n\t\tlet mCarFlags = $prop('DataCorePlugin.GameRawData.mCarFlags');\r\n\t\treturn mCarFlags.toString(2).substr(-1)\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\t\r\n\treturn 0\r\n\r\n}",
-                "Interpreter": 1
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
-            }
-          },
-          "BorderStyle": {
-            "Bindings": {
-              "RadiusBottomLeft": {
-                "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
-                  "Interpreter": 1
-                },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusBottomLeft"
-              },
-              "RadiusBottomRight": {
-                "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
-                  "Interpreter": 1
-                },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusBottomRight"
-              },
-              "RadiusTopLeft": {
-                "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
-                  "Interpreter": 1
-                },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusTopLeft"
-              },
-              "RadiusTopRight": {
-                "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
-                  "Interpreter": 1
-                },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusTopRight"
-              }
-            },
-            "RadiusBottomLeft": 45,
-            "RadiusBottomRight": 45,
-            "RadiusTopLeft": 45,
-            "RadiusTopRight": 45
-          },
-          "Height": 480.0,
-          "IsFreezed": true,
-          "IsRectangleItem": true,
-          "Left": 0.0,
-          "Name": "Night Mode",
-          "Top": 0.0,
-          "Visible": false,
-          "Width": 850.0
         }
       ],
       "Name": "Map",
@@ -5135,7 +6834,7 @@
       "ScreenId": "eb241db3-1ca0-44ff-87f6-ec3e0937e52c"
     }
   ],
-  "ShowBackground": true,
+  "ShowBackground": false,
   "ShowBoundingRectangles": false,
   "ShowForeground": true,
   "ShowOnScreenControls": true,

@@ -25,6 +25,14 @@ The available settings are:
 
 ---
 
+#### `analytics`
+Enable anonymous data usage of the Dashboard. Going forward, the Lovely Dashboard will rely on this data in order to improve the experience and understanding the usage. **It is recommended to leave this on.**
+
+- `0` Off, no data is collected
+- `1` (Default & Recommended) - On, anonymous data is collected 
+
+---
+
 #### `yourName`, `yourNumber`
 Setup the custom splash screen with your Name & Number. If you do not specify a name and number, the default splash screen will be displayed.
 
@@ -46,6 +54,14 @@ You can change the way the Driver Name is formatted and displayed.
 Display your next session information on the Lovely Dashboard splash screen.
 
 - You can find your LFM ID in the URL of your profile page on [Low Fuel Motorsports](https://lowfuelmotorsport.com)
+
+--- 
+
+#### `rpmLED`
+Display RPM LED's within the Lovely Dashboard. Ideal for those who do run the dashboard on a dedicated DDU with built in LEDs.
+
+- `0` (Default) - Hide RPM LEDs
+- `1` (Default) - Show RPM LEDs
 
 ---
 
@@ -77,6 +93,19 @@ Set how much time in milliseconds to display the Alert Views. (eg. 1000 = 1 seco
 
 ---
 
+#### `damageAlert`
+Display the Damage Alert every time there is a change in the overall vehicle damage.
+
+- `0` **Off**
+- `1` (Default) **On**
+
+#### `damageAlertDelay`
+Set how much time in milliseconds to display the Damage Alert. (eg. 1000 = 1 second)
+
+- `7500` (Default) - Display the Damage Alert for 7.5 seconds
+
+---
+
 #### `clutchMode`
 Display the Clutch Value
 
@@ -102,6 +131,13 @@ Change the map type, between two avaialble options
 
 ---
 
+#### `mapZoom`
+The map unzoom percentage. 
+
+- `0 - 100` The larger the number, the more unzoomed the map gets
+
+---
+
 #### `uiMode`
 Set the UI mode intensity and change the line brightness throughout the dashbaord.
 
@@ -121,3 +157,16 @@ For sims that support night races and provide info on Lights (currently ACC and 
 
 - `0` Enabled: Will dim the screen when lights are on
 - `1` Disabled: Will always remain bright
+
+---
+
+#### `tireLapAvg`
+Set the UI mode intensity and change the line brightness throughout the dashbaord.
+
+- `2` (Default) - The number of laps to collect tire data
+
+#### `tireLapAvgResetKey` (Experimental)
+Set a hot-key to reset the AVG Tire data. This is still a bit buggy, so if the data does not resume collecting, you'd need to restart your DDU/Device.
+
+- `F24` (Default) The hot-key combination of your choice
+
