@@ -1,18 +1,24 @@
 {
+    "analytics": 1,
+        "analytics_help": "Enable the Dashboard to submit anonymous data regarding the Dashboard usage",
+    
     "yourName": "",
         "yourName_help": "F. Lastname (optional)",
 
     "yourNumber": "",
         "yourNumber_help": "Your Number (optional)",
 
-    "yourColor": "",
+    "yourColor": "", 
         "yourColor_help": "Red, Blue, #2B98FB (default)",
 
     "driverName": 0,
         "driverName_help": "0: F. Lastname, 1: Firstname L., 2: Firstname Lastname",
 
-    "lfmID": "",
+    "lfmID": "", 
         "lfmID_help": "your LFM ID",
+
+    "rpmLED": 0,
+        "rpmLED_help": "0: Hide, 1: Show - Show/Hide the RPM LED lights",
 
     "lapReview": 1,
         "lapReview_help": "0: Always Off, 1: Only Quali, 2: Always On",
@@ -20,11 +26,17 @@
     "lapReviewDelay": 2500,
         "lapReviewDelay_help": "The time to display the Lap Review Alert in miliseconds",
 
-    "alertView": 0,
+    "alertView": 1,
         "alertsView_help": "0: Normal, 1: Mini, 2: Off",
 
     "alertDelay": 1000,
         "alertDelay_help": "The time to display the Alerts in miliseconds",
+
+    "damageAlert": 1,
+        "damageAlert_help": "0: Off, 1: On - Display the damage alert",
+
+    "damageAlertDelay": 7500,
+        "damageAlertDelay_help": "Set the delay of the damage alert in miliseconds",
 
     "clutchMode": 1,
         "clutchMode_help": "0: Always Off, 1: Show when engaged, 2: Always On",
@@ -44,13 +56,13 @@
     "uiRadius": 45,
         "uiRadius_help": "Pixel Radius of outer corners, Suggested Min:12, Max:50",
 
-    "nightMode": 1,
+    "nightMode": 0,
         "nightMode_help": "0: Off, 1: On",
 
     "tireLapAvg": 2,
-        "tireLapAvg_help": "2: Set the number of last laps to record data",
+        "tireLapAvg_help": "2: Number of lasp to extract AVG Data",
 
-    "tireLapAvgResetKey": "h",
-        "tireLapAvgResetKey_help": "BETA: Set the hot key to reset your Tire AVG data - Use with caution, may freeze data collection"
+    "tireLapAvgResetKey": "F24",
+        "tireLapAvg_help": "Set a hot-key to reset the AVG Tyre Data. Requires 'Settings>Plugins>Keyboard Input' Plugin enabled in Simhub"
 
 }
