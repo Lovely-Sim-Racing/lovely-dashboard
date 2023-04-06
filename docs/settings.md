@@ -61,7 +61,7 @@ Display your next session information on the Lovely Dashboard splash screen.
 Display RPM LED's within the Lovely Dashboard. Ideal for those who do run the dashboard on a dedicated DDU with built in LEDs.
 
 - `0` (Default) - Hide RPM LEDs
-- `1` (Default) - Show RPM LEDs
+- `1` Show RPM LEDs
 
 ---
 
@@ -161,7 +161,7 @@ For sims that support night races and provide info on Lights (currently ACC and 
 ---
 
 #### `tireLapAvg`
-Set the UI mode intensity and change the line brightness throughout the dashbaord.
+Specify the number of laps to collect tire data.
 
 - `2` (Default) - The number of laps to collect tire data
 
