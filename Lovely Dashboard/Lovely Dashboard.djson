@@ -12,7 +12,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "d4fee35b-64d0-4473-93b2-4c4eeea3f675",
+  "Id": "8d8b3322-9658-44a4-98e0-31d138394a4d",
   "Images": [
     {
       "Extension": ".png",
@@ -410,7 +410,7 @@
           "IsTextItem": true,
           "Left": 295.0,
           "Name": "TextItem0",
-          "Text": "Lovely Dashboard v1.6.8",
+          "Text": "Lovely Dashboard v1.6.9",
           "TextColor": "#FFFFFFFF",
           "Top": 395.0,
           "VerticalAlignment": 1,
@@ -431,7 +431,7 @@
             },
             "Visible": {
               "Formula": {
-                "Expression": "var currentVer = '1.6.8'\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
+                "Expression": "var currentVer = '1.6.9'\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -734,7 +734,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.lfmID || settings.lfmID == '' ) {\r\n\treturn 0\r\n} else {\r\n\t\r\n\tconst url = 'https://api.lowfuelmotorsport.de/lfmlicense/'+settings.lfmID+'?size=sm'\r\n\tconst lfm_widget = downloadstring(5000, url)\r\n\tconst found = lfm_widget.search('<div class=\"nextrace\">')\r\n\t\r\n\treturn ( found != -1 ) ? 1 : 0\r\n\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.lfmID || settings.lfmID == '' ) {\r\n\treturn 0\r\n} else {\r\n\r\n\tlfm_url = 'https://api2.lowfuelmotorsport.com/api/licenseWidgetUserData/' + settings.lfmID\r\n\tconst json_lfm = downloadstring(1000, lfm_url)\r\n\tconst lfm = JSON.parse(json_lfm)\r\n\t\r\n\treturn ( lfm.race['0'] != null ) ? 1 : 0\r\n\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -748,18 +748,19 @@
               "Font": "Roboto",
               "FontSize": 14.0,
               "FontWeight": "Bold",
-              "Height": 22.0,
+              "Height": 24.0,
               "HorizontalAlignment": 0,
+              "IsFreezed": true,
               "IsTextItem": true,
               "Left": 20.0,
               "Name": "TextItem4",
               "ShadowColor": "#FF696969",
-              "Text": "Next Up:",
+              "Text": "NEXT UP:",
               "TextColor": "#FF808080",
-              "Top": 19.0,
+              "Top": 18.0,
               "VerticalAlignment": 2,
               "Visible": true,
-              "Width": 55.0
+              "Width": 65.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -767,7 +768,7 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( settings && settings.lfmID && settings.lfmID != '' ) {\r\n\t\r\n\tconst url = 'https://api.lowfuelmotorsport.de/lfmlicense/'+settings.lfmID+'?size=sm'\r\n\t\t\t\r\n\tconst lfm_widget = downloadstring(1000, url)\r\n\tconst start = lfm_widget.search('<div class=\"nextrace\">')\r\n\tconst end = lfm_widget.search('<span class=\"drivers\">')\r\n\t\r\n\tif ( start > 0 && end > 0 ) {\r\n\t\tconst length = end-start\r\n\t\treturn lfm_widget.substr(start+27, length-27)\r\n\t}\r\n\r\n}",
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( settings && settings.lfmID && settings.lfmID != '' ) {\r\n\t\r\n\tlfm_url = 'https://api2.lowfuelmotorsport.com/api/licenseWidgetUserData/' + settings.lfmID\r\n\tconst json_lfm = downloadstring(1000, lfm_url)\r\n\tconst lfm = JSON.parse(json_lfm)\r\n\t\r\n\tconst sim = (lfm.sim.sim_id == 1) ? 'ACC' : 'rF2'\r\n\t\r\n\treturn sim + ' | ' + lfm.race['0'].event_name.trim() + ' | #' + lfm.race['0'].race_id + ' | Split ' + lfm.race['0'].split\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -777,27 +778,88 @@
               "Font": "Roboto",
               "FontSize": 18.0,
               "FontWeight": "Bold",
-              "Height": 22.0,
+              "Height": 24.0,
               "HorizontalAlignment": 0,
+              "IsFreezed": true,
               "IsTextItem": true,
-              "Left": 79.0,
+              "Left": 90.0,
               "Name": "TextItem3",
               "ShadowColor": "#FF696969",
-              "Text": "Series",
+              "Text": "SIM | Upcoming Race Series | #00000 | Split X",
               "TextColor": "#FFFFFFFF",
-              "Top": 20.0,
+              "Top": 18.0,
               "VerticalAlignment": 2,
               "Visible": true,
-              "Width": 600.0
+              "Width": 580.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( settings && settings.lfmID && settings.lfmID != '' ) {\r\n\t\r\n\tlfm_url = 'https://api2.lowfuelmotorsport.com/api/licenseWidgetUserData/' + settings.lfmID\r\n\tconst json_lfm = downloadstring(1000, lfm_url)\r\n\tconst lfm = JSON.parse(json_lfm)\r\n\t\r\n\tvar raceTime = lfm.race['0'].race_date\r\n\t\r\n\tvar countdownTo = new Date(raceTime)\r\n\tvar now = new Date().getTime()\r\n\tvar timeDiff = countdownTo - now\r\n\t\t\t\t\r\n\tif (timeDiff < 300000) { // Show if under 5 minutes\r\n\t\treturn  '#FFFA0000'\r\n\t} else {\r\n\t\treturn '#FFFFFFFF'\r\n\t}\r\n \r\n} else {\r\n\treturn '#FFFFFFFF'\r\n}\r\n",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "BackgroundColor"
+                },
+                "Text": {
+                  "Formula": {
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( settings && settings.lfmID && settings.lfmID != '' ) {\r\n\t\r\n\tlfm_url = 'https://api2.lowfuelmotorsport.com/api/licenseWidgetUserData/' + settings.lfmID\r\n\tconst json_lfm = downloadstring(1000, lfm_url)\r\n\tconst lfm = JSON.parse(json_lfm)\r\n\t\r\n\tvar raceTime = lfm.race['0'].race_date\r\n\t\r\n\tvar countdownTo = new Date(raceTime).getTime();\r\n\tvar now = new Date().getTime();\r\n\tvar timeDiff = countdownTo - now\r\n\t\r\n\tif (timeDiff <= 0 ) {\r\n\t\treturn 'NOW'\r\n\t} else {\r\n\t\tvar days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));\r\n\t    var hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));\r\n\t\tvar minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));\r\n\t\tvar seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);\r\n\t\t\r\n\t\tvar nextRaceIn = format(minutes, '00') + ':' + format(seconds, '00')\r\n\t\treturn nextRaceIn\r\n\t}\r\n \r\n} else {\r\n\treturn ''\r\n}\r\n",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( settings && settings.lfmID && settings.lfmID != '' ) {\r\n\t\r\n\tlfm_url = 'https://api2.lowfuelmotorsport.com/api/licenseWidgetUserData/' + settings.lfmID\r\n\tconst json_lfm = downloadstring(1000, lfm_url)\r\n\tconst lfm = JSON.parse(json_lfm)\r\n\t\r\n\tvar raceTime = lfm.race['0'].race_date\r\n\t\r\n\tvar countdownTo = new Date(raceTime)\r\n\tvar now = new Date().getTime()\r\n\tvar timeDiff = countdownTo - now\r\n\t\t\t\t\r\n\tif (timeDiff < 300000) { // Show if under 5 minutes\r\n\t\treturn  '#FFFFFFFF'\r\n\t} else {\r\n\t\treturn '#FF000000'\r\n\t}\r\n \r\n} else {\r\n\treturn '#FF000000'\r\n}\r\n",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( settings && settings.lfmID && settings.lfmID != '' ) {\r\n\t\r\n\tlfm_url = 'https://api2.lowfuelmotorsport.com/api/licenseWidgetUserData/' + settings.lfmID\r\n\tconst json_lfm = downloadstring(1000, lfm_url)\r\n\tconst lfm = JSON.parse(json_lfm)\r\n\t\r\n\tvar raceTime = lfm.race['0'].race_date\r\n\t\r\n\tvar countdownTo = new Date(raceTime)\r\n\tvar now = new Date().getTime()\r\n\tvar timeDiff = countdownTo - now\r\n\t\t\t\t\r\n\tif (timeDiff < 3600000) { // Show if under 60 min\r\n\t\treturn 1\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n \r\n} else {\r\n\treturn 0\r\n}\r\n\r\n",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Visible"
+                }
+              },
+              "BorderStyle": {
+                "RadiusBottomLeft": 3,
+                "RadiusBottomRight": 3,
+                "RadiusTopLeft": 3,
+                "RadiusTopRight": 3
+              },
+              "Font": "Roboto",
+              "FontSize": 18.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 1,
+              "IsFreezed": true,
+              "IsTextItem": true,
+              "Left": 20.0,
+              "Name": "Countdown",
+              "ShadowColor": "#FF696969",
+              "Text": "00:00",
+              "TextColor": "#FFFFFFFF",
+              "Top": 18.0,
+              "VerticalAlignment": 1,
+              "Visible": false,
+              "Width": 60.0
             }
           ],
           "Group": true,
-          "Height": 23.0,
+          "Height": 24.0,
           "Left": 20.0,
-          "Name": "Next Race",
-          "Top": 19.0,
+          "Name": "Next LFM Race",
+          "Top": 18.0,
           "Visible": true,
-          "Width": 659.0
+          "Width": 650.0
         }
       ],
       "Name": "Idle",
