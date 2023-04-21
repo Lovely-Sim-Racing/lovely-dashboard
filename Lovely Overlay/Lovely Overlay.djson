@@ -1,7 +1,7 @@
 {
   "BackgroundColor": "#FF000000",
   "BackgroundOpacity": 100.0,
-  "BaseHeight": 480,
+  "BaseHeight": 370,
   "BaseWidth": 1000,
   "DashboardDebugManager": {
     "Maximized": false
@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "f23c6f9f-d7fc-4553-9c63-e39dc379b082",
+  "Id": "9c352086-8141-4235-bbfa-d351f5e7d2c4",
   "Images": [
     {
       "Extension": ".png",
@@ -281,7 +281,7 @@
     "Author": "Constantinos Demetriadis - Lovely Sim Racing",
     "Description": "A feature packed SimHub Stream Overlay",
     "EnableOnDashboardMessaging": true,
-    "Height": 480.0,
+    "Height": 370.0,
     "IdleScreensIndexs": [
       0
     ],
@@ -322,7 +322,7 @@
             }
           },
           "ClickThrough": false,
-          "Height": 480.0,
+          "Height": 370.0,
           "IsFreezed": true,
           "Left": 0.0,
           "Name": "Analytics",
@@ -340,7 +340,7 @@
             "RadiusTopLeft": 5,
             "RadiusTopRight": 5
           },
-          "Height": 480.0,
+          "Height": 370.0,
           "IsFreezed": true,
           "IsRectangleItem": true,
           "Left": 0.0,
@@ -357,14 +357,13 @@
           "FontSize": 12.0,
           "Height": 20.0,
           "HorizontalAlignment": 1,
-          "IsFreezed": true,
           "IsTextItem": true,
           "Left": 155.0,
           "Name": "TextItem2",
           "Text": "This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License",
           "TextColor": "#FF878787",
           "TextWrapping": 0,
-          "Top": 453.0,
+          "Top": 350.0,
           "VerticalAlignment": 1,
           "Visible": true,
           "Width": 690.0
@@ -383,7 +382,7 @@
           "Text": "All trademarks, logos and brand names are the property of their respective owners. All company, product and service names used in this application are for identification purposes only. Use of these names, trademarks and brands does not imply endorsement.",
           "TextColor": "#FF878787",
           "TextWrapping": 0,
-          "Top": 423.0,
+          "Top": 322.0,
           "VerticalAlignment": 2,
           "Visible": true,
           "Width": 690.0
@@ -399,9 +398,9 @@
           "IsTextItem": true,
           "Left": 370.0,
           "Name": "TextItem0",
-          "Text": "Lovely Dashboard v1.6.7",
+          "Text": "Lovely Dashboard v1.6.8",
           "TextColor": "#FFFFFFFF",
-          "Top": 395.0,
+          "Top": 301.0,
           "VerticalAlignment": 1,
           "Visible": true,
           "Width": 260.0
@@ -426,7 +425,7 @@
           "IsFreezed": true,
           "Left": 380.0,
           "Name": "ImageItem",
-          "Top": 70.0,
+          "Top": 35.0,
           "Visible": true,
           "Width": 240.0
         },
@@ -451,9 +450,9 @@
               "BackgroundColor": "#00FFFFFF",
               "Height": 40.0,
               "Image": "lr-team-icon",
-              "Left": 491.5,
+              "Left": 480.0,
               "Name": "ImageItem2",
-              "Top": 350.0,
+              "Top": 262.0,
               "Visible": true,
               "Width": 40.0
             },
@@ -479,13 +478,13 @@
               "Height": 50.0,
               "HorizontalAlignment": 1,
               "IsTextItem": true,
-              "Left": 92.5,
+              "Left": 90.0,
               "Name": "Name",
               "ShadowColor": "#FF000000",
               "ShadowDirection": 0,
               "Text": "F. LASTNAME",
               "TextColor": "#FFFFFFFF",
-              "Top": 260.0,
+              "Top": 206.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 840.0
@@ -519,21 +518,21 @@
               "Height": 210.0,
               "HorizontalAlignment": 1,
               "IsTextItem": true,
-              "Left": 67.5,
+              "Left": 65.0,
               "Name": "Number",
               "Text": "000",
               "TextColor": "#FF2B98FB",
-              "Top": 65.0,
+              "Top": 11.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 840.0
             }
           ],
           "Group": true,
-          "Height": 325.0,
-          "Left": 67.5,
+          "Height": 291.0,
+          "Left": 65.0,
           "Name": "User name",
-          "Top": 65.0,
+          "Top": 11.0,
           "Visible": false,
           "Width": 865.0
         }
@@ -579,42 +578,6 @@
           "Name": "Analytics",
           "StartAddress": "",
           "Top": 0.0,
-          "Visible": true,
-          "Width": 1000.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
-          "BackgroundColor": "#FF000000",
-          "BorderStyle": {
-            "Bindings": {
-              "RadiusBottomLeft": {
-                "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
-                  "Interpreter": 1
-                },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusBottomLeft"
-              },
-              "RadiusBottomRight": {
-                "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
-                  "Interpreter": 1
-                },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusBottomRight"
-              }
-            },
-            "RadiusBottomLeft": 45,
-            "RadiusBottomRight": 45,
-            "RadiusTopLeft": 5,
-            "RadiusTopRight": 5
-          },
-          "Height": 100.0,
-          "IsFreezed": true,
-          "IsRectangleItem": true,
-          "Left": 0.0,
-          "Name": "RectangleItem4",
-          "Top": 380.0,
           "Visible": true,
           "Width": 1000.0
         },
@@ -676,195 +639,6 @@
           "Width": 300.0
         },
         {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
-          "BackgroundColor": "#FFFFFFFF",
-          "Height": 1.0,
-          "IsFreezed": true,
-          "IsRectangleItem": true,
-          "Left": 535.0,
-          "Name": "RectangleItem5",
-          "Top": 390.0,
-          "Visible": true,
-          "Width": 305.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
-          "Childrens": [
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#FF000000",
-              "BorderStyle": {
-                "RadiusBottomLeft": 8,
-                "RadiusBottomRight": 8,
-                "RadiusTopLeft": 8,
-                "RadiusTopRight": 8
-              },
-              "Font": "Roboto",
-              "FontSize": 12.0,
-              "FontWeight": "Bold",
-              "Height": 16.0,
-              "HorizontalAlignment": 1,
-              "IsTextItem": true,
-              "Left": 887.0,
-              "Name": "TextItem5",
-              "Text": "FUEL CALC",
-              "TextColor": "#FFFFFFFF",
-              "Top": 386.0,
-              "VerticalAlignment": 1,
-              "Visible": true,
-              "Width": 70.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Visible": {
-                  "Formula": {
-                    "Expression": "var estTotalLaps; // Estimated laps left for the race\r\nvar fuelRequired; // Fuel requried for the entire race\r\nvar reFuel; // Re Fuel amount, if required\r\nvar timeAgainst; // Best or Last lap\r\nvar carMaxFuel; // Max Fuel Capacity\r\n\r\nif ( timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) == 0 ) {\r\n\ttimeAgainst = $prop('DataCorePlugin.GameRawData.Graphics.iLastTime');\r\n} else {\r\n\ttimeAgainst = $prop('DataCorePlugin.GameRawData.Graphics.iBestTime');\r\n}\r\n\r\ncarMaxFuel = $prop('DataCorePlugin.GameData.MaxFuel');\r\n\r\nestTotalLaps = $prop('DataCorePlugin.GameRawData.Graphics.SessionTimeLeft') / timeAgainst;\r\n\r\nfuelRequired = estTotalLaps * $prop('DataCorePlugin.GameRawData.Graphics.FuelXLap');\r\n\r\nreFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel');\r\n\r\nif (reFuel > 0) {\r\n\treturn 1\r\n} else {\r\n\treturn 0\r\n}",
-                    "Interpreter": 1
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Visible"
-                }
-              },
-              "Childrens": [
-                {
-                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                  "BackgroundColor": "#00FFFFFF",
-                  "Font": "Roboto",
-                  "FontSize": 12.0,
-                  "FontWeight": "Bold",
-                  "Height": 14.0,
-                  "HorizontalAlignment": 1,
-                  "IsTextItem": true,
-                  "Left": 867.0,
-                  "Name": "TextItem23",
-                  "Text": "REFUEL",
-                  "TextColor": "#FF878787",
-                  "Top": 461.0,
-                  "VerticalAlignment": 1,
-                  "Visible": true,
-                  "Width": 110.0
-                },
-                {
-                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                  "BackgroundColor": "#00FFFFFF",
-                  "Bindings": {
-                    "Text": {
-                      "FormatString": "0.0",
-                      "Formula": {
-                        "Expression": "var estTotalLaps; // Estimated laps left for the race\r\nvar fuelRequired; // Fuel requried for the entire race\r\nvar reFuel; // Re Fuel amount, if required\r\nvar timeAgainst; // Best or Last lap\r\nvar carMaxFuel; // Max Fuel Capacity\r\n\r\nif ( timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) == 0 ) {\r\n\ttimeAgainst = $prop('DataCorePlugin.GameRawData.Graphics.iLastTime');\r\n} else {\r\n\ttimeAgainst = $prop('DataCorePlugin.GameRawData.Graphics.iBestTime');\r\n}\r\n\r\ncarMaxFuel = $prop('DataCorePlugin.GameData.MaxFuel');\r\n\r\nestTotalLaps = $prop('DataCorePlugin.GameRawData.Graphics.SessionTimeLeft') / timeAgainst;\r\n\r\nfuelRequired = estTotalLaps * $prop('DataCorePlugin.GameRawData.Graphics.FuelXLap');\r\n\r\nreFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel');\r\n\r\nif (reFuel > 0) {\r\n\tif (reFuel >= carMaxFuel) {\r\n\t\treturn carMaxFuel\r\n\t} else {\r\n\t\treturn Math.abs(reFuel)\r\n\t}\r\n} else {\r\n\treturn 0\r\n}",
-                        "Interpreter": 1
-                      },
-                      "Mode": 2,
-                      "TargetPropertyName": "Text"
-                    }
-                  },
-                  "Font": "Roboto",
-                  "FontSize": 50.0,
-                  "FontWeight": "Bold",
-                  "Height": 90.0,
-                  "HorizontalAlignment": 1,
-                  "IsTextItem": true,
-                  "Left": 857.0,
-                  "Name": "TextItem6",
-                  "Text": "000.0",
-                  "TextColor": "#FFFFFFFF",
-                  "Top": 391.0,
-                  "VerticalAlignment": 1,
-                  "Visible": true,
-                  "Width": 130.0
-                }
-              ],
-              "Group": true,
-              "Height": 90.0,
-              "Left": 857.0,
-              "Name": "Refuel",
-              "Top": 391.0,
-              "Visible": true,
-              "Width": 130.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Visible": {
-                  "Formula": {
-                    "Expression": "var estTotalLaps; // Estimated laps left for the race\r\nvar fuelRequired; // Fuel requried for the entire race\r\nvar reFuel; // Re Fuel amount, if required\r\nvar timeAgainst; // Best or Last lap\r\n\r\nif ( timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) == 0 ) {\r\n\ttimeAgainst = $prop('DataCorePlugin.GameRawData.Graphics.iLastTime');\r\n} else {\r\n\ttimeAgainst = $prop('DataCorePlugin.GameRawData.Graphics.iBestTime');\r\n}\r\n\r\nestTotalLaps = $prop('DataCorePlugin.GameRawData.Graphics.SessionTimeLeft') / timeAgainst;\r\n\r\nfuelRequired = estTotalLaps * $prop('DataCorePlugin.GameRawData.Graphics.FuelXLap');\r\n\r\nreFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel');\r\n\r\nif (reFuel < 0) {\r\n\treturn 1\r\n} else {\r\n\treturn 0\r\n}",
-                    "Interpreter": 1
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Visible"
-                }
-              },
-              "Childrens": [
-                {
-                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                  "BackgroundColor": "#00FFFFFF",
-                  "Font": "Roboto",
-                  "FontSize": 12.0,
-                  "FontWeight": "Bold",
-                  "Height": 14.0,
-                  "HorizontalAlignment": 1,
-                  "IsTextItem": true,
-                  "Left": 867.0,
-                  "Name": "TextItem23",
-                  "Text": "FINISH",
-                  "TextColor": "#FF878787",
-                  "Top": 461.0,
-                  "VerticalAlignment": 1,
-                  "Visible": true,
-                  "Width": 110.0
-                },
-                {
-                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                  "BackgroundColor": "#00FFFFFF",
-                  "Bindings": {
-                    "Text": {
-                      "FormatString": "0.0",
-                      "Formula": {
-                        "Expression": "var estTotalLaps; // Estimated laps left for the race\r\nvar fuelRequired; // Fuel requried for the entire race\r\nvar reFuel; // Re Fuel amount, if required\r\nvar timeAgainst; // Best or Last lap\r\n\r\nif ( timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) == 0 ) {\r\n\ttimeAgainst = $prop('DataCorePlugin.GameRawData.Graphics.iLastTime');\r\n} else {\r\n\ttimeAgainst = $prop('DataCorePlugin.GameRawData.Graphics.iBestTime');\r\n}\r\n\r\nestTotalLaps = $prop('DataCorePlugin.GameRawData.Graphics.SessionTimeLeft') / timeAgainst;\r\n\r\nfuelRequired = estTotalLaps * $prop('DataCorePlugin.GameRawData.Graphics.FuelXLap');\r\n\r\nreFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel');\r\n\r\nif (reFuel < 0) {\r\n\treturn Math.abs(reFuel)\r\n} else {\r\n\treturn 0\r\n}",
-                        "Interpreter": 1
-                      },
-                      "Mode": 2,
-                      "TargetPropertyName": "Text"
-                    }
-                  },
-                  "Font": "Roboto",
-                  "FontSize": 50.0,
-                  "FontWeight": "Bold",
-                  "Height": 90.0,
-                  "HorizontalAlignment": 1,
-                  "IsTextItem": true,
-                  "Left": 857.0,
-                  "Name": "TextItem6",
-                  "Text": "000.0",
-                  "TextColor": "#FFFFFFFF",
-                  "Top": 391.0,
-                  "VerticalAlignment": 1,
-                  "Visible": true,
-                  "Width": 130.0
-                }
-              ],
-              "Group": true,
-              "Height": 90.0,
-              "Left": 857.0,
-              "Name": "Finish",
-              "Top": 391.0,
-              "Visible": false,
-              "Width": 130.0
-            }
-          ],
-          "Group": true,
-          "Height": 95.0,
-          "Left": 857.0,
-          "Name": "Fuel",
-          "Top": 386.0,
-          "Visible": true,
-          "Width": 130.0
-        },
-        {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
@@ -877,106 +651,7 @@
               "TargetPropertyName": "Visible"
             }
           },
-          "FileName": "Vehicle Settings.djson",
-          "Height": 97.0,
-          "InitialScreenIndex": 0,
-          "IsFreezed": true,
-          "Left": 1.0,
-          "Name": "Vehicle Settings",
-          "NextScreenCommand": 0,
-          "PreviousScreenCommand": 0,
-          "Top": 382.0,
-          "Visible": true,
-          "Width": 850.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
-          "AutoSize": true,
-          "BackgroundColor": "#00FFFFFF",
-          "Bindings": {
-            "Visible": {
-              "Formula": {
-                "Expression": "if ([DataCorePlugin.CurrentGame]=='IRacing', 1, 0)"
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
-            }
-          },
-          "FileName": "Vehicle Settings - iR.djson",
-          "Height": 97.0,
-          "InitialScreenIndex": 0,
-          "IsFreezed": true,
-          "Left": 1.0,
-          "Name": "Vehicle Settings iR",
-          "NextScreenCommand": 4,
-          "PreviousScreenCommand": 0,
-          "Top": 382.0,
-          "Visible": false,
-          "Width": 850.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
-          "AutoSize": true,
-          "BackgroundColor": "#00FFFFFF",
-          "Bindings": {
-            "Visible": {
-              "Formula": {
-                "Expression": "if ([DataCorePlugin.CurrentGame]=='Automobilista2', 1, 0)"
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
-            }
-          },
-          "FileName": "Vehicle Settings - AMS2.djson",
-          "Height": 97.0,
-          "InitialScreenIndex": 0,
-          "IsFreezed": true,
-          "Left": 1.0,
-          "Name": "Vehicle Settings AMS2",
-          "NextScreenCommand": 4,
-          "PreviousScreenCommand": 0,
-          "Top": 382.0,
-          "Visible": false,
-          "Width": 850.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
-          "AutoSize": true,
-          "BackgroundColor": "#00FFFFFF",
-          "Bindings": {
-            "Visible": {
-              "Formula": {
-                "Expression": "if ([DataCorePlugin.CurrentGame]=='RFactor2', 1, 0)"
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
-            }
-          },
-          "FileName": "Vehicle Settings - rF2.djson",
-          "Height": 97.0,
-          "InitialScreenIndex": 0,
-          "IsFreezed": true,
-          "Left": 1.0,
-          "Name": "Vehicle Settings rF2",
-          "NextScreenCommand": 0,
-          "PreviousScreenCommand": 0,
-          "Top": 382.0,
-          "Visible": false,
-          "Width": 850.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
-          "AutoSize": true,
-          "BackgroundColor": "#00FFFFFF",
-          "Bindings": {
-            "Visible": {
-              "Formula": {
-                "Expression": "if ([DataCorePlugin.CurrentGame]=='AssettoCorsaCompetizione', 1, 0)"
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
-            }
-          },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Central.djson",
           "Height": 300.0,
           "InitialScreenIndex": 0,
@@ -1002,6 +677,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Central - iR.djson",
           "Height": 330.0,
           "InitialScreenIndex": 0,
@@ -1027,6 +703,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Central - AMS2.djson",
           "Height": 300.0,
           "InitialScreenIndex": 0,
@@ -1052,6 +729,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Central - rF2.djson",
           "Height": 330.0,
           "InitialScreenIndex": 0,
@@ -1077,6 +755,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Environment.djson",
           "Height": 58.0,
           "InitialScreenIndex": 0,
@@ -1102,6 +781,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Environment - iR.djson",
           "Height": 24.0,
           "InitialScreenIndex": 0,
@@ -1127,6 +807,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Environment - AMS2.djson",
           "Height": 58.0,
           "InitialScreenIndex": 0,
@@ -1152,6 +833,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Environment - Rf2.djson",
           "Height": 24.0,
           "InitialScreenIndex": 0,
@@ -1177,13 +859,14 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Multi Function Module Right.djson",
           "Height": 250.0,
           "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": -15.0,
           "Name": "Right MFM",
-          "NextScreenCommand": 2,
+          "NextScreenCommand": 0,
           "PreviousScreenCommand": 0,
           "Top": 100.0,
           "Visible": true,
@@ -1202,13 +885,14 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Multi Function Module Right - iR.djson",
           "Height": 250.0,
           "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": -15.0,
           "Name": "Right MFM iR",
-          "NextScreenCommand": 2,
+          "NextScreenCommand": 0,
           "PreviousScreenCommand": 0,
           "Top": 100.0,
           "Visible": false,
@@ -1227,13 +911,14 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Multi Function Module Right - AMS2.djson",
           "Height": 250.0,
           "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": -15.0,
           "Name": "Right MFM AMS2",
-          "NextScreenCommand": 2,
+          "NextScreenCommand": 0,
           "PreviousScreenCommand": 0,
           "Top": 100.0,
           "Visible": false,
@@ -1252,13 +937,14 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Multi Function Module Right - rF2.djson",
           "Height": 250.0,
           "InitialScreenIndex": 0,
           "IsFreezed": true,
           "Left": -15.0,
           "Name": "Right MFM rF2",
-          "NextScreenCommand": 2,
+          "NextScreenCommand": 0,
           "PreviousScreenCommand": 0,
           "Top": 100.0,
           "Visible": false,
@@ -1277,6 +963,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Session.djson",
           "Height": 49.0,
           "InitialScreenIndex": 0,
@@ -1302,6 +989,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Session - iR.djson",
           "Height": 49.0,
           "InitialScreenIndex": 0,
@@ -1327,6 +1015,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Session - AMS2.djson",
           "Height": 49.0,
           "InitialScreenIndex": 0,
@@ -1352,6 +1041,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Session - rF2.djson",
           "Height": 49.0,
           "InitialScreenIndex": 0,
@@ -1384,6 +1074,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Relative Native.djson",
           "Height": 314.0,
           "InitialScreenIndex": 0,
@@ -1416,6 +1107,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Relative Native - iR.djson",
           "Height": 314.0,
           "InitialScreenIndex": 0,
@@ -1448,6 +1140,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Relative Native - AMS2.djson",
           "Height": 314.0,
           "InitialScreenIndex": 0,
@@ -1480,6 +1173,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Relative Native - rF2.djson",
           "Height": 314.0,
           "InitialScreenIndex": 0,

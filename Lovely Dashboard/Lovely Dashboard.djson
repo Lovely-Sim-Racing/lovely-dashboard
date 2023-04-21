@@ -12,7 +12,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "6c19daa5-b0b4-434f-80f9-0c0a7a8a0af7",
+  "Id": "d4fee35b-64d0-4473-93b2-4c4eeea3f675",
   "Images": [
     {
       "Extension": ".png",
@@ -410,7 +410,7 @@
           "IsTextItem": true,
           "Left": 295.0,
           "Name": "TextItem0",
-          "Text": "Lovely Dashboard v1.6.7",
+          "Text": "Lovely Dashboard v1.6.8",
           "TextColor": "#FFFFFFFF",
           "Top": 395.0,
           "VerticalAlignment": 1,
@@ -431,7 +431,7 @@
             },
             "Visible": {
               "Formula": {
-                "Expression": "var currentVer = '1.6.7'\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
+                "Expression": "var currentVer = '1.6.8'\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -2142,6 +2142,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Functions.djson",
           "Height": 50.0,
           "InitialScreenIndex": 0,
@@ -2175,6 +2176,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Functions - iR.djson",
           "Height": 50.0,
           "InitialScreenIndex": 0,
@@ -2208,6 +2210,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Functions - AMS2.djson",
           "Height": 50.0,
           "InitialScreenIndex": 0,
@@ -2241,6 +2244,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Functions - rF2.djson",
           "Height": 50.0,
           "InitialScreenIndex": 0,
@@ -2274,6 +2278,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Session.djson",
           "Height": 49.0,
           "InitialScreenIndex": 0,
@@ -2307,6 +2312,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Session - iR.djson",
           "Height": 49.0,
           "InitialScreenIndex": 0,
@@ -2340,6 +2346,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Session - AMS2.djson",
           "Height": 49.0,
           "InitialScreenIndex": 0,
@@ -2373,6 +2380,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Session - rF2.djson",
           "Height": 49.0,
           "InitialScreenIndex": 0,
@@ -2390,14 +2398,6 @@
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
-            "InitialScreenIndex": {
-              "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings  || !settings.leftMFM) {\r\n\treturn 0\r\n} else {\r\n\treturn settings.leftMFM\r\n}",
-                "Interpreter": 1
-              },
-              "Mode": 2,
-              "TargetPropertyName": "InitialScreenIndex"
-            },
             "Top": {
               "Formula": {
                 "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED ) {\r\n\treturn 110\r\n} else {\r\n\treturn 115\r\n}\r\n",
@@ -2414,6 +2414,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Multi Function Module Left.djson",
           "Height": 268.0,
           "InitialScreenIndex": 0,
@@ -2431,14 +2432,6 @@
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
-            "InitialScreenIndex": {
-              "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings  || !settings.leftMFM) {\r\n\treturn 0\r\n} else {\r\n\treturn settings.leftMFM\r\n}",
-                "Interpreter": 1
-              },
-              "Mode": 2,
-              "TargetPropertyName": "InitialScreenIndex"
-            },
             "Top": {
               "Formula": {
                 "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED ) {\r\n\treturn 110\r\n} else {\r\n\treturn 115\r\n}\r\n",
@@ -2455,6 +2448,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Multi Function Module Left - iR.djson",
           "Height": 268.0,
           "InitialScreenIndex": 0,
@@ -2472,14 +2466,6 @@
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
-            "InitialScreenIndex": {
-              "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings  || !settings.leftMFM) {\r\n\treturn 0\r\n} else {\r\n\treturn settings.leftMFM\r\n}",
-                "Interpreter": 1
-              },
-              "Mode": 2,
-              "TargetPropertyName": "InitialScreenIndex"
-            },
             "Top": {
               "Formula": {
                 "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED ) {\r\n\treturn 110\r\n} else {\r\n\treturn 115\r\n}\r\n",
@@ -2496,6 +2482,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Multi Function Module Left - AMS2.djson",
           "Height": 268.0,
           "InitialScreenIndex": 0,
@@ -2513,14 +2500,6 @@
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
-            "InitialScreenIndex": {
-              "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings  || !settings.leftMFM) {\r\n\treturn 0\r\n} else {\r\n\treturn settings.leftMFM\r\n}",
-                "Interpreter": 1
-              },
-              "Mode": 2,
-              "TargetPropertyName": "InitialScreenIndex"
-            },
             "Top": {
               "Formula": {
                 "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED ) {\r\n\treturn 110\r\n} else {\r\n\treturn 115\r\n}\r\n",
@@ -2537,6 +2516,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Multi Function Module Left - rF2.djson",
           "Height": 268.0,
           "InitialScreenIndex": 0,
@@ -2554,14 +2534,6 @@
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
-            "InitialScreenIndex": {
-              "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.rightMFM) {\r\n\treturn 0\r\n} else {\r\n\treturn settings.rightMFM\r\n}",
-                "Interpreter": 1
-              },
-              "Mode": 2,
-              "TargetPropertyName": "InitialScreenIndex"
-            },
             "Top": {
               "Formula": {
                 "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED ) {\r\n\treturn 110\r\n} else {\r\n\treturn 115\r\n}\r\n",
@@ -2578,6 +2550,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Multi Function Module Right.djson",
           "Height": 268.0,
           "InitialScreenIndex": 0,
@@ -2595,14 +2568,6 @@
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
-            "InitialScreenIndex": {
-              "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.rightMFM) {\r\n\treturn 0\r\n} else {\r\n\treturn settings.rightMFM\r\n}",
-                "Interpreter": 1
-              },
-              "Mode": 2,
-              "TargetPropertyName": "InitialScreenIndex"
-            },
             "Top": {
               "Formula": {
                 "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED ) {\r\n\treturn 110\r\n} else {\r\n\treturn 115\r\n}\r\n",
@@ -2619,6 +2584,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Multi Function Module Right - iR.djson",
           "Height": 268.0,
           "InitialScreenIndex": 0,
@@ -2636,14 +2602,6 @@
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
-            "InitialScreenIndex": {
-              "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.rightMFM) {\r\n\treturn 0\r\n} else {\r\n\treturn settings.rightMFM\r\n}",
-                "Interpreter": 1
-              },
-              "Mode": 2,
-              "TargetPropertyName": "InitialScreenIndex"
-            },
             "Top": {
               "Formula": {
                 "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED ) {\r\n\treturn 110\r\n} else {\r\n\treturn 115\r\n}\r\n",
@@ -2660,6 +2618,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Multi Function Module Right - AMS2.djson",
           "Height": 268.0,
           "InitialScreenIndex": 0,
@@ -2677,14 +2636,6 @@
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
           "Bindings": {
-            "InitialScreenIndex": {
-              "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.rightMFM) {\r\n\treturn 0\r\n} else {\r\n\treturn settings.rightMFM\r\n}",
-                "Interpreter": 1
-              },
-              "Mode": 2,
-              "TargetPropertyName": "InitialScreenIndex"
-            },
             "Top": {
               "Formula": {
                 "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED ) {\r\n\treturn 110\r\n} else {\r\n\treturn 115\r\n}\r\n",
@@ -2701,6 +2652,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Multi Function Module Right - rF2.djson",
           "Height": 268.0,
           "InitialScreenIndex": 0,
@@ -2726,6 +2678,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Central.djson",
           "Height": 300.0,
           "InitialScreenIndex": 0,
@@ -2751,6 +2704,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Central - iR.djson",
           "Height": 330.0,
           "InitialScreenIndex": 0,
@@ -2776,6 +2730,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Central - AMS2.djson",
           "Height": 300.0,
           "InitialScreenIndex": 0,
@@ -2801,6 +2756,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Central - rF2.djson",
           "Height": 330.0,
           "InitialScreenIndex": 0,
@@ -2826,6 +2782,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Environment.djson",
           "Height": 58.0,
           "InitialScreenIndex": 0,
@@ -2851,6 +2808,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Environment - iR.djson",
           "Height": 24.0,
           "InitialScreenIndex": 0,
@@ -2876,6 +2834,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Environment - AMS2.djson",
           "Height": 58.0,
           "InitialScreenIndex": 0,
@@ -2901,6 +2860,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Environment - Rf2.djson",
           "Height": 24.0,
           "InitialScreenIndex": 0,
@@ -2926,6 +2886,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Vehicle Settings.djson",
           "Height": 97.0,
           "InitialScreenIndex": 0,
@@ -2951,6 +2912,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Vehicle Settings - iR.djson",
           "Height": 97.0,
           "InitialScreenIndex": 0,
@@ -2976,6 +2938,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Vehicle Settings - AMS2.djson",
           "Height": 97.0,
           "InitialScreenIndex": 0,
@@ -3001,6 +2964,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Vehicle Settings - rF2.djson",
           "Height": 97.0,
           "InitialScreenIndex": 0,
@@ -3035,6 +2999,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Flags.djson",
           "Height": 50.0,
           "InitialScreenIndex": 0,
@@ -3069,6 +3034,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Flags - iR.djson",
           "Height": 50.0,
           "InitialScreenIndex": 0,
@@ -3103,6 +3069,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Flags - AMS2.djson",
           "Height": 50.0,
           "InitialScreenIndex": 0,
@@ -3137,6 +3104,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Flags - rF2.djson",
           "Height": 50.0,
           "InitialScreenIndex": 0,
@@ -3170,6 +3138,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Alerts.djson",
           "Height": 480.0,
           "InitialScreenIndex": 0,
@@ -3203,6 +3172,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Alerts - iR.djson",
           "Height": 480.0,
           "InitialScreenIndex": 0,
@@ -3236,6 +3206,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Alerts - AMS2.djson",
           "Height": 480.0,
           "InitialScreenIndex": 0,
@@ -3269,6 +3240,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Alerts - rF2.djson",
           "Height": 480.0,
           "InitialScreenIndex": 0,
@@ -3285,6 +3257,7 @@
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Turn Signals.djson",
           "Height": 103.0,
           "InitialScreenIndex": 0,
@@ -4044,6 +4017,7 @@
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Standings Compact.djson",
           "Height": 314.0,
           "InitialScreenIndex": 0,
@@ -4139,6 +4113,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Relative Native.djson",
           "Height": 314.0,
           "InitialScreenIndex": 0,
@@ -4164,6 +4139,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Relative Native - iR.djson",
           "Height": 314.0,
           "InitialScreenIndex": 0,
@@ -4189,6 +4165,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Relative Native - AMS2.djson",
           "Height": 314.0,
           "InitialScreenIndex": 0,
@@ -4214,6 +4191,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Relative Native - rF2.djson",
           "Height": 314.0,
           "InitialScreenIndex": 0,
@@ -4467,6 +4445,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Central.djson",
           "Height": 300.0,
           "InitialScreenIndex": 0,
@@ -4492,6 +4471,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Central - iR.djson",
           "Height": 330.0,
           "InitialScreenIndex": 0,
@@ -4517,6 +4497,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Central - AMS2.djson",
           "Height": 300.0,
           "InitialScreenIndex": 0,
@@ -4542,6 +4523,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Central - rF2.djson",
           "Height": 330.0,
           "InitialScreenIndex": 0,
@@ -4567,6 +4549,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Environment.djson",
           "Height": 58.0,
           "InitialScreenIndex": 0,
@@ -4592,6 +4575,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Environment - iR.djson",
           "Height": 24.0,
           "InitialScreenIndex": 0,
@@ -4617,6 +4601,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Environment - AMS2.djson",
           "Height": 58.0,
           "InitialScreenIndex": 0,
@@ -4642,6 +4627,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Environment - Rf2.djson",
           "Height": 24.0,
           "InitialScreenIndex": 0,
@@ -4667,6 +4653,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Vehicle Settings.djson",
           "Height": 97.0,
           "InitialScreenIndex": 0,
@@ -4692,6 +4679,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Vehicle Settings - iR.djson",
           "Height": 97.0,
           "InitialScreenIndex": 0,
@@ -4717,6 +4705,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Vehicle Settings - AMS2.djson",
           "Height": 97.0,
           "InitialScreenIndex": 0,
@@ -4742,6 +4731,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Vehicle Settings - rF2.djson",
           "Height": 97.0,
           "InitialScreenIndex": 0,
@@ -4767,6 +4757,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Alerts.djson",
           "Height": 480.0,
           "InitialScreenIndex": 0,
@@ -4792,6 +4783,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Alerts - iR.djson",
           "Height": 480.0,
           "InitialScreenIndex": 0,
@@ -4817,6 +4809,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Alerts - AMS2.djson",
           "Height": 480.0,
           "InitialScreenIndex": 0,
@@ -4842,6 +4835,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Alerts - rF2.djson",
           "Height": 480.0,
           "InitialScreenIndex": 0,
@@ -4858,6 +4852,7 @@
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Turn Signals.djson",
           "Height": 103.0,
           "InitialScreenIndex": 0,
@@ -5554,6 +5549,7 @@
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Standings Compact.djson",
           "Height": 314.0,
           "InitialScreenIndex": 0,
@@ -5646,6 +5642,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Wind.djson",
           "Height": 70.0,
           "InitialScreenIndex": 0,
@@ -5671,6 +5668,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Wind iR.djson",
           "Height": 70.0,
           "InitialScreenIndex": 0,
@@ -5696,6 +5694,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Wind - AMS2.djson",
           "Height": 70.0,
           "InitialScreenIndex": 0,
@@ -5726,6 +5725,7 @@
           "BorderStyle": {
             "BorderColor": "#FF000000"
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Flags.djson",
           "Height": 35.5,
           "InitialScreenIndex": 0,
@@ -5753,6 +5753,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Flags - iR.djson",
           "Height": 35.5,
           "InitialScreenIndex": 0,
@@ -5780,6 +5781,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Flags - AMS2.djson",
           "Height": 35.5,
           "InitialScreenIndex": 0,
@@ -5807,6 +5809,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Flags - rF2.djson",
           "Height": 35.5,
           "InitialScreenIndex": 0,
@@ -5844,6 +5847,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Session.djson",
           "Height": 49.0,
           "InitialScreenIndex": 0,
@@ -5869,6 +5873,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Session - iR.djson",
           "Height": 49.0,
           "InitialScreenIndex": 0,
@@ -5894,6 +5899,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Session - AMS2.djson",
           "Height": 49.0,
           "InitialScreenIndex": 0,
@@ -5919,6 +5925,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Session - rF2.djson",
           "Height": 49.0,
           "InitialScreenIndex": 0,
@@ -6091,6 +6098,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Central.djson",
           "Height": 300.0,
           "InitialScreenIndex": 0,
@@ -6116,6 +6124,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Central - iR.djson",
           "Height": 330.0,
           "InitialScreenIndex": 0,
@@ -6141,6 +6150,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Central - AMS2.djson",
           "Height": 300.0,
           "InitialScreenIndex": 0,
@@ -6166,6 +6176,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Central - rF2.djson",
           "Height": 330.0,
           "InitialScreenIndex": 0,
@@ -6191,6 +6202,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Environment.djson",
           "Height": 58.0,
           "InitialScreenIndex": 0,
@@ -6216,6 +6228,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Environment - iR.djson",
           "Height": 24.0,
           "InitialScreenIndex": 0,
@@ -6241,6 +6254,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Environment - AMS2.djson",
           "Height": 58.0,
           "InitialScreenIndex": 0,
@@ -6266,6 +6280,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Environment - Rf2.djson",
           "Height": 24.0,
           "InitialScreenIndex": 0,
@@ -6291,6 +6306,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Vehicle Settings.djson",
           "Height": 97.0,
           "InitialScreenIndex": 0,
@@ -6316,6 +6332,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Vehicle Settings - iR.djson",
           "Height": 97.0,
           "InitialScreenIndex": 0,
@@ -6341,6 +6358,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Vehicle Settings - AMS2.djson",
           "Height": 97.0,
           "InitialScreenIndex": 0,
@@ -6366,6 +6384,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Vehicle Settings - rF2.djson",
           "Height": 97.0,
           "InitialScreenIndex": 0,
@@ -6391,6 +6410,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Alerts.djson",
           "Height": 480.0,
           "InitialScreenIndex": 0,
@@ -6416,6 +6436,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Alerts - iR.djson",
           "Height": 480.0,
           "InitialScreenIndex": 0,
@@ -6441,6 +6462,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Alerts - AMS2.djson",
           "Height": 480.0,
           "InitialScreenIndex": 0,
@@ -6466,6 +6488,7 @@
               "TargetPropertyName": "Visible"
             }
           },
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Alerts - rF2.djson",
           "Height": 480.0,
           "InitialScreenIndex": 0,
@@ -6482,6 +6505,7 @@
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
+          "EnableScreenRolesAndActivation": false,
           "FileName": "Turn Signals.djson",
           "Height": 103.0,
           "InitialScreenIndex": 0,
