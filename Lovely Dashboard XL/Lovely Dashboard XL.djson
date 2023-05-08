@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "cd4a57e6-d593-4f93-9b86-17f88cb06f81",
+  "Id": "99b48286-9dac-4e4b-a9a6-525e8c7e0649",
   "Images": [
     {
       "Extension": ".png",
@@ -270,7 +270,7 @@
           "IsTextItem": true,
           "Left": 510.0,
           "Name": "TextItem0",
-          "Text": "Lovely Dashboard v1.6.9",
+          "Text": "Lovely Dashboard v1.6.10",
           "TextColor": "#FFFFFFFF",
           "Top": 395.0,
           "VerticalAlignment": 1,
@@ -291,7 +291,7 @@
             },
             "Visible": {
               "Formula": {
-                "Expression": "var currentVer = '1.6.9'\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
+                "Expression": "var currentVer = '1.6.10'\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -511,7 +511,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.lfmID || settings.lfmID == '' ) {\r\n\treturn 0\r\n} else {\r\n\r\n\tlfm_url = 'https://api2.lowfuelmotorsport.com/api/licenseWidgetUserData/' + settings.lfmID\r\n\tconst json_lfm = downloadstring(1000, lfm_url)\r\n\tconst lfm = JSON.parse(json_lfm)\r\n\t\r\n\treturn ( lfm.race['0'] != null ) ? 1 : 0\r\n\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.lfmID || settings.lfmID == '' ) {\r\n\treturn 0\r\n} else {\r\n\r\n\tlfm_url = 'https://api2.lowfuelmotorsport.com/api/licenseWidgetUserData/' + settings.lfmID\r\n\tconst json_lfm = downloadstring(15000, lfm_url)\r\n\tconst lfm = JSON.parse(json_lfm)\r\n\t\r\n\treturn ( lfm.race['0'] != null ) ? 1 : 0\r\n\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -545,7 +545,7 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( settings && settings.lfmID && settings.lfmID != '' ) {\r\n\t\r\n\tlfm_url = 'https://api2.lowfuelmotorsport.com/api/licenseWidgetUserData/' + settings.lfmID\r\n\tconst json_lfm = downloadstring(1000, lfm_url)\r\n\tconst lfm = JSON.parse(json_lfm)\r\n\t\r\n\tconst sim = (lfm.sim.sim_id == 1) ? 'ACC' : 'rF2'\r\n\t\r\n\treturn sim + ' | ' + lfm.race['0'].event_name.trim() + ' | #' + lfm.race['0'].race_id + ' | Split ' + lfm.race['0'].split\r\n\r\n}",
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( settings && settings.lfmID && settings.lfmID != '' ) {\r\n\t\r\n\tlfm_url = 'https://api2.lowfuelmotorsport.com/api/licenseWidgetUserData/' + settings.lfmID\r\n\tconst json_lfm = downloadstring(15000, lfm_url)\r\n\tconst lfm = JSON.parse(json_lfm)\r\n\t\r\n\tconst sim = (lfm.sim.sim_id == 1) ? 'ACC' : 'rF2'\r\n\t\r\n\treturn sim + ' | ' + lfm.race['0'].event_name.trim() + ' | #' + lfm.race['0'].race_id + ' | Split ' + lfm.race['0'].split\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -575,7 +575,7 @@
               "Bindings": {
                 "BackgroundColor": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( settings && settings.lfmID && settings.lfmID != '' ) {\r\n\t\r\n\tlfm_url = 'https://api2.lowfuelmotorsport.com/api/licenseWidgetUserData/' + settings.lfmID\r\n\tconst json_lfm = downloadstring(1000, lfm_url)\r\n\tconst lfm = JSON.parse(json_lfm)\r\n\t\r\n\tvar raceTime = lfm.race['0'].race_date\r\n\t\r\n\tvar countdownTo = new Date(raceTime)\r\n\tvar now = new Date().getTime()\r\n\tvar timeDiff = countdownTo - now\r\n\t\t\t\t\r\n\tif (timeDiff < 300000) { // Show if under 5 minutes\r\n\t\treturn  '#FFFA0000'\r\n\t} else {\r\n\t\treturn '#FFFFFFFF'\r\n\t}\r\n \r\n} else {\r\n\treturn '#FFFFFFFF'\r\n}\r\n",
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( settings && settings.lfmID && settings.lfmID != '' ) {\r\n\t\r\n\tlfm_url = 'https://api2.lowfuelmotorsport.com/api/licenseWidgetUserData/' + settings.lfmID\r\n\tconst json_lfm = downloadstring(15000, lfm_url)\r\n\tconst lfm = JSON.parse(json_lfm)\r\n\t\r\n\tvar raceTime = lfm.race['0'].race_date\r\n\t\r\n\tvar countdownTo = new Date(raceTime)\r\n\tvar now = new Date().getTime()\r\n\tvar timeDiff = countdownTo - now\r\n\t\t\t\t\r\n\tif (timeDiff < 300000) { // Show if under 5 minutes\r\n\t\treturn  '#FFFA0000'\r\n\t} else {\r\n\t\treturn '#FFFFFFFF'\r\n\t}\r\n \r\n} else {\r\n\treturn '#FFFFFFFF'\r\n}\r\n",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -583,7 +583,7 @@
                 },
                 "Text": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( settings && settings.lfmID && settings.lfmID != '' ) {\r\n\t\r\n\tlfm_url = 'https://api2.lowfuelmotorsport.com/api/licenseWidgetUserData/' + settings.lfmID\r\n\tconst json_lfm = downloadstring(1000, lfm_url)\r\n\tconst lfm = JSON.parse(json_lfm)\r\n\t\r\n\tvar raceTime = lfm.race['0'].race_date\r\n\t\r\n\tvar countdownTo = new Date(raceTime).getTime();\r\n\tvar now = new Date().getTime();\r\n\tvar timeDiff = countdownTo - now\r\n\t\r\n\tif (timeDiff <= 0 ) {\r\n\t\treturn 'NOW'\r\n\t} else {\r\n\t\tvar days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));\r\n\t    var hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));\r\n\t\tvar minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));\r\n\t\tvar seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);\r\n\t\t\r\n\t\tvar nextRaceIn = format(minutes, '00') + ':' + format(seconds, '00')\r\n\t\treturn nextRaceIn\r\n\t}\r\n \r\n} else {\r\n\treturn ''\r\n}\r\n",
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( settings && settings.lfmID && settings.lfmID != '' ) {\r\n\t\r\n\tlfm_url = 'https://api2.lowfuelmotorsport.com/api/licenseWidgetUserData/' + settings.lfmID\r\n\tconst json_lfm = downloadstring(15000, lfm_url)\r\n\tconst lfm = JSON.parse(json_lfm)\r\n\t\r\n\tvar raceTime = lfm.race['0'].race_date\r\n\t\r\n\tvar countdownTo = new Date(raceTime).getTime();\r\n\tvar now = new Date().getTime();\r\n\tvar timeDiff = countdownTo - now\r\n\t\r\n\tif (timeDiff <= 0 ) {\r\n\t\treturn 'NOW'\r\n\t} else {\r\n\t\tvar days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));\r\n\t    var hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));\r\n\t\tvar minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));\r\n\t\tvar seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);\r\n\t\t\r\n\t\tvar nextRaceIn = format(minutes, '00') + ':' + format(seconds, '00')\r\n\t\treturn nextRaceIn\r\n\t}\r\n \r\n} else {\r\n\treturn ''\r\n}\r\n",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -591,7 +591,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( settings && settings.lfmID && settings.lfmID != '' ) {\r\n\t\r\n\tlfm_url = 'https://api2.lowfuelmotorsport.com/api/licenseWidgetUserData/' + settings.lfmID\r\n\tconst json_lfm = downloadstring(1000, lfm_url)\r\n\tconst lfm = JSON.parse(json_lfm)\r\n\t\r\n\tvar raceTime = lfm.race['0'].race_date\r\n\t\r\n\tvar countdownTo = new Date(raceTime)\r\n\tvar now = new Date().getTime()\r\n\tvar timeDiff = countdownTo - now\r\n\t\t\t\t\r\n\tif (timeDiff < 300000) { // Show if under 5 minutes\r\n\t\treturn  '#FFFFFFFF'\r\n\t} else {\r\n\t\treturn '#FF000000'\r\n\t}\r\n \r\n} else {\r\n\treturn '#FF000000'\r\n}\r\n",
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( settings && settings.lfmID && settings.lfmID != '' ) {\r\n\t\r\n\tlfm_url = 'https://api2.lowfuelmotorsport.com/api/licenseWidgetUserData/' + settings.lfmID\r\n\tconst json_lfm = downloadstring(15000, lfm_url)\r\n\tconst lfm = JSON.parse(json_lfm)\r\n\t\r\n\tvar raceTime = lfm.race['0'].race_date\r\n\t\r\n\tvar countdownTo = new Date(raceTime)\r\n\tvar now = new Date().getTime()\r\n\tvar timeDiff = countdownTo - now\r\n\t\t\t\t\r\n\tif (timeDiff < 300000) { // Show if under 5 minutes\r\n\t\treturn  '#FFFFFFFF'\r\n\t} else {\r\n\t\treturn '#FF000000'\r\n\t}\r\n \r\n} else {\r\n\treturn '#FF000000'\r\n}\r\n",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -599,7 +599,7 @@
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( settings && settings.lfmID && settings.lfmID != '' ) {\r\n\t\r\n\tlfm_url = 'https://api2.lowfuelmotorsport.com/api/licenseWidgetUserData/' + settings.lfmID\r\n\tconst json_lfm = downloadstring(1000, lfm_url)\r\n\tconst lfm = JSON.parse(json_lfm)\r\n\t\r\n\tvar raceTime = lfm.race['0'].race_date\r\n\t\r\n\tvar countdownTo = new Date(raceTime)\r\n\tvar now = new Date().getTime()\r\n\tvar timeDiff = countdownTo - now\r\n\t\t\t\t\r\n\tif (timeDiff < 3600000) { // Show if under 60 min\r\n\t\treturn 1\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n \r\n} else {\r\n\treturn 0\r\n}\r\n\r\n",
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( settings && settings.lfmID && settings.lfmID != '' ) {\r\n\t\r\n\tlfm_url = 'https://api2.lowfuelmotorsport.com/api/licenseWidgetUserData/' + settings.lfmID\r\n\tconst json_lfm = downloadstring(15000, lfm_url)\r\n\tconst lfm = JSON.parse(json_lfm)\r\n\t\r\n\tvar raceTime = lfm.race['0'].race_date\r\n\t\r\n\tvar countdownTo = new Date(raceTime)\r\n\tvar now = new Date().getTime()\r\n\tvar timeDiff = countdownTo - now\r\n\t\t\t\t\r\n\tif (timeDiff < 3600000) { // Show if under 60 min\r\n\t\treturn 1\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n \r\n} else {\r\n\treturn 0\r\n}\r\n\r\n",
                     "Interpreter": 1
                   },
                   "Mode": 2,
