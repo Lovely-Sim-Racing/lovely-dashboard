@@ -5,13 +5,13 @@
 <h1 align="center">Lovely Dashboard Settings</h1>
 
 <p align="center">
-As of version 1.5.4, the <strong>Lovely Dashboard</strong> can be setup to your personal preferences.
+The <strong>Lovely Dashboard</strong> can be customised to your personal preferences in many ways.
 </p>
  
 <br/>
 
 ## Settings File
-You will need to copy the file `Lovely-Dashboard_settings.json` into `./SimHub/JavascriptExtensions`. 
+To customise the Lovely Dashboard, you will need to copy the file `Lovely-Dashboard_settings.json` into the `./SimHub/JavascriptExtensions`. 
 
 ![Copy the settings file into the JavascriptExtensions folder](./images/settings-file.png)
 
@@ -21,144 +21,135 @@ To change your personal settings, you will need to edit the `Lovely-Dashboard_se
 
 **:information_source: If you do not copy the settings file, the default values will be used.**
 
-The available settings are:
 
----
+## Settings
+The settings will work for both the **Lovely Dashboard** and **Lovely Dashboard XL**.
+
+* [Analytics](#settings)
+* [Idle Screen Personalisation](#idle-screen-personalisation)
+* [Platform Integrations](#platform-integrations)
+* [UI Customisation](#ui-customisation)
+* [Alerts](#alerts)
+* Sim Specific Settings
+	* [Assetto Corsa Competizione](#acc-assetto-corsa-competizione)
+	* [Assetto Corsa](#ac-assetto-corsa)
+	* [iRacing](#iracing-iracing)
+	* [Autmobilista 2](#automobilista2-automobilista-2)
+	* [rFactor 2](#rfactor2-rfactor-2)
+	* [Formula 1](#f1-formula-1)
+
+### Analytics
 
 #### `analytics`
 Enable anonymous data usage of the Dashboard. Going forward, the Lovely Dashboard will rely on this data in order to improve the experience and understanding the usage. **It is recommended to leave this on.**
 
 - `0` Off, no data is collected
-- `1` (Default & Recommended) - On, anonymous data is collected 
+- **`1` (Default & recommended)** - On, anonymous data is collected 
 
----
+--
+### Idle Screen Personlisation
 
 #### `yourName`, `yourNumber`
-Setup the custom splash screen with your Name & Number. If you do not specify a name and number, the default splash screen will be displayed.
+Setup the custom splash screen with your Name & Number. If you do not specify a name and number, the default idle screen will be displayed.
 
 #### `yourColor`
-Setup the custom splash screen with your Color. You can use any web safe name or hex code eg. `#2B98FB`
+If you've set a Name & Number, you can also change it to your Color. You can use any web safe name or hex code 
 
----
+* Example: `Light Blue` or`#2B98FB`
+
+#### `yourLogo`
+Setup the custom idle screen with your Logo or Image. The image file path must be relative to the Simhub folder. Recommended image size is `800 x 270px`, but will scale to fit. The image can be used alongside your Name and Number as a background, or on its' own by not using a Name and Number at all.
+
+* Example `./JavascriptExtensions/image.png`
+
+--
+
+### Platform Integrations
+
+#### `lfmID`
+Display your Low Fuel Motorsport next session countdown and information on the Lovely Dashboard.
+
+- You can find your LFM ID in the URL of your profile page on [Low Fuel Motorsports](https://lowfuelmotorsport.com)
+
+#### `pitskillID`
+Display your Pitskill.io next session countdown and information on the Lovely Dashboard.
+
+- You can find your **Pitskill.io License ID** on your "My Racing License" page on [Pitskill.io](https://pitskill.io/)
+
+--
+
+### UI Customisation
 
 #### `driverName`
 You can change the way the Driver Name is formatted and displayed.
 
-- `0` (Default) - Will display names as "**F. Lastname**"
-- `1` Will display names as "**Firstname L.**"
-- `2` Will display names as "**Firstname Lastname**"
+- **`1` (Default)** - Will display names as "**F. Lastname**"
+- `2` Will display names as "**Firstname L.**"
+- `3` Will display names as "**Firstname Lastname**"
 
---- 
-
-#### `lfmID`
-Display your next session information on the Lovely Dashboard splash screen.
-
-- You can find your LFM ID in the URL of your profile page on [Low Fuel Motorsports](https://lowfuelmotorsport.com)
-
---- 
+--
 
 #### `rpmLED`
-Display RPM LED's within the Lovely Dashboard. Ideal for those who do run the dashboard on a dedicated DDU with built in LEDs.
+Display virtual RPM LEDs within the Lovely Dashboard. Ideal for those who do not run the dashboard on a mobile phone or tablet, that does not have built in LEDs.
 
-- `0` (Default) - Hide RPM LEDs
-- `1` Show RPM LEDs
+- **`0` (Default)** - Hide virtual RPM LEDs
+- `1` Show virtual RPM LEDs
 
----
-
-#### `lapReview`
-Choose when the Lap Review Alert should appear.
-
-- `0` **Never** show the Lap Review Alert
-- `1` (Default) - **Qualifying** & **Practice** - This will only show the Lap Review Alert during **Qualifying** & **Practice** sessions
-- `2` **Always** - Will show the Lap Review Alert on every lap
-
-#### `lapReviewDelay`
-Set how much time in milliseconds to display the Lap Review Alert. (eg. 1000 = 1 second)
-
-- `5000` (Default) - Display the Lap Review Alert for 5 seconds
-
----
-
-#### `alertView`
-Display the Alert Views (TC, ABS, MAP etc)
-
-- `0` (Default) **Normal** full width size
-- `1` **Mini** size
-- `2` **Off** - Do not display any Alerts
-
-#### `alertDelay`
-Set how much time in milliseconds to display the Alert Views. (eg. 1000 = 1 second)
-
-- `1000` (Default) - Display the Alert Views for 1 second
-
----
-
-#### `damageAlert`
-Display the Damage Alert every time there is a change in the overall vehicle damage.
-
-- `0` **Off**
-- `1` (Default) **On**
-
-#### `damageAlertDelay`
-Set how much time in milliseconds to display the Damage Alert. (eg. 1000 = 1 second)
-
-- `7500` (Default) - Display the Damage Alert for 7.5 seconds
-
----
+--
 
 #### `clutchMode`
-Display the Clutch Value
+Display the Clutch Value (0-100)
 
-- `0` Always Off
-- `1` (Default) Show when engaged
-- `2` Always On
+- `0` Hide Clutch Value
+- **`1` (Default)** Show when engaged
+- `2` Always Show
 
----
+--
 
 #### `showFlags`
 You can enable or disable the track flags in the top left module.
 
-- `0` (Default) Show Flags
-- `1` Hide Flags
+- `0` Hide Flags
+- **`1` (Default)** Show Flags
 
----
+--
 
 #### `mapType`
 Change the map type, between two avaialble options
 
-- `0` (Default) Static Map
-- `1` Animated Map
+- **`1` (Default)** Static Map
+- `2` Animated Map
 
----
+--
 
 #### `mapZoom`
-The map unzoom percentage. 
+If `mapType` is set to animated, you can select the unzoom percentage. The faster you go, the more the map zooms-out.
 
-- `0 - 100` The larger the number, the more unzoomed the map gets
+- **`30` (Default)** (0 - 100) The larger the number, the more zoomed-out the map gets
 
----
+--
 
 #### `uiMode`
 Set the UI mode intensity and change the line brightness throughout the dashbaord.
 
-- `0` Low
-- `1` Medium
-- `2` (Default) High
+- `1` Low
+- `2` Medium
+- **`3` (Default)** High
 
-#### `uiRadius` (NEW)
+#### `uiRadius`
 Set the UI mode intensity and change the line brightness throughout the dashbaord.
 
-- `45` (Default) Pixel Radius of outer corners, suggested size Min:12 - Max:50
+- **`45` (Default)** Pixel Radius of outer corners, suggested size Min:12 - Max:50
 
----
+--
 
 #### `nightMode` (NEW)
 For sims that support night races and provide info on Lights (currently ACC and AMS2), when you turn on the lights, it will activate a dimmer view of the dashboard. You can enable this or disable this feature:
 
-- `0` Enabled: Will dim the screen when lights are on
-- `1` Disabled: Will always remain bright
+- `0` Disabled: Will always remain bright
+- **`1` (Default)** Enabled: Will dim the screen when lights are on
 
----
+--
 
 #### `tireLapAvg`
 Specify the number of laps to collect tire data.
@@ -170,3 +161,250 @@ Set a hot-key to reset the AVG Tire data. This is still a bit buggy, so if the d
 
 - `F24` (Default) The hot-key combination of your choice
 
+--
+
+### Alerts
+
+#### `lapReview`
+Choose when the Lap Review Alert should appear.
+
+- `0` Never show the Lap Review Alert
+- **`1` (Default)** - **Qualifying** & **Practice** - This will only show the Lap Review Alert during **Qualifying** & **Practice** sessions
+- `2` Always - Will show the Lap Review Alert on every lap
+
+#### `lapReviewDelay`
+Set how much time in milliseconds to display the Lap Review Alert. (eg. 1000 = 1 second)
+
+- **`5000` (Default)** - Display the Lap Review Alert for 5 seconds
+
+--
+
+#### `deltaReviewDelay`
+Set how much time in milliseconds to display the Sector Delta Review. (eg. 1000 = 1 second)
+
+- **`5000` (Default)** - Display the Sector Delta Review for 5 seconds
+
+--
+
+#### `alertView`
+Display the Alert Views (TC, ABS, MAP etc)
+
+- `0` Off - Do not display any Alerts
+- **`1` (Default)** Normal full width size
+- `2` Mini size
+
+#### `alertDelay`
+Set how much time in milliseconds to display the Alert Views. (eg. 1000 = 1 second)
+
+- **`5000` (Default)** - Display the Alert Views for 5 seconds
+
+--
+
+#### `damageAlert`
+Display the Damage Alert every time there is a change in the overall vehicle damage.
+
+- `0` Off
+- **`1` (Default)** On
+
+#### `damageAlertDelay`
+Set how much time in milliseconds to display the Damage Alert. (eg. 1000 = 1 second)
+
+- **`7500` (Default)** - Display the Damage Alert for 7.5 seconds
+
+--
+
+### Sim Specific Settings
+Set the default widget pages for each sim seperately.
+
+### `ACC` Assetto Corsa Competizione
+
+**Left, Right & Overlay Multi Funciton Display**
+
+#### `leftMFM: 4` `rightMFM: 0` `overlayMFM: 0`
+
+* **`0` Lap Times**
+* `1` Sectors
+* `2` Relative
+* `3` Standings
+* **`4` Tires**
+* `5` Tire AVG
+* `6` Damage
+* `8` Map
+
+
+**Central**
+
+#### `centralModule: 0`
+* **`0` Lap Diff**
+* `1` Nothing
+* `2` Real Time Clock
+
+
+**Fuel Calculator**
+
+#### `fuelModule: 0`
+* **`0` Fuel Data**
+* `1` Fuel Time Left
+* `2` Refuel Calculator (Refuel or Finish Line)
+
+--
+
+### `AC` Assetto Corsa
+
+**Left, Right & Overlay Multi Funciton Display**
+
+#### `leftMFM: 4` `rightMFM: 0` `overlayMFM: 0`
+
+* **`0` Lap Times**
+* `1` Sectors
+* `2` Relative
+* `3` Standings
+* **`4` Tires**
+* `5` Tire AVG
+* `6` Damage
+* `8` Map
+
+
+**Central**
+
+#### `centralModule: 0`
+* **`0` Lap Diff**
+* `1` Nothing
+* `2` Real Time Clock
+
+
+**Fuel Calculator**
+
+#### `fuelModule: 0`
+* **`0` Fuel Data**
+* `1` Fuel Time Left
+* `2` Refuel Calculator (Refuel or Finish Line)
+
+--
+
+### `IRacing` iRacing
+
+**Left, Right & Overlay Multi Funciton Display**
+
+#### `leftMFM: 7` `rightMFM: 0` `overlayMFM: 0`
+
+* **`0` Lap Times**
+* `1` Sectors
+* `2` Relative
+* `3` Standings
+* **`7` Status**
+* `8` Map
+
+
+**Central**
+
+#### `centralModule: 0`
+* **`0` Lap Diff**
+* `1` Nothing
+* `2` Real Time Clock
+
+
+**Fuel Calculator**
+
+#### `fuelModule: 0`
+* **`0` Fuel Data**
+* `1` Fuel Time Left
+* `2` Refuel Calculator (Refuel or Finish Line)
+
+--
+
+### `Automobilista2` Automobilista 2
+
+**Left, Right & Overlay Multi Funciton Display**
+
+#### `leftMFM: 4` `rightMFM: 0` `overlayMFM: 0`
+
+* **`0` Lap Times**
+* `1` Sectors
+* `2` Relative
+* `3` Standings
+* **`4` Tires**
+* `5` Tire AVG
+* `7` Status
+* `8` Map
+
+**Central**
+
+#### `centralModule: 0`
+* **`0` Lap Diff**
+* `1` Nothing
+* `2` Real Time Clock
+
+
+**Fuel Calculator**
+
+#### `fuelModule: 0`
+* **`0` Fuel Data**
+* `1` Fuel Time Left
+* `2` Refuel Calculator (Refuel or Finish Line)
+
+--
+
+### `RFactor2` rFactor 2
+
+**Left, Right & Overlay Multi Funciton Display**
+
+#### `leftMFM: 4` `rightMFM: 0` `overlayMFM: 0`
+
+* **`0` Lap Times**
+* `1` Sectors
+* `2` Relative
+* `3` Standings
+* **`4` Tires**
+* `5` Tire AVG
+* `8` Map
+
+**Central**
+
+#### `centralModule: 0`
+* **`0` Lap Diff**
+* `1` Nothing
+* `2` Real Time Clock
+
+
+**Fuel Calculator**
+
+#### `fuelModule: 0`
+* **`0` Fuel Data**
+* `1` Fuel Time Left
+* `2` Refuel Calculator (Refuel or Finish Line)
+
+--
+
+### `F1` Formula 1
+
+**Left, Right & Overlay Multi Funciton Display**
+
+#### `leftMFM: 4` `rightMFM: 0` `overlayMFM: 0`
+
+* **`0` Lap Times**
+* `1` Sectors
+* `2` Relative
+* `3` Standings
+* **`4` Tires**
+* `5` Tire AVG
+* `6` Damage
+* `7` Status
+* `8` Map
+
+**Central**
+
+#### `centralModule: 0`
+* **`0` Lap Diff**
+* `1` Nothing
+* `2` Real Time Clock
+
+
+**Fuel Calculator**
+
+#### `fuelModule: 0`
+* **`0` Fuel Data**
+* `1` Fuel Time Left
+* `2` Refuel Calculator (Refuel or Finish Line)
+
+--

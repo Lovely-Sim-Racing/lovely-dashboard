@@ -25,6 +25,7 @@
 
 ### Center Module
 1. Live Lap Time Diff to your Session Best
+2. Sector Indicators
 2. Gear
 3. RPM
 4. Speed
@@ -42,14 +43,14 @@
 3. Brake Temp & Color (FL, FR, RL, RR)
 4. Tyre Type & Set Number
 
-👉 [+ Action A & B modules](actions.md)
+👉 [+ Action A modules](actions.md)
 
 ### Right Module
 1. Predicted Lap (White, Red when invalidated)
 2. Last Lap
 3. Session Best Lap
 
-👉 [+ Action A & B modules](actions.md)
+👉 [+ Action B modules](actions.md)
 
 ### Bottom Module
 1. TC Level (Flashes when active)
