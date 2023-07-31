@@ -70,7 +70,8 @@ If this is your first time installing the **Lovely Dashboard**, please follow th
 1. Download & Install [**SimHub Dash**](https://www.simhubdash.com) app
 2. Download & Install [**Roboto Font Family**](https://fonts.google.com/specimen/Roboto) by Christian Robertson
 3. Download & Install the [**Lovely Dashboard Latest Release**](https://github.com/cdemetriadis/lovely-dashboard/releases)
-4. *Optionally,* For extra customisability, copy and edit the [**Settings File**](./docs/settings.md)
+4. Setup your [**Simuhub Action Keys**](./docs/actions.md) to control the Lovely Dashboard UI
+5. ***Optionally***, you can also copy and edit the [**Settings File**](./docs/settings.md)
 
 ### Updating
 If you have received a notification on your **Lovely Dashboard** of a new update, please follow the below steps:
@@ -112,9 +113,10 @@ The new **Lovely Dashboard v2.0.0** is no longer locked to any sim. There's a pr
 ## The Lovely Dashboard
 If you were wondering why this is the best SimHub dashboard out there, wonder no more. It's good looking and feature packed but with considered design and proper information architecture. 
 
-[![Basic Feature Set](docs/images/AllFeatures.jpg)](docs/features.md)
 
-🖥 **View the [Full Feature Set](docs/features.md)**
+![Basic Feature Set](docs/images/Primary.png)
+
+![Basic Feature Set](docs/images/AllFeatures.png)
 
 ## Contributing
 Would you like to contribute to the **Lovely Dashboard**? Then head on over to the [**Developers Docs**](docs/developers.md) and find out how you can get started.

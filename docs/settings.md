@@ -235,14 +235,13 @@ Set the default widget pages for each sim seperately.
 * `6` Damage
 * `8` Map
 
-
 **Central**
 
 #### `centralModule: 0`
-* **`0` Lap Diff**
-* `1` Nothing
-* `2` Real Time Clock
-
+* **`0` Full**
+* `1` Simple (no lap delta)
+* `2` Time (displays a real worl clock on top)
+* `3` Speedometer (prioritise the speedometer)
 
 **Fuel Calculator**
 
@@ -268,14 +267,13 @@ Set the default widget pages for each sim seperately.
 * `6` Damage
 * `8` Map
 
-
 **Central**
 
 #### `centralModule: 0`
-* **`0` Lap Diff**
-* `1` Nothing
-* `2` Real Time Clock
-
+* **`0` Full**
+* `1` Simple (no lap delta)
+* `2` Time (displays a real worl clock on top)
+* `3` Speedometer (prioritise the speedometer)
 
 **Fuel Calculator**
 
@@ -299,14 +297,13 @@ Set the default widget pages for each sim seperately.
 * **`7` Status**
 * `8` Map
 
-
 **Central**
 
 #### `centralModule: 0`
-* **`0` Lap Diff**
-* `1` Nothing
-* `2` Real Time Clock
-
+* **`0` Full**
+* `1` Simple (no lap delta)
+* `2` Time (displays a real worl clock on top)
+* `3` Speedometer (prioritise the speedometer)
 
 **Fuel Calculator**
 
@@ -335,10 +332,10 @@ Set the default widget pages for each sim seperately.
 **Central**
 
 #### `centralModule: 0`
-* **`0` Lap Diff**
-* `1` Nothing
-* `2` Real Time Clock
-
+* **`0` Full**
+* `1` Simple (no lap delta)
+* `2` Time (displays a real worl clock on top)
+* `3` Speedometer (prioritise the speedometer)
 
 **Fuel Calculator**
 
@@ -366,10 +363,10 @@ Set the default widget pages for each sim seperately.
 **Central**
 
 #### `centralModule: 0`
-* **`0` Lap Diff**
-* `1` Nothing
-* `2` Real Time Clock
-
+* **`0` Full**
+* `1` Simple (no lap delta)
+* `2` Time (displays a real worl clock on top)
+* `3` Speedometer (prioritise the speedometer)
 
 **Fuel Calculator**
 
@@ -399,10 +396,10 @@ Set the default widget pages for each sim seperately.
 **Central**
 
 #### `centralModule: 0`
-* **`0` Lap Diff**
-* `1` Nothing
-* `2` Real Time Clock
-
+* **`0` Full**
+* `1` Simple (no lap delta)
+* `2` Time (displays a real worl clock on top)
+* `3` Speedometer (prioritise the speedometer)
 
 **Fuel Calculator**
 
