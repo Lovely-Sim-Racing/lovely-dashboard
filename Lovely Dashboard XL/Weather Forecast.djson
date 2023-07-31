@@ -1,0 +1,1064 @@
+{
+  "BackgroundColor": "#FF000000",
+  "BackgroundOpacity": 100.0,
+  "BaseHeight": 235,
+  "BaseWidth": 130,
+  "DashboardDebugManager": {
+    "LastPlacement": "-1764,156,307,555",
+    "Maximized": false
+  },
+  "EnableClickThroughOverlay": true,
+  "EnableOnDashboardMessaging": true,
+  "ForegroundOpacity": 100.0,
+  "GridSize": 10,
+  "HideLabels": true,
+  "Id": "6806b8c2-92f9-46e0-ab43-df8f56eb7530",
+  "Images": [
+    {
+      "Extension": ".png",
+      "Height": 133,
+      "Length": 1653,
+      "MD5": "9d8dabe3fa039195f1f18e7120acb2e4",
+      "Modified": false,
+      "Name": "Heavy Rain",
+      "Optimized": true,
+      "Width": 133
+    },
+    {
+      "Extension": ".png",
+      "Height": 133,
+      "Length": 1979,
+      "MD5": "26b818379029f2bb96ae926a19262bcd",
+      "Modified": false,
+      "Name": "Light Cloud",
+      "Optimized": true,
+      "Width": 133
+    },
+    {
+      "Extension": ".png",
+      "Height": 133,
+      "Length": 1608,
+      "MD5": "8c524f3681440532b5f00b005e3b49bb",
+      "Modified": false,
+      "Name": "Light Rain",
+      "Optimized": true,
+      "Width": 133
+    },
+    {
+      "Extension": ".png",
+      "Height": 133,
+      "Length": 1996,
+      "MD5": "e0b73a2d922532218c40e73d15b8be5c",
+      "Modified": false,
+      "Name": "Overcast",
+      "Optimized": true,
+      "Width": 133
+    },
+    {
+      "Extension": ".png",
+      "Height": 133,
+      "Length": 1924,
+      "MD5": "317311aa098f527531cc2711a507c789",
+      "Modified": false,
+      "Name": "Storm",
+      "Optimized": true,
+      "Width": 133
+    },
+    {
+      "Extension": ".png",
+      "Height": 133,
+      "Length": 2274,
+      "MD5": "9211248b5b2c2e98f46ae8a360746f1f",
+      "Modified": false,
+      "Name": "Clear",
+      "Optimized": true,
+      "Width": 133
+    }
+  ],
+  "IsOverlay": false,
+  "Metadata": {
+    "EnableOnDashboardMessaging": true,
+    "Height": 235.0,
+    "IdleScreensIndexs": [
+      0
+    ],
+    "InGameScreensIndexs": [
+      0
+    ],
+    "IsOverlay": false,
+    "MainPreviewIndex": 0,
+    "MetadataVersion": 2.0,
+    "OverlaySizeWarning": false,
+    "PitScreensIndexs": [],
+    "ScreenCount": 1.0,
+    "Width": 130.0
+  },
+  "Screens": [
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#FF000000",
+      "IdleScreen": true,
+      "InGameScreen": true,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": false,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Childrens": [
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "Formula": {
+                        "Expression": "format(isnull([GameRawData.PacketSessionData.m_weatherForecastSamples07.m_rainPercentage],1),'0')+'%'"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    },
+                    "TextColor": {
+                      "EnableMiddleColor": false,
+                      "EndColor": "#FF00BFFF",
+                      "EndColorValue": 100.0,
+                      "Formula": {
+                        "Expression": "format(isnull([GameRawData.PacketSessionData.m_weatherForecastSamples07.m_rainPercentage],1),'0')"
+                      },
+                      "MiddleColor": "#FF000000",
+                      "MiddleColorValue": 1.0,
+                      "Mode": 4,
+                      "StartColor": "#FFFFFFFF",
+                      "StartColorValue": 0.0,
+                      "TargetPropertyName": "TextColor"
+                    },
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "[GameRawData.PacketSessionData.m_weatherForecastSamples07.m_timeOffset]>0"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Visible"
+                    }
+                  },
+                  "BorderStyle": {
+                    "BorderColor": "#FF808080"
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 14.0,
+                  "FontWeight": "SemiBold",
+                  "Height": 20.0,
+                  "HorizontalAlignment": 1,
+                  "IsFreezed": true,
+                  "IsTextItem": true,
+                  "Left": 240.0,
+                  "Name": "Percentage",
+                  "Text": "0%",
+                  "TextColor": "#FFFFFFFF",
+                  "Top": 50.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "+0",
+                      "Formula": {
+                        "Expression": "'+' + ([GameRawData.PacketSessionData.m_weatherForecastSamples07.m_timeOffset]) + '\\''"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    },
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "[GameRawData.PacketSessionData.m_weatherForecastSamples07.m_timeOffset]>0"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Visible"
+                    }
+                  },
+                  "BorderStyle": {
+                    "BorderColor": "#FF808080"
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 14.0,
+                  "FontWeight": "SemiBold",
+                  "Height": 15.0,
+                  "HorizontalAlignment": 1,
+                  "IsFreezed": true,
+                  "IsTextItem": true,
+                  "Left": 240.0,
+                  "Name": "Time",
+                  "Text": "Now",
+                  "TextColor": "#FF878787",
+                  "Top": 35.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                  "AutoSize": false,
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Image": {
+                      "Formula": {
+                        "Expression": "var image_Weather = $prop('GameRawData.PacketSessionData.m_weatherForecastSamples07.m_weather');\r\nvar image = '';\r\n\r\nif (image_Weather == '0'){image = 'Clear'};\r\nif (image_Weather == '1'){image = 'Light Cloud'};\r\nif (image_Weather == '2'){image = 'Overcast'};\r\nif (image_Weather == '3'){image = 'Light Rain'};\r\nif (image_Weather == '4'){image = 'Heavy Rain'};\r\nif (image_Weather == '5'){image = 'Storm'};\r\n\r\nreturn image;",
+                        "Interpreter": 1
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Image"
+                    },
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "[GameRawData.PacketSessionData.m_weatherForecastSamples07.m_timeOffset]>0"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Visible"
+                    }
+                  },
+                  "Height": 35.0,
+                  "Image": "Light Cloud",
+                  "IsFreezed": true,
+                  "Left": 240.0,
+                  "Name": "Image",
+                  "RenderingSkip": 30,
+                  "Top": 0.0,
+                  "Visible": true,
+                  "Width": 35.0
+                }
+              ],
+              "Group": true,
+              "Height": 70.0,
+              "Left": 240.0,
+              "Name": "7",
+              "Top": 0.0,
+              "Visible": true,
+              "Width": 40.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Childrens": [
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "Formula": {
+                        "Expression": "format(isnull([GameRawData.PacketSessionData.m_weatherForecastSamples06.m_rainPercentage],1),'0')+'%'"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    },
+                    "TextColor": {
+                      "EnableMiddleColor": false,
+                      "EndColor": "#FF00BFFF",
+                      "EndColorValue": 100.0,
+                      "Formula": {
+                        "Expression": "format(isnull([GameRawData.PacketSessionData.m_weatherForecastSamples06.m_rainPercentage],1),'0')"
+                      },
+                      "MiddleColor": "#FF000000",
+                      "MiddleColorValue": 1.0,
+                      "Mode": 4,
+                      "StartColor": "#FFFFFFFF",
+                      "StartColorValue": 0.0,
+                      "TargetPropertyName": "TextColor"
+                    },
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "[GameRawData.PacketSessionData.m_weatherForecastSamples06.m_timeOffset]>0"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Visible"
+                    }
+                  },
+                  "BorderStyle": {
+                    "BorderColor": "#FF808080"
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 14.0,
+                  "FontWeight": "SemiBold",
+                  "Height": 35.0,
+                  "HorizontalAlignment": 1,
+                  "IsFreezed": true,
+                  "IsTextItem": true,
+                  "Left": 90.0,
+                  "Name": "Percentage",
+                  "Text": "0%",
+                  "TextColor": "#FFFFFFFF",
+                  "Top": 200.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                  "AutoSize": false,
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Image": {
+                      "Formula": {
+                        "Expression": "var image_Weather = $prop('GameRawData.PacketSessionData.m_weatherForecastSamples06.m_weather');\r\nvar image = '';\r\n\r\nif (image_Weather == '0'){image = 'Clear'};\r\nif (image_Weather == '1'){image = 'Light Cloud'};\r\nif (image_Weather == '2'){image = 'Overcast'};\r\nif (image_Weather == '3'){image = 'Light Rain'};\r\nif (image_Weather == '4'){image = 'Heavy Rain'};\r\nif (image_Weather == '5'){image = 'Storm'};\r\n\r\nreturn image;",
+                        "Interpreter": 1
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Image"
+                    },
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "[GameRawData.PacketSessionData.m_weatherForecastSamples06.m_timeOffset]>0"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Visible"
+                    }
+                  },
+                  "Height": 35.0,
+                  "Image": "Light Rain",
+                  "IsFreezed": true,
+                  "Left": 50.0,
+                  "Name": "Image",
+                  "RenderingSkip": 30,
+                  "Top": 200.0,
+                  "Visible": true,
+                  "Width": 35.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "+0",
+                      "Formula": {
+                        "Expression": "'+' + ([GameRawData.PacketSessionData.m_weatherForecastSamples06.m_timeOffset]) + '\\''"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    },
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "[GameRawData.PacketSessionData.m_weatherForecastSamples06.m_timeOffset]>0"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Visible"
+                    }
+                  },
+                  "BorderStyle": {
+                    "BorderColor": "#FF808080"
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 14.0,
+                  "FontWeight": "SemiBold",
+                  "Height": 35.0,
+                  "HorizontalAlignment": 1,
+                  "IsFreezed": true,
+                  "IsTextItem": true,
+                  "Left": 0.0,
+                  "Name": "Time",
+                  "Text": "Now",
+                  "TextColor": "#FF878787",
+                  "Top": 200.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 40.0
+                }
+              ],
+              "Group": true,
+              "Height": 35.0,
+              "Left": 0.0,
+              "Name": "6",
+              "Top": 200.0,
+              "Visible": true,
+              "Width": 130.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Childrens": [
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "Formula": {
+                        "Expression": "format(isnull([GameRawData.PacketSessionData.m_weatherForecastSamples05.m_rainPercentage],1),'0')+'%'"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    },
+                    "TextColor": {
+                      "EnableMiddleColor": false,
+                      "EndColor": "#FF00BFFF",
+                      "EndColorValue": 100.0,
+                      "Formula": {
+                        "Expression": "format(isnull([GameRawData.PacketSessionData.m_weatherForecastSamples05.m_rainPercentage],1),'0')"
+                      },
+                      "MiddleColor": "#FF000000",
+                      "MiddleColorValue": 1.0,
+                      "Mode": 4,
+                      "StartColor": "#FFFFFFFF",
+                      "StartColorValue": 0.0,
+                      "TargetPropertyName": "TextColor"
+                    },
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "[GameRawData.PacketSessionData.m_weatherForecastSamples05.m_timeOffset]>0"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Visible"
+                    }
+                  },
+                  "BorderStyle": {
+                    "BorderColor": "#FF808080"
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 14.0,
+                  "FontWeight": "SemiBold",
+                  "Height": 35.0,
+                  "HorizontalAlignment": 1,
+                  "IsFreezed": true,
+                  "IsTextItem": true,
+                  "Left": 90.0,
+                  "Name": "Percentage",
+                  "Text": "0%",
+                  "TextColor": "#FFFFFFFF",
+                  "Top": 160.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                  "AutoSize": false,
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Image": {
+                      "Formula": {
+                        "Expression": "var image_Weather = $prop('GameRawData.PacketSessionData.m_weatherForecastSamples05.m_weather');\r\nvar image = '';\r\n\r\nif (image_Weather == '0'){image = 'Clear'};\r\nif (image_Weather == '1'){image = 'Light Cloud'};\r\nif (image_Weather == '2'){image = 'Overcast'};\r\nif (image_Weather == '3'){image = 'Light Rain'};\r\nif (image_Weather == '4'){image = 'Heavy Rain'};\r\nif (image_Weather == '5'){image = 'Storm'};\r\n\r\nreturn image;",
+                        "Interpreter": 1
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Image"
+                    },
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "[GameRawData.PacketSessionData.m_weatherForecastSamples05.m_timeOffset]>0"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Visible"
+                    }
+                  },
+                  "Height": 35.0,
+                  "Image": "Overcast",
+                  "IsFreezed": true,
+                  "Left": 50.0,
+                  "Name": "Image",
+                  "RenderingSkip": 30,
+                  "Top": 160.0,
+                  "Visible": true,
+                  "Width": 35.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "+0",
+                      "Formula": {
+                        "Expression": "'+' + ([GameRawData.PacketSessionData.m_weatherForecastSamples05.m_timeOffset]) + '\\''"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    },
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "[GameRawData.PacketSessionData.m_weatherForecastSamples05.m_timeOffset]>0"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Visible"
+                    }
+                  },
+                  "BorderStyle": {
+                    "BorderColor": "#FF808080"
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 14.0,
+                  "FontWeight": "SemiBold",
+                  "Height": 35.0,
+                  "HorizontalAlignment": 1,
+                  "IsFreezed": true,
+                  "IsTextItem": true,
+                  "Left": 0.0,
+                  "Name": "Time",
+                  "Text": "Now",
+                  "TextColor": "#FF878787",
+                  "Top": 160.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 40.0
+                }
+              ],
+              "Group": true,
+              "Height": 35.0,
+              "Left": 0.0,
+              "Name": "5",
+              "Top": 160.0,
+              "Visible": true,
+              "Width": 130.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Childrens": [
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "Formula": {
+                        "Expression": "format(isnull([GameRawData.PacketSessionData.m_weatherForecastSamples04.m_rainPercentage],1),'0')+'%'"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    },
+                    "TextColor": {
+                      "EnableMiddleColor": false,
+                      "EndColor": "#FF00BFFF",
+                      "EndColorValue": 100.0,
+                      "Formula": {
+                        "Expression": "format(isnull([GameRawData.PacketSessionData.m_weatherForecastSamples04.m_rainPercentage],1),'0')"
+                      },
+                      "MiddleColor": "#FF000000",
+                      "MiddleColorValue": 1.0,
+                      "Mode": 4,
+                      "StartColor": "#FFFFF0F5",
+                      "StartColorValue": 0.0,
+                      "TargetPropertyName": "TextColor"
+                    },
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "[GameRawData.PacketSessionData.m_weatherForecastSamples04.m_timeOffset]>0"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Visible"
+                    }
+                  },
+                  "BorderStyle": {
+                    "BorderColor": "#FF808080"
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 14.0,
+                  "FontWeight": "SemiBold",
+                  "Height": 35.0,
+                  "HorizontalAlignment": 1,
+                  "IsFreezed": true,
+                  "IsTextItem": true,
+                  "Left": 90.0,
+                  "Name": "Percentage",
+                  "Text": "0%",
+                  "TextColor": "#FFFFFFFF",
+                  "Top": 120.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                  "AutoSize": false,
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Image": {
+                      "Formula": {
+                        "Expression": "var image_Weather = $prop('GameRawData.PacketSessionData.m_weatherForecastSamples04.m_weather');\r\nvar image = '';\r\n\r\nif (image_Weather == '0'){image = 'Clear'};\r\nif (image_Weather == '1'){image = 'Light Cloud'};\r\nif (image_Weather == '2'){image = 'Overcast'};\r\nif (image_Weather == '3'){image = 'Light Rain'};\r\nif (image_Weather == '4'){image = 'Heavy Rain'};\r\nif (image_Weather == '5'){image = 'Storm'};\r\n\r\nreturn image;",
+                        "Interpreter": 1
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Image"
+                    },
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "[GameRawData.PacketSessionData.m_weatherForecastSamples04.m_timeOffset]>0"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Visible"
+                    }
+                  },
+                  "Height": 35.0,
+                  "Image": "Light Cloud",
+                  "IsFreezed": true,
+                  "Left": 50.0,
+                  "Name": "Image",
+                  "RenderingSkip": 30,
+                  "Top": 120.0,
+                  "Visible": true,
+                  "Width": 35.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "+0",
+                      "Formula": {
+                        "Expression": "'+' + ([GameRawData.PacketSessionData.m_weatherForecastSamples04.m_timeOffset]) + '\\''"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    },
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "[GameRawData.PacketSessionData.m_weatherForecastSamples04.m_timeOffset]>0"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Visible"
+                    }
+                  },
+                  "BorderStyle": {
+                    "BorderColor": "#FF808080"
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 14.0,
+                  "FontWeight": "SemiBold",
+                  "Height": 35.0,
+                  "HorizontalAlignment": 1,
+                  "IsFreezed": true,
+                  "IsTextItem": true,
+                  "Left": 0.0,
+                  "Name": "Time",
+                  "Text": "Now",
+                  "TextColor": "#FF878787",
+                  "Top": 120.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 40.0
+                }
+              ],
+              "Group": true,
+              "Height": 35.0,
+              "Left": 0.0,
+              "Name": "4",
+              "Top": 120.0,
+              "Visible": true,
+              "Width": 130.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Childrens": [
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "Formula": {
+                        "Expression": "format(isnull([GameRawData.PacketSessionData.m_weatherForecastSamples03.m_rainPercentage],1),'0')+'%'"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    },
+                    "TextColor": {
+                      "EnableMiddleColor": false,
+                      "EndColor": "#FF00BFFF",
+                      "EndColorValue": 100.0,
+                      "Formula": {
+                        "Expression": "format(isnull([GameRawData.PacketSessionData.m_weatherForecastSamples03.m_rainPercentage],1),'0')"
+                      },
+                      "MiddleColor": "#FF000000",
+                      "MiddleColorValue": 1.0,
+                      "Mode": 4,
+                      "StartColor": "#FFFFFFFF",
+                      "StartColorValue": 0.0,
+                      "TargetPropertyName": "TextColor"
+                    },
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "[GameRawData.PacketSessionData.m_weatherForecastSamples03.m_timeOffset]>0"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Visible"
+                    }
+                  },
+                  "BorderStyle": {
+                    "BorderColor": "#FF808080"
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 14.0,
+                  "FontWeight": "SemiBold",
+                  "Height": 35.0,
+                  "HorizontalAlignment": 1,
+                  "IsFreezed": true,
+                  "IsTextItem": true,
+                  "Left": 90.0,
+                  "Name": "Percentage",
+                  "Text": "0%",
+                  "TextColor": "#FFFFFFFF",
+                  "Top": 80.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                  "AutoSize": false,
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Image": {
+                      "Formula": {
+                        "Expression": "var image_Weather = $prop('GameRawData.PacketSessionData.m_weatherForecastSamples03.m_weather');\r\nvar image = '';\r\n\r\nif (image_Weather == '0'){image = 'Clear'};\r\nif (image_Weather == '1'){image = 'Light Cloud'};\r\nif (image_Weather == '2'){image = 'Overcast'};\r\nif (image_Weather == '3'){image = 'Light Rain'};\r\nif (image_Weather == '4'){image = 'Heavy Rain'};\r\nif (image_Weather == '5'){image = 'Storm'};\r\n\r\nreturn image;",
+                        "Interpreter": 1
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Image"
+                    },
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "[GameRawData.PacketSessionData.m_weatherForecastSamples03.m_timeOffset]>0"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Visible"
+                    }
+                  },
+                  "Height": 35.0,
+                  "Image": "Clear",
+                  "IsFreezed": true,
+                  "Left": 50.0,
+                  "Name": "Image",
+                  "RenderingSkip": 30,
+                  "Top": 80.0,
+                  "Visible": true,
+                  "Width": 35.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "+0",
+                      "Formula": {
+                        "Expression": "'+' + ([GameRawData.PacketSessionData.m_weatherForecastSamples03.m_timeOffset]) + '\\''"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    },
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "[GameRawData.PacketSessionData.m_weatherForecastSamples03.m_timeOffset]>0"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Visible"
+                    }
+                  },
+                  "BorderStyle": {
+                    "BorderColor": "#FF808080"
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 14.0,
+                  "FontWeight": "SemiBold",
+                  "Height": 35.0,
+                  "HorizontalAlignment": 1,
+                  "IsFreezed": true,
+                  "IsTextItem": true,
+                  "Left": 0.0,
+                  "Name": "Time",
+                  "Text": "Now",
+                  "TextColor": "#FF878787",
+                  "Top": 80.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 40.0
+                }
+              ],
+              "Group": true,
+              "Height": 35.0,
+              "Left": 0.0,
+              "Name": "3",
+              "Top": 80.0,
+              "Visible": true,
+              "Width": 130.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Childrens": [
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "Formula": {
+                        "Expression": "format(isnull([GameRawData.PacketSessionData.m_weatherForecastSamples02.m_rainPercentage],1),'0')+'%'"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    },
+                    "TextColor": {
+                      "EnableMiddleColor": false,
+                      "EndColor": "#FF00BFFF",
+                      "EndColorValue": 100.0,
+                      "Formula": {
+                        "Expression": "format(isnull([GameRawData.PacketSessionData.m_weatherForecastSamples02.m_rainPercentage],1),'0')"
+                      },
+                      "MiddleColor": "#FF000000",
+                      "MiddleColorValue": 1.0,
+                      "Mode": 4,
+                      "StartColor": "#FFFFFFFF",
+                      "StartColorValue": 0.0,
+                      "TargetPropertyName": "TextColor"
+                    },
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "[GameRawData.PacketSessionData.m_weatherForecastSamples02.m_timeOffset]>0"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Visible"
+                    }
+                  },
+                  "BorderStyle": {
+                    "BorderColor": "#FF808080"
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 14.0,
+                  "FontWeight": "SemiBold",
+                  "Height": 35.0,
+                  "HorizontalAlignment": 1,
+                  "IsFreezed": true,
+                  "IsTextItem": true,
+                  "Left": 90.0,
+                  "Name": "Percentage",
+                  "Text": "0%",
+                  "TextColor": "#FFFFFFFF",
+                  "Top": 40.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                  "AutoSize": false,
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Image": {
+                      "Formula": {
+                        "Expression": "var image_Weather = $prop('GameRawData.PacketSessionData.m_weatherForecastSamples02.m_weather');\r\nvar image = '';\r\n\r\nif (image_Weather == '0'){image = 'Clear'};\r\nif (image_Weather == '1'){image = 'Light Cloud'};\r\nif (image_Weather == '2'){image = 'Overcast'};\r\nif (image_Weather == '3'){image = 'Light Rain'};\r\nif (image_Weather == '4'){image = 'Heavy Rain'};\r\nif (image_Weather == '5'){image = 'Storm'};\r\n\r\nreturn image;",
+                        "Interpreter": 1
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Image"
+                    },
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "[GameRawData.PacketSessionData.m_weatherForecastSamples02.m_timeOffset]>0"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Visible"
+                    }
+                  },
+                  "Height": 35.0,
+                  "Image": "Storm",
+                  "IsFreezed": true,
+                  "Left": 50.0,
+                  "Name": "Image",
+                  "RenderingSkip": 30,
+                  "Top": 40.0,
+                  "Visible": true,
+                  "Width": 35.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "+0",
+                      "Formula": {
+                        "Expression": "'+' + ([GameRawData.PacketSessionData.m_weatherForecastSamples02.m_timeOffset]) + '\\''"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    },
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "[GameRawData.PacketSessionData.m_weatherForecastSamples02.m_timeOffset]>0"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Visible"
+                    }
+                  },
+                  "BorderStyle": {
+                    "BorderColor": "#FF808080"
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 14.0,
+                  "FontWeight": "SemiBold",
+                  "Height": 35.0,
+                  "HorizontalAlignment": 1,
+                  "IsFreezed": true,
+                  "IsTextItem": true,
+                  "Left": 0.0,
+                  "Name": "Time",
+                  "Text": "Now",
+                  "TextColor": "#FF878787",
+                  "Top": 40.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 40.0
+                }
+              ],
+              "Group": true,
+              "Height": 35.0,
+              "Left": 0.0,
+              "Name": "2",
+              "Top": 40.0,
+              "Visible": true,
+              "Width": 130.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Childrens": [
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "Formula": {
+                        "Expression": "format(isnull([GameRawData.PacketSessionData.m_weatherForecastSamples01.m_rainPercentage],1),'0')+'%'"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    },
+                    "TextColor": {
+                      "EnableMiddleColor": false,
+                      "EndColor": "#FF00BFFF",
+                      "EndColorValue": 100.0,
+                      "Formula": {
+                        "Expression": "format(isnull([GameRawData.PacketSessionData.m_weatherForecastSamples01.m_rainPercentage],1),'0')"
+                      },
+                      "MiddleColor": "#FF000000",
+                      "MiddleColorValue": 1.0,
+                      "Mode": 4,
+                      "StartColor": "#FFFFFFFF",
+                      "StartColorValue": 0.0,
+                      "TargetPropertyName": "TextColor"
+                    }
+                  },
+                  "BorderStyle": {
+                    "BorderColor": "#FF808080"
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 14.0,
+                  "FontWeight": "SemiBold",
+                  "Height": 35.0,
+                  "HorizontalAlignment": 1,
+                  "IsFreezed": true,
+                  "IsTextItem": true,
+                  "Left": 90.0,
+                  "Name": "Percentage",
+                  "Text": "0%",
+                  "TextColor": "#FFFFFFFF",
+                  "Top": 0.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                  "AutoSize": false,
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Image": {
+                      "Formula": {
+                        "Expression": "var image_Weather = $prop('GameRawData.PacketSessionData.m_weatherForecastSamples01.m_weather');\r\nvar image = '';\r\n\r\nif (image_Weather == '0'){image = 'Clear'};\r\nif (image_Weather == '1'){image = 'Light Cloud'};\r\nif (image_Weather == '2'){image = 'Overcast'};\r\nif (image_Weather == '3'){image = 'Light Rain'};\r\nif (image_Weather == '4'){image = 'Heavy Rain'};\r\nif (image_Weather == '5'){image = 'Storm'};\r\n\r\nreturn image;",
+                        "Interpreter": 1
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Image"
+                    }
+                  },
+                  "Height": 35.0,
+                  "Image": "Heavy Rain",
+                  "IsFreezed": true,
+                  "Left": 50.0,
+                  "Name": "Image",
+                  "RenderingSkip": 30,
+                  "Top": 0.0,
+                  "Visible": true,
+                  "Width": 35.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "BorderStyle": {
+                    "BorderColor": "#FF808080"
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 14.0,
+                  "FontWeight": "SemiBold",
+                  "Height": 35.0,
+                  "HorizontalAlignment": 1,
+                  "IsFreezed": true,
+                  "IsTextItem": true,
+                  "Left": 0.0,
+                  "Name": "Time",
+                  "Text": "Now",
+                  "TextColor": "#FF878787",
+                  "Top": 0.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 40.0
+                }
+              ],
+              "Group": true,
+              "Height": 35.0,
+              "Left": 0.0,
+              "Name": "1",
+              "Top": 0.0,
+              "Visible": true,
+              "Width": 130.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF878787",
+              "Height": 225.0,
+              "IsRectangleItem": true,
+              "Left": 45.0,
+              "Name": "Splitter",
+              "Top": 5.0,
+              "Visible": true,
+              "Width": 1.0
+            }
+          ],
+          "Group": true,
+          "Height": 235.0,
+          "Left": 0.0,
+          "Name": "Weather",
+          "Top": 0.0,
+          "Visible": true,
+          "Width": 280.0
+        }
+      ],
+      "Name": "Screen",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": ""
+      },
+      "PitScreen": false,
+      "ScreenEnabledExpression": {
+        "Expression": ""
+      },
+      "ScreenId": "233b7d7d-d1c3-4aac-b8d4-7c9c26b71f36"
+    }
+  ],
+  "ShowBackground": true,
+  "ShowBoundingRectangles": true,
+  "ShowForeground": true,
+  "ShowOnScreenControls": true,
+  "SnapToGrid": false,
+  "Version": 2
+}
