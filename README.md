@@ -31,7 +31,7 @@ Join the Lovely Sim Racing Discord Server and help develop a better version.<br/
  
 <br/>
 
-### 🔌 If you like this dashboard & overlay, please consider subscribing to my Youtube channel [Lovely Sim Racing](http://j76.me/LSR), where I stream as often as I can. You'll even see them both in action.
+### 🔌 If you like this dashboard & overlay, please consider subscribing to my Youtube Channel [Lovely Sim Racing](http://j76.me/LSR), where I stream as often as I can.
 
 ### Please consider [buying me a coffee](http://j76.me/BuyMeCoffee) :coffee: or snagging some [Lovely Merch](http://j76.me/LSRStore) 
 
@@ -64,12 +64,19 @@ In the [Releases](https://github.com/cdemetriadis/lovely-dashboard/releases) sec
 ## Download & Install
 This is a SimHub Dashboard, therefore **SimHub Dash** app is required to run it (Doh!). Also, since the UI was a considerate design, you will also need to download and install the **Roboto Font Family** from Google (free).
 
-1. Download & Install [SimHub Dash v8.4.5+](https://www.simhubdash.com) app
-2. Download & Install [Roboto Font Family](https://fonts.google.com/specimen/Roboto) by Christian Robertson
-3. Download & Install the [**Lovely Dashboard Latest Release**](https://github.com/cdemetriadis/lovely-dashboard/releases)
-4. For extra customisability, copy and edit the [**Settings File**](./docs/settings.md)
+### First time install
+If this is your first time installing the **Lovely Dashboard**, please follow these steps, and make sure you've completed each before proceeding to the next one.
 
-:warning: **Warning: Simhub Dash v8.4.5+** is required to run the **Lovely Dashboard v2.0.0**
+1. Download & Install [**SimHub Dash**](https://www.simhubdash.com) app
+2. Download & Install [**Roboto Font Family**](https://fonts.google.com/specimen/Roboto) by Christian Robertson
+3. Download & Install the [**Lovely Dashboard Latest Release**](https://github.com/cdemetriadis/lovely-dashboard/releases)
+4. *Optionally,* For extra customisability, copy and edit the [**Settings File**](./docs/settings.md)
+
+### Updating
+If you have received a notification on your **Lovely Dashboard** of a new update, please follow the below steps:
+
+1. Download & Install the [**Lovely Dashboard Latest Release**](https://github.com/cdemetriadis/lovely-dashboard/releases)
+2. Read the changelog and if prompted, you may also need to update [**SimHub Dash**](https://www.simhubdash.com) and/or the [**Settings File**](./docs/settings.md)
 
 **For more information, tips & feedback, please join the [Lovely Discord](http://j76.me/LSRDiscord)**
 
@@ -78,14 +85,13 @@ As of version 1.5.4, the Lovely Dashboard can also be setup to your liking. You 
 
 ![Copy the settings file into the JavascriptExtensions folder](docs/images/settings-file.png)
 
-To change your personal settings, you can edit the file `Lovely-Dashboard_settings.json` in any text editor. The available settings are outlined in the dedicated [**Settings Page**](./docs/settings.md)
+To change your personal settings, you can edit the file `Lovely-Dashboard_settings.json` in any text editor. The available settings are outlined in the dedicated [**Settings File**](./docs/settings.md) page.
   
 ## Compatibility
 
 ### Screen Size
-* Native **5" (850x480)** and **10" (1920x720)** DDU Screens 
-* Any 16:9 or 21:9 screen ratio is ideal, but...
-* Any device compatible with SimHub is fine
+* Any device compatible with SimHub Dash
+* Native **5" (850x480)** and **10" (1920x720)** DDU Screens are supported
 
 ### Compatible Sims
 The Lovely Dashboard offers native support for many sims, but will work with ANY simulator that offers native data to Simhub.
@@ -101,25 +107,19 @@ The Lovely Dashboard offers native support for many sims, but will work with ANY
 
 #### Untested Support
 
-The new Lovely Dashboard v2.0.0 is no longer locked for any sim. There's a provision for natively supporting a few of the most popular simulators, but it can also be run with ANY simulator. If the data is available, then it will display...
+The new **Lovely Dashboard v2.0.0** is no longer locked to any sim. There's a provision for natively supporting a few of the most popular simulators, but it can also be run with ANY simulator. If the data is available, then it will display...
 
 ## The Lovely Dashboard
-If you were wondering why this is the best SimHub dashboard out there, wonder no more. It's good looking and feature packed but with considerate design and proper information architecture. 
+If you were wondering why this is the best SimHub dashboard out there, wonder no more. It's good looking and feature packed but with considered design and proper information architecture. 
 
 [![Basic Feature Set](docs/images/AllFeatures.jpg)](docs/features.md)
 
 🖥 **View the [Full Feature Set](docs/features.md)**
 
 ## Contributing
-Would you like to contribute to the **Lovely Dashboard & Overlay**? If yes, then head on over to the [**Developers Doc**](docs/developers.md) and find out how you can get started.
+Would you like to contribute to the **Lovely Dashboard**? Then head on over to the [**Developers Docs**](docs/developers.md) and find out how you can get started.
 
-
-<br/>
-
----
-
-<br/>
-### Marketing Inquiries
+## Marketing Inquiries
 For all marketing inquiries (eg, using the Lovely Dashboard on your marketing material) please send an email to [**marketing@ohmylovely.com**](mailto:marketing@ohmylovely.com).
 <br/><br/>
 

@@ -11,7 +11,7 @@ The <strong>Lovely Dashboard</strong> can be customised to your personal prefere
 <br/>
 
 ## Settings File
-To customise the Lovely Dashboard, you will need to copy the file `Lovely-Dashboard_settings.json` into the `./SimHub/JavascriptExtensions`. 
+To customise the **Lovely Dashboard**, you will need to copy the file `Lovely-Dashboard_settings.json` into the `./SimHub/JavascriptExtensions`. 
 
 ![Copy the settings file into the JavascriptExtensions folder](./images/settings-file.png)
 
@@ -23,7 +23,7 @@ To change your personal settings, you will need to edit the `Lovely-Dashboard_se
 
 
 ## Settings
-The settings will work for both the **Lovely Dashboard** and **Lovely Dashboard XL**.
+The settings will work for the **Lovely Dashboard**, **Lovely Dashboard XL** and **Lovely Overlay***. 
 
 * [Analytics](#settings)
 * [Idle Screen Personalisation](#idle-screen-personalisation)
@@ -37,6 +37,8 @@ The settings will work for both the **Lovely Dashboard** and **Lovely Dashboard 
 	* [Autmobilista 2](#automobilista2-automobilista-2)
 	* [rFactor 2](#rfactor2-rfactor-2)
 	* [Formula 1](#f1-formula-1)
+
+--
 
 ### Analytics
 
@@ -98,10 +100,10 @@ Display virtual RPM LEDs within the Lovely Dashboard. Ideal for those who do not
 --
 
 #### `clutchMode`
-Display the Clutch Value (0-100)
+Display the Clutch Value (0-100). This is great for defining the bite point.
 
 - `0` Hide Clutch Value
-- **`1` (Default)** Show when engaged
+- **`1` (Default)** Show only when clutch is engaged
 - `2` Always Show
 
 --
@@ -115,7 +117,7 @@ You can enable or disable the track flags in the top left module.
 --
 
 #### `mapType`
-Change the map type, between two avaialble options
+Change the map type, between a static or animated map
 
 - **`1` (Default)** Static Map
 - `2` Animated Map
@@ -137,13 +139,13 @@ Set the UI mode intensity and change the line brightness throughout the dashbaor
 - **`3` (Default)** High
 
 #### `uiRadius`
-Set the UI mode intensity and change the line brightness throughout the dashbaord.
+Change the dashboard's outer corner radii to match that of your physical device.
 
 - **`45` (Default)** Pixel Radius of outer corners, suggested size Min:12 - Max:50
 
 --
 
-#### `nightMode` (NEW)
+#### `nightMode`
 For sims that support night races and provide info on Lights (currently ACC and AMS2), when you turn on the lights, it will activate a dimmer view of the dashboard. You can enable this or disable this feature:
 
 - `0` Disabled: Will always remain bright
@@ -154,12 +156,14 @@ For sims that support night races and provide info on Lights (currently ACC and 
 #### `tireLapAvg`
 Specify the number of laps to collect tire data.
 
-- `2` (Default) - The number of laps to collect tire data
+- **`2` (Default)** - The number of laps to collect tire data
 
 #### `tireLapAvgResetKey` (Experimental)
-Set a hot-key to reset the AVG Tire data. This is still a bit buggy, so if the data does not resume collecting, you'd need to restart your DDU/Device.
+Set a hot-key to reset the AVG Tire data. 
 
-- `F24` (Default) The hot-key combination of your choice
+- **`A` (Default)** - The hot-key or key-combination of your choice
+
+:warning: **Warning:** This is still a bit buggy. If the data does not resume collecting, you will need to restart your DDU/Device.
 
 --
 
