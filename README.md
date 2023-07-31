@@ -46,7 +46,7 @@ Join the Lovely Sim Racing Discord Server and help develop a better version.<br/
 Learn your way around the Lovely Dashboard with this video. Although it is a bit old, the basic principles are the same.
 <h4 align="center">
 <a href="https://youtu.be/1XCZ4Z6RqOA">
-<img src="docs/images/LSRM - Lovely Dashboard Walkthrough.jpg" /><br/>
+<img src="docs/images/LSRM - Lovely Dashboard Walkthrough.png" /><br/>
 Watch the Lovely Dashboard 1.6.3 Walkthrough video
 </a>
 </h4> 
