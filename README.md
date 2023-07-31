@@ -121,6 +121,12 @@ If you were wondering why this is the best SimHub dashboard out there, wonder no
 ## Contributing
 Would you like to contribute to the **Lovely Dashboard**? Then head on over to the [**Developers Docs**](docs/developers.md) and find out how you can get started.
 
+## Special Thanks
+A special thanks to all of you who have supported this project in [one way](http://j76.me/BuyMeCoffee) or [another](http://j76.me/LSRStore). It could not have been done without you. Special thanks also to these fellas that have contributed to the code:
+
+* **Mike Bowen** (iRacing ERS & MGU)
+* **Steve Mattar** (F1 Support)
+
 ## Marketing Inquiries
 For all marketing inquiries (eg, using the Lovely Dashboard on your marketing material) please send an email to [**marketing@ohmylovely.com**](mailto:marketing@ohmylovely.com).
 <br/><br/>
