@@ -64,6 +64,8 @@ In the [Releases](https://github.com/cdemetriadis/lovely-dashboard/releases) sec
 ## Download & Install
 This is a SimHub Dashboard, therefore **SimHub Dash** app is required to run it (Doh!). Also, since the UI was a considerate design, you will also need to download and install the **Roboto Font Family** from Google (free).
 
+:people_holding_hands: **For more information, tips & feedback, please join the [Lovely Discord](http://j76.me/LSRDiscord)**
+
 ### First time install
 If this is your first time installing the **Lovely Dashboard**, please follow these steps, and make sure you've completed each before proceeding to the next one.
 
@@ -71,15 +73,13 @@ If this is your first time installing the **Lovely Dashboard**, please follow th
 2. Download & Install [**Roboto Font Family**](https://fonts.google.com/specimen/Roboto) by Christian Robertson
 3. Download & Install the [**Lovely Dashboard Latest Release**](https://github.com/cdemetriadis/lovely-dashboard/releases)
 4. Setup your [**Simuhub Action Keys**](./docs/actions.md) to control the Lovely Dashboard UI
-5. ***Optionally***, you can also copy and edit the [**Settings File**](./docs/settings.md)
+5. ***Optionally***, you can also copy and edit the [**Settings File**](./docs/settings.md) and add the `lovely-dash-bg.jpg` into the `./SimHub/JavascriptExtensions` folder.
 
 ### Updating
 If you have received a notification on your **Lovely Dashboard** of a new update, please follow the below steps:
 
 1. Download & Install the [**Lovely Dashboard Latest Release**](https://github.com/cdemetriadis/lovely-dashboard/releases)
 2. Read the changelog and if prompted, you may also need to update [**SimHub Dash**](https://www.simhubdash.com) and/or the [**Settings File**](./docs/settings.md)
-
-**For more information, tips & feedback, please join the [Lovely Discord](http://j76.me/LSRDiscord)**
 
 ## Settings
 As of version 1.5.4, the Lovely Dashboard can also be setup to your liking. You will need to copy the file `Lovely-Dashboard_settings.json` into the `./Simhub/JavascriptExtensions` folder. 
