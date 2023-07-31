@@ -1,8 +1,8 @@
 {
   "BackgroundColor": "#FF000000",
   "BackgroundOpacity": 100.0,
-  "BaseHeight": 49,
-  "BaseWidth": 360,
+  "BaseHeight": 80,
+  "BaseWidth": 420,
   "DashboardDebugManager": {
     "Maximized": false
   },
@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "78069f75-e5b9-484b-8a11-2c3b5920a9f0",
+  "Id": "1aa950b9-6186-4b76-a0c7-ff156cd07a7f",
   "Images": [
     {
       "Extension": ".png",
@@ -36,7 +36,7 @@
   "Metadata": {
     "Author": "Constantinos Demetriadis - Lovely Sim Racing - http://j76.me/LSR",
     "EnableOnDashboardMessaging": true,
-    "Height": 49.0,
+    "Height": 80.0,
     "IdleScreensIndexs": [
       0
     ],
@@ -50,7 +50,7 @@
     "PitScreensIndexs": [],
     "ScreenCount": 1.0,
     "Title": "Turn Racing Dashboard",
-    "Width": 360.0
+    "Width": 420.0
   },
   "Screens": [
     {
@@ -63,6 +63,64 @@
       "IsOverlayLayer": false,
       "Items": [
         {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Height": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nreturn ( !settings || !settings.rpmLED || settings.rpmLED == 0) ? 80 : 70",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Height"
+            },
+            "Opacity": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Opacity"
+            },
+            "Top": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nreturn ( !settings || !settings.rpmLED || settings.rpmLED == 0) ? 0 : 5",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Top"
+            }
+          },
+          "BorderStyle": {
+            "Bindings": {
+              "RadiusTopRight": {
+                "Formula": {
+                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                  "Interpreter": 1
+                },
+                "Mode": 2,
+                "TargetPropertyName": "RadiusTopRight"
+              }
+            },
+            "BorderBottom": 2,
+            "BorderLeft": 2,
+            "BorderRight": 2,
+            "BorderTop": 2,
+            "RadiusBottomLeft": 12,
+            "RadiusBottomRight": 12,
+            "RadiusTopLeft": 12,
+            "RadiusTopRight": 45
+          },
+          "Height": 80.0,
+          "IsFreezed": true,
+          "IsRectangleItem": true,
+          "Left": 0.0,
+          "Name": "RectangleItem",
+          "Top": 0.0,
+          "Visible": true,
+          "Width": 420.0
+        },
+        {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
           "BackgroundColor": "#00FFFFFF",
           "Childrens": [
@@ -71,9 +129,9 @@
               "BackgroundColor": "#FF727272",
               "Height": 1.0,
               "IsRectangleItem": true,
-              "Left": 85.0,
+              "Left": 105.0,
               "Name": "RectangleItem2",
-              "Top": 13.0,
+              "Top": 27.0,
               "Visible": true,
               "Width": 190.0
             },
@@ -82,9 +140,9 @@
               "BackgroundColor": "#FF727272",
               "Height": 9.0,
               "IsRectangleItem": true,
-              "Left": 274.0,
+              "Left": 294.0,
               "Name": "RectangleItem",
-              "Top": 9.0,
+              "Top": 23.0,
               "Visible": true,
               "Width": 1.0
             },
@@ -93,9 +151,9 @@
               "BackgroundColor": "#FF727272",
               "Height": 9.0,
               "IsRectangleItem": true,
-              "Left": 227.0,
+              "Left": 247.0,
               "Name": "RectangleItem4",
-              "Top": 9.0,
+              "Top": 23.0,
               "Visible": true,
               "Width": 1.0
             },
@@ -104,9 +162,9 @@
               "BackgroundColor": "#FF727272",
               "Height": 9.0,
               "IsRectangleItem": true,
-              "Left": 179.5,
+              "Left": 199.5,
               "Name": "RectangleItem5",
-              "Top": 9.0,
+              "Top": 23.0,
               "Visible": true,
               "Width": 1.0
             },
@@ -115,9 +173,9 @@
               "BackgroundColor": "#FF727272",
               "Height": 9.0,
               "IsRectangleItem": true,
-              "Left": 132.0,
+              "Left": 152.0,
               "Name": "RectangleItem6",
-              "Top": 9.0,
+              "Top": 23.0,
               "Visible": true,
               "Width": 1.0
             },
@@ -126,9 +184,9 @@
               "BackgroundColor": "#FF727272",
               "Height": 9.0,
               "IsRectangleItem": true,
-              "Left": 85.0,
+              "Left": 105.0,
               "Name": "RectangleItem3",
-              "Top": 9.0,
+              "Top": 23.0,
               "Visible": true,
               "Width": 1.0
             },
@@ -155,9 +213,9 @@
               },
               "Height": 20.0,
               "Image": "icon-right-green",
-              "Left": 170.0,
+              "Left": 190.0,
               "Name": "ImageItem",
-              "Top": 3.0,
+              "Top": 17.0,
               "Visible": true,
               "Width": 20.0
             },
@@ -189,11 +247,11 @@
               "HorizontalAlignment": 1,
               "IsFreezed": true,
               "IsTextItem": true,
-              "Left": 160.0,
+              "Left": 180.0,
               "Name": "TextItem5",
               "Text": "00%",
               "TextColor": "#FFFFFFFF",
-              "Top": 23.0,
+              "Top": 37.0,
               "VerticalAlignment": 1,
               "Visible": false,
               "Width": 40.0
@@ -201,9 +259,9 @@
           ],
           "Group": true,
           "Height": 38.0,
-          "Left": 85.0,
+          "Left": 105.0,
           "Name": "Layer",
-          "Top": 3.0,
+          "Top": 17.0,
           "Visible": true,
           "Width": 190.0
         },
@@ -225,13 +283,12 @@
           "FontWeight": "Bold",
           "Height": 30.0,
           "HorizontalAlignment": 0,
-          "IsFreezed": true,
           "IsTextItem": true,
-          "Left": 0.0,
+          "Left": 20.0,
           "Name": "TextItem",
           "Text": "00.00",
           "TextColor": "#FFFFFFFF",
-          "Top": 1.0,
+          "Top": 15.0,
           "VerticalAlignment": 1,
           "Visible": true,
           "Width": 80.0
@@ -254,13 +311,12 @@
           "FontWeight": "Bold",
           "Height": 30.0,
           "HorizontalAlignment": 2,
-          "IsFreezed": true,
           "IsTextItem": true,
-          "Left": 280.0,
+          "Left": 300.0,
           "Name": "TextItem6",
           "Text": "00.00",
           "TextColor": "#FFFFFFFF",
-          "Top": 1.0,
+          "Top": 15.0,
           "VerticalAlignment": 1,
           "Visible": true,
           "Width": 80.0
@@ -273,13 +329,12 @@
           "FontWeight": "Bold",
           "Height": 15.0,
           "HorizontalAlignment": 0,
-          "IsFreezed": true,
           "IsTextItem": true,
-          "Left": 0.0,
+          "Left": 20.0,
           "Name": "TextItem7",
           "Text": "BEHIND",
           "TextColor": "#FF878787",
-          "Top": 34.0,
+          "Top": 48.0,
           "VerticalAlignment": 1,
           "Visible": true,
           "Width": 80.0
@@ -292,13 +347,12 @@
           "FontWeight": "Bold",
           "Height": 15.0,
           "HorizontalAlignment": 2,
-          "IsFreezed": true,
           "IsTextItem": true,
-          "Left": 280.0,
+          "Left": 300.0,
           "Name": "TextItem8",
           "Text": "AHEAD",
           "TextColor": "#FF878787",
-          "Top": 34.0,
+          "Top": 48.0,
           "VerticalAlignment": 1,
           "Visible": true,
           "Width": 80.0
@@ -322,5 +376,8 @@
   "ShowForeground": true,
   "ShowOnScreenControls": true,
   "SnapToGrid": false,
+  "Variables": {
+    "DashboardVariables": []
+  },
   "Version": 2
 }
