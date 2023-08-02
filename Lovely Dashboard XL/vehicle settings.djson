@@ -12,7 +12,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "b55c07fe-28f1-4bca-81fc-8f1a4089686f",
+  "Id": "0706d505-cfdc-466e-b400-e3c03df3858a",
   "Images": [],
   "IsOverlay": false,
   "Metadata": {
@@ -73,7 +73,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "if ( $prop('DataCorePlugin.CurrentGame')=='IRacing' ) {\r\n\r\n\treturn ( $prop('GameRawData.Telemetry.EnergyERSBattery') == null ) ? 1 : 0\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa' ) {\r\n\t\r\n\treturn ( $prop('GameRawData.StaticInfo.HasERS') == 0 ) ? 1 : 0\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\t\r\n\treturn ($prop('DataCorePlugin.GameData.EngineMap')>0) ? 1 : 0\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\t\r\n\treturn ($prop('DataCorePlugin.GameData.EngineMap')>0) ? 1 : 0\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\r\n\treturn ($prop('DataCorePlugin.GameData.EngineMap')>0) ? 1 : 0\r\n\t\r\n} else {\r\n\r\n\treturn 1\r\n\r\n}",
+                "Expression": "if ( $prop('DataCorePlugin.CurrentGame')=='IRacing' ) {\r\n\r\n\treturn ( $prop('GameRawData.Telemetry.EnergyERSBattery') == null ) ? 1 : 0\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa' ) {\r\n\t\r\n\treturn ( $prop('GameRawData.StaticInfo.HasERS') == 0 ) ? 1 : 0\r\n\r\n/* } else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\t\r\n\treturn ($prop('DataCorePlugin.GameData.EngineMap')>0) ? 1 : 0\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\t\r\n\treturn ($prop('DataCorePlugin.GameData.EngineMap')>0) ? 1 : 0\r\n*/\r\n} else if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\r\n\treturn ($prop('DataCorePlugin.GameData.EngineMap')>0) ? 1 : 0\r\n\t\r\n} else {\r\n\r\n\treturn 1\r\n\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -323,7 +323,7 @@
                 "Text": {
                   "FormatString": "0",
                   "Formula": {
-                    "Expression": "if ( $prop('GameRawData.Physics.ErsRecoveryLevel') > 0 ) {\r\n\treturn $prop('GameRawData.Physics.ErsRecoveryLevel')*10\r\n} else if ( $prop('GameRawData.Physics.ErsRecoveryLevel') == 0 ) {\r\n\treturn 'OFF'\r\n} else if ($prop('ERSPercent') > 0) {\r\n\treturn Math.round($prop('ERSPercent'))\r\n} else {\r\n\treturn 'OFF'\r\n}",
+                    "Expression": "if ( $prop('GameRawData.Physics.ErsRecoveryLevel') > 0 ) {\r\n\treturn $prop('GameRawData.Physics.ErsRecoveryLevel')*10\r\n} else if ( $prop('GameRawData.Physics.ErsRecoveryLevel') == 0 ) {\r\n\treturn 'OFF'\r\n} else if ($prop('ERSPercent') > 0) {\r\n\treturn Math.round($prop('ERSPercent'))\r\n} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.PowerMGU_K') < 0 ) {\r\n\treturn 'BUI'\r\n} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.PowerMGU_K') > 0 ) {\r\n\treturn 'DEP'\r\n} else {\r\n\treturn 'OFF'\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -356,7 +356,7 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "if ( \r\n\t$prop('DataCorePlugin.CurrentGame')=='IRacing' ||\r\n\t$prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa'\r\n) {\r\n\r\n\treturn 'MGU-K %'\r\n} else {\r\n\r\n\treturn 'MAP'\r\n\r\n}",
+                    "Expression": "if ( \r\n\t$prop('DataCorePlugin.CurrentGame')=='IRacing' ||\r\n\t$prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa'\r\n) {\r\n\r\n\treturn 'MGU-K'\r\n} else {\r\n\r\n\treturn 'MAP'\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -580,7 +580,7 @@
               "Bindings": {
                 "Visible": {
                   "Formula": {
-                    "Expression": "if ($prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione') {\r\n\r\n\tif (isnull($prop('DataCorePlugin.GameRawData.Graphics.ABS'),0) > 0) {\r\n\t\treturn ld_changed(300, $prop('DataCorePlugin.GameData.ABSActive'))\r\n\t}\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\tif ($prop('DataCorePlugin.GameData.ABSLevel') > 0) {\r\n\t\t\r\n\t\treturn\t$prop('GameRawData.PlayerMotionData.m_wheelSlip01') * 100 < -5 ||\r\n\t\t\t\t$prop('GameRawData.PlayerMotionData.m_wheelSlip02') * 100 < -5 ||\r\n\t\t\t\t$prop('GameRawData.PlayerMotionData.m_wheelSlip03') * 100 < -5 ||\r\n\t\t\t\t$prop('GameRawData.PlayerMotionData.m_wheelSlip04') * 100 < -5\r\n\t\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n\r\n} else {\r\n\r\n\tif (isnull($prop('DataCorePlugin.GameData.ABSLevel'),0) > 0) {\r\n\t\treturn changed(300, $prop('DataCorePlugin.GameData.ABSActive'))\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n}\r\n",
+                    "Expression": "if ($prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione') {\r\n\r\n\tif (isnull($prop('DataCorePlugin.GameRawData.Graphics.ABS'),0) > 0) {\r\n\t\treturn ld_changed(300, $prop('DataCorePlugin.GameData.ABSActive'))\r\n\t}\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\tif ($prop('DataCorePlugin.GameData.ABSLevel') > 0) {\r\n\t\t\r\n\t\treturn\t$prop('GameRawData.PlayerMotionData.m_wheelSlip01') * 100 < -5 ||\r\n\t\t\t\t$prop('GameRawData.PlayerMotionData.m_wheelSlip02') * 100 < -5 ||\r\n\t\t\t\t$prop('GameRawData.PlayerMotionData.m_wheelSlip03') * 100 < -5 ||\r\n\t\t\t\t$prop('GameRawData.PlayerMotionData.m_wheelSlip04') * 100 < -5\r\n\t\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n\r\n} else {\r\n\r\n\tif (isnull($prop('DataCorePlugin.GameData.ABSLevel'),0) > 0) {\r\n\t\treturn ld_changed(300, $prop('DataCorePlugin.GameData.ABSActive'))\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n}\r\n",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -809,7 +809,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "return ( \r\n\t$prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ||\r\n\t$prop('DataCorePlugin.CurrentGame').startsWith('F120')\r\n\t\t) ? 0 : 1",
+                "Expression": "return ( \r\n\t$prop('DataCorePlugin.CurrentGame').startsWith('F120')\r\n\t\t) ? 0 : 1",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -1092,7 +1092,7 @@
               "Bindings": {
                 "Visible": {
                   "Formula": {
-                    "Expression": "if ($prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione') {\r\n\r\n\tif (isnull($prop('DataCorePlugin.GameRawData.Graphics.TC'),0) > 0) {\r\n\t\treturn ld_changed(300, $prop('DataCorePlugin.GameData.TCActive'))\r\n\t}\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\tif ($prop('DataCorePlugin.GameData.TCLevel') > 0) {\r\n\t\t\r\n\t\treturn\t$prop('GameRawData.PlayerMotionData.m_wheelSlip01') * 100 > 5 ||\r\n\t\t\t\t$prop('GameRawData.PlayerMotionData.m_wheelSlip02') * 100 > 5 ||\r\n\t\t\t\t$prop('GameRawData.PlayerMotionData.m_wheelSlip03') * 100 > 5 ||\r\n\t\t\t\t$prop('GameRawData.PlayerMotionData.m_wheelSlip04') * 100 > 5\r\n\t\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n\r\n} else {\r\n\r\n\tif (isnull($prop('DataCorePlugin.GameData.TCLevel'),0) > 0) {\r\n\t\treturn changed(300, $prop('DataCorePlugin.GameData.TCActive'))\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n}\r\n",
+                    "Expression": "if ($prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione') {\r\n\r\n\tif (isnull($prop('DataCorePlugin.GameRawData.Graphics.TC'),0) > 0) {\r\n\t\treturn ld_changed(300, $prop('DataCorePlugin.GameData.TCActive'))\r\n\t}\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\tif ($prop('DataCorePlugin.GameData.TCLevel') > 0) {\r\n\t\t\r\n\t\treturn\t$prop('GameRawData.PlayerMotionData.m_wheelSlip01') * 100 > 5 ||\r\n\t\t\t\t$prop('GameRawData.PlayerMotionData.m_wheelSlip02') * 100 > 5 ||\r\n\t\t\t\t$prop('GameRawData.PlayerMotionData.m_wheelSlip03') * 100 > 5 ||\r\n\t\t\t\t$prop('GameRawData.PlayerMotionData.m_wheelSlip04') * 100 > 5\r\n\t\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n\r\n} else {\r\n\r\n\tif (isnull($prop('DataCorePlugin.GameData.TCLevel'),0) > 0) {\r\n\t\treturn ld_changed(300, $prop('DataCorePlugin.GameData.TCActive'))\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n}\r\n",
                     "Interpreter": 1
                   },
                   "Mode": 2,

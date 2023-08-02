@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "ad8e16f5-327b-4a71-8770-995393099de5",
+  "Id": "98663bfe-9475-4414-9cd0-f4cd9923bea7",
   "Images": [
     {
       "Extension": ".png",
@@ -685,15 +685,6 @@
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
-          "Bindings": {
-            "Visible": {
-              "Formula": {
-                "Expression": "if ([DataCorePlugin.CurrentGame]=='AssettoCorsaCompetizione', 1, 0)"
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
-            }
-          },
           "EnableScreenRolesAndActivation": false,
           "FileName": "Environment.djson",
           "Height": 50.0,
@@ -711,15 +702,6 @@
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
-          "Bindings": {
-            "Visible": {
-              "Formula": {
-                "Expression": "if ([DataCorePlugin.CurrentGame]=='AssettoCorsaCompetizione', 1, 0)"
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
-            }
-          },
           "EnableScreenRolesAndActivation": false,
           "FileName": "Central.djson",
           "Height": 330.0,
@@ -745,13 +727,6 @@
               },
               "Mode": 2,
               "TargetPropertyName": "InitialScreenIndex"
-            },
-            "Visible": {
-              "Formula": {
-                "Expression": "if ([DataCorePlugin.CurrentGame]=='AssettoCorsaCompetizione', 1, 0)"
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
             }
           },
           "EnableScreenRolesAndActivation": true,
@@ -771,15 +746,6 @@
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
           "AutoSize": true,
           "BackgroundColor": "#00FFFFFF",
-          "Bindings": {
-            "Visible": {
-              "Formula": {
-                "Expression": "if ([DataCorePlugin.CurrentGame]=='AssettoCorsaCompetizione', 1, 0)"
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
-            }
-          },
           "EnableScreenRolesAndActivation": false,
           "FileName": "Session.djson",
           "Height": 80.0,
@@ -804,13 +770,6 @@
               },
               "Mode": 2,
               "TargetPropertyName": "Height"
-            },
-            "Visible": {
-              "Formula": {
-                "Expression": "if ([DataCorePlugin.CurrentGame]=='AssettoCorsaCompetizione', 1, 0)"
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
             }
           },
           "EnableScreenRolesAndActivation": false,
