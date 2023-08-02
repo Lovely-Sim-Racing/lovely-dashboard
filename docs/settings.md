@@ -25,8 +25,8 @@ To change your personal settings, you will need to edit the `Lovely-Dashboard_se
 ## Settings
 The settings will work for the **Lovely Dashboard**, **Lovely Dashboard XL** and **Lovely Overlay***. 
 
-* [Analytics](#settings)
-* [Idle Screen Personalisation](#idle-screen-personalisation)
+* [Analytics](#analytics)
+* [Idle Screen Personalisation](#idle-screen-personlisation)
 * [Platform Integrations](#platform-integrations)
 * [UI Customisation](#ui-customisation)
 * [Alerts](#alerts)
@@ -294,6 +294,7 @@ Set the default widget pages for each sim seperately.
 * `1` Sectors
 * `2` Relative
 * `3` Standings
+* `4` Tires
 * **`7` Status**
 * `8` Map
 

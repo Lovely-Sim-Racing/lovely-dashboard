@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">Lovely SimHub Dashboard</h1>
-<p align="center"><strong>Version 2.0.0 (NEW)</strong></p>
+<p align="center"><strong>Version 2.0.1 (NEW)</strong></p>
 
 <p align="center">
 A multifunctional feature packed SimHub Dashboard (DDU) and a matching Stream Overlay.

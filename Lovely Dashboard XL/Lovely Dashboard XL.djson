@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "f5b16b6d-9885-4888-bfad-21c5e532e2da",
+  "Id": "4351138a-44be-48b7-b953-a9f3c439d164",
   "Images": [
     {
       "Extension": ".png",
@@ -270,7 +270,7 @@
           "IsTextItem": true,
           "Left": 510.0,
           "Name": "Version",
-          "Text": "Lovely Dashboard XL v2.0.0",
+          "Text": "Lovely Dashboard XL v2.0.1",
           "TextColor": "#FFFFFFFF",
           "Top": 395.0,
           "VerticalAlignment": 1,
@@ -291,7 +291,7 @@
             },
             "Visible": {
               "Formula": {
-                "Expression": "var currentVer = '2.0.0'\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
+                "Expression": "var currentVer = '2.0.1'\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -792,7 +792,7 @@
           "Bindings": {
             "Height": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nreturn ( !settings || !settings.rpmLED || settings.rpmLED == 0) ? 368 : 358",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nreturn ( !settings || !settings.rpmLED || settings.rpmLED == 0) ? 367 : 357",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -835,7 +835,7 @@
             "RadiusTopLeft": 12,
             "RadiusTopRight": 12
           },
-          "Height": 368.0,
+          "Height": 367.0,
           "IsFreezed": true,
           "IsRectangleItem": true,
           "Left": 855.0,
@@ -1996,7 +1996,7 @@
           "Width": 850.0
         }
       ],
-      "Name": "Main",
+      "Name": "Primary",
       "OverlayMaxDuration": 0,
       "OverlayMinDuration": 0,
       "OverlayTriggerExpression": {

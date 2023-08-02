@@ -12,7 +12,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "5efb184a-66a7-4b42-9f2c-38acde1741c2",
+  "Id": "cee6b9d2-d1ef-4847-90ff-06db3633282d",
   "Images": [],
   "IsOverlay": false,
   "Metadata": {
@@ -513,29 +513,19 @@
             }
           },
           "BorderStyle": {
-            "Bindings": {
-              "RadiusBottomRight": {
-                "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
-                  "Interpreter": 1
-                },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusBottomRight"
-              }
-            },
             "BorderBottom": 2,
             "BorderLeft": 2,
             "BorderRight": 2,
             "BorderTop": 2,
             "RadiusBottomLeft": 12,
-            "RadiusBottomRight": 45,
+            "RadiusBottomRight": 12,
             "RadiusTopLeft": 12,
             "RadiusTopRight": 12
           },
           "Height": 85.0,
           "IsRectangleItem": true,
           "Left": 0.0,
-          "Name": "RectangleItem6",
+          "Name": "RectangleItem",
           "Top": 7.0,
           "Visible": true,
           "Width": 324.0
@@ -796,29 +786,19 @@
             }
           },
           "BorderStyle": {
-            "Bindings": {
-              "RadiusBottomRight": {
-                "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
-                  "Interpreter": 1
-                },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusBottomRight"
-              }
-            },
             "BorderBottom": 2,
             "BorderLeft": 2,
             "BorderRight": 2,
             "BorderTop": 2,
             "RadiusBottomLeft": 12,
-            "RadiusBottomRight": 45,
+            "RadiusBottomRight": 12,
             "RadiusTopLeft": 12,
             "RadiusTopRight": 12
           },
           "Height": 85.0,
           "IsRectangleItem": true,
           "Left": 0.0,
-          "Name": "RectangleItem6",
+          "Name": "RectangleItem",
           "Top": 7.0,
           "Visible": true,
           "Width": 324.0
