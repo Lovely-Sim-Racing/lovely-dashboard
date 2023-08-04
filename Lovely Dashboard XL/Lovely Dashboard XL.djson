@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "4351138a-44be-48b7-b953-a9f3c439d164",
+  "Id": "54bb7afa-7f47-4e5d-9722-8d52a8903b14",
   "Images": [
     {
       "Extension": ".png",
@@ -270,7 +270,7 @@
           "IsTextItem": true,
           "Left": 510.0,
           "Name": "Version",
-          "Text": "Lovely Dashboard XL v2.0.1",
+          "Text": "Lovely Dashboard XL v2.1.0",
           "TextColor": "#FFFFFFFF",
           "Top": 395.0,
           "VerticalAlignment": 1,
@@ -291,7 +291,7 @@
             },
             "Visible": {
               "Formula": {
-                "Expression": "var currentVer = '2.0.1'\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
+                "Expression": "var currentVer = '2.1.0'\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -311,7 +311,7 @@
           "HorizontalAlignment": 1,
           "IsTextItem": true,
           "Left": 415.0,
-          "Name": "New Version Alert2",
+          "Name": "New Version Alert",
           "Text": "NEW VERSION AVAILABLE: 1.6.11 - Visit j76.me/Update",
           "TextColor": "#FFFFFFFF",
           "Top": 395.0,
@@ -1652,7 +1652,7 @@
           "Bindings": {
             "InitialScreenIndex": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\tif ( settings && settings.IRacing.leftMFM ) {\r\n\t\treturn settings.IRacing.leftMFM\r\n\t} else {\r\n\t\treturn 7\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\tif ( settings && settings.Automobilista2.leftMFM ) {\r\n\t\treturn settings.Automobilista2.leftMFM\r\n\t} else {\r\n\t\treturn 4\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\tif ( settings && settings.RFactor2.leftMFM ) {\r\n\t\treturn settings.RFactor2.leftMFM\r\n\t} else {\r\n\t\treturn 4\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa' ) {\r\n\r\n\tif ( settings && settings.AC.leftMFM ) {\r\n\t\treturn settings.AC.leftMFM\r\n\t} else {\r\n\t\treturn 4\r\n\t}\r\n\t\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\r\n\tif ( settings && settings.F1.leftMFM ) {\r\n\t\treturn settings.F1.leftMFM\r\n\t} else {\r\n\t\treturn 4\r\n\t}\r\n\r\n} else {\r\n\r\n\tif ( settings && settings.ACC.leftMFM ) {\r\n\t\treturn settings.ACC.leftMFM\r\n\t} else {\r\n\t\treturn 4\r\n\t}\r\n\t\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\tif ( settings && settings.IRacing.leftMFM>=0 ) {\r\n\t\treturn settings.IRacing.leftMFM\r\n\t} else {\r\n\t\treturn 7\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\tif ( settings && settings.Automobilista2.leftMFM>=0 ) {\r\n\t\treturn settings.Automobilista2.leftMFM\r\n\t} else {\r\n\t\treturn 4\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\tif ( settings && settings.RFactor2.leftMFM>=0 ) {\r\n\t\treturn settings.RFactor2.leftMFM\r\n\t} else {\r\n\t\treturn 4\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa' ) {\r\n\r\n\tif ( settings && settings.AC.leftMFM>=0 ) {\r\n\t\treturn settings.AC.leftMFM\r\n\t} else {\r\n\t\treturn 4\r\n\t}\r\n\t\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\r\n\tif ( settings && settings.F1.leftMFM>=0 ) {\r\n\t\treturn settings.F1.leftMFM\r\n\t} else {\r\n\t\treturn 4\r\n\t}\r\n\r\n} else {\r\n\r\n\tif ( settings && settings.ACC.leftMFM>=0 ) {\r\n\t\treturn settings.ACC.leftMFM\r\n\t} else {\r\n\t\treturn 4\r\n\t}\r\n\t\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,

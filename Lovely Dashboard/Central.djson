@@ -12,7 +12,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "77f9443a-baa7-44f1-880e-efd340fa3146",
+  "Id": "f3aff498-bd70-45a2-a4aa-654cc2969f5e",
   "Images": [],
   "IsOverlay": false,
   "Metadata": {
@@ -8041,7 +8041,7 @@
               "Bindings": {
                 "Height": {
                   "Formula": {
-                    "Expression": "return ( \r\n\t$prop('GameRawData.Telemetry.EnergyERSBattery') > 0 ||\r\n\t$prop('GameRawData.StaticInfo.HasERS') ||\r\n\t$prop('ERSPercent') > 0\r\n) ? 215 : 240",
+                    "Expression": "return ( \r\n\t$prop('GameRawData.Telemetry.EnergyERSBattery') > 0 ||\r\n\t$prop('GameRawData.StaticInfo.HasERS') ||\r\n\t$prop('ERSPercent') > 0\r\n) ? 170 : 195",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -8063,7 +8063,7 @@
                 "RadiusTopLeft": 5,
                 "RadiusTopRight": 5
               },
-              "Height": 240.0,
+              "Height": 195.0,
               "IsRectangleItem": true,
               "Left": 0.0,
               "Name": "Background",
@@ -8072,51 +8072,65 @@
               "Width": 160.0
             },
             {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
-              "BackgroundColor": "#FF800000",
-              "Bindings": {
-                "Height": {
-                  "Formula": {
-                    "Expression": "return ( \r\n\t$prop('GameRawData.Telemetry.EnergyERSBattery') > 0 ||\r\n\t$prop('GameRawData.StaticInfo.HasERS') ||\r\n\t$prop('ERSPercent') > 0\r\n) ? 215 : 240",
-                    "Interpreter": 1
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Height"
-                },
-                "Top": {
-                  "Formula": {
-                    "Expression": "return ( \r\n\t$prop('GameRawData.Telemetry.EnergyERSBattery') > 0 ||\r\n\t$prop('GameRawData.StaticInfo.HasERS') ||\r\n\t$prop('ERSPercent') > 0\r\n) ? 70 : 45",
-                    "Interpreter": 1
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Top"
-                },
-                "Visible": {
-                  "Formula": {
-                    "Expression": "[DataCorePlugin.GameData.CarSettings_RPMRedLineReached]>0"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Visible"
-                }
-              },
-              "BlinkDelay": 200.0,
-              "BlinkEnabled": true,
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.RPMText, SimHub.Plugins",
+              "BackgroundColor": "#FFFFFFFF",
               "BorderStyle": {
-                "BorderBottom": 2,
-                "BorderColor": "#FFFF0000",
-                "BorderLeft": 2,
-                "BorderRight": 2,
-                "BorderTop": 2,
                 "RadiusBottomLeft": 5,
                 "RadiusBottomRight": 5,
                 "RadiusTopLeft": 5,
                 "RadiusTopRight": 5
               },
-              "Height": 240.0,
-              "IsRectangleItem": true,
+              "Font": "Roboto",
+              "FontSize": 22.0,
+              "Format": "0",
+              "Height": 40.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
               "Left": 0.0,
-              "Name": "Redline",
-              "Top": 45.0,
+              "Name": "RPM",
+              "NoDataText": "0",
+              "TextAfterValue": "",
+              "TextColor": "#FF000000",
+              "Top": 245.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 160.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.RPMText, SimHub.Plugins",
+              "BackgroundColor": "#FFFFFFFF",
+              "Bindings": {
+                "Visible": {
+                  "Formula": {
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tclutchMode = 1\r\n} else {\r\n\tclutchMode = settings.clutchMode\r\n}\r\n\r\n\r\nif (clutchMode == 2) {\r\n\t\r\n\treturn 1\r\n\t\r\n} else {\r\n\t\r\n\treturn 0\r\n\t\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Visible"
+                }
+              },
+              "BorderStyle": {
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Font": "Roboto",
+              "FontSize": 22.0,
+              "Format": "0",
+              "Height": 40.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 0.0,
+              "Name": "RPM Padding",
+              "NoDataText": "0",
+              "TextAfterValue": "",
+              "TextColor": "#FF000000",
+              "TextPadding": {
+                "PaddingLeft": 55
+              },
+              "Top": 245.0,
+              "VerticalAlignment": 1,
               "Visible": false,
               "Width": 160.0
             },
@@ -8153,40 +8167,97 @@
               "Height": 24.0,
               "HorizontalAlignment": 1,
               "IsTextItem": true,
-              "Left": 57.5,
-              "Name": "Clutch",
+              "Left": 8.0,
+              "Name": "Clutch2",
               "Text": "000",
               "TextColor": "#FF000000",
-              "Top": 250.0,
+              "Top": 252.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 45.0
             },
             {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.RPMText, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF800000",
               "Bindings": {
+                "Height": {
+                  "Formula": {
+                    "Expression": "return ( \r\n\t$prop('GameRawData.Telemetry.EnergyERSBattery') > 0 ||\r\n\t$prop('GameRawData.StaticInfo.HasERS') ||\r\n\t$prop('ERSPercent') > 0\r\n) ? 170 : 195\r\n",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Height"
+                },
                 "Top": {
                   "Formula": {
-                    "Expression": "return ( \r\n\t$prop('GameRawData.Telemetry.EnergyERSBattery') > 0 ||\r\n\t$prop('GameRawData.StaticInfo.HasERS') ||\r\n\t$prop('ERSPercent') > 0\r\n) ? 210 : 195",
+                    "Expression": "return ( \r\n\t$prop('GameRawData.Telemetry.EnergyERSBattery') > 0 ||\r\n\t$prop('GameRawData.StaticInfo.HasERS') ||\r\n\t$prop('ERSPercent') > 0\r\n) ? 70 : 45",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Top"
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "[DataCorePlugin.GameData.CarSettings_RPMRedLineReached]>0"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Visible"
+                }
+              },
+              "BlinkDelay": 200.0,
+              "BlinkEnabled": true,
+              "BorderStyle": {
+                "BorderBottom": 2,
+                "BorderColor": "#FFFF0000",
+                "BorderLeft": 2,
+                "BorderRight": 2,
+                "BorderTop": 2,
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Height": 195.0,
+              "IsRectangleItem": true,
+              "Left": 0.0,
+              "Name": "Redline",
+              "Top": 45.0,
+              "Visible": false,
+              "Width": 160.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "return $prop('DataCorePlugin.GameData.Gear')",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "Top": {
+                  "Formula": {
+                    "Expression": "return ( \r\n\t$prop('GameRawData.Telemetry.EnergyERSBattery') > 0 ||\r\n\t$prop('GameRawData.StaticInfo.HasERS') ||\r\n\t$prop('ERSPercent') > 0\r\n) ? 180 : 170",
                     "Interpreter": 1
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Top"
                 }
               },
+              "BlinkDelay": 200.0,
               "Font": "Roboto",
-              "FontSize": 22.0,
-              "Format": "0",
-              "Height": 40.0,
+              "FontSize": 50.0,
+              "FontWeight": "Bold",
+              "Height": 50.0,
               "HorizontalAlignment": 1,
               "IsTextItem": true,
               "Left": 0.0,
-              "Name": "RPM",
-              "NoDataText": "0",
-              "TextAfterValue": "",
+              "Name": "Gear",
+              "Text": "N",
               "TextColor": "#FFFFFFFF",
-              "Top": 195.0,
+              "Top": 170.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 160.0
@@ -8205,7 +8276,7 @@
                 },
                 "Top": {
                   "Formula": {
-                    "Expression": "return ( \r\n\t$prop('GameRawData.Telemetry.EnergyERSBattery') > 0 ||\r\n\t$prop('GameRawData.StaticInfo.HasERS') ||\r\n\t$prop('ERSPercent') > 0\r\n) ? 135 : 120",
+                    "Expression": "return ( \r\n\t$prop('GameRawData.Telemetry.EnergyERSBattery') > 0 ||\r\n\t$prop('GameRawData.StaticInfo.HasERS') ||\r\n\t$prop('ERSPercent') > 0\r\n) ? 80 : 70",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -8218,54 +8289,18 @@
                 "RadiusTopLeft": 5,
                 "RadiusTopRight": 5
               },
+              "CharWidth": 50.0,
               "Font": "Roboto",
-              "FontSize": 85.0,
+              "FontSize": 90.0,
               "FontWeight": "Bold",
-              "Height": 80.0,
+              "Height": 105.0,
               "HorizontalAlignment": 1,
               "IsTextItem": true,
               "Left": 0.0,
               "Name": "Speed ",
               "Text": "000",
               "TextColor": "#FFFFFFFF",
-              "Top": 120.0,
-              "VerticalAlignment": 1,
-              "Visible": true,
-              "Width": 160.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Text": {
-                  "Formula": {
-                    "Expression": "return $prop('DataCorePlugin.GameData.Gear')",
-                    "Interpreter": 1
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                },
-                "Top": {
-                  "Formula": {
-                    "Expression": "return ( \r\n\t$prop('GameRawData.Telemetry.EnergyERSBattery') > 0 ||\r\n\t$prop('GameRawData.StaticInfo.HasERS') ||\r\n\t$prop('ERSPercent') > 0\r\n) ? 80 : 65",
-                    "Interpreter": 1
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Top"
-                }
-              },
-              "BlinkDelay": 200.0,
-              "Font": "Roboto",
-              "FontSize": 40.0,
-              "FontWeight": "Bold",
-              "Height": 50.0,
-              "HorizontalAlignment": 1,
-              "IsTextItem": true,
-              "Left": 0.0,
-              "Name": "Gear",
-              "Text": "N",
-              "TextColor": "#FFFFFFFF",
-              "Top": 65.0,
+              "Top": 70.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 160.0
@@ -8943,7 +8978,7 @@
           "Left": 0.0,
           "Name": "Short",
           "Top": 0.0,
-          "Visible": true,
+          "Visible": false,
           "Width": 160.0
         },
         {
@@ -8966,7 +9001,7 @@
               "Bindings": {
                 "Height": {
                   "Formula": {
-                    "Expression": "return ( \r\n\t$prop('GameRawData.Telemetry.EnergyERSBattery') > 0 ||\r\n\t$prop('GameRawData.StaticInfo.HasERS') ||\r\n\t$prop('ERSPercent') > 0\r\n) ? 245 : 270 ",
+                    "Expression": "return ( \r\n\t$prop('GameRawData.Telemetry.EnergyERSBattery') > 0 ||\r\n\t$prop('GameRawData.StaticInfo.HasERS') ||\r\n\t$prop('ERSPercent') > 0\r\n) ? 200 : 225 ",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -8988,7 +9023,7 @@
                 "RadiusTopLeft": 5,
                 "RadiusTopRight": 5
               },
-              "Height": 270.0,
+              "Height": 225.0,
               "IsRectangleItem": true,
               "Left": 0.0,
               "Name": "RectangleItem",
@@ -8997,51 +9032,65 @@
               "Width": 160.0
             },
             {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
-              "BackgroundColor": "#FF800000",
-              "Bindings": {
-                "Height": {
-                  "Formula": {
-                    "Expression": "return ( \r\n\t$prop('GameRawData.Telemetry.EnergyERSBattery') > 0 ||\r\n\t$prop('GameRawData.StaticInfo.HasERS') ||\r\n\t$prop('ERSPercent') > 0\r\n) ? 245 : 270 ",
-                    "Interpreter": 1
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Height"
-                },
-                "Top": {
-                  "Formula": {
-                    "Expression": "return ( \r\n\t$prop('GameRawData.Telemetry.EnergyERSBattery') > 0 ||\r\n\t$prop('GameRawData.StaticInfo.HasERS') ||\r\n\t$prop('ERSPercent') > 0\r\n) ? 70 : 45 ",
-                    "Interpreter": 1
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Top"
-                },
-                "Visible": {
-                  "Formula": {
-                    "Expression": "[DataCorePlugin.GameData.CarSettings_RPMRedLineReached]>0"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Visible"
-                }
-              },
-              "BlinkDelay": 200.0,
-              "BlinkEnabled": true,
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.RPMText, SimHub.Plugins",
+              "BackgroundColor": "#FFFFFFFF",
               "BorderStyle": {
-                "BorderBottom": 2,
-                "BorderColor": "#FFFF0000",
-                "BorderLeft": 2,
-                "BorderRight": 2,
-                "BorderTop": 2,
                 "RadiusBottomLeft": 5,
                 "RadiusBottomRight": 5,
                 "RadiusTopLeft": 5,
                 "RadiusTopRight": 5
               },
-              "Height": 270.0,
-              "IsRectangleItem": true,
+              "Font": "Roboto",
+              "FontSize": 22.0,
+              "Format": "0",
+              "Height": 40.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
               "Left": 0.0,
-              "Name": "Redline",
-              "Top": 45.0,
+              "Name": "RPM",
+              "NoDataText": "0",
+              "TextAfterValue": "",
+              "TextColor": "#FF000000",
+              "Top": 275.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 160.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.RPMText, SimHub.Plugins",
+              "BackgroundColor": "#FFFFFFFF",
+              "Bindings": {
+                "Visible": {
+                  "Formula": {
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tclutchMode = 1\r\n} else {\r\n\tclutchMode = settings.clutchMode\r\n}\r\n\r\n\r\nif (clutchMode == 2) {\r\n\t\r\n\treturn 1\r\n\t\r\n} else {\r\n\t\r\n\treturn 0\r\n\t\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Visible"
+                }
+              },
+              "BorderStyle": {
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Font": "Roboto",
+              "FontSize": 22.0,
+              "Format": "0",
+              "Height": 40.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 0.0,
+              "Name": "RPM Padding",
+              "NoDataText": "0",
+              "TextAfterValue": "",
+              "TextColor": "#FF000000",
+              "TextPadding": {
+                "PaddingLeft": 55
+              },
+              "Top": 275.0,
+              "VerticalAlignment": 1,
               "Visible": false,
               "Width": 160.0
             },
@@ -9078,40 +9127,97 @@
               "Height": 24.0,
               "HorizontalAlignment": 1,
               "IsTextItem": true,
-              "Left": 57.5,
+              "Left": 8.0,
               "Name": "Clutch2",
               "Text": "000",
               "TextColor": "#FF000000",
-              "Top": 275.0,
+              "Top": 283.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 45.0
             },
             {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.RPMText, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF800000",
               "Bindings": {
+                "Height": {
+                  "Formula": {
+                    "Expression": "return ( \r\n\t$prop('GameRawData.Telemetry.EnergyERSBattery') > 0 ||\r\n\t$prop('GameRawData.StaticInfo.HasERS') ||\r\n\t$prop('ERSPercent') > 0\r\n) ? 200 : 225 ",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Height"
+                },
                 "Top": {
                   "Formula": {
-                    "Expression": "return ( \r\n\t$prop('GameRawData.Telemetry.EnergyERSBattery') > 0 ||\r\n\t$prop('GameRawData.StaticInfo.HasERS') ||\r\n\t$prop('ERSPercent') > 0\r\n) ? 225 : 210",
+                    "Expression": "return ( \r\n\t$prop('GameRawData.Telemetry.EnergyERSBattery') > 0 ||\r\n\t$prop('GameRawData.StaticInfo.HasERS') ||\r\n\t$prop('ERSPercent') > 0\r\n) ? 70 : 45 ",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Top"
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "[DataCorePlugin.GameData.CarSettings_RPMRedLineReached]>0"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Visible"
+                }
+              },
+              "BlinkDelay": 200.0,
+              "BlinkEnabled": true,
+              "BorderStyle": {
+                "BorderBottom": 2,
+                "BorderColor": "#FFFF0000",
+                "BorderLeft": 2,
+                "BorderRight": 2,
+                "BorderTop": 2,
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Height": 225.0,
+              "IsRectangleItem": true,
+              "Left": 0.0,
+              "Name": "Redline",
+              "Top": 45.0,
+              "Visible": false,
+              "Width": 160.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "return $prop('DataCorePlugin.GameData.Gear')",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "Top": {
+                  "Formula": {
+                    "Expression": "return ( \r\n\t$prop('GameRawData.Telemetry.EnergyERSBattery') > 0 ||\r\n\t$prop('GameRawData.StaticInfo.HasERS') ||\r\n\t$prop('ERSPercent') > 0\r\n) ? 195 : 185",
                     "Interpreter": 1
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Top"
                 }
               },
+              "BlinkDelay": 200.0,
               "Font": "Roboto",
-              "FontSize": 22.0,
-              "Format": "0",
-              "Height": 40.0,
+              "FontSize": 50.0,
+              "FontWeight": "Bold",
+              "Height": 50.0,
               "HorizontalAlignment": 1,
               "IsTextItem": true,
               "Left": 0.0,
-              "Name": "RPM",
-              "NoDataText": "0",
-              "TextAfterValue": "",
+              "Name": "Gear",
+              "Text": "N",
               "TextColor": "#FFFFFFFF",
-              "Top": 210.0,
+              "Top": 185.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 160.0
@@ -9130,7 +9236,7 @@
                 },
                 "Top": {
                   "Formula": {
-                    "Expression": "return ( \r\n\t$prop('GameRawData.Telemetry.EnergyERSBattery') > 0 ||\r\n\t$prop('GameRawData.StaticInfo.HasERS') ||\r\n\t$prop('ERSPercent') > 0\r\n) ? 145 : 130",
+                    "Expression": "return ( \r\n\t$prop('GameRawData.Telemetry.EnergyERSBattery') > 0 ||\r\n\t$prop('GameRawData.StaticInfo.HasERS') ||\r\n\t$prop('ERSPercent') > 0\r\n) ? 85 : 75",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -9143,52 +9249,16 @@
                 "RadiusTopLeft": 5,
                 "RadiusTopRight": 5
               },
+              "CharWidth": 50.0,
               "Font": "Roboto",
-              "FontSize": 85.0,
+              "FontSize": 90.0,
               "FontWeight": "Bold",
-              "Height": 80.0,
+              "Height": 105.0,
               "HorizontalAlignment": 1,
               "IsTextItem": true,
               "Left": 0.0,
-              "Name": "Speed 2",
+              "Name": "Speed ",
               "Text": "000",
-              "TextColor": "#FFFFFFFF",
-              "Top": 130.0,
-              "VerticalAlignment": 1,
-              "Visible": true,
-              "Width": 160.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
-              "Bindings": {
-                "Text": {
-                  "Formula": {
-                    "Expression": "return $prop('DataCorePlugin.GameData.Gear')",
-                    "Interpreter": 1
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                },
-                "Top": {
-                  "Formula": {
-                    "Expression": "return ( \r\n\t$prop('GameRawData.Telemetry.EnergyERSBattery') > 0 ||\r\n\t$prop('GameRawData.StaticInfo.HasERS') ||\r\n\t$prop('ERSPercent') > 0\r\n) ? 90 : 75",
-                    "Interpreter": 1
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Top"
-                }
-              },
-              "BlinkDelay": 200.0,
-              "Font": "Roboto",
-              "FontSize": 40.0,
-              "FontWeight": "Bold",
-              "Height": 50.0,
-              "HorizontalAlignment": 1,
-              "IsTextItem": true,
-              "Left": 0.0,
-              "Name": "Gear2",
-              "Text": "N",
               "TextColor": "#FFFFFFFF",
               "Top": 75.0,
               "VerticalAlignment": 1,
@@ -9860,7 +9930,7 @@
           "Left": 0.0,
           "Name": "Tall",
           "Top": 0.0,
-          "Visible": false,
+          "Visible": true,
           "Width": 160.0
         }
       ],
