@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "3c1845dd-ae11-490d-925b-096d5390290c",
+  "Id": "fa0792d6-ff9f-4ed9-9735-0e8b5b7f1883",
   "Images": [
     {
       "Extension": ".png",
@@ -399,7 +399,7 @@
           "IsTextItem": true,
           "Left": 370.0,
           "Name": "Version",
-          "Text": "Lovely Overlay v2.0.1",
+          "Text": "Lovely Overlay v2.1.0",
           "TextColor": "#FFFFFFFF",
           "Top": 296.0,
           "VerticalAlignment": 1,
@@ -420,7 +420,7 @@
             },
             "Visible": {
               "Formula": {
-                "Expression": "var currentVer = '2.0.1'\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
+                "Expression": "var currentVer = '2.1.0'\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -440,7 +440,7 @@
           "HorizontalAlignment": 1,
           "IsTextItem": true,
           "Left": 275.0,
-          "Name": "New Version Alert2",
+          "Name": "New Version Alert",
           "Text": "NEW VERSION AVAILABLE: 1.6.11 - Visit j76.me/Update",
           "TextColor": "#FFFFFFFF",
           "Top": 295.0,

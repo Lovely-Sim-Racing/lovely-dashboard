@@ -12,7 +12,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "87b4ee41-1463-44ae-b8f5-5816e9097d04",
+  "Id": "443b7b84-f78e-490c-b1f2-33a8f5a1363c",
   "Images": [
     {
       "Extension": ".png",
@@ -367,37 +367,6 @@
           "Width": 325.0
         },
         {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
-          "Bindings": {
-            "Opacity": {
-              "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
-                "Interpreter": 1
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Opacity"
-            }
-          },
-          "BorderStyle": {
-            "BorderBottom": 2,
-            "BorderLeft": 2,
-            "BorderRight": 2,
-            "BorderTop": 2,
-            "RadiusBottomLeft": 12,
-            "RadiusBottomRight": 12,
-            "RadiusTopLeft": 12,
-            "RadiusTopRight": 12
-          },
-          "Height": 262.0,
-          "IsRectangleItem": true,
-          "Left": 0.0,
-          "Name": "RectangleItem",
-          "Top": 8.0,
-          "Visible": true,
-          "Width": 320.0
-        },
-        {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
           "BackgroundColor": "#00FFFFFF",
           "Font": "Roboto",
@@ -577,7 +546,7 @@
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "BackgroundColor": "#FF000000",
+          "BackgroundColor": "#00FFFFFF",
           "Font": "Roboto",
           "FontSize": 12.0,
           "FontWeight": "Bold",
@@ -638,38 +607,6 @@
           "Top": 0.0,
           "Visible": true,
           "Width": 325.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
-          "Bindings": {
-            "Opacity": {
-              "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
-                "Interpreter": 1
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Opacity"
-            }
-          },
-          "BorderStyle": {
-            "BorderBottom": 2,
-            "BorderLeft": 2,
-            "BorderRight": 2,
-            "BorderTop": 2,
-            "RadiusBottomLeft": 12,
-            "RadiusBottomRight": 12,
-            "RadiusTopLeft": 12,
-            "RadiusTopRight": 12
-          },
-          "Height": 262.0,
-          "IsFreezed": true,
-          "IsRectangleItem": true,
-          "Left": 0.0,
-          "Name": "RectangleItem",
-          "Top": 8.0,
-          "Visible": true,
-          "Width": 320.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
@@ -1695,7 +1632,7 @@
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "BackgroundColor": "#FF000000",
+          "BackgroundColor": "#00FFFFFF",
           "Font": "Roboto",
           "FontSize": 12.0,
           "FontWeight": "Bold",
@@ -1758,38 +1695,6 @@
           "Top": 0.0,
           "Visible": true,
           "Width": 325.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
-          "Bindings": {
-            "Opacity": {
-              "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
-                "Interpreter": 1
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Opacity"
-            }
-          },
-          "BorderStyle": {
-            "BorderBottom": 2,
-            "BorderLeft": 2,
-            "BorderRight": 2,
-            "BorderTop": 2,
-            "RadiusBottomLeft": 12,
-            "RadiusBottomRight": 12,
-            "RadiusTopLeft": 12,
-            "RadiusTopRight": 12
-          },
-          "Height": 262.0,
-          "IsFreezed": true,
-          "IsRectangleItem": true,
-          "Left": 0.0,
-          "Name": "RectangleItem3",
-          "Top": 8.0,
-          "Visible": true,
-          "Width": 320.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
@@ -3435,7 +3340,7 @@
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "BackgroundColor": "#FF000000",
+          "BackgroundColor": "#00FFFFFF",
           "Font": "Roboto",
           "FontSize": 12.0,
           "FontWeight": "Bold",
@@ -3497,38 +3402,6 @@
           "Top": 0.0,
           "Visible": true,
           "Width": 325.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
-          "Bindings": {
-            "Opacity": {
-              "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
-                "Interpreter": 1
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Opacity"
-            }
-          },
-          "BorderStyle": {
-            "BorderBottom": 2,
-            "BorderLeft": 2,
-            "BorderRight": 2,
-            "BorderTop": 2,
-            "RadiusBottomLeft": 12,
-            "RadiusBottomRight": 12,
-            "RadiusTopLeft": 12,
-            "RadiusTopRight": 12
-          },
-          "Height": 262.0,
-          "IsFreezed": true,
-          "IsRectangleItem": true,
-          "Left": 0.0,
-          "Name": "RectangleItem3",
-          "Top": 8.0,
-          "Visible": true,
-          "Width": 320.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
@@ -4209,7 +4082,7 @@
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "BackgroundColor": "#FF000000",
+          "BackgroundColor": "#00FFFFFF",
           "Font": "Roboto",
           "FontSize": 12.0,
           "FontWeight": "Bold",
@@ -4270,38 +4143,6 @@
           "Top": 0.0,
           "Visible": true,
           "Width": 325.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
-          "Bindings": {
-            "Opacity": {
-              "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
-                "Interpreter": 1
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Opacity"
-            }
-          },
-          "BorderStyle": {
-            "BorderBottom": 2,
-            "BorderLeft": 2,
-            "BorderRight": 2,
-            "BorderTop": 2,
-            "RadiusBottomLeft": 12,
-            "RadiusBottomRight": 12,
-            "RadiusTopLeft": 12,
-            "RadiusTopRight": 12
-          },
-          "Height": 262.0,
-          "IsFreezed": true,
-          "IsRectangleItem": true,
-          "Left": 0.0,
-          "Name": "RectangleItem3",
-          "Top": 8.0,
-          "Visible": true,
-          "Width": 320.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
@@ -7032,7 +6873,7 @@
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "BackgroundColor": "#FF000000",
+          "BackgroundColor": "#00FFFFFF",
           "Font": "Roboto",
           "FontSize": 12.0,
           "FontWeight": "Bold",
@@ -7094,38 +6935,6 @@
           "Top": 0.0,
           "Visible": true,
           "Width": 325.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
-          "Bindings": {
-            "Opacity": {
-              "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
-                "Interpreter": 1
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Opacity"
-            }
-          },
-          "BorderStyle": {
-            "BorderBottom": 2,
-            "BorderLeft": 2,
-            "BorderRight": 2,
-            "BorderTop": 2,
-            "RadiusBottomLeft": 12,
-            "RadiusBottomRight": 12,
-            "RadiusTopLeft": 12,
-            "RadiusTopRight": 12
-          },
-          "Height": 262.0,
-          "IsFreezed": true,
-          "IsRectangleItem": true,
-          "Left": 0.0,
-          "Name": "RectangleItem2",
-          "Top": 8.0,
-          "Visible": true,
-          "Width": 320.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
@@ -8285,7 +8094,7 @@
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "BackgroundColor": "#FF000000",
+          "BackgroundColor": "#00FFFFFF",
           "Bindings": {
             "Text": {
               "Formula": {
@@ -8358,38 +8167,6 @@
           "Top": 0.0,
           "Visible": true,
           "Width": 325.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
-          "Bindings": {
-            "Opacity": {
-              "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
-                "Interpreter": 1
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Opacity"
-            }
-          },
-          "BorderStyle": {
-            "BorderBottom": 2,
-            "BorderLeft": 2,
-            "BorderRight": 2,
-            "BorderTop": 2,
-            "RadiusBottomLeft": 12,
-            "RadiusBottomRight": 12,
-            "RadiusTopLeft": 12,
-            "RadiusTopRight": 12
-          },
-          "Height": 262.0,
-          "IsFreezed": true,
-          "IsRectangleItem": true,
-          "Left": 0.0,
-          "Name": "RectangleItem3",
-          "Top": 8.0,
-          "Visible": true,
-          "Width": 320.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
@@ -9685,7 +9462,7 @@
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "BackgroundColor": "#FF000000",
+          "BackgroundColor": "#00FFFFFF",
           "Font": "Roboto",
           "FontSize": 12.0,
           "FontWeight": "Bold",
@@ -9747,37 +9524,6 @@
           "Top": 0.0,
           "Visible": true,
           "Width": 325.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
-          "Bindings": {
-            "Opacity": {
-              "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
-                "Interpreter": 1
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Opacity"
-            }
-          },
-          "BorderStyle": {
-            "BorderBottom": 2,
-            "BorderLeft": 2,
-            "BorderRight": 2,
-            "BorderTop": 2,
-            "RadiusBottomLeft": 12,
-            "RadiusBottomRight": 12,
-            "RadiusTopLeft": 12,
-            "RadiusTopRight": 12
-          },
-          "Height": 262.0,
-          "IsRectangleItem": true,
-          "Left": 0.0,
-          "Name": "RectangleItem4",
-          "Top": 8.0,
-          "Visible": true,
-          "Width": 320.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
@@ -11117,7 +10863,7 @@
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "BackgroundColor": "#FF000000",
+          "BackgroundColor": "#00FFFFFF",
           "Font": "Roboto",
           "FontSize": 12.0,
           "FontWeight": "Bold",
@@ -11179,37 +10925,6 @@
           "Top": 0.0,
           "Visible": true,
           "Width": 325.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
-          "Bindings": {
-            "Opacity": {
-              "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
-                "Interpreter": 1
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Opacity"
-            }
-          },
-          "BorderStyle": {
-            "BorderBottom": 2,
-            "BorderLeft": 2,
-            "BorderRight": 2,
-            "BorderTop": 2,
-            "RadiusBottomLeft": 12,
-            "RadiusBottomRight": 12,
-            "RadiusTopLeft": 12,
-            "RadiusTopRight": 12
-          },
-          "Height": 262.0,
-          "IsRectangleItem": true,
-          "Left": 0.0,
-          "Name": "RectangleItem3",
-          "Top": 8.0,
-          "Visible": true,
-          "Width": 320.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.GeneratedStaticMapItem, SimHub.Plugins",
@@ -11358,7 +11073,7 @@
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "BackgroundColor": "#FF000000",
+          "BackgroundColor": "#00FFFFFF",
           "BorderStyle": {
             "RadiusBottomLeft": 9,
             "RadiusBottomRight": 9,
