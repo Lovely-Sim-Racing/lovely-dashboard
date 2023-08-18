@@ -11,7 +11,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "fa0792d6-ff9f-4ed9-9735-0e8b5b7f1883",
+  "Id": "94f33f1f-7319-413f-8655-c7b1eac02bdf",
   "Images": [
     {
       "Extension": ".png",
@@ -314,7 +314,7 @@
           "Bindings": {
             "StartAddress": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app=LovelyOverlay&screen=Idle'\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.name')+'&screen=Idle'\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -391,6 +391,16 @@
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
           "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Text": {
+              "Formula": {
+                "Expression": "return \"Lovely Overlay v\" + $prop('variable.version')",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Text"
+            }
+          },
           "Font": "Roboto",
           "FontSize": 16.0,
           "Height": 25.0,
@@ -399,7 +409,7 @@
           "IsTextItem": true,
           "Left": 370.0,
           "Name": "Version",
-          "Text": "Lovely Overlay v2.1.0",
+          "Text": "Lovely Overlay vX.X.X",
           "TextColor": "#FFFFFFFF",
           "Top": 296.0,
           "VerticalAlignment": 1,
@@ -420,7 +430,7 @@
             },
             "Visible": {
               "Formula": {
-                "Expression": "var currentVer = '2.1.0'\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
+                "Expression": "var currentVer = $prop('variable.version')\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -441,7 +451,7 @@
           "IsTextItem": true,
           "Left": 275.0,
           "Name": "New Version Alert",
-          "Text": "NEW VERSION AVAILABLE: 1.6.11 - Visit j76.me/Update",
+          "Text": "NEW VERSION AVAILABLE: X.X.X - Visit j76.me/Update",
           "TextColor": "#FFFFFFFF",
           "Top": 295.0,
           "VerticalAlignment": 1,
@@ -608,7 +618,7 @@
           "Bindings": {
             "StartAddress": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app=LovelyOverlay&screen=Primary'\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.name')+'&screen=Primary'\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -926,7 +936,7 @@
           "Width": 505.0
         }
       ],
-      "Name": "Overlay",
+      "Name": "Primary",
       "OverlayMaxDuration": 0,
       "OverlayMinDuration": 0,
       "OverlayTriggerExpression": {
@@ -945,7 +955,26 @@
   "ShowOnScreenControls": true,
   "SnapToGrid": false,
   "Variables": {
-    "DashboardVariables": []
+    "DashboardVariables": [
+      {
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": "return \"LovelyOverlay\"",
+          "Interpreter": 1
+        },
+        "VariableName": "name"
+      },
+      {
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": "return \"2.2.0\"",
+          "Interpreter": 1
+        },
+        "VariableName": "version"
+      }
+    ]
   },
   "Version": 2
 }

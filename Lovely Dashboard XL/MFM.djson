@@ -12,7 +12,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "87b4ee41-1463-44ae-b8f5-5816e9097d04",
+  "Id": "d3438467-52cf-4e45-8554-790dbdb7dcc7",
   "Images": [
     {
       "Extension": ".png",
@@ -350,7 +350,7 @@
           "Bindings": {
             "StartAddress": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app=LovelyDashboard&screen=Primary&mfm=LapTimes'\r\n} else {\r\n\treturn ''\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.name')+'&screen=Primary&mfm=LapTimes'\r\n} else {\r\n\treturn ''\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -622,7 +622,7 @@
           "Bindings": {
             "StartAddress": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app=LovelyDashboard&screen=Primary&mfm=Sectors'\r\n} else {\r\n\treturn ''\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.name')+'&screen=Primary&mfm=Sectors'\r\n} else {\r\n\treturn ''\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -1742,7 +1742,7 @@
           "Bindings": {
             "StartAddress": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app=LovelyDashboard&screen=Primary&mfm=Relative'\r\n} else {\r\n\treturn ''\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.name')+'&screen=Primary&mfm=Relative'\r\n} else {\r\n\treturn ''\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -3481,7 +3481,7 @@
           "Bindings": {
             "StartAddress": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app=LovelyDashboard&screen=Primary&mfm=Standings'\r\n} else {\r\n\treturn ''\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.name')+'&screen=Primary&mfm=Standings'\r\n} else {\r\n\treturn ''\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -4254,7 +4254,7 @@
           "Bindings": {
             "StartAddress": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app=LovelyDashboard&screen=Primary&mfm=Tires'\r\n} else {\r\n\treturn ''\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.name')+'&screen=Primary&mfm=Tires'\r\n} else {\r\n\treturn ''\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -6549,7 +6549,7 @@
                   "BackgroundColor": "#00FFFFFF",
                   "Bindings": {
                     "Text": {
-                      "FormatString": "0\u00b0",
+                      "FormatString": "0%",
                       "Formula": {
                         "Expression": "return $prop('TyreWearFrontLeft')/100",
                         "Interpreter": 1
@@ -6579,7 +6579,7 @@
                   "BackgroundColor": "#00FFFFFF",
                   "Bindings": {
                     "Text": {
-                      "FormatString": "0\u00b0",
+                      "FormatString": "0%",
                       "Formula": {
                         "Expression": "return $prop('TyreWearFrontRight')/100",
                         "Interpreter": 1
@@ -6609,9 +6609,10 @@
                   "BackgroundColor": "#00FFFFFF",
                   "Bindings": {
                     "Text": {
-                      "FormatString": "0\u00b0",
+                      "FormatString": "0%",
                       "Formula": {
-                        "Expression": "return $prop('TyreWearRearLeft')/100"
+                        "Expression": "return $prop('TyreWearRearLeft')/100",
+                        "Interpreter": 1
                       },
                       "Mode": 2,
                       "TargetPropertyName": "Text"
@@ -6669,7 +6670,7 @@
               "Left": 19.0,
               "Name": "Wear",
               "Top": 106.0,
-              "Visible": false,
+              "Visible": true,
               "Width": 288.0
             },
             {
@@ -6984,7 +6985,7 @@
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "return (\r\n\t$prop('DataCorePlugin.CurrentGame') == 'RFactor2' ||\r\n\t$prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa'\r\n) ? 0 : 1\r\n",
+                    "Expression": "return (\r\n\t$prop('DataCorePlugin.CurrentGame') == 'IRacing' ||\r\n\t$prop('DataCorePlugin.CurrentGame') == 'RFactor2' ||\r\n\t$prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa'\r\n) ? 0 : 1\r\n",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -7058,7 +7059,7 @@
       },
       "PitScreen": false,
       "ScreenEnabledExpression": {
-        "Expression": "return (\r\n\t$prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ||\r\n\t$prop('DataCorePlugin.CurrentGame') =='Automobilista2' ||\r\n\t$prop('DataCorePlugin.CurrentGame') =='IRacing' ||\r\n\t$prop('DataCorePlugin.CurrentGame') =='RFactor2' ||\r\n\t$prop('DataCorePlugin.CurrentGame') =='AssettoCorsa' ||\r\n\t$prop('DataCorePlugin.CurrentGame').startsWith('F120')\r\n) ? 1 : 0",
+        "Expression": "",
         "Interpreter": 1
       },
       "ScreenId": "2b07ae57-8298-448f-8838-d5be9ab0cac0"
@@ -7079,7 +7080,7 @@
           "Bindings": {
             "StartAddress": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app=LovelyDashboard&screen=Primary&mfm=TiresAVG'\r\n} else {\r\n\treturn ''\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.name')+'&screen=Primary&mfm=TiresAVG'\r\n} else {\r\n\treturn ''\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -8321,7 +8322,7 @@
       },
       "PitScreen": false,
       "ScreenEnabledExpression": {
-        "Expression": "return (\r\n\t$prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ||\r\n\t$prop('DataCorePlugin.CurrentGame') =='Automobilista2' ||\r\n\t$prop('DataCorePlugin.CurrentGame') =='RFactor2' ||\r\n\t$prop('DataCorePlugin.CurrentGame') =='AssettoCorsa' ||\r\n\t$prop('DataCorePlugin.CurrentGame').startsWith('F120')\r\n) ? 1 : 0",
+        "Expression": "return (\r\n\t$prop('DataCorePlugin.CurrentGame') == 'IRacing'\r\n) ? 0 : 1",
         "Interpreter": 1
       },
       "ScreenId": "77c15cba-fe31-4c75-80d2-27a39b0c2d44"
@@ -8342,7 +8343,7 @@
           "Bindings": {
             "StartAddress": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app=LovelyDashboard&screen=Primary&mfm=Damage'\r\n} else {\r\n\treturn ''\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.name')+'&screen=Primary&mfm=Damage'\r\n} else {\r\n\treturn ''\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -9732,7 +9733,7 @@
           "Bindings": {
             "StartAddress": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app=LovelyDashboard&screen=Primary&mfm=Status'\r\n} else {\r\n\treturn ''\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.name')+'&screen=Primary&mfm=Status'\r\n} else {\r\n\treturn ''\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -9799,11 +9800,11 @@
               "Height": 1.0,
               "IsFreezed": true,
               "IsRectangleItem": true,
-              "Left": 1.5,
+              "Left": 2.0,
               "Name": "RectangleItem",
               "Top": 149.5,
               "Visible": true,
-              "Width": 321.0
+              "Width": 316.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
@@ -10438,11 +10439,11 @@
           ],
           "Group": true,
           "Height": 245.0,
-          "Left": 1.5,
+          "Left": 2.0,
           "Name": "Generic Status",
           "Top": 22.0,
-          "Visible": false,
-          "Width": 321.0
+          "Visible": true,
+          "Width": 318.5
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
@@ -11023,22 +11024,22 @@
               "BackgroundColor": "#FF353535",
               "Height": 1.0,
               "IsRectangleItem": true,
-              "Left": 1.5,
+              "Left": 2.0,
               "Name": "RectangleItem4",
               "Top": 185.5,
               "Visible": true,
-              "Width": 321.0
+              "Width": 316.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
               "BackgroundColor": "#FF353535",
               "Height": 1.0,
               "IsRectangleItem": true,
-              "Left": 1.5,
+              "Left": 2.0,
               "Name": "RectangleItem",
               "Top": 105.5,
               "Visible": true,
-              "Width": 321.0
+              "Width": 316.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
@@ -11109,11 +11110,11 @@
           ],
           "Group": true,
           "Height": 240.0,
-          "Left": 1.5,
+          "Left": 2.0,
           "Name": "F1 Status",
           "Top": 22.0,
-          "Visible": true,
-          "Width": 321.0
+          "Visible": false,
+          "Width": 316.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -11164,7 +11165,7 @@
           "Bindings": {
             "StartAddress": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app=LovelyDashboard&screen=Primary&mfm=Map'\r\n} else {\r\n\treturn ''\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.name')+'&screen=Primary&mfm=Map'\r\n} else {\r\n\treturn ''\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -11400,7 +11401,24 @@
   "ShowOnScreenControls": true,
   "SnapToGrid": false,
   "Variables": {
-    "DashboardVariables": []
+    "DashboardVariables": [
+      {
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "name"
+      },
+      {
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "version"
+      }
+    ]
   },
   "Version": 2
 }
