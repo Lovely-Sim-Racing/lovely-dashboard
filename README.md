@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">Lovely SimHub Dashboard</h1>
-<p align="center"><strong>Version 2.2.0 (NEW)</strong></p>
+<p align="center"><strong>Version 2.3.0</strong></p>
 
 <p align="center">
 A multifunctional feature packed SimHub Dashboard (DDU) and a matching Stream Overlay.
@@ -17,6 +17,15 @@ A multifunctional feature packed SimHub Dashboard (DDU) and a matching Stream Ov
 <img width="80" height="80" alt="rFactor 2" src="docs/images/icon-rf2.png">
 <img width="80" height="80" alt="Formula 1" src="docs/images/icon-f1.png"></br>
 <span>+ all simulators that suppoort native Simhub data</span>
+</p>
+ 
+--
+
+</br>
+<p align="center">
+<span><strong>Partners</strong></span></br>
+<a href="#simdash" target="_blank"><img width="80" height="80" alt="Assetto Corsa" src="docs/images/icon-ac.png"></a>
+<a href="#simutec" target="_blank"><img width="80" height="80" alt="Assetto Corsa" src="docs/images/icon-ac.png"></a>
 </p>
  
 ---
@@ -72,7 +81,7 @@ If this is your first time installing the **Lovely Dashboard**, please follow th
 1. Download & Install [**SimHub Dash**](https://www.simhubdash.com) app
 2. Download & Install [**Roboto Font Family**](https://fonts.google.com/specimen/Roboto) by Christian Robertson
 3. Download & Install the [**Lovely Dashboard Latest Release**](https://github.com/cdemetriadis/lovely-dashboard/releases)
-4. Setup your [**Simuhub Action Keys**](./docs/actions.md) to control the Lovely Dashboard UI
+4. Setup your [**Simhub Action Keys**](./docs/actions.md) to control the Lovely Dashboard UI
 5. ***Optionally***, you can also copy and edit the [**Settings File**](./docs/settings.md) and add the `lovely-dash-bg.jpg` into the `./SimHub/JavascriptExtensions` folder.
 
 ### Updating
@@ -128,8 +137,13 @@ A special thanks to all of you who have supported this project in [one way](http
 * **Steve Mattar** (F1 Support)
 
 ## Marketing Inquiries
-For all marketing inquiries (eg, using the Lovely Dashboard on your marketing material) please send an email to [**marketing@ohmylovely.com**](mailto:marketing@ohmylovely.com).
-<br/><br/>
+For all marketing inquiries please contact me directly. 
+
+:envelope: [**marketing@ohmylovely.com**](mailto:marketing@ohmylovely.com)
+
+:page_facing_up: Although the Lovely Dashboard is ditributed for free, usage of its screen interface design is also subject to the license it is distributed under. Any use in commercial or marketing material, promotional still or animated images and videos is forbidden unless direct consent is given.
+
+<br/>
 
 ---
 
