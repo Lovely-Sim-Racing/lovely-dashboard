@@ -9,7 +9,7 @@
 A multifunctional feature packed SimHub Dashboard (DDU) and ecosystem.
 </p>
 
----
+![Basic Feature Set](docs/images/Primary.png)
 
 <p align="center">
 <span><strong>Native Simulator Support</strong></span></br>
@@ -35,7 +35,7 @@ A multifunctional feature packed SimHub Dashboard (DDU) and ecosystem.
 <a href="https://pitskill.io" target="_blank"><img width="80" height="80" alt="Pitskill.io" src="docs/images/icon-pitskill.png"></a>
 </p>
  
----
+--
 
 <div align="center">
 <p><img width="80" height="80" alt="Lovely Discord" src="docs/images/icon-discord.png"></br>
@@ -45,10 +45,6 @@ Join the Lovely Sim Racing Discord Server and help develop a better version.<br/
 </div>
 </br>
  
----
- 
-<br/>
-
 ### 🔌 If you like this dashboard & overlay, please consider subscribing to my Youtube Channel [Lovely Sim Racing](http://j76.me/LSR), where I stream as often as I can.
 
 ### Please consider [buying me a coffee](http://j76.me/BuyMeCoffee) :coffee: or snagging some [Lovely Merch](http://j76.me/LSRStore) 
@@ -149,11 +145,10 @@ For all marketing inquiries please contact me directly.
 
 :envelope: [**marketing@ohmylovely.com**](mailto:marketing@ohmylovely.com)
 
-:page_facing_up: Although the Lovely Dashboard is distributed for free, usage of its user interface design (UI) is also subject to the license it is distributed under. Any use in commercial or marketing material, promotional still or animated images and videos is forbidden unless direct consent is given.
+> [!NOTE]
+> Although the Lovely Dashboard is distributed for free, usage of its user interface design (UI) is also subject to the license it is distributed under. Any use in commercial or marketing material, promotional still or animated images and videos is forbidden unless direct consent is given.
 
-<br/>
-
----
+--
  
 <p align="center">
 <span><strong>Lovely Partners</strong></span></br>
@@ -166,7 +161,7 @@ For all marketing inquiries please contact me directly.
 <a href="https://pitskill.io" target="_blank"><img width="80" height="80" alt="Pitskill.io" src="docs/images/icon-pitskill.png"></a>
 </p>
  
----
+--
 
 <br/>
 
