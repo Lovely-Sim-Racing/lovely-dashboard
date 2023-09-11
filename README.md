@@ -22,7 +22,7 @@ A multifunctional feature packed SimHub Dashboard (DDU) and ecosystem.
 <span>+ generic support for all simulators that work with Simhub</span>
 </p>
 
---
+---
  
 <p align="center">
 <span><strong>Lovely Partners</strong></span></br>
@@ -35,7 +35,7 @@ A multifunctional feature packed SimHub Dashboard (DDU) and ecosystem.
 <a href="https://pitskill.io" target="_blank"><img width="80" height="80" alt="Pitskill.io" src="docs/images/icon-pitskill.png"></a>
 </p>
  
---
+---
 
 <div align="center">
 <p><img width="80" height="80" alt="Lovely Discord" src="docs/images/icon-discord.png"></br>
@@ -148,7 +148,7 @@ For all marketing inquiries please contact me directly.
 > [!NOTE]
 > Although the Lovely Dashboard is distributed for free, usage of its user interface design (UI) is also subject to the license it is distributed under. Any use in commercial or marketing material, promotional still or animated images and videos is forbidden unless direct consent is given.
 
---
+---
  
 <p align="center">
 <span><strong>Lovely Partners</strong></span></br>
@@ -161,7 +161,7 @@ For all marketing inquiries please contact me directly.
 <a href="https://pitskill.io" target="_blank"><img width="80" height="80" alt="Pitskill.io" src="docs/images/icon-pitskill.png"></a>
 </p>
  
---
+---
 
 <br/>
 
