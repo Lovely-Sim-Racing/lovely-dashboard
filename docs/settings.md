@@ -218,11 +218,26 @@ Set how much time in milliseconds to display the Damage Alert. (eg. 1000 = 1 sec
 --
 
 ### Sim Specific Settings
-Set the default widget pages for each sim seperately.
+Set the active & default MFM pages for each sim seperately.
 
 ### `ACC` Assetto Corsa Competizione
 
-**Left, Right & Overlay Multi Funciton Display**
+**Left, Right & Overlay Multi Function Module (MFM)**
+
+### Active Pages
+
+#### `activeLeftMFM: "0,1,2,3"` `activeRightMFM: "4,5,6,8"`
+
+* `0` Lap Times
+* `1` Sectors
+* `2` Relative
+* `3` Standings
+* `4` Tires
+* `5` Tire AVG
+* `6` Damage
+* `8` Map
+
+### Default Pages
 
 #### `leftMFM: 4` `rightMFM: 0` `overlayMFM: 0`
 
@@ -254,7 +269,22 @@ Set the default widget pages for each sim seperately.
 
 ### `AC` Assetto Corsa
 
-**Left, Right & Overlay Multi Funciton Display**
+**Left, Right & Overlay Multi Function Module (MFM)**
+
+### Active Pages
+
+#### `activeLeftMFM: "0,1,2,3"` `activeRightMFM: "4,5,6,8"`
+
+* `0` Lap Times
+* `1` Sectors
+* `2` Relative
+* `3` Standings
+* `4` Tires
+* `5` Tire AVG
+* `6` Damage
+* `8` Map
+
+### Default Pages
 
 #### `leftMFM: 4` `rightMFM: 0` `overlayMFM: 0`
 
@@ -286,7 +316,21 @@ Set the default widget pages for each sim seperately.
 
 ### `IRacing` iRacing
 
-**Left, Right & Overlay Multi Funciton Display**
+**Left, Right & Overlay Multi Function Module (MFM)**
+
+### Active Pages
+
+#### `activeLeftMFM: "0,1,2,3"` `activeRightMFM: "4,7,8"`
+
+* `0` Lap Times
+* `1` Sectors
+* `2` Relative
+* `3` Standings
+* `4` Tires
+* `7` Status
+* `8` Map
+
+### Default Pages
 
 #### `leftMFM: 7` `rightMFM: 0` `overlayMFM: 0`
 
@@ -317,7 +361,22 @@ Set the default widget pages for each sim seperately.
 
 ### `Automobilista2` Automobilista 2
 
-**Left, Right & Overlay Multi Funciton Display**
+**Left, Right & Overlay Multi Function Module (MFM)**
+
+### Active Pages
+
+#### `activeLeftMFM: "0,1,2,3"` `activeRightMFM: "4,5,7,8"`
+
+* `0` Lap Times
+* `1` Sectors
+* `2` Relative
+* `3` Standings
+* `4` Tires
+* `5` Tire AVG
+* `7` Status
+* `8` Map
+
+### Default Pages
 
 #### `leftMFM: 4` `rightMFM: 0` `overlayMFM: 0`
 
@@ -349,7 +408,21 @@ Set the default widget pages for each sim seperately.
 
 ### `RFactor2` rFactor 2
 
-**Left, Right & Overlay Multi Funciton Display**
+**Left, Right & Overlay Multi Function Module (MFM)**
+
+### Active Pages
+
+#### `activeLeftMFM: "0,1,2,3"` `activeRightMFM: "4,5,8"`
+
+* `0` Lap Times
+* `1` Sectors
+* `2` Relative
+* `3` Standings
+* `4` Tires
+* `5` Tire AVG
+* `8` Map
+
+### Default Pages
 
 #### `leftMFM: 4` `rightMFM: 0` `overlayMFM: 0`
 
@@ -380,7 +453,23 @@ Set the default widget pages for each sim seperately.
 
 ### `F1` Formula 1
 
-**Left, Right & Overlay Multi Funciton Display**
+**Left, Right & Overlay Multi Function Module (MFM)**
+
+### Active Pages
+
+#### `activeLeftMFM: "0,1,2,3"` `activeRightMFM: "4,5,6,7,8"`
+
+* `0` Lap Times
+* `1` Sectors
+* `2` Relative
+* `3` Standings
+* `4` Tires
+* `5` Tire AVG
+* `6` Damage
+* `7` Status
+* `8` Map
+
+### Default Pages
 
 #### `leftMFM: 4` `rightMFM: 0` `overlayMFM: 0`
 
