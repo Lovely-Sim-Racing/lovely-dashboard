@@ -9,6 +9,12 @@
 A multifunctional feature packed SimHub Dashboard (DDU) and ecosystem.
 </p>
 
+---
+
+<strong>Used by thousands* of sim racers across the world, the Lovely Dashboard has become a staple in all of your sim racing setups. From professionals like <strong>Tony Kanaan</strong> all the way to rookies, the Lovely Dashboard delivers the best and most consistent information for all simulators.</strong>
+
+<strong>*</strong> Google Analytics: 6.2k Unique Users Mar-July 2023
+
 ![Basic Feature Set](docs/images/Primary.png)
 
 <p align="center">
