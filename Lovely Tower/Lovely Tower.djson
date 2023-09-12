@@ -3,15 +3,13 @@
   "BackgroundOpacity": 100.0,
   "BaseHeight": 850,
   "BaseWidth": 300,
-  "DashboardDebugManager": {
-    "Maximized": false
-  },
+  "DashboardDebugManager": {},
   "EnableClickThroughOverlay": true,
   "EnableOnDashboardMessaging": true,
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "57616b8c-8ad4-49d3-88db-9a2c86d05c98",
+  "Id": "5f4785f9-9853-4f45-9e5a-8ce40ec766c7",
   "Images": [
     {
       "Extension": ".png",
@@ -62,7 +60,7 @@
           "Bindings": {
             "StartAddress": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.name')+'&screen=Idle'\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.dashName')+'&ver='+$prop('variable.dashVer')+'&screen=Idle'\r\n} else {\r\n\treturn ''\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -107,7 +105,7 @@
           "Bindings": {
             "StartAddress": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.name')+'&screen=Primary'\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.dashName')+'&ver='+$prop('variable.dashVer')+'&screen=Primary'\r\n} else {\r\n\treturn ''\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -787,6 +785,25 @@
           "Top": 0.0,
           "Visible": true,
           "Width": 240.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
+          "AutoSize": true,
+          "BackgroundColor": "#00FFFFFF",
+          "EnableScreenRolesAndActivation": true,
+          "FileName": "Debug.djson",
+          "Height": 100.0,
+          "InitialScreenIndex": 0,
+          "Left": 20.0,
+          "Name": "Debug",
+          "NextScreenCommand": 0,
+          "PreviousScreenCommand": 0,
+          "Top": 730.0,
+          "Variables": {
+            "DashboardVariables": []
+          },
+          "Visible": true,
+          "Width": 200.0
         }
       ],
       "Name": "Tower",
@@ -811,21 +828,27 @@
     "DashboardVariables": [
       {
         "EvaluateOnlyOnce": false,
-        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "OverrideWithParentDashboardVariableWhenAvailable": false,
         "ValueExpression": {
-          "Expression": "return \"LovelyTower\"",
-          "Interpreter": 1
+          "Expression": "'LovelyTower'"
         },
-        "VariableName": "name"
+        "VariableName": "dashName"
       },
       {
         "EvaluateOnlyOnce": false,
-        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "OverrideWithParentDashboardVariableWhenAvailable": false,
         "ValueExpression": {
-          "Expression": "return \"1.0.0\"",
-          "Interpreter": 1
+          "Expression": "'1.1.0'"
         },
-        "VariableName": "version"
+        "VariableName": "dashVer"
+      },
+      {
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": false,
+        "ValueExpression": {
+          "Expression": "'8.4.11'"
+        },
+        "VariableName": "shVer"
       }
     ]
   },

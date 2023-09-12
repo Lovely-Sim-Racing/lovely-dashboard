@@ -3,34 +3,48 @@
 </p>
 
 <h1 align="center">Lovely SimHub Dashboard</h1>
-<p align="center"><strong>Version 2.2.0 (NEW)</strong></p>
+<p align="center"><strong>Version 2.3.0</strong></p>
 
 <p align="center">
-A multifunctional feature packed SimHub Dashboard (DDU) and a matching Stream Overlay.
+A multifunctional feature packed SimHub Dashboard (DDU) and ecosystem.
 </p>
 
+![Basic Feature Set](docs/images/Primary.png)
+
 <p align="center">
+<span><strong>Native Simulator Support</strong></span></br>
 <img width="80" height="80" alt="Assetto Corsa Competizione" src="docs/images/icon-acc.png">
 <img width="80" height="80" alt="Assetto Corsa" src="docs/images/icon-ac.png">
 <img width="80" height="80" alt="iRacing" src="docs/images/icon-iracing.png">
 <img width="80" height="80" alt="Automobilista 2" src="docs/images/icon-ams2.png">
 <img width="80" height="80" alt="rFactor 2" src="docs/images/icon-rf2.png">
 <img width="80" height="80" alt="Formula 1" src="docs/images/icon-f1.png"></br>
-<span>+ all simulators that suppoort native Simhub data</span>
+<span>+ generic support for all simulators that work with Simhub</span>
+</p>
+
+---
+ 
+<p align="center">
+<span><strong>Lovely Partners</strong></span></br>
+<a href="https://www.simhubdash.com" target="_blank"><img width="80" height="80" alt="SimHub" src="docs/images/icon-simhub.png"></a>
+<a href="https://www.facebook.com/SimDash.pt" target="_blank"><img width="80" height="80" alt="SimDash" src="docs/images/icon-simdash.png"></a>
+<a href="https://www.simutec.co.uk" target="_blank"><img width="80" height="80" alt="Simutec" src="docs/images/icon-simutec.png"></a>
+<a href="https://gomezsimindustries.com" target="_blank"><img width="80" height="80" alt="Gomez Sim Industries" src="docs/images/icon-gsi.png"></a>
+<a href="https://www.turnracing.com" target="_blank"><img width="80" height="80" alt="Turn Racing" src="docs/images/icon-turn.png"></a>
+<a href="https://lowfuelmotorsport.com" target="_blank"><img width="80" height="80" alt="Low Fuel Motorsport" src="docs/images/icon-lfm.png"></a>
+<a href="https://pitskill.io" target="_blank"><img width="80" height="80" alt="Pitskill.io" src="docs/images/icon-pitskill.png"></a>
 </p>
  
 ---
- 
-<br/>
 
 <div align="center">
-<p><strong><em>JOIN over 2700 Lovely Sim Racers on Discord</em></strong><br/>
+<p><img width="80" height="80" alt="Lovely Discord" src="docs/images/icon-discord.png"></br>
+<strong><em>JOIN over 3100 Lovely Sim Racers on Discord</em></strong><br/>
 Join the Lovely Sim Racing Discord Server and help develop a better version.<br/>
-👉 <a href="http://j76.me/LSRDiscord">Discord Server</a></p>
+👉 <a href="http://j76.me/LSRDiscord"><strong>Lovely Discord Server</strong></a></p>
 </div>
+</br>
  
-<br/>
-
 ### 🔌 If you like this dashboard & overlay, please consider subscribing to my Youtube Channel [Lovely Sim Racing](http://j76.me/LSR), where I stream as often as I can.
 
 ### Please consider [buying me a coffee](http://j76.me/BuyMeCoffee) :coffee: or snagging some [Lovely Merch](http://j76.me/LSRStore) 
@@ -57,9 +71,8 @@ In the [Releases](https://github.com/cdemetriadis/lovely-dashboard/releases) sec
 1. **Lovely Dashboard** - A custom designed dashboard to use on your phone or dedicated DDU Screen
 2. **Lovely Dashboard XL** - An oversized version of the Lovely Dashboard for the new 10" DDU Screens.
 3. **Lovely Overlay** - If you're a streamer, you can use this overlay in OBS or any other broadcasting software
-4. *Coming Soon* ***Lovely Tower*** - A new leader board tower, great for OBS if you're streaming 
-5. *Coming Soon* ***Lovely Flags*** - A new "simple" dashboard to display race flags and platform integration
-6. **LED Profiles** - Multiple LED profiles for your DDU Screens
+4. **Lovely Tower** - A leader board tower, great for OBS if you're streaming 
+5. **Lovely Flags** - A "simple" dashboard to display race flags and platform integration
 
 ## Download & Install
 This is a SimHub Dashboard, therefore **SimHub Dash** app is required to run it (Doh!). Also, since the UI was a considerate design, you will also need to download and install the **Roboto Font Family** from Google (free).
@@ -72,7 +85,7 @@ If this is your first time installing the **Lovely Dashboard**, please follow th
 1. Download & Install [**SimHub Dash**](https://www.simhubdash.com) app
 2. Download & Install [**Roboto Font Family**](https://fonts.google.com/specimen/Roboto) by Christian Robertson
 3. Download & Install the [**Lovely Dashboard Latest Release**](https://github.com/cdemetriadis/lovely-dashboard/releases)
-4. Setup your [**Simuhub Action Keys**](./docs/actions.md) to control the Lovely Dashboard UI
+4. Setup your [**Simhub Action Keys**](./docs/actions.md) to control the Lovely Dashboard UI
 5. ***Optionally***, you can also copy and edit the [**Settings File**](./docs/settings.md) and add the `lovely-dash-bg.jpg` into the `./SimHub/JavascriptExtensions` folder.
 
 ### Updating
@@ -82,7 +95,7 @@ If you have received a notification on your **Lovely Dashboard** of a new update
 2. Read the changelog and if prompted, you may also need to update [**SimHub Dash**](https://www.simhubdash.com) and/or the [**Settings File**](./docs/settings.md)
 
 ## Settings
-As of version 1.5.4, the Lovely Dashboard can also be setup to your liking. You will need to copy the file `Lovely-Dashboard_settings.json` into the `./Simhub/JavascriptExtensions` folder. 
+The Lovely Dashboard is a highly customizable dashboard. You can tailor it to your personal brand, but also adapt how it functions. To take full advantage of the Lovely Dashboard you'll need to copy the file `Lovely-Dashboard_settings.json` into the `./Simhub/JavascriptExtensions` folder. 
 
 ![Copy the settings file into the JavascriptExtensions folder](docs/images/settings-file.png)
 
@@ -128,16 +141,33 @@ A special thanks to all of you who have supported this project in [one way](http
 * **Steve Mattar** (F1 Support)
 
 ## Marketing Inquiries
-For all marketing inquiries (eg, using the Lovely Dashboard on your marketing material) please send an email to [**marketing@ohmylovely.com**](mailto:marketing@ohmylovely.com).
-<br/><br/>
+For all marketing inquiries please contact me directly. 
 
+:envelope: [**marketing@ohmylovely.com**](mailto:marketing@ohmylovely.com)
+
+> [!NOTE]
+> Although the Lovely Dashboard is distributed for free, usage of its user interface design (UI) is also subject to the license it is distributed under. Any use in commercial or marketing material, promotional still or animated images and videos is forbidden unless direct consent is given.
+
+---
+ 
+<p align="center">
+<span><strong>Lovely Partners</strong></span></br>
+<a href="https://www.simhubdash.com" target="_blank"><img width="80" height="80" alt="SimHub" src="docs/images/icon-simhub.png"></a>
+<a href="https://www.facebook.com/SimDash.pt" target="_blank"><img width="80" height="80" alt="SimDash" src="docs/images/icon-simdash.png"></a>
+<a href="https://www.simutec.co.uk" target="_blank"><img width="80" height="80" alt="Simutec" src="docs/images/icon-simutec.png"></a>
+<a href="https://gomezsimindustries.com" target="_blank"><img width="80" height="80" alt="Gomez Sim Industries" src="docs/images/icon-gsi.png"></a>
+<a href="https://www.turnracing.com" target="_blank"><img width="80" height="80" alt="Turn Racing" src="docs/images/icon-turn.png"></a>
+<a href="https://lowfuelmotorsport.com" target="_blank"><img width="80" height="80" alt="Low Fuel Motorsport" src="docs/images/icon-lfm.png"></a>
+<a href="https://pitskill.io" target="_blank"><img width="80" height="80" alt="Pitskill.io" src="docs/images/icon-pitskill.png"></a>
+</p>
+ 
 ---
 
 <br/>
 
 ### Disclaimer
 
-All trademarks, logos and brand names are the property of their respective owners. All company, product and service names used in this application are for identification purposes only. Use of these names, trademarks and brands does not imply endorsement.
+All trademarks, logos and brand names are the property of their respective owners. All company, product and service names used in this application are for identification purposes only. Use of these names, trademarks and brands does not imply endorsement unless otherwise stated.
 
 <br/>
 

@@ -328,6 +328,31 @@ function ld_changed(delay, value) {
 	return root['ld_triggerTime'] == null ? false : root['ld_time'] - root['ld_triggerTime'] <= delay/1000;
 }
 
+function ld_getSim() {
+    currentGame = $prop('DataCorePlugin.CurrentGame')
+
+    switch (currentGame) {
+        case "AssettoCorsaCompetizione": 
+            return "ACC"
+        case "AssettoCorsa": 
+            return "AC"
+        case "IRacing": 
+            return "IRacing"
+        case "Automobilista2": 
+            return "Automobilista2"
+        case "RFactor2": 
+            return "RFactor2"
+        case "F12020":
+        case "F12021":
+        case "F12022":
+        case "F12023":
+            return "F1"
+        default:
+            return "generic"
+    }
+	
+}
+
 function ld_isIncreasing(value) {
     
     if(root['value']==null){

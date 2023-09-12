@@ -1,0 +1,185 @@
+{
+  "BackgroundColor": "#FF000000",
+  "BackgroundOpacity": 100.0,
+  "BaseHeight": 100,
+  "BaseWidth": 200,
+  "DashboardDebugManager": {},
+  "EnableClickThroughOverlay": true,
+  "EnableOnDashboardMessaging": true,
+  "ForegroundOpacity": 100.0,
+  "GridSize": 10,
+  "HideLabels": false,
+  "Id": "ecf37594-ffae-4f0e-a2e8-92aadf4cf7d1",
+  "Images": [],
+  "IsOverlay": false,
+  "Metadata": {
+    "EnableOnDashboardMessaging": true,
+    "Height": 100.0,
+    "IdleScreensIndexs": [
+      0
+    ],
+    "InGameScreensIndexs": [
+      0
+    ],
+    "IsOverlay": false,
+    "MainPreviewIndex": 0,
+    "MetadataVersion": 2.0,
+    "OverlaySizeWarning": false,
+    "PitScreensIndexs": [],
+    "ScreenCount": 1.0,
+    "Width": 200.0
+  },
+  "Screens": [
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#FF000000",
+      "IdleScreen": true,
+      "InGameScreen": true,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": false,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#BE000000",
+          "Bindings": {
+            "Text": {
+              "Formula": {
+                "Expression": "return $prop('variable.dashName') + '\\n' + \r\n\t\t'v' + $prop('variable.dashVer') + '\\n' +\r\n\t\t'Simhub Ver: ' + $prop('DataCorePlugin.SimHubVersion') + '\\n' +\r\n\t\t'Simhub Min Ver: ' + $prop('variable.shVer')",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Text"
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.debug || settings.debug == 0 ) {\r\n\treturn 0\r\n} else {\r\n\treturn 1\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 5,
+            "RadiusBottomRight": 5,
+            "RadiusTopLeft": 5,
+            "RadiusTopRight": 5
+          },
+          "Font": "Roboto",
+          "FontSize": 15.0,
+          "Height": 100.0,
+          "HorizontalAlignment": 0,
+          "IsTextItem": true,
+          "Left": 0.0,
+          "Name": "Debug",
+          "Text": "Text",
+          "TextColor": "#FF00FFFF",
+          "TextPadding": {
+            "PaddingBottom": 10,
+            "PaddingLeft": 10,
+            "PaddingRight": 10,
+            "PaddingTop": 10
+          },
+          "Top": 0.0,
+          "VerticalAlignment": 0,
+          "Visible": true,
+          "Width": 200.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Text": {
+              "FormatString": "0.0",
+              "Formula": {
+                "Expression": "return $prop('DataCorePlugin.DataUpdateFps')",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Text"
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.debug || settings.debug == 0 ) {\r\n\treturn 0\r\n} else {\r\n\treturn 1\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 5,
+            "RadiusBottomRight": 5,
+            "RadiusTopLeft": 5,
+            "RadiusTopRight": 5
+          },
+          "Font": "Roboto",
+          "FontSize": 15.0,
+          "Height": 100.0,
+          "HorizontalAlignment": 2,
+          "IsTextItem": true,
+          "Left": 0.0,
+          "Name": "Debug2",
+          "Text": "Text",
+          "TextColor": "#FFFFFFFF",
+          "TextPadding": {
+            "PaddingBottom": 10,
+            "PaddingLeft": 10,
+            "PaddingRight": 10,
+            "PaddingTop": 10
+          },
+          "Top": 0.0,
+          "VerticalAlignment": 2,
+          "Visible": true,
+          "Width": 200.0
+        }
+      ],
+      "Name": "Screen",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": ""
+      },
+      "PitScreen": false,
+      "ScreenEnabledExpression": {
+        "Expression": ""
+      },
+      "ScreenId": "d11e3b99-58aa-4f9f-8352-01ab72148999"
+    }
+  ],
+  "ShowBackground": true,
+  "ShowBoundingRectangles": false,
+  "ShowForeground": true,
+  "ShowOnScreenControls": true,
+  "SnapToGrid": false,
+  "Variables": {
+    "DashboardVariables": [
+      {
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "dashName"
+      },
+      {
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "dashVer"
+      },
+      {
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "shVer"
+      }
+    ]
+  },
+  "Version": 2
+}

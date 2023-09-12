@@ -3,15 +3,13 @@
   "BackgroundOpacity": 100.0,
   "BaseHeight": 480,
   "BaseWidth": 850,
-  "DashboardDebugManager": {
-    "Maximized": false
-  },
+  "DashboardDebugManager": {},
   "EnableClickThroughOverlay": true,
   "EnableOnDashboardMessaging": true,
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "12c5772e-7a76-4772-a94a-437c930c671a",
+  "Id": "1a93c806-d9ae-4705-be0e-0792099ba449",
   "Images": [
     {
       "Extension": ".png",
@@ -32,6 +30,16 @@
       "Name": "lr-team-icon",
       "Optimized": true,
       "Width": 800
+    },
+    {
+      "Extension": ".png",
+      "Height": 120,
+      "Length": 3146,
+      "MD5": "608b3d577d86e813e4b91160ceaeeb21",
+      "Modified": false,
+      "Name": "Simhub Update",
+      "Optimized": true,
+      "Width": 148
     }
   ],
   "IsOverlay": false,
@@ -50,7 +58,7 @@
     "MetadataVersion": 2.0,
     "OverlaySizeWarning": false,
     "PitScreensIndexs": [],
-    "ScreenCount": 2.0,
+    "ScreenCount": 3.0,
     "Title": "Lovely Flags",
     "Width": 850.0
   },
@@ -71,7 +79,7 @@
           "Bindings": {
             "StartAddress": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.name')+'&screen=Idle'\r\n} else {\r\n\treturn ''\r\n}\r\n",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.dashName')+'&ver='+$prop('variable.dashVer')+'&screen=Idle'\r\n} else {\r\n\treturn ''\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -147,7 +155,7 @@
           "Bindings": {
             "Text": {
               "Formula": {
-                "Expression": "return \"Lovely Flags v\" + $prop('variable.version')",
+                "Expression": "return \"Lovely Flags v\" + $prop('variable.dashVer')\r\n",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -168,6 +176,49 @@
           "VerticalAlignment": 1,
           "Visible": true,
           "Width": 260.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FFFF0000",
+          "Bindings": {
+            "Text": {
+              "FormatString": "",
+              "Formula": {
+                "Expression": "const json_version = downloadstringasync(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.json')\r\n\r\n// Break if error in JSON\r\nif ( json_version == null ) { return 0 }\r\n\r\nconst latestVer = JSON.parse(json_version)\r\n\r\nreturn 'NEW VERSION AVAILABLE: ' + latestVer.LovelyFlags + ' - Visit j76.me/Update'",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Text"
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "var currentVer = $prop('variable.dashVer')\r\nconst json_version = downloadstringasync(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.json')\r\n\r\n// Break if error in JSON\r\nif ( json_version == null ) { return 0 }\r\n\r\nconst latestVer = JSON.parse(json_version)\r\n\r\nif ( compareversions( currentVer, latestVer.LovelyFlags ) == '-1') {\r\n\treturn true\r\n} else {\r\n\treturn false\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 10,
+            "RadiusBottomRight": 10,
+            "RadiusTopLeft": 10,
+            "RadiusTopRight": 10
+          },
+          "Font": "Roboto",
+          "FontSize": 16.0,
+          "FontWeight": "Bold",
+          "Height": 25.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 200.0,
+          "Name": "New Version Alert",
+          "Text": "NEW VERSION AVAILABLE: X.X.X - Visit j76.me/Update",
+          "TextColor": "#FFFFFFFF",
+          "Top": 400.0,
+          "VerticalAlignment": 1,
+          "Visible": false,
+          "Width": 450.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.TimeText, SimHub.Plugins",
@@ -208,6 +259,9 @@
           "NextScreenCommand": 0,
           "PreviousScreenCommand": 0,
           "Top": 20.0,
+          "Variables": {
+            "DashboardVariables": []
+          },
           "Visible": true,
           "Width": 770.0
         },
@@ -223,6 +277,25 @@
           "Top": 350.0,
           "Visible": true,
           "Width": 40.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
+          "AutoSize": true,
+          "BackgroundColor": "#00FFFFFF",
+          "EnableScreenRolesAndActivation": true,
+          "FileName": "Debug.djson",
+          "Height": 100.0,
+          "InitialScreenIndex": 0,
+          "Left": 20.0,
+          "Name": "Debug",
+          "NextScreenCommand": 0,
+          "PreviousScreenCommand": 0,
+          "Top": 360.0,
+          "Variables": {
+            "DashboardVariables": []
+          },
+          "Visible": true,
+          "Width": 200.0
         }
       ],
       "Name": "Idle",
@@ -253,7 +326,7 @@
           "Bindings": {
             "StartAddress": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.name')+'&screen=Primary'\r\n} else {\r\n\treturn ''\r\n}\r\n",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.dashName')+'&ver='+$prop('variable.dashVer')+'&screen=Primary'\r\n} else {\r\n\treturn ''\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -768,8 +841,30 @@
           "NextScreenCommand": 0,
           "PreviousScreenCommand": 0,
           "Top": 20.0,
+          "Variables": {
+            "DashboardVariables": []
+          },
           "Visible": true,
           "Width": 770.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
+          "AutoSize": true,
+          "BackgroundColor": "#00FFFFFF",
+          "EnableScreenRolesAndActivation": true,
+          "FileName": "Debug.djson",
+          "Height": 100.0,
+          "InitialScreenIndex": 0,
+          "Left": 20.0,
+          "Name": "Debug",
+          "NextScreenCommand": 0,
+          "PreviousScreenCommand": 0,
+          "Top": 360.0,
+          "Variables": {
+            "DashboardVariables": []
+          },
+          "Visible": true,
+          "Width": 200.0
         }
       ],
       "Name": "Primary",
@@ -783,6 +878,155 @@
         "Expression": ""
       },
       "ScreenId": "5a65307b-d16b-4ce6-8ed4-7ad3e42c11ca"
+    },
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#00FFFFFF",
+      "IdleScreen": false,
+      "InGameScreen": false,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": true,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "BackgroundColor": "#FF000000",
+          "BorderStyle": {
+            "Bindings": {
+              "RadiusBottomLeft": {
+                "Formula": {
+                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius + 5",
+                  "Interpreter": 1
+                },
+                "Mode": 2,
+                "TargetPropertyName": "RadiusBottomLeft"
+              },
+              "RadiusBottomRight": {
+                "Formula": {
+                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius + 5",
+                  "Interpreter": 1
+                },
+                "Mode": 2,
+                "TargetPropertyName": "RadiusBottomRight"
+              },
+              "RadiusTopLeft": {
+                "Formula": {
+                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius + 5",
+                  "Interpreter": 1
+                },
+                "Mode": 2,
+                "TargetPropertyName": "RadiusTopLeft"
+              },
+              "RadiusTopRight": {
+                "Formula": {
+                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius + 5",
+                  "Interpreter": 1
+                },
+                "Mode": 2,
+                "TargetPropertyName": "RadiusTopRight"
+              }
+            },
+            "RadiusBottomLeft": 50,
+            "RadiusBottomRight": 50,
+            "RadiusTopLeft": 50,
+            "RadiusTopRight": 50
+          },
+          "Height": 480.0,
+          "IsRectangleItem": true,
+          "Left": 0.0,
+          "Name": "Background",
+          "Top": 0.0,
+          "Visible": true,
+          "Width": 850.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Text": {
+              "Formula": {
+                "Expression": "return \"The Lovely Flags v\" + $prop('variable.dashVer') + \" requires a newer version of SimHub, please visit the official website to download it.\\n\\nvisit: j76.me/simhub\"",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Text"
+            }
+          },
+          "Font": "Roboto",
+          "FontSize": 16.0,
+          "Height": 80.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 219.0,
+          "Name": "Version",
+          "Text": "Update Note",
+          "TextColor": "#FFFFFFFF",
+          "TextWrapping": 0,
+          "Top": 292.0,
+          "VerticalAlignment": 0,
+          "Visible": true,
+          "Width": 412.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FFFF0000",
+          "Bindings": {
+            "Text": {
+              "FormatString": "",
+              "Formula": {
+                "Expression": "return 'SIMHUB UPDATE REQUIRED: v' + $prop('variable.shVer')",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Text"
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 10,
+            "RadiusBottomRight": 10,
+            "RadiusTopLeft": 10,
+            "RadiusTopRight": 10
+          },
+          "Font": "Roboto",
+          "FontSize": 16.0,
+          "FontWeight": "Bold",
+          "Height": 24.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 275.0,
+          "Name": "New Version Alert",
+          "Text": "SIMHUB UPDATE REQUIRED: vX.X.X",
+          "TextColor": "#FFFFFFFF",
+          "Top": 248.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 300.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+          "AutoSize": true,
+          "BackgroundColor": "#00FFFFFF",
+          "Height": 120.0,
+          "Image": "Simhub Update",
+          "Left": 351.0,
+          "Name": "ImageItem",
+          "Top": 108.0,
+          "Visible": true,
+          "Width": 148.0
+        }
+      ],
+      "Name": "Simhub",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": "var currentVer = $prop('DataCorePlugin.SimHubVersion')\r\nvar minVer = $prop('variable.shVer')\r\n\r\nif ( compareversions( currentVer, minVer ) == '-1') {\r\n\treturn true\r\n} else {\r\n\treturn false\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
+        "Interpreter": 1
+      },
+      "PitScreen": false,
+      "ScreenEnabledExpression": {
+        "Expression": ""
+      },
+      "ScreenId": "e1621519-ffd5-48e3-bf7e-be7b776eafdd"
     }
   ],
   "ShowBackground": true,
@@ -794,21 +1038,27 @@
     "DashboardVariables": [
       {
         "EvaluateOnlyOnce": false,
-        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "OverrideWithParentDashboardVariableWhenAvailable": false,
         "ValueExpression": {
-          "Expression": "return \"LovelyFlags\"",
-          "Interpreter": 1
+          "Expression": "'LovelyFlags'"
         },
-        "VariableName": "name"
+        "VariableName": "dashName"
       },
       {
         "EvaluateOnlyOnce": false,
-        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "OverrideWithParentDashboardVariableWhenAvailable": false,
         "ValueExpression": {
-          "Expression": "return \"1.0.0\"",
-          "Interpreter": 1
+          "Expression": "'1.1.0'"
         },
-        "VariableName": "version"
+        "VariableName": "dashVer"
+      },
+      {
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": false,
+        "ValueExpression": {
+          "Expression": "'8.4.11'"
+        },
+        "VariableName": "shVer"
       }
     ]
   },

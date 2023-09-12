@@ -38,7 +38,7 @@ The settings will work for the **Lovely Dashboard**, **Lovely Dashboard XL** and
 	* [rFactor 2](#rfactor2-rfactor-2)
 	* [Formula 1](#f1-formula-1)
 
---
+---
 
 ### Analytics
 
@@ -48,7 +48,8 @@ Enable anonymous data usage of the Dashboard. Going forward, the Lovely Dashboar
 - `0` Off, no data is collected
 - **`1` (Default & recommended)** - On, anonymous data is collected 
 
---
+---
+
 ### Idle Screen Personlisation
 
 #### `yourName`, `yourNumber`
@@ -78,7 +79,7 @@ Display your Pitskill.io next session countdown and information on the Lovely Da
 
 - You can find your **Pitskill.io License ID** on your "My Racing License" page on [Pitskill.io](https://pitskill.io/)
 
---
+---
 
 ### UI Customisation
 
@@ -89,7 +90,7 @@ You can change the way the Driver Name is formatted and displayed.
 - `2` Will display names as "**Firstname L.**"
 - `3` Will display names as "**Firstname Lastname**"
 
---
+---
 
 #### `rpmLED`
 Display virtual RPM LEDs within the Lovely Dashboard. Ideal for those who do not run the dashboard on a mobile phone or tablet, that does not have built in LEDs.
@@ -97,7 +98,7 @@ Display virtual RPM LEDs within the Lovely Dashboard. Ideal for those who do not
 - **`0` (Default)** - Hide virtual RPM LEDs
 - `1` Show virtual RPM LEDs
 
---
+---
 
 #### `clutchMode`
 Display the Clutch Value (0-100). This is great for defining the bite point.
@@ -106,7 +107,7 @@ Display the Clutch Value (0-100). This is great for defining the bite point.
 - **`1` (Default)** Show only when clutch is engaged
 - `2` Always Show
 
---
+---
 
 #### `showFlags`
 You can enable or disable the track flags in the top left module.
@@ -114,7 +115,7 @@ You can enable or disable the track flags in the top left module.
 - `0` Hide Flags
 - **`1` (Default)** Show Flags
 
---
+---
 
 #### `mapType`
 Change the map type, between a static or animated map
@@ -122,14 +123,14 @@ Change the map type, between a static or animated map
 - **`1` (Default)** Static Map
 - `2` Animated Map
 
---
+---
 
 #### `mapZoom`
 If `mapType` is set to animated, you can select the unzoom percentage. The faster you go, the more the map zooms-out.
 
 - **`30` (Default)** (0 - 100) The larger the number, the more zoomed-out the map gets
 
---
+---
 
 #### `uiMode`
 Set the UI mode intensity and change the line brightness throughout the dashbaord.
@@ -143,7 +144,7 @@ Change the dashboard's outer corner radii to match that of your physical device.
 
 - **`45` (Default)** Pixel Radius of outer corners, suggested size Min:12 - Max:50
 
---
+---
 
 #### `nightMode`
 For sims that support night races and provide info on Lights (currently ACC and AMS2), when you turn on the lights, it will activate a dimmer view of the dashboard. You can enable this or disable this feature:
@@ -151,7 +152,7 @@ For sims that support night races and provide info on Lights (currently ACC and 
 - `0` Disabled: Will always remain bright
 - **`1` (Default)** Enabled: Will dim the screen when lights are on
 
---
+---
 
 #### `tireLapAvg`
 Specify the number of laps to collect tire data.
@@ -165,7 +166,7 @@ Set a hot-key to reset the AVG Tire data.
 
 :warning: **Warning:** This is still a bit buggy. If the data does not resume collecting, you will need to restart your DDU/Device.
 
---
+---
 
 ### Alerts
 
@@ -181,14 +182,14 @@ Set how much time in milliseconds to display the Lap Review Alert. (eg. 1000 = 1
 
 - **`5000` (Default)** - Display the Lap Review Alert for 5 seconds
 
---
+---
 
 #### `deltaReviewDelay`
 Set how much time in milliseconds to display the Sector Delta Review. (eg. 1000 = 1 second)
 
 - **`5000` (Default)** - Display the Sector Delta Review for 5 seconds
 
---
+---
 
 #### `alertView`
 Display the Alert Views (TC, ABS, MAP etc)
@@ -202,7 +203,7 @@ Set how much time in milliseconds to display the Alert Views. (eg. 1000 = 1 seco
 
 - **`5000` (Default)** - Display the Alert Views for 5 seconds
 
---
+---
 
 #### `damageAlert`
 Display the Damage Alert every time there is a change in the overall vehicle damage.
@@ -215,14 +216,29 @@ Set how much time in milliseconds to display the Damage Alert. (eg. 1000 = 1 sec
 
 - **`7500` (Default)** - Display the Damage Alert for 7.5 seconds
 
---
+---
 
 ### Sim Specific Settings
-Set the default widget pages for each sim seperately.
+Set the active & default MFM pages for each sim seperately.
 
 ### `ACC` Assetto Corsa Competizione
 
-**Left, Right & Overlay Multi Funciton Display**
+**Left, Right & Overlay Multi Function Module (MFM)**
+
+### Active Pages
+
+#### `activeLeftMFM: "0,1,2,3"` `activeRightMFM: "4,5,6,8"`
+
+* `0` Lap Times
+* `1` Sectors
+* `2` Relative
+* `3` Standings
+* `4` Tires
+* `5` Tire AVG
+* `6` Damage
+* `8` Map
+
+### Default Pages
 
 #### `leftMFM: 4` `rightMFM: 0` `overlayMFM: 0`
 
@@ -250,11 +266,26 @@ Set the default widget pages for each sim seperately.
 * `1` Fuel Time Left
 * `2` Refuel Calculator (Refuel or Finish Line)
 
---
+---
 
 ### `AC` Assetto Corsa
 
-**Left, Right & Overlay Multi Funciton Display**
+**Left, Right & Overlay Multi Function Module (MFM)**
+
+### Active Pages
+
+#### `activeLeftMFM: "0,1,2,3"` `activeRightMFM: "4,5,6,8"`
+
+* `0` Lap Times
+* `1` Sectors
+* `2` Relative
+* `3` Standings
+* `4` Tires
+* `5` Tire AVG
+* `6` Damage
+* `8` Map
+
+### Default Pages
 
 #### `leftMFM: 4` `rightMFM: 0` `overlayMFM: 0`
 
@@ -282,11 +313,25 @@ Set the default widget pages for each sim seperately.
 * `1` Fuel Time Left
 * `2` Refuel Calculator (Refuel or Finish Line)
 
---
+---
 
 ### `IRacing` iRacing
 
-**Left, Right & Overlay Multi Funciton Display**
+**Left, Right & Overlay Multi Function Module (MFM)**
+
+### Active Pages
+
+#### `activeLeftMFM: "0,1,2,3"` `activeRightMFM: "4,7,8"`
+
+* `0` Lap Times
+* `1` Sectors
+* `2` Relative
+* `3` Standings
+* `4` Tires
+* `7` Status
+* `8` Map
+
+### Default Pages
 
 #### `leftMFM: 7` `rightMFM: 0` `overlayMFM: 0`
 
@@ -313,11 +358,26 @@ Set the default widget pages for each sim seperately.
 * `1` Fuel Time Left
 * `2` Refuel Calculator (Refuel or Finish Line)
 
---
+---
 
 ### `Automobilista2` Automobilista 2
 
-**Left, Right & Overlay Multi Funciton Display**
+**Left, Right & Overlay Multi Function Module (MFM)**
+
+### Active Pages
+
+#### `activeLeftMFM: "0,1,2,3"` `activeRightMFM: "4,5,7,8"`
+
+* `0` Lap Times
+* `1` Sectors
+* `2` Relative
+* `3` Standings
+* `4` Tires
+* `5` Tire AVG
+* `7` Status
+* `8` Map
+
+### Default Pages
 
 #### `leftMFM: 4` `rightMFM: 0` `overlayMFM: 0`
 
@@ -345,11 +405,25 @@ Set the default widget pages for each sim seperately.
 * `1` Fuel Time Left
 * `2` Refuel Calculator (Refuel or Finish Line)
 
---
+---
 
 ### `RFactor2` rFactor 2
 
-**Left, Right & Overlay Multi Funciton Display**
+**Left, Right & Overlay Multi Function Module (MFM)**
+
+### Active Pages
+
+#### `activeLeftMFM: "0,1,2,3"` `activeRightMFM: "4,5,8"`
+
+* `0` Lap Times
+* `1` Sectors
+* `2` Relative
+* `3` Standings
+* `4` Tires
+* `5` Tire AVG
+* `8` Map
+
+### Default Pages
 
 #### `leftMFM: 4` `rightMFM: 0` `overlayMFM: 0`
 
@@ -376,11 +450,27 @@ Set the default widget pages for each sim seperately.
 * `1` Fuel Time Left
 * `2` Refuel Calculator (Refuel or Finish Line)
 
---
+---
 
 ### `F1` Formula 1
 
-**Left, Right & Overlay Multi Funciton Display**
+**Left, Right & Overlay Multi Function Module (MFM)**
+
+### Active Pages
+
+#### `activeLeftMFM: "0,1,2,3"` `activeRightMFM: "4,5,6,7,8"`
+
+* `0` Lap Times
+* `1` Sectors
+* `2` Relative
+* `3` Standings
+* `4` Tires
+* `5` Tire AVG
+* `6` Damage
+* `7` Status
+* `8` Map
+
+### Default Pages
 
 #### `leftMFM: 4` `rightMFM: 0` `overlayMFM: 0`
 
@@ -409,4 +499,4 @@ Set the default widget pages for each sim seperately.
 * `1` Fuel Time Left
 * `2` Refuel Calculator (Refuel or Finish Line)
 
---
+---
