@@ -3,16 +3,13 @@
   "BackgroundOpacity": 100.0,
   "BaseHeight": 270,
   "BaseWidth": 320,
-  "DashboardDebugManager": {
-    "LastPlacement": "393,303,480,405",
-    "Maximized": false
-  },
+  "DashboardDebugManager": {},
   "EnableClickThroughOverlay": true,
   "EnableOnDashboardMessaging": true,
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "cf544665-75b6-4568-a1ac-a6601a8a69d7",
+  "Id": "4f981b80-f7cf-4ca1-9d42-e98b36c43d31",
   "Images": [
     {
       "Extension": ".png",
@@ -350,7 +347,7 @@
           "Bindings": {
             "StartAddress": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.name')+'&screen=Primary&mfm=LapTimes'\r\n} else {\r\n\treturn ''\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nvar mfm = ($prop('variable.positionMFM') == 'leftMFM') ? 'lmfm' : 'rmfm'\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.dashName')+'&ver='+$prop('variable.dashVer')+'&screen=Primary&'+mfm+'=LapTimes'\r\n} else {\r\n\treturn ''\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -377,6 +374,14 @@
               },
               "Mode": 2,
               "TargetPropertyName": "Opacity"
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "return ( $prop('variable.dashName') == 'LovelyOverlay') ? 0 : 1",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
             }
           },
           "BorderStyle": {
@@ -394,7 +399,7 @@
           "Left": 0.0,
           "Name": "RectangleItem",
           "Top": 8.0,
-          "Visible": false,
+          "Visible": true,
           "Width": 320.0
         },
         {
@@ -577,7 +582,17 @@
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
+          "BackgroundColor": "#FF000000",
+          "Bindings": {
+            "BackgroundColor": {
+              "Formula": {
+                "Expression": "return ( $prop('variable.dashName') == 'LovelyOverlay' ) ? '#00FFFFFF' : '#FF000000'",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "BackgroundColor"
+            }
+          },
           "Font": "Roboto",
           "FontSize": 12.0,
           "FontWeight": "Bold",
@@ -602,7 +617,8 @@
       },
       "PitScreen": false,
       "ScreenEnabledExpression": {
-        "Expression": ""
+        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst currentSim = ld_getSim()\r\n\r\nif ($prop('variable.positionMFM') == 'leftMFM') {\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeLeftMFM\").trim()\r\n}  else if ($prop('variable.positionMFM') == 'rightMFM') {\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeRightMFM\").trim()\r\n} else {\r\n\tactiveMFM = \"\"\r\n}\r\n\r\nif ( !settings || !activeMFM || activeMFM == \"\" ) {\r\n\t\r\n\t// Show MFM if no activeMFM has been set\r\n\treturn 1\r\n\t\r\n} else {\r\n\t\r\n\t// Is MFM set in activeMFM?\r\n\treturn activeMFM.includes(0)\r\n\t\r\n}",
+        "Interpreter": 1
       },
       "ScreenId": "0bf35db0-820b-4f3d-a637-69c7bbda70df"
     },
@@ -622,7 +638,7 @@
           "Bindings": {
             "StartAddress": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.name')+'&screen=Primary&mfm=Sectors'\r\n} else {\r\n\treturn ''\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nvar mfm = ($prop('variable.positionMFM') == 'leftMFM') ? 'lmfm' : 'rmfm'\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.dashName')+'&ver='+$prop('variable.dashVer')+'&screen=Primary&'+mfm+'=Sectors'\r\n} else {\r\n\treturn ''\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -650,6 +666,14 @@
               },
               "Mode": 2,
               "TargetPropertyName": "Opacity"
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "return ( $prop('variable.dashName') == 'LovelyOverlay') ? 0 : 1",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
             }
           },
           "BorderStyle": {
@@ -668,7 +692,7 @@
           "Left": 0.0,
           "Name": "RectangleItem",
           "Top": 8.0,
-          "Visible": false,
+          "Visible": true,
           "Width": 320.0
         },
         {
@@ -1695,7 +1719,17 @@
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
+          "BackgroundColor": "#FF000000",
+          "Bindings": {
+            "BackgroundColor": {
+              "Formula": {
+                "Expression": "return ( $prop('variable.dashName') == 'LovelyOverlay' ) ? '#00FFFFFF' : '#FF000000'",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "BackgroundColor"
+            }
+          },
           "Font": "Roboto",
           "FontSize": 12.0,
           "FontWeight": "Bold",
@@ -1721,7 +1755,7 @@
       },
       "PitScreen": false,
       "ScreenEnabledExpression": {
-        "Expression": "",
+        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst currentSim = ld_getSim()\r\n\r\nif ($prop('variable.positionMFM') == 'leftMFM') {\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeLeftMFM\").trim()\r\n}  else if ($prop('variable.positionMFM') == 'rightMFM') {\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeRightMFM\").trim()\r\n} else {\r\n\tactiveMFM = \"\"\r\n}\r\n\r\nif ( !settings || !activeMFM || activeMFM == \"\" ) {\r\n\t\r\n\t// Show MFM if no activeMFM has been set\r\n\treturn 1\r\n\t\r\n} else {\r\n\t\r\n\t// Is MFM set in activeMFM?\r\n\treturn activeMFM.includes(1)\r\n\t\r\n}",
         "Interpreter": 1
       },
       "ScreenId": "8c7ce06b-b8a8-497e-b838-f00b17534185"
@@ -1742,7 +1776,7 @@
           "Bindings": {
             "StartAddress": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.name')+'&screen=Primary&mfm=Relative'\r\n} else {\r\n\treturn ''\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nvar mfm = ($prop('variable.positionMFM') == 'leftMFM') ? 'lmfm' : 'rmfm'\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.dashName')+'&ver='+$prop('variable.dashVer')+'&screen=Primary&'+mfm+'=Relative'\r\n} else {\r\n\treturn ''\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -1770,6 +1804,14 @@
               },
               "Mode": 2,
               "TargetPropertyName": "Opacity"
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "return ( $prop('variable.dashName') == 'LovelyOverlay') ? 0 : 1",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
             }
           },
           "BorderStyle": {
@@ -1788,7 +1830,7 @@
           "Left": 0.0,
           "Name": "RectangleItem3",
           "Top": 8.0,
-          "Visible": false,
+          "Visible": true,
           "Width": 320.0
         },
         {
@@ -3435,7 +3477,17 @@
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
+          "BackgroundColor": "#FF000000",
+          "Bindings": {
+            "BackgroundColor": {
+              "Formula": {
+                "Expression": "return ( $prop('variable.dashName') == 'LovelyOverlay' ) ? '#00FFFFFF' : '#FF000000'",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "BackgroundColor"
+            }
+          },
           "Font": "Roboto",
           "FontSize": 12.0,
           "FontWeight": "Bold",
@@ -3461,7 +3513,8 @@
       },
       "PitScreen": false,
       "ScreenEnabledExpression": {
-        "Expression": ""
+        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst currentSim = ld_getSim()\r\n\r\nif ($prop('variable.positionMFM') == 'leftMFM') {\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeLeftMFM\").trim()\r\n}  else if ($prop('variable.positionMFM') == 'rightMFM') {\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeRightMFM\").trim()\r\n} else {\r\n\tactiveMFM = \"\"\r\n}\r\n\r\nif ( !settings || !activeMFM || activeMFM == \"\" ) {\r\n\t\r\n\t// Show MFM if no activeMFM has been set\r\n\treturn 1\r\n\t\r\n} else {\r\n\t\r\n\t// Is MFM set in activeMFM?\r\n\treturn activeMFM.includes(2)\r\n\t\r\n}",
+        "Interpreter": 1
       },
       "ScreenId": "083f6da1-c66e-4799-b24d-f371cf7750e0"
     },
@@ -3481,7 +3534,7 @@
           "Bindings": {
             "StartAddress": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.name')+'&screen=Primary&mfm=Standings'\r\n} else {\r\n\treturn ''\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nvar mfm = ($prop('variable.positionMFM') == 'leftMFM') ? 'lmfm' : 'rmfm'\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.dashName')+'&ver='+$prop('variable.dashVer')+'&screen=Primary&'+mfm+'=Standings'\r\n} else {\r\n\treturn ''\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -3509,6 +3562,14 @@
               },
               "Mode": 2,
               "TargetPropertyName": "Opacity"
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "return ( $prop('variable.dashName') == 'LovelyOverlay') ? 0 : 1",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
             }
           },
           "BorderStyle": {
@@ -3527,7 +3588,7 @@
           "Left": 0.0,
           "Name": "RectangleItem3",
           "Top": 8.0,
-          "Visible": false,
+          "Visible": true,
           "Width": 320.0
         },
         {
@@ -3654,6 +3715,13 @@
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.LeaderboardOpponentGap, SimHub.Plugins",
                   "BackgroundColor": "#00FFFFFF",
                   "Bindings": {
+                    "LeaderboardPosition": {
+                      "Formula": {
+                        "Expression": "repeatindex()"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "LeaderboardPosition"
+                    },
                     "Visible": {
                       "Formula": {
                         "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Qualify' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Lone Qualify'\r\n\t) ? 0 : 1\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='QUALIFY'\r\n\t) ? 0 : 1\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Qualify'\r\n\t) ? 0 : 1\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\treturn ( \r\n\t\t$prop('GameRawData.PacketSessionData.m_sessionType') < 10\r\n\t\t// 0 = unknown, 1 = P1, 2 = P2, 3 = P3, 4 = Short P, 5 = Q1\r\n        // 6 = Q2, 7 = Q3, 8 = Short Q, 9 = OSQ, 10 = R, 11 = R2\r\n        // 12 = Time Trial\r\n\t) ? 0 : 1\r\n\r\n} else {\r\n\r\n\treturn ( \r\n\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='QUALIFY'\r\n\t) ? 0 : 1\r\n\t\r\n}",
@@ -3668,18 +3736,17 @@
                   "FontSize": 20.0,
                   "FontWeight": "Bold",
                   "Format": "0.0",
-                  "GapMode": 1,
+                  "GapMode": 0,
                   "Height": 24.0,
                   "HorizontalAlignment": 2,
-                  "IsFreezed": true,
                   "IsPlayer": false,
                   "IsTextItem": true,
-                  "LeaderboardMode": 2,
+                  "LeaderboardMode": 0,
                   "LeaderboardPosition": 1,
                   "LeaderboardPositionRelativeToPlayer": false,
                   "LeaderboardPositionRelativeToPlayerOnTrack": false,
                   "Left": 240.0,
-                  "Name": "Gap",
+                  "Name": "LeaderboardOpponentGap",
                   "NameStyle": 0,
                   "NoDataText": "",
                   "OpponentFontSize": 20.0,
@@ -3703,7 +3770,6 @@
                   },
                   "PlayerStyleEnabled": true,
                   "PlayerTextColor": "#FFFFE04C",
-                  "RenderingSkip": 15,
                   "TextColor": "#FFFFFFFF",
                   "Top": 20.0,
                   "VerticalAlignment": 1,
@@ -4041,9 +4107,9 @@
                     "FontSize": 20.0,
                     "FontStyle": "Normal",
                     "FontWeight": "Bold",
-                    "TextColor": "#FFFFFFFF"
+                    "TextColor": "#FFFFE04C"
                   },
-                  "OpponentTextColor": "#FFFFFFFF",
+                  "OpponentTextColor": "#FFFFE04C",
                   "PlayerFontSize": 20.0,
                   "PlayerFontStyle": "Normal",
                   "PlayerFontWeight": "Bold",
@@ -4053,10 +4119,10 @@
                     "FontWeight": "Bold",
                     "TextColor": "#FFFFE04C"
                   },
-                  "PlayerStyleEnabled": true,
+                  "PlayerStyleEnabled": false,
                   "PlayerTextColor": "#FFFFE04C",
                   "SpecialCharsWidth": 5.0,
-                  "TextColor": "#FFFFFFFF",
+                  "TextColor": "#FFFFE04C",
                   "Top": 236.0,
                   "UseMonospacedText": true,
                   "VerticalAlignment": 1,
@@ -4209,7 +4275,17 @@
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
+          "BackgroundColor": "#FF000000",
+          "Bindings": {
+            "BackgroundColor": {
+              "Formula": {
+                "Expression": "return ( $prop('variable.dashName') == 'LovelyOverlay' ) ? '#00FFFFFF' : '#FF000000'",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "BackgroundColor"
+            }
+          },
           "Font": "Roboto",
           "FontSize": 12.0,
           "FontWeight": "Bold",
@@ -4234,7 +4310,8 @@
       },
       "PitScreen": false,
       "ScreenEnabledExpression": {
-        "Expression": ""
+        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst currentSim = ld_getSim()\r\n\r\nif ($prop('variable.positionMFM') == 'leftMFM') {\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeLeftMFM\").trim()\r\n}  else if ($prop('variable.positionMFM') == 'rightMFM') {\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeRightMFM\").trim()\r\n} else {\r\n\tactiveMFM = \"\"\r\n}\r\n\r\nif ( !settings || !activeMFM || activeMFM == \"\" ) {\r\n\t\r\n\t// Show MFM if no activeMFM has been set\r\n\treturn 1\r\n\t\r\n} else {\r\n\t\r\n\t// Is MFM set in activeMFM?\r\n\treturn activeMFM.includes(3)\r\n\t\r\n}",
+        "Interpreter": 1
       },
       "ScreenId": "42e8404d-3619-4107-944a-baa94aba1074"
     },
@@ -4254,7 +4331,7 @@
           "Bindings": {
             "StartAddress": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.name')+'&screen=Primary&mfm=Tires'\r\n} else {\r\n\treturn ''\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nvar mfm = ($prop('variable.positionMFM') == 'leftMFM') ? 'lmfm' : 'rmfm'\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.dashName')+'&ver='+$prop('variable.dashVer')+'&screen=Primary&'+mfm+'=Tires'\r\n} else {\r\n\treturn ''\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -4282,6 +4359,14 @@
               },
               "Mode": 2,
               "TargetPropertyName": "Opacity"
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "return ( $prop('variable.dashName') == 'LovelyOverlay') ? 0 : 1",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
             }
           },
           "BorderStyle": {
@@ -4300,7 +4385,7 @@
           "Left": 0.0,
           "Name": "RectangleItem3",
           "Top": 8.0,
-          "Visible": false,
+          "Visible": true,
           "Width": 320.0
         },
         {
@@ -6670,7 +6755,7 @@
               "Left": 19.0,
               "Name": "Wear",
               "Top": 106.0,
-              "Visible": true,
+              "Visible": false,
               "Width": 288.0
             },
             {
@@ -7033,7 +7118,17 @@
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
+          "BackgroundColor": "#FF000000",
+          "Bindings": {
+            "BackgroundColor": {
+              "Formula": {
+                "Expression": "return ( $prop('variable.dashName') == 'LovelyOverlay' ) ? '#00FFFFFF' : '#FF000000'",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "BackgroundColor"
+            }
+          },
           "Font": "Roboto",
           "FontSize": 12.0,
           "FontWeight": "Bold",
@@ -7059,7 +7154,7 @@
       },
       "PitScreen": false,
       "ScreenEnabledExpression": {
-        "Expression": "",
+        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst currentSim = ld_getSim()\r\n\r\nif ($prop('variable.positionMFM') == 'leftMFM') {\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeLeftMFM\").trim()\r\n}  else if ($prop('variable.positionMFM') == 'rightMFM') {\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeRightMFM\").trim()\r\n} else {\r\n\tactiveMFM = \"\"\r\n}\r\n\r\nif ( !settings || !activeMFM || activeMFM == \"\" ) {\r\n\t\r\n\t// Show MFM if no activeMFM has been set\r\n\treturn 1\r\n\t\r\n} else {\r\n\t\r\n\t// Is MFM set in activeMFM?\r\n\treturn activeMFM.includes(4)\r\n\t\r\n}",
         "Interpreter": 1
       },
       "ScreenId": "2b07ae57-8298-448f-8838-d5be9ab0cac0"
@@ -7080,7 +7175,7 @@
           "Bindings": {
             "StartAddress": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.name')+'&screen=Primary&mfm=TiresAVG'\r\n} else {\r\n\treturn ''\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nvar mfm = ($prop('variable.positionMFM') == 'leftMFM') ? 'lmfm' : 'rmfm'\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.dashName')+'&ver='+$prop('variable.dashVer')+'&screen=Primary&'+mfm+'=TiresAVG'\r\n} else {\r\n\treturn ''\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -7107,6 +7202,14 @@
               },
               "Mode": 2,
               "TargetPropertyName": "Opacity"
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "return ( $prop('variable.dashName') == 'LovelyOverlay') ? 0 : 1",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
             }
           },
           "BorderStyle": {
@@ -7125,7 +7228,7 @@
           "Left": 0.0,
           "Name": "RectangleItem2",
           "Top": 8.0,
-          "Visible": false,
+          "Visible": true,
           "Width": 320.0
         },
         {
@@ -8286,8 +8389,16 @@
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
+          "BackgroundColor": "#FF000000",
           "Bindings": {
+            "BackgroundColor": {
+              "Formula": {
+                "Expression": "return ( $prop('variable.dashName') == 'LovelyOverlay' ) ? '#00FFFFFF' : '#FF000000'",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "BackgroundColor"
+            },
             "Text": {
               "Formula": {
                 "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\ttireLapAvg = 2\r\n\ttireLapAvgResetKey = \"Shift+A\"\r\n} else {\r\n\ttireLapAvg = settings.tireLapAvg\r\n\ttireLapAvgResetKey = settings.tireLapAvgResetKey\r\n}\r\n\r\nif ($prop('InputStatus.KeyboardReaderPlugin.'+tireLapAvgResetKey)) {\r\n\treturn 'CLEARING'\r\n}\r\n\r\nreturn tireLapAvg + ' LAP TIRE AVG'",
@@ -8322,7 +8433,7 @@
       },
       "PitScreen": false,
       "ScreenEnabledExpression": {
-        "Expression": "return (\r\n\t$prop('DataCorePlugin.CurrentGame') == 'IRacing'\r\n) ? 0 : 1",
+        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst currentSim = ld_getSim()\r\n\r\nif ($prop('variable.positionMFM') == 'leftMFM') {\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeLeftMFM\").trim()\r\n}  else if ($prop('variable.positionMFM') == 'rightMFM') {\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeRightMFM\").trim()\r\n} else {\r\n\tactiveMFM = \"\"\r\n}\r\n\r\nif ( !settings || !activeMFM || activeMFM == \"\" ) {\r\n\t\r\n\t// Show MFM if no activeMFM has been set\r\n\t// Hide for iRacing\r\n\treturn (\r\n\t\tcurrentSim == 'IRacing'\r\n\t) ? 0 : 1\r\n\t\r\n} else {\r\n\t\r\n\t// Is MFM set in activeMFM?\r\n\t// Hide for iRacing\r\n\treturn (\r\n\t\tcurrentSim == 'IRacing'\r\n\t) ? 0 : activeMFM.includes(5)\r\n\t\r\n}",
         "Interpreter": 1
       },
       "ScreenId": "77c15cba-fe31-4c75-80d2-27a39b0c2d44"
@@ -8343,7 +8454,7 @@
           "Bindings": {
             "StartAddress": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.name')+'&screen=Primary&mfm=Damage'\r\n} else {\r\n\treturn ''\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nvar mfm = ($prop('variable.positionMFM') == 'leftMFM') ? 'lmfm' : 'rmfm'\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.dashName')+'&ver='+$prop('variable.dashVer')+'&screen=Primary&'+mfm+'=Damage'\r\n} else {\r\n\treturn ''\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -8371,6 +8482,14 @@
               },
               "Mode": 2,
               "TargetPropertyName": "Opacity"
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "return ( $prop('variable.dashName') == 'LovelyOverlay') ? 0 : 1",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
             }
           },
           "BorderStyle": {
@@ -8389,7 +8508,7 @@
           "Left": 0.0,
           "Name": "RectangleItem3",
           "Top": 8.0,
-          "Visible": false,
+          "Visible": true,
           "Width": 320.0
         },
         {
@@ -8442,6 +8561,9 @@
               "NextScreenCommand": 0,
               "PreviousScreenCommand": 0,
               "Top": 30.0,
+              "Variables": {
+                "DashboardVariables": []
+              },
               "Visible": true,
               "Width": 92.39999999999999
             },
@@ -9686,7 +9808,17 @@
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
+          "BackgroundColor": "#FF000000",
+          "Bindings": {
+            "BackgroundColor": {
+              "Formula": {
+                "Expression": "return ( $prop('variable.dashName') == 'LovelyOverlay' ) ? '#00FFFFFF' : '#FF000000'",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "BackgroundColor"
+            }
+          },
           "Font": "Roboto",
           "FontSize": 12.0,
           "FontWeight": "Bold",
@@ -9712,7 +9844,7 @@
       },
       "PitScreen": false,
       "ScreenEnabledExpression": {
-        "Expression": "return (\r\n\t$prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ||\r\n\t$prop('DataCorePlugin.CurrentGame') =='AssettoCorsa' ||\r\n\t$prop('DataCorePlugin.CurrentGame').startsWith('F120')\r\n) ? 1 : 0",
+        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst currentSim = ld_getSim()\r\n\r\nif ($prop('variable.positionMFM') == 'leftMFM') {\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeLeftMFM\").trim()\r\n}  else if ($prop('variable.positionMFM') == 'rightMFM') {\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeRightMFM\").trim()\r\n} else {\r\n\tactiveMFM = \"\"\r\n}\r\n\r\nif ( !settings || !activeMFM || activeMFM == \"\" ) {\r\n\r\n\t// Show MFM if no activeMFM has been set\r\n\t// Show only for\r\n\treturn (\r\n\t\tcurrentSim == 'ACC' ||\r\n\t\tcurrentSim =='AC' ||\r\n\t\tcurrentSim == 'F1'\r\n\t) ? 1 : 0\r\n\t\r\n} else {\r\n\t\r\n\t// Is MFM set in activeMFM?\r\n\t// Show only for\r\n\treturn (\r\n\t\tcurrentSim == 'ACC' ||\r\n\t\tcurrentSim =='AC' ||\r\n\t\tcurrentSim == 'F1'\r\n\t) ? activeMFM.includes(6) : 0\r\n\t\r\n}",
         "Interpreter": 1
       },
       "ScreenId": "6a7f83c9-7fec-400f-b4dd-7e428d60cf3c"
@@ -9733,7 +9865,7 @@
           "Bindings": {
             "StartAddress": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.name')+'&screen=Primary&mfm=Status'\r\n} else {\r\n\treturn ''\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nvar mfm = ($prop('variable.positionMFM') == 'leftMFM') ? 'lmfm' : 'rmfm'\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.dashName')+'&ver='+$prop('variable.dashVer')+'&screen=Primary&'+mfm+'=Status'\r\n} else {\r\n\treturn ''\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -9760,6 +9892,14 @@
               },
               "Mode": 2,
               "TargetPropertyName": "Opacity"
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "return ( $prop('variable.dashName') == 'LovelyOverlay') ? 0 : 1",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
             }
           },
           "BorderStyle": {
@@ -9777,7 +9917,7 @@
           "Left": 0.0,
           "Name": "RectangleItem4",
           "Top": 8.0,
-          "Visible": false,
+          "Visible": true,
           "Width": 320.0
         },
         {
@@ -9800,11 +9940,11 @@
               "Height": 1.0,
               "IsFreezed": true,
               "IsRectangleItem": true,
-              "Left": 1.5,
+              "Left": 2.0,
               "Name": "RectangleItem",
               "Top": 149.5,
               "Visible": true,
-              "Width": 321.0
+              "Width": 316.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
@@ -10439,11 +10579,11 @@
           ],
           "Group": true,
           "Height": 245.0,
-          "Left": 1.5,
+          "Left": 2.0,
           "Name": "Generic Status",
           "Top": 22.0,
-          "Visible": false,
-          "Width": 321.0
+          "Visible": true,
+          "Width": 318.5
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
@@ -11024,22 +11164,22 @@
               "BackgroundColor": "#FF353535",
               "Height": 1.0,
               "IsRectangleItem": true,
-              "Left": 1.5,
+              "Left": 2.0,
               "Name": "RectangleItem4",
               "Top": 185.5,
               "Visible": true,
-              "Width": 321.0
+              "Width": 316.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
               "BackgroundColor": "#FF353535",
               "Height": 1.0,
               "IsRectangleItem": true,
-              "Left": 1.5,
+              "Left": 2.0,
               "Name": "RectangleItem",
               "Top": 105.5,
               "Visible": true,
-              "Width": 321.0
+              "Width": 316.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
@@ -11110,15 +11250,25 @@
           ],
           "Group": true,
           "Height": 240.0,
-          "Left": 1.5,
+          "Left": 2.0,
           "Name": "F1 Status",
           "Top": 22.0,
-          "Visible": true,
-          "Width": 321.0
+          "Visible": false,
+          "Width": 316.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
+          "BackgroundColor": "#FF000000",
+          "Bindings": {
+            "BackgroundColor": {
+              "Formula": {
+                "Expression": "return ( $prop('variable.dashName') == 'LovelyOverlay' ) ? '#00FFFFFF' : '#FF000000'",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "BackgroundColor"
+            }
+          },
           "Font": "Roboto",
           "FontSize": 12.0,
           "FontWeight": "Bold",
@@ -11144,7 +11294,7 @@
       },
       "PitScreen": false,
       "ScreenEnabledExpression": {
-        "Expression": "return (\r\n\t$prop('DataCorePlugin.CurrentGame') == 'IRacing' ||\r\n\t$prop('DataCorePlugin.CurrentGame') =='Automobilista2' ||\r\n\t$prop('DataCorePlugin.CurrentGame').startsWith('F120')\r\n) ? 1 : 0",
+        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst currentSim = ld_getSim()\r\n\r\nif ($prop('variable.positionMFM') == 'leftMFM') {\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeLeftMFM\").trim()\r\n}  else if ($prop('variable.positionMFM') == 'rightMFM') {\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeRightMFM\").trim()\r\n} else {\r\n\tactiveMFM = \"\"\r\n}\r\n\r\nif ( !settings || !activeMFM || activeMFM == \"\" ) {\r\n\t\r\n\t// Show MFM if no activeMFM has been set\r\n\t// Show only for\r\n\treturn (\r\n\t\tcurrentSim == 'IRacing' ||\r\n\t\tcurrentSim =='Automobilista2' ||\r\n\t\tcurrentSim == 'F1'\r\n\t) ? 1 : 0\r\n\t\r\n} else {\r\n\t\r\n\t// Is MFM set in activeMFM?\r\n\t// Show only for\r\n\treturn (\r\n\t\tcurrentSim == 'IRacing' ||\r\n\t\tcurrentSim =='Automobilista2' ||\r\n\t\tcurrentSim == 'F1'\r\n\t) ? activeMFM.includes(7) : 0\r\n\t\r\n}",
         "Interpreter": 1
       },
       "ScreenId": "5efdedc3-c956-451c-a9f5-8fb0dbd07154"
@@ -11165,7 +11315,7 @@
           "Bindings": {
             "StartAddress": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.name')+'&screen=Primary&mfm=Map'\r\n} else {\r\n\treturn ''\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nvar mfm = ($prop('variable.positionMFM') == 'leftMFM') ? 'lmfm' : 'rmfm'\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.dashName')+'&ver='+$prop('variable.dashVer')+'&screen=Primary&'+mfm+'=Map'\r\n} else {\r\n\treturn ''\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -11192,6 +11342,14 @@
               },
               "Mode": 2,
               "TargetPropertyName": "Opacity"
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "return ( $prop('variable.dashName') == 'LovelyOverlay') ? 0 : 1",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
             }
           },
           "BorderStyle": {
@@ -11209,7 +11367,7 @@
           "Left": 0.0,
           "Name": "RectangleItem3",
           "Top": 8.0,
-          "Visible": false,
+          "Visible": true,
           "Width": 320.0
         },
         {
@@ -11359,7 +11517,17 @@
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
+          "BackgroundColor": "#FF000000",
+          "Bindings": {
+            "BackgroundColor": {
+              "Formula": {
+                "Expression": "return ( $prop('variable.dashName') == 'LovelyOverlay' ) ? '#00FFFFFF' : '#FF000000'",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "BackgroundColor"
+            }
+          },
           "BorderStyle": {
             "RadiusBottomLeft": 9,
             "RadiusBottomRight": 9,
@@ -11390,7 +11558,8 @@
       },
       "PitScreen": false,
       "ScreenEnabledExpression": {
-        "Expression": ""
+        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst currentSim = ld_getSim()\r\n\r\nif ($prop('variable.positionMFM') == 'leftMFM') {\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeLeftMFM\").trim()\r\n}  else if ($prop('variable.positionMFM') == 'rightMFM') {\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeRightMFM\").trim()\r\n} else {\r\n\tactiveMFM = \"\"\r\n}\r\n\r\nif ( !settings || !activeMFM || activeMFM == \"\" ) {\r\n\t\r\n\t// Show MFM if no activeMFM has been set\r\n\treturn 1\r\n\t\r\n} else {\r\n\t\r\n\t// Is MFM set in activeMFM?\r\n\treturn activeMFM.includes(8)\r\n\t\r\n}",
+        "Interpreter": 1
       },
       "ScreenId": "8962a7ab-1471-4063-9327-c1cafc97bdce"
     }
@@ -11408,7 +11577,7 @@
         "ValueExpression": {
           "Expression": ""
         },
-        "VariableName": "name"
+        "VariableName": "dashName"
       },
       {
         "EvaluateOnlyOnce": false,
@@ -11416,7 +11585,23 @@
         "ValueExpression": {
           "Expression": ""
         },
-        "VariableName": "version"
+        "VariableName": "dashVer"
+      },
+      {
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "shVer"
+      },
+      {
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "positionMFM"
       }
     ]
   },

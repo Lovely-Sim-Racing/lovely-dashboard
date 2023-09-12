@@ -3,15 +3,13 @@
   "BackgroundOpacity": 100.0,
   "BaseHeight": 333,
   "BaseWidth": 85,
-  "DashboardDebugManager": {
-    "Maximized": false
-  },
+  "DashboardDebugManager": {},
   "EnableClickThroughOverlay": true,
   "EnableOnDashboardMessaging": true,
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "1f8f170f-1472-4405-8393-f56686581307",
+  "Id": "188eacfe-798f-41ba-9d5c-408e9c0ca36d",
   "Images": [],
   "IsOverlay": false,
   "Metadata": {
@@ -171,6 +169,13 @@
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.LeaderboardOpponentGap, SimHub.Plugins",
               "BackgroundColor": "#00FFFFFF",
               "Bindings": {
+                "LeaderboardPosition": {
+                  "Formula": {
+                    "Expression": "repeatindex()"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "LeaderboardPosition"
+                },
                 "Visible": {
                   "Formula": {
                     "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Qualify' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Lone Qualify'\r\n\t) ? 0 : 1\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='QUALIFY'\r\n\t) ? 0 : 1\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Qualify'\r\n\t) ? 0 : 1\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\treturn ( \r\n\t\t$prop('GameRawData.PacketSessionData.m_sessionType') < 10\r\n\t\t// 0 = unknown, 1 = P1, 2 = P2, 3 = P3, 4 = Short P, 5 = Q1\r\n        // 6 = Q2, 7 = Q3, 8 = Short Q, 9 = OSQ, 10 = R, 11 = R2\r\n        // 12 = Time Trial\r\n\t) ? 0 : 1\r\n\r\n} else {\r\n\r\n\treturn ( \r\n\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='QUALIFY'\r\n\t) ? 0 : 1\r\n\t\r\n}",
@@ -180,23 +185,22 @@
                   "TargetPropertyName": "Visible"
                 }
               },
-              "CharWidth": 10.0,
               "EmptyValueText": "0.0",
               "Font": "Roboto",
               "FontSize": 20.0,
               "FontWeight": "Bold",
               "Format": "0.0",
-              "GapMode": 1,
+              "GapMode": 0,
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsPlayer": false,
               "IsTextItem": true,
-              "LeaderboardMode": 2,
+              "LeaderboardMode": 0,
               "LeaderboardPosition": 1,
               "LeaderboardPositionRelativeToPlayer": false,
               "LeaderboardPositionRelativeToPlayerOnTrack": false,
               "Left": 25.0,
-              "Name": "Gap",
+              "Name": "LeaderboardOpponentGap",
               "NameStyle": 0,
               "NoDataText": "",
               "OpponentFontSize": 20.0,
@@ -220,7 +224,6 @@
               },
               "PlayerStyleEnabled": true,
               "PlayerTextColor": "#FFFFE04C",
-              "SpecialCharsWidth": 4.0,
               "TextColor": "#FFFFFFFF",
               "Top": 19.0,
               "VerticalAlignment": 1,
@@ -563,5 +566,8 @@
   "ShowForeground": true,
   "ShowOnScreenControls": true,
   "SnapToGrid": false,
+  "Variables": {
+    "DashboardVariables": []
+  },
   "Version": 2
 }

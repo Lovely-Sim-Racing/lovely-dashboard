@@ -3,15 +3,13 @@
   "BackgroundOpacity": 100.0,
   "BaseHeight": 480,
   "BaseWidth": 1280,
-  "DashboardDebugManager": {
-    "Maximized": false
-  },
+  "DashboardDebugManager": {},
   "EnableClickThroughOverlay": true,
   "EnableOnDashboardMessaging": true,
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "8f9ae771-1d98-4ca6-b32d-8edd9f2268cf",
+  "Id": "9c88f40c-bd10-4053-8c85-d71cebac31e4",
   "Images": [
     {
       "Extension": ".png",
@@ -112,6 +110,16 @@
       "Name": "icon-rf2",
       "Optimized": true,
       "Width": 80
+    },
+    {
+      "Extension": ".png",
+      "Height": 120,
+      "Length": 3146,
+      "MD5": "608b3d577d86e813e4b91160ceaeeb21",
+      "Modified": false,
+      "Name": "Simhub Update",
+      "Optimized": true,
+      "Width": 148
     }
   ],
   "IsOverlay": false,
@@ -131,7 +139,7 @@
     "MetadataVersion": 2.0,
     "OverlaySizeWarning": true,
     "PitScreensIndexs": [],
-    "ScreenCount": 3.0,
+    "ScreenCount": 4.0,
     "Title": "Lovely Dashboard XL",
     "Width": 1280.0
   },
@@ -152,7 +160,7 @@
           "Bindings": {
             "StartAddress": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.name')+'&screen=Idle'\r\n} else {\r\n\treturn ''\r\n}\r\n",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.dashName')+'&ver='+$prop('variable.dashVer')+'&screen=Idle'\r\n} else {\r\n\treturn ''\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -265,7 +273,7 @@
           "Bindings": {
             "Text": {
               "Formula": {
-                "Expression": "return \"Lovely Dashboard XL v\" + $prop('variable.version')",
+                "Expression": "return \"Lovely Dashboard v\" + $prop('variable.dashVer')",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -276,11 +284,10 @@
           "FontSize": 16.0,
           "Height": 25.0,
           "HorizontalAlignment": 1,
-          "IsFreezed": true,
           "IsTextItem": true,
           "Left": 510.0,
           "Name": "Version",
-          "Text": "Lovely Dashboard XL vX.X.X",
+          "Text": "Lovely Dashboard vX.X.X",
           "TextColor": "#FFFFFFFF",
           "Top": 395.0,
           "VerticalAlignment": 1,
@@ -294,14 +301,15 @@
             "Text": {
               "FormatString": "",
               "Formula": {
-                "Expression": "'NEW VERSION AVAILABLE: ' + downloadstring(86400, 'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt') + ' - Visit j76.me/Update'"
+                "Expression": "const json_version = downloadstringasync(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.json')\r\n\r\n// Break if error in JSON\r\nif ( json_version == null ) { return 0 }\r\n\r\nconst latestVer = JSON.parse(json_version)\r\n\r\nreturn 'NEW VERSION AVAILABLE: ' + latestVer.LovelyDashboardXL + ' - Visit j76.me/Update'",
+                "Interpreter": 1
               },
               "Mode": 2,
               "TargetPropertyName": "Text"
             },
             "Visible": {
               "Formula": {
-                "Expression": "var currentVer = $prop('variable.version')\r\nvar latestVer = downloadstring(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.txt')\r\n\r\nif ( compareversions( currentVer, latestVer ) == '-1') {\r\n\treturn '1'\r\n} else {\r\n\treturn '0'\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
+                "Expression": "var currentVer = $prop('variable.dashVer')\r\nconst json_version = downloadstringasync(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.json')\r\n\r\n// Break if error in JSON\r\nif ( json_version == null ) { return 0 }\r\n\r\nconst latestVer = JSON.parse(json_version)\r\n\r\nif ( compareversions( currentVer, latestVer.LovelyDashboardXL ) == '-1') {\r\n\treturn true\r\n} else {\r\n\treturn false\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -585,8 +593,30 @@
           "NextScreenCommand": 0,
           "PreviousScreenCommand": 0,
           "Top": 15.0,
+          "Variables": {
+            "DashboardVariables": []
+          },
           "Visible": true,
           "Width": 730.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
+          "AutoSize": true,
+          "BackgroundColor": "#00FFFFFF",
+          "EnableScreenRolesAndActivation": true,
+          "FileName": "Debug.djson",
+          "Height": 100.0,
+          "InitialScreenIndex": 0,
+          "Left": 20.0,
+          "Name": "Debug",
+          "NextScreenCommand": 0,
+          "PreviousScreenCommand": 0,
+          "Top": 360.0,
+          "Variables": {
+            "DashboardVariables": []
+          },
+          "Visible": true,
+          "Width": 200.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
@@ -727,7 +757,7 @@
           "Bindings": {
             "StartAddress": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.name')+'&screen=Primary'\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.dashName')+'&ver='+$prop('variable.dashVer')+'&screen=Primary'\r\n} else {\r\n\treturn ''\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -1529,6 +1559,9 @@
           "NextScreenCommand": 0,
           "PreviousScreenCommand": 0,
           "Top": 124.0,
+          "Variables": {
+            "DashboardVariables": []
+          },
           "Visible": true,
           "Width": 380.0
         },
@@ -1556,6 +1589,9 @@
           "NextScreenCommand": 0,
           "PreviousScreenCommand": 0,
           "Top": 5.0,
+          "Variables": {
+            "DashboardVariables": []
+          },
           "Visible": true,
           "Width": 420.0
         },
@@ -1573,6 +1609,9 @@
           "NextScreenCommand": 0,
           "PreviousScreenCommand": 0,
           "Top": 383.0,
+          "Variables": {
+            "DashboardVariables": []
+          },
           "Visible": true,
           "Width": 850.0
         },
@@ -1608,6 +1647,18 @@
           "NextScreenCommand": 2,
           "PreviousScreenCommand": 0,
           "Top": 100.0,
+          "Variables": {
+            "DashboardVariables": [
+              {
+                "EvaluateOnlyOnce": false,
+                "OverrideWithParentDashboardVariableWhenAvailable": true,
+                "ValueExpression": {
+                  "Expression": "'rightMFM'"
+                },
+                "VariableName": "positionMFM"
+              }
+            ]
+          },
           "Visible": true,
           "Width": 320.0
         },
@@ -1625,6 +1676,9 @@
           "NextScreenCommand": 0,
           "PreviousScreenCommand": 0,
           "Top": 310.0,
+          "Variables": {
+            "DashboardVariables": []
+          },
           "Visible": true,
           "Width": 160.0
         },
@@ -1652,6 +1706,9 @@
           "NextScreenCommand": 5,
           "PreviousScreenCommand": 0,
           "Top": 0.0,
+          "Variables": {
+            "DashboardVariables": []
+          },
           "Visible": true,
           "Width": 160.0
         },
@@ -1687,6 +1744,18 @@
           "NextScreenCommand": 1,
           "PreviousScreenCommand": 0,
           "Top": 100.0,
+          "Variables": {
+            "DashboardVariables": [
+              {
+                "EvaluateOnlyOnce": false,
+                "OverrideWithParentDashboardVariableWhenAvailable": true,
+                "ValueExpression": {
+                  "Expression": "'leftMFM'"
+                },
+                "VariableName": "positionMFM"
+              }
+            ]
+          },
           "Visible": true,
           "Width": 320.0
         },
@@ -1714,6 +1783,9 @@
           "NextScreenCommand": 0,
           "PreviousScreenCommand": 0,
           "Top": 5.0,
+          "Variables": {
+            "DashboardVariables": []
+          },
           "Visible": true,
           "Width": 320.0
         },
@@ -1741,6 +1813,9 @@
           "NextScreenCommand": 0,
           "PreviousScreenCommand": 0,
           "Top": 5.0,
+          "Variables": {
+            "DashboardVariables": []
+          },
           "Visible": true,
           "Width": 320.0
         },
@@ -1776,6 +1851,9 @@
           "NextScreenCommand": 0,
           "PreviousScreenCommand": 0,
           "Top": 20.0,
+          "Variables": {
+            "DashboardVariables": []
+          },
           "Visible": true,
           "Width": 286.0
         },
@@ -1792,6 +1870,9 @@
           "NextScreenCommand": 0,
           "PreviousScreenCommand": 0,
           "Top": 50.0,
+          "Variables": {
+            "DashboardVariables": []
+          },
           "Visible": true,
           "Width": 814.0
         },
@@ -1894,6 +1975,25 @@
           "Top": 0.0,
           "Visible": false,
           "Width": 1280.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
+          "AutoSize": true,
+          "BackgroundColor": "#00FFFFFF",
+          "EnableScreenRolesAndActivation": true,
+          "FileName": "Debug.djson",
+          "Height": 100.0,
+          "InitialScreenIndex": 0,
+          "Left": 20.0,
+          "Name": "Debug",
+          "NextScreenCommand": 0,
+          "PreviousScreenCommand": 0,
+          "Top": 360.0,
+          "Variables": {
+            "DashboardVariables": []
+          },
+          "Visible": true,
+          "Width": 200.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
@@ -2051,6 +2151,9 @@
           "NextScreenCommand": 0,
           "PreviousScreenCommand": 0,
           "Top": 0.0,
+          "Variables": {
+            "DashboardVariables": []
+          },
           "Visible": true,
           "Width": 850.0
         }
@@ -2067,6 +2170,155 @@
         "Expression": ""
       },
       "ScreenId": "9bc2592b-30ac-4170-abfe-82daccefc11b"
+    },
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#00FFFFFF",
+      "IdleScreen": false,
+      "InGameScreen": false,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": true,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "BackgroundColor": "#FF000000",
+          "BorderStyle": {
+            "Bindings": {
+              "RadiusBottomLeft": {
+                "Formula": {
+                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius + 5",
+                  "Interpreter": 1
+                },
+                "Mode": 2,
+                "TargetPropertyName": "RadiusBottomLeft"
+              },
+              "RadiusBottomRight": {
+                "Formula": {
+                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius + 5",
+                  "Interpreter": 1
+                },
+                "Mode": 2,
+                "TargetPropertyName": "RadiusBottomRight"
+              },
+              "RadiusTopLeft": {
+                "Formula": {
+                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius + 5",
+                  "Interpreter": 1
+                },
+                "Mode": 2,
+                "TargetPropertyName": "RadiusTopLeft"
+              },
+              "RadiusTopRight": {
+                "Formula": {
+                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius + 5",
+                  "Interpreter": 1
+                },
+                "Mode": 2,
+                "TargetPropertyName": "RadiusTopRight"
+              }
+            },
+            "RadiusBottomLeft": 50,
+            "RadiusBottomRight": 50,
+            "RadiusTopLeft": 50,
+            "RadiusTopRight": 50
+          },
+          "Height": 480.0,
+          "IsRectangleItem": true,
+          "Left": 0.0,
+          "Name": "Background",
+          "Top": 0.0,
+          "Visible": true,
+          "Width": 1280.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Text": {
+              "Formula": {
+                "Expression": "return \"The Lovely Dashboard XL v\" + $prop('variable.dashVer') + \" requires a newer version of SimHub, please visit the official website to download it.\\n\\nvisit: j76.me/simhub\"",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Text"
+            }
+          },
+          "Font": "Roboto",
+          "FontSize": 16.0,
+          "Height": 80.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 434.0,
+          "Name": "Version",
+          "Text": "Update Note",
+          "TextColor": "#FFFFFFFF",
+          "TextWrapping": 0,
+          "Top": 292.0,
+          "VerticalAlignment": 0,
+          "Visible": true,
+          "Width": 412.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FFFF0000",
+          "Bindings": {
+            "Text": {
+              "FormatString": "",
+              "Formula": {
+                "Expression": "return 'SIMHUB UPDATE REQUIRED: v' + $prop('variable.shVer')",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Text"
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 10,
+            "RadiusBottomRight": 10,
+            "RadiusTopLeft": 10,
+            "RadiusTopRight": 10
+          },
+          "Font": "Roboto",
+          "FontSize": 16.0,
+          "FontWeight": "Bold",
+          "Height": 24.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 490.0,
+          "Name": "New Version Alert",
+          "Text": "SIMHUB UPDATE REQUIRED: vX.X.X",
+          "TextColor": "#FFFFFFFF",
+          "Top": 248.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 300.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+          "AutoSize": true,
+          "BackgroundColor": "#00FFFFFF",
+          "Height": 120.0,
+          "Image": "Simhub Update",
+          "Left": 566.0,
+          "Name": "ImageItem",
+          "Top": 108.0,
+          "Visible": true,
+          "Width": 148.0
+        }
+      ],
+      "Name": "Simhub",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": "var currentVer = $prop('DataCorePlugin.SimHubVersion')\r\nvar minVer = $prop('variable.shVer')\r\n\r\nif ( compareversions( currentVer, minVer ) == '-1') {\r\n\treturn true\r\n} else {\r\n\treturn false\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
+        "Interpreter": 1
+      },
+      "PitScreen": false,
+      "ScreenEnabledExpression": {
+        "Expression": ""
+      },
+      "ScreenId": "c4cdbe89-7c5e-4447-bf2e-7c61876b33f2"
     }
   ],
   "ShowBackground": true,
@@ -2078,21 +2330,27 @@
     "DashboardVariables": [
       {
         "EvaluateOnlyOnce": false,
-        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "OverrideWithParentDashboardVariableWhenAvailable": false,
         "ValueExpression": {
-          "Expression": "return \"2.2.0\"",
-          "Interpreter": 1
+          "Expression": "'LovelyDashboardXL'"
         },
-        "VariableName": "version"
+        "VariableName": "dashName"
       },
       {
         "EvaluateOnlyOnce": false,
-        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "OverrideWithParentDashboardVariableWhenAvailable": false,
         "ValueExpression": {
-          "Expression": "return \"LovelyDashboardXL\"",
-          "Interpreter": 1
+          "Expression": "'2.3.0'"
         },
-        "VariableName": "name"
+        "VariableName": "dashVer"
+      },
+      {
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": false,
+        "ValueExpression": {
+          "Expression": "'9.0.2'"
+        },
+        "VariableName": "shVer"
       }
     ]
   },

@@ -1,8 +1,3 @@
-//
-// Lovely Dashboard JavaScript Extensions
-// Please drop this file in the 'Simhub/JavascriptExtensions' folder
-//
-
 function ld_GetPlayerName() {
     const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')
     const settings = JSON.parse(json_settings);
@@ -188,19 +183,24 @@ function ld_GetRelCarLogo (relPosition) {
 function ld_formatName (name, mode) {
 
     name = name.replace('�0', 'E'); // replace unicode characters
-    name = name.toLowerCase().replace(/\b\w/g, s => s.toUpperCase()); // transform to title case
+    //name = name.toLowerCase().replace(/\b\w/g, s => s.toUpperCase()); // transform to title case
 
     if (name!=null) {
         var full_name = name.split(' ');
+        var first_name = full_name.shift();
+        var last_name = full_name;
         if (mode == 2) {
             // Firstname L.
-            return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'
+            //return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'
+            return first_name + ' ' + last_name.join(" ").substr(0,1) + '.'
         } else if (mode == 3) {
             // Firstname Lastname
-            return full_name[0] + ' ' + full_name[full_name.length-1]
+            //return full_name[0] + ' ' + full_name[full_name.length-1]
+            return first_name + ' ' + last_name.join(" ")
         } else {
             // F. Lastname
-            return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]
+            //return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]
+            return first_name.substr(0,1) + '. ' + last_name.join(" ")
         }
     } else {
         return ''
@@ -326,6 +326,31 @@ function ld_changed(delay, value) {
 		root['ld_triggerTime'] = root['ld_time'];
 	}
 	return root['ld_triggerTime'] == null ? false : root['ld_time'] - root['ld_triggerTime'] <= delay/1000;
+}
+
+function ld_getSim() {
+    currentGame = $prop('DataCorePlugin.CurrentGame')
+
+    switch (currentGame) {
+        case "AssettoCorsaCompetizione": 
+            return "ACC"
+        case "AssettoCorsa": 
+            return "AC"
+        case "IRacing": 
+            return "IRacing"
+        case "Automobilista2": 
+            return "Automobilista2"
+        case "RFactor2": 
+            return "RFactor2"
+        case "F12020":
+        case "F12021":
+        case "F12022":
+        case "F12023":
+            return "F1"
+        default:
+            return "generic"
+    }
+	
 }
 
 function ld_isIncreasing(value) {
