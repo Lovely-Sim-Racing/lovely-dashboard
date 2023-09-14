@@ -182,10 +182,10 @@ function ld_GetRelCarLogo (relPosition) {
 
 function ld_formatName (name, mode) {
 
-    name = name.replace('�0', 'E'); // replace unicode characters
-    //name = name.toLowerCase().replace(/\b\w/g, s => s.toUpperCase()); // transform to title case
-
     if (name!=null) {
+        
+        name = name.replace('�0', 'E'); // replace unicode characters
+        
         var full_name = name.split(' ');
         var first_name = full_name.shift();
         var last_name = full_name;

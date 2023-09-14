@@ -9,7 +9,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "adb493a2-f346-4274-a6bb-3cb0478c04bb",
+  "Id": "6a03d0e0-7522-4624-9c05-e00e54bb369f",
   "Images": [
     {
       "Extension": ".png",
@@ -2582,6 +2582,33 @@
           "Top": 5.0,
           "Visible": true,
           "Width": 850.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Text": {
+              "Formula": {
+                "Expression": "return $prop('variable.mfmPage_central')",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Text"
+            }
+          },
+          "Font": "Segoe UI",
+          "FontSize": 50.0,
+          "Height": 100.0,
+          "HorizontalAlignment": 0,
+          "IsTextItem": true,
+          "Left": 13.0,
+          "Name": "TextItem",
+          "Text": "Text",
+          "TextColor": "#FFFFFFFF",
+          "Top": 59.0,
+          "VerticalAlignment": 0,
+          "Visible": true,
+          "Width": 100.0
         }
       ],
       "Name": "Primary",
@@ -4117,7 +4144,7 @@
         "EvaluateOnlyOnce": false,
         "OverrideWithParentDashboardVariableWhenAvailable": false,
         "ValueExpression": {
-          "Expression": "'2.3.0'"
+          "Expression": "'2.3.1'"
         },
         "VariableName": "dashVer"
       },

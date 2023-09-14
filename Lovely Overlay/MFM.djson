@@ -9,7 +9,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "4f981b80-f7cf-4ca1-9d42-e98b36c43d31",
+  "Id": "599eee5f-1807-4db8-8024-2485dbedb834",
   "Images": [
     {
       "Extension": ".png",
@@ -320,14 +320,15 @@
       5,
       6,
       7,
-      8
+      8,
+      9
     ],
     "IsOverlay": false,
     "MainPreviewIndex": 0,
     "MetadataVersion": 2.0,
     "OverlaySizeWarning": false,
     "PitScreensIndexs": [],
-    "ScreenCount": 9.0,
+    "ScreenCount": 10.0,
     "Width": 320.0
   },
   "Screens": [
@@ -617,7 +618,7 @@
       },
       "PitScreen": false,
       "ScreenEnabledExpression": {
-        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst currentSim = ld_getSim()\r\n\r\nif ($prop('variable.positionMFM') == 'leftMFM') {\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeLeftMFM\").trim()\r\n}  else if ($prop('variable.positionMFM') == 'rightMFM') {\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeRightMFM\").trim()\r\n} else {\r\n\tactiveMFM = \"\"\r\n}\r\n\r\nif ( !settings || !activeMFM || activeMFM == \"\" ) {\r\n\t\r\n\t// Show MFM if no activeMFM has been set\r\n\treturn 1\r\n\t\r\n} else {\r\n\t\r\n\t// Is MFM set in activeMFM?\r\n\treturn activeMFM.includes(0)\r\n\t\r\n}",
+        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst currentSim = ld_getSim()\r\n\t\r\nif ( settings ) {\r\n\r\n\r\n\tif ($prop('variable.positionMFM') == 'leftMFM') {\r\n\t\tactiveMFM = eval(\"settings.\"+currentSim+\".activeLeftMFM\").trim()\r\n\t}  else if ($prop('variable.positionMFM') == 'rightMFM') {\r\n\t\tactiveMFM = eval(\"settings.\"+currentSim+\".activeRightMFM\").trim()\r\n\t} else {\r\n\t\tactiveMFM = \"\"\r\n\t}\r\n\t\r\n\tif ( !activeMFM || activeMFM == \"\" ) {\r\n\t\t// Show MFM if no activeMFM has been set\r\n\t\treturn true\r\n\t} else {\r\n\t\t// Is MFM set in activeMFM?\r\n\t\treturn activeMFM.includes(0)\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn true \r\n\r\n}",
         "Interpreter": 1
       },
       "ScreenId": "0bf35db0-820b-4f3d-a637-69c7bbda70df"
@@ -1755,7 +1756,7 @@
       },
       "PitScreen": false,
       "ScreenEnabledExpression": {
-        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst currentSim = ld_getSim()\r\n\r\nif ($prop('variable.positionMFM') == 'leftMFM') {\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeLeftMFM\").trim()\r\n}  else if ($prop('variable.positionMFM') == 'rightMFM') {\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeRightMFM\").trim()\r\n} else {\r\n\tactiveMFM = \"\"\r\n}\r\n\r\nif ( !settings || !activeMFM || activeMFM == \"\" ) {\r\n\t\r\n\t// Show MFM if no activeMFM has been set\r\n\treturn 1\r\n\t\r\n} else {\r\n\t\r\n\t// Is MFM set in activeMFM?\r\n\treturn activeMFM.includes(1)\r\n\t\r\n}",
+        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst currentSim = ld_getSim()\r\n\t\r\nif ( settings ) {\r\n\r\n\tif ($prop('variable.positionMFM') == 'leftMFM') {\r\n\t\tactiveMFM = eval(\"settings.\"+currentSim+\".activeLeftMFM\").trim()\r\n\t}  else if ($prop('variable.positionMFM') == 'rightMFM') {\r\n\t\tactiveMFM = eval(\"settings.\"+currentSim+\".activeRightMFM\").trim()\r\n\t} else {\r\n\t\tactiveMFM = \"\"\r\n\t}\r\n\t\r\n\tif ( !activeMFM || activeMFM == \"\" ) {\r\n\t\t// Show MFM if no activeMFM has been set\r\n\t\treturn true\r\n\t} else {\r\n\t\t// Is MFM set in activeMFM?\r\n\t\treturn activeMFM.includes(1)\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn true \r\n\r\n}",
         "Interpreter": 1
       },
       "ScreenId": "8c7ce06b-b8a8-497e-b838-f00b17534185"
@@ -3513,7 +3514,7 @@
       },
       "PitScreen": false,
       "ScreenEnabledExpression": {
-        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst currentSim = ld_getSim()\r\n\r\nif ($prop('variable.positionMFM') == 'leftMFM') {\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeLeftMFM\").trim()\r\n}  else if ($prop('variable.positionMFM') == 'rightMFM') {\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeRightMFM\").trim()\r\n} else {\r\n\tactiveMFM = \"\"\r\n}\r\n\r\nif ( !settings || !activeMFM || activeMFM == \"\" ) {\r\n\t\r\n\t// Show MFM if no activeMFM has been set\r\n\treturn 1\r\n\t\r\n} else {\r\n\t\r\n\t// Is MFM set in activeMFM?\r\n\treturn activeMFM.includes(2)\r\n\t\r\n}",
+        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst currentSim = ld_getSim()\r\n\t\r\nif ( settings ) {\r\n\r\n\tif ($prop('variable.positionMFM') == 'leftMFM') {\r\n\t\tactiveMFM = eval(\"settings.\"+currentSim+\".activeLeftMFM\").trim()\r\n\t}  else if ($prop('variable.positionMFM') == 'rightMFM') {\r\n\t\tactiveMFM = eval(\"settings.\"+currentSim+\".activeRightMFM\").trim()\r\n\t} else {\r\n\t\tactiveMFM = \"\"\r\n\t}\r\n\t\r\n\tif ( !activeMFM || activeMFM == \"\" ) {\r\n\t\t// Show MFM if no activeMFM has been set\r\n\t\treturn true\r\n\t} else {\r\n\t\t// Is MFM set in activeMFM?\r\n\t\treturn activeMFM.includes(2)\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn true \r\n\r\n}",
         "Interpreter": 1
       },
       "ScreenId": "083f6da1-c66e-4799-b24d-f371cf7750e0"
@@ -4310,7 +4311,7 @@
       },
       "PitScreen": false,
       "ScreenEnabledExpression": {
-        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst currentSim = ld_getSim()\r\n\r\nif ($prop('variable.positionMFM') == 'leftMFM') {\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeLeftMFM\").trim()\r\n}  else if ($prop('variable.positionMFM') == 'rightMFM') {\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeRightMFM\").trim()\r\n} else {\r\n\tactiveMFM = \"\"\r\n}\r\n\r\nif ( !settings || !activeMFM || activeMFM == \"\" ) {\r\n\t\r\n\t// Show MFM if no activeMFM has been set\r\n\treturn 1\r\n\t\r\n} else {\r\n\t\r\n\t// Is MFM set in activeMFM?\r\n\treturn activeMFM.includes(3)\r\n\t\r\n}",
+        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst currentSim = ld_getSim()\r\n\t\r\nif ( settings ) {\r\n\r\n\tif ($prop('variable.positionMFM') == 'leftMFM') {\r\n\t\tactiveMFM = eval(\"settings.\"+currentSim+\".activeLeftMFM\").trim()\r\n\t}  else if ($prop('variable.positionMFM') == 'rightMFM') {\r\n\t\tactiveMFM = eval(\"settings.\"+currentSim+\".activeRightMFM\").trim()\r\n\t} else {\r\n\t\tactiveMFM = \"\"\r\n\t}\r\n\t\r\n\tif ( !activeMFM || activeMFM == \"\" ) {\r\n\t\t// Show MFM if no activeMFM has been set\r\n\t\treturn true\r\n\t} else {\r\n\t\t// Is MFM set in activeMFM?\r\n\t\treturn activeMFM.includes(3)\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn true \r\n\r\n}",
         "Interpreter": 1
       },
       "ScreenId": "42e8404d-3619-4107-944a-baa94aba1074"
@@ -7154,7 +7155,7 @@
       },
       "PitScreen": false,
       "ScreenEnabledExpression": {
-        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst currentSim = ld_getSim()\r\n\r\nif ($prop('variable.positionMFM') == 'leftMFM') {\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeLeftMFM\").trim()\r\n}  else if ($prop('variable.positionMFM') == 'rightMFM') {\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeRightMFM\").trim()\r\n} else {\r\n\tactiveMFM = \"\"\r\n}\r\n\r\nif ( !settings || !activeMFM || activeMFM == \"\" ) {\r\n\t\r\n\t// Show MFM if no activeMFM has been set\r\n\treturn 1\r\n\t\r\n} else {\r\n\t\r\n\t// Is MFM set in activeMFM?\r\n\treturn activeMFM.includes(4)\r\n\t\r\n}",
+        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst currentSim = ld_getSim()\r\n\t\r\nif ( settings ) {\r\n\r\n\tif ($prop('variable.positionMFM') == 'leftMFM') {\r\n\t\tactiveMFM = eval(\"settings.\"+currentSim+\".activeLeftMFM\").trim()\r\n\t}  else if ($prop('variable.positionMFM') == 'rightMFM') {\r\n\t\tactiveMFM = eval(\"settings.\"+currentSim+\".activeRightMFM\").trim()\r\n\t} else {\r\n\t\tactiveMFM = \"\"\r\n\t}\r\n\t\r\n\tif ( !activeMFM || activeMFM == \"\" ) {\r\n\t\t// Show MFM if no activeMFM has been set\r\n\t\treturn true\r\n\t} else {\r\n\t\t// Is MFM set in activeMFM?\r\n\t\treturn activeMFM.includes(4)\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn true \r\n\r\n}",
         "Interpreter": 1
       },
       "ScreenId": "2b07ae57-8298-448f-8838-d5be9ab0cac0"
@@ -8433,7 +8434,7 @@
       },
       "PitScreen": false,
       "ScreenEnabledExpression": {
-        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst currentSim = ld_getSim()\r\n\r\nif ($prop('variable.positionMFM') == 'leftMFM') {\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeLeftMFM\").trim()\r\n}  else if ($prop('variable.positionMFM') == 'rightMFM') {\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeRightMFM\").trim()\r\n} else {\r\n\tactiveMFM = \"\"\r\n}\r\n\r\nif ( !settings || !activeMFM || activeMFM == \"\" ) {\r\n\t\r\n\t// Show MFM if no activeMFM has been set\r\n\t// Hide for iRacing\r\n\treturn (\r\n\t\tcurrentSim == 'IRacing'\r\n\t) ? 0 : 1\r\n\t\r\n} else {\r\n\t\r\n\t// Is MFM set in activeMFM?\r\n\t// Hide for iRacing\r\n\treturn (\r\n\t\tcurrentSim == 'IRacing'\r\n\t) ? 0 : activeMFM.includes(5)\r\n\t\r\n}",
+        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst currentSim = ld_getSim()\r\n\t\r\nif ( settings ) {\r\n\r\n\tif ($prop('variable.positionMFM') == 'leftMFM') {\r\n\t\tactiveMFM = eval(\"settings.\"+currentSim+\".activeLeftMFM\").trim()\r\n\t}  else if ($prop('variable.positionMFM') == 'rightMFM') {\r\n\t\tactiveMFM = eval(\"settings.\"+currentSim+\".activeRightMFM\").trim()\r\n\t} else {\r\n\t\tactiveMFM = \"\"\r\n\t}\r\n\t\r\n\tif ( !activeMFM || activeMFM == \"\" ) {\r\n\t\t// Show MFM if no activeMFM has been set\r\n\t\treturn (\r\n\t\t\tcurrentSim == 'IRacing'\r\n\t\t) ? false : true\r\n\t} else {\r\n\t\t// Is MFM set in activeMFM?\r\n\t\treturn (\r\n\t\t\tcurrentSim == 'IRacing'\r\n\t\t) ? false : activeMFM.includes(5)\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn (\r\n\t\tcurrentSim == 'IRacing'\r\n\t) ? false : true\r\n\r\n}",
         "Interpreter": 1
       },
       "ScreenId": "77c15cba-fe31-4c75-80d2-27a39b0c2d44"
@@ -9844,7 +9845,7 @@
       },
       "PitScreen": false,
       "ScreenEnabledExpression": {
-        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst currentSim = ld_getSim()\r\n\r\nif ($prop('variable.positionMFM') == 'leftMFM') {\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeLeftMFM\").trim()\r\n}  else if ($prop('variable.positionMFM') == 'rightMFM') {\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeRightMFM\").trim()\r\n} else {\r\n\tactiveMFM = \"\"\r\n}\r\n\r\nif ( !settings || !activeMFM || activeMFM == \"\" ) {\r\n\r\n\t// Show MFM if no activeMFM has been set\r\n\t// Show only for\r\n\treturn (\r\n\t\tcurrentSim == 'ACC' ||\r\n\t\tcurrentSim =='AC' ||\r\n\t\tcurrentSim == 'F1'\r\n\t) ? 1 : 0\r\n\t\r\n} else {\r\n\t\r\n\t// Is MFM set in activeMFM?\r\n\t// Show only for\r\n\treturn (\r\n\t\tcurrentSim == 'ACC' ||\r\n\t\tcurrentSim =='AC' ||\r\n\t\tcurrentSim == 'F1'\r\n\t) ? activeMFM.includes(6) : 0\r\n\t\r\n}",
+        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst currentSim = ld_getSim()\r\n\t\r\nif ( settings ) {\r\n\r\n\tif ($prop('variable.positionMFM') == 'leftMFM') {\r\n\t\tactiveMFM = eval(\"settings.\"+currentSim+\".activeLeftMFM\").trim()\r\n\t}  else if ($prop('variable.positionMFM') == 'rightMFM') {\r\n\t\tactiveMFM = eval(\"settings.\"+currentSim+\".activeRightMFM\").trim()\r\n\t} else {\r\n\t\tactiveMFM = \"\"\r\n\t}\r\n\t\r\n\tif ( !activeMFM || activeMFM == \"\" ) {\r\n\t\t// Show MFM if no activeMFM has been set\r\n\t\treturn (\r\n\t\t\tcurrentSim == 'ACC' ||\r\n\t\t\tcurrentSim =='AC' ||\r\n\t\t\tcurrentSim == 'F1'\r\n\t\t) ? true : false\r\n\t} else {\r\n\t\t// Is MFM set in activeMFM?\r\n\t\treturn (\r\n\t\t\tcurrentSim == 'ACC' ||\r\n\t\t\tcurrentSim =='AC' ||\r\n\t\t\tcurrentSim == 'F1'\r\n\t\t) ? activeMFM.includes(6) : false\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn (\r\n\t\tcurrentSim == 'ACC' ||\r\n\t\tcurrentSim =='AC' ||\r\n\t\tcurrentSim == 'F1'\r\n\t) ? true : false \r\n\r\n}",
         "Interpreter": 1
       },
       "ScreenId": "6a7f83c9-7fec-400f-b4dd-7e428d60cf3c"
@@ -11294,7 +11295,7 @@
       },
       "PitScreen": false,
       "ScreenEnabledExpression": {
-        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst currentSim = ld_getSim()\r\n\r\nif ($prop('variable.positionMFM') == 'leftMFM') {\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeLeftMFM\").trim()\r\n}  else if ($prop('variable.positionMFM') == 'rightMFM') {\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeRightMFM\").trim()\r\n} else {\r\n\tactiveMFM = \"\"\r\n}\r\n\r\nif ( !settings || !activeMFM || activeMFM == \"\" ) {\r\n\t\r\n\t// Show MFM if no activeMFM has been set\r\n\t// Show only for\r\n\treturn (\r\n\t\tcurrentSim == 'IRacing' ||\r\n\t\tcurrentSim =='Automobilista2' ||\r\n\t\tcurrentSim == 'F1'\r\n\t) ? 1 : 0\r\n\t\r\n} else {\r\n\t\r\n\t// Is MFM set in activeMFM?\r\n\t// Show only for\r\n\treturn (\r\n\t\tcurrentSim == 'IRacing' ||\r\n\t\tcurrentSim =='Automobilista2' ||\r\n\t\tcurrentSim == 'F1'\r\n\t) ? activeMFM.includes(7) : 0\r\n\t\r\n}",
+        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst currentSim = ld_getSim()\r\n\t\r\nif ( settings ) {\r\n\r\n\tif ($prop('variable.positionMFM') == 'leftMFM') {\r\n\t\tactiveMFM = eval(\"settings.\"+currentSim+\".activeLeftMFM\").trim()\r\n\t}  else if ($prop('variable.positionMFM') == 'rightMFM') {\r\n\t\tactiveMFM = eval(\"settings.\"+currentSim+\".activeRightMFM\").trim()\r\n\t} else {\r\n\t\tactiveMFM = \"\"\r\n\t}\r\n\t\r\n\tif ( !activeMFM || activeMFM == \"\" ) {\r\n\t\t// Show MFM if no activeMFM has been set\r\n\t\treturn (\r\n\t\t\tcurrentSim == 'IRacing' ||\r\n\t\t\tcurrentSim =='Automobilista2' ||\r\n\t\t\tcurrentSim == 'F1'\r\n\t\t) ? true : false\r\n\t} else {\r\n\t\t// Is MFM set in activeMFM?\r\n\t\treturn (\r\n\t\t\tcurrentSim == 'IRacing' ||\r\n\t\t\tcurrentSim =='Automobilista2' ||\r\n\t\t\tcurrentSim == 'F1'\r\n\t\t) ? activeMFM.includes(7) : false\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn (\r\n\t\tcurrentSim == 'IRacing' ||\r\n\t\tcurrentSim =='Automobilista2' ||\r\n\t\tcurrentSim == 'F1'\r\n\t) ? true : false\r\n\r\n}",
         "Interpreter": 1
       },
       "ScreenId": "5efdedc3-c956-451c-a9f5-8fb0dbd07154"
@@ -11558,10 +11559,632 @@
       },
       "PitScreen": false,
       "ScreenEnabledExpression": {
-        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst currentSim = ld_getSim()\r\n\r\nif ($prop('variable.positionMFM') == 'leftMFM') {\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeLeftMFM\").trim()\r\n}  else if ($prop('variable.positionMFM') == 'rightMFM') {\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeRightMFM\").trim()\r\n} else {\r\n\tactiveMFM = \"\"\r\n}\r\n\r\nif ( !settings || !activeMFM || activeMFM == \"\" ) {\r\n\t\r\n\t// Show MFM if no activeMFM has been set\r\n\treturn 1\r\n\t\r\n} else {\r\n\t\r\n\t// Is MFM set in activeMFM?\r\n\treturn activeMFM.includes(8)\r\n\t\r\n}",
+        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( settings ) {\r\n\r\n\tconst currentSim = ld_getSim()\r\n\r\n\tif ($prop('variable.positionMFM') == 'leftMFM') {\r\n\t\tactiveMFM = eval(\"settings.\"+currentSim+\".activeLeftMFM\").trim()\r\n\t}  else if ($prop('variable.positionMFM') == 'rightMFM') {\r\n\t\tactiveMFM = eval(\"settings.\"+currentSim+\".activeRightMFM\").trim()\r\n\t} else {\r\n\t\tactiveMFM = \"\"\r\n\t}\r\n\t\r\n\tif ( !activeMFM || activeMFM == \"\" ) {\r\n\t\t// Show MFM if no activeMFM has been set\r\n\t\treturn true\r\n\t} else {\r\n\t\t// Is MFM set in activeMFM?\r\n\t\treturn activeMFM.includes(8)\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn true \r\n\r\n}",
         "Interpreter": 1
       },
       "ScreenId": "8962a7ab-1471-4063-9327-c1cafc97bdce"
+    },
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#00FFFFFF",
+      "IdleScreen": false,
+      "InGameScreen": true,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": false,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WebPageItem, SimHub.Plugins",
+          "AllowTransparency": true,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "StartAddress": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nvar mfm = ($prop('variable.positionMFM') == 'leftMFM') ? 'lmfm' : 'rmfm'\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.dashName')+'&ver='+$prop('variable.dashVer')+'&screen=Primary&'+mfm+'=TireProgress'\r\n} else {\r\n\treturn ''\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "StartAddress"
+            }
+          },
+          "ClickThrough": false,
+          "Height": 268.0,
+          "IsFreezed": true,
+          "Left": 0.0,
+          "Name": "Analytics",
+          "StartAddress": "",
+          "Top": 0.0,
+          "Visible": true,
+          "Width": 325.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Opacity": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Opacity"
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "return ( $prop('variable.dashName') == 'LovelyOverlay') ? 0 : 1",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "BorderStyle": {
+            "BorderBottom": 2,
+            "BorderLeft": 2,
+            "BorderRight": 2,
+            "BorderTop": 2,
+            "RadiusBottomLeft": 12,
+            "RadiusBottomRight": 12,
+            "RadiusTopLeft": 12,
+            "RadiusTopRight": 12
+          },
+          "Height": 262.0,
+          "IsFreezed": true,
+          "IsRectangleItem": true,
+          "Left": 0.0,
+          "Name": "RectangleItem3",
+          "Top": 8.0,
+          "Visible": true,
+          "Width": 320.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FF000000",
+          "Bindings": {
+            "BackgroundColor": {
+              "Formula": {
+                "Expression": "return ( $prop('variable.dashName') == 'LovelyOverlay' ) ? '#00FFFFFF' : '#FF000000'",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "BackgroundColor"
+            }
+          },
+          "Font": "Roboto",
+          "FontSize": 12.0,
+          "FontWeight": "Bold",
+          "Height": 18.0,
+          "HorizontalAlignment": 1,
+          "IsFreezed": true,
+          "IsTextItem": true,
+          "Left": 109.0,
+          "Name": "Title",
+          "Text": "TIRE PROGRESS",
+          "TextColor": "#FFFFFFFF",
+          "Top": 0.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 102.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ChartItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "CurrentValue": {
+                  "Formula": {
+                    "Expression": "[TyrePressureRearRight]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "CurrentValue"
+                }
+              },
+              "CurrentValue": 28.0,
+              "Height": 200.0,
+              "Left": 5.0,
+              "LineColor": "#FF67BEE5",
+              "LineTickness": 3,
+              "Maximum": 31.5,
+              "MaximumEx": 31.5,
+              "Minimum": 21.5,
+              "MinimumEx": 21.5,
+              "Name": "RR",
+              "PointsCount": 500.0,
+              "ShowYAxis": false,
+              "Top": 65.0,
+              "UseMaximum": true,
+              "UseMinimum": true,
+              "Visible": true,
+              "Width": 275.0,
+              "YAxisFont": "Segoe UI",
+              "YAxisFontSize": 30.0,
+              "YAxisFontWeight": "Normal",
+              "YAxisTextColor": "#FFFF0000",
+              "YAxisTickColor": "#FFFF0000",
+              "YAxislineColor": "#FFFF0000"
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ChartItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "CurrentValue": {
+                  "Formula": {
+                    "Expression": "[TyrePressureRearLeft]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "CurrentValue"
+                }
+              },
+              "CurrentValue": 27.0,
+              "Height": 200.0,
+              "Left": 5.0,
+              "LineColor": "#FF0054FF",
+              "LineTickness": 3,
+              "Maximum": 31.5,
+              "MaximumEx": 31.5,
+              "Minimum": 21.5,
+              "MinimumEx": 21.5,
+              "Name": "RL",
+              "PointsCount": 500.0,
+              "ShowYAxis": false,
+              "Top": 65.0,
+              "UseMaximum": true,
+              "UseMinimum": true,
+              "Visible": true,
+              "Width": 275.0,
+              "YAxisFont": "Segoe UI",
+              "YAxisFontSize": 30.0,
+              "YAxisFontWeight": "Normal",
+              "YAxisTextColor": "#FFFF0000",
+              "YAxisTickColor": "#FFFF0000",
+              "YAxislineColor": "#FFFF0000"
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ChartItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "CurrentValue": {
+                  "Formula": {
+                    "Expression": "[TyrePressureFrontRight]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "CurrentValue"
+                }
+              },
+              "CurrentValue": 26.0,
+              "Height": 200.0,
+              "Left": 5.0,
+              "LineColor": "#FFFF8D00",
+              "LineTickness": 3,
+              "Maximum": 31.5,
+              "MaximumEx": 31.5,
+              "Minimum": 21.5,
+              "MinimumEx": 21.5,
+              "Name": "FR",
+              "PointsCount": 500.0,
+              "ShowYAxis": false,
+              "Top": 65.0,
+              "UseMaximum": true,
+              "UseMinimum": true,
+              "Visible": true,
+              "Width": 275.0,
+              "YAxisFont": "Segoe UI",
+              "YAxisFontSize": 30.0,
+              "YAxisFontWeight": "Normal",
+              "YAxisTextColor": "#FFFF0000",
+              "YAxisTickColor": "#FFFF0000",
+              "YAxislineColor": "#FFFF0000"
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ChartItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "CurrentValue": {
+                  "Formula": {
+                    "Expression": "[TyrePressureFrontLeft]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "CurrentValue"
+                }
+              },
+              "CurrentValue": 25.0,
+              "Height": 200.0,
+              "Left": 5.0,
+              "LineColor": "#FFFF0000",
+              "LineTickness": 3,
+              "Maximum": 31.5,
+              "MaximumEx": 31.5,
+              "Minimum": 21.5,
+              "MinimumEx": 21.5,
+              "Name": "FL",
+              "PointsCount": 500.0,
+              "ShowYAxis": false,
+              "Top": 65.0,
+              "UseMaximum": true,
+              "UseMinimum": true,
+              "Visible": true,
+              "Width": 275.0,
+              "YAxisFont": "Segoe UI",
+              "YAxisFontSize": 30.0,
+              "YAxisFontWeight": "Normal",
+              "YAxisTextColor": "#FFFF0000",
+              "YAxisTickColor": "#FFFF0000",
+              "YAxislineColor": "#FFFF0000"
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Font": "Roboto",
+              "FontSize": 16.0,
+              "FontWeight": "Bold",
+              "Height": 20.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 270.0,
+              "Name": "TextItem",
+              "Text": "26.5",
+              "TextColor": "#FF7FFF00",
+              "Top": 155.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 40.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF7FFF00",
+              "Height": 2.0,
+              "IsRectangleItem": true,
+              "Left": 15.0,
+              "Name": "RectangleItem",
+              "Opacity": 50.0,
+              "Top": 165.0,
+              "Visible": true,
+              "Width": 255.0
+            }
+          ],
+          "Group": true,
+          "Height": 200.0,
+          "Left": 5.0,
+          "Name": "Dry",
+          "Top": 65.0,
+          "Visible": true,
+          "Width": 305.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ChartItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "CurrentValue": {
+                  "Formula": {
+                    "Expression": "[TyrePressureRearRight]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "CurrentValue"
+                }
+              },
+              "CurrentValue": 28.0,
+              "Height": 200.0,
+              "Left": 5.0,
+              "LineColor": "#FF67BEE5",
+              "LineTickness": 3,
+              "Maximum": 34.5,
+              "MaximumEx": 34.5,
+              "Minimum": 24.5,
+              "MinimumEx": 24.5,
+              "Name": "RR",
+              "PointsCount": 500.0,
+              "ShowYAxis": false,
+              "Top": 65.0,
+              "UseMaximum": true,
+              "UseMinimum": true,
+              "Visible": true,
+              "Width": 275.0,
+              "YAxisFont": "Segoe UI",
+              "YAxisFontSize": 30.0,
+              "YAxisFontWeight": "Normal",
+              "YAxisTextColor": "#FFFF0000",
+              "YAxisTickColor": "#FFFF0000",
+              "YAxislineColor": "#FFFF0000"
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ChartItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "CurrentValue": {
+                  "Formula": {
+                    "Expression": "[TyrePressureRearLeft]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "CurrentValue"
+                }
+              },
+              "CurrentValue": 27.0,
+              "Height": 200.0,
+              "Left": 5.0,
+              "LineColor": "#FF0054FF",
+              "LineTickness": 3,
+              "Maximum": 34.5,
+              "MaximumEx": 34.5,
+              "Minimum": 24.5,
+              "MinimumEx": 24.5,
+              "Name": "RL",
+              "PointsCount": 500.0,
+              "ShowYAxis": false,
+              "Top": 65.0,
+              "UseMaximum": true,
+              "UseMinimum": true,
+              "Visible": true,
+              "Width": 275.0,
+              "YAxisFont": "Segoe UI",
+              "YAxisFontSize": 30.0,
+              "YAxisFontWeight": "Normal",
+              "YAxisTextColor": "#FFFF0000",
+              "YAxisTickColor": "#FFFF0000",
+              "YAxislineColor": "#FFFF0000"
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ChartItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "CurrentValue": {
+                  "Formula": {
+                    "Expression": "[TyrePressureFrontRight]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "CurrentValue"
+                }
+              },
+              "CurrentValue": 26.0,
+              "Height": 200.0,
+              "Left": 5.0,
+              "LineColor": "#FFFF8D00",
+              "LineTickness": 3,
+              "Maximum": 34.5,
+              "MaximumEx": 34.5,
+              "Minimum": 24.5,
+              "MinimumEx": 24.5,
+              "Name": "FR",
+              "PointsCount": 500.0,
+              "ShowYAxis": false,
+              "Top": 65.0,
+              "UseMaximum": true,
+              "UseMinimum": true,
+              "Visible": true,
+              "Width": 275.0,
+              "YAxisFont": "Segoe UI",
+              "YAxisFontSize": 30.0,
+              "YAxisFontWeight": "Normal",
+              "YAxisTextColor": "#FFFF0000",
+              "YAxisTickColor": "#FFFF0000",
+              "YAxislineColor": "#FFFF0000"
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ChartItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "CurrentValue": {
+                  "Formula": {
+                    "Expression": "[TyrePressureFrontLeft]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "CurrentValue"
+                }
+              },
+              "CurrentValue": 25.0,
+              "Height": 200.0,
+              "Left": 5.0,
+              "LineColor": "#FFFF0000",
+              "LineTickness": 3,
+              "Maximum": 34.5,
+              "MaximumEx": 34.5,
+              "Minimum": 24.5,
+              "MinimumEx": 24.5,
+              "Name": "FL",
+              "PointsCount": 500.0,
+              "ShowYAxis": false,
+              "Top": 65.0,
+              "UseMaximum": true,
+              "UseMinimum": true,
+              "Visible": true,
+              "Width": 275.0,
+              "YAxisFont": "Segoe UI",
+              "YAxisFontSize": 30.0,
+              "YAxisFontWeight": "Normal",
+              "YAxisTextColor": "#FFFF0000",
+              "YAxisTickColor": "#FFFF0000",
+              "YAxislineColor": "#FFFF0000"
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Font": "Roboto",
+              "FontSize": 12.0,
+              "FontWeight": "Bold",
+              "Height": 12.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 270.0,
+              "Name": "TextItem",
+              "Text": "30.0",
+              "TextColor": "#FF00BFFF",
+              "Top": 110.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 28.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF00BFFF",
+              "Height": 2.0,
+              "IsRectangleItem": true,
+              "Left": 15.0,
+              "Name": "RectangleItem",
+              "Opacity": 50.0,
+              "Top": 119.0,
+              "Visible": true,
+              "Width": 255.0
+            }
+          ],
+          "Group": true,
+          "Height": 200.0,
+          "Left": 5.0,
+          "Name": "Wet",
+          "Top": 65.0,
+          "Visible": false,
+          "Width": 293.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FF67BEE5",
+          "Bindings": {
+            "Text": {
+              "Formula": {
+                "Expression": "'RR ' + format([TyrePressureRearRight], '0.0')"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Text"
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 3,
+            "RadiusBottomRight": 3,
+            "RadiusTopLeft": 3,
+            "RadiusTopRight": 3
+          },
+          "Font": "Roboto",
+          "FontSize": 16.0,
+          "FontWeight": "Bold",
+          "Height": 24.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 240.0,
+          "Name": "RR2",
+          "Text": "RR 27.7",
+          "TextColor": "#FFFFFFFF",
+          "Top": 30.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 65.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FF0054FF",
+          "Bindings": {
+            "Text": {
+              "Formula": {
+                "Expression": "'RL ' + format([TyrePressureRearLeft], '0.0')"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Text"
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 3,
+            "RadiusBottomRight": 3,
+            "RadiusTopLeft": 3,
+            "RadiusTopRight": 3
+          },
+          "Font": "Roboto",
+          "FontSize": 16.0,
+          "FontWeight": "Bold",
+          "Height": 24.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 165.0,
+          "Name": "RL2",
+          "Text": "RL 27.7",
+          "TextColor": "#FFFFFFFF",
+          "Top": 30.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 65.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FFFF8D00",
+          "Bindings": {
+            "Text": {
+              "Formula": {
+                "Expression": "'FR ' + format([TyrePressureFrontRight], '0.0')"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Text"
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 3,
+            "RadiusBottomRight": 3,
+            "RadiusTopLeft": 3,
+            "RadiusTopRight": 3
+          },
+          "Font": "Roboto",
+          "FontSize": 16.0,
+          "FontWeight": "Bold",
+          "Height": 24.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 90.0,
+          "Name": "FR2",
+          "Text": "FR 27.7",
+          "TextColor": "#FFFFFFFF",
+          "Top": 30.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 65.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FFFF0000",
+          "Bindings": {
+            "Text": {
+              "Formula": {
+                "Expression": "'FL ' + format([TyrePressureFrontLeft], '0.0')"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Text"
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 3,
+            "RadiusBottomRight": 3,
+            "RadiusTopLeft": 3,
+            "RadiusTopRight": 3
+          },
+          "Font": "Roboto",
+          "FontSize": 16.0,
+          "FontWeight": "Bold",
+          "Height": 24.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 15.0,
+          "Name": "FL2",
+          "Text": "FL 27.7",
+          "TextColor": "#FFFFFFFF",
+          "Top": 30.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 65.0
+        }
+      ],
+      "Name": "Tyre Progress",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": ""
+      },
+      "PitScreen": false,
+      "ScreenEnabledExpression": {
+        "Expression": "return ( $prop('variable.dashName') == \"LovelyPitWall\") ? true : false",
+        "Interpreter": 1
+      },
+      "ScreenId": "e431a24d-df45-47e4-b5c9-a05751ccec4d"
     }
   ],
   "ShowBackground": true,
