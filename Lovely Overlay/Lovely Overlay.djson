@@ -9,7 +9,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "4bef94d7-fedd-4866-ba6f-235fe467ae4b",
+  "Id": "a3ac1cad-8dca-43ec-a4eb-150fa71c69dc",
   "Images": [
     {
       "Extension": ".png",
@@ -475,7 +475,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.yourNumber.trim() == \"\" || settings.yourName.trim() == \"\" ) {\r\n\treturn 1\r\n} else {\r\n\treturn 0\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.yourNumber == \"\" || settings.yourName == \"\" ) {\r\n\treturn 1\r\n} else {\r\n\treturn 0\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -497,7 +497,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json');\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.yourNumber.trim() == \"\" || settings.yourName.trim() == \"\" ) {\r\n\treturn 0\r\n} else {\r\n\treturn 1\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.yourNumber == \"\" || settings.yourName == \"\" ) {\r\n\treturn 0\r\n} else {\r\n\treturn 1\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -524,7 +524,7 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( settings.yourName ) {\r\n\treturn ucase(settings.yourName.trim())\r\n}\r\n",
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( settings && settings.yourName ) {\r\n\treturn ucase(settings.yourName.trim())\r\n} else {\r\n\treturn ''\r\n}\r\n",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -557,7 +557,7 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( settings.yourNumber ) {\r\n\treturn settings.yourNumber.trim()\r\n}",
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( settings && settings.yourNumber ) {\r\n\treturn settings.yourNumber.trim()\r\n} else {\r\n\treturn ''\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -565,7 +565,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( settings.yourColor.trim() == \"\" || !settings.yourColor) {\r\n\treturn \"#2B98FB\"\r\n} else {\r\n\treturn settings.yourColor.trim()\r\n}",
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( settings && settings.yourColor ) {\r\n\treturn settings.yourColor.trim()\r\n} else {\r\n\treturn lovely_blue\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -1087,7 +1087,7 @@
             "Text": {
               "FormatString": "",
               "Formula": {
-                "Expression": "return 'SIMHUB UPDATE REQUIRED: v' + $prop('variable.shVer')",
+                "Expression": "return 'SIMHUB UPDATE REQUIRED: v' + $prop('variable.shVer') + ' or higher'",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -1106,14 +1106,14 @@
           "Height": 24.0,
           "HorizontalAlignment": 1,
           "IsTextItem": true,
-          "Left": 350.0,
+          "Left": 320.0,
           "Name": "New Version Alert",
           "Text": "SIMHUB UPDATE REQUIRED: vX.X.X",
           "TextColor": "#FFFFFFFF",
-          "Top": 208.0,
+          "Top": 210.0,
           "VerticalAlignment": 1,
           "Visible": true,
-          "Width": 300.0
+          "Width": 360.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
@@ -1161,7 +1161,7 @@
         "EvaluateOnlyOnce": false,
         "OverrideWithParentDashboardVariableWhenAvailable": false,
         "ValueExpression": {
-          "Expression": "'2.3.1'"
+          "Expression": "'2.4.0'"
         },
         "VariableName": "dashVer"
       },
@@ -1169,7 +1169,7 @@
         "EvaluateOnlyOnce": false,
         "OverrideWithParentDashboardVariableWhenAvailable": false,
         "ValueExpression": {
-          "Expression": "'9.0.2'"
+          "Expression": "'9.0.4'"
         },
         "VariableName": "shVer"
       }

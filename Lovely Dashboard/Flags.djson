@@ -3,16 +3,13 @@
   "BackgroundOpacity": 100.0,
   "BaseHeight": 50,
   "BaseWidth": 286,
-  "DashboardDebugManager": {
-    "LastPlacement": "178,260,429,75",
-    "Maximized": false
-  },
+  "DashboardDebugManager": {},
   "EnableClickThroughOverlay": true,
   "EnableOnDashboardMessaging": true,
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": false,
-  "Id": "15b2410f-a807-4209-9984-b1ef2793644b",
+  "Id": "5620e445-f650-4c0c-8073-e1f5c46b055f",
   "Images": [
     {
       "Extension": ".png",
@@ -425,7 +422,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn ( $prop('DataCorePlugin.GameRawData.Telemetry.SessionFlagsDetails.Isyellow') == 1 ) ? 1 : 0\r\n\r\n} else {\r\n\r\n\treturn ( $prop('Flag_Yellow')==1 ) ? 1 : 0\r\n\t\r\n}",
+                "Expression": "return ( $prop('Flag_Yellow') || $prop('GameRawData.Graphics.globalYellow') ) ? 1 : 0",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -609,5 +606,8 @@
   "ShowForeground": true,
   "ShowOnScreenControls": true,
   "SnapToGrid": false,
+  "Variables": {
+    "DashboardVariables": []
+  },
   "Version": 2
 }

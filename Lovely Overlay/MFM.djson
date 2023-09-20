@@ -9,7 +9,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "599eee5f-1807-4db8-8024-2485dbedb834",
+  "Id": "6a2dbe94-fa02-4961-833b-39fa590a8375",
   "Images": [
     {
       "Extension": ".png",
@@ -304,6 +304,32 @@
       "Name": "icon-turbo",
       "Optimized": true,
       "Width": 35
+    },
+    {
+      "Extension": ".png",
+      "Height": 16,
+      "Length": 356,
+      "MD5": "faa63ce808f9536b2edd97528ed4398f",
+      "Modified": false,
+      "Name": "direction-bg",
+      "Optimized": true,
+      "Width": 51
+    },
+    {
+      "Extension": ".png",
+      "Length": 479,
+      "MD5": "88d4e961278fa992685e58543dbe5464",
+      "Modified": false,
+      "Name": "direction-down",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Length": 475,
+      "MD5": "a63dde464dcd01ddfd1750b290158dc2",
+      "Modified": false,
+      "Name": "direction-up",
+      "Optimized": true
     }
   ],
   "IsOverlay": false,
@@ -321,14 +347,15 @@
       6,
       7,
       8,
-      9
+      9,
+      10
     ],
     "IsOverlay": false,
     "MainPreviewIndex": 0,
     "MetadataVersion": 2.0,
     "OverlaySizeWarning": false,
     "PitScreensIndexs": [],
-    "ScreenCount": 10.0,
+    "ScreenCount": 11.0,
     "Width": 320.0
   },
   "Screens": [
@@ -445,7 +472,7 @@
           "Bindings": {
             "Text": {
               "Formula": {
-                "Expression": "if ( timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) == 0 ) {\r\n\treturn 'CURRENT LAP'\r\n} else {\r\n\treturn 'ESTIMATED LAP'\r\n}",
+                "Expression": "return ld_getEstimatedLabel()",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -465,6 +492,45 @@
           "Top": 88.0,
           "VerticalAlignment": 1,
           "Visible": true,
+          "Width": 260.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Text": {
+              "Formula": {
+                "Expression": "return format( $prop('PersistantTrackerPlugin.AllTimeBest'), 'mm\\\\:ss\\\\.fff' )",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Text"
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "return (\r\n\ttimespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime_AllTimeBestBased')) > 0 &&\r\n\ttimespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime_SessionBestBased')) == 0\r\n)",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Font": "Roboto",
+          "FontSize": 12.0,
+          "FontWeight": "Bold",
+          "Height": 14.0,
+          "HorizontalAlignment": 2,
+          "IsTextItem": true,
+          "Left": 30.0,
+          "Name": "EstimatedAllTime",
+          "Text": "ESTIMATED LAP",
+          "TextColor": "#FFFFFFFF",
+          "TextPadding": {
+            "PaddingRight": 8
+          },
+          "Top": 88.0,
+          "VerticalAlignment": 1,
+          "Visible": false,
           "Width": 260.0
         },
         {
@@ -550,7 +616,7 @@
             "Text": {
               "FormatString": "mm\\:ss\\.fff",
               "Formula": {
-                "Expression": "if ( timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) == 0 ) {\r\n\treturn $prop('CurrentLapTime')\r\n} else {\r\n\treturn $prop('PersistantTrackerPlugin.EstimatedLapTime')\r\n}",
+                "Expression": "return ld_getEstimatedLapTime()",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -558,7 +624,7 @@
             },
             "TextColor": {
               "Formula": {
-                "Expression": "white =  '#FFFFFFFF'\r\nred =    '#FFFA0000'\r\nyellow = '#FFFFE04C'\r\ngreen =  '#FF00FF02'\r\npurple = '#FFC500CE'\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\t\r\n\t// Calculate Off Tracks\r\n\tif( root[\"offTrack\"] == null ) {\r\n\t\troot[\"offTrack\"] = 0\r\n\t}\r\n\tif ( $prop('DataCorePlugin.GameRawData.Telemetry.PlayerTrackSurface') == 0 ) {\r\n\t\troot[\"offTrack\"]++\r\n\t}\r\n\tif ( $prop('DataCorePlugin.GameData.TrackPositionPercent') < 0.001 ) {\r\n\t\troot[\"offTrack\"] = 0 \r\n\t}\r\n\tif ( root[\"offTrack\"] > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') != 'Race') {\r\n\t\treturn red\r\n\t} else {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn green\r\n\t\t\t} else {\r\n\t\t\t\treturn purple\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2') {\r\n\r\n\tif ( $prop('DataCorePlugin.GameRawData.mLapInvalidated') == false ) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn green\r\n\t\t\t} else {\r\n\t\t\t\treturn purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn red\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\tif ( timeDiffMine > 0 ) {\r\n\t\treturn yellow\r\n\t} else {\r\n\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\treturn green\r\n\t\t} else {\r\n\t\t\treturn purple\r\n\t\t}\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa' ) {\r\n\r\n\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\tif ( timeDiffMine > 0 ) {\r\n\t\treturn yellow\r\n\t} else {\r\n\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\treturn green\r\n\t\t} else {\r\n\t\t\treturn purple\r\n\t\t}\r\n\t}\r\n} else if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\r\n\tfastestLap = timespantoseconds(isnull(driverbestlap($prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1), '0:00.000'))\r\n\t\r\n\tif ( ! timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) > 0) {\r\n\t\treturn white\r\n\t} else if ( $prop('GameRawData.PlayerLapData.m_currentLapInvalid') == 0) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\t\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - fastestLap\r\n\t\t\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn green\r\n\t\t\t} else {\r\n\t\t\t\treturn purple\r\n\t\t\t}\r\n\t\t}\r\n\t\r\n\t} else {\r\n\t\treturn red\r\n\t}\r\n\r\n} else {\r\n\r\n\tif ( $prop('DataCorePlugin.GameRawData.Graphics.isValidLap') == 1 ) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn green\r\n\t\t\t} else {\r\n\t\t\t\treturn purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn red\r\n\t}\r\n\r\n}",
+                "Expression": "return ld_getEstimatedColour()",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -618,7 +684,7 @@
       },
       "PitScreen": false,
       "ScreenEnabledExpression": {
-        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst currentSim = ld_getSim()\r\n\t\r\nif ( settings ) {\r\n\r\n\r\n\tif ($prop('variable.positionMFM') == 'leftMFM') {\r\n\t\tactiveMFM = eval(\"settings.\"+currentSim+\".activeLeftMFM\").trim()\r\n\t}  else if ($prop('variable.positionMFM') == 'rightMFM') {\r\n\t\tactiveMFM = eval(\"settings.\"+currentSim+\".activeRightMFM\").trim()\r\n\t} else {\r\n\t\tactiveMFM = \"\"\r\n\t}\r\n\t\r\n\tif ( !activeMFM || activeMFM == \"\" ) {\r\n\t\t// Show MFM if no activeMFM has been set\r\n\t\treturn true\r\n\t} else {\r\n\t\t// Is MFM set in activeMFM?\r\n\t\treturn activeMFM.includes(0)\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn true \r\n\r\n}",
+        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst currentSim = ld_getSim()\r\n\t\r\nif ( settings ) {\r\n\r\n\tif ($prop('variable.positionMFM') == 'leftMFM') {\r\n\t\tactiveMFM = eval(\"settings.\"+currentSim+\".activeLeftMFM\").trim()\r\n\t}  else if ($prop('variable.positionMFM') == 'rightMFM') {\r\n\t\tactiveMFM = eval(\"settings.\"+currentSim+\".activeRightMFM\").trim()\r\n\t} else {\r\n\t\tactiveMFM = \"\"\r\n\t}\r\n\t\r\n\tif ( !activeMFM || activeMFM == \"\" ) {\r\n\t\t// Show MFM if no activeMFM has been set\r\n\t\treturn true\r\n\t} else {\r\n\t\t// Is MFM set in activeMFM?\r\n\t\treturn activeMFM.includes(0)\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn true \r\n\r\n}",
         "Interpreter": 1
       },
       "ScreenId": "0bf35db0-820b-4f3d-a637-69c7bbda70df"
@@ -702,7 +768,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdeltaReviewDelay = 5000\r\n} else {\r\n\tdeltaReviewDelay = settings.deltaReviewDelay\r\n}\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && $prop('DataCorePlugin.GameRawData.Telemetry.LapCurrentLapTime') < deltaReviewDelay/1000 && timespantoseconds($prop('DataCorePlugin.GameRawData.Telemetry.LapCurrentLapTime')) != 0 ) {\r\n\t\r\n\t\treturn 0\r\n\r\n\t} else {\r\n\t\r\n\t\treturn 1\r\n\t\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime')) < (deltaReviewDelay/1000) && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime')) != 0 ) {\r\n\t\t\r\n\t\treturn 0\r\n\t\t\r\n\t} else {\r\n\t\r\n\t\treturn 1\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 < deltaReviewDelay && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 != 0) {\r\n\t\r\n\t\treturn 0\r\n\t\t\t\r\n\t} else {\r\n\t\r\n\t\treturn 1\r\n\t\r\n\t}\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 < deltaReviewDelay && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 != 0) {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 1\r\n\t\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' || $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && $prop('DataCorePlugin.GameRawData.Graphics.iCurrentTime') < deltaReviewDelay && $prop('DataCorePlugin.GameRawData.Graphics.iCurrentTime') != 0 ) {\r\n\t\r\n\t\treturn 0\r\n\t\t\t\r\n\t} else {\r\n\t\r\n\t\treturn 1\r\n\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 < deltaReviewDelay && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 != 0) {\r\n\t\r\n\t\treturn 0\r\n\t\t\t\r\n\t} else {\r\n\t\r\n\t\treturn 1\r\n\t\r\n\t}\r\n\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdeltaReview = 1\r\n\tdeltaReviewDelay = 5000\r\n} else {\r\n\tdeltaReview = (settings.hasOwnProperty(\"deltaReview\")) ? settings.deltaReview : 1\r\n\tdeltaReviewDelay = (settings.hasOwnProperty(\"deltaReviewDelay\")) ? settings.deltaReviewDelay : 5000\r\n}\r\n\r\nif ( deltaReview == 0 ) { return 1 }\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && $prop('DataCorePlugin.GameRawData.Telemetry.LapCurrentLapTime') < deltaReviewDelay/1000 && timespantoseconds($prop('DataCorePlugin.GameRawData.Telemetry.LapCurrentLapTime')) != 0 ) {\r\n\t\r\n\t\treturn 0\r\n\r\n\t} else {\r\n\t\r\n\t\treturn 1\r\n\t\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime')) < (deltaReviewDelay/1000) && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime')) != 0 ) {\r\n\t\t\r\n\t\treturn 0\r\n\t\t\r\n\t} else {\r\n\t\treturn 1\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 < deltaReviewDelay && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 != 0) {\r\n\t\r\n\t\treturn 0\r\n\t\t\t\r\n\t} else {\r\n\t\r\n\t\treturn 1\r\n\t\r\n\t}\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 < deltaReviewDelay && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 != 0) {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 1\r\n\t\r\n\t}\r\n\r\n} else {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && $prop('DataCorePlugin.GameRawData.Graphics.iCurrentTime') < deltaReviewDelay && $prop('DataCorePlugin.GameRawData.Graphics.iCurrentTime') != 0 ) {\r\n\t\r\n\t\treturn 0\r\n\t\t\t\r\n\t} else {\r\n\t\r\n\t\treturn 1\r\n\t\r\n\t}\r\n\t\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -717,7 +783,7 @@
                 "Text": {
                   "FormatString": "",
                   "Formula": {
-                    "Expression": "var timeDiff\r\n\r\nif ( $prop('CurrentSectorIndex') <= 2 ) {\r\n\t\r\n\tif ( sessionbestlapgetsectortime(3, false)!=null ) {\r\n\t\ttimeDiff = timespantoseconds(lastlapgetsectortime(3, false)) - timespantoseconds( bestsectortime(3, false))\r\n\t} else {\r\n\t\treturn '0.000'\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn ''\r\n\t\r\n}\r\n\r\nif (timeDiff >= -9 && timeDiff <= 9) {\r\n\treturn format(timeDiff, '0.000', true)\r\n} else if (timeDiff >= -99 && timeDiff <= 99) {\r\n\treturn format(timeDiff, '00.00', true)\r\n} else if (timeDiff >= -999 && timeDiff <= 999) {\r\n\treturn format(timeDiff, '000.0', true)\r\n} else {\r\n\treturn format(timeDiff, '000', true)\r\n}",
+                    "Expression": "var timeDiff\r\n\r\nif ( $prop('CurrentSectorIndex') <= 2 ) {\r\n\t\r\n\tif ( sessionbestlapgetsectortime(3, false)!=null ) {\r\n\t\ttimeDiff = timespantoseconds(lastlapgetsectortime(3, false)) - timespantoseconds( bestsectortime(3, false))\r\n\t} else {\r\n\t\treturn '0.000'\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn ''\r\n\t\r\n}\r\n\r\nreturn ld_formatTime(timeDiff)",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -725,7 +791,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "if ( $prop('CurrentSectorIndex') <= 2 ) {\r\n\treturn ld_sectorSegmentColor(3)\r\n} else {\r\n\treturn '#FF262626'\r\n}",
+                    "Expression": "if ( $prop('CurrentSectorIndex') <= 2 ) {\r\n\treturn ld_sectorSegmentColor(3)\r\n} else {\r\n\treturn gray\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -764,7 +830,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "if ( $prop('CurrentSectorIndex') >= 3 ) {\r\n\r\n\treturn '#FFFFFFFF'\r\n\r\n} else {\r\n\t\r\n\treturn '#FF444444'\r\n\r\n}",
+                    "Expression": "if ( $prop('CurrentSectorIndex') >= 3 ) {\r\n\r\n\treturn white\r\n\r\n} else {\r\n\t\r\n\treturn gray\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -803,7 +869,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "if ( $prop('CurrentSectorIndex') >= 3 ) {\r\n\r\n\treturn '#FFFFFFFF'\r\n\r\n} else {\r\n\t\r\n\treturn '#FF444444'\r\n\r\n}",
+                    "Expression": "if ( $prop('CurrentSectorIndex') >= 3 ) {\r\n\r\n\treturn white\r\n\r\n} else {\r\n\t\r\n\treturn gray\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -834,7 +900,7 @@
                 "Text": {
                   "FormatString": "",
                   "Formula": {
-                    "Expression": "var timeDiff\r\n\r\nif ( $prop('CurrentSectorIndex') == 1 ) {\r\n\t\r\n\tif ( sessionbestlapgetsectortime(2, false)!=null ) {\r\n\t\ttimeDiff = timespantoseconds(lastlapgetsectortime(2, false)) - timespantoseconds( bestsectortime(2, false))\r\n\t} else {\r\n\t\treturn '0.000'\r\n\t}\r\n\t\r\n} else if ( $prop('CurrentSectorIndex') == 2 ) {\r\n\r\n\treturn ''\r\n\t\r\n} else {\r\n\r\n\tsectorIndex = $prop('CurrentSectorIndex')-1\r\n\tif ( sessionbestlapgetsectortime(sectorIndex, false)!=null ) {\r\n\t\ttimeDiff = timespantoseconds( currentlapgetsectortime(sectorIndex, false) ) - \r\n\t\t\ttimespantoseconds( bestsectortime(sectorIndex, false) )\r\n\t} else {\r\n\t\treturn '0.000'\r\n\t}\r\n\r\n}\r\n\r\nif (timeDiff >= -9 && timeDiff <= 9) {\r\n\treturn format(timeDiff, '0.000', true)\r\n} else if (timeDiff >= -99 && timeDiff <= 99) {\r\n\treturn format(timeDiff, '00.00', true)\r\n} else if (timeDiff >= -999 && timeDiff <= 999) {\r\n\treturn format(timeDiff, '000.0', true)\r\n} else {\r\n\treturn format(timeDiff, '000', true)\r\n}",
+                    "Expression": "var timeDiff\r\n\r\nif ( $prop('CurrentSectorIndex') == 1 ) {\r\n\t\r\n\tif ( sessionbestlapgetsectortime(2, false)!=null ) {\r\n\t\ttimeDiff = timespantoseconds(lastlapgetsectortime(2, false)) - timespantoseconds( bestsectortime(2, false))\r\n\t} else {\r\n\t\treturn '0.000'\r\n\t}\r\n\t\r\n} else if ( $prop('CurrentSectorIndex') == 2 ) {\r\n\r\n\treturn ''\r\n\t\r\n} else {\r\n\r\n\tsectorIndex = $prop('CurrentSectorIndex')-1\r\n\tif ( sessionbestlapgetsectortime(sectorIndex, false)!=null ) {\r\n\t\ttimeDiff = timespantoseconds( currentlapgetsectortime(sectorIndex, false) ) - \r\n\t\t\ttimespantoseconds( bestsectortime(sectorIndex, false) )\r\n\t} else {\r\n\t\treturn '0.000'\r\n\t}\r\n\r\n}\r\n\r\nreturn ld_formatTime(timeDiff)",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -842,7 +908,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "if ( $prop('CurrentSectorIndex') == 1 ) {\r\n\treturn ld_sectorSegmentColor(2)\r\n} else if ( $prop('CurrentSectorIndex') == 2 ) {\r\n\treturn '#FF262626'\r\n} else {\r\n\tsectorIndex = $prop('CurrentSectorIndex')-1\r\n\treturn ld_sectorSegmentColor(sectorIndex)\r\n}",
+                    "Expression": "if ( $prop('CurrentSectorIndex') == 1 ) {\r\n\treturn ld_sectorSegmentColor(2)\r\n} else if ( $prop('CurrentSectorIndex') == 2 ) {\r\n\treturn gray\r\n} else {\r\n\tsectorIndex = $prop('CurrentSectorIndex')-1\r\n\treturn ld_sectorSegmentColor(sectorIndex)\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -881,7 +947,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "if ( $prop('CurrentSectorIndex') == 2 ) {\r\n\r\n\treturn '#FFFFFFFF'\r\n\r\n} else {\r\n\t\r\n\treturn '#FF444444'\r\n\r\n}",
+                    "Expression": "if ( $prop('CurrentSectorIndex') == 2 ) {\r\n\r\n\treturn white\r\n\r\n} else {\r\n\t\r\n\treturn gray\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -920,7 +986,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "if ( $prop('CurrentSectorIndex') == 2 ) {\r\n\r\n\treturn '#FFFFFFFF'\r\n\r\n} else {\r\n\t\r\n\treturn '#FF444444'\r\n\r\n}",
+                    "Expression": "if ( $prop('CurrentSectorIndex') == 2 ) {\r\n\r\n\treturn white\r\n\r\n} else {\r\n\t\r\n\treturn gray\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -951,7 +1017,7 @@
                 "Text": {
                   "FormatString": "",
                   "Formula": {
-                    "Expression": "var timeDiff\r\n\r\nif ( $prop('CurrentSectorIndex') == 1 ) {\r\n\treturn ''\r\n} else if ( $prop('CurrentSectorIndex') <= 3) {\r\n\t\r\n\tif ( sessionbestlapgetsectortime(1, false)!=null ) {\r\n\t\ttimeDiff = timespantoseconds(currentlapgetsectortime(1, false)) - timespantoseconds( bestsectortime(1, false))\r\n\t} else {\r\n\t\treturn '0.000'\r\n\t}\r\n\t\r\n} else {\r\n\tsectorIndex = $prop('CurrentSectorIndex')-2\r\n\tif ( sessionbestlapgetsectortime(sectorIndex, false)!=null ) {\r\n\t\ttimeDiff = timespantoseconds( currentlapgetsectortime(sectorIndex, false) ) - \r\n\t\t\ttimespantoseconds( bestsectortime(sectorIndex, false) )\r\n\t} else {\r\n\t\treturn '0.000'\r\n\t}\r\n\r\n}\r\nif (timeDiff >= -9 && timeDiff <= 9) {\r\n\treturn format(timeDiff, '0.000', true)\r\n} else if (timeDiff >= -99 && timeDiff <= 99) {\r\n\treturn format(timeDiff, '00.00', true)\r\n} else if (timeDiff >= -999 && timeDiff <= 999) {\r\n\treturn format(timeDiff, '000.0', true)\r\n} else {\r\n\treturn format(timeDiff, '000', true)\r\n}",
+                    "Expression": "var timeDiff\r\n\r\nif ( $prop('CurrentSectorIndex') == 1 ) {\r\n\treturn ''\r\n} else if ( $prop('CurrentSectorIndex') <= 3) {\r\n\t\r\n\tif ( sessionbestlapgetsectortime(1, false)!=null ) {\r\n\t\ttimeDiff = timespantoseconds(currentlapgetsectortime(1, false)) - timespantoseconds( bestsectortime(1, false))\r\n\t} else {\r\n\t\treturn '0.000'\r\n\t}\r\n\t\r\n} else {\r\n\tsectorIndex = $prop('CurrentSectorIndex')-2\r\n\tif ( sessionbestlapgetsectortime(sectorIndex, false)!=null ) {\r\n\t\ttimeDiff = timespantoseconds( currentlapgetsectortime(sectorIndex, false) ) - \r\n\t\t\ttimespantoseconds( bestsectortime(sectorIndex, false) )\r\n\t} else {\r\n\t\treturn '0.000'\r\n\t}\r\n\r\n}\r\n\r\nreturn ld_formatTime(timeDiff)",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -959,7 +1025,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "if ( $prop('CurrentSectorIndex') == 1 ) {\r\n\treturn '#FF262626'\r\n} else if ( $prop('CurrentSectorIndex') <= 3) {\r\n\treturn ld_sectorSegmentColor(1)\r\n} else {\r\n\tsectorIndex = $prop('CurrentSectorIndex')-2\r\n\treturn ld_sectorSegmentColor(sectorIndex)\r\n}",
+                    "Expression": "if ( $prop('CurrentSectorIndex') == 1 ) {\r\n\treturn gray\r\n} else if ( $prop('CurrentSectorIndex') <= 3) {\r\n\treturn ld_sectorSegmentColor(1)\r\n} else {\r\n\tsectorIndex = $prop('CurrentSectorIndex')-2\r\n\treturn ld_sectorSegmentColor(sectorIndex)\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -998,7 +1064,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "if ( $prop('CurrentSectorIndex') == 1 ) {\r\n\r\n\treturn '#FFFFFFFF'\r\n\r\n} else {\r\n\t\r\n\treturn '#FF444444'\r\n\r\n}",
+                    "Expression": "if ( $prop('CurrentSectorIndex') == 1 ) {\r\n\r\n\treturn white\r\n\r\n} else {\r\n\t\r\n\treturn gray\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -1037,7 +1103,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "if ( $prop('CurrentSectorIndex') == 1 ) {\r\n\r\n\treturn '#FFFFFFFF'\r\n\r\n} else {\r\n\t\r\n\treturn '#FF444444'\r\n\r\n}",
+                    "Expression": "if ( $prop('CurrentSectorIndex') == 1 ) {\r\n\r\n\treturn white\r\n\r\n} else {\r\n\t\r\n\treturn gray\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -1094,7 +1160,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\t\r\n\t// Calculate Off Tracks\r\n\tif( root[\"offTrack\"] == null ) {\r\n\t\troot[\"offTrack\"] = 0\r\n\t}\r\n\tif ( $prop('DataCorePlugin.GameRawData.Telemetry.PlayerTrackSurface') == 0 ) {\r\n\t\troot[\"offTrack\"]++\r\n\t}\r\n\tif ( $prop('DataCorePlugin.GameData.TrackPositionPercent') < 0.001 ) {\r\n\t\troot[\"offTrack\"] = 0 \r\n\t}\r\n\tif ( root[\"offTrack\"] > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') != 'Race') {\r\n\t\treturn '#FA0000'\r\n\t} else {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn '#ffe04c' // Yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn '#00ff02' // Green\r\n\t\t\t} else {\r\n\t\t\t\treturn '#C500CE' // Purple\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2') {\r\n\r\n\tif ( $prop('DataCorePlugin.GameRawData.mLapInvalidated') == false ) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn '#ffe04c' // Yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn '#00ff02' // Green\r\n\t\t\t} else {\r\n\t\t\t\treturn '#C500CE' // Purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn '#FA0000'\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\tif ( timeDiffMine > 0 ) {\r\n\t\treturn '#ffe04c' // Yellow\r\n\t} else {\r\n\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\treturn '#00ff02' // Green\r\n\t\t} else {\r\n\t\t\treturn '#C500CE' // Purple\r\n\t\t}\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa' ) {\r\n\r\n\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\tif ( timeDiffMine > 0 ) {\r\n\t\treturn '#ffe04c' // Yellow\r\n\t} else {\r\n\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\treturn '#00ff02' // Green\r\n\t\t} else {\r\n\t\t\treturn '#C500CE' // Purple\r\n\t\t}\r\n\t}\r\n\r\n} else {\r\n\r\n\tif ( $prop('DataCorePlugin.GameRawData.Graphics.isValidLap') == 1 ) {\r\n\t\tvar timeDiffMine = $prop('DataCorePlugin.GameRawData.Graphics.iEstimatedLapTime')/1000 - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = $prop('DataCorePlugin.GameRawData.Graphics.iEstimatedLapTime')/1000 - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn '#ffe04c' // Yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn '#00ff02' // Green\r\n\t\t\t} else {\r\n\t\t\t\treturn '#C500CE' // Purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn '#FA0000'\r\n\t}\r\n\r\n}",
+                    "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\t\r\n\t// Calculate Off Tracks\r\n\tif( root[\"offTrack\"] == null ) {\r\n\t\troot[\"offTrack\"] = 0\r\n\t}\r\n\tif ( $prop('DataCorePlugin.GameRawData.Telemetry.PlayerTrackSurface') == 0 ) {\r\n\t\troot[\"offTrack\"]++\r\n\t}\r\n\tif ( $prop('DataCorePlugin.GameData.TrackPositionPercent') < 0.001 ) {\r\n\t\troot[\"offTrack\"] = 0 \r\n\t}\r\n\tif ( root[\"offTrack\"] > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') != 'Race') {\r\n\t\treturn red\r\n\t} else {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn green\r\n\t\t\t} else {\r\n\t\t\t\treturn purple\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2') {\r\n\r\n\tif ( $prop('DataCorePlugin.GameRawData.mLapInvalidated') == false ) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn green\r\n\t\t\t} else {\r\n\t\t\t\treturn purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn red\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\tif ( timeDiffMine > 0 ) {\r\n\t\treturn yellow\r\n\t} else {\r\n\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\treturn green\r\n\t\t} else {\r\n\t\t\treturn purple\r\n\t\t}\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa' ) {\r\n\r\n\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\tif ( timeDiffMine > 0 ) {\r\n\t\treturn yellow\r\n\t} else {\r\n\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\treturn green\r\n\t\t} else {\r\n\t\t\treturn purple\r\n\t\t}\r\n\t}\r\n\r\n} else {\r\n\r\n\tif ( $prop('DataCorePlugin.GameRawData.Graphics.isValidLap') == 1 ) {\r\n\t\tvar timeDiffMine = $prop('DataCorePlugin.GameRawData.Graphics.iEstimatedLapTime')/1000 - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = $prop('DataCorePlugin.GameRawData.Graphics.iEstimatedLapTime')/1000 - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn green\r\n\t\t\t} else {\r\n\t\t\t\treturn purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn red\r\n\t}\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -1132,7 +1198,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdeltaReviewDelay = 5000\r\n} else {\r\n\tdeltaReviewDelay = settings.deltaReviewDelay\r\n}\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && $prop('DataCorePlugin.GameRawData.Telemetry.LapCurrentLapTime') < deltaReviewDelay/1000 && timespantoseconds($prop('DataCorePlugin.GameRawData.Telemetry.LapCurrentLapTime')) != 0 ) {\r\n\t\r\n\t\treturn 1\r\n\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime')) < (deltaReviewDelay/1000) && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime')) != 0 ) {\r\n\t\t\r\n\t\treturn 1\r\n\t\t\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 < deltaReviewDelay && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 != 0) {\r\n\t\r\n\t\treturn 1\r\n\t\t\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 < deltaReviewDelay && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 != 0) {\r\n\t\r\n\t\treturn 1\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' || $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && $prop('DataCorePlugin.GameRawData.Graphics.iCurrentTime') < deltaReviewDelay && $prop('DataCorePlugin.GameRawData.Graphics.iCurrentTime') != 0 ) {\r\n\t\r\n\t\treturn 1\r\n\t\t\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\t\r\n} else {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 < deltaReviewDelay && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 != 0) {\r\n\t\r\n\t\treturn 1\r\n\t\t\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdeltaReview = 1\r\n\tdeltaReviewDelay = 5000\r\n} else {\r\n\tdeltaReview = (settings.hasOwnProperty(\"deltaReview\")) ? settings.deltaReview : 1\r\n\tdeltaReviewDelay = (settings.hasOwnProperty(\"deltaReviewDelay\")) ? settings.deltaReviewDelay : 5000\r\n}\r\n\r\nif ( deltaReview == 0 ) { return 0 }\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && $prop('DataCorePlugin.GameRawData.Telemetry.LapCurrentLapTime') < deltaReviewDelay/1000 && timespantoseconds($prop('DataCorePlugin.GameRawData.Telemetry.LapCurrentLapTime')) != 0 ) {\r\n\t\r\n\t\treturn 1\r\n\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime')) < (deltaReviewDelay/1000) && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime')) != 0 ) {\r\n\t\t\r\n\t\treturn 1\r\n\t\t\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 < deltaReviewDelay && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 != 0) {\r\n\t\r\n\t\treturn 1\r\n\t\t\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 < deltaReviewDelay && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 != 0) {\r\n\t\r\n\t\treturn 1\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\r\n} else {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && $prop('DataCorePlugin.GameRawData.Graphics.iCurrentTime') < deltaReviewDelay && $prop('DataCorePlugin.GameRawData.Graphics.iCurrentTime') != 0 ) {\r\n\t\r\n\t\treturn 1\r\n\t\t\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\t\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -11378,7 +11444,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.mapType ) {\r\n\treturn 1\r\n} else {\r\n\tswitch (settings.mapType) {\r\n\t\tcase 1: return 1\r\n\t\tcase 2: return 0\r\n\t\tdefault: return 1\r\n\t}\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.mapTypeMFM ) {\r\n\treturn 1\r\n} else {\r\n\tswitch (settings.mapTypeMFM) {\r\n\t\tcase 1: return 1\r\n\t\tcase 2: return 0\r\n\t\tdefault: return 1\r\n\t}\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -11454,7 +11520,7 @@
             },
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.mapType ) {\r\n\treturn 0\r\n} else {\r\n\tswitch (settings.mapType) {\r\n\t\tcase 1: return 0\r\n\t\tcase 2: return 1\r\n\t\tdefault: return 0\r\n\t}\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.mapTypeMFM ) {\r\n\treturn 0\r\n} else {\r\n\tswitch (settings.mapTypeMFM) {\r\n\t\tcase 1: return 0\r\n\t\tcase 2: return 1\r\n\t\tdefault: return 0\r\n\t}\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -11563,6 +11629,782 @@
         "Interpreter": 1
       },
       "ScreenId": "8962a7ab-1471-4063-9327-c1cafc97bdce"
+    },
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#00FFFFFF",
+      "IdleScreen": false,
+      "InGameScreen": true,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": false,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WebPageItem, SimHub.Plugins",
+          "AllowTransparency": true,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "StartAddress": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nvar mfm = ($prop('variable.positionMFM') == 'leftMFM') ? 'lmfm' : 'rmfm'\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.dashName')+'&ver='+$prop('variable.dashVer')+'&screen=Primary&'+mfm+'=Opponents'\r\n} else {\r\n\treturn ''\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "StartAddress"
+            }
+          },
+          "ClickThrough": false,
+          "Height": 268.0,
+          "IsFreezed": true,
+          "Left": 0.0,
+          "Name": "Analytics",
+          "StartAddress": "",
+          "Top": 0.0,
+          "Visible": true,
+          "Width": 325.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "BackgroundColor": "#FF353535",
+          "Height": 1.0,
+          "IsFreezed": true,
+          "IsRectangleItem": true,
+          "Left": 2.0,
+          "Name": "RectangleItem",
+          "Top": 140.0,
+          "Visible": true,
+          "Width": 134.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "BackgroundColor": "#FF353535",
+          "Height": 1.0,
+          "IsFreezed": true,
+          "IsRectangleItem": true,
+          "Left": 184.0,
+          "Name": "RectangleItem2",
+          "Top": 140.0,
+          "Visible": true,
+          "Width": 134.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Opacity": {
+              "Formula": {
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Opacity"
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "return ( $prop('variable.dashName') == 'LovelyOverlay') ? 0 : 1",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "BorderStyle": {
+            "BorderBottom": 2,
+            "BorderLeft": 2,
+            "BorderRight": 2,
+            "BorderTop": 2,
+            "RadiusBottomLeft": 12,
+            "RadiusBottomRight": 12,
+            "RadiusTopLeft": 12,
+            "RadiusTopRight": 12
+          },
+          "Height": 262.0,
+          "IsFreezed": true,
+          "IsRectangleItem": true,
+          "Left": 0.0,
+          "Name": "RectangleItem3",
+          "Top": 8.0,
+          "Visible": true,
+          "Width": 320.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "if (isnull([PersistantTrackerPlugin.DriverBehind_00_CarNumber]), 0, 1)\r\n\r\n"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF212121",
+              "BorderStyle": {
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Height": 24.0,
+              "IsRectangleItem": true,
+              "Left": 8.0,
+              "Name": "RectangleItem0",
+              "Top": 236.0,
+              "Visible": true,
+              "Width": 304.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "return ld_GetRelDriverName('Behind_00')",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_GetRelDriverColor('Behind_00')",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 0,
+              "IsFreezed": true,
+              "IsTextItem": true,
+              "Left": 90.0,
+              "Name": "Driver",
+              "Text": "F. Lastname",
+              "TextColor": "#FFFFFFFF",
+              "Top": 236.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 215.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "return '#' + $prop('PersistantTrackerPlugin.DriverBehind_00_CarNumber')",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_GetRelDriverColor('Behind_00')",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "CharWidth": 11.0,
+              "Font": "Roboto",
+              "FontSize": 18.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 1,
+              "IsFreezed": true,
+              "IsTextItem": true,
+              "Left": 40.0,
+              "Name": "Number",
+              "SpecialCharsWidth": 5.0,
+              "Text": "#000",
+              "TextColor": "#FFFFFFFF",
+              "Top": 236.0,
+              "UseMonospacedText": true,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 45.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FFFFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "return $prop('PersistantTrackerPlugin.DriverBehind_00_Position')",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "BorderStyle": {
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Font": "Roboto",
+              "FontSize": 17.0,
+              "FontWeight": "Black",
+              "Height": 24.0,
+              "HorizontalAlignment": 1,
+              "IsFreezed": true,
+              "IsTextItem": true,
+              "Left": 10.0,
+              "Name": "Position",
+              "Text": "00",
+              "TextColor": "#FF000000",
+              "Top": 236.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 24.0
+            }
+          ],
+          "Group": true,
+          "Height": 24.0,
+          "Left": 8.0,
+          "Name": "Driver Behind",
+          "RepeatTopOffset": 0.0,
+          "Top": 236.0,
+          "Visible": true,
+          "Width": 304.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "if (isnull([PersistantTrackerPlugin.DriverBehind_00_CarNumber]), 0, 1)\r\n"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "m\\.ss\\.fff",
+                  "Formula": {
+                    "Expression": "return ld_GetRelBestLapTime('Behind_00')",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_GetRelBestColor('Behind_00')",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 16.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 0,
+              "IsTextItem": true,
+              "Left": 25.0,
+              "Name": "Best Time",
+              "Text": "0:00.000",
+              "TextColor": "#FFFFFFFF",
+              "Top": 201.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 82.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Font": "Roboto",
+              "FontSize": 12.0,
+              "FontWeight": "Bold",
+              "Height": 14.0,
+              "HorizontalAlignment": 0,
+              "IsTextItem": true,
+              "Left": 25.0,
+              "Name": "Best Label",
+              "Text": "BEST",
+              "TextColor": "#FF878787",
+              "Top": 191.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 40.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "m\\.ss\\.fff",
+                  "Formula": {
+                    "Expression": "return ld_GetRelLastLapTime('Behind_00')",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 16.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 0,
+              "IsTextItem": true,
+              "Left": 25.0,
+              "Name": "Last TIme",
+              "Text": "0:00.000",
+              "TextColor": "#FFFFFFFF",
+              "Top": 166.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 82.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Font": "Roboto",
+              "FontSize": 12.0,
+              "FontWeight": "Bold",
+              "Height": 14.0,
+              "HorizontalAlignment": 0,
+              "IsTextItem": true,
+              "Left": 25.0,
+              "Name": "Last Label",
+              "Text": "LAST",
+              "TextColor": "#FF878787",
+              "Top": 156.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 40.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "-0.0",
+                  "Formula": {
+                    "Expression": "return ld_formatTimeShort( Math.abs($prop('PersistantTrackerPlugin.DriverBehind_00_Gap')) )",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "CharWidth": 33.0,
+              "Font": "Roboto",
+              "FontSize": 60.0,
+              "FontWeight": "Bold",
+              "Height": 50.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 120.0,
+              "Name": "Behind Gap",
+              "Text": "+0.00",
+              "TextColor": "#FFFFFFFF",
+              "Top": 165.5,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 170.0
+            }
+          ],
+          "Group": true,
+          "Height": 69.0,
+          "Left": 25.0,
+          "Name": "Behind Times",
+          "Top": 156.0,
+          "Visible": true,
+          "Width": 265.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+          "AutoSize": true,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Image": {
+              "Formula": {
+                "Expression": "var behindDistance = Math.round( ($prop('PersistantTrackerPlugin.DriverBehind_00_Distance') / ($prop('PersistantTrackerPlugin.DriverBehind_00_Distance') + Math.abs($prop('PersistantTrackerPlugin.DriverAhead_00_Distance')))) * 100 )\r\n\r\nif ( ld_isIncreasing(behindDistance) == true ) {\r\n\t\r\n\treturn 'direction-up'\r\n\t\r\n} else if ( ld_isIncreasing( behindDistance) == false ) {\t\r\n\t\r\n\treturn 'direction-down'\r\n\t\r\n} else { \r\n\t\r\n\treturn 'direction-bg'\r\n\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Image"
+            }
+          },
+          "Height": 16.0,
+          "Image": "direction-bg",
+          "IsFreezed": true,
+          "Left": 134.5,
+          "Name": "ImageItem",
+          "RenderingSkip": 50,
+          "Top": 132.0,
+          "Visible": true,
+          "Width": 51.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "if (isnull([PersistantTrackerPlugin.DriverAhead_00_CarNumber]), 0, 1)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "m\\.ss\\.fff",
+                  "Formula": {
+                    "Expression": "return ld_GetRelBestLapTime('Ahead_00')",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_GetRelBestColor('Ahead_00')",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 16.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 0,
+              "IsTextItem": true,
+              "Left": 25.0,
+              "Name": "Best Time",
+              "Text": "0:00.000",
+              "TextColor": "#FFFFFFFF",
+              "Top": 101.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 82.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Font": "Roboto",
+              "FontSize": 12.0,
+              "FontWeight": "Bold",
+              "Height": 14.0,
+              "HorizontalAlignment": 0,
+              "IsTextItem": true,
+              "Left": 25.0,
+              "Name": "Best Label",
+              "Text": "BEST",
+              "TextColor": "#FF878787",
+              "Top": 91.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 40.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "m\\.ss\\.fff",
+                  "Formula": {
+                    "Expression": "return ld_GetRelLastLapTime('Ahead_00')",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 16.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 0,
+              "IsTextItem": true,
+              "Left": 25.0,
+              "Name": "Last TIme",
+              "Text": "0:00.000",
+              "TextColor": "#FFFFFFFF",
+              "Top": 66.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 82.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Font": "Roboto",
+              "FontSize": 12.0,
+              "FontWeight": "Bold",
+              "Height": 14.0,
+              "HorizontalAlignment": 0,
+              "IsTextItem": true,
+              "Left": 25.0,
+              "Name": "Last Label",
+              "Text": "LAST",
+              "TextColor": "#FF878787",
+              "Top": 56.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 40.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "",
+                  "Formula": {
+                    "Expression": "return ld_formatTimeShort( Math.abs($prop('PersistantTrackerPlugin.DriverAhead_00_Gap')) )",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "CharWidth": 33.0,
+              "Font": "Roboto",
+              "FontSize": 60.0,
+              "FontWeight": "Bold",
+              "Height": 50.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 120.0,
+              "Name": "Ahead Gap",
+              "Text": "+0.00",
+              "TextColor": "#FFFFFFFF",
+              "Top": 65.5,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 170.0
+            }
+          ],
+          "Group": true,
+          "Height": 69.0,
+          "Left": 25.0,
+          "Name": "Ahead Times",
+          "Top": 56.0,
+          "Visible": true,
+          "Width": 265.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "if (isnull([PersistantTrackerPlugin.DriverAhead_00_CarNumber]), 0, 1)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF212121",
+              "BorderStyle": {
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Height": 24.0,
+              "IsRectangleItem": true,
+              "Left": 8.0,
+              "Name": "RectangleItem0",
+              "Top": 20.0,
+              "Visible": true,
+              "Width": 304.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "return ld_GetRelDriverName('Ahead_00')",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_GetRelDriverColor('Ahead_00')",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 0,
+              "IsFreezed": true,
+              "IsTextItem": true,
+              "Left": 90.0,
+              "Name": "Driver",
+              "Text": "F. Lastname",
+              "TextColor": "#FFFFFFFF",
+              "Top": 20.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 215.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "return '#' + $prop('PersistantTrackerPlugin.DriverAhead_00_CarNumber')",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_GetRelDriverColor('Ahead_00')",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "CharWidth": 11.0,
+              "Font": "Roboto",
+              "FontSize": 18.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 1,
+              "IsFreezed": true,
+              "IsTextItem": true,
+              "Left": 40.0,
+              "Name": "Number",
+              "SpecialCharsWidth": 11.0,
+              "Text": "#000",
+              "TextColor": "#FFFFFFFF",
+              "Top": 20.0,
+              "UseMonospacedText": true,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 45.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FFFFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "return $prop('PersistantTrackerPlugin.DriverAhead_00_Position')",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "BorderStyle": {
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Font": "Roboto",
+              "FontSize": 17.0,
+              "FontWeight": "Black",
+              "Height": 24.0,
+              "HorizontalAlignment": 1,
+              "IsFreezed": true,
+              "IsTextItem": true,
+              "Left": 10.0,
+              "Name": "Position",
+              "Text": "00",
+              "TextColor": "#FF000000",
+              "Top": 20.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 24.0
+            }
+          ],
+          "Group": true,
+          "Height": 24.0,
+          "Left": 8.0,
+          "Name": "Driver Ahead",
+          "RepeatTopOffset": 0.0,
+          "Top": 20.0,
+          "Visible": true,
+          "Width": 304.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FF000000",
+          "Bindings": {
+            "BackgroundColor": {
+              "Formula": {
+                "Expression": "return ( $prop('variable.dashName') == 'LovelyOverlay' ) ? '#00FFFFFF' : '#FF000000'",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "BackgroundColor"
+            }
+          },
+          "Font": "Roboto",
+          "FontSize": 12.0,
+          "FontWeight": "Bold",
+          "Height": 18.0,
+          "HorizontalAlignment": 1,
+          "IsFreezed": true,
+          "IsTextItem": true,
+          "Left": 117.0,
+          "Name": "Title",
+          "Text": "OPPONENTS",
+          "TextColor": "#FFFFFFFF",
+          "Top": 0.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 86.0
+        }
+      ],
+      "Name": "Opponents",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": ""
+      },
+      "PitScreen": false,
+      "ScreenEnabledExpression": {
+        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst currentSim = ld_getSim()\r\n\t\r\nif ( settings ) {\r\n\r\n\tif ($prop('variable.positionMFM') == 'leftMFM') {\r\n\t\tactiveMFM = eval(\"settings.\"+currentSim+\".activeLeftMFM\").trim()\r\n\t}  else if ($prop('variable.positionMFM') == 'rightMFM') {\r\n\t\tactiveMFM = eval(\"settings.\"+currentSim+\".activeRightMFM\").trim()\r\n\t} else {\r\n\t\tactiveMFM = \"\"\r\n\t}\r\n\t\r\n\tif ( !activeMFM || activeMFM == \"\" ) {\r\n\t\t// Show MFM if no activeMFM has been set\r\n\t\treturn true\r\n\t} else {\r\n\t\t// Is MFM set in activeMFM?\r\n\t\treturn activeMFM.includes(9)\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn true \r\n\r\n}",
+        "Interpreter": 1
+      },
+      "ScreenId": "360342b3-7ca2-4344-b8ea-649d80dbb0cb"
     },
     {
       "AllowOverlays": true,
@@ -12173,7 +13015,7 @@
           "Width": 65.0
         }
       ],
-      "Name": "Tyre Progress",
+      "Name": "Tyre Progress (Pit Wall Only)",
       "OverlayMaxDuration": 0,
       "OverlayMinDuration": 0,
       "OverlayTriggerExpression": {

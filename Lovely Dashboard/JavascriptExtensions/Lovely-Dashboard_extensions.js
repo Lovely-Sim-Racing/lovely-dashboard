@@ -1,3 +1,15 @@
+var lovely_blue = '#FF2B98FB'
+var white = '#FFFFFFFF'
+var black = '#FF000000'
+var gray = '#FF444444'
+var dark = '#FF262626'
+var red = '#FFFA0000'
+var yellow = '#FFFFE04C'
+var green = '#FF00FF02'
+var purple = '#FFC500CE'
+var orange = '#FFFF7400'
+var blue = '#FF00BFFF'
+
 function ld_GetPlayerName() {
     const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')
     const settings = JSON.parse(json_settings);
@@ -38,9 +50,9 @@ function ld_GetPlayerLastLapTime() {
 
 function ld_GetPlayerBestColor() {
     if ( driverdeltatobest($prop('DataCorePlugin.GameData.Position')) == 0 ) {
-        return '#C500CE'
+        return purple
     } else {
-        return '#FFE04C'
+        return yellow
     }
 }
 
@@ -111,9 +123,9 @@ function ld_GetRelLastLapTime(relPosition) {
 
 function ld_GetRelBestColor(relPosition) {
     if ( driverdeltatobest($prop('PersistantTrackerPlugin.Driver'+relPosition+'_Position')) == 0 ) {
-        return '#C500CE'
+        return purple
     } else {
-        return '#FFFFFF'
+        return white
     }
 }
 
@@ -127,21 +139,21 @@ function ld_GetRelDriverColor(relPosition) {
     if (driver_lap > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') == 'RACE') {
         if (
             $prop('PersistantTrackerPlugin.Driver'+relPosition+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') >= 2 ) {
-            return '#FF7400' // 2+ Laps Ahead
+            return orange // 2+ Laps Ahead
         } else if (
             $prop('PersistantTrackerPlugin.Driver'+relPosition+'_CurrentLap') - $prop('DataCorePlugin.GameRawData.Graphics.CompletedLaps') <= -2 ) {
-            return '#00BFFF' // 2- Laps Behind
+            return blue // 2- Laps Behind
         } else {
             if ( driver_lap + driver_gap < (driver_lap * 0.15) ) {
-                return '#FF7400' // Ahead
+                return orange // Ahead
             } else if ( driver_lap + driver_gap > driver_lap+(driver_lap * 0.85) ) {
-                return '#00BFFF' // Behind
+                return blue // Behind
             } else {
-                return '#FFFFFF' // Same Lap
+                return white // Same Lap
             }
         }
     } else {
-        return '#FFFFFF'
+        return white
     }
 }
 
@@ -190,16 +202,10 @@ function ld_formatName (name, mode) {
         var first_name = full_name.shift();
         var last_name = full_name;
         if (mode == 2) {
-            // Firstname L.
-            //return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'
             return first_name + ' ' + last_name.join(" ").substr(0,1) + '.'
         } else if (mode == 3) {
-            // Firstname Lastname
-            //return full_name[0] + ' ' + full_name[full_name.length-1]
             return first_name + ' ' + last_name.join(" ")
         } else {
-            // F. Lastname
-            //return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]
             return first_name.substr(0,1) + '. ' + last_name.join(" ")
         }
     } else {
@@ -256,14 +262,245 @@ function ld_getAvgValue(getAvgForProp, lapAvg, resetKey) {
 
 }
 
+//
+//
+// Estimated Lap
+
+function ld_getEstimatedLapTime() {
+    if ( timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime_SessionBestBased')) != 0 ) {
+        return $prop('PersistantTrackerPlugin.EstimatedLapTime_SessionBestBased')
+    } else if ( timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime_AllTimeBestBased')) != 0 ) {
+        return $prop('PersistantTrackerPlugin.EstimatedLapTime_AllTimeBestBased')
+    } else {
+        return $prop('CurrentLapTime')
+    }
+}
+
+function ld_getEstimatedDelta() {
+    if ( timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime_SessionBestBased')) != 0 ) {
+        return ld_formatTime( timespantoseconds( $prop('PersistantTrackerPlugin.EstimatedLapTime_SessionBestBased')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') ) )
+    } else if ( timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime_AllTimeBestBased')) != 0 ) {
+        return ld_formatTime( timespantoseconds( $prop('PersistantTrackerPlugin.EstimatedLapTime_AllTimeBestBased')) - timespantoseconds( $prop('PersistantTrackerPlugin.AllTimeBest') ) )
+    } else {
+        return ld_formatTime( 0 )
+    }
+}
+
+function ld_getEstimatedLabel() {
+    if ( timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime_SessionBestBased')) != 0 ) {
+        return 'ESTIMATED LAP'
+    } else if ( timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime_AllTimeBestBased')) != 0 ) {
+        return 'ESTIMATED LAP (ALL TIME:                     )'
+    } else {
+        return 'CURRENT LAP'
+    }
+}
+
+function ld_getEstimatedColour() {
+
+    if ( timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime_SessionBestBased')) != 0 ) {
+        var timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime_SessionBestBased')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )
+        var timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime_SessionBestBased')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )
+    } else if ( timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime_AllTimeBestBased')) != 0 ) {
+        var timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime_AllTimeBestBased')) - timespantoseconds( $prop('PersistantTrackerPlugin.AllTimeBest') )
+        var timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime_AllTimeBestBased')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )
+     } else {
+        var timeDiffMine = null
+        var timeDiffOverall = null
+    }
+
+     if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {
+    
+        // Calculate Off Tracks
+        if( root["offTrack"] == null ) {
+            root["offTrack"] = 0
+        }
+        if ( $prop('DataCorePlugin.GameRawData.Telemetry.PlayerTrackSurface') == 0 ) {
+            root["offTrack"]++
+        }
+        if ( $prop('DataCorePlugin.GameData.TrackPositionPercent') < 0.001 ) {
+            root["offTrack"] = 0 
+        }
+        if ( root["offTrack"] > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') != 'Race') {
+            return red
+        } else {
+            if ( timeDiffMine > 0 ) {
+                return yellow
+            } else {
+                if ( timeDiffOverall > 0 ) {
+                    return green
+                } else {
+                    return purple
+                }
+            }
+        }
+
+    } else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2') {
+
+        if ( $prop('DataCorePlugin.GameRawData.mLapInvalidated') == false ) {
+            
+            if ( timeDiffMine > 0 ) {
+                return yellow
+            } else {
+                if ( timeDiffOverall > 0 ) {
+                    return green
+                } else {
+                    return purple
+                }
+            }
+        } else {
+            return red
+        }
+
+    } else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {
+
+        if ( timeDiffMine > 0 ) {
+            return yellow
+        } else {
+            if ( timeDiffOverall > 0 ) {
+                return green
+            } else {
+                return purple
+            }
+        }
+
+    } else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa' ) {
+
+        if ( timeDiffMine > 0 ) {
+            return yellow
+        } else {
+            if ( timeDiffOverall > 0 ) {
+                return green
+            } else {
+                return purple
+            }
+        }
+        
+    } else if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {
+
+        fastestLap = timespantoseconds(isnull(driverbestlap($prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1), '0:00.000'))
+        
+        if ( ! timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) > 0) {
+            return white
+        } else if ( $prop('GameRawData.PlayerLapData.m_currentLapInvalid') == 0) {
+
+            if ( timeDiffMine > 0 ) {
+                return yellow
+            } else {
+                if ( timeDiffOverall > 0 ) {
+                    return green
+                } else {
+                    return purple
+                }
+            }
+        
+        } else {
+            return red
+        }
+
+    } else {
+
+        if ( $prop('DataCorePlugin.GameRawData.Graphics.isValidLap') == 1 ) {
+
+            if ( timeDiffMine == null & timeDiffOverall == null) {
+                return white
+            } else if ( timeDiffMine > 0 ) {
+                return yellow
+            } else {
+                if ( timeDiffOverall > 0 ) {
+                    return green
+                } else {
+                    return purple
+                }
+            }
+
+        } else {
+            return red
+        }
+
+    }
+
+}
+
+function ld_getEstimatedTextColour() {
+
+    if ( timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime_SessionBestBased')) != 0 ) {
+        var timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime_SessionBestBased')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )
+        var timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime_SessionBestBased')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )
+    } else if ( timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime_AllTimeBestBased')) != 0 ) {
+        var timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime_AllTimeBestBased')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )
+        var timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime_AllTimeBestBased')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )
+     } else {
+        var timeDiffMine = null
+        var timeDiffOverall = null
+    }
+
+     if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {
+    
+        // Calculate Off Tracks
+        if( root["offTrack"] == null ) {
+            root["offTrack"] = 0
+        }
+        if ( $prop('DataCorePlugin.GameRawData.Telemetry.PlayerTrackSurface') == 0 ) {
+            root["offTrack"]++
+        }
+        if ( $prop('DataCorePlugin.GameData.TrackPositionPercent') < 0.001 ) {
+            root["offTrack"] = 0 
+        }
+        if ( root["offTrack"] > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') != 'Race') {
+            return white // red bg
+        } else {
+            return black
+        }
+
+    } else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2') {
+
+        if ( $prop('DataCorePlugin.GameRawData.mLapInvalidated') == false ) {
+            return black 
+        } else {
+            return white // red bg
+        }
+
+    } else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {
+
+        return black
+
+    } else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa' ) {
+
+        return black
+        
+    } else if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {
+
+        fastestLap = timespantoseconds(isnull(driverbestlap($prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1), '0:00.000'))
+        
+        if ( ! timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) > 0) {
+            return white
+        } else if ( $prop('GameRawData.PlayerLapData.m_currentLapInvalid') == 0) {
+
+            return black
+        
+        } else {
+            return white // red bg
+        }
+
+    } else {
+
+        if ( $prop('DataCorePlugin.GameRawData.Graphics.isValidLap') == 1 ) {
+
+            return black
+
+        } else {
+            return white // red bg
+        }
+
+    }
+
+}
 
 //
 //
 // Sectors
 function ld_sectorCount() {
-    // if ( $prop('DataCorePlugin.GameData.CompletedLaps') <= 0 ) {
-    //     root['sectorCount'] = 1 // Reset if 0 laps completed
-    // }
 
     if ( root['sectorCount'] == null ) {
         root['sectorCount'] = $prop('DataCorePlugin.GameData.CurrentSectorIndex')
@@ -275,6 +512,7 @@ function ld_sectorCount() {
     }
     return root['sectorCount']
 }
+
 function ld_sectorSegmentWidth(sector) {
     if ( sector == ld_sectorCount() ) {
         return 160 / ld_sectorCount()
@@ -282,36 +520,30 @@ function ld_sectorSegmentWidth(sector) {
         return 160 / ld_sectorCount() - 1
     }
 }
+
 function ld_sectorSegmentPos(sector) {
     return (160 / ld_sectorCount() ) * (sector-1)
 }
+
 function ld_sectorSegmentColor(sector) {
 
     var timeDiff = timespantoseconds( currentlapgetsectortime(sector, false) ) - 
                 timespantoseconds( sessionbestlapgetsectortime(sector, false) )
-    var overallDiff = timespantoseconds( currentlapgetsectortime(sector, false) ) - 
-                timespantoseconds( bestsectortime(sector, false) )
     if (sector >= $prop('DataCorePlugin.GameData.CurrentSectorIndex') ) {
-        return '#FF262626' // Off
-    } else if (overallDiff <= 0) {
-        return '#FFC500CE' // Purple
+        return gray
     } else if (timeDiff <= 0) {
-        return '#FF00FF02' // Green
+        return green
     } else {
-        return '#FFFFE04C' // Yellow 
+        return yellow 
     }
 }
 function ld_sectorLastSegmentColor(sector) {
     var timeDiff = timespantoseconds( lastlapgetsectortime(sector, false) ) - 
                 timespantoseconds( sessionbestlapgetsectortime(sector, false) )
-    var overallDiff = timespantoseconds( lastlapgetsectortime(sector, false) ) - 
-                timespantoseconds( bestsectortime(sector, false) )
-    if (overallDiff <= 0) {
-        return '#FFC500CE' // Purple
-    } else if (timeDiff <= 0) {
-        return '#FF00FF02' // Green
+    if (timeDiff <= 0) {
+        return green
     } else {
-        return '#FFFFE04C' // Yellow
+        return yellow
     }
 }
 
@@ -351,6 +583,28 @@ function ld_getSim() {
             return "generic"
     }
 	
+}
+
+function ld_formatTime(time) {
+    if (time > -10 && time < 10) {
+		return format(time, '0.000', true)
+	} else if (time > -100 && time < 100) {
+		return format(time, '00.00', true)
+	} else if (time > -1000 && time < 1000) {
+		return format(time, '000.0', true)
+	} else {
+		return format(time, '000', true)
+	}
+}
+
+function ld_formatTimeShort(time) {
+    if (time > -10 && time < 10) {
+		return format(time, '0.00', true)
+	} else if (time > -100 && time < 100) {
+		return format(time, '00.0', true)
+	} else {
+		return format(time, '000', true)
+	}
 }
 
 function ld_isIncreasing(value) {

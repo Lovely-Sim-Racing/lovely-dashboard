@@ -3,15 +3,13 @@
   "BackgroundOpacity": 100.0,
   "BaseHeight": 80,
   "BaseWidth": 320,
-  "DashboardDebugManager": {
-    "Maximized": false
-  },
+  "DashboardDebugManager": {},
   "EnableClickThroughOverlay": true,
   "EnableOnDashboardMessaging": true,
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "cc62b9f1-e177-4a6f-b227-a8e12db1b2d6",
+  "Id": "70c97d9a-3c89-49e8-a8c8-53142686255d",
   "Images": [],
   "IsOverlay": false,
   "Metadata": {
@@ -67,6 +65,14 @@
               },
               "Mode": 2,
               "TargetPropertyName": "Top"
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "return ( $prop('variable.dashName') == 'LovelyOverlay') ? 0 : 1",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
             }
           },
           "BorderStyle": {
@@ -667,6 +673,14 @@
               },
               "Mode": 2,
               "TargetPropertyName": "Top"
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "return ( $prop('variable.dashName') == 'LovelyOverlay') ? 0 : 1",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
             }
           },
           "BorderStyle": {
@@ -977,7 +991,16 @@
   "ShowOnScreenControls": true,
   "SnapToGrid": false,
   "Variables": {
-    "DashboardVariables": []
+    "DashboardVariables": [
+      {
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "dashName"
+      }
+    ]
   },
   "Version": 2
 }
