@@ -3,7 +3,6 @@
 </p>
 
 <h1 align="center">Lovely SimHub Dashboard</h1>
-<p align="center"><strong>Version 2.3.1</strong></p>
 
 <p align="center">
 A multifunctional feature packed SimHub Dashboard (DDU) and ecosystem.

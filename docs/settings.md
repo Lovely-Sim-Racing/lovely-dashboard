@@ -118,12 +118,16 @@ You can enable or disable the track flags in the top left module.
 ---
 
 #### `mapType`
-Change the map type, between a static or animated map
+Change the map type on the Map Screen, between a static or animated map
 
 - **`1` (Default)** Static Map
 - `2` Animated Map
 
----
+#### `mapTypeMFM`
+Change the map type in the MFM, between a static or animated map
+
+- `1` Static Map
+- **`2` (Default)** Animated Map
 
 #### `mapZoom`
 If `mapType` is set to animated, you can select the unzoom percentage. The faster you go, the more the map zooms-out.
