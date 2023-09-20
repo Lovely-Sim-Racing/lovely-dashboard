@@ -9,7 +9,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "428409ca-fb0f-4b2b-a448-c8dc7c91e5d7",
+  "Id": "50281b1b-657e-45f9-a978-8597cf259a50",
   "Images": [
     {
       "Extension": ".png",
@@ -658,7 +658,7 @@
               "Bindings": {
                 "BackgroundColor": {
                   "Formula": {
-                    "Expression": "if ($prop('Flag_Green')==1) {\r\n\treturn '#FF00D901'\r\n} else if ($prop('Flag_Yellow')==1) {\r\n\treturn '#FFFFE04C'\r\n} else if ($prop('Flag_Checkered')==1) {\r\n\treturn 'Gray'\r\n} else {\r\n\treturn '#FFFFFFFF'\r\n}\r\n",
+                    "Expression": "if ($prop('Flag_Green')==1) {\r\n\treturn '#FF00D901'\r\n} else if ($prop('Flag_Yellow')==1) {\r\n\treturn '#FFFFE04C'\r\n} else {\r\n\treturn '#FFFFFFFF'\r\n}\r\n",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -838,7 +838,7 @@
         "EvaluateOnlyOnce": false,
         "OverrideWithParentDashboardVariableWhenAvailable": false,
         "ValueExpression": {
-          "Expression": "'1.1.1'"
+          "Expression": "'1.2.0'"
         },
         "VariableName": "dashVer"
       },

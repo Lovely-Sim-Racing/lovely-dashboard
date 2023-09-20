@@ -3,15 +3,13 @@
   "BackgroundOpacity": 100.0,
   "BaseHeight": 80,
   "BaseWidth": 320,
-  "DashboardDebugManager": {
-    "Maximized": false
-  },
+  "DashboardDebugManager": {},
   "EnableClickThroughOverlay": true,
   "EnableOnDashboardMessaging": true,
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "fb5ba43b-60d9-49fb-9c45-7abc83942683",
+  "Id": "70c97d9a-3c89-49e8-a8c8-53142686255d",
   "Images": [],
   "IsOverlay": false,
   "Metadata": {
@@ -67,19 +65,17 @@
               },
               "Mode": 2,
               "TargetPropertyName": "Top"
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "return ( $prop('variable.dashName') == 'LovelyOverlay') ? 0 : 1",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
             }
           },
           "BorderStyle": {
-            "Bindings": {
-              "RadiusTopRight": {
-                "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
-                  "Interpreter": 1
-                },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusTopRight"
-              }
-            },
             "BorderBottom": 2,
             "BorderLeft": 2,
             "BorderRight": 2,
@@ -87,7 +83,7 @@
             "RadiusBottomLeft": 12,
             "RadiusBottomRight": 12,
             "RadiusTopLeft": 12,
-            "RadiusTopRight": 45
+            "RadiusTopRight": 12
           },
           "Height": 80.0,
           "IsFreezed": true,
@@ -677,6 +673,14 @@
               },
               "Mode": 2,
               "TargetPropertyName": "Top"
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "return ( $prop('variable.dashName') == 'LovelyOverlay') ? 0 : 1",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
             }
           },
           "BorderStyle": {
@@ -987,7 +991,16 @@
   "ShowOnScreenControls": true,
   "SnapToGrid": false,
   "Variables": {
-    "DashboardVariables": []
+    "DashboardVariables": [
+      {
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "dashName"
+      }
+    ]
   },
   "Version": 2
 }

@@ -3,13 +3,22 @@
   "BackgroundOpacity": 100.0,
   "BaseHeight": 330,
   "BaseWidth": 160,
-  "DashboardDebugManager": {},
+  "DashboardDebugManager": {
+    "WindowPositionSettings": {
+      "AllowTransparency": false,
+      "CloseOnMonitorLoss": false,
+      "IsFullScreen": false,
+      "NoWindowActivate": false,
+      "Position": "2262,211,160,330",
+      "TopMost": false
+    }
+  },
   "EnableClickThroughOverlay": true,
   "EnableOnDashboardMessaging": true,
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "7b9b5977-8a61-4166-9243-d281b02c622e",
+  "Id": "0d8112b5-5fe5-4699-a17b-af9e40962d45",
   "Images": [],
   "IsOverlay": false,
   "Metadata": {
@@ -529,18 +538,10 @@
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "BackgroundColor": "#FF878787",
-              "Behavior": {
-                "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Behaviors.DoubleText.Imp.LiveDeltaSessionBest, SimHub.Plugins",
-                "Settings": {
-                  "AlwaysAddSign": true,
-                  "AppendUnit": false,
-                  "Decimals": 3
-                }
-              },
               "Bindings": {
                 "BackgroundColor": {
                   "Formula": {
-                    "Expression": "gray = '#FF878787'\r\nred =    '#FFFA0000'\r\nyellow = '#FFFFE04C'\r\ngreen =  '#FF00FF02'\r\npurple = '#FFC500CE'\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\t// iRacing\r\n\tif( root[\"offTrack\"] == null ) {\r\n\t\troot[\"offTrack\"] = 0\r\n\t}\r\n\tif ( $prop('DataCorePlugin.GameRawData.Telemetry.PlayerTrackSurface') == 0 ) {\r\n\t\troot[\"offTrack\"]++\r\n\t}\r\n\tif ( $prop('DataCorePlugin.GameData.TrackPositionPercent') < 0.001 ) {\r\n\t\troot[\"offTrack\"] = 0 \r\n\t}\r\n\tif ( root[\"offTrack\"] > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') != 'Race' ) {\r\n\t\treturn '#FA0000'\r\n\t} else {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn green\r\n\t\t\t} else {\r\n\t\t\t\treturn purple\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ) {\r\n\t\r\n\t// ACC\r\n\tif ( $prop('DataCorePlugin.GameRawData.Graphics.isValidLap') == 1 ) {\r\n\t\tvar timeDiffMine = $prop('DataCorePlugin.GameRawData.Graphics.iEstimatedLapTime')/1000 - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = $prop('DataCorePlugin.GameRawData.Graphics.iEstimatedLapTime')/1000 - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn green\r\n\t\t\t} else {\r\n\t\t\t\treturn purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn red\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\t// AMS2\r\n\tif ( $prop('DataCorePlugin.GameRawData.mLapInvalidated') == false ) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn green\r\n\t\t\t} else {\r\n\t\t\t\treturn purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn red\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\t// rF2\r\n\tif ( $prop('DataCorePlugin.GameData.LapInvalidated') == false ) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn green\r\n\t\t\t} else {\r\n\t\t\t\treturn purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn red\r\n\t}\r\n\t\r\n} else {\r\n\tif ( ! timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) > 0) {\r\n\t\treturn gray\r\n\t} else if (!$prop('LapInvalidated')) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn green\r\n\t\t\t} else {\r\n\t\t\t\treturn purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn red\r\n\t}\r\n}",
+                    "Expression": "return ld_getEstimatedColour()",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -556,7 +557,7 @@
                 },
                 "Text": {
                   "Formula": {
-                    "Expression": "var timeDiff = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds($prop('BestLapTime'))\r\n\r\nif (timeDiff >= -9 && timeDiff <= 9) {\r\n\treturn format(timeDiff, '0.000', true)\r\n} else if (timeDiff >= -99 && timeDiff <= 99) {\r\n\treturn format(timeDiff, '00.00', true)\r\n} else if (timeDiff >= -999 && timeDiff <= 999) {\r\n\treturn format(timeDiff, '000.0', true)\r\n} else {\r\n\treturn format(timeDiff, '000', true)\r\n}",
+                    "Expression": "return ld_getEstimatedDelta()",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -564,68 +565,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\t// iRacing\r\n\tif( root[\"offTrack\"] == null ) {\r\n\t\troot[\"offTrack\"] = 0\r\n\t}\r\n\tif ( $prop('DataCorePlugin.GameRawData.Telemetry.PlayerTrackSurface') == 0 ) {\r\n\t\troot[\"offTrack\"]++\r\n\t}\r\n\tif ( $prop('DataCorePlugin.GameData.TrackPositionPercent') < 0.001 ) {\r\n\t\troot[\"offTrack\"] = 0 \r\n\t}\r\n\tif ( root[\"offTrack\"] > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') != 'Race' ) {\r\n\t\treturn '#ffffff'\r\n\t} else {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn '#000000' // Yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn '#000000' // Green\r\n\t\t\t} else {\r\n\t\t\t\treturn '#ffffff' // Purple\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ) {\r\n\r\n\t// ACC\r\n\tif ( $prop('DataCorePlugin.GameRawData.Graphics.isValidLap') == 1 ) {\r\n\t\tvar timeDiffMine = $prop('DataCorePlugin.GameRawData.Graphics.iEstimatedLapTime')/1000 - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = $prop('DataCorePlugin.GameRawData.Graphics.iEstimatedLapTime')/1000 - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn '#000000' // Yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn '#000000' // Green\r\n\t\t\t} else {\r\n\t\t\t\treturn '#ffffff' // Purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn '#ffffff'\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\t// AMS2\r\n\tif ( $prop('DataCorePlugin.GameRawData.mLapInvalidated') == false ) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn '#000000' // Yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn '#000000' // Green\r\n\t\t\t} else {\r\n\t\t\t\treturn '#ffffff' // Purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn '#ffffff'\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\t// rF2\r\n\tif ( $prop('DataCorePlugin.GameData.LapInvalidated') == false ) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn '#000000' // Yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn '#000000' // Green\r\n\t\t\t} else {\r\n\t\t\t\treturn '#ffffff' // Purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn '#ffffff'\r\n\t}\r\n\t\r\n} else {\r\n\tif ( ! timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) > 0) {\r\n\t\treturn '#000000'\r\n\t} else if (!$prop('LapInvalidated')) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn '#000000' // Yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn '#000000' // Green\r\n\t\t\t} else {\r\n\t\t\t\treturn '#ffffff' // Purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn '#ffffff'\r\n\t}\r\n}",
-                    "Interpreter": 1
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
-                }
-              },
-              "BorderStyle": {
-                "RadiusBottomLeft": 2,
-                "RadiusBottomRight": 2,
-                "RadiusTopLeft": 15,
-                "RadiusTopRight": 15
-              },
-              "Font": "Roboto",
-              "FontSize": 30.0,
-              "FontWeight": "Bold",
-              "Height": 33.0,
-              "HorizontalAlignment": 1,
-              "IsFreezed": true,
-              "IsTextItem": true,
-              "Left": 0.0,
-              "Name": "Session best lap time - Live delta",
-              "OriginalName": "New",
-              "OriginalText": "0.000",
-              "Text": "+3.125",
-              "TextColor": "#FF000000",
-              "Top": 0.0,
-              "VerticalAlignment": 1,
-              "Visible": false,
-              "Width": 160.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "BackgroundColor": "#FF878787",
-              "Bindings": {
-                "BackgroundColor": {
-                  "Formula": {
-                    "Expression": "gray = '#FF878787'\r\nred =    '#FFFA0000'\r\nyellow = '#FFFFE04C'\r\ngreen =  '#FF00FF02'\r\npurple = '#FFC500CE'\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\t// iRacing\r\n\tif( root[\"offTrack\"] == null ) {\r\n\t\troot[\"offTrack\"] = 0\r\n\t}\r\n\tif ( $prop('DataCorePlugin.GameRawData.Telemetry.PlayerTrackSurface') == 0 ) {\r\n\t\troot[\"offTrack\"]++\r\n\t}\r\n\tif ( $prop('DataCorePlugin.GameData.TrackPositionPercent') < 0.001 ) {\r\n\t\troot[\"offTrack\"] = 0 \r\n\t}\r\n\tif ( root[\"offTrack\"] > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') != 'Race' ) {\r\n\t\treturn '#FA0000'\r\n\t} else {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn green\r\n\t\t\t} else {\r\n\t\t\t\treturn purple\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ) {\r\n\t\r\n\t// ACC\r\n\tif ( $prop('DataCorePlugin.GameRawData.Graphics.isValidLap') == 1 ) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn green\r\n\t\t\t} else {\r\n\t\t\t\treturn purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn red\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\t// AMS2\r\n\tif ( $prop('DataCorePlugin.GameRawData.mLapInvalidated') == false ) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn green\r\n\t\t\t} else {\r\n\t\t\t\treturn purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn red\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\t// rF2\r\n\tif ( $prop('DataCorePlugin.GameData.LapInvalidated') == false ) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn green\r\n\t\t\t} else {\r\n\t\t\t\treturn purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn red\r\n\t}\r\n\t\r\n} else {\r\n\tif ( ! timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) > 0) {\r\n\t\treturn gray\r\n\t} else if (!$prop('LapInvalidated')) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn green\r\n\t\t\t} else {\r\n\t\t\t\treturn purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn red\r\n\t}\r\n}",
-                    "Interpreter": 1
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "BackgroundColor"
-                },
-                "Height": {
-                  "Formula": {
-                    "Expression": "return ( $prop('CurrentSectorIndex') <= 0 ) ? 40 : 33",
-                    "Interpreter": 1
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Height"
-                },
-                "Text": {
-                  "Formula": {
-                    "Expression": "var timeDiff = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds($prop('BestLapTime'))\r\n\r\nif ( timespantoseconds($prop('BestLapTime')) > 0) {\r\n\r\n\tif (timeDiff >= -9 && timeDiff <= 9) {\r\n\t\treturn format(timeDiff, '0.000', true)\r\n\t} else if (timeDiff >= -99 && timeDiff <= 99) {\r\n\t\treturn format(timeDiff, '00.00', true)\r\n\t} else if (timeDiff >= -999 && timeDiff <= 999) {\r\n\t\treturn format(timeDiff, '000.0', true)\r\n\t} else {\r\n\t\treturn format(timeDiff, '000', true)\r\n\t}\r\n\r\n} else {\r\n\r\n\treturn '0.000'\r\n\r\n}",
-                    "Interpreter": 1
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
-                },
-                "TextColor": {
-                  "Formula": {
-                    "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\t// iRacing\r\n\tif( root[\"offTrack\"] == null ) {\r\n\t\troot[\"offTrack\"] = 0\r\n\t}\r\n\tif ( $prop('DataCorePlugin.GameRawData.Telemetry.PlayerTrackSurface') == 0 ) {\r\n\t\troot[\"offTrack\"]++\r\n\t}\r\n\tif ( $prop('DataCorePlugin.GameData.TrackPositionPercent') < 0.001 ) {\r\n\t\troot[\"offTrack\"] = 0 \r\n\t}\r\n\tif ( root[\"offTrack\"] > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') != 'Race' ) {\r\n\t\treturn '#ffffff'\r\n\t} else {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn '#000000' // Yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn '#000000' // Green\r\n\t\t\t} else {\r\n\t\t\t\treturn '#ffffff' // Purple\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ) {\r\n\r\n\t// ACC\r\n\tif ( $prop('DataCorePlugin.GameRawData.Graphics.isValidLap') == 1 ) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn '#000000' // Yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn '#000000' // Green\r\n\t\t\t} else {\r\n\t\t\t\treturn '#ffffff' // Purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn '#ffffff'\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\t// AMS2\r\n\tif ( $prop('DataCorePlugin.GameRawData.mLapInvalidated') == false ) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn '#000000' // Yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn '#000000' // Green\r\n\t\t\t} else {\r\n\t\t\t\treturn '#ffffff' // Purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn '#ffffff'\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\t// rF2\r\n\tif ( $prop('DataCorePlugin.GameData.LapInvalidated') == false ) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn '#000000' // Yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn '#000000' // Green\r\n\t\t\t} else {\r\n\t\t\t\treturn '#ffffff' // Purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn '#ffffff'\r\n\t}\r\n\t\r\n} else {\r\n\tif ( ! timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) > 0) {\r\n\t\treturn '#000000'\r\n\t} else if (!$prop('LapInvalidated')) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn '#000000' // Yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn '#000000' // Green\r\n\t\t\t} else {\r\n\t\t\t\treturn '#ffffff' // Purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn '#ffffff'\r\n\t}\r\n}",
+                    "Expression": "return ld_getEstimatedTextColour()",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -669,7 +609,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdeltaReviewDelay = 5000\r\n} else {\r\n\tdeltaReviewDelay = settings.deltaReviewDelay\r\n}\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && $prop('DataCorePlugin.GameRawData.Telemetry.LapCurrentLapTime') < deltaReviewDelay/1000 && timespantoseconds($prop('DataCorePlugin.GameRawData.Telemetry.LapCurrentLapTime')) != 0 ) {\r\n\t\r\n\t\treturn 1\r\n\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime')) < (deltaReviewDelay/1000) && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime')) != 0 ) {\r\n\t\t\r\n\t\treturn 1\r\n\t\t\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 < deltaReviewDelay && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 != 0) {\r\n\t\r\n\t\treturn 1\r\n\t\t\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 < deltaReviewDelay && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 != 0) {\r\n\t\r\n\t\treturn 1\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\r\n} else {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && $prop('DataCorePlugin.GameRawData.Graphics.iCurrentTime') < deltaReviewDelay && $prop('DataCorePlugin.GameRawData.Graphics.iCurrentTime') != 0 ) {\r\n\t\r\n\t\treturn 1\r\n\t\t\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\t\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdeltaReview = 1\r\n\tdeltaReviewDelay = 5000\r\n} else {\r\n\tdeltaReview = (settings.hasOwnProperty(\"deltaReview\")) ? settings.deltaReview : 1\r\n\tdeltaReviewDelay = (settings.hasOwnProperty(\"deltaReviewDelay\")) ? settings.deltaReviewDelay : 5000\r\n}\r\n\r\nif ( deltaReview == 0 ) { return 0 }\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && $prop('DataCorePlugin.GameRawData.Telemetry.LapCurrentLapTime') < deltaReviewDelay/1000 && timespantoseconds($prop('DataCorePlugin.GameRawData.Telemetry.LapCurrentLapTime')) != 0 ) {\r\n\t\r\n\t\treturn 1\r\n\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime')) < (deltaReviewDelay/1000) && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime')) != 0 ) {\r\n\t\t\r\n\t\treturn 1\r\n\t\t\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 < deltaReviewDelay && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 != 0) {\r\n\t\r\n\t\treturn 1\r\n\t\t\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 < deltaReviewDelay && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 != 0) {\r\n\t\r\n\t\treturn 1\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\r\n} else {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && $prop('DataCorePlugin.GameRawData.Graphics.iCurrentTime') < deltaReviewDelay && $prop('DataCorePlugin.GameRawData.Graphics.iCurrentTime') != 0 ) {\r\n\t\r\n\t\treturn 1\r\n\t\t\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\t\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -1209,7 +1149,7 @@
               "HorizontalAlignment": 1,
               "IsTextItem": true,
               "Left": 0.0,
-              "Name": "New",
+              "Name": "Delta",
               "OriginalName": "New",
               "Text": "0.000",
               "TextColor": "#FF000000",
@@ -3526,23 +3466,63 @@
                       },
                       "Mode": 2,
                       "TargetPropertyName": "Text"
+                    },
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "if ( round([DataCorePlugin.GameData.SpeedLocal],0) <100 , 1, 0)"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Visible"
                     }
                   },
                   "Font": "Roboto",
-                  "FontSize": 100.0,
+                  "FontSize": 98.0,
                   "FontWeight": "Bold",
                   "Height": 117.0,
                   "HorizontalAlignment": 1,
-                  "IsFreezed": true,
                   "IsTextItem": true,
-                  "Left": 10.0,
-                  "Name": "TextItem",
+                  "Left": 0.0,
+                  "Name": "99",
                   "Text": "00",
                   "TextColor": "#FFFFFFFF",
-                  "Top": 59.0,
+                  "Top": 60.0,
                   "VerticalAlignment": 1,
                   "Visible": true,
-                  "Width": 140.0
+                  "Width": 160.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "Formula": {
+                        "Expression": "round([DataCorePlugin.GameData.SpeedLocal], 0)"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    },
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "if ( round([DataCorePlugin.GameData.SpeedLocal],0) >=100 , 1, 0)"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Visible"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 80.0,
+                  "FontWeight": "Bold",
+                  "Height": 117.0,
+                  "HorizontalAlignment": 1,
+                  "IsTextItem": true,
+                  "Left": 0.0,
+                  "Name": "100",
+                  "Text": "000",
+                  "TextColor": "#FFFFFFFF",
+                  "Top": 60.0,
+                  "VerticalAlignment": 1,
+                  "Visible": false,
+                  "Width": 160.0
                 },
                 {
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -7434,18 +7414,10 @@
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "BackgroundColor": "#FF878787",
-              "Behavior": {
-                "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Behaviors.DoubleText.Imp.LiveDeltaSessionBest, SimHub.Plugins",
-                "Settings": {
-                  "AlwaysAddSign": true,
-                  "AppendUnit": false,
-                  "Decimals": 3
-                }
-              },
               "Bindings": {
                 "BackgroundColor": {
                   "Formula": {
-                    "Expression": "gray = '#FF878787'\r\nred =    '#FFFA0000'\r\nyellow = '#FFFFE04C'\r\ngreen =  '#FF00FF02'\r\npurple = '#FFC500CE'\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\t// iRacing\r\n\tif( root[\"offTrack\"] == null ) {\r\n\t\troot[\"offTrack\"] = 0\r\n\t}\r\n\tif ( $prop('DataCorePlugin.GameRawData.Telemetry.PlayerTrackSurface') == 0 ) {\r\n\t\troot[\"offTrack\"]++\r\n\t}\r\n\tif ( $prop('DataCorePlugin.GameData.TrackPositionPercent') < 0.001 ) {\r\n\t\troot[\"offTrack\"] = 0 \r\n\t}\r\n\tif ( root[\"offTrack\"] > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') != 'Race' ) {\r\n\t\treturn '#FA0000'\r\n\t} else {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn green\r\n\t\t\t} else {\r\n\t\t\t\treturn purple\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ) {\r\n\t\r\n\t// ACC\r\n\tif ( $prop('DataCorePlugin.GameRawData.Graphics.isValidLap') == 1 ) {\r\n\t\tvar timeDiffMine = $prop('DataCorePlugin.GameRawData.Graphics.iEstimatedLapTime')/1000 - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = $prop('DataCorePlugin.GameRawData.Graphics.iEstimatedLapTime')/1000 - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn green\r\n\t\t\t} else {\r\n\t\t\t\treturn purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn red\r\n\t}\r\n\r\n} else if (\r\n\t $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ||\r\n\t $prop('DataCorePlugin.CurrentGame') == 'RFactor2' \r\n\t ) {\r\n\r\n\t// AMS2 & rF2\r\n\tif ( $prop('DataCorePlugin.GameRawData.mLapInvalidated') == false ) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn green\r\n\t\t\t} else {\r\n\t\t\t\treturn purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn red\r\n\t}\r\n\t\r\n} else {\r\n\tif ( ! timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) > 0) {\r\n\t\treturn gray\r\n\t} else if (!$prop('LapInvalidated')) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn green\r\n\t\t\t} else {\r\n\t\t\t\treturn purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn red\r\n\t}\r\n}",
+                    "Expression": "return ld_getEstimatedColour()",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -7461,7 +7433,7 @@
                 },
                 "Text": {
                   "Formula": {
-                    "Expression": "var timeDiff = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds($prop('BestLapTime'))\r\n\r\nif (timeDiff >= -9 && timeDiff <= 9) {\r\n\treturn format(timeDiff, '0.000', true)\r\n} else if (timeDiff >= -99 && timeDiff <= 99) {\r\n\treturn format(timeDiff, '00.00', true)\r\n} else if (timeDiff >= -999 && timeDiff <= 999) {\r\n\treturn format(timeDiff, '000.0', true)\r\n} else {\r\n\treturn format(timeDiff, '000', true)\r\n}",
+                    "Expression": "return ld_getEstimatedDelta()",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -7469,7 +7441,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\t// iRacing\r\n\tif( root[\"offTrack\"] == null ) {\r\n\t\troot[\"offTrack\"] = 0\r\n\t}\r\n\tif ( $prop('DataCorePlugin.GameRawData.Telemetry.PlayerTrackSurface') == 0 ) {\r\n\t\troot[\"offTrack\"]++\r\n\t}\r\n\tif ( $prop('DataCorePlugin.GameData.TrackPositionPercent') < 0.001 ) {\r\n\t\troot[\"offTrack\"] = 0 \r\n\t}\r\n\tif ( root[\"offTrack\"] > 0 && $prop('DataCorePlugin.GameData.SessionTypeName') != 'Race' ) {\r\n\t\treturn '#ffffff'\r\n\t} else {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn '#000000' // Yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn '#000000' // Green\r\n\t\t\t} else {\r\n\t\t\t\treturn '#ffffff' // Purple\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ) {\r\n\r\n\t// ACC\r\n\tif ( $prop('DataCorePlugin.GameRawData.Graphics.isValidLap') == 1 ) {\r\n\t\tvar timeDiffMine = $prop('DataCorePlugin.GameRawData.Graphics.iEstimatedLapTime')/1000 - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = $prop('DataCorePlugin.GameRawData.Graphics.iEstimatedLapTime')/1000 - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn '#000000' // Yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn '#000000' // Green\r\n\t\t\t} else {\r\n\t\t\t\treturn '#ffffff' // Purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn '#ffffff'\r\n\t}\r\n\t\r\n} else if (\r\n\t $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ||\r\n\t $prop('DataCorePlugin.CurrentGame') == 'RFactor2' \r\n\t ) {\r\n\r\n\t// AMS2\r\n\tif ( $prop('DataCorePlugin.GameRawData.mLapInvalidated') == false ) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn '#000000' // Yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn '#000000' // Green\r\n\t\t\t} else {\r\n\t\t\t\treturn '#ffffff' // Purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn '#ffffff'\r\n\t}\r\n\r\n} else {\r\n\tif ( ! timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) > 0) {\r\n\t\treturn '#000000'\r\n\t} else if (!$prop('LapInvalidated')) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn '#000000' // Yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn '#000000' // Green\r\n\t\t\t} else {\r\n\t\t\t\treturn '#ffffff' // Purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn '#ffffff'\r\n\t}\r\n}",
+                    "Expression": "return ld_getEstimatedTextColour()",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -7487,14 +7459,11 @@
               "FontWeight": "Bold",
               "Height": 33.0,
               "HorizontalAlignment": 1,
-              "IsFreezed": true,
               "IsTextItem": true,
               "Left": 0.0,
-              "Name": "Session best lap time - Live delta",
+              "Name": "Live Delta",
               "OriginalName": "New",
-              "OriginalText": "0.000",
-              "RenderingSkip": 10,
-              "Text": "+3.125",
+              "Text": "0.000",
               "TextColor": "#FF000000",
               "Top": 0.0,
               "VerticalAlignment": 1,
@@ -7516,7 +7485,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdeltaReviewDelay = 5000\r\n} else {\r\n\tdeltaReviewDelay = settings.deltaReviewDelay\r\n}\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && $prop('DataCorePlugin.GameRawData.Telemetry.LapCurrentLapTime') < deltaReviewDelay/1000 && timespantoseconds($prop('DataCorePlugin.GameRawData.Telemetry.LapCurrentLapTime')) != 0 ) {\r\n\t\r\n\t\treturn 1\r\n\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime')) < (deltaReviewDelay/1000) && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime')) != 0 ) {\r\n\t\t\r\n\t\treturn 1\r\n\t\t\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 < deltaReviewDelay && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 != 0) {\r\n\t\r\n\t\treturn 1\r\n\t\t\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 < deltaReviewDelay && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 != 0) {\r\n\t\r\n\t\treturn 1\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\r\n} else {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && $prop('DataCorePlugin.GameRawData.Graphics.iCurrentTime') < deltaReviewDelay && $prop('DataCorePlugin.GameRawData.Graphics.iCurrentTime') != 0 ) {\r\n\t\r\n\t\treturn 1\r\n\t\t\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\t\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdeltaReview = 1\r\n\tdeltaReviewDelay = 5000\r\n} else {\r\n\tdeltaReview = (settings.hasOwnProperty(\"deltaReview\")) ? settings.deltaReview : 1\r\n\tdeltaReviewDelay = (settings.hasOwnProperty(\"deltaReviewDelay\")) ? settings.deltaReviewDelay : 5000\r\n}\r\n\r\nif ( deltaReview == 0 ) { return 0 }\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && $prop('DataCorePlugin.GameRawData.Telemetry.LapCurrentLapTime') < deltaReviewDelay/1000 && timespantoseconds($prop('DataCorePlugin.GameRawData.Telemetry.LapCurrentLapTime')) != 0 ) {\r\n\t\r\n\t\treturn 1\r\n\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime')) < (deltaReviewDelay/1000) && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime')) != 0 ) {\r\n\t\t\r\n\t\treturn 1\r\n\t\t\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 < deltaReviewDelay && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 != 0) {\r\n\t\r\n\t\treturn 1\r\n\t\t\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 < deltaReviewDelay && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 != 0) {\r\n\t\r\n\t\treturn 1\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\r\n} else {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && $prop('DataCorePlugin.GameRawData.Graphics.iCurrentTime') < deltaReviewDelay && $prop('DataCorePlugin.GameRawData.Graphics.iCurrentTime') != 0 ) {\r\n\t\r\n\t\treturn 1\r\n\t\t\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\t\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -8012,7 +7981,7 @@
               "Bindings": {
                 "BackgroundColor": {
                   "Formula": {
-                    "Expression": "gray = '#FF878787'\r\nred =    '#FFFA0000'\r\nyellow = '#FFFFE04C'\r\ngreen =  '#FF00FF02'\r\npurple = '#FFC500CE'\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\tvar timeDiffMine = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\tvar timeDiffOverall = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\tif ( timeDiffMine > 0 ) {\r\n\t\treturn yellow\r\n\t} else {\r\n\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\treturn green\r\n\t\t} else {\r\n\t\t\treturn purple\r\n\t\t}\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ) {\r\n\t\r\n\t// ACC\r\n\tif ( $prop('DataCorePlugin.GameRawData.Graphics.isValidLap') == 1 ) {\r\n\t\tvar timeDiffMine = $prop('DataCorePlugin.GameRawData.Graphics.iLastTime')/1000 - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = $prop('DataCorePlugin.GameRawData.Graphics.iLastTime')/1000 - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn green\r\n\t\t\t} else {\r\n\t\t\t\treturn purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn red\r\n\t}\r\n\r\n} else if (\r\n\t $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ||\r\n\t $prop('DataCorePlugin.CurrentGame') == 'RFactor2' \r\n\t ) {\r\n\r\n\r\n\t// AMS2 & rF2\r\n\tif ( $prop('DataCorePlugin.GameRawData.mLapInvalidated') == false ) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn green\r\n\t\t\t} else {\r\n\t\t\t\treturn purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn red\r\n\t}\r\n\t\r\n} else {\r\n\tif ( ! timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) > 0) {\r\n\t\treturn gray\r\n\t} else if (!$prop('LapInvalidated')) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn green\r\n\t\t\t} else {\r\n\t\t\t\treturn purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn red\r\n\t}\r\n}",
+                    "Expression": "gray = '#FF878787'\r\nred =    '#FFFA0000'\r\nyellow = '#FFFFE04C'\r\ngreen =  '#FF00FF02'\r\npurple = '#FFC500CE'\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\tvar timeDiffMine = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\tvar timeDiffOverall = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\tif ( timeDiffMine > 0 ) {\r\n\t\treturn yellow\r\n\t} else {\r\n\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\treturn green\r\n\t\t} else {\r\n\t\t\treturn purple\r\n\t\t}\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ) {\r\n\t\r\n\t// ACC\r\n\tif ( $prop('DataCorePlugin.GameRawData.Graphics.isValidLap') == 1 ) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\t\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn green\r\n\t\t\t} else {\r\n\t\t\t\treturn purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn red\r\n\t}\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\t// AMS2\r\n\tif ( $prop('DataCorePlugin.GameRawData.mLapInvalidated') == false ) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn green\r\n\t\t\t} else {\r\n\t\t\t\treturn purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn red\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\t// rF2\r\n\tif ( $prop('DataCorePlugin.GameData.LapInvalidated') == false ) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn green\r\n\t\t\t} else {\r\n\t\t\t\treturn purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn red\r\n\t}\r\n\r\n} else {\r\n\tif ( ! timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) > 0) {\r\n\t\treturn gray\r\n\t} else if (!$prop('LapInvalidated')) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn green\r\n\t\t\t} else {\r\n\t\t\t\treturn purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn red\r\n\t}\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -8036,7 +8005,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn '#000000' // Yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn '#000000' // Green\r\n\t\t\t} else {\r\n\t\t\t\treturn '#ffffff' // Purple\r\n\t\t\t}\r\n\t\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ) {\r\n\r\n\t// ACC\r\n\tif ( $prop('DataCorePlugin.GameRawData.Graphics.isValidLap') == 1 ) {\r\n\t\tvar timeDiffMine = $prop('DataCorePlugin.GameRawData.Graphics.iLastTime')/1000 - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = $prop('DataCorePlugin.GameRawData.Graphics.iLastTime')/1000 - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn '#000000' // Yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn '#000000' // Green\r\n\t\t\t} else {\r\n\t\t\t\treturn '#ffffff' // Purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn '#ffffff'\r\n\t}\r\n\t\r\n} else if (\r\n\t $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ||\r\n\t $prop('DataCorePlugin.CurrentGame') == 'RFactor2' \r\n\t ) {\r\n\r\n\t// AMS2\r\n\tif ( $prop('DataCorePlugin.GameRawData.mLapInvalidated') == false ) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn '#000000' // Yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn '#000000' // Green\r\n\t\t\t} else {\r\n\t\t\t\treturn '#ffffff' // Purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn '#ffffff'\r\n\t}\r\n\r\n} else {\r\n\tif ( ! timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) > 0) {\r\n\t\treturn '#000000'\r\n\t} else if (!$prop('LapInvalidated')) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn '#000000' // Yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn '#000000' // Green\r\n\t\t\t} else {\r\n\t\t\t\treturn '#ffffff' // Purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn '#ffffff'\r\n\t}\r\n}",
+                    "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn '#000000' // Yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn '#000000' // Green\r\n\t\t\t} else {\r\n\t\t\t\treturn '#ffffff' // Purple\r\n\t\t\t}\r\n\t\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ) {\r\n\r\n\t// ACC\r\n\tif ( $prop('DataCorePlugin.GameRawData.Graphics.isValidLap') == 1 ) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn '#000000' // Yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn '#000000' // Green\r\n\t\t\t} else {\r\n\t\t\t\treturn '#ffffff' // Purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn '#ffffff'\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\t// AMS2\r\n\tif ( $prop('DataCorePlugin.GameRawData.mLapInvalidated') == false ) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn '#000000' // Yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn '#000000' // Green\r\n\t\t\t} else {\r\n\t\t\t\treturn '#ffffff' // Purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn '#ffffff'\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\t// rF2\r\n\tif ( $prop('DataCorePlugin.GameData.LapInvalidated') == false ) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn '#000000' // Yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn '#000000' // Green\r\n\t\t\t} else {\r\n\t\t\t\treturn '#ffffff' // Purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn '#ffffff'\r\n\t}\r\n\r\n} else {\r\n\tif ( ! timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) > 0) {\r\n\t\treturn '#000000'\r\n\t} else if (!$prop('LapInvalidated')) {\r\n\t\tvar timeDiffMine = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) - timespantoseconds( $prop('DataCorePlugin.GameData.BestLapTime') )\r\n\t\tvar timeDiffOverall = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) - timespantoseconds( driverbestlap( $prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1 ) )\r\n\t\tif ( timeDiffMine > 0 ) {\r\n\t\t\treturn '#000000' // Yellow\r\n\t\t} else {\r\n\t\t\tif ( timeDiffOverall > 0 ) {\r\n\t\t\t\treturn '#000000' // Green\r\n\t\t\t} else {\r\n\t\t\t\treturn '#ffffff' // Purple\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\treturn '#ffffff'\r\n\t}\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -8056,9 +8025,8 @@
               "HorizontalAlignment": 1,
               "IsTextItem": true,
               "Left": 0.0,
-              "Name": "New",
+              "Name": "Delta",
               "OriginalName": "New",
-              "RenderingSkip": 10,
               "Text": "0.000",
               "TextColor": "#FF000000",
               "Top": 0.0,
@@ -8304,7 +8272,7 @@
               },
               "BlinkDelay": 200.0,
               "Font": "Roboto",
-              "FontSize": 50.0,
+              "FontSize": 60.0,
               "FontWeight": "Bold",
               "Height": 50.0,
               "HorizontalAlignment": 1,
@@ -9266,7 +9234,7 @@
               },
               "BlinkDelay": 200.0,
               "Font": "Roboto",
-              "FontSize": 50.0,
+              "FontSize": 60.0,
               "FontWeight": "Bold",
               "Height": 50.0,
               "HorizontalAlignment": 1,

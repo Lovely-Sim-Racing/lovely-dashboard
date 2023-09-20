@@ -9,7 +9,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": false,
-  "Id": "bda8afb5-4fe3-4875-9112-7132e158ce9a",
+  "Id": "bd4b683b-e8b9-4dcd-a4e3-fd5dc3d007e9",
   "Images": [],
   "IsOverlay": false,
   "Metadata": {
@@ -67,7 +67,7 @@
             "RadiusTopRight": 5
           },
           "Font": "Roboto",
-          "FontSize": 15.0,
+          "FontSize": 13.0,
           "Height": 100.0,
           "HorizontalAlignment": 0,
           "IsTextItem": true,
@@ -93,11 +93,19 @@
             "Text": {
               "FormatString": "0.0",
               "Formula": {
-                "Expression": "return $prop('DataCorePlugin.DataUpdateFps')",
+                "Expression": "return 'FPS: ' + Math.round( $prop('DataCorePlugin.DataUpdateFps') )",
                 "Interpreter": 1
               },
               "Mode": 2,
               "TargetPropertyName": "Text"
+            },
+            "TextColor": {
+              "Formula": {
+                "Expression": "if ( $prop('DataCorePlugin.DataUpdateFps') > 50 ) {\r\n\r\n\treturn green \r\n\r\n} else if ( $prop('DataCorePlugin.DataUpdateFps') > 35 ) {\r\n\r\n\treturn blue\r\n\t\r\n} else if ( $prop('DataCorePlugin.DataUpdateFps') > 10 ) {\r\n\r\n\treturn orange\r\n\t\r\n} else {\r\n\r\n\treturn red\r\n\t\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "TextColor"
             },
             "Visible": {
               "Formula": {
@@ -115,12 +123,13 @@
             "RadiusTopRight": 5
           },
           "Font": "Roboto",
-          "FontSize": 15.0,
+          "FontSize": 13.0,
+          "FontWeight": "Bold",
           "Height": 100.0,
-          "HorizontalAlignment": 2,
+          "HorizontalAlignment": 0,
           "IsTextItem": true,
           "Left": 0.0,
-          "Name": "Debug2",
+          "Name": "fps",
           "Text": "Text",
           "TextColor": "#FFFFFFFF",
           "TextPadding": {

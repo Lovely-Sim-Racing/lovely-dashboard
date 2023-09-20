@@ -118,12 +118,16 @@ You can enable or disable the track flags in the top left module.
 ---
 
 #### `mapType`
-Change the map type, between a static or animated map
+Change the map type on the Map Screen, between a static or animated map
 
 - **`1` (Default)** Static Map
 - `2` Animated Map
 
----
+#### `mapTypeMFM`
+Change the map type in the MFM, between a static or animated map
+
+- `1` Static Map
+- **`2` (Default)** Animated Map
 
 #### `mapZoom`
 If `mapType` is set to animated, you can select the unzoom percentage. The faster you go, the more the map zooms-out.
@@ -184,6 +188,12 @@ Set how much time in milliseconds to display the Lap Review Alert. (eg. 1000 = 1
 
 ---
 
+#### `deltaReview`
+Show or hide the delta and sector review for the previous lap review
+
+- `0` Off
+- **`1` (Default)** On
+
 #### `deltaReviewDelay`
 Set how much time in milliseconds to display the Sector Delta Review. (eg. 1000 = 1 second)
 
@@ -237,6 +247,7 @@ Set the active & default MFM pages for each sim seperately.
 * `5` Tire AVG
 * `6` Damage
 * `8` Map
+* `9` Opponents
 
 ### Default Pages
 
@@ -250,6 +261,7 @@ Set the active & default MFM pages for each sim seperately.
 * `5` Tire AVG
 * `6` Damage
 * `8` Map
+* `9` Opponents
 
 **Central**
 
@@ -284,6 +296,7 @@ Set the active & default MFM pages for each sim seperately.
 * `5` Tire AVG
 * `6` Damage
 * `8` Map
+* `9` Opponents
 
 ### Default Pages
 
@@ -297,6 +310,7 @@ Set the active & default MFM pages for each sim seperately.
 * `5` Tire AVG
 * `6` Damage
 * `8` Map
+* `9` Opponents
 
 **Central**
 
@@ -330,6 +344,7 @@ Set the active & default MFM pages for each sim seperately.
 * `4` Tires
 * `7` Status
 * `8` Map
+* `9` Opponents
 
 ### Default Pages
 
@@ -342,6 +357,7 @@ Set the active & default MFM pages for each sim seperately.
 * `4` Tires
 * **`7` Status**
 * `8` Map
+* `9` Opponents
 
 **Central**
 
@@ -376,6 +392,7 @@ Set the active & default MFM pages for each sim seperately.
 * `5` Tire AVG
 * `7` Status
 * `8` Map
+* `9` Opponents
 
 ### Default Pages
 
@@ -389,6 +406,7 @@ Set the active & default MFM pages for each sim seperately.
 * `5` Tire AVG
 * `7` Status
 * `8` Map
+* `9` Opponents
 
 **Central**
 
@@ -422,6 +440,7 @@ Set the active & default MFM pages for each sim seperately.
 * `4` Tires
 * `5` Tire AVG
 * `8` Map
+* `9` Opponents
 
 ### Default Pages
 
@@ -434,6 +453,7 @@ Set the active & default MFM pages for each sim seperately.
 * **`4` Tires**
 * `5` Tire AVG
 * `8` Map
+* `9` Opponents
 
 **Central**
 
@@ -469,6 +489,7 @@ Set the active & default MFM pages for each sim seperately.
 * `6` Damage
 * `7` Status
 * `8` Map
+* `9` Opponents
 
 ### Default Pages
 
@@ -483,6 +504,7 @@ Set the active & default MFM pages for each sim seperately.
 * `6` Damage
 * `7` Status
 * `8` Map
+* `9` Opponents
 
 **Central**
 

@@ -3,15 +3,13 @@
   "BackgroundOpacity": 100.0,
   "BaseHeight": 480,
   "BaseWidth": 850,
-  "DashboardDebugManager": {
-    "Maximized": false
-  },
+  "DashboardDebugManager": {},
   "EnableClickThroughOverlay": true,
   "EnableOnDashboardMessaging": true,
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "633d4ba8-47a7-43c1-9d19-11b12c672b4e",
+  "Id": "40392f40-8d3c-4b15-89be-c93196ed2e13",
   "Images": [
     {
       "Extension": ".png",
@@ -236,7 +234,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.alertView ) {\r\n\talertView = 1 // Default Wide\r\n} else {\r\n\talertView = settings.alertView\r\n}\r\n\r\nreturn (alertView == 2 ) ? 1 : 0",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\talertView = 1\r\n} else {\r\n\talertView = (settings.hasOwnProperty(\"alertView\")) ? settings.alertView : 1\r\n}\r\n\r\nreturn (alertView == 2 ) ? 1 : 0",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -807,7 +805,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.alertView ) {\r\n\talertView = 0 // Default Wide\r\n} else {\r\n\talertView = settings.alertView\r\n}\r\n\r\nreturn (alertView == 1 ) ? 1 : 0 ",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\talertView = 1\r\n} else {\r\n\talertView = (settings.hasOwnProperty(\"alertView\")) ? settings.alertView : 1\r\n}\r\n\r\nreturn (alertView == 1 ) ? 1 : 0 ",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -1377,7 +1375,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( ! $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\treturn 0\r\n}\r\n\r\nif ( !settings ) {\r\n\tdamageAlert = 1\r\n} else {\r\n\tdamageAlert = settings.damageAlert\r\n}\r\n\r\nif (damageAlert == 1) {\r\n\r\n\tif ( !settings ) {\r\n\t\tdamageAlertDelay = 7500\r\n\t} else {\r\n\t\tdamageAlertDelay = settings.damageAlertDelay\r\n\t}\r\n\t\r\n   return ld_changed(damageAlertDelay,\r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_frontLeftWingDamage') + \r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_frontRightWingDamage') +\r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_rearWingDamage') +\r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_floorDamage') +\r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_diffuserDamage') +\r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_sidepodDamage') +\r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_gearBoxDamage') +\r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_engineDamage')\r\n   \t\t\t)\r\n   \t\t\t\t\r\n} else {\r\n\r\n\treturn 0 \r\n\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !$prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\treturn 0\r\n}\r\n\r\nif ( !settings ) {\r\n\tdamageAlert = 1\r\n\tdamageAlertDelay = 5000\r\n} else {\r\n\tdamageAlert = (settings.hasOwnProperty(\"damageAlert\")) ? settings.damageAlert : 1\r\n\tdamageAlertDelay = (settings.hasOwnProperty(\"damageAlertDelay\")) ? settings.damageAlertDelay : 7500\r\n}\r\n\r\nif ( damageAlert == 0 ) { return 0 }\r\n\r\nreturn ld_changed( damageAlertDelay,\r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_frontLeftWingDamage') + \r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_frontRightWingDamage') +\r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_rearWingDamage') +\r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_floorDamage') +\r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_diffuserDamage') +\r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_sidepodDamage') +\r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_gearBoxDamage') +\r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_engineDamage')\r\n   \t\t\t)\r\n\r\n/* \r\nif (damageAlert == 1) {\r\n\r\n\tif ( !settings ) {\r\n\t\tdamageAlertDelay = 7500\r\n\t} else {\r\n\t\tdamageAlertDelay = settings.damageAlertDelay\r\n\t}\r\n\t\r\n   return ld_changed(damageAlertDelay,\r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_frontLeftWingDamage') + \r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_frontRightWingDamage') +\r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_rearWingDamage') +\r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_floorDamage') +\r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_diffuserDamage') +\r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_sidepodDamage') +\r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_gearBoxDamage') +\r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_engineDamage')\r\n   \t\t\t)\r\n   \t\t\t\t\r\n} else {\r\n\r\n\treturn 0 \r\n\r\n}\r\n*/",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -1448,6 +1446,9 @@
                   "NextScreenCommand": 0,
                   "PreviousScreenCommand": 0,
                   "Top": 122.65,
+                  "Variables": {
+                    "DashboardVariables": []
+                  },
                   "Visible": true,
                   "Width": 92.39999999999999
                 },
@@ -2081,7 +2082,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\treturn 0\r\n}\r\n\r\nif ( !settings ) {\r\n\tdamageAlert = 1\r\n} else {\r\n\tdamageAlert = settings.damageAlert\r\n}\r\n\r\nif (damageAlert == 1) {\r\n\r\n\tif ( !settings ) {\r\n\t\tdamageAlertDelay = 7500\r\n\t} else {\r\n\t\tdamageAlertDelay = settings.damageAlertDelay\r\n\t}\r\n\t\r\n\treturn ld_changed(damageAlertDelay, $prop('DataCorePlugin.GameData.CarDamage5') )\r\n\r\n} else {\r\n\r\n\treturn 0 \r\n\r\n}",
+                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\t// Hide if F1 Game\r\n\treturn 0\r\n}\r\n\r\nif ( !settings ) {\r\n\tdamageAlert = 1\r\n\tdamageAlertDelay = 5000\r\n} else {\r\n\tdamageAlert = (settings.hasOwnProperty(\"damageAlert\")) ? settings.damageAlert : 1\r\n\tdamageAlertDelay = (settings.hasOwnProperty(\"damageAlertDelay\")) ? settings.damageAlertDelay : 7500\r\n}\r\n\r\nif ( damageAlert == 0 ) { return 0 }\r\n\r\nreturn ld_changed(damageAlertDelay, $prop('DataCorePlugin.GameData.CarDamage5') )",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -2772,7 +2773,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "// JavaScript source code\r\nconst json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tlapReview = 1\r\n\tlapReviewDelay = 5000\r\n} else {\r\n\tlapReview = settings.lapReview\r\n\tlapReviewDelay = settings.lapReviewDelay\r\n}\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && $prop('DataCorePlugin.GameRawData.Telemetry.LapCurrentLapTime') < lapReviewDelay/1000 && timespantoseconds($prop('DataCorePlugin.GameRawData.Telemetry.LapCurrentLapTime')) != 0 ) {\r\n\t\r\n\t\tif ( lapReview == 2) {\r\n\t\t\t// Always On\r\n\t\t\treturn 1\r\n\t\t} else if (lapReview == 1) {\r\n\t\t\t// Quali Only\r\n\t\t\tif ( \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Qualify' || \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Lone Qualify' || \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Practice' || \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice' || \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Offline Testing'\r\n\t\t\t) {\r\n\t\t\t\treturn 1\r\n\t\t\t} else {\r\n\t\t\t\treturn 0\r\n\t\t\t}\r\n\t\t} else {\r\n\t\t\t// Always Off\r\n\t\t\treturn 0\r\n\t\t}\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime')) < (lapReviewDelay/1000) && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime')) != 0 ) {\r\n\t\tif ( lapReview == 2) {\r\n\t\t\t// Always On\r\n\t\t\treturn 1\r\n\t\t} else if (lapReview == 1) {\r\n\t\t\t// Quali Only\r\n\t\t\tif ( \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='QUALIFY' || \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='PRACTICE' \r\n\t\t\t) {\r\n\t\t\t\treturn 1\r\n\t\t\t} else {\r\n\t\t\t\treturn 0\r\n\t\t\t}\r\n\t\t} else {\r\n\t\t\t// Always Off\r\n\t\t\treturn 0\r\n\t\t}\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 < lapReviewDelay && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 != 0) {\r\n\t\r\n\t\tif ( lapReview == 2) {\r\n\t\t\t// Always On\r\n\t\t\treturn 1\r\n\t\t} else if (lapReview == 1) {\r\n\t\t\t// Quali Only\r\n\t\t\tif ( \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Qualify' || \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice' \r\n\t\t\t) {\r\n\t\t\t\treturn 1\r\n\t\t\t} else {\r\n\t\t\t\treturn 0\r\n\t\t\t}\r\n\t\t} else {\r\n\t\t\t// Always Off\r\n\t\t\treturn 0\r\n\t\t}\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 < lapReviewDelay && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 != 0) {\r\n\t\r\n\t\tif ( lapReview == 2) {\r\n\t\t\t// Always On\r\n\t\t\treturn 1\r\n\t\t} else if (lapReview == 1) {\r\n\t\t\t// Practice/Quali Only\r\n\t\t\tif ( \r\n\t\t\t\t$prop('GameRawData.PacketSessionData.m_sessionType')<10\r\n\t\t\t) {\r\n\t\t\t\treturn 1\r\n\t\t\t} else {\r\n\t\t\t\treturn 0\r\n\t\t\t}\r\n\t\t} else {\r\n\t\t\t// Always Off\r\n\t\t\treturn 0\r\n\t\t}\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ||  $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa' ) { // ACC & AC\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && $prop('DataCorePlugin.GameRawData.Graphics.iCurrentTime') < lapReviewDelay && $prop('DataCorePlugin.GameRawData.Graphics.iCurrentTime') != 0 ) {\r\n\t\r\n\t\tif ( lapReview == 2) {\r\n\t\t\t// Always On\r\n\t\t\treturn 1\r\n\t\t} else if (lapReview == 1) {\r\n\t\t\t// Quali Only\r\n\t\t\tif ( \r\n\t\t\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='QUALIFY' || \r\n\t\t\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='PRACTICE' \r\n\t\t\t) {\r\n\t\t\t\treturn 1\r\n\t\t\t} else {\r\n\t\t\t\treturn 0\r\n\t\t\t}\r\n\t\t} else {\r\n\t\t\t// Always Off\r\n\t\t\treturn 0\r\n\t\t}\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\t\r\n} else { // Generic Version\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 < lapReviewDelay && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 != 0) {\r\n\t\r\n\t\tif ( lapReview == 2) {\r\n\t\t\t// Always On\r\n\t\t\treturn 1\r\n\t\t} else if (lapReview == 1) {\r\n\t\t\t// Quali Only\r\n\t\t\tif ( \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Qualify' || \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice' \r\n\t\t\t) {\r\n\t\t\t\treturn 1\r\n\t\t\t} else {\r\n\t\t\t\treturn 0\r\n\t\t\t}\r\n\t\t} else {\r\n\t\t\t// Always Off\r\n\t\t\treturn 0\r\n\t\t}\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n}",
+                "Expression": "// JavaScript source code\r\nconst json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tlapReview = 1\r\n\tlapReviewDelay = 5000\r\n} else {\r\n\tlapReview = (settings.hasOwnProperty(\"lapReview\")) ? settings.lapReview : 1\r\n\tlapReviewDelay = (settings.hasOwnProperty(\"lapReviewDelay\")) ? settings.lapReviewDelay : 5000\r\n}\r\n\r\nif ( lapReview == 0 ) { return 0 }\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && $prop('DataCorePlugin.GameRawData.Telemetry.LapCurrentLapTime') < lapReviewDelay/1000 && timespantoseconds($prop('DataCorePlugin.GameRawData.Telemetry.LapCurrentLapTime')) != 0 ) {\r\n\t\r\n\t\tif ( lapReview == 2) {\r\n\t\t\t// Always On\r\n\t\t\treturn 1\r\n\t\t} else if (lapReview == 1) {\r\n\t\t\t// Quali Only\r\n\t\t\tif ( \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Qualify' || \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Lone Qualify' || \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Practice' || \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice' || \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Offline Testing'\r\n\t\t\t) {\r\n\t\t\t\treturn 1\r\n\t\t\t} else {\r\n\t\t\t\treturn 0\r\n\t\t\t}\r\n\t\t} else {\r\n\t\t\t// Always Off\r\n\t\t\treturn 0\r\n\t\t}\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime')) < (lapReviewDelay/1000) && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime')) != 0 ) {\r\n\t\tif ( lapReview == 2) {\r\n\t\t\t// Always On\r\n\t\t\treturn 1\r\n\t\t} else if (lapReview == 1) {\r\n\t\t\t// Quali Only\r\n\t\t\tif ( \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='QUALIFY' || \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='PRACTICE' \r\n\t\t\t) {\r\n\t\t\t\treturn 1\r\n\t\t\t} else {\r\n\t\t\t\treturn 0\r\n\t\t\t}\r\n\t\t} else {\r\n\t\t\t// Always Off\r\n\t\t\treturn 0\r\n\t\t}\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 < lapReviewDelay && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 != 0) {\r\n\t\r\n\t\tif ( lapReview == 2) {\r\n\t\t\t// Always On\r\n\t\t\treturn 1\r\n\t\t} else if (lapReview == 1) {\r\n\t\t\t// Quali Only\r\n\t\t\tif ( \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Qualify' || \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice' \r\n\t\t\t) {\r\n\t\t\t\treturn 1\r\n\t\t\t} else {\r\n\t\t\t\treturn 0\r\n\t\t\t}\r\n\t\t} else {\r\n\t\t\t// Always Off\r\n\t\t\treturn 0\r\n\t\t}\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 < lapReviewDelay && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 != 0) {\r\n\t\r\n\t\tif ( lapReview == 2) {\r\n\t\t\t// Always On\r\n\t\t\treturn 1\r\n\t\t} else if (lapReview == 1) {\r\n\t\t\t// Practice/Quali Only\r\n\t\t\tif ( \r\n\t\t\t\t$prop('GameRawData.PacketSessionData.m_sessionType')<10\r\n\t\t\t) {\r\n\t\t\t\treturn 1\r\n\t\t\t} else {\r\n\t\t\t\treturn 0\r\n\t\t\t}\r\n\t\t} else {\r\n\t\t\t// Always Off\r\n\t\t\treturn 0\r\n\t\t}\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ||  $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa' ) { // ACC & AC\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && $prop('DataCorePlugin.GameRawData.Graphics.iCurrentTime') < lapReviewDelay && $prop('DataCorePlugin.GameRawData.Graphics.iCurrentTime') != 0 ) {\r\n\t\r\n\t\tif ( lapReview == 2) {\r\n\t\t\t// Always On\r\n\t\t\treturn 1\r\n\t\t} else if (lapReview == 1) {\r\n\t\t\t// Quali Only\r\n\t\t\tif ( \r\n\t\t\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='QUALIFY' || \r\n\t\t\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='PRACTICE' \r\n\t\t\t) {\r\n\t\t\t\treturn 1\r\n\t\t\t} else {\r\n\t\t\t\treturn 0\r\n\t\t\t}\r\n\t\t} else {\r\n\t\t\t// Always Off\r\n\t\t\treturn 0\r\n\t\t}\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\t\r\n} else { // Generic Version\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 < lapReviewDelay && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 != 0) {\r\n\t\r\n\t\tif ( lapReview == 2) {\r\n\t\t\t// Always On\r\n\t\t\treturn 1\r\n\t\t} else if (lapReview == 1) {\r\n\t\t\t// Quali Only\r\n\t\t\tif ( \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Qualify' || \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice' \r\n\t\t\t) {\r\n\t\t\t\treturn 1\r\n\t\t\t} else {\r\n\t\t\t\treturn 0\r\n\t\t\t}\r\n\t\t} else {\r\n\t\t\t// Always Off\r\n\t\t\treturn 0\r\n\t\t}\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -2885,60 +2886,6 @@
                       "Width": 160.0
                     },
                     {
-                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                      "BackgroundColor": "#00FFFFFF",
-                      "Font": "Roboto",
-                      "FontSize": 12.0,
-                      "FontWeight": "Bold",
-                      "Height": 14.0,
-                      "HorizontalAlignment": 0,
-                      "IsTextItem": true,
-                      "Left": 300.0,
-                      "Name": "Overall Label",
-                      "Text": "OVERALL SESSION BEST",
-                      "TextColor": "#FF878787",
-                      "Top": 316.0,
-                      "VerticalAlignment": 1,
-                      "Visible": true,
-                      "Width": 150.0
-                    },
-                    {
-                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                      "BackgroundColor": "#00FFFFFF",
-                      "Bindings": {
-                        "Text": {
-                          "FormatString": "m\\:ss\\.fff",
-                          "Formula": {
-                            "Expression": "var bestLap\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\tbestLap = driverbestlap($prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1)\r\n} else if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\tbestLap = driverbestlap($prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1)\r\n} else {\r\n\tbestLap = driverbestlap($prop('DataCorePlugin.GameRawData.Realtime.BestLapCarIndex')+1)\r\n}\r\n\r\nif ( bestLap == null ) {\r\n\r\n\treturn '0:00.000'\r\n\r\n} else {\r\n\r\n\treturn bestLap\r\n\t\r\n}\r\n\r\n",
-                            "Interpreter": 1
-                          },
-                          "Mode": 2,
-                          "TargetPropertyName": "Text"
-                        }
-                      },
-                      "BorderStyle": {
-                        "BorderColor": "#FFFA0000",
-                        "RadiusBottomLeft": 10,
-                        "RadiusBottomRight": 10,
-                        "RadiusTopLeft": 10,
-                        "RadiusTopRight": 10
-                      },
-                      "Font": "Roboto",
-                      "FontSize": 35.0,
-                      "FontWeight": "Bold",
-                      "Height": 40.0,
-                      "HorizontalAlignment": 0,
-                      "IsTextItem": true,
-                      "Left": 300.0,
-                      "Name": "Overall best",
-                      "Text": "0:00.000",
-                      "TextColor": "#FFC500CE",
-                      "Top": 279.0,
-                      "VerticalAlignment": 1,
-                      "Visible": true,
-                      "Width": 160.0
-                    },
-                    {
                       "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
                       "AutoSize": true,
                       "BackgroundColor": "#00FFFFFF",
@@ -2955,7 +2902,7 @@
                       "BackgroundColor": "#00FFFFFF",
                       "Bindings": {
                         "Text": {
-                          "FormatString": "0.000",
+                          "FormatString": "",
                           "Formula": {
                             "Expression": "if (isnull(driverdeltatobest([DataCorePlugin.GameData.Position])), '-.---', \r\n\r\n\tif ( \r\n\t\tdriverdeltatobest([DataCorePlugin.GameData.Position]) > 0,\r\n\t\t'+', '' ) +\r\n\t\r\n\tif ( \r\n\t\tdriverdeltatobest([DataCorePlugin.GameData.Position]) < 0,\r\n\t\t'-', '' ) +\r\n\t\r\n\tformat(driverdeltatobest([DataCorePlugin.GameData.Position]), '0.000')\r\n\t\r\n)"
                           },
@@ -2996,6 +2943,60 @@
                       "Top": 292.0,
                       "Visible": true,
                       "Width": 14.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "Font": "Roboto",
+                      "FontSize": 12.0,
+                      "FontWeight": "Bold",
+                      "Height": 14.0,
+                      "HorizontalAlignment": 0,
+                      "IsTextItem": true,
+                      "Left": 300.0,
+                      "Name": "Overall Label",
+                      "Text": "OVERALL SESSION BEST",
+                      "TextColor": "#FF878787",
+                      "Top": 316.0,
+                      "VerticalAlignment": 1,
+                      "Visible": true,
+                      "Width": 150.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Text": {
+                          "FormatString": "m\\:ss\\.fff",
+                          "Formula": {
+                            "Expression": "var bestLap\r\n\r\n/*if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\tbestLap = driverbestlap($prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1)\r\n} else if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\tbestLap = driverbestlap($prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1)\r\n} else {\r\n\tbestLap = driverbestlap($prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1)\r\n} */\r\n\r\nbestLap = driverbestlap($prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1)\r\n\r\nif ( bestLap == null ) {\r\n\r\n\treturn '0:00.000'\r\n\r\n} else {\r\n\r\n\treturn bestLap\r\n\t\r\n}\r\n\r\n",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "Text"
+                        }
+                      },
+                      "BorderStyle": {
+                        "BorderColor": "#FFFA0000",
+                        "RadiusBottomLeft": 10,
+                        "RadiusBottomRight": 10,
+                        "RadiusTopLeft": 10,
+                        "RadiusTopRight": 10
+                      },
+                      "Font": "Roboto",
+                      "FontSize": 35.0,
+                      "FontWeight": "Bold",
+                      "Height": 40.0,
+                      "HorizontalAlignment": 0,
+                      "IsTextItem": true,
+                      "Left": 300.0,
+                      "Name": "Overall best",
+                      "Text": "0:00.000",
+                      "TextColor": "#FFC500CE",
+                      "Top": 279.0,
+                      "VerticalAlignment": 1,
+                      "Visible": true,
+                      "Width": 160.0
                     }
                   ],
                   "Group": true,
@@ -3262,60 +3263,6 @@
                       "Width": 160.0
                     },
                     {
-                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                      "BackgroundColor": "#00FFFFFF",
-                      "Font": "Roboto",
-                      "FontSize": 12.0,
-                      "FontWeight": "Bold",
-                      "Height": 14.0,
-                      "HorizontalAlignment": 0,
-                      "IsTextItem": true,
-                      "Left": 300.0,
-                      "Name": "Overall Label",
-                      "Text": "OVERALL SESSION BEST",
-                      "TextColor": "#FF878787",
-                      "Top": 316.0,
-                      "VerticalAlignment": 1,
-                      "Visible": true,
-                      "Width": 150.0
-                    },
-                    {
-                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                      "BackgroundColor": "#00FFFFFF",
-                      "Bindings": {
-                        "Text": {
-                          "FormatString": "m\\:ss\\.fff",
-                          "Formula": {
-                            "Expression": "var bestLap\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\tbestLap = driverbestlap($prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1)\r\n} else if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\tbestLap = driverbestlap($prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1)\r\n} else {\r\n\tbestLap = driverbestlap($prop('DataCorePlugin.GameRawData.Realtime.BestLapCarIndex')+1)\r\n}\r\n\r\nif ( bestLap == null ) {\r\n\r\n\treturn '0:00.000'\r\n\r\n} else {\r\n\r\n\treturn bestLap\r\n\t\r\n}\r\n\r\n",
-                            "Interpreter": 1
-                          },
-                          "Mode": 2,
-                          "TargetPropertyName": "Text"
-                        }
-                      },
-                      "BorderStyle": {
-                        "BorderColor": "#FFFA0000",
-                        "RadiusBottomLeft": 10,
-                        "RadiusBottomRight": 10,
-                        "RadiusTopLeft": 10,
-                        "RadiusTopRight": 10
-                      },
-                      "Font": "Roboto",
-                      "FontSize": 35.0,
-                      "FontWeight": "Bold",
-                      "Height": 40.0,
-                      "HorizontalAlignment": 0,
-                      "IsTextItem": true,
-                      "Left": 300.0,
-                      "Name": "Overall best",
-                      "Text": "0:00.000",
-                      "TextColor": "#FFC500CE",
-                      "Top": 279.0,
-                      "VerticalAlignment": 1,
-                      "Visible": true,
-                      "Width": 160.0
-                    },
-                    {
                       "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
                       "AutoSize": true,
                       "BackgroundColor": "#00FFFFFF",
@@ -3373,6 +3320,60 @@
                       "Top": 292.0,
                       "Visible": true,
                       "Width": 14.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "Font": "Roboto",
+                      "FontSize": 12.0,
+                      "FontWeight": "Bold",
+                      "Height": 14.0,
+                      "HorizontalAlignment": 0,
+                      "IsTextItem": true,
+                      "Left": 300.0,
+                      "Name": "Overall Label",
+                      "Text": "OVERALL SESSION BEST",
+                      "TextColor": "#FF878787",
+                      "Top": 316.0,
+                      "VerticalAlignment": 1,
+                      "Visible": true,
+                      "Width": 150.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Text": {
+                          "FormatString": "m\\:ss\\.fff",
+                          "Formula": {
+                            "Expression": "var bestLap\r\n\r\n/*if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\tbestLap = driverbestlap($prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1)\r\n} else if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\tbestLap = driverbestlap($prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1)\r\n} else {\r\n\tbestLap = driverbestlap($prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1)\r\n} */\r\n\r\nbestLap = driverbestlap($prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1)\r\n\r\nif ( bestLap == null ) {\r\n\r\n\treturn '0:00.000'\r\n\r\n} else {\r\n\r\n\treturn bestLap\r\n\t\r\n}\r\n\r\n",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "Text"
+                        }
+                      },
+                      "BorderStyle": {
+                        "BorderColor": "#FFFA0000",
+                        "RadiusBottomLeft": 10,
+                        "RadiusBottomRight": 10,
+                        "RadiusTopLeft": 10,
+                        "RadiusTopRight": 10
+                      },
+                      "Font": "Roboto",
+                      "FontSize": 35.0,
+                      "FontWeight": "Bold",
+                      "Height": 40.0,
+                      "HorizontalAlignment": 0,
+                      "IsTextItem": true,
+                      "Left": 300.0,
+                      "Name": "Overall best",
+                      "Text": "0:00.000",
+                      "TextColor": "#FFC500CE",
+                      "Top": 279.0,
+                      "VerticalAlignment": 1,
+                      "Visible": true,
+                      "Width": 160.0
                     }
                   ],
                   "Group": true,
