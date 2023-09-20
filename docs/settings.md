@@ -241,6 +241,7 @@ Set the active & default MFM pages for each sim seperately.
 * `5` Tire AVG
 * `6` Damage
 * `8` Map
+* `9` Opponents
 
 ### Default Pages
 
@@ -254,6 +255,7 @@ Set the active & default MFM pages for each sim seperately.
 * `5` Tire AVG
 * `6` Damage
 * `8` Map
+* `9` Opponents
 
 **Central**
 
@@ -288,6 +290,7 @@ Set the active & default MFM pages for each sim seperately.
 * `5` Tire AVG
 * `6` Damage
 * `8` Map
+* `9` Opponents
 
 ### Default Pages
 
@@ -301,6 +304,7 @@ Set the active & default MFM pages for each sim seperately.
 * `5` Tire AVG
 * `6` Damage
 * `8` Map
+* `9` Opponents
 
 **Central**
 
@@ -334,6 +338,7 @@ Set the active & default MFM pages for each sim seperately.
 * `4` Tires
 * `7` Status
 * `8` Map
+* `9` Opponents
 
 ### Default Pages
 
@@ -346,6 +351,7 @@ Set the active & default MFM pages for each sim seperately.
 * `4` Tires
 * **`7` Status**
 * `8` Map
+* `9` Opponents
 
 **Central**
 
@@ -380,6 +386,7 @@ Set the active & default MFM pages for each sim seperately.
 * `5` Tire AVG
 * `7` Status
 * `8` Map
+* `9` Opponents
 
 ### Default Pages
 
@@ -393,6 +400,7 @@ Set the active & default MFM pages for each sim seperately.
 * `5` Tire AVG
 * `7` Status
 * `8` Map
+* `9` Opponents
 
 **Central**
 
@@ -426,6 +434,7 @@ Set the active & default MFM pages for each sim seperately.
 * `4` Tires
 * `5` Tire AVG
 * `8` Map
+* `9` Opponents
 
 ### Default Pages
 
@@ -438,6 +447,7 @@ Set the active & default MFM pages for each sim seperately.
 * **`4` Tires**
 * `5` Tire AVG
 * `8` Map
+* `9` Opponents
 
 **Central**
 
@@ -473,6 +483,7 @@ Set the active & default MFM pages for each sim seperately.
 * `6` Damage
 * `7` Status
 * `8` Map
+* `9` Opponents
 
 ### Default Pages
 
@@ -487,6 +498,7 @@ Set the active & default MFM pages for each sim seperately.
 * `6` Damage
 * `7` Status
 * `8` Map
+* `9` Opponents
 
 **Central**
 
