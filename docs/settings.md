@@ -188,6 +188,12 @@ Set how much time in milliseconds to display the Lap Review Alert. (eg. 1000 = 1
 
 ---
 
+#### `deltaReview`
+Show or hide the delta and sector review for the previous lap review
+
+- `0` Off
+- **`1` (Default)** On
+
 #### `deltaReviewDelay`
 Set how much time in milliseconds to display the Sector Delta Review. (eg. 1000 = 1 second)
 
