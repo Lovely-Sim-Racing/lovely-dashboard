@@ -9,6 +9,7 @@ var green = '#FF00FF02'
 var purple = '#FFC500CE'
 var orange = '#FFFF7400'
 var blue = '#FF00BFFF'
+var dark_blue = '#FF0000FF'
 
 function ld_GetPlayerName() {
     const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')

@@ -9,7 +9,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "70c97d9a-3c89-49e8-a8c8-53142686255d",
+  "Id": "19a6f57b-be14-4665-a8b9-93890e65471a",
   "Images": [],
   "IsOverlay": false,
   "Metadata": {
@@ -76,6 +76,24 @@
             }
           },
           "BorderStyle": {
+            "Bindings": {
+              "BorderColor": {
+                "Formula": {
+                  "Expression": "return ( $prop('IsInPitLane') ) ? dark_blue : white",
+                  "Interpreter": 1
+                },
+                "Mode": 2,
+                "TargetPropertyName": "BorderColor"
+              },
+              "RadiusTopRight": {
+                "Formula": {
+                  "Expression": "if ( $prop('variable.dashName') == 'LovelyDashboardXL') {\r\n\r\n\treturn 12\r\n\t\r\n} else {\r\n\r\n\tconst json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\n\tconst settings = JSON.parse(json_settings);\r\n\t\r\n\tif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\t\tuiRadius = 45\r\n\t} else {\r\n\t\tuiRadius = settings.uiRadius\r\n\t}\r\n\t\r\n\treturn uiRadius\r\n\r\n}",
+                  "Interpreter": 1
+                },
+                "Mode": 2,
+                "TargetPropertyName": "RadiusTopRight"
+              }
+            },
             "BorderBottom": 2,
             "BorderLeft": 2,
             "BorderRight": 2,
@@ -83,7 +101,7 @@
             "RadiusBottomLeft": 12,
             "RadiusBottomRight": 12,
             "RadiusTopLeft": 12,
-            "RadiusTopRight": 12
+            "RadiusTopRight": 45
           },
           "Height": 80.0,
           "IsFreezed": true,
@@ -685,9 +703,17 @@
           },
           "BorderStyle": {
             "Bindings": {
+              "BorderColor": {
+                "Formula": {
+                  "Expression": "return ( $prop('IsInPitLane') ) ? dark_blue : white",
+                  "Interpreter": 1
+                },
+                "Mode": 2,
+                "TargetPropertyName": "BorderColor"
+              },
               "RadiusTopRight": {
                 "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                  "Expression": "if ( $prop('variable.dashName') == 'LovelyDashboardXL') {\r\n\r\n\treturn 12\r\n\t\r\n} else {\r\n\r\n\tconst json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\n\tconst settings = JSON.parse(json_settings);\r\n\t\r\n\tif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\t\tuiRadius = 45\r\n\t} else {\r\n\t\tuiRadius = settings.uiRadius\r\n\t}\r\n\t\r\n\treturn uiRadius\r\n\r\n}",
                   "Interpreter": 1
                 },
                 "Mode": 2,

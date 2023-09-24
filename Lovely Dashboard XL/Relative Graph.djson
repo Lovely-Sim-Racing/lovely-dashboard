@@ -3,15 +3,13 @@
   "BackgroundOpacity": 100.0,
   "BaseHeight": 80,
   "BaseWidth": 420,
-  "DashboardDebugManager": {
-    "Maximized": false
-  },
+  "DashboardDebugManager": {},
   "EnableClickThroughOverlay": true,
   "EnableOnDashboardMessaging": true,
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "1aa950b9-6186-4b76-a0c7-ff156cd07a7f",
+  "Id": "aca64c21-3677-4bcb-9172-02998040b6c1",
   "Images": [
     {
       "Extension": ".png",
@@ -93,6 +91,14 @@
           },
           "BorderStyle": {
             "Bindings": {
+              "BorderColor": {
+                "Formula": {
+                  "Expression": "return ( $prop('IsInPitLane') ) ? dark_blue : white",
+                  "Interpreter": 1
+                },
+                "Mode": 2,
+                "TargetPropertyName": "BorderColor"
+              },
               "RadiusTopRight": {
                 "Formula": {
                   "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
