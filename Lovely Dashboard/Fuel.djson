@@ -3,16 +3,13 @@
   "BackgroundOpacity": 100.0,
   "BaseHeight": 97,
   "BaseWidth": 329,
-  "DashboardDebugManager": {
-    "LastPlacement": "418,418,495,146",
-    "Maximized": false
-  },
+  "DashboardDebugManager": {},
   "EnableClickThroughOverlay": true,
   "EnableOnDashboardMessaging": true,
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "f9c1e843-94f3-4561-bf93-a146a853acbf",
+  "Id": "57ed1825-b2c0-46c4-9da8-296a38478fc6",
   "Images": [],
   "IsOverlay": false,
   "Metadata": {
@@ -63,7 +60,7 @@
             "Bindings": {
               "RadiusBottomRight": {
                 "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                  "Expression": "if ( $prop('variable.dashName') == 'LovelyDashboardXL') {\r\n\r\n\treturn 12\r\n\t\r\n} else {\r\n\r\n\tconst json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\n\tconst settings = JSON.parse(json_settings);\r\n\t\r\n\tif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\t\tuiRadius = 45\r\n\t} else {\r\n\t\tuiRadius = settings.uiRadius\r\n\t}\r\n\t\r\n\treturn uiRadius\r\n\r\n}",
                   "Interpreter": 1
                 },
                 "Mode": 2,
@@ -269,7 +266,7 @@
                 "Bindings": {
                   "RadiusBottomRight": {
                     "Formula": {
-                      "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius-5",
+                      "Expression": "if ( $prop('variable.dashName') == 'LovelyDashboardXL') {\r\n\r\n\treturn 12\r\n\t\r\n} else {\r\n\r\n\tconst json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\n\tconst settings = JSON.parse(json_settings);\r\n\t\r\n\tif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\t\tuiRadius = 40\r\n\t} else {\r\n\t\tuiRadius = settings.uiRadius-5\r\n\t}\r\n\t\r\n\treturn uiRadius\r\n\r\n}",
                       "Interpreter": 1
                     },
                     "Mode": 2,
@@ -526,7 +523,7 @@
             "Bindings": {
               "RadiusBottomRight": {
                 "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                  "Expression": "if ( $prop('variable.dashName') == 'LovelyDashboardXL') {\r\n\r\n\treturn 12\r\n\t\r\n} else {\r\n\r\n\tconst json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\n\tconst settings = JSON.parse(json_settings);\r\n\t\r\n\tif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\t\tuiRadius = 45\r\n\t} else {\r\n\t\tuiRadius = settings.uiRadius\r\n\t}\r\n\t\r\n\treturn uiRadius\r\n\r\n}",
                   "Interpreter": 1
                 },
                 "Mode": 2,
@@ -589,7 +586,7 @@
                 "Bindings": {
                   "RadiusBottomRight": {
                     "Formula": {
-                      "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius-5",
+                      "Expression": "if ( $prop('variable.dashName') == 'LovelyDashboardXL') {\r\n\r\n\treturn 12\r\n\t\r\n} else {\r\n\r\n\tconst json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\n\tconst settings = JSON.parse(json_settings);\r\n\t\r\n\tif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\t\tuiRadius = 40\r\n\t} else {\r\n\t\tuiRadius = settings.uiRadius-5\r\n\t}\r\n\t\r\n\treturn uiRadius\r\n\r\n}",
                       "Interpreter": 1
                     },
                     "Mode": 2,
@@ -809,7 +806,7 @@
             "Bindings": {
               "RadiusBottomRight": {
                 "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                  "Expression": "if ( $prop('variable.dashName') == 'LovelyDashboardXL') {\r\n\r\n\treturn 12\r\n\t\r\n} else {\r\n\r\n\tconst json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\n\tconst settings = JSON.parse(json_settings);\r\n\t\r\n\tif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\t\tuiRadius = 45\r\n\t} else {\r\n\t\tuiRadius = settings.uiRadius\r\n\t}\r\n\t\r\n\treturn uiRadius\r\n\r\n}",
                   "Interpreter": 1
                 },
                 "Mode": 2,
@@ -890,7 +887,7 @@
                 "Bindings": {
                   "RadiusBottomRight": {
                     "Formula": {
-                      "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius-5",
+                      "Expression": "if ( $prop('variable.dashName') == 'LovelyDashboardXL') {\r\n\r\n\treturn 12\r\n\t\r\n} else {\r\n\r\n\tconst json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\n\tconst settings = JSON.parse(json_settings);\r\n\t\r\n\tif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\t\tuiRadius = 40\r\n\t} else {\r\n\t\tuiRadius = settings.uiRadius-5\r\n\t}\r\n\t\r\n\treturn uiRadius\r\n\r\n}",
                       "Interpreter": 1
                     },
                     "Mode": 2,
@@ -1151,5 +1148,17 @@
   "ShowForeground": true,
   "ShowOnScreenControls": true,
   "SnapToGrid": false,
+  "Variables": {
+    "DashboardVariables": [
+      {
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "dashName"
+      }
+    ]
+  },
   "Version": 2
 }

@@ -9,7 +9,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "6a2dbe94-fa02-4961-833b-39fa590a8375",
+  "Id": "a9552b4a-df58-4dcd-8ecb-35c762c78c44",
   "Images": [
     {
       "Extension": ".png",
@@ -9221,7 +9221,7 @@
           "Left": 20.0,
           "Name": "F1",
           "Top": 24.5,
-          "Visible": true,
+          "Visible": false,
           "Width": 280.0
         },
         {
@@ -9868,9 +9868,9 @@
           "Group": true,
           "Height": 219.0,
           "Left": 17.0,
-          "Name": "ACC",
+          "Name": "Damage",
           "Top": 29.5,
-          "Visible": false,
+          "Visible": true,
           "Width": 286.0
         },
         {
@@ -9911,7 +9911,7 @@
       },
       "PitScreen": false,
       "ScreenEnabledExpression": {
-        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst currentSim = ld_getSim()\r\n\t\r\nif ( settings ) {\r\n\r\n\tif ($prop('variable.positionMFM') == 'leftMFM') {\r\n\t\tactiveMFM = eval(\"settings.\"+currentSim+\".activeLeftMFM\").trim()\r\n\t}  else if ($prop('variable.positionMFM') == 'rightMFM') {\r\n\t\tactiveMFM = eval(\"settings.\"+currentSim+\".activeRightMFM\").trim()\r\n\t} else {\r\n\t\tactiveMFM = \"\"\r\n\t}\r\n\t\r\n\tif ( !activeMFM || activeMFM == \"\" ) {\r\n\t\t// Show MFM if no activeMFM has been set\r\n\t\treturn (\r\n\t\t\tcurrentSim == 'ACC' ||\r\n\t\t\tcurrentSim =='AC' ||\r\n\t\t\tcurrentSim == 'F1'\r\n\t\t) ? true : false\r\n\t} else {\r\n\t\t// Is MFM set in activeMFM?\r\n\t\treturn (\r\n\t\t\tcurrentSim == 'ACC' ||\r\n\t\t\tcurrentSim =='AC' ||\r\n\t\t\tcurrentSim == 'F1'\r\n\t\t) ? activeMFM.includes(6) : false\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn (\r\n\t\tcurrentSim == 'ACC' ||\r\n\t\tcurrentSim =='AC' ||\r\n\t\tcurrentSim == 'F1'\r\n\t) ? true : false \r\n\r\n}",
+        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst currentSim = ld_getSim()\r\n\t\r\nif ( settings ) {\r\n\r\n\tif ($prop('variable.positionMFM') == 'leftMFM') {\r\n\t\tactiveMFM = eval(\"settings.\"+currentSim+\".activeLeftMFM\").trim()\r\n\t}  else if ($prop('variable.positionMFM') == 'rightMFM') {\r\n\t\tactiveMFM = eval(\"settings.\"+currentSim+\".activeRightMFM\").trim()\r\n\t} else {\r\n\t\tactiveMFM = \"\"\r\n\t}\r\n\t\r\n\tif ( !activeMFM || activeMFM == \"\" ) {\r\n\t\t// Show MFM if no activeMFM has been set\r\n\t\treturn (\r\n\t\t\tcurrentSim == 'ACC' ||\r\n\t\t\tcurrentSim =='AC' ||\r\n\t\t\tcurrentSim =='Automobilista2' ||\r\n\t\t\tcurrentSim == 'F1'\r\n\t\t) ? true : false\r\n\t} else {\r\n\t\t// Is MFM set in activeMFM?\r\n\t\treturn (\r\n\t\t\tcurrentSim == 'ACC' ||\r\n\t\t\tcurrentSim =='AC' ||\r\n\t\t\tcurrentSim =='Automobilista2' ||\r\n\t\t\tcurrentSim == 'F1'\r\n\t\t) ? activeMFM.includes(6) : false\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn (\r\n\t\tcurrentSim == 'ACC' ||\r\n\t\tcurrentSim =='AC' ||\r\n\t\tcurrentSim == 'F1'\r\n\t) ? true : false \r\n\r\n}",
         "Interpreter": 1
       },
       "ScreenId": "6a7f83c9-7fec-400f-b4dd-7e428d60cf3c"
