@@ -9,7 +9,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "fda49271-13e6-4778-9b18-f03a27dadfb3",
+  "Id": "4e8d76dc-1d7e-4277-ade9-cd8116980dd2",
   "Images": [
     {
       "Extension": ".png",
@@ -3031,16 +3031,6 @@
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.GeneratedStaticMapItem, SimHub.Plugins",
           "AlternateTrackSectorColor": "#FFD3D3D3",
           "BackgroundColor": "#00FFFFFF",
-          "Bindings": {
-            "Visible": {
-              "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.mapTypeMFM ) {\r\n\treturn 1\r\n} else {\r\n\tswitch (settings.mapTypeMFM) {\r\n\t\tcase 1: return 1\r\n\t\tcase 2: return 0\r\n\t\tdefault: return 1\r\n\t}\r\n}",
-                "Interpreter": 1
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
-            }
-          },
           "BlinkDelay": 249.0,
           "BorderStyle": {
             "Bindings": {
@@ -3061,6 +3051,7 @@
           "CursorColor": "#FFFF0000",
           "DisplayScale": 1.0,
           "Height": 350.0,
+          "IsFreezed": true,
           "Left": 855.0,
           "MapShadow": false,
           "MinimumTrackBorderWidth": 0.0,
@@ -3102,94 +3093,6 @@
           "TrackColor": "#FF808080",
           "TrackWidth": 6.0,
           "Visible": true,
-          "Width": 420.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.GeneratedMapItem, SimHub.Plugins",
-          "AlternateTrackSectorColor": "#B9D3D3D3",
-          "BackgroundColor": "#00FFFFFF",
-          "BaseMapScale": 1.0,
-          "Bindings": {
-            "SpeedUnzoomPercent": {
-              "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.mapZoom ) {\r\n\tmapZoom = 30\r\n} else {\r\n\tmapZoom = settings.mapZoom\r\n}\r\n\r\nreturn mapZoom",
-                "Interpreter": 1
-              },
-              "Mode": 2,
-              "TargetPropertyName": "SpeedUnzoomPercent"
-            },
-            "Visible": {
-              "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.mapTypeMFM ) {\r\n\treturn 0\r\n} else {\r\n\tswitch (settings.mapTypeMFM) {\r\n\t\tcase 1: return 0\r\n\t\tcase 2: return 1\r\n\t\tdefault: return 0\r\n\t}\r\n}",
-                "Interpreter": 1
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
-            }
-          },
-          "BorderStyle": {
-            "Bindings": {
-              "RadiusBottomRight": {
-                "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
-                  "Interpreter": 1
-                },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusBottomRight"
-              }
-            },
-            "RadiusBottomLeft": 12,
-            "RadiusBottomRight": 45,
-            "RadiusTopLeft": 12,
-            "RadiusTopRight": 12
-          },
-          "CursorColor": "#FFFF0000",
-          "DisplayScale": 1.0,
-          "Height": 350.0,
-          "Left": 855.0,
-          "MapShadow": false,
-          "MinimumTrackBorderWidth": 0.0,
-          "MinimumTrackWidth": 10.0,
-          "Name": "Animated Map",
-          "OpponentStyle": {
-            "DotBorderThickness": 3.0,
-            "DotBordercolor": "#FF262626",
-            "DotColor": "#FFFFFFFF",
-            "DotRadius": 40.0,
-            "LabelColor": "#FF000000",
-            "LabelFont": "Roboto",
-            "LabelFontSize": 20.0
-          },
-          "PlayerPulse": true,
-          "PlayerPulseColor": "#FFFFD700",
-          "PlayerPulseRadius": 100.0,
-          "PlayerPulseThickness": 8.0,
-          "PlayerStyle": {
-            "DotBorderThickness": 3.0,
-            "DotBordercolor": "#FF000000",
-            "DotColor": "#FFFFD700",
-            "DotRadius": 45.0,
-            "LabelColor": "#FF000000",
-            "LabelFont": "Roboto",
-            "LabelFontSize": 22.0
-          },
-          "RenderImageHeight": 375.05234018241254,
-          "RenderImageWidth": 525.0732762553776,
-          "SpeedUnzoomEnabled": true,
-          "SpeedUnzoomPercent": 30.0,
-          "SpeedUnzoomStartSpeed": 100.0,
-          "StartLine": {
-            "Color": "#FFFFFFFF",
-            "Enabled": true,
-            "Height": 40.0,
-            "Width": 2.0
-          },
-          "Top": 125.0,
-          "TrackBorderColor": "#FFFFFFFF",
-          "TrackBorderWidth": 0.0,
-          "TrackColor": "#B9808080",
-          "TrackWidth": 10.0,
-          "Visible": false,
           "Width": 420.0
         },
         {
@@ -4696,7 +4599,7 @@
         "EvaluateOnlyOnce": false,
         "OverrideWithParentDashboardVariableWhenAvailable": false,
         "ValueExpression": {
-          "Expression": "'2.4.1'"
+          "Expression": "'2.4.2'"
         },
         "VariableName": "dashVer"
       },

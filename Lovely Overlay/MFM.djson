@@ -9,7 +9,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "a9552b4a-df58-4dcd-8ecb-35c762c78c44",
+  "Id": "0c944f71-872c-4c97-8cea-51de06c8e3b3",
   "Images": [
     {
       "Extension": ".png",
@@ -413,6 +413,16 @@
             }
           },
           "BorderStyle": {
+            "Bindings": {
+              "BorderColor": {
+                "Formula": {
+                  "Expression": "return ( $prop('IsInPitLane') ) ? dark_blue : white",
+                  "Interpreter": 1
+                },
+                "Mode": 2,
+                "TargetPropertyName": "BorderColor"
+              }
+            },
             "BorderBottom": 2,
             "BorderLeft": 2,
             "BorderRight": 2,
@@ -744,6 +754,16 @@
             }
           },
           "BorderStyle": {
+            "Bindings": {
+              "BorderColor": {
+                "Formula": {
+                  "Expression": "return ( $prop('IsInPitLane') ) ? dark_blue : white",
+                  "Interpreter": 1
+                },
+                "Mode": 2,
+                "TargetPropertyName": "BorderColor"
+              }
+            },
             "BorderBottom": 2,
             "BorderLeft": 2,
             "BorderRight": 2,
@@ -1882,6 +1902,16 @@
             }
           },
           "BorderStyle": {
+            "Bindings": {
+              "BorderColor": {
+                "Formula": {
+                  "Expression": "return ( $prop('IsInPitLane') ) ? dark_blue : white",
+                  "Interpreter": 1
+                },
+                "Mode": 2,
+                "TargetPropertyName": "BorderColor"
+              }
+            },
             "BorderBottom": 2,
             "BorderLeft": 2,
             "BorderRight": 2,
@@ -3640,6 +3670,16 @@
             }
           },
           "BorderStyle": {
+            "Bindings": {
+              "BorderColor": {
+                "Formula": {
+                  "Expression": "return ( $prop('IsInPitLane') ) ? dark_blue : white",
+                  "Interpreter": 1
+                },
+                "Mode": 2,
+                "TargetPropertyName": "BorderColor"
+              }
+            },
             "BorderBottom": 2,
             "BorderLeft": 2,
             "BorderRight": 2,
@@ -4437,6 +4477,16 @@
             }
           },
           "BorderStyle": {
+            "Bindings": {
+              "BorderColor": {
+                "Formula": {
+                  "Expression": "return ( $prop('IsInPitLane') ) ? dark_blue : white",
+                  "Interpreter": 1
+                },
+                "Mode": 2,
+                "TargetPropertyName": "BorderColor"
+              }
+            },
             "BorderBottom": 2,
             "BorderLeft": 2,
             "BorderRight": 2,
@@ -7280,6 +7330,16 @@
             }
           },
           "BorderStyle": {
+            "Bindings": {
+              "BorderColor": {
+                "Formula": {
+                  "Expression": "return ( $prop('IsInPitLane') ) ? dark_blue : white",
+                  "Interpreter": 1
+                },
+                "Mode": 2,
+                "TargetPropertyName": "BorderColor"
+              }
+            },
             "BorderBottom": 2,
             "BorderLeft": 2,
             "BorderRight": 2,
@@ -8560,6 +8620,16 @@
             }
           },
           "BorderStyle": {
+            "Bindings": {
+              "BorderColor": {
+                "Formula": {
+                  "Expression": "return ( $prop('IsInPitLane') ) ? dark_blue : white",
+                  "Interpreter": 1
+                },
+                "Mode": 2,
+                "TargetPropertyName": "BorderColor"
+              }
+            },
             "BorderBottom": 2,
             "BorderLeft": 2,
             "BorderRight": 2,
@@ -9230,7 +9300,929 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "return !$prop('DataCorePlugin.CurrentGame').startsWith('F120')",
+                "Expression": "return ( $prop('DataCorePlugin.CurrentGame') == \"Automobilista2\" )",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "AutoSize": true,
+              "BackgroundColor": "#00FFFFFF",
+              "Height": 160.0,
+              "Image": "vehicle-status",
+              "IsFreezed": true,
+              "Left": 122.0,
+              "Name": "vehicle",
+              "Opacity": 35.0,
+              "Top": 39.5,
+              "Visible": true,
+              "Width": 76.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Childrens": [
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0",
+                      "Formula": {
+                        "Expression": "if ($prop('GameRawData.mSuspensionDamage03')>0.1 && $prop('GameRawData.mSuspensionDamage03')<=0.2) {\r\n\r\n\treturn 'LIT'\r\n\t\r\n} else if ($prop('GameRawData.mSuspensionDamage03')>0.2 && $prop('GameRawData.mSuspensionDamage03')<=0.5) {\r\n\r\n\treturn 'MED'\r\n\t\r\n} else if ($prop('GameRawData.mSuspensionDamage03')>0.5) {\r\n\r\n\treturn 'HVY'\r\n\r\n} else {\r\n\r\n\treturn 'OK'\r\n\t\r\n}\r\n\t",
+                        "Interpreter": 1
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 24.0,
+                  "Height": 35.0,
+                  "HorizontalAlignment": 2,
+                  "IsTextItem": true,
+                  "Left": 15.0,
+                  "Name": "TextItem0",
+                  "Text": "OK",
+                  "TextColor": "#FFFFFFFF",
+                  "Top": 136.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 55.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Font": "Roboto",
+                  "FontSize": 12.0,
+                  "FontWeight": "Bold",
+                  "Height": 14.0,
+                  "HorizontalAlignment": 2,
+                  "IsTextItem": true,
+                  "Left": 15.0,
+                  "Name": "TextItem5",
+                  "Text": "RL SUSP.",
+                  "TextColor": "#FF878787",
+                  "Top": 169.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 55.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                  "AutoSize": true,
+                  "BackgroundColor": "#00FFFFFF",
+                  "Height": 12.0,
+                  "Image": "line-rear",
+                  "Left": 75.0,
+                  "Name": "ImageItem0",
+                  "Top": 151.5,
+                  "Visible": true,
+                  "Width": 32.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF808080",
+                  "Bindings": {
+                    "BackgroundColor": {
+                      "Formula": {
+                        "Expression": "if ($prop('GameRawData.mSuspensionDamage03')>0.1 && $prop('GameRawData.mSuspensionDamage03')<=0.2) {\r\n\r\n\treturn yellow\r\n\t\r\n} else if ($prop('GameRawData.mSuspensionDamage03')>0.2 && $prop('GameRawData.mSuspensionDamage03')<=0.5) {\r\n\r\n\treturn orange\r\n\t\r\n} else if ($prop('GameRawData.mSuspensionDamage03')>0.5) {\r\n\r\n\treturn red\r\n\r\n} else {\r\n\r\n\treturn gray\r\n\t\r\n}\r\n\t",
+                        "Interpreter": 1
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "BackgroundColor"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 2,
+                    "RadiusBottomRight": 2
+                  },
+                  "Height": 12.0,
+                  "IsRectangleItem": true,
+                  "Left": 112.0,
+                  "Name": "RectangleItem",
+                  "Top": 165.0,
+                  "Visible": true,
+                  "Width": 4.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF808080",
+                  "Bindings": {
+                    "BackgroundColor": {
+                      "Formula": {
+                        "Expression": "if ($prop('GameRawData.mSuspensionDamage03')>0.1 && $prop('GameRawData.mSuspensionDamage03')<=0.2) {\r\n\r\n\treturn yellow\r\n\t\r\n} else if ($prop('GameRawData.mSuspensionDamage03')>0.2 && $prop('GameRawData.mSuspensionDamage03')<=0.5) {\r\n\r\n\treturn orange\r\n\t\r\n} else if ($prop('GameRawData.mSuspensionDamage03')>0.5) {\r\n\r\n\treturn red\r\n\r\n} else {\r\n\r\n\treturn gray\r\n\t\r\n}\r\n\t",
+                        "Interpreter": 1
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "BackgroundColor"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusTopLeft": 2,
+                    "RadiusTopRight": 2
+                  },
+                  "Height": 15.0,
+                  "IsRectangleItem": true,
+                  "Left": 111.0,
+                  "Name": "RectangleItem2",
+                  "Top": 152.0,
+                  "Visible": true,
+                  "Width": 6.0
+                }
+              ],
+              "Group": true,
+              "Height": 47.0,
+              "Left": 15.0,
+              "Name": "RL Susp.",
+              "Top": 136.5,
+              "Visible": true,
+              "Width": 102.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Childrens": [
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0",
+                      "Formula": {
+                        "Expression": "if ($prop('GameRawData.mSuspensionDamage04')>0.1 && $prop('GameRawData.mSuspensionDamage04')<=0.2) {\r\n\r\n\treturn 'LIT'\r\n\t\r\n} else if ($prop('GameRawData.mSuspensionDamage04')>0.2 && $prop('GameRawData.mSuspensionDamage04')<=0.5) {\r\n\r\n\treturn 'MED'\r\n\t\r\n} else if ($prop('GameRawData.mSuspensionDamage04')>0.5) {\r\n\r\n\treturn 'HVY'\r\n\r\n} else {\r\n\r\n\treturn 'OK'\r\n\t\r\n}\r\n\t",
+                        "Interpreter": 1
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 24.0,
+                  "Height": 35.0,
+                  "HorizontalAlignment": 0,
+                  "IsTextItem": true,
+                  "Left": 250.0,
+                  "Name": "TextItem0",
+                  "Text": "OK",
+                  "TextColor": "#FFFFFFFF",
+                  "Top": 153.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 55.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Font": "Roboto",
+                  "FontSize": 12.0,
+                  "FontWeight": "Bold",
+                  "Height": 14.0,
+                  "HorizontalAlignment": 0,
+                  "IsTextItem": true,
+                  "Left": 250.0,
+                  "Name": "TextItem5",
+                  "Text": "RR SUSP.",
+                  "TextColor": "#FF878787",
+                  "Top": 186.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 55.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                  "AutoSize": true,
+                  "BackgroundColor": "#00FFFFFF",
+                  "Height": 12.0,
+                  "Image": "line-front",
+                  "Left": 212.0,
+                  "Name": "ImageItem0",
+                  "Top": 159.5,
+                  "Visible": true,
+                  "Width": 32.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF808080",
+                  "Bindings": {
+                    "BackgroundColor": {
+                      "Formula": {
+                        "Expression": "if ($prop('GameRawData.mSuspensionDamage04')>0.1 && $prop('GameRawData.mSuspensionDamage04')<=0.2) {\r\n\r\n\treturn yellow\r\n\t\r\n} else if ($prop('GameRawData.mSuspensionDamage04')>0.2 && $prop('GameRawData.mSuspensionDamage04')<=0.5) {\r\n\r\n\treturn orange\r\n\t\r\n} else if ($prop('GameRawData.mSuspensionDamage04')>0.5) {\r\n\r\n\treturn red\r\n\r\n} else {\r\n\r\n\treturn gray\r\n\t\r\n}\r\n\t",
+                        "Interpreter": 1
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "BackgroundColor"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 2,
+                    "RadiusBottomRight": 2
+                  },
+                  "Height": 12.0,
+                  "IsRectangleItem": true,
+                  "Left": 204.0,
+                  "Name": "RectangleItem",
+                  "Top": 165.0,
+                  "Visible": true,
+                  "Width": 4.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF808080",
+                  "Bindings": {
+                    "BackgroundColor": {
+                      "Formula": {
+                        "Expression": "if ($prop('GameRawData.mSuspensionDamage04')>0.1 && $prop('GameRawData.mSuspensionDamage04')<=0.2) {\r\n\r\n\treturn yellow\r\n\t\r\n} else if ($prop('GameRawData.mSuspensionDamage04')>0.2 && $prop('GameRawData.mSuspensionDamage04')<=0.5) {\r\n\r\n\treturn orange\r\n\t\r\n} else if ($prop('GameRawData.mSuspensionDamage04')>0.5) {\r\n\r\n\treturn red\r\n\r\n} else {\r\n\r\n\treturn gray\r\n\t\r\n}\r\n\t",
+                        "Interpreter": 1
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "BackgroundColor"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusTopLeft": 2,
+                    "RadiusTopRight": 2
+                  },
+                  "Height": 15.0,
+                  "IsRectangleItem": true,
+                  "Left": 203.0,
+                  "Name": "RectangleItem2",
+                  "Top": 152.0,
+                  "Visible": true,
+                  "Width": 6.0
+                }
+              ],
+              "Group": true,
+              "Height": 48.5,
+              "Left": 203.0,
+              "Name": "RR Susp.",
+              "Top": 152.0,
+              "Visible": true,
+              "Width": 102.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Childrens": [
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0",
+                      "Formula": {
+                        "Expression": "if ($prop('GameRawData.mSuspensionDamage02')>0.1 && $prop('GameRawData.mSuspensionDamage02')<=0.2) {\r\n\r\n\treturn 'LIT'\r\n\t\r\n} else if ($prop('GameRawData.mSuspensionDamage02')>0.2 && $prop('GameRawData.mSuspensionDamage02')<=0.5) {\r\n\r\n\treturn 'MED'\r\n\t\r\n} else if ($prop('GameRawData.mSuspensionDamage02')>0.5) {\r\n\r\n\treturn 'HVY'\r\n\r\n} else {\r\n\r\n\treturn 'OK'\r\n\t\r\n}\r\n\t",
+                        "Interpreter": 1
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 24.0,
+                  "Height": 35.0,
+                  "HorizontalAlignment": 0,
+                  "IsTextItem": true,
+                  "Left": 250.0,
+                  "Name": "TextItem0",
+                  "Text": "OK",
+                  "TextColor": "#FFFFFFFF",
+                  "Top": 59.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 55.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Font": "Roboto",
+                  "FontSize": 12.0,
+                  "FontWeight": "Bold",
+                  "Height": 14.0,
+                  "HorizontalAlignment": 0,
+                  "IsTextItem": true,
+                  "Left": 250.0,
+                  "Name": "TextItem5",
+                  "Text": "FR SUSP.",
+                  "TextColor": "#FF878787",
+                  "Top": 92.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 55.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                  "AutoSize": true,
+                  "BackgroundColor": "#00FFFFFF",
+                  "Height": 12.0,
+                  "Image": "line-rear",
+                  "Left": 212.0,
+                  "Name": "ImageItem0",
+                  "Top": 65.5,
+                  "Visible": true,
+                  "Width": 32.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF808080",
+                  "Bindings": {
+                    "BackgroundColor": {
+                      "Formula": {
+                        "Expression": "if ($prop('GameRawData.mSuspensionDamage02')>0.1 && $prop('GameRawData.mSuspensionDamage02')<=0.2) {\r\n\r\n\treturn yellow\r\n\t\r\n} else if ($prop('GameRawData.mSuspensionDamage02')>0.2 && $prop('GameRawData.mSuspensionDamage02')<=0.5) {\r\n\r\n\treturn orange\r\n\t\r\n} else if ($prop('GameRawData.mSuspensionDamage02')>0.5) {\r\n\r\n\treturn red\r\n\r\n} else {\r\n\r\n\treturn gray\r\n\t\r\n}\r\n\t",
+                        "Interpreter": 1
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "BackgroundColor"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 2,
+                    "RadiusBottomRight": 2
+                  },
+                  "Height": 12.0,
+                  "IsRectangleItem": true,
+                  "Left": 204.0,
+                  "Name": "RectangleItem",
+                  "Top": 69.0,
+                  "Visible": true,
+                  "Width": 4.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF808080",
+                  "Bindings": {
+                    "BackgroundColor": {
+                      "Formula": {
+                        "Expression": "if ($prop('GameRawData.mSuspensionDamage02')>0.1 && $prop('GameRawData.mSuspensionDamage02')<=0.2) {\r\n\r\n\treturn yellow\r\n\t\r\n} else if ($prop('GameRawData.mSuspensionDamage02')>0.2 && $prop('GameRawData.mSuspensionDamage02')<=0.5) {\r\n\r\n\treturn orange\r\n\t\r\n} else if ($prop('GameRawData.mSuspensionDamage02')>0.5) {\r\n\r\n\treturn red\r\n\r\n} else {\r\n\r\n\treturn gray\r\n\t\r\n}\r\n\t",
+                        "Interpreter": 1
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "BackgroundColor"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusTopLeft": 2,
+                    "RadiusTopRight": 2
+                  },
+                  "Height": 15.0,
+                  "IsRectangleItem": true,
+                  "Left": 203.0,
+                  "Name": "RectangleItem2",
+                  "Top": 56.0,
+                  "Visible": true,
+                  "Width": 6.0
+                }
+              ],
+              "Group": true,
+              "Height": 50.5,
+              "Left": 203.0,
+              "Name": "FR Susp.",
+              "Top": 56.0,
+              "Visible": true,
+              "Width": 102.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Childrens": [
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "0",
+                      "Formula": {
+                        "Expression": "if ($prop('GameRawData.mSuspensionDamage01')>0.1 && $prop('GameRawData.mSuspensionDamage01')<=0.2) {\r\n\r\n\treturn 'LIT'\r\n\t\r\n} else if ($prop('GameRawData.mSuspensionDamage01')>0.2 && $prop('GameRawData.mSuspensionDamage01')<=0.5) {\r\n\r\n\treturn 'MED'\r\n\t\r\n} else if ($prop('GameRawData.mSuspensionDamage01')>0.5) {\r\n\r\n\treturn 'HVY'\r\n\r\n} else {\r\n\r\n\treturn 'OK'\r\n\t\r\n}\r\n\t",
+                        "Interpreter": 1
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 24.0,
+                  "Height": 35.0,
+                  "HorizontalAlignment": 2,
+                  "IsTextItem": true,
+                  "Left": 15.0,
+                  "Name": "TextItem0",
+                  "Text": "OK",
+                  "TextColor": "#FFFFFFFF",
+                  "Top": 39.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 55.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Font": "Roboto",
+                  "FontSize": 12.0,
+                  "FontWeight": "Bold",
+                  "Height": 14.0,
+                  "HorizontalAlignment": 2,
+                  "IsTextItem": true,
+                  "Left": 15.0,
+                  "Name": "TextItem5",
+                  "Text": "FL SUSP.",
+                  "TextColor": "#FF878787",
+                  "Top": 72.5,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 55.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                  "AutoSize": true,
+                  "BackgroundColor": "#00FFFFFF",
+                  "Height": 12.0,
+                  "Image": "line-front",
+                  "Left": 75.0,
+                  "Name": "ImageItem0",
+                  "Top": 54.5,
+                  "Visible": true,
+                  "Width": 32.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF808080",
+                  "Bindings": {
+                    "BackgroundColor": {
+                      "Formula": {
+                        "Expression": "if ($prop('GameRawData.mSuspensionDamage01')>0.1 && $prop('GameRawData.mSuspensionDamage01')<=0.2) {\r\n\r\n\treturn yellow\r\n\t\r\n} else if ($prop('GameRawData.mSuspensionDamage01')>0.2 && $prop('GameRawData.mSuspensionDamage01')<=0.5) {\r\n\r\n\treturn orange\r\n\t\r\n} else if ($prop('GameRawData.mSuspensionDamage01')>0.5) {\r\n\r\n\treturn red\r\n\r\n} else {\r\n\r\n\treturn gray\r\n\t\r\n}\r\n\t",
+                        "Interpreter": 1
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "BackgroundColor"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 2,
+                    "RadiusBottomRight": 2
+                  },
+                  "Height": 12.0,
+                  "IsRectangleItem": true,
+                  "Left": 112.0,
+                  "Name": "RectangleItem",
+                  "Top": 69.0,
+                  "Visible": true,
+                  "Width": 4.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#FF808080",
+                  "Bindings": {
+                    "BackgroundColor": {
+                      "Formula": {
+                        "Expression": "if ($prop('GameRawData.mSuspensionDamage01')>0.1 && $prop('GameRawData.mSuspensionDamage01')<=0.2) {\r\n\r\n\treturn yellow\r\n\t\r\n} else if ($prop('GameRawData.mSuspensionDamage01')>0.2 && $prop('GameRawData.mSuspensionDamage01')<=0.5) {\r\n\r\n\treturn orange\r\n\t\r\n} else if ($prop('GameRawData.mSuspensionDamage01')>0.5) {\r\n\r\n\treturn red\r\n\r\n} else {\r\n\r\n\treturn gray\r\n\t\r\n}\r\n\t",
+                        "Interpreter": 1
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "BackgroundColor"
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusTopLeft": 2,
+                    "RadiusTopRight": 2
+                  },
+                  "Height": 15.0,
+                  "IsRectangleItem": true,
+                  "Left": 111.0,
+                  "Name": "RectangleItem",
+                  "Top": 56.0,
+                  "Visible": true,
+                  "Width": 6.0
+                }
+              ],
+              "Group": true,
+              "Height": 47.0,
+              "IsFreezed": true,
+              "Left": 15.0,
+              "Name": "FL Susp.",
+              "Top": 39.5,
+              "Visible": true,
+              "Width": 102.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Childrens": [
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Childrens": [
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Text": {
+                          "FormatString": "0",
+                          "Formula": {
+                            "Expression": "if ($prop('DataCorePlugin.GameRawData.mAeroDamage')>0.1 && $prop('DataCorePlugin.GameRawData.mAeroDamage')<=0.2) {\r\n\r\n\treturn 'LIT'\r\n\t\r\n} else if ($prop('DataCorePlugin.GameRawData.mAeroDamage')>0.2 && $prop('DataCorePlugin.GameRawData.mAeroDamage')<=0.5) {\r\n\r\n\treturn 'MED'\r\n\t\r\n} else if ($prop('DataCorePlugin.GameRawData.mAeroDamage')>0.5) {\r\n\r\n\treturn 'HVY'\r\n\r\n} else {\r\n\r\n\treturn 'OK'\r\n\t\r\n}",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "Text"
+                        }
+                      },
+                      "Font": "Roboto",
+                      "FontSize": 24.0,
+                      "Height": 35.0,
+                      "HorizontalAlignment": 0,
+                      "IsTextItem": true,
+                      "Left": 203.0,
+                      "Name": "TextItem1",
+                      "Text": "OK",
+                      "TextColor": "#FFFFFFFF",
+                      "Top": 203.5,
+                      "VerticalAlignment": 1,
+                      "Visible": true,
+                      "Width": 55.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "Font": "Roboto",
+                      "FontSize": 12.0,
+                      "FontWeight": "Bold",
+                      "Height": 14.0,
+                      "HorizontalAlignment": 0,
+                      "IsTextItem": true,
+                      "Left": 203.0,
+                      "Name": "TextItem8",
+                      "Text": "AERO",
+                      "TextColor": "#FF878787",
+                      "Top": 236.5,
+                      "VerticalAlignment": 1,
+                      "Visible": true,
+                      "Width": 55.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                      "AutoSize": true,
+                      "BackgroundColor": "#00FFFFFF",
+                      "Height": 12.0,
+                      "Image": "line-rear",
+                      "Left": 165.0,
+                      "Name": "ImageItem3",
+                      "Top": 210.5,
+                      "Visible": true,
+                      "Width": 32.0
+                    }
+                  ],
+                  "Group": true,
+                  "Height": 47.0,
+                  "Left": 165.0,
+                  "Name": "Aero",
+                  "Top": 203.5,
+                  "Visible": true,
+                  "Width": 93.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Childrens": [
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                      "AutoSize": false,
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Visible": {
+                          "Formula": {
+                            "Expression": "return $prop('DataCorePlugin.GameRawData.mAeroDamage')>0.1 && $prop('DataCorePlugin.GameRawData.mAeroDamage')<=0.2 ",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "Visible"
+                        }
+                      },
+                      "Height": 44.0,
+                      "Image": "vehicle-status-front-light",
+                      "Left": 122.0,
+                      "Name": "front light",
+                      "Top": 39.5,
+                      "Visible": false,
+                      "Width": 76.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                      "AutoSize": false,
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Visible": {
+                          "Formula": {
+                            "Expression": "return $prop('DataCorePlugin.GameRawData.mAeroDamage')>0.2 && $prop('DataCorePlugin.GameRawData.mAeroDamage')<=0.5 ",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "Visible"
+                        }
+                      },
+                      "Height": 44.0,
+                      "Image": "vehicle-status-front-medium",
+                      "Left": 122.0,
+                      "Name": "front medium",
+                      "Top": 39.5,
+                      "Visible": false,
+                      "Width": 76.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                      "AutoSize": false,
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Visible": {
+                          "Formula": {
+                            "Expression": "return $prop('DataCorePlugin.GameRawData.mAeroDamage')>0.5",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "Visible"
+                        }
+                      },
+                      "Height": 44.0,
+                      "Image": "vehicle-status-front-heavy",
+                      "Left": 122.0,
+                      "Name": "front heavy",
+                      "Top": 39.5,
+                      "Visible": false,
+                      "Width": 76.0
+                    }
+                  ],
+                  "Group": true,
+                  "Height": 44.0,
+                  "Left": 122.0,
+                  "Name": "Front",
+                  "Top": 39.5,
+                  "Visible": true,
+                  "Width": 76.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Childrens": [
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                      "AutoSize": true,
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Visible": {
+                          "Formula": {
+                            "Expression": "return $prop('DataCorePlugin.GameRawData.mAeroDamage')>0.1 && $prop('DataCorePlugin.GameRawData.mAeroDamage')<=0.2 ",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "Visible"
+                        }
+                      },
+                      "Height": 44.0,
+                      "Image": "vehicle-status-rear-light",
+                      "Left": 122.0,
+                      "Name": "Rear Light",
+                      "Top": 155.5,
+                      "Visible": false,
+                      "Width": 76.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                      "AutoSize": true,
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Visible": {
+                          "Formula": {
+                            "Expression": "return $prop('DataCorePlugin.GameRawData.mAeroDamage')>0.2 && $prop('DataCorePlugin.GameRawData.mAeroDamage')<=0.5 ",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "Visible"
+                        }
+                      },
+                      "Height": 44.0,
+                      "Image": "vehicle-status-rear-medium",
+                      "Left": 122.0,
+                      "Name": "Rear Medium",
+                      "Top": 155.5,
+                      "Visible": false,
+                      "Width": 76.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                      "AutoSize": true,
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Visible": {
+                          "Formula": {
+                            "Expression": "return $prop('DataCorePlugin.GameRawData.mAeroDamage')>0.5",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "Visible"
+                        }
+                      },
+                      "Height": 44.0,
+                      "Image": "vehicle-status-rear-heavy",
+                      "Left": 122.0,
+                      "Name": "Rear Heavy",
+                      "Top": 155.5,
+                      "Visible": false,
+                      "Width": 76.0
+                    }
+                  ],
+                  "Group": true,
+                  "Height": 44.0,
+                  "Left": 122.0,
+                  "Name": "Rear",
+                  "Top": 155.5,
+                  "Visible": true,
+                  "Width": 76.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Childrens": [
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                      "AutoSize": true,
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Visible": {
+                          "Formula": {
+                            "Expression": "return $prop('DataCorePlugin.GameRawData.mAeroDamage')>0.1 && $prop('DataCorePlugin.GameRawData.mAeroDamage')<=0.2 ",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "Visible"
+                        }
+                      },
+                      "Height": 72.0,
+                      "Image": "vehicle-status-left-light",
+                      "Left": 122.0,
+                      "Name": "Left Light",
+                      "Top": 83.5,
+                      "Visible": false,
+                      "Width": 38.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                      "AutoSize": true,
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Visible": {
+                          "Formula": {
+                            "Expression": "return $prop('DataCorePlugin.GameRawData.mAeroDamage')>0.2 && $prop('DataCorePlugin.GameRawData.mAeroDamage')<=0.5 ",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "Visible"
+                        }
+                      },
+                      "Height": 72.0,
+                      "Image": "vehicle-status-left-medium",
+                      "Left": 122.0,
+                      "Name": "Left Medium",
+                      "Top": 83.5,
+                      "Visible": false,
+                      "Width": 38.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                      "AutoSize": true,
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Visible": {
+                          "Formula": {
+                            "Expression": "return $prop('DataCorePlugin.GameRawData.mAeroDamage')>0.5",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "Visible"
+                        }
+                      },
+                      "Height": 72.0,
+                      "Image": "vehicle-status-left-heavy",
+                      "Left": 122.0,
+                      "Name": "Left Heavy",
+                      "Top": 83.5,
+                      "Visible": false,
+                      "Width": 38.0
+                    }
+                  ],
+                  "Group": true,
+                  "Height": 72.0,
+                  "Left": 122.0,
+                  "Name": "Left",
+                  "Top": 83.5,
+                  "Visible": true,
+                  "Width": 38.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Childrens": [
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                      "AutoSize": true,
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Visible": {
+                          "Formula": {
+                            "Expression": "return $prop('DataCorePlugin.GameRawData.mAeroDamage')>0.1 && $prop('DataCorePlugin.GameRawData.mAeroDamage')<=0.2 ",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "Visible"
+                        }
+                      },
+                      "Height": 72.0,
+                      "Image": "vehicle-status-right-light",
+                      "Left": 160.0,
+                      "Name": "Right Light",
+                      "Top": 83.5,
+                      "Visible": false,
+                      "Width": 38.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                      "AutoSize": true,
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Visible": {
+                          "Formula": {
+                            "Expression": "return $prop('DataCorePlugin.GameRawData.mAeroDamage')>0.2 && $prop('DataCorePlugin.GameRawData.mAeroDamage')<=0.5 ",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "Visible"
+                        }
+                      },
+                      "Height": 72.0,
+                      "Image": "vehicle-status-right-medium",
+                      "Left": 160.0,
+                      "Name": "Right Medium",
+                      "Top": 83.5,
+                      "Visible": false,
+                      "Width": 38.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                      "AutoSize": true,
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Visible": {
+                          "Formula": {
+                            "Expression": "return $prop('DataCorePlugin.GameRawData.mAeroDamage')>0.5",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "Visible"
+                        }
+                      },
+                      "Height": 72.0,
+                      "Image": "vehicle-status-right-heavy",
+                      "Left": 160.0,
+                      "Name": "Right Heavy",
+                      "Top": 83.5,
+                      "Visible": false,
+                      "Width": 38.0
+                    }
+                  ],
+                  "Group": true,
+                  "Height": 72.0,
+                  "Left": 160.0,
+                  "Name": "Right",
+                  "Top": 83.5,
+                  "Visible": true,
+                  "Width": 38.0
+                }
+              ],
+              "Group": true,
+              "Height": 211.0,
+              "Left": 122.0,
+              "Name": "Aero",
+              "Top": 39.5,
+              "Visible": true,
+              "Width": 136.0
+            }
+          ],
+          "Group": true,
+          "Height": 211.0,
+          "Left": 15.0,
+          "Name": "AMS2",
+          "Top": 39.5,
+          "Visible": true,
+          "Width": 290.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "return !$prop('DataCorePlugin.CurrentGame').startsWith('F120') && $prop('DataCorePlugin.CurrentGame') != \"Automobilista2\"",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -9867,10 +10859,11 @@
           ],
           "Group": true,
           "Height": 219.0,
+          "IsFreezed": true,
           "Left": 17.0,
           "Name": "Damage",
           "Top": 29.5,
-          "Visible": true,
+          "Visible": false,
           "Width": 286.0
         },
         {
@@ -9970,6 +10963,16 @@
             }
           },
           "BorderStyle": {
+            "Bindings": {
+              "BorderColor": {
+                "Formula": {
+                  "Expression": "return ( $prop('IsInPitLane') ) ? dark_blue : white",
+                  "Interpreter": 1
+                },
+                "Mode": 2,
+                "TargetPropertyName": "BorderColor"
+              }
+            },
             "BorderBottom": 2,
             "BorderLeft": 2,
             "BorderRight": 2,
@@ -11420,6 +12423,16 @@
             }
           },
           "BorderStyle": {
+            "Bindings": {
+              "BorderColor": {
+                "Formula": {
+                  "Expression": "return ( $prop('IsInPitLane') ) ? dark_blue : white",
+                  "Interpreter": 1
+                },
+                "Mode": 2,
+                "TargetPropertyName": "BorderColor"
+              }
+            },
             "BorderBottom": 2,
             "BorderLeft": 2,
             "BorderRight": 2,
@@ -11709,6 +12722,16 @@
             }
           },
           "BorderStyle": {
+            "Bindings": {
+              "BorderColor": {
+                "Formula": {
+                  "Expression": "return ( $prop('IsInPitLane') ) ? dark_blue : white",
+                  "Interpreter": 1
+                },
+                "Mode": 2,
+                "TargetPropertyName": "BorderColor"
+              }
+            },
             "BorderBottom": 2,
             "BorderLeft": 2,
             "BorderRight": 2,
