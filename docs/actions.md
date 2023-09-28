@@ -1,4 +1,4 @@
-# SimHub Actions
+# SimHub Action Triggers
 Actions in SimHub provide a way to interact with the dashboard, offfering many way to customise the Lovely Dashboard experience. 
 
 In Simhub, depending on your device (Touch or Hardware Buttons) you will need to assign the Actions to buttons on your Steering Wheel or Button Box. You can choose whatever suits your personal needs.
