@@ -24,7 +24,7 @@ A multifunctional feature packed SimHub Dashboard (DDU) and ecosystem.
 <img width="80" height="80" alt="Automobilista 2" src="docs/images/icon-ams2.png">
 <img width="80" height="80" alt="rFactor 2" src="docs/images/icon-rf2.png">
 <img width="80" height="80" alt="Formula 1" src="docs/images/icon-f1.png"></br>
-<span>+ generic support for all simulators that work with Simhub</span>
+<span>+ generic support for all simulators that work with SimHub</span>
 </p>
 
 ---
@@ -113,7 +113,7 @@ To change your personal settings, you can edit the file `Lovely-Dashboard_settin
 * Native **5" (850x480)** and **10" (1920x720)** DDU Screens are supported
 
 ### Compatible Sims
-The Lovely Dashboard offers native support for many sims, but will work with ANY simulator that offers native data to Simhub.
+The Lovely Dashboard offers native support for many sims, but will work with ANY simulator that offers native data to SimHub.
 
 #### Native Support
 

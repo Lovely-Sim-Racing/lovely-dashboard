@@ -66,7 +66,7 @@ If you've set a Name & Number, you can also change it to your Color. You can use
 * Example: `Light Blue` or`#2B98FB`
 
 #### `yourLogo`
-Setup the custom idle screen with your Logo or Image. The image file path must be relative to the Simhub folder, you can use the `./JavascriptExtensions`. Recommended image size is `800 x 270px`, but will scale to fit. The image can be used alongside your Name and Number as a background, or on its' own by not using a Name and Number at all.
+Setup the custom idle screen with your Logo or Image. The image file path must be relative to the SimHub folder, you can use the `./JavascriptExtensions`. Recommended image size is `800 x 270px`, but will scale to fit. The image can be used alongside your Name and Number as a background, or on its' own by not using a Name and Number at all.
 
 * Example:  `./JavascriptExtensions/lovely-dash-bg.jpg`
 
