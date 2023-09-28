@@ -90,7 +90,7 @@ If this is your first time installing the **Lovely Dashboard**, please follow th
 1. Download & Install [**SimHub Dash**](https://www.simhubdash.com) app
 2. Download & Install [**Roboto Font Family**](https://fonts.google.com/specimen/Roboto) by Christian Robertson
 3. Download & Install the [**Lovely Dashboard Latest Release**](https://github.com/cdemetriadis/lovely-dashboard/releases)
-4. Setup your [**Simhub Action Triggers**](./docs/actions.md) to control the Lovely Dashboard UI
+4. Setup your [**SimHub Action Triggers**](./docs/actions.md) to control the Lovely Dashboard UI
 5. ***Optionally***, you can also copy and edit the [**Settings File**](./docs/settings.md) and add the `lovely-dash-bg.jpg` into the `./SimHub/JavascriptExtensions` folder.
 
 ### Updating
