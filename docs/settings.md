@@ -10,6 +10,10 @@ The <strong>Lovely Dashboard</strong> can be customised to your personal prefere
  
 <br/>
 
+> [!WARNING]
+> **As of v2.0.0+ of the Lovely Dashboard**, you must update your Settings File to the latest version. The actual Settings File format has chnaged. Failing to update the Settings File will cause problem to the functionality of the Lovely Dashboard.
+
+
 ## Settings File
 To customise the **Lovely Dashboard**, you will need to copy the file `Lovely-Dashboard_settings.json` into the `./SimHub/JavascriptExtensions`. 
 
