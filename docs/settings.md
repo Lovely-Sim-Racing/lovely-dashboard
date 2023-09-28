@@ -10,8 +10,12 @@ The <strong>Lovely Dashboard</strong> can be customised to your personal prefere
  
 <br/>
 
+> [!WARNING]
+> **As of v2.0.0+ of the Lovely Dashboard**, you must update your Settings File to the latest version. The actual Settings File format has changed. Failing to update the Settings File will cause problems to the functionality of the Lovely Dashboard.
+
+
 ## Settings File
-To customise the **Lovely Dashboard**, you will need to copy the file `Lovely-Dashboard_settings.json` into the `./SimHub/JavascriptExtensions`. 
+To customise the **Lovely Dashboard**, you will need to copy the Settings File (`Lovely-Dashboard_settings.json`) into the `./SimHub/JavascriptExtensions`. You can find and download the latest **Settings File** in the [Releases](https://github.com/cdemetriadis/lovely-dashboard/releases) section.
 
 ![Copy the settings file into the JavascriptExtensions folder](./images/settings-file.png)
 
@@ -19,7 +23,8 @@ To customise the **Lovely Dashboard**, you will need to copy the file `Lovely-Da
 
 To change your personal settings, you will need to edit the `Lovely-Dashboard_settings.json` file in any text editor. 
 
-**:information_source: If you do not copy the settings file, the default values will be used.**
+> [!NOTE]
+> If you do not copy the settings file, the default values will be used
 
 
 ## Settings
@@ -61,7 +66,7 @@ If you've set a Name & Number, you can also change it to your Color. You can use
 * Example: `Light Blue` or`#2B98FB`
 
 #### `yourLogo`
-Setup the custom idle screen with your Logo or Image. The image file path must be relative to the Simhub folder, you can use the `./JavascriptExtensions`. Recommended image size is `800 x 270px`, but will scale to fit. The image can be used alongside your Name and Number as a background, or on its' own by not using a Name and Number at all.
+Setup the custom idle screen with your Logo or Image. The image file path must be relative to the SimHub folder, you can use the `./JavascriptExtensions`. Recommended image size is `800 x 270px`, but will scale to fit. The image can be used alongside your Name and Number as a background, or on its' own by not using a Name and Number at all.
 
 * Example:  `./JavascriptExtensions/lovely-dash-bg.jpg`
 

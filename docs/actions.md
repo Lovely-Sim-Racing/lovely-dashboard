@@ -1,36 +1,62 @@
-# Available Actions
-***Please note that each simulator has slightly different features, depending on the data provided by SimHub.***
+<p align="center">
+<img width="150" height="150" alt="Lovely Sim Racing" src="./images/lr-logo-small.png">
+</p>
 
-Actions in SimHub are ways to change "pages" on certain parts of the screen. This way, everyone can quickly glance at various information on the same screen.
+<h1 align="center">SimHub Action Triggers</h1>
+ 
+<br/>
 
-In Simhub, you will need to assign the actions to buttons on your Wheel, Button Box or even Stream Deck. You can choose whatever makes sense for your personal needs.
+Actions in SimHub provide a way to interact with the dashboard, offfering many way to customise the Lovely Dashboard experience. 
 
-![Primary Screen](./images/PrimaryActionsOnly.png)
+In SimHub, depending on your device (Touch or Hardware Buttons) you will need to assign the Actions to buttons on your Steering Wheel or Button Box. You can choose whatever suits your personal needs.
 
-# Assigning Actions in Simhub
-The Lovely Dashboard is pre-configured out-of-the-box to work with Touch Gestures. 
+# Add your device
+As of **SimHub v9+**, all devices should be added to the Devices section.
 
-## How to setup Touch Controls
+1. Navigate to the `Devices` tab on the left hand menu
+2. If your device is not already present, tap on `Add new device`
+	* For **Mobiles & Tablets**: Select `Web Device`
+	* For **DDU's, Steering Wheels etc**: Select your device from the list
+	* For **Generic Devices**: Select `Generic Vocore Screen`
 
-### Mobile and Tablets
-If used on Mobile or Tablets, the actions are already set and ready to be used.
-Tapping on the appropriate area, will change the page. Swiping left or right on the top part of the dash (Functions or Session) will go to next/previous screen.
+# Setup Touch Triggers
+> For all devices wth **Touch Inputs** (Mobile Phones, Tablets, DDUs with Touch Screens etc) 
+ 
+The Lovely Dashboard is pre-configured out-of-the-box to work with touch gestures. 
 
-### Dedicated DDU (Advance Touch Mode)
+#### Setup your device
+1. In **SimHub**, navigate to `Devices` on the left hand menu
+2. Select `'Your Device'`
+3. In `'Your Device' > LCD` tab, enable `Touch screen` and select `Advanced touch mode`
+4. In `'Your Device' > Controls` tab, **Clear** all settings that may exist
+6. **Done**
 
-To use Touch Controls, you must set your device to Advanced touch mode in `Devices > {Your Device} > LCD`
+#### Using the controls
+The areas which you can use to control your Lovely Dashboard are shown below.
 
-#### Record Your Actions
+![Pre-Defined Triggers](./images/PrimaryActionsOnlyTouch.png)
 
-In `Devices > {Your DDU} > Controls`, find the action you want to map, and hit `Click to configure`. While the window is open, touch your device in the appropriate area. You should see the tap recorded in the window. Hit `SAVE` and you're set. Repeat for each action...
+# Setup Physical Buttons
 
-Please be aware, when you have Hardware buttons assigned the Touch actions may not work. 
+> For all devices (Touch and non-touch enabled)
 
-## How to Setup Hardware Controls
-You can setup hardware controls depending on the device you want to use.
+If you prefer to control your device with physical buttons, you can assign specific actions to your Steering Wheel, Button Box etc.
 
-### Mobile and Tablets
-To setup hardware controls on your mobile or tablet, you will need to navigate to `Dash Studio > Settings`. Find the action you want to map, and hit `Click to configure`. While the window is open, tap the button you want to assign to that action. You should see the tap recorded in the window. Hit `SAVE` and you're set. Repeat for each action...
+#### Setup device
+1. In **SimHub**, navigate to `Devices` on the left hand menu
+2. In `'Your Device' > Controls` tab, select `Click to configure` next to the action you want
+3. Click on the trigger (button) you want to assign and hit `Save`
+4. Repeat for each action. We recommend the following actions
+	* `Show next screen`
+	* `Trigger dash action A`
+	* `Trigger dash action B`
+	* `Trigger dash action C`
+	* `Trigger dash action D`
+5. **Done**
 
-### Dedicated DDU
-To setup hardware controls on your DDU, you will need to navigate to `Devices > {Your Device} > Controls`. Find the action you want to map, and hit `Click to configure`. While the window is open, tap the button you want to assign to that action. You should see the tap recorded in the window. Hit `SAVE` and you're set. Repeat for each action... 
+#### Using the controls
+Clicking on any of the physical buttons you just assigned, should change the screen, as shown below.
+
+![Pre-Defined Triggers](./images/PrimaryActionsOnly.png)
+
+

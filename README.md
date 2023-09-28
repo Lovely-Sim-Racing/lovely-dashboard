@@ -24,7 +24,7 @@ A multifunctional feature packed SimHub Dashboard (DDU) and ecosystem.
 <img width="80" height="80" alt="Automobilista 2" src="docs/images/icon-ams2.png">
 <img width="80" height="80" alt="rFactor 2" src="docs/images/icon-rf2.png">
 <img width="80" height="80" alt="Formula 1" src="docs/images/icon-f1.png"></br>
-<span>+ generic support for all simulators that work with Simhub</span>
+<span>+ generic support for all simulators that work with SimHub</span>
 </p>
 
 ---
@@ -90,7 +90,7 @@ If this is your first time installing the **Lovely Dashboard**, please follow th
 1. Download & Install [**SimHub Dash**](https://www.simhubdash.com) app
 2. Download & Install [**Roboto Font Family**](https://fonts.google.com/specimen/Roboto) by Christian Robertson
 3. Download & Install the [**Lovely Dashboard Latest Release**](https://github.com/cdemetriadis/lovely-dashboard/releases)
-4. Setup your [**Simhub Action Keys**](./docs/actions.md) to control the Lovely Dashboard UI
+4. Setup your [**SimHub Action Triggers**](./docs/actions.md) to control the Lovely Dashboard UI
 5. ***Optionally***, you can also copy and edit the [**Settings File**](./docs/settings.md) and add the `lovely-dash-bg.jpg` into the `./SimHub/JavascriptExtensions` folder.
 
 ### Updating
@@ -113,7 +113,7 @@ To change your personal settings, you can edit the file `Lovely-Dashboard_settin
 * Native **5" (850x480)** and **10" (1920x720)** DDU Screens are supported
 
 ### Compatible Sims
-The Lovely Dashboard offers native support for many sims, but will work with ANY simulator that offers native data to Simhub.
+The Lovely Dashboard offers native support for many sims, but will work with ANY simulator that offers native data to SimHub.
 
 #### Native Support
 
