@@ -20,7 +20,7 @@ The Lovely Dashboard is pre-configured out-of-the-box to work with touch gesture
 #### Setup your device
 1. In **SimHub**, navigate to `Devices` on the left hand menu
 2. Select `'Your Device'`
-3. In `'Your Device' > LCD` tab, enable `Touschscreen` and select `Advanced touch mode`
+3. In `'Your Device' > LCD` tab, enable `Touch screen` and select `Advanced touch mode`
 4. In `'Your Device' > Controls` tab, **Clear** all settings that may exist
 6. **Done**
 
@@ -31,7 +31,7 @@ The areas which you can use to control your Lovely Dashboard are shown below.
 
 # Setup Physical Buttons
 
-> for: All devices (Touch and non-touch enabled)
+> For all devices (Touch and non-touch enabled)
 
 If you prefer to control your device with physical buttons, you can assign specific actions to your Steering Wheel, Button Box etc.
 
