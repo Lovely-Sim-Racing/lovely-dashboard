@@ -15,7 +15,7 @@ The <strong>Lovely Dashboard</strong> can be customised to your personal prefere
 
 
 ## Settings File
-To customise the **Lovely Dashboard**, you will need to copy the file `Lovely-Dashboard_settings.json` into the `./SimHub/JavascriptExtensions`. 
+To customise the **Lovely Dashboard**, you will need to copy the Settings File (`Lovely-Dashboard_settings.json`) into the `./SimHub/JavascriptExtensions`. You can find and download the latest **Settings File** in the [Releases](https://github.com/cdemetriadis/lovely-dashboard/releases) section.
 
 ![Copy the settings file into the JavascriptExtensions folder](./images/settings-file.png)
 
@@ -23,7 +23,8 @@ To customise the **Lovely Dashboard**, you will need to copy the file `Lovely-Da
 
 To change your personal settings, you will need to edit the `Lovely-Dashboard_settings.json` file in any text editor. 
 
-**:information_source: If you do not copy the settings file, the default values will be used.**
+> [!NOTE]
+> If you do not copy the settings file, the default values will be used
 
 
 ## Settings
