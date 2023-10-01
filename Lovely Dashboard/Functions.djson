@@ -9,7 +9,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "ac3bde4c-69a6-4d30-9c00-06fa11f315b3",
+  "Id": "24a1c7f0-5712-48b4-bbda-a23f080db37a",
   "Images": [
     {
       "Extension": ".png",
@@ -1518,7 +1518,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "return ( \r\n\t$prop('GameRawData.StaticInfo.HasDRS') || // AC\r\n\t$prop('GameRawData.Telemetry.DRS_Status') >= 1 || // iRacing\r\n\t$prop('GameRawData.PlayerCarStatusData.m_ersDeployMode')!=null // F1\r\n) ? 1 : 0",
+                "Expression": "return ( \r\n\t$prop('GameRawData.StaticInfo.HasDRS') || // AC\r\n\t$prop('GameRawData.Telemetry.DRS_Status') >= 1 || // iRacing\r\n\t$prop('GameRawData.PlayerCarStatusData.m_ersDeployMode')!=null || // F1\r\n\t$prop('GameRawData.mDrsState') > 0 // AMS2\r\n) ? 1 : 0",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -1532,7 +1532,7 @@
               "Bindings": {
                 "BackgroundColor": {
                   "Formula": {
-                    "Expression": "if ( \r\n\t$prop('GameRawData.Physics.DrsEnabled') || // AC: DRS ON\r\n\t$prop('GameRawData.Telemetry.DRS_Status') == 3 || // iRacing: DRS ON\r\n\t$prop('DataCorePlugin.GameRawData.PlayerCarTelemetryData.m_drs') == 1 // F1: DRS ON\r\n\r\n) {\r\n\treturn '#FF004101'\r\n\t\r\n} else {\r\n\treturn '#FF262626' // AC: DRS Enables, iRacing: DRS Zone Upcoming\r\n\t\r\n}\r\n\r\n\r\nfunction isDRSAllowed() {\r\n\tdrsAllowed = $prop('DataCorePlugin.GameRawData.PlayerCarStatusData.m_drsAllowed')\r\n\tdrsDisabled = $prop('DataCorePlugin.GameRawData.PlayerCarTelemetryData.m_drs')==0\r\n\tyellowFlag = $prop('Flag_Yellow')\r\n\treturn drsAllowed && drsDisabled && !yellowFlag\r\n}",
+                    "Expression": "if ( \r\n\t$prop('GameRawData.Physics.DrsEnabled') || // AC: DRS ON\r\n\t$prop('GameRawData.Telemetry.DRS_Status') == 3 || // iRacing: DRS ON\r\n\t$prop('DataCorePlugin.GameRawData.PlayerCarTelemetryData.m_drs') == 1 || // F1: DRS ON\r\n\t$prop('GameRawData.mDrsState') === 27 // AMS2\r\n) {\r\n\treturn '#FF004101'\r\n\t\r\n} else {\r\n\treturn '#FF262626' // AC: DRS Enables, iRacing: DRS Zone Upcoming\r\n\t\r\n}\r\n\r\n\r\nfunction isDRSAllowed() {\r\n\tdrsAllowed = $prop('DataCorePlugin.GameRawData.PlayerCarStatusData.m_drsAllowed')\r\n\tdrsDisabled = $prop('DataCorePlugin.GameRawData.PlayerCarTelemetryData.m_drs')==0\r\n\tyellowFlag = $prop('Flag_Yellow')\r\n\treturn drsAllowed && drsDisabled && !yellowFlag\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -1568,7 +1568,7 @@
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "if ( \r\n\t$prop('GameRawData.Physics.DrsAvailable')  || // AC: DRS Available\r\n\t$prop('GameRawData.Telemetry.DRS_Status') == 2 || // iRacing: DRS Zone\r\n\tisDRSAllowed() // F1: DRS Allowed\r\n) {\r\n\treturn 1\r\n} else {\r\n\treturn 0\r\n}\r\n\r\nfunction isDRSAllowed() {\r\n\tdrsAllowed = $prop('DataCorePlugin.GameRawData.PlayerCarStatusData.m_drsAllowed')\r\n\tdrsDisabled = $prop('DataCorePlugin.GameRawData.PlayerCarTelemetryData.m_drs')==0\r\n\tyellowFlag = $prop('Flag_Yellow')\r\n\treturn drsAllowed && drsDisabled && !yellowFlag\r\n}",
+                    "Expression": "if ( \r\n\t$prop('GameRawData.Physics.DrsAvailable')  || // AC: DRS Available\r\n\t$prop('GameRawData.Telemetry.DRS_Status') == 2 || // iRacing: DRS Zone\r\n\tisDRSAllowed() || // F1: DRS Allowed\r\n\t$prop('GameRawData.mDrsState') === 11 // AMS2\r\n) {\r\n\treturn 1\r\n} else {\r\n\treturn 0\r\n}\r\n\r\nfunction isDRSAllowed() {\r\n\tdrsAllowed = $prop('DataCorePlugin.GameRawData.PlayerCarStatusData.m_drsAllowed')\r\n\tdrsDisabled = $prop('DataCorePlugin.GameRawData.PlayerCarTelemetryData.m_drs')==0\r\n\tyellowFlag = $prop('Flag_Yellow')\r\n\treturn drsAllowed && drsDisabled && !yellowFlag\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -1596,7 +1596,7 @@
               "Bindings": {
                 "TextColor": {
                   "Formula": {
-                    "Expression": "if ( \r\n\t$prop('GameRawData.Physics.DrsEnabled') || // AC: DRS ON\r\n\t$prop('GameRawData.Telemetry.DRS_Status') == 3 || // iRacing: DRS ON\r\n\t$prop('DataCorePlugin.GameRawData.PlayerCarTelemetryData.m_drs') == 1 // F1: DRS ON\r\n\t\r\n) {\r\n\treturn '#FF00FF02'\r\n\t\r\n} else if ( \r\n\t$prop('GameRawData.Physics.DrsAvailable')  || // AC: DRS Available\r\n\t$prop('GameRawData.Telemetry.DRS_Status') == 2 || // iRacing: DRS Zone\r\n\tisDRSAllowed() // F1: DRS Allowed\r\n) {\r\n\treturn '#FFFFFFFF'\r\n\t\r\n} else {\r\n\treturn 'Gray' // AC: DRS Enables, iRacing: DRS Zone Upcoming\r\n\t\r\n}\r\n\r\n\r\nfunction isDRSAllowed() {\r\n\tdrsAllowed = $prop('DataCorePlugin.GameRawData.PlayerCarStatusData.m_drsAllowed')\r\n\tdrsDisabled = $prop('DataCorePlugin.GameRawData.PlayerCarTelemetryData.m_drs')==0\r\n\tyellowFlag = $prop('Flag_Yellow')\r\n\treturn drsAllowed && drsDisabled && !yellowFlag\r\n}",
+                    "Expression": "if ( \r\n\t$prop('GameRawData.Physics.DrsEnabled') || // AC: DRS ON\r\n\t$prop('GameRawData.Telemetry.DRS_Status') == 3 || // iRacing: DRS ON\r\n\t$prop('DataCorePlugin.GameRawData.PlayerCarTelemetryData.m_drs') == 1 || // F1: DRS ON\r\n\t$prop('GameRawData.mDrsState') === 27 // AMS2\r\n) {\r\n\treturn '#FF00FF02'\r\n\t\r\n} else if ( \r\n\t$prop('GameRawData.Physics.DrsAvailable')  || // AC: DRS Available\r\n\t$prop('GameRawData.Telemetry.DRS_Status') == 2 || // iRacing: DRS Zone\r\n\tisDRSAllowed() || // F1: DRS Allowed\r\n\t$prop('GameRawData.mDrsState') === 11 // AMS2\r\n) {\r\n\treturn '#FFFFFFFF'\r\n\t\r\n} else {\r\n\treturn 'Gray' // AC: DRS Enables, iRacing: DRS Zone Upcoming\r\n\t\r\n}\r\n\r\n\r\nfunction isDRSAllowed() {\r\n\tdrsAllowed = $prop('DataCorePlugin.GameRawData.PlayerCarStatusData.m_drsAllowed')\r\n\tdrsDisabled = $prop('DataCorePlugin.GameRawData.PlayerCarTelemetryData.m_drs')==0\r\n\tyellowFlag = $prop('Flag_Yellow')\r\n\treturn drsAllowed && drsDisabled && !yellowFlag\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
