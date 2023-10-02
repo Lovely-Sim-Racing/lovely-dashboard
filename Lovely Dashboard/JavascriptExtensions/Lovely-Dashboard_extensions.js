@@ -496,7 +496,7 @@ function ld_getEstimatedTextColour() {
                 return white // green bg
             }
 
-            return black // purple bg
+            return white // purple bg
 
         } else {
             return white // red bg
