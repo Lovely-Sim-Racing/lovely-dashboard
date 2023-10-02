@@ -487,8 +487,19 @@ function ld_getEstimatedTextColour() {
     } else {
 
         if ( $prop('DataCorePlugin.GameRawData.Graphics.isValidLap') == 1 ) {
+            
+	        if ( timeDiffMine == null & timeDiffOverall == null) {
+                return black // white bg
+            } else if ( timeDiffMine > 0 ) {
+                return black // yellow bg
+            } else {
+                if ( timeDiffOverall > 0 ) {
+                    return white // green bg
+                } else {
+                    return black // purple bg
+                }
+            }
 
-            return black
 
         } else {
             return white // red bg
