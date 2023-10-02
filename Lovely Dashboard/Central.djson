@@ -18,7 +18,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "45f344ca-3e8b-499f-ab1a-61525a2b89dc",
+  "Id": "ddc92461-6e77-4158-b046-a5d39a7887aa",
   "Images": [],
   "IsOverlay": false,
   "Metadata": {
@@ -3117,7 +3117,8 @@
       },
       "PitScreen": false,
       "ScreenEnabledExpression": {
-        "Expression": ""
+        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst currentSim = ld_getSim()\r\n\t\r\nif ( settings ) {\r\n\r\n\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeCentralMFM\").trim()\r\n\t\r\n\tif ( !activeMFM || activeMFM == \"\" ) {\r\n\t\t// Show MFM if no activeMFM has been set\r\n\t\treturn true\r\n\t} else {\r\n\t\t// Is MFM set in activeMFM?\r\n\t\treturn activeMFM.includes(0)\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn true \r\n\r\n}",
+        "Interpreter": 1
       },
       "ScreenId": "6e12babf-9d62-43f0-90b9-769fc77341d2"
     },
@@ -4884,7 +4885,8 @@
       },
       "PitScreen": false,
       "ScreenEnabledExpression": {
-        "Expression": ""
+        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst currentSim = ld_getSim()\r\n\t\r\nif ( settings ) {\r\n\r\n\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeCentralMFM\").trim()\r\n\t\r\n\tif ( !activeMFM || activeMFM == \"\" ) {\r\n\t\t// Show MFM if no activeMFM has been set\r\n\t\treturn true\r\n\t} else {\r\n\t\t// Is MFM set in activeMFM?\r\n\t\treturn activeMFM.includes(1)\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn true \r\n\r\n}",
+        "Interpreter": 1
       },
       "ScreenId": "89dd15fa-4877-4545-9847-52b893d2ed5d"
     },
@@ -6917,7 +6919,8 @@
       },
       "PitScreen": false,
       "ScreenEnabledExpression": {
-        "Expression": ""
+        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst currentSim = ld_getSim()\r\n\t\r\nif ( settings ) {\r\n\r\n\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeCentralMFM\").trim()\r\n\t\r\n\tif ( !activeMFM || activeMFM == \"\" ) {\r\n\t\t// Show MFM if no activeMFM has been set\r\n\t\treturn true\r\n\t} else {\r\n\t\t// Is MFM set in activeMFM?\r\n\t\treturn activeMFM.includes(2)\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn true \r\n\r\n}",
+        "Interpreter": 1
       },
       "ScreenId": "44cc1147-a7bd-4752-ac3a-822a0b5a2ed6"
     },
@@ -9974,7 +9977,8 @@
       },
       "PitScreen": false,
       "ScreenEnabledExpression": {
-        "Expression": ""
+        "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nconst currentSim = ld_getSim()\r\n\t\r\nif ( settings ) {\r\n\r\n\r\n\tactiveMFM = eval(\"settings.\"+currentSim+\".activeCentralMFM\").trim()\r\n\t\r\n\tif ( !activeMFM || activeMFM == \"\" ) {\r\n\t\t// Show MFM if no activeMFM has been set\r\n\t\treturn true\r\n\t} else {\r\n\t\t// Is MFM set in activeMFM?\r\n\t\treturn activeMFM.includes(3)\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn true \r\n\r\n}",
+        "Interpreter": 1
       },
       "ScreenId": "d4dad73d-ae8f-4f74-ae8a-25854d219624"
     }
