@@ -3,13 +3,14 @@
   "BackgroundOpacity": 100.0,
   "BaseHeight": 480,
   "BaseWidth": 850,
+  "CarClassColorsOverrides": [],
   "DashboardDebugManager": {},
   "EnableClickThroughOverlay": true,
   "EnableOnDashboardMessaging": true,
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "2bb2b9b3-43b4-4598-ad1d-2b7801a7f54f",
+  "Id": "75680d0d-8510-46a6-b49b-a0fb50b708d9",
   "Images": [
     {
       "Extension": ".png",
@@ -499,7 +500,7 @@
           "Bindings": {
             "StartAddress": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.dashName')+'&ver='+$prop('variable.dashVer')+'&screen=Idle'\r\n} else {\r\n\treturn ''\r\n}",
+                "Expression": "if ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.dashName')+'&ver='+$prop('variable.dashVer')+'&screen=Idle'\r\n} else {\r\n\treturn ''\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -686,7 +687,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.yourNumber == \"\" || settings.yourName == \"\" ) {\r\n\treturn 1\r\n} else {\r\n\treturn 0\r\n}",
+                "Expression": "if ( !settings || settings.yourNumber == \"\" || settings.yourName == \"\" ) {\r\n\treturn 1\r\n} else {\r\n\treturn 0\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -708,7 +709,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.yourLogo || settings.yourLogo.trim() == \"\" ) {\r\n\treturn 0\r\n} else {\r\n\treturn 1\r\n}",
+                "Expression": "if ( !settings || !settings.yourLogo || settings.yourLogo.trim() == \"\" ) {\r\n\treturn 0\r\n} else {\r\n\treturn 1\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -735,7 +736,7 @@
               "Bindings": {
                 "ImagePath": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.yourLogo || settings.yourLogo.trim() == \"\" ) {\r\n\treturn ''\r\n} else {\r\n\treturn settings.yourLogo\r\n}",
+                    "Expression": "if ( !settings || !settings.yourLogo || settings.yourLogo.trim() == \"\" ) {\r\n\treturn ''\r\n} else {\r\n\treturn settings.yourLogo\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -766,7 +767,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.yourNumber == \"\" || settings.yourName == \"\" ) {\r\n\treturn 0\r\n} else {\r\n\treturn 1\r\n}",
+                "Expression": "if ( !settings || settings.yourNumber == \"\" || settings.yourName == \"\" ) {\r\n\treturn 0\r\n} else {\r\n\treturn 1\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -793,7 +794,7 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( settings && settings.yourName ) {\r\n\treturn ucase(settings.yourName.trim())\r\n} else {\r\n\treturn ''\r\n}\r\n\r\n",
+                    "Expression": "if ( settings && settings.yourName ) {\r\n\treturn ucase(settings.yourName.trim())\r\n} else {\r\n\treturn ''\r\n}\r\n\r\n",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -826,7 +827,7 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( settings && settings.yourNumber ) {\r\n\treturn settings.yourNumber.trim()\r\n} else {\r\n\treturn ''\r\n}\r\n",
+                    "Expression": "if ( settings && settings.yourNumber ) {\r\n\treturn settings.yourNumber.trim()\r\n} else {\r\n\treturn ''\r\n}\r\n",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -834,7 +835,7 @@
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( settings && settings.yourColor ) {\r\n\treturn settings.yourColor.trim()\r\n} else {\r\n\treturn lovely_blue\r\n}",
+                    "Expression": "if ( settings && settings.yourColor ) {\r\n\treturn settings.yourColor.trim()\r\n} else {\r\n\treturn lovely_blue\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -1053,11 +1054,18 @@
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ButtonItem, SimHub.Plugins",
               "AutoSize": false,
               "BackgroundColor": "#00FFFFFF",
+              "Behavior": {
+                "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Behaviors.Buttons.TriggerDashActionBehavior, SimHub.Plugins",
+                "Settings": {
+                  "Action": 2
+                }
+              },
               "DisabledOpacity": 50,
               "Height": 268.0,
               "IsEnabled": true,
               "Left": 525.0,
-              "Name": "Right MFM",
+              "Name": "Trigger a dash action (A/B/C/D)4",
+              "OriginalName": "Right MFM",
               "PressedOpacity": 100,
               "SimulateKey": false,
               "SimulatedKey": 0,
@@ -1069,8 +1077,8 @@
                 "Win": false
               },
               "Top": 100.0,
-              "TriggerAction": "GraphicalDashPlugin.ActionB",
-              "TriggerSimHubInputName": "ButtonB",
+              "TriggerAction": "None",
+              "TriggerSimHubInputName": "",
               "Visible": true,
               "Width": 325.0
             },
@@ -1078,11 +1086,18 @@
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ButtonItem, SimHub.Plugins",
               "AutoSize": false,
               "BackgroundColor": "#00FFFFFF",
+              "Behavior": {
+                "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Behaviors.Buttons.TriggerDashActionBehavior, SimHub.Plugins",
+                "Settings": {
+                  "Action": 5
+                }
+              },
               "DisabledOpacity": 50,
               "Height": 300.0,
               "IsEnabled": true,
               "Left": 345.0,
-              "Name": "Central",
+              "Name": "Trigger a dash action (A/B/C/D)3",
+              "OriginalName": "Central",
               "PressedOpacity": 100,
               "SimulateKey": false,
               "SimulatedKey": 0,
@@ -1093,8 +1108,8 @@
                 "Win": false
               },
               "Top": 5.0,
-              "TriggerAction": "GraphicalDashPlugin.ActionD",
-              "TriggerSimHubInputName": "ButtonD",
+              "TriggerAction": "None",
+              "TriggerSimHubInputName": "",
               "Visible": true,
               "Width": 160.0
             },
@@ -1102,11 +1117,18 @@
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ButtonItem, SimHub.Plugins",
               "AutoSize": false,
               "BackgroundColor": "#00FFFFFF",
+              "Behavior": {
+                "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Behaviors.Buttons.TriggerDashActionBehavior, SimHub.Plugins",
+                "Settings": {
+                  "Action": 1
+                }
+              },
               "DisabledOpacity": 50,
               "Height": 268.0,
               "IsEnabled": true,
               "Left": 0.0,
-              "Name": "Left MFM",
+              "Name": "Trigger a dash action (A/B/C/D)2",
+              "OriginalName": "Left MFM",
               "PressedOpacity": 100,
               "SimulateKey": false,
               "SimulatedKey": 0,
@@ -1117,8 +1139,8 @@
                 "Win": false
               },
               "Top": 100.0,
-              "TriggerAction": "GraphicalDashPlugin.ActionA",
-              "TriggerSimHubInputName": "ButtonA",
+              "TriggerAction": "None",
+              "TriggerSimHubInputName": "",
               "Visible": true,
               "Width": 325.0
             },
@@ -1126,11 +1148,18 @@
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ButtonItem, SimHub.Plugins",
               "AutoSize": false,
               "BackgroundColor": "#00FFFFFF",
+              "Behavior": {
+                "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Behaviors.Buttons.TriggerDashActionBehavior, SimHub.Plugins",
+                "Settings": {
+                  "Action": 4
+                }
+              },
               "DisabledOpacity": 50,
               "Height": 92.0,
               "IsEnabled": true,
               "Left": 520.0,
-              "Name": "Fuel",
+              "Name": "Trigger a dash action (A/B/C/D)",
+              "OriginalName": "Fuel",
               "PressedOpacity": 100,
               "SimulateKey": false,
               "SimulatedKey": 0,
@@ -1141,10 +1170,38 @@
                 "Win": false
               },
               "Top": 388.0,
-              "TriggerAction": "GraphicalDashPlugin.ActionC",
-              "TriggerSimHubInputName": "ButtonC",
+              "TriggerAction": "None",
+              "TriggerSimHubInputName": "",
               "Visible": true,
               "Width": 330.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ButtonItem, SimHub.Plugins",
+              "AutoSize": false,
+              "BackgroundColor": "#00FFFFFF",
+              "Behavior": {
+                "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Behaviors.Buttons.NextScreenBehavior, SimHub.Plugins"
+              },
+              "DisabledOpacity": 50,
+              "Height": 85.0,
+              "IsEnabled": true,
+              "Left": 5.0,
+              "Name": "Next active game mode screen (and cancel navigation)",
+              "OriginalName": "Fuel",
+              "PressedOpacity": 100,
+              "SimulateKey": false,
+              "SimulatedKey": 0,
+              "SimulatedKeyV2": {
+                "Alt": false,
+                "Ctrl": false,
+                "Shift": false,
+                "Win": false
+              },
+              "Top": 5.0,
+              "TriggerAction": "None",
+              "TriggerSimHubInputName": "",
+              "Visible": true,
+              "Width": 325.0
             }
           ],
           "Group": true,
@@ -1206,7 +1263,7 @@
           "Bindings": {
             "StartAddress": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.dashName')+'&ver='+$prop('variable.dashVer')+'&screen=Primary'\r\n} else {\r\n\treturn ''\r\n}",
+                "Expression": "if ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.dashName')+'&ver='+$prop('variable.dashVer')+'&screen=Primary'\r\n} else {\r\n\treturn ''\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -1281,7 +1338,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nreturn ( !settings || !settings.rpmLED || settings.rpmLED == 0) ? 0 : 1",
+                "Expression": "return ( !settings || !settings.rpmLED || settings.rpmLED == 0) ? 0 : 1",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -2137,7 +2194,7 @@
           "Bindings": {
             "InitialScreenIndex": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\tif ( settings && settings.IRacing.rightMFM ) {\r\n\t\treturn settings.IRacing.rightMFM\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\tif ( settings && settings.Automobilista2.rightMFM ) {\r\n\t\treturn settings.Automobilista2.rightMFM\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\tif ( settings && settings.RFactor2.rightMFM ) {\r\n\t\treturn settings.RFactor2.rightMFM\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa' ) {\r\n\r\n\tif ( settings && settings.AC.rightMFM ) {\r\n\t\treturn settings.AC.rightMFM\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\r\n\tif ( settings && settings.F1.rightMFM ) {\r\n\t\treturn settings.F1.rightMFM\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else {\r\n\r\n\tif ( settings && settings.ACC.rightMFM ) {\r\n\t\treturn settings.ACC.rightMFM\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n}",
+                "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\tif ( settings && settings.IRacing.rightMFM ) {\r\n\t\treturn settings.IRacing.rightMFM\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\tif ( settings && settings.Automobilista2.rightMFM ) {\r\n\t\treturn settings.Automobilista2.rightMFM\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\tif ( settings && settings.RFactor2.rightMFM ) {\r\n\t\treturn settings.RFactor2.rightMFM\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa' ) {\r\n\r\n\tif ( settings && settings.AC.rightMFM ) {\r\n\t\treturn settings.AC.rightMFM\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\r\n\tif ( settings && settings.F1.rightMFM ) {\r\n\t\treturn settings.F1.rightMFM\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else {\r\n\r\n\tif ( settings && settings.ACC.rightMFM ) {\r\n\t\treturn settings.ACC.rightMFM\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -2145,7 +2202,7 @@
             },
             "Top": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nreturn ( !settings || !settings.rpmLED || settings.rpmLED == 0) ? 100 : 110",
+                "Expression": "return ( !settings || !settings.rpmLED || settings.rpmLED == 0) ? 100 : 110",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -2204,7 +2261,7 @@
           "Bindings": {
             "InitialScreenIndex": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\tif ( settings && settings.IRacing.centralModule ) {\r\n\t\treturn settings.IRacing.centralModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\tif ( settings && settings.Automobilista2.centralModule ) {\r\n\t\treturn settings.Automobilista2.centralModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\tif ( settings && settings.RFactor2.centralModule ) {\r\n\t\treturn settings.RFactor2.centralModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa' ) {\r\n\r\n\tif ( settings && settings.AC.centralModule ) {\r\n\t\treturn settings.AC.centralModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\r\n\tif ( settings && settings.F1.centralModule ) {\r\n\t\treturn settings.F1.centralModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else {\r\n\r\n\tif ( settings && settings.ACC.centralModule ) {\r\n\t\treturn settings.ACC.centralModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n}",
+                "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\tif ( settings && settings.IRacing.centralModule ) {\r\n\t\treturn settings.IRacing.centralModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\tif ( settings && settings.Automobilista2.centralModule ) {\r\n\t\treturn settings.Automobilista2.centralModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\tif ( settings && settings.RFactor2.centralModule ) {\r\n\t\treturn settings.RFactor2.centralModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa' ) {\r\n\r\n\tif ( settings && settings.AC.centralModule ) {\r\n\t\treturn settings.AC.centralModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\r\n\tif ( settings && settings.F1.centralModule ) {\r\n\t\treturn settings.F1.centralModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else {\r\n\r\n\tif ( settings && settings.ACC.centralModule ) {\r\n\t\treturn settings.ACC.centralModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -2234,7 +2291,7 @@
           "Bindings": {
             "InitialScreenIndex": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\tif ( settings && settings.IRacing.leftMFM>=0 ) {\r\n\t\treturn settings.IRacing.leftMFM\r\n\t} else {\r\n\t\treturn 7\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\tif ( settings && settings.Automobilista2.leftMFM>=0 ) {\r\n\t\treturn settings.Automobilista2.leftMFM\r\n\t} else {\r\n\t\treturn 4\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\tif ( settings && settings.RFactor2.leftMFM>=0 ) {\r\n\t\treturn settings.RFactor2.leftMFM\r\n\t} else {\r\n\t\treturn 4\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa' ) {\r\n\r\n\tif ( settings && settings.AC.leftMFM>=0 ) {\r\n\t\treturn settings.AC.leftMFM\r\n\t} else {\r\n\t\treturn 4\r\n\t}\r\n\t\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\r\n\tif ( settings && settings.F1.leftMFM>=0 ) {\r\n\t\treturn settings.F1.leftMFM\r\n\t} else {\r\n\t\treturn 4\r\n\t}\r\n\r\n} else {\r\n\r\n\tif ( settings && settings.ACC.leftMFM>=0 ) {\r\n\t\treturn settings.ACC.leftMFM\r\n\t} else {\r\n\t\treturn 4\r\n\t}\r\n\t\r\n}",
+                "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\tif ( settings && settings.IRacing.leftMFM>=0 ) {\r\n\t\treturn settings.IRacing.leftMFM\r\n\t} else {\r\n\t\treturn 7\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\tif ( settings && settings.Automobilista2.leftMFM>=0 ) {\r\n\t\treturn settings.Automobilista2.leftMFM\r\n\t} else {\r\n\t\treturn 4\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\tif ( settings && settings.RFactor2.leftMFM>=0 ) {\r\n\t\treturn settings.RFactor2.leftMFM\r\n\t} else {\r\n\t\treturn 4\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa' ) {\r\n\r\n\tif ( settings && settings.AC.leftMFM>=0 ) {\r\n\t\treturn settings.AC.leftMFM\r\n\t} else {\r\n\t\treturn 4\r\n\t}\r\n\t\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\r\n\tif ( settings && settings.F1.leftMFM>=0 ) {\r\n\t\treturn settings.F1.leftMFM\r\n\t} else {\r\n\t\treturn 4\r\n\t}\r\n\r\n} else {\r\n\r\n\tif ( settings && settings.ACC.leftMFM>=0 ) {\r\n\t\treturn settings.ACC.leftMFM\r\n\t} else {\r\n\t\treturn 4\r\n\t}\r\n\t\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -2242,7 +2299,7 @@
             },
             "Top": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nreturn ( !settings || !settings.rpmLED || settings.rpmLED == 0) ? 100 : 110\r\n",
+                "Expression": "return ( !settings || !settings.rpmLED || settings.rpmLED == 0) ? 100 : 110\r\n",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -2281,7 +2338,7 @@
           "Bindings": {
             "Top": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nreturn ( !settings || !settings.rpmLED || settings.rpmLED == 0) ? 5 : 30",
+                "Expression": "return ( !settings || !settings.rpmLED || settings.rpmLED == 0) ? 5 : 30",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -2311,7 +2368,7 @@
           "Bindings": {
             "Top": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nreturn ( !settings || !settings.rpmLED || settings.rpmLED == 0) ? 5 : 30",
+                "Expression": "return ( !settings || !settings.rpmLED || settings.rpmLED == 0) ? 5 : 30",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -2341,7 +2398,7 @@
           "Bindings": {
             "Top": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED || settings.rpmLED == \"0\") {\r\n\treturn 20\r\n} else {\r\n\treturn 45\r\n}\r\n",
+                "Expression": "if ( !settings || !settings.rpmLED || settings.rpmLED == \"0\") {\r\n\treturn 20\r\n} else {\r\n\treturn 45\r\n}\r\n",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -2349,7 +2406,7 @@
             },
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nreturn ( !settings || !settings.showFlags || settings.showFlags == 0) ? 0 : 1",
+                "Expression": "return ( !settings || !settings.showFlags || settings.showFlags == 0) ? 0 : 1",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -2398,7 +2455,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.nightMode ) {\r\n\tnightMode = 0\r\n} else {\r\n\tnightMode = settings.nightMode\r\n}\r\n\r\nif ( nightMode == 1) {\r\n\r\n\tif ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ) {\r\n\t\r\n\t\tif ($prop('DataCorePlugin.GameRawData.Graphics.LightsStage')>0 ) {\r\n\t\t\treturn 1\r\n\t\t} else {\t\r\n\t\t\treturn 0 \r\n\t\t}\r\n\t\r\n\t} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\t\r\n\t\tlet mCarFlags = $prop('DataCorePlugin.GameRawData.mCarFlags');\r\n\t\treturn mCarFlags.toString(2).substr(-1)\r\n\t\t\r\n\t} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\t\treturn ($prop('GameRawData.PacketSessionData.m_timeOfDay') > 1200 && $prop('GameRawData.PacketSessionData.m_timeOfDay') < 360)\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\t\r\n\treturn 0\r\n\r\n}",
+                "Expression": "if ( !settings || !settings.nightMode ) {\r\n\tnightMode = 0\r\n} else {\r\n\tnightMode = settings.nightMode\r\n}\r\n\r\nif ( nightMode == 1) {\r\n\r\n\tif ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ) {\r\n\t\r\n\t\tif ($prop('DataCorePlugin.GameRawData.Graphics.LightsStage')>0 ) {\r\n\t\t\treturn 1\r\n\t\t} else {\t\r\n\t\t\treturn 0 \r\n\t\t}\r\n\t\r\n\t} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\t\r\n\t\tlet mCarFlags = $prop('DataCorePlugin.GameRawData.mCarFlags');\r\n\t\treturn mCarFlags.toString(2).substr(-1)\r\n\t\t\r\n\t} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\t\treturn ($prop('GameRawData.PacketSessionData.m_timeOfDay') > 1200 && $prop('GameRawData.PacketSessionData.m_timeOfDay') < 360)\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\t\r\n\treturn 0\r\n\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -2481,11 +2538,18 @@
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ButtonItem, SimHub.Plugins",
               "AutoSize": false,
               "BackgroundColor": "#00FFFFFF",
+              "Behavior": {
+                "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Behaviors.Buttons.TriggerDashActionBehavior, SimHub.Plugins",
+                "Settings": {
+                  "Action": 2
+                }
+              },
               "DisabledOpacity": 50,
               "Height": 268.0,
               "IsEnabled": true,
               "Left": 525.0,
-              "Name": "Right MFM",
+              "Name": "Trigger a dash action (A/B/C/D)4",
+              "OriginalName": "Right MFM",
               "PressedOpacity": 100,
               "SimulateKey": false,
               "SimulatedKey": 0,
@@ -2497,8 +2561,8 @@
                 "Win": false
               },
               "Top": 100.0,
-              "TriggerAction": "GraphicalDashPlugin.ActionB",
-              "TriggerSimHubInputName": "ButtonB",
+              "TriggerAction": "None",
+              "TriggerSimHubInputName": "",
               "Visible": true,
               "Width": 325.0
             },
@@ -2506,11 +2570,18 @@
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ButtonItem, SimHub.Plugins",
               "AutoSize": false,
               "BackgroundColor": "#00FFFFFF",
+              "Behavior": {
+                "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Behaviors.Buttons.TriggerDashActionBehavior, SimHub.Plugins",
+                "Settings": {
+                  "Action": 5
+                }
+              },
               "DisabledOpacity": 50,
               "Height": 300.0,
               "IsEnabled": true,
               "Left": 345.0,
-              "Name": "Central",
+              "Name": "Trigger a dash action (A/B/C/D)3",
+              "OriginalName": "Central",
               "PressedOpacity": 100,
               "SimulateKey": false,
               "SimulatedKey": 0,
@@ -2521,8 +2592,8 @@
                 "Win": false
               },
               "Top": 5.0,
-              "TriggerAction": "GraphicalDashPlugin.ActionD",
-              "TriggerSimHubInputName": "ButtonD",
+              "TriggerAction": "None",
+              "TriggerSimHubInputName": "",
               "Visible": true,
               "Width": 160.0
             },
@@ -2530,11 +2601,18 @@
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ButtonItem, SimHub.Plugins",
               "AutoSize": false,
               "BackgroundColor": "#00FFFFFF",
+              "Behavior": {
+                "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Behaviors.Buttons.TriggerDashActionBehavior, SimHub.Plugins",
+                "Settings": {
+                  "Action": 1
+                }
+              },
               "DisabledOpacity": 50,
               "Height": 268.0,
               "IsEnabled": true,
               "Left": 0.0,
-              "Name": "Left MFM",
+              "Name": "Trigger a dash action (A/B/C/D)2",
+              "OriginalName": "Left MFM",
               "PressedOpacity": 100,
               "SimulateKey": false,
               "SimulatedKey": 0,
@@ -2545,8 +2623,8 @@
                 "Win": false
               },
               "Top": 100.0,
-              "TriggerAction": "GraphicalDashPlugin.ActionA",
-              "TriggerSimHubInputName": "ButtonA",
+              "TriggerAction": "None",
+              "TriggerSimHubInputName": "",
               "Visible": true,
               "Width": 325.0
             },
@@ -2554,11 +2632,18 @@
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ButtonItem, SimHub.Plugins",
               "AutoSize": false,
               "BackgroundColor": "#00FFFFFF",
+              "Behavior": {
+                "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Behaviors.Buttons.TriggerDashActionBehavior, SimHub.Plugins",
+                "Settings": {
+                  "Action": 4
+                }
+              },
               "DisabledOpacity": 50,
               "Height": 92.0,
               "IsEnabled": true,
               "Left": 520.0,
-              "Name": "Fuel",
+              "Name": "Trigger a dash action (A/B/C/D)",
+              "OriginalName": "Fuel",
               "PressedOpacity": 100,
               "SimulateKey": false,
               "SimulatedKey": 0,
@@ -2569,10 +2654,38 @@
                 "Win": false
               },
               "Top": 388.0,
-              "TriggerAction": "GraphicalDashPlugin.ActionC",
-              "TriggerSimHubInputName": "ButtonC",
+              "TriggerAction": "None",
+              "TriggerSimHubInputName": "",
               "Visible": true,
               "Width": 330.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ButtonItem, SimHub.Plugins",
+              "AutoSize": false,
+              "BackgroundColor": "#00FFFFFF",
+              "Behavior": {
+                "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Behaviors.Buttons.NextScreenBehavior, SimHub.Plugins"
+              },
+              "DisabledOpacity": 50,
+              "Height": 85.0,
+              "IsEnabled": true,
+              "Left": 5.0,
+              "Name": "Next active game mode screen (and cancel navigation)",
+              "OriginalName": "Fuel",
+              "PressedOpacity": 100,
+              "SimulateKey": false,
+              "SimulatedKey": 0,
+              "SimulatedKeyV2": {
+                "Alt": false,
+                "Ctrl": false,
+                "Shift": false,
+                "Win": false
+              },
+              "Top": 5.0,
+              "TriggerAction": "None",
+              "TriggerSimHubInputName": "",
+              "Visible": true,
+              "Width": 325.0
             }
           ],
           "Group": true,
@@ -2613,7 +2726,7 @@
           "Bindings": {
             "StartAddress": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.dashName')+'&ver='+$prop('variable.dashVer')+'&screen=Leaderboard'\r\n} else {\r\n\treturn ''\r\n}\r\n",
+                "Expression": "if ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.dashName')+'&ver='+$prop('variable.dashVer')+'&screen=Leaderboard'\r\n} else {\r\n\treturn ''\r\n}\r\n",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -2680,7 +2793,7 @@
           "Bindings": {
             "Opacity": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
+                "Expression": "if ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -2750,7 +2863,7 @@
           "Bindings": {
             "Opacity": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
+                "Expression": "if ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -2965,7 +3078,7 @@
           "Bindings": {
             "InitialScreenIndex": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\tif ( settings && settings.IRacing.centralModule ) {\r\n\t\treturn settings.IRacing.centralModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\tif ( settings && settings.Automobilista2.centralModule ) {\r\n\t\treturn settings.Automobilista2.centralModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\tif ( settings && settings.RFactor2.centralModule ) {\r\n\t\treturn settings.RFactor2.centralModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa' ) {\r\n\r\n\tif ( settings && settings.AC.centralModule ) {\r\n\t\treturn settings.AC.centralModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\r\n\tif ( settings && settings.F1.centralModule ) {\r\n\t\treturn settings.F1.centralModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else {\r\n\r\n\tif ( settings && settings.ACC.centralModule ) {\r\n\t\treturn settings.ACC.centralModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n}",
+                "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\tif ( settings && settings.IRacing.centralModule ) {\r\n\t\treturn settings.IRacing.centralModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\tif ( settings && settings.Automobilista2.centralModule ) {\r\n\t\treturn settings.Automobilista2.centralModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\tif ( settings && settings.RFactor2.centralModule ) {\r\n\t\treturn settings.RFactor2.centralModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa' ) {\r\n\r\n\tif ( settings && settings.AC.centralModule ) {\r\n\t\treturn settings.AC.centralModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\r\n\tif ( settings && settings.F1.centralModule ) {\r\n\t\treturn settings.F1.centralModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else {\r\n\r\n\tif ( settings && settings.ACC.centralModule ) {\r\n\t\treturn settings.ACC.centralModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -3054,7 +3167,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.nightMode ) {\r\n\tnightMode = 0\r\n} else {\r\n\tnightMode = settings.nightMode\r\n}\r\n\r\nif ( nightMode == 1) {\r\n\r\n\tif ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ) {\r\n\t\r\n\t\tif ($prop('DataCorePlugin.GameRawData.Graphics.LightsStage')>0 ) {\r\n\t\t\treturn 1\r\n\t\t} else {\t\r\n\t\t\treturn 0 \r\n\t\t}\r\n\t\r\n\t} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\t\r\n\t\tlet mCarFlags = $prop('DataCorePlugin.GameRawData.mCarFlags');\r\n\t\treturn mCarFlags.toString(2).substr(-1)\r\n\t\t\r\n\t} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\t\treturn ($prop('GameRawData.PacketSessionData.m_timeOfDay') > 1200 && $prop('GameRawData.PacketSessionData.m_timeOfDay') < 360)\r\n\t\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\t\r\n\treturn 0\r\n\r\n}",
+                "Expression": "if ( !settings || !settings.nightMode ) {\r\n\tnightMode = 0\r\n} else {\r\n\tnightMode = settings.nightMode\r\n}\r\n\r\nif ( nightMode == 1) {\r\n\r\n\tif ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ) {\r\n\t\r\n\t\tif ($prop('DataCorePlugin.GameRawData.Graphics.LightsStage')>0 ) {\r\n\t\t\treturn 1\r\n\t\t} else {\t\r\n\t\t\treturn 0 \r\n\t\t}\r\n\t\r\n\t} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\t\r\n\t\tlet mCarFlags = $prop('DataCorePlugin.GameRawData.mCarFlags');\r\n\t\treturn mCarFlags.toString(2).substr(-1)\r\n\t\t\r\n\t} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\t\treturn ($prop('GameRawData.PacketSessionData.m_timeOfDay') > 1200 && $prop('GameRawData.PacketSessionData.m_timeOfDay') < 360)\r\n\t\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\t\r\n\treturn 0\r\n\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -3129,35 +3242,18 @@
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ButtonItem, SimHub.Plugins",
               "AutoSize": false,
               "BackgroundColor": "#00FFFFFF",
-              "DisabledOpacity": 50,
-              "Height": 92.0,
-              "IsEnabled": true,
-              "Left": 520.0,
-              "Name": "Fuel",
-              "PressedOpacity": 100,
-              "SimulateKey": false,
-              "SimulatedKey": 0,
-              "SimulatedKeyV2": {
-                "Alt": false,
-                "Ctrl": false,
-                "Shift": false,
-                "Win": false
+              "Behavior": {
+                "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Behaviors.Buttons.TriggerDashActionBehavior, SimHub.Plugins",
+                "Settings": {
+                  "Action": 5
+                }
               },
-              "Top": 388.0,
-              "TriggerAction": "GraphicalDashPlugin.ActionC",
-              "TriggerSimHubInputName": "ButtonC",
-              "Visible": true,
-              "Width": 330.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ButtonItem, SimHub.Plugins",
-              "AutoSize": false,
-              "BackgroundColor": "#00FFFFFF",
               "DisabledOpacity": 50,
               "Height": 300.0,
               "IsEnabled": true,
               "Left": 685.0,
-              "Name": "Central",
+              "Name": "Trigger a dash action (A/B/C/D)3",
+              "OriginalName": "Central",
               "PressedOpacity": 100,
               "SimulateKey": false,
               "SimulatedKey": 0,
@@ -3168,19 +3264,78 @@
                 "Win": false
               },
               "Top": 5.0,
-              "TriggerAction": "GraphicalDashPlugin.ActionD",
-              "TriggerSimHubInputName": "ButtonD",
+              "TriggerAction": "None",
+              "TriggerSimHubInputName": "",
               "Visible": true,
               "Width": 160.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ButtonItem, SimHub.Plugins",
+              "AutoSize": false,
+              "BackgroundColor": "#00FFFFFF",
+              "Behavior": {
+                "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Behaviors.Buttons.TriggerDashActionBehavior, SimHub.Plugins",
+                "Settings": {
+                  "Action": 4
+                }
+              },
+              "DisabledOpacity": 50,
+              "Height": 92.0,
+              "IsEnabled": true,
+              "Left": 520.0,
+              "Name": "Trigger a dash action (A/B/C/D)",
+              "OriginalName": "Fuel",
+              "PressedOpacity": 100,
+              "SimulateKey": false,
+              "SimulatedKey": 0,
+              "SimulatedKeyV2": {
+                "Alt": false,
+                "Ctrl": false,
+                "Shift": false,
+                "Win": false
+              },
+              "Top": 388.0,
+              "TriggerAction": "None",
+              "TriggerSimHubInputName": "",
+              "Visible": true,
+              "Width": 330.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ButtonItem, SimHub.Plugins",
+              "AutoSize": false,
+              "BackgroundColor": "#00FFFFFF",
+              "Behavior": {
+                "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Behaviors.Buttons.NextScreenBehavior, SimHub.Plugins"
+              },
+              "DisabledOpacity": 50,
+              "Height": 85.0,
+              "IsEnabled": true,
+              "Left": 5.0,
+              "Name": "Next active game mode screen (and cancel navigation)",
+              "OriginalName": "Fuel",
+              "PressedOpacity": 100,
+              "SimulateKey": false,
+              "SimulatedKey": 0,
+              "SimulatedKeyV2": {
+                "Alt": false,
+                "Ctrl": false,
+                "Shift": false,
+                "Win": false
+              },
+              "Top": 5.0,
+              "TriggerAction": "None",
+              "TriggerSimHubInputName": "",
+              "Visible": true,
+              "Width": 325.0
             }
           ],
           "Group": true,
           "Height": 475.0,
-          "Left": 520.0,
+          "Left": 5.0,
           "Name": "Touch Actions",
           "Top": 5.0,
           "Visible": true,
-          "Width": 330.0
+          "Width": 845.0
         }
       ],
       "Name": "Timetables",
@@ -3212,7 +3367,7 @@
           "Bindings": {
             "StartAddress": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.dashName')+'&ver='+$prop('variable.dashVer')+'&screen=Map'\r\n} else {\r\n\treturn ''\r\n}\r\n",
+                "Expression": "if ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.dashName')+'&ver='+$prop('variable.dashVer')+'&screen=Map'\r\n} else {\r\n\treturn ''\r\n}\r\n",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -3279,7 +3434,7 @@
           "Bindings": {
             "Opacity": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
+                "Expression": "if ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -3381,7 +3536,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\treturn 1\r\n} else {\r\n\tswitch (settings.showFlags) {\r\n\t\tcase 0: return 1\r\n\t\tcase 1: return 0\r\n\t\tdefault: return 1\r\n\t}\r\n}",
+                "Expression": "if ( !settings ) {\r\n\treturn 1\r\n} else {\r\n\tswitch (settings.showFlags) {\r\n\t\tcase 0: return 1\r\n\t\tcase 1: return 0\r\n\t\tdefault: return 1\r\n\t}\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -3523,7 +3678,7 @@
           "Bindings": {
             "Opacity": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
+                "Expression": "if ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -3566,7 +3721,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.mapType ) {\r\n\treturn 1\r\n} else {\r\n\tswitch (settings.mapType) {\r\n\t\tcase 1: return 1\r\n\t\tcase 2: return 0\r\n\t\tdefault: return 1\r\n\t}\r\n}",
+                "Expression": "if ( !settings || !settings.mapType ) {\r\n\treturn 1\r\n} else {\r\n\tswitch (settings.mapType) {\r\n\t\tcase 1: return 1\r\n\t\tcase 2: return 0\r\n\t\tdefault: return 1\r\n\t}\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -3576,6 +3731,7 @@
           "BlinkDelay": 249.0,
           "CursorColor": "#FFFF0000",
           "DisplayScale": 1.0,
+          "ForcePlayerDotBorderContrastWhenUsingCarClassColors": true,
           "Height": 350.0,
           "IsFreezed": true,
           "Left": 280.0,
@@ -3592,10 +3748,7 @@
             "LabelFont": "Roboto",
             "LabelFontSize": 14.0
           },
-          "PlayerPulse": false,
-          "PlayerPulseColor": "#FFFFD700",
-          "PlayerPulseRadius": 100.0,
-          "PlayerPulseThickness": 8.0,
+          "OverrideColorsWithCarClassColors": true,
           "PlayerStyle": {
             "DotBorderThickness": 0.0,
             "DotBordercolor": "#FFFFFFFF",
@@ -3629,7 +3782,7 @@
           "Bindings": {
             "SpeedUnzoomPercent": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.mapZoom ) {\r\n\tmapZoom = 30\r\n} else {\r\n\tmapZoom = settings.mapZoom\r\n}\r\n\r\nreturn mapZoom",
+                "Expression": "if ( !settings || !settings.mapZoom ) {\r\n\tmapZoom = 30\r\n} else {\r\n\tmapZoom = settings.mapZoom\r\n}\r\n\r\nreturn mapZoom",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -3637,7 +3790,7 @@
             },
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.mapType ) {\r\n\treturn 0\r\n} else {\r\n\tswitch (settings.mapType) {\r\n\t\tcase 1: return 0\r\n\t\tcase 2: return 1\r\n\t\tdefault: return 0\r\n\t}\r\n}",
+                "Expression": "if ( !settings || !settings.mapType ) {\r\n\treturn 0\r\n} else {\r\n\tswitch (settings.mapType) {\r\n\t\tcase 1: return 0\r\n\t\tcase 2: return 1\r\n\t\tdefault: return 0\r\n\t}\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -3646,6 +3799,7 @@
           },
           "CursorColor": "#FFFF0000",
           "DisplayScale": 1.0,
+          "ForcePlayerDotBorderContrastWhenUsingCarClassColors": true,
           "Height": 350.0,
           "IsFreezed": true,
           "Left": 140.0,
@@ -3662,10 +3816,7 @@
             "LabelFont": "Roboto",
             "LabelFontSize": 20.0
           },
-          "PlayerPulse": true,
-          "PlayerPulseColor": "#FFFFD700",
-          "PlayerPulseRadius": 100.0,
-          "PlayerPulseThickness": 8.0,
+          "OverrideColorsWithCarClassColors": true,
           "PlayerStyle": {
             "DotBorderThickness": 3.0,
             "DotBordercolor": "#FF000000",
@@ -3701,7 +3852,7 @@
           "Bindings": {
             "InitialScreenIndex": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\tif ( settings && settings.IRacing.centralModule ) {\r\n\t\treturn settings.IRacing.centralModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\tif ( settings && settings.Automobilista2.centralModule ) {\r\n\t\treturn settings.Automobilista2.centralModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\tif ( settings && settings.RFactor2.centralModule ) {\r\n\t\treturn settings.RFactor2.centralModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa' ) {\r\n\r\n\tif ( settings && settings.AC.centralModule ) {\r\n\t\treturn settings.AC.centralModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\r\n\tif ( settings && settings.F1.centralModule ) {\r\n\t\treturn settings.F1.centralModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else {\r\n\r\n\tif ( settings && settings.ACC.centralModule ) {\r\n\t\treturn settings.ACC.centralModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n}",
+                "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\tif ( settings && settings.IRacing.centralModule ) {\r\n\t\treturn settings.IRacing.centralModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\tif ( settings && settings.Automobilista2.centralModule ) {\r\n\t\treturn settings.Automobilista2.centralModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\tif ( settings && settings.RFactor2.centralModule ) {\r\n\t\treturn settings.RFactor2.centralModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa' ) {\r\n\r\n\tif ( settings && settings.AC.centralModule ) {\r\n\t\treturn settings.AC.centralModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\r\n\tif ( settings && settings.F1.centralModule ) {\r\n\t\treturn settings.F1.centralModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else {\r\n\r\n\tif ( settings && settings.ACC.centralModule ) {\r\n\t\treturn settings.ACC.centralModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -3790,7 +3941,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.nightMode ) {\r\n\tnightMode = 0\r\n} else {\r\n\tnightMode = settings.nightMode\r\n}\r\n\r\nif ( nightMode == 1) {\r\n\r\n\tif ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ) {\r\n\t\r\n\t\tif ($prop('DataCorePlugin.GameRawData.Graphics.LightsStage')>0 ) {\r\n\t\t\treturn 1\r\n\t\t} else {\t\r\n\t\t\treturn 0 \r\n\t\t}\r\n\t\r\n\t} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\t\r\n\t\tlet mCarFlags = $prop('DataCorePlugin.GameRawData.mCarFlags');\r\n\t\treturn mCarFlags.toString(2).substr(-1)\r\n\t\t\r\n\t} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\t\treturn ($prop('GameRawData.PacketSessionData.m_timeOfDay') > 1200 && $prop('GameRawData.PacketSessionData.m_timeOfDay') < 360)\r\n\t\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\t\r\n\treturn 0\r\n\r\n}",
+                "Expression": "if ( !settings || !settings.nightMode ) {\r\n\tnightMode = 0\r\n} else {\r\n\tnightMode = settings.nightMode\r\n}\r\n\r\nif ( nightMode == 1) {\r\n\r\n\tif ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ) {\r\n\t\r\n\t\tif ($prop('DataCorePlugin.GameRawData.Graphics.LightsStage')>0 ) {\r\n\t\t\treturn 1\r\n\t\t} else {\t\r\n\t\t\treturn 0 \r\n\t\t}\r\n\t\r\n\t} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\t\r\n\t\tlet mCarFlags = $prop('DataCorePlugin.GameRawData.mCarFlags');\r\n\t\treturn mCarFlags.toString(2).substr(-1)\r\n\t\t\r\n\t} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\t\treturn ($prop('GameRawData.PacketSessionData.m_timeOfDay') > 1200 && $prop('GameRawData.PacketSessionData.m_timeOfDay') < 360)\r\n\t\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\t\r\n\treturn 0\r\n\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -3865,35 +4016,18 @@
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ButtonItem, SimHub.Plugins",
               "AutoSize": false,
               "BackgroundColor": "#00FFFFFF",
-              "DisabledOpacity": 50,
-              "Height": 92.0,
-              "IsEnabled": true,
-              "Left": 520.0,
-              "Name": "Fuel",
-              "PressedOpacity": 100,
-              "SimulateKey": false,
-              "SimulatedKey": 0,
-              "SimulatedKeyV2": {
-                "Alt": false,
-                "Ctrl": false,
-                "Shift": false,
-                "Win": false
+              "Behavior": {
+                "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Behaviors.Buttons.TriggerDashActionBehavior, SimHub.Plugins",
+                "Settings": {
+                  "Action": 5
+                }
               },
-              "Top": 388.0,
-              "TriggerAction": "GraphicalDashPlugin.ActionC",
-              "TriggerSimHubInputName": "ButtonC",
-              "Visible": true,
-              "Width": 330.0
-            },
-            {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ButtonItem, SimHub.Plugins",
-              "AutoSize": false,
-              "BackgroundColor": "#00FFFFFF",
               "DisabledOpacity": 50,
               "Height": 300.0,
               "IsEnabled": true,
               "Left": 685.0,
-              "Name": "Central",
+              "Name": "Trigger a dash action (A/B/C/D)3",
+              "OriginalName": "Central",
               "PressedOpacity": 100,
               "SimulateKey": false,
               "SimulatedKey": 0,
@@ -3904,19 +4038,78 @@
                 "Win": false
               },
               "Top": 5.0,
-              "TriggerAction": "GraphicalDashPlugin.ActionD",
-              "TriggerSimHubInputName": "ButtonD",
+              "TriggerAction": "None",
+              "TriggerSimHubInputName": "",
               "Visible": true,
               "Width": 160.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ButtonItem, SimHub.Plugins",
+              "AutoSize": false,
+              "BackgroundColor": "#00FFFFFF",
+              "Behavior": {
+                "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Behaviors.Buttons.TriggerDashActionBehavior, SimHub.Plugins",
+                "Settings": {
+                  "Action": 4
+                }
+              },
+              "DisabledOpacity": 50,
+              "Height": 92.0,
+              "IsEnabled": true,
+              "Left": 520.0,
+              "Name": "Trigger a dash action (A/B/C/D)",
+              "OriginalName": "Fuel",
+              "PressedOpacity": 100,
+              "SimulateKey": false,
+              "SimulatedKey": 0,
+              "SimulatedKeyV2": {
+                "Alt": false,
+                "Ctrl": false,
+                "Shift": false,
+                "Win": false
+              },
+              "Top": 388.0,
+              "TriggerAction": "None",
+              "TriggerSimHubInputName": "",
+              "Visible": true,
+              "Width": 330.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ButtonItem, SimHub.Plugins",
+              "AutoSize": false,
+              "BackgroundColor": "#00FFFFFF",
+              "Behavior": {
+                "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Behaviors.Buttons.NextScreenBehavior, SimHub.Plugins"
+              },
+              "DisabledOpacity": 50,
+              "Height": 85.0,
+              "IsEnabled": true,
+              "Left": 5.0,
+              "Name": "Next active game mode screen (and cancel navigation)",
+              "OriginalName": "Fuel",
+              "PressedOpacity": 100,
+              "SimulateKey": false,
+              "SimulatedKey": 0,
+              "SimulatedKeyV2": {
+                "Alt": false,
+                "Ctrl": false,
+                "Shift": false,
+                "Win": false
+              },
+              "Top": 5.0,
+              "TriggerAction": "None",
+              "TriggerSimHubInputName": "",
+              "Visible": true,
+              "Width": 325.0
             }
           ],
           "Group": true,
           "Height": 475.0,
-          "Left": 520.0,
+          "Left": 5.0,
           "Name": "Touch Actions",
           "Top": 5.0,
           "Visible": true,
-          "Width": 330.0
+          "Width": 845.0
         }
       ],
       "Name": "Map",
@@ -3948,7 +4141,7 @@
           "Bindings": {
             "Top": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.rpmLED || settings.rpmLED == \"0\") {\r\n\treturn 5\r\n} else {\r\n\treturn 15\r\n}",
+                "Expression": "if ( !settings || !settings.rpmLED || settings.rpmLED == \"0\") {\r\n\treturn 5\r\n} else {\r\n\treturn 15\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -3976,7 +4169,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tpitLarge = 0\r\n} else {\r\n\tpitLarge = (settings.hasOwnProperty(\"pitLarge\")) ? settings.pitLarge : 0\r\n}\r\n\r\nif ( pitLarge == 1 ) { \r\n\r\n\treturn ( $prop('DataCorePlugin.GameData.PitLimiterOn') ) ? 1 : 0\r\n\r\n} else {\r\n\r\n\treturn 0\r\n\r\n}",
+                "Expression": "if ( !settings ) {\r\n\tpitLarge = 0\r\n} else {\r\n\tpitLarge = (settings.hasOwnProperty(\"pitLarge\")) ? settings.pitLarge : 0\r\n}\r\n\r\nif ( pitLarge == 1 ) { \r\n\r\n\treturn ( $prop('DataCorePlugin.GameData.PitLimiterOn') ) ? 1 : 0\r\n\r\n} else {\r\n\r\n\treturn 0\r\n\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -4882,7 +5075,7 @@
         "EvaluateOnlyOnce": false,
         "OverrideWithParentDashboardVariableWhenAvailable": false,
         "ValueExpression": {
-          "Expression": "'2.4.2'"
+          "Expression": "'2.5.0'"
         },
         "VariableName": "dashVer"
       },
@@ -4890,7 +5083,7 @@
         "EvaluateOnlyOnce": false,
         "OverrideWithParentDashboardVariableWhenAvailable": true,
         "ValueExpression": {
-          "Expression": "'9.0.4'"
+          "Expression": "'9.1.0'"
         },
         "VariableName": "shVer"
       }

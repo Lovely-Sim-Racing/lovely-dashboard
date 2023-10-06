@@ -9,7 +9,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "13aad209-00af-4386-b694-706edbb57fb4",
+  "Id": "d7a3b844-db52-476e-b2c2-f643e84cef91",
   "Images": [
     {
       "Extension": ".png",
@@ -234,7 +234,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\talertView = 1\r\n} else {\r\n\talertView = (settings.hasOwnProperty(\"alertView\")) ? settings.alertView : 1\r\n}\r\n\r\nreturn (alertView == 2 ) ? 1 : 0",
+                "Expression": "if ( !settings ) {\r\n\talertView = 1\r\n} else {\r\n\talertView = (settings.hasOwnProperty(\"alertView\")) ? settings.alertView : 1\r\n}\r\n\r\nreturn (alertView == 2 ) ? 1 : 0",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -257,7 +257,7 @@
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\treturn ld_changed(alertDelay, $prop('DataCorePlugin.GameRawData.PlayerCarSetup.m_onThrottle') )\r\n} else {\r\n\treturn 0\r\n}\r\n",
+                    "Expression": "if ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\treturn ld_changed(alertDelay, $prop('DataCorePlugin.GameRawData.PlayerCarSetup.m_onThrottle') )\r\n} else {\r\n\treturn 0\r\n}\r\n",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -301,7 +301,7 @@
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\treturn ld_changed(alertDelay, $prop('GameRawData.PlayerCarStatusData.m_fuelMix') )\r\n} else {\r\n\treturn ld_changed(alertDelay, $prop('DataCorePlugin.GameData.EngineMap') )\r\n}",
+                    "Expression": "if ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\treturn ld_changed(alertDelay, $prop('GameRawData.PlayerCarStatusData.m_fuelMix') )\r\n} else {\r\n\treturn ld_changed(alertDelay, $prop('DataCorePlugin.GameData.EngineMap') )\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -343,7 +343,7 @@
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn ld_changed(alertDelay, $prop('DataCorePlugin.GameData.ABSLevel') )",
+                    "Expression": "if ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn ld_changed(alertDelay, $prop('DataCorePlugin.GameData.ABSLevel') )",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -386,7 +386,7 @@
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\treturn ld_changed(alertDelay, $prop('DataCorePlugin.GameRawData.Telemetry.dcTractionControl2') )\r\n} else {\r\n\treturn ld_changed(alertDelay, $prop('DataCorePlugin.GameRawData.Graphics.TCCut') )\r\n}",
+                    "Expression": "if ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\treturn ld_changed(alertDelay, $prop('DataCorePlugin.GameRawData.Telemetry.dcTractionControl2') )\r\n} else {\r\n\treturn ld_changed(alertDelay, $prop('DataCorePlugin.GameRawData.Graphics.TCCut') )\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -429,7 +429,7 @@
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn ld_changed(alertDelay, $prop('DataCorePlugin.GameData.TCLevel') )",
+                    "Expression": "if ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn ld_changed(alertDelay, $prop('DataCorePlugin.GameData.TCLevel') )",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -473,7 +473,7 @@
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn ld_changed(alertDelay, $prop('DataCorePlugin.GameData.BrakeBias') )",
+                    "Expression": "if ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn ld_changed(alertDelay, $prop('DataCorePlugin.GameData.BrakeBias') )",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -516,7 +516,7 @@
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn ld_changed(alertDelay, $prop('DataCorePlugin.GameRawData.Telemetry.dcAntiRollFront') )",
+                    "Expression": "if ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn ld_changed(alertDelay, $prop('DataCorePlugin.GameRawData.Telemetry.dcAntiRollFront') )",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -559,7 +559,7 @@
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn ld_changed(alertDelay, $prop('DataCorePlugin.GameRawData.Telemetry.dcAntiRollRear') )",
+                    "Expression": "if ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn ld_changed(alertDelay, $prop('DataCorePlugin.GameRawData.Telemetry.dcAntiRollRear') )",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -603,7 +603,7 @@
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn ld_changed(alertDelay, $prop('GameRawData.Physics.ErsRecoveryLevel') )",
+                    "Expression": "if ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn ld_changed(alertDelay, $prop('GameRawData.Physics.ErsRecoveryLevel') )",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -638,7 +638,7 @@
               "Bindings": {
                 "Visible": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn ld_changed(alertDelay, $prop('GameRawData.Telemetry.dcMGUKDeployMode') )\r\n} else if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\r\n\treturn ld_changed(alertDelay, $prop('GameRawData.PlayerCarStatusData.m_ersDeployMode') )\r\n\t\r\n} else {\r\n\r\n\treturn ld_changed(alertDelay, $prop('GameRawData.Physics.ErsPowerLevel') )\r\n\r\n}",
+                    "Expression": "if ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn ld_changed(alertDelay, $prop('GameRawData.Telemetry.dcMGUKDeployMode') )\r\n} else if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\r\n\treturn ld_changed(alertDelay, $prop('GameRawData.PlayerCarStatusData.m_ersDeployMode') )\r\n\t\r\n} else {\r\n\r\n\treturn ld_changed(alertDelay, $prop('GameRawData.Physics.ErsPowerLevel') )\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -805,7 +805,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\talertView = 1\r\n} else {\r\n\talertView = (settings.hasOwnProperty(\"alertView\")) ? settings.alertView : 1\r\n}\r\n\r\nreturn (alertView == 1 ) ? 1 : 0 ",
+                "Expression": "if ( !settings ) {\r\n\talertView = 1\r\n} else {\r\n\talertView = (settings.hasOwnProperty(\"alertView\")) ? settings.alertView : 1\r\n}\r\n\r\nreturn (alertView == 1 ) ? 1 : 0 ",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -827,7 +827,7 @@
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\treturn ld_changed(alertDelay, $prop('DataCorePlugin.GameRawData.PlayerCarSetup.m_onThrottle') )\r\n} else {\r\n\treturn 0\r\n}\r\n",
+                    "Expression": "if ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\treturn ld_changed(alertDelay, $prop('DataCorePlugin.GameRawData.PlayerCarSetup.m_onThrottle') )\r\n} else {\r\n\treturn 0\r\n}\r\n",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -871,7 +871,7 @@
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\treturn ld_changed(alertDelay, $prop('GameRawData.PlayerCarStatusData.m_fuelMix') )\r\n} else {\r\n\treturn ld_changed(alertDelay, $prop('DataCorePlugin.GameData.EngineMap') )\r\n}",
+                    "Expression": "if ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\treturn ld_changed(alertDelay, $prop('GameRawData.PlayerCarStatusData.m_fuelMix') )\r\n} else {\r\n\treturn ld_changed(alertDelay, $prop('DataCorePlugin.GameData.EngineMap') )\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -913,7 +913,7 @@
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn ld_changed(alertDelay, $prop('DataCorePlugin.GameData.ABSLevel') )",
+                    "Expression": "if ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn ld_changed(alertDelay, $prop('DataCorePlugin.GameData.ABSLevel') )",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -956,7 +956,7 @@
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\treturn ld_changed(alertDelay, $prop('DataCorePlugin.GameRawData.Telemetry.dcTractionControl2') )\r\n} else {\r\n\treturn ld_changed(alertDelay, $prop('DataCorePlugin.GameRawData.Graphics.TCCut') )\r\n}",
+                    "Expression": "if ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\treturn ld_changed(alertDelay, $prop('DataCorePlugin.GameRawData.Telemetry.dcTractionControl2') )\r\n} else {\r\n\treturn ld_changed(alertDelay, $prop('DataCorePlugin.GameRawData.Graphics.TCCut') )\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -999,7 +999,7 @@
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn ld_changed(alertDelay, $prop('DataCorePlugin.GameData.TCLevel') )",
+                    "Expression": "if ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn ld_changed(alertDelay, $prop('DataCorePlugin.GameData.TCLevel') )",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -1043,7 +1043,7 @@
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn ld_changed(alertDelay, $prop('DataCorePlugin.GameData.BrakeBias') )",
+                    "Expression": "if ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn ld_changed(alertDelay, $prop('DataCorePlugin.GameData.BrakeBias') )",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -1086,7 +1086,7 @@
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn ld_changed(alertDelay, $prop('DataCorePlugin.GameRawData.Telemetry.dcAntiRollFront') )",
+                    "Expression": "if ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn ld_changed(alertDelay, $prop('DataCorePlugin.GameRawData.Telemetry.dcAntiRollFront') )",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -1129,7 +1129,7 @@
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn ld_changed(alertDelay, $prop('DataCorePlugin.GameRawData.Telemetry.dcAntiRollRear') )",
+                    "Expression": "if ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn ld_changed(alertDelay, $prop('DataCorePlugin.GameRawData.Telemetry.dcAntiRollRear') )",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -1173,7 +1173,7 @@
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn ld_changed(alertDelay, $prop('GameRawData.Physics.ErsRecoveryLevel') )",
+                    "Expression": "if ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nreturn ld_changed(alertDelay, $prop('GameRawData.Physics.ErsRecoveryLevel') )",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -1208,7 +1208,7 @@
               "Bindings": {
                 "Visible": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn ld_changed(alertDelay, $prop('GameRawData.Telemetry.dcMGUKDeployMode') )\r\n} else if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\r\n\treturn ld_changed(alertDelay, $prop('GameRawData.PlayerCarStatusData.m_ersDeployMode') )\r\n\t\r\n} else {\r\n\r\n\treturn ld_changed(alertDelay, $prop('GameRawData.Physics.ErsPowerLevel') )\r\n\r\n}",
+                    "Expression": "if ( !settings ) {\r\n\talertDelay = 5000\r\n} else {\r\n\talertDelay = settings.alertDelay\r\n}\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn ld_changed(alertDelay, $prop('GameRawData.Telemetry.dcMGUKDeployMode') )\r\n} else if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\r\n\treturn ld_changed(alertDelay, $prop('GameRawData.PlayerCarStatusData.m_ersDeployMode') )\r\n\t\r\n} else {\r\n\r\n\treturn ld_changed(alertDelay, $prop('GameRawData.Physics.ErsPowerLevel') )\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -1375,7 +1375,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !$prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\t// Hide if not F1\r\n\treturn 0\r\n}\r\n\r\nif ( !settings ) {\r\n\tdamageAlert = 1\r\n\tdamageAlertDelay = 5000\r\n} else {\r\n\tdamageAlert = (settings.hasOwnProperty(\"damageAlert\")) ? settings.damageAlert : 1\r\n\tdamageAlertDelay = (settings.hasOwnProperty(\"damageAlertDelay\")) ? settings.damageAlertDelay : 7500\r\n}\r\n\r\nif ( damageAlert == 0 ) { return 0 }\r\n\r\nreturn ld_changed( damageAlertDelay,\r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_frontLeftWingDamage') + \r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_frontRightWingDamage') +\r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_rearWingDamage') +\r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_floorDamage') +\r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_diffuserDamage') +\r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_sidepodDamage') +\r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_gearBoxDamage') +\r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_engineDamage')\r\n   \t\t\t)\r\n",
+                "Expression": "if ( !$prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\t// Hide if not F1\r\n\treturn 0\r\n}\r\n\r\nif ( !settings ) {\r\n\tdamageAlert = 1\r\n\tdamageAlertDelay = 5000\r\n} else {\r\n\tdamageAlert = (settings.hasOwnProperty(\"damageAlert\")) ? settings.damageAlert : 1\r\n\tdamageAlertDelay = (settings.hasOwnProperty(\"damageAlertDelay\")) ? settings.damageAlertDelay : 7500\r\n}\r\n\r\nif ( damageAlert == 0 ) { return 0 }\r\n\r\nreturn ld_changed( damageAlertDelay,\r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_frontLeftWingDamage') + \r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_frontRightWingDamage') +\r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_rearWingDamage') +\r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_floorDamage') +\r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_diffuserDamage') +\r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_sidepodDamage') +\r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_gearBoxDamage') +\r\n   \t\t\t\t$prop('GameRawData.PlayerCarDamageData.m_engineDamage')\r\n   \t\t\t)\r\n",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -2082,7 +2082,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') != \"Automobilista2\" ) {\r\n\t// Hide if not AMS2\r\n\treturn 0\r\n}\r\n\r\nif ( !settings ) {\r\n\tdamageAlert = 1\r\n\tdamageAlertDelay = 5000\r\n} else {\r\n\tdamageAlert = (settings.hasOwnProperty(\"damageAlert\")) ? settings.damageAlert : 1\r\n\tdamageAlertDelay = (settings.hasOwnProperty(\"damageAlertDelay\")) ? settings.damageAlertDelay : 7500\r\n}\r\n\r\nif ( damageAlert == 0 ) { return 0 }\r\n\r\nreturn ld_changed(damageAlertDelay, $prop('DataCorePlugin.GameRawData.mAeroDamage') + $prop('DataCorePlugin.GameRawData.mSuspensionDamage01') + $prop('DataCorePlugin.GameRawData.mSuspensionDamage01') + $prop('DataCorePlugin.GameRawData.mSuspensionDamage01') + $prop('DataCorePlugin.GameRawData.mSuspensionDamage01') )",
+                "Expression": "if ( $prop('DataCorePlugin.CurrentGame') != \"Automobilista2\" ) {\r\n\t// Hide if not AMS2\r\n\treturn 0\r\n}\r\n\r\nif ( !settings ) {\r\n\tdamageAlert = 1\r\n\tdamageAlertDelay = 5000\r\n} else {\r\n\tdamageAlert = (settings.hasOwnProperty(\"damageAlert\")) ? settings.damageAlert : 1\r\n\tdamageAlertDelay = (settings.hasOwnProperty(\"damageAlertDelay\")) ? settings.damageAlertDelay : 7500\r\n}\r\n\r\nif ( damageAlert == 0 ) { return 0 }\r\n\r\nreturn ld_changed(damageAlertDelay, $prop('DataCorePlugin.GameRawData.mAeroDamage') + $prop('DataCorePlugin.GameRawData.mSuspensionDamage01') + $prop('DataCorePlugin.GameRawData.mSuspensionDamage01') + $prop('DataCorePlugin.GameRawData.mSuspensionDamage01') + $prop('DataCorePlugin.GameRawData.mSuspensionDamage01') )",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -3064,7 +3064,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') || $prop('DataCorePlugin.CurrentGame') == \"Automobilista2\" ) {\r\n\t// Hide if F1 Game or AMS2\r\n\treturn 0\r\n}\r\n\r\nif ( !settings ) {\r\n\tdamageAlert = 1\r\n\tdamageAlertDelay = 5000\r\n} else {\r\n\tdamageAlert = (settings.hasOwnProperty(\"damageAlert\")) ? settings.damageAlert : 1\r\n\tdamageAlertDelay = (settings.hasOwnProperty(\"damageAlertDelay\")) ? settings.damageAlertDelay : 7500\r\n}\r\n\r\nif ( damageAlert == 0 ) { return 0 }\r\n\r\nreturn ld_changed(damageAlertDelay, $prop('DataCorePlugin.GameData.CarDamage1') + $prop('DataCorePlugin.GameData.CarDamage2') + $prop('DataCorePlugin.GameData.CarDamage3') + $prop('DataCorePlugin.GameData.CarDamage4') + $prop('DataCorePlugin.GameData.CarDamage5') )",
+                "Expression": "if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') || $prop('DataCorePlugin.CurrentGame') == \"Automobilista2\" ) {\r\n\t// Hide if F1 Game or AMS2\r\n\treturn 0\r\n}\r\n\r\nif ( !settings ) {\r\n\tdamageAlert = 1\r\n\tdamageAlertDelay = 5000\r\n} else {\r\n\tdamageAlert = (settings.hasOwnProperty(\"damageAlert\")) ? settings.damageAlert : 1\r\n\tdamageAlertDelay = (settings.hasOwnProperty(\"damageAlertDelay\")) ? settings.damageAlertDelay : 7500\r\n}\r\n\r\nif ( damageAlert == 0 ) { return 0 }\r\n\r\nreturn ld_changed(damageAlertDelay, $prop('DataCorePlugin.GameData.CarDamage1') + $prop('DataCorePlugin.GameData.CarDamage2') + $prop('DataCorePlugin.GameData.CarDamage3') + $prop('DataCorePlugin.GameData.CarDamage4') + $prop('DataCorePlugin.GameData.CarDamage5') )",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -3756,7 +3756,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tlapReview = 1\r\n\tlapReviewDelay = 5000\r\n} else {\r\n\tlapReview = (settings.hasOwnProperty(\"lapReview\")) ? settings.lapReview : 1\r\n\tlapReviewDelay = (settings.hasOwnProperty(\"lapReviewDelay\")) ? settings.lapReviewDelay : 5000\r\n}\r\n\r\nif ( lapReview == 0 ) { return 0 }\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && $prop('DataCorePlugin.GameRawData.Telemetry.LapCurrentLapTime') < lapReviewDelay/1000 && timespantoseconds($prop('DataCorePlugin.GameRawData.Telemetry.LapCurrentLapTime')) != 0 ) {\r\n\t\r\n\t\tif ( lapReview == 2) {\r\n\t\t\t// Always On\r\n\t\t\treturn 1\r\n\t\t} else if (lapReview == 1) {\r\n\t\t\t// Quali Only\r\n\t\t\tif ( \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Qualify' || \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Lone Qualify' || \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Practice' || \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice' || \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Offline Testing'\r\n\t\t\t) {\r\n\t\t\t\treturn 1\r\n\t\t\t} else {\r\n\t\t\t\treturn 0\r\n\t\t\t}\r\n\t\t} else {\r\n\t\t\t// Always Off\r\n\t\t\treturn 0\r\n\t\t}\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime')) < (lapReviewDelay/1000) && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime')) != 0 ) {\r\n\t\tif ( lapReview == 2) {\r\n\t\t\t// Always On\r\n\t\t\treturn 1\r\n\t\t} else if (lapReview == 1) {\r\n\t\t\t// Quali Only\r\n\t\t\tif ( \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='QUALIFY' || \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='PRACTICE' \r\n\t\t\t) {\r\n\t\t\t\treturn 1\r\n\t\t\t} else {\r\n\t\t\t\treturn 0\r\n\t\t\t}\r\n\t\t} else {\r\n\t\t\t// Always Off\r\n\t\t\treturn 0\r\n\t\t}\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 < lapReviewDelay && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 != 0) {\r\n\t\r\n\t\tif ( lapReview == 2) {\r\n\t\t\t// Always On\r\n\t\t\treturn 1\r\n\t\t} else if (lapReview == 1) {\r\n\t\t\t// Quali Only\r\n\t\t\tif ( \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Qualify' || \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice' \r\n\t\t\t) {\r\n\t\t\t\treturn 1\r\n\t\t\t} else {\r\n\t\t\t\treturn 0\r\n\t\t\t}\r\n\t\t} else {\r\n\t\t\t// Always Off\r\n\t\t\treturn 0\r\n\t\t}\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 < lapReviewDelay && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 != 0) {\r\n\t\r\n\t\tif ( lapReview == 2) {\r\n\t\t\t// Always On\r\n\t\t\treturn 1\r\n\t\t} else if (lapReview == 1) {\r\n\t\t\t// Practice/Quali Only\r\n\t\t\tif ( \r\n\t\t\t\t$prop('GameRawData.PacketSessionData.m_sessionType')<10\r\n\t\t\t) {\r\n\t\t\t\treturn 1\r\n\t\t\t} else {\r\n\t\t\t\treturn 0\r\n\t\t\t}\r\n\t\t} else {\r\n\t\t\t// Always Off\r\n\t\t\treturn 0\r\n\t\t}\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ||  $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa' ) { // ACC & AC\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && $prop('DataCorePlugin.GameRawData.Graphics.iCurrentTime') < lapReviewDelay && $prop('DataCorePlugin.GameRawData.Graphics.iCurrentTime') != 0 ) {\r\n\t\r\n\t\tif ( lapReview == 2) {\r\n\t\t\t// Always On\r\n\t\t\treturn 1\r\n\t\t} else if (lapReview == 1) {\r\n\t\t\t// Quali Only\r\n\t\t\tif ( \r\n\t\t\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='QUALIFY' || \r\n\t\t\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='PRACTICE' \r\n\t\t\t) {\r\n\t\t\t\treturn 1\r\n\t\t\t} else {\r\n\t\t\t\treturn 0\r\n\t\t\t}\r\n\t\t} else {\r\n\t\t\t// Always Off\r\n\t\t\treturn 0\r\n\t\t}\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\t\r\n} else { // Generic Version\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 < lapReviewDelay && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 != 0) {\r\n\t\r\n\t\tif ( lapReview == 2) {\r\n\t\t\t// Always On\r\n\t\t\treturn 1\r\n\t\t} else if (lapReview == 1) {\r\n\t\t\t// Quali Only\r\n\t\t\tif ( \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Qualify' || \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice' \r\n\t\t\t) {\r\n\t\t\t\treturn 1\r\n\t\t\t} else {\r\n\t\t\t\treturn 0\r\n\t\t\t}\r\n\t\t} else {\r\n\t\t\t// Always Off\r\n\t\t\treturn 0\r\n\t\t}\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n}",
+                "Expression": "if ( !settings ) {\r\n\tlapReview = 1\r\n\tlapReviewDelay = 5000\r\n} else {\r\n\tlapReview = (settings.hasOwnProperty(\"lapReview\")) ? settings.lapReview : 1\r\n\tlapReviewDelay = (settings.hasOwnProperty(\"lapReviewDelay\")) ? settings.lapReviewDelay : 5000\r\n}\r\n\r\nif ( lapReview == 0 ) { return 0 }\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && $prop('DataCorePlugin.GameRawData.Telemetry.LapCurrentLapTime') < lapReviewDelay/1000 && timespantoseconds($prop('DataCorePlugin.GameRawData.Telemetry.LapCurrentLapTime')) != 0 ) {\r\n\t\r\n\t\tif ( lapReview == 2) {\r\n\t\t\t// Always On\r\n\t\t\treturn 1\r\n\t\t} else if (lapReview == 1) {\r\n\t\t\t// Quali Only\r\n\t\t\tif ( \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Qualify' || \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Lone Qualify' || \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Practice' || \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice' || \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Offline Testing'\r\n\t\t\t) {\r\n\t\t\t\treturn 1\r\n\t\t\t} else {\r\n\t\t\t\treturn 0\r\n\t\t\t}\r\n\t\t} else {\r\n\t\t\t// Always Off\r\n\t\t\treturn 0\r\n\t\t}\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime')) < (lapReviewDelay/1000) && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime')) != 0 ) {\r\n\t\tif ( lapReview == 2) {\r\n\t\t\t// Always On\r\n\t\t\treturn 1\r\n\t\t} else if (lapReview == 1) {\r\n\t\t\t// Quali Only\r\n\t\t\tif ( \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='QUALIFY' || \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='PRACTICE' \r\n\t\t\t) {\r\n\t\t\t\treturn 1\r\n\t\t\t} else {\r\n\t\t\t\treturn 0\r\n\t\t\t}\r\n\t\t} else {\r\n\t\t\t// Always Off\r\n\t\t\treturn 0\r\n\t\t}\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 < lapReviewDelay && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 != 0) {\r\n\t\r\n\t\tif ( lapReview == 2) {\r\n\t\t\t// Always On\r\n\t\t\treturn 1\r\n\t\t} else if (lapReview == 1) {\r\n\t\t\t// Quali Only\r\n\t\t\tif ( \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Qualify' || \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice' \r\n\t\t\t) {\r\n\t\t\t\treturn 1\r\n\t\t\t} else {\r\n\t\t\t\treturn 0\r\n\t\t\t}\r\n\t\t} else {\r\n\t\t\t// Always Off\r\n\t\t\treturn 0\r\n\t\t}\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 < lapReviewDelay && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 != 0) {\r\n\t\r\n\t\tif ( lapReview == 2) {\r\n\t\t\t// Always On\r\n\t\t\treturn 1\r\n\t\t} else if (lapReview == 1) {\r\n\t\t\t// Practice/Quali Only\r\n\t\t\tif ( \r\n\t\t\t\t$prop('GameRawData.PacketSessionData.m_sessionType')<10\r\n\t\t\t) {\r\n\t\t\t\treturn 1\r\n\t\t\t} else {\r\n\t\t\t\treturn 0\r\n\t\t\t}\r\n\t\t} else {\r\n\t\t\t// Always Off\r\n\t\t\treturn 0\r\n\t\t}\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ||  $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa' ) { // ACC & AC\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && $prop('DataCorePlugin.GameRawData.Graphics.iCurrentTime') < lapReviewDelay && $prop('DataCorePlugin.GameRawData.Graphics.iCurrentTime') != 0 ) {\r\n\t\r\n\t\tif ( lapReview == 2) {\r\n\t\t\t// Always On\r\n\t\t\treturn 1\r\n\t\t} else if (lapReview == 1) {\r\n\t\t\t// Quali Only\r\n\t\t\tif ( \r\n\t\t\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='QUALIFY' || \r\n\t\t\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='PRACTICE' \r\n\t\t\t) {\r\n\t\t\t\treturn 1\r\n\t\t\t} else {\r\n\t\t\t\treturn 0\r\n\t\t\t}\r\n\t\t} else {\r\n\t\t\t// Always Off\r\n\t\t\treturn 0\r\n\t\t}\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n\t\r\n} else { // Generic Version\r\n\r\n\tif ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 < lapReviewDelay && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 != 0) {\r\n\t\r\n\t\tif ( lapReview == 2) {\r\n\t\t\t// Always On\r\n\t\t\treturn 1\r\n\t\t} else if (lapReview == 1) {\r\n\t\t\t// Quali Only\r\n\t\t\tif ( \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Qualify' || \r\n\t\t\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice' \r\n\t\t\t) {\r\n\t\t\t\treturn 1\r\n\t\t\t} else {\r\n\t\t\t\treturn 0\r\n\t\t\t}\r\n\t\t} else {\r\n\t\t\t// Always Off\r\n\t\t\treturn 0\r\n\t\t}\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\r\n\t}\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -4137,7 +4137,7 @@
               "Bindings": {
                 "Visible": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings || !settings.nightMode ) {\r\n\tnightMode = 0\r\n} else {\r\n\tnightMode = settings.nightMode\r\n}\r\n\r\nif ( nightMode == 1) {\r\n\r\n\tif ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ) {\r\n\t\r\n\t\tif ($prop('DataCorePlugin.GameRawData.Graphics.LightsStage')>0 ) {\r\n\t\t\treturn 1\r\n\t\t} else {\t\r\n\t\t\treturn 0 \r\n\t\t}\r\n\t\r\n\t} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\t\r\n\t\tlet mCarFlags = $prop('DataCorePlugin.GameRawData.mCarFlags');\r\n\t\treturn mCarFlags.toString(2).substr(-1)\r\n\t\t\r\n\t} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\r\n\t\treturn ($prop('GameRawData.PacketSessionData.m_timeOfDay') > 1200 && $prop('GameRawData.PacketSessionData.m_timeOfDay') < 360)\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\t\r\n\treturn 0\r\n\r\n}",
+                    "Expression": "if ( !settings || !settings.nightMode ) {\r\n\tnightMode = 0\r\n} else {\r\n\tnightMode = settings.nightMode\r\n}\r\n\r\nif ( nightMode == 1) {\r\n\r\n\tif ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ) {\r\n\t\r\n\t\tif ($prop('DataCorePlugin.GameRawData.Graphics.LightsStage')>0 ) {\r\n\t\t\treturn 1\r\n\t\t} else {\t\r\n\t\t\treturn 0 \r\n\t\t}\r\n\t\r\n\t} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\t\r\n\t\tlet mCarFlags = $prop('DataCorePlugin.GameRawData.mCarFlags');\r\n\t\treturn mCarFlags.toString(2).substr(-1)\r\n\t\t\r\n\t} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\r\n\t\treturn ($prop('GameRawData.PacketSessionData.m_timeOfDay') > 1200 && $prop('GameRawData.PacketSessionData.m_timeOfDay') < 360)\r\n\t\r\n\t} else {\r\n\t\r\n\t\treturn 0\r\n\t\t\r\n\t}\r\n\t\r\n} else {\r\n\t\r\n\treturn 0\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,

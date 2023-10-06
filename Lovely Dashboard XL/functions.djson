@@ -9,7 +9,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "ac3bde4c-69a6-4d30-9c00-06fa11f315b3",
+  "Id": "56bbd257-d644-4bc5-8db1-1d7df1233763",
   "Images": [
     {
       "Extension": ".png",
@@ -244,7 +244,7 @@
           "Bindings": {
             "Height": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nreturn ( !settings || !settings.rpmLED || settings.rpmLED == 0) ? 80 : 70",
+                "Expression": "return ( !settings || !settings.rpmLED || settings.rpmLED == 0) ? 80 : 70",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -252,7 +252,7 @@
             },
             "Opacity": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
+                "Expression": "if ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -260,7 +260,7 @@
             },
             "Top": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nreturn ( !settings || !settings.rpmLED || settings.rpmLED == 0) ? 0 : 5",
+                "Expression": "return ( !settings || !settings.rpmLED || settings.rpmLED == 0) ? 0 : 5",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -271,7 +271,7 @@
             "Bindings": {
               "BorderColor": {
                 "Formula": {
-                  "Expression": "return ( $prop('IsInPitLane') ) ? dark_blue : white",
+                  "Expression": "return ( (!settings || settings.pitAlert == null || settings.pitAlert == 1) && $prop('IsInPitLane') ) ? dark_blue : white",
                   "Interpreter": 1
                 },
                 "Mode": 2,

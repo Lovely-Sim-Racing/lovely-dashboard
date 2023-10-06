@@ -2,6 +2,7 @@ var lovely_blue = '#FF2B98FB'
 var white = '#FFFFFFFF'
 var black = '#FF000000'
 var gray = '#FF444444'
+var light_gray = '#FF8C8C8C'
 var dark = '#FF262626'
 var red = '#FFFA0000'
 var yellow = '#FFFFE04C'
@@ -11,9 +12,10 @@ var orange = '#FFFF7400'
 var blue = '#FF00BFFF'
 var dark_blue = '#FF0000FF'
 
+const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')
+const settings = JSON.parse(json_settings);
+
 function ld_GetPlayerName() {
-    const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')
-    const settings = JSON.parse(json_settings);
     if ( !settings || !settings.driverName ) {
         driverName = 0
     } else {
@@ -50,7 +52,7 @@ function ld_GetPlayerLastLapTime() {
 }
 
 function ld_GetPlayerBestColor() {
-    if ( driverdeltatobest($prop('DataCorePlugin.GameData.Position')) == 0 ) {
+    if ( driverdeltatobest(getplayerleaderboardposition()) == 0 ) {
         return purple
     } else {
         return yellow
@@ -60,8 +62,6 @@ function ld_GetPlayerBestColor() {
 function ld_GetDriverName(position) {
 
     // Data expected is '01', '00'
-    const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')
-    const settings = JSON.parse(json_settings);
 
     if ( !settings || !settings.driverName ) {
         driverName = 0
@@ -83,8 +83,6 @@ function ld_GetRelDriverName(relPosition) {
 
     // Data expected is 'Ahead_01', 'Behind_00'
     // -> PersistantTrackerPlugin.DriverAhead_01_Name
-    const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')
-    const settings = JSON.parse(json_settings);
 
     if ( !settings || !settings.driverName ) {
         driverName = 0

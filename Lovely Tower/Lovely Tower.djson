@@ -9,7 +9,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "3a1ea071-01c5-404b-acde-66d5bd45269b",
+  "Id": "103b827e-6f21-4883-85e7-77bb40d3d34a",
   "Images": [
     {
       "Extension": ".png",
@@ -60,7 +60,7 @@
           "Bindings": {
             "StartAddress": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.dashName')+'&ver='+$prop('variable.dashVer')+'&screen=Idle'\r\n} else {\r\n\treturn ''\r\n}",
+                "Expression": "if ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.dashName')+'&ver='+$prop('variable.dashVer')+'&screen=Idle'\r\n} else {\r\n\treturn ''\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -105,7 +105,7 @@
           "Bindings": {
             "StartAddress": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.dashName')+'&ver='+$prop('variable.dashVer')+'&screen=Primary'\r\n} else {\r\n\treturn ''\r\n}",
+                "Expression": "if ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.dashName')+'&ver='+$prop('variable.dashVer')+'&screen=Primary'\r\n} else {\r\n\treturn ''\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -658,7 +658,7 @@
               "Bindings": {
                 "BackgroundColor": {
                   "Formula": {
-                    "Expression": "if ($prop('Flag_Green')==1) {\r\n\treturn '#FF00D901'\r\n} else if ($prop('Flag_Yellow')==1) {\r\n\treturn '#FFFFE04C'\r\n} else {\r\n\treturn '#FFFFFFFF'\r\n}\r\n",
+                    "Expression": "if ($prop('Flag_Green')==1) {\r\n\treturn green\r\n} else if ($prop('Flag_Yellow')==1) {\r\n\treturn yellow\r\n} else {\r\n\treturn white\r\n}\r\n",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -838,7 +838,7 @@
         "EvaluateOnlyOnce": false,
         "OverrideWithParentDashboardVariableWhenAvailable": false,
         "ValueExpression": {
-          "Expression": "'1.2.1'"
+          "Expression": "'1.2.2'"
         },
         "VariableName": "dashVer"
       },

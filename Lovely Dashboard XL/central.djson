@@ -18,7 +18,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "0d8112b5-5fe5-4699-a17b-af9e40962d45",
+  "Id": "45f344ca-3e8b-499f-ab1a-61525a2b89dc",
   "Images": [],
   "IsOverlay": false,
   "Metadata": {
@@ -1640,7 +1640,7 @@
               "Bindings": {
                 "Visible": {
                   "Formula": {
-                    "Expression": "return ( $prop('DataCorePlugin.GameData.PitLimiterOn') ) ? 1 : 0",
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings ) {\r\n\tpitLarge = 0\r\n} else {\r\n\tpitLarge = (settings.hasOwnProperty(\"pitLarge\")) ? settings.pitLarge : 0\r\n}\r\n\r\nif ( pitLarge == 0 ) { \r\n\r\n\treturn ( $prop('DataCorePlugin.GameData.PitLimiterOn') ) ? 1 : 0\r\n\r\n} else {\r\n\r\n\treturn 0\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -2611,7 +2611,8 @@
               "Bindings": {
                 "Visible": {
                   "Formula": {
-                    "Expression": "[PitLimiterOn]>0"
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings ) {\r\n\tpitLarge = 0\r\n} else {\r\n\tpitLarge = (settings.hasOwnProperty(\"pitLarge\")) ? settings.pitLarge : 0\r\n}\r\n\r\nif ( pitLarge == 0 ) { \r\n\r\n\treturn ( $prop('DataCorePlugin.GameData.PitLimiterOn') ) ? 1 : 0\r\n\r\n} else {\r\n\r\n\treturn 0\r\n\r\n}",
+                    "Interpreter": 1
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Visible"
@@ -3403,7 +3404,8 @@
               "Bindings": {
                 "Visible": {
                   "Formula": {
-                    "Expression": "[PitLimiterOn]>0"
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings ) {\r\n\tpitLarge = 0\r\n} else {\r\n\tpitLarge = (settings.hasOwnProperty(\"pitLarge\")) ? settings.pitLarge : 0\r\n}\r\n\r\nif ( pitLarge == 0 ) { \r\n\r\n\treturn ( $prop('DataCorePlugin.GameData.PitLimiterOn') ) ? 1 : 0\r\n\r\n} else {\r\n\r\n\treturn 0\r\n\r\n}",
+                    "Interpreter": 1
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Visible"
@@ -4354,7 +4356,8 @@
               "Bindings": {
                 "Visible": {
                   "Formula": {
-                    "Expression": "[PitLimiterOn]>0"
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings ) {\r\n\tpitLarge = 0\r\n} else {\r\n\tpitLarge = (settings.hasOwnProperty(\"pitLarge\")) ? settings.pitLarge : 0\r\n}\r\n\r\nif ( pitLarge == 0 ) { \r\n\r\n\treturn ( $prop('DataCorePlugin.GameData.PitLimiterOn') ) ? 1 : 0\r\n\r\n} else {\r\n\r\n\treturn 0\r\n\r\n}",
+                    "Interpreter": 1
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Visible"
@@ -5215,7 +5218,8 @@
               "Bindings": {
                 "Visible": {
                   "Formula": {
-                    "Expression": "[PitLimiterOn]>0"
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings ) {\r\n\tpitLarge = 0\r\n} else {\r\n\tpitLarge = (settings.hasOwnProperty(\"pitLarge\")) ? settings.pitLarge : 0\r\n}\r\n\r\nif ( pitLarge == 0 ) { \r\n\r\n\treturn ( $prop('DataCorePlugin.GameData.PitLimiterOn') ) ? 1 : 0\r\n\r\n} else {\r\n\r\n\treturn 0\r\n\r\n}",
+                    "Interpreter": 1
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Visible"
@@ -6331,7 +6335,8 @@
               "Bindings": {
                 "Visible": {
                   "Formula": {
-                    "Expression": "[PitLimiterOn]>0"
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings ) {\r\n\tpitLarge = 0\r\n} else {\r\n\tpitLarge = (settings.hasOwnProperty(\"pitLarge\")) ? settings.pitLarge : 0\r\n}\r\n\r\nif ( pitLarge == 0 ) { \r\n\r\n\treturn ( $prop('DataCorePlugin.GameData.PitLimiterOn') ) ? 1 : 0\r\n\r\n} else {\r\n\r\n\treturn 0\r\n\r\n}",
+                    "Interpreter": 1
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Visible"
@@ -8501,7 +8506,7 @@
               "Bindings": {
                 "Visible": {
                   "Formula": {
-                    "Expression": "return ( $prop('DataCorePlugin.GameData.PitLimiterOn') ) ? 1 : 0",
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings ) {\r\n\tpitLarge = 0\r\n} else {\r\n\tpitLarge = (settings.hasOwnProperty(\"pitLarge\")) ? settings.pitLarge : 0\r\n}\r\n\r\nif ( pitLarge == 0 ) { \r\n\r\n\treturn ( $prop('DataCorePlugin.GameData.PitLimiterOn') ) ? 1 : 0\r\n\r\n} else {\r\n\r\n\treturn 0\r\n\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -9463,7 +9468,8 @@
               "Bindings": {
                 "Visible": {
                   "Formula": {
-                    "Expression": "[PitLimiterOn]>0"
+                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nif ( !settings ) {\r\n\tpitLarge = 0\r\n} else {\r\n\tpitLarge = (settings.hasOwnProperty(\"pitLarge\")) ? settings.pitLarge : 0\r\n}\r\n\r\nif ( pitLarge == 0 ) { \r\n\r\n\treturn ( $prop('DataCorePlugin.GameData.PitLimiterOn') ) ? 1 : 0\r\n\r\n} else {\r\n\r\n\treturn 0\r\n\r\n}",
+                    "Interpreter": 1
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Visible"
