@@ -3,13 +3,14 @@
   "BackgroundOpacity": 100.0,
   "BaseHeight": 333,
   "BaseWidth": 85,
+  "CarClassColorsOverrides": [],
   "DashboardDebugManager": {},
   "EnableClickThroughOverlay": true,
   "EnableOnDashboardMessaging": true,
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "188eacfe-798f-41ba-9d5c-408e9c0ca36d",
+  "Id": "a260b7ec-1de5-4605-b567-3f58885df48e",
   "Images": [],
   "IsOverlay": false,
   "Metadata": {
@@ -166,135 +167,100 @@
           },
           "Childrens": [
             {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.LeaderboardOpponentGap, SimHub.Plugins",
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "BackgroundColor": "#00FFFFFF",
               "Bindings": {
-                "LeaderboardPosition": {
+                "Text": {
+                  "FormatString": "",
                   "Formula": {
-                    "Expression": "repeatindex()"
+                    "Expression": "return ld_formatTimeShort( drivergaptoleader( repeatindex() ) - drivergaptoleader( repeatindex()-1 ) )",
+                    "Interpreter": 1
                   },
                   "Mode": 2,
-                  "TargetPropertyName": "LeaderboardPosition"
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ( driverisplayer(repeatindex()) ) ? yellow : white",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Qualify' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Lone Qualify'\r\n\t) ? 0 : 1\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='QUALIFY'\r\n\t) ? 0 : 1\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Qualify'\r\n\t) ? 0 : 1\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\treturn ( \r\n\t\t$prop('GameRawData.PacketSessionData.m_sessionType') < 10\r\n\t\t// 0 = unknown, 1 = P1, 2 = P2, 3 = P3, 4 = Short P, 5 = Q1\r\n        // 6 = Q2, 7 = Q3, 8 = Short Q, 9 = OSQ, 10 = R, 11 = R2\r\n        // 12 = Time Trial\r\n\t) ? 0 : 1\r\n\r\n} else {\r\n\r\n\treturn ( \r\n\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='QUALIFY'\r\n\t) ? 0 : 1\r\n\t\r\n}",
+                    "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Qualify' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Lone Qualify' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Practice' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Offline Testing'\r\n\t) ? 0 : 1\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='QUALIFY' ||\r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='PRACTICE'\r\n\t) ? 0 : 1\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Qualify' ||\r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice'\r\n\t) ? 0 : 1\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\treturn ( \r\n\t\t$prop('GameRawData.PacketSessionData.m_sessionType') < 10\r\n\t\t// 0 = unknown, 1 = P1, 2 = P2, 3 = P3, 4 = Short P, 5 = Q1\r\n        // 6 = Q2, 7 = Q3, 8 = Short Q, 9 = OSQ, 10 = R, 11 = R2\r\n        // 12 = Time Trial\r\n\t) ? 0 : 1\r\n\r\n} else {\r\n\r\n\treturn ( \r\n\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='QUALIFY' ||\r\n\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='PRACTICE'\r\n\t) ? 0 : 1\r\n\t\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Visible"
                 }
               },
-              "EmptyValueText": "0.0",
+              "CharWidth": 11.0,
               "Font": "Roboto",
               "FontSize": 20.0,
               "FontWeight": "Bold",
-              "Format": "0.0",
-              "GapMode": 0,
               "Height": 24.0,
               "HorizontalAlignment": 2,
-              "IsPlayer": false,
               "IsTextItem": true,
-              "LeaderboardMode": 0,
-              "LeaderboardPosition": 1,
-              "LeaderboardPositionRelativeToPlayer": false,
-              "LeaderboardPositionRelativeToPlayerOnTrack": false,
-              "Left": 25.0,
-              "Name": "LeaderboardOpponentGap",
-              "NameStyle": 0,
-              "NoDataText": "",
-              "OpponentFontSize": 20.0,
-              "OpponentFontStyle": "Normal",
-              "OpponentFontWeight": "Bold",
-              "OpponentStyle": {
-                "FontSize": 20.0,
-                "FontStyle": "Normal",
-                "FontWeight": "Bold",
-                "TextColor": "#FFFFFFFF"
-              },
-              "OpponentTextColor": "#FFFFFFFF",
-              "PlayerFontSize": 20.0,
-              "PlayerFontStyle": "Normal",
-              "PlayerFontWeight": "Bold",
-              "PlayerStyle": {
-                "FontSize": 20.0,
-                "FontStyle": "Normal",
-                "FontWeight": "Bold",
-                "TextColor": "#FFFFE04C"
-              },
-              "PlayerStyleEnabled": true,
-              "PlayerTextColor": "#FFFFE04C",
+              "Left": 20.0,
+              "Name": "Int (Race)",
+              "SpecialCharsWidth": 5.0,
+              "Text": "0.000",
               "TextColor": "#FFFFFFFF",
-              "Top": 19.0,
+              "Top": 20.0,
+              "UseMonospacedText": true,
               "VerticalAlignment": 1,
               "Visible": true,
-              "Width": 60.0
+              "Width": 65.0
             },
             {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.LeaderboardOpponentDelta, SimHub.Plugins",
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "BackgroundColor": "#00FFFFFF",
               "Bindings": {
-                "LeaderboardPosition": {
+                "Text": {
+                  "FormatString": "",
                   "Formula": {
-                    "Expression": "repeatindex()"
+                    "Expression": "return ld_formatTimeShort( driverdeltatobest( repeatindex() ) )",
+                    "Interpreter": 1
                   },
                   "Mode": 2,
-                  "TargetPropertyName": "LeaderboardPosition"
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ( driverisplayer(repeatindex()) ) ? yellow : white",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Qualify' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Lone Qualify'\r\n\t) ? 1 : 0\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='QUALIFY'\r\n\t) ? 1 : 0\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Qualify'\r\n\t) ? 1 : 0\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\treturn ( \r\n\t\t$prop('GameRawData.PacketSessionData.m_sessionType') < 10\r\n\t\t// 0 = unknown, 1 = P1, 2 = P2, 3 = P3, 4 = Short P, 5 = Q1\r\n        // 6 = Q2, 7 = Q3, 8 = Short Q, 9 = OSQ, 10 = R, 11 = R2\r\n        // 12 = Time Trial\r\n\t) ? 1 : 0\r\n\r\n} else {\r\n\r\n\treturn ( \r\n\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='QUALIFY'\r\n\t) ? 1 : 0\r\n\t\r\n}",
+                    "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Qualify' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Lone Qualify' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Practice' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Offline Testing'\r\n\t) ? 1 : 0\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='QUALIFY' ||\r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='PRACTICE'\r\n\t) ? 1 : 0\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Qualify' ||\r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice'\r\n\t) ? 1 : 0\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\treturn ( \r\n\t\t$prop('GameRawData.PacketSessionData.m_sessionType') < 10\r\n\t\t// 0 = unknown, 1 = P1, 2 = P2, 3 = P3, 4 = Short P, 5 = Q1\r\n        // 6 = Q2, 7 = Q3, 8 = Short Q, 9 = OSQ, 10 = R, 11 = R2\r\n        // 12 = Time Trial\r\n\t) ? 1 : 0\r\n\r\n} else {\r\n\r\n\treturn ( \r\n\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='QUALIFY' ||\r\n\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='PRACTICE'\r\n\t) ? 1 : 0\r\n\t\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Visible"
                 }
               },
-              "CharWidth": 10.0,
-              "EmptyValueText": "0.000",
+              "CharWidth": 11.0,
               "Font": "Roboto",
-              "FontSize": 17.0,
+              "FontSize": 20.0,
               "FontWeight": "Bold",
-              "Format": "0.000",
               "Height": 24.0,
               "HorizontalAlignment": 2,
-              "IsPlayer": false,
               "IsTextItem": true,
-              "LeaderboardMode": 0,
-              "LeaderboardPosition": 1,
-              "LeaderboardPositionRelativeToPlayer": false,
-              "LeaderboardPositionRelativeToPlayerOnTrack": false,
-              "Left": 25.0,
-              "Name": "Delta",
-              "NameStyle": 0,
-              "NoDataText": "",
-              "OpponentFontSize": 17.0,
-              "OpponentFontStyle": "Normal",
-              "OpponentFontWeight": "Bold",
-              "OpponentStyle": {
-                "FontSize": 17.0,
-                "FontStyle": "Normal",
-                "FontWeight": "Bold",
-                "TextColor": "#FFFFFFFF"
-              },
-              "OpponentTextColor": "#FFFFFFFF",
-              "PlayerFontSize": 17.0,
-              "PlayerFontStyle": "Normal",
-              "PlayerFontWeight": "Bold",
-              "PlayerStyle": {
-                "FontSize": 17.0,
-                "FontStyle": "Normal",
-                "FontWeight": "Bold",
-                "TextColor": "#FFFFE04C"
-              },
-              "PlayerStyleEnabled": true,
-              "PlayerTextColor": "#FFFFE04C",
-              "SpecialCharsWidth": 4.0,
+              "Left": 20.0,
+              "Name": "Delta (Quali)",
+              "SpecialCharsWidth": 5.0,
+              "Text": "0.000",
               "TextColor": "#FFFFFFFF",
-              "Top": 19.0,
+              "Top": 20.0,
+              "UseMonospacedText": true,
               "VerticalAlignment": 1,
-              "Visible": false,
-              "Width": 60.0
+              "Visible": true,
+              "Width": 65.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -302,14 +268,16 @@
               "Bindings": {
                 "BackgroundColor": {
                   "Formula": {
-                    "Expression": "if (isplayer(repeatindex()), '#FFE04C', '#FFFFFF')"
+                    "Expression": "return ( driverisplayer(repeatindex()) ) ? yellow : white",
+                    "Interpreter": 1
                   },
                   "Mode": 2,
                   "TargetPropertyName": "BackgroundColor"
                 },
                 "Text": {
                   "Formula": {
-                    "Expression": "repeatindex()"
+                    "Expression": "return repeatindex()",
+                    "Interpreter": 1
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
@@ -326,12 +294,13 @@
               "FontWeight": "Black",
               "Height": 24.0,
               "HorizontalAlignment": 1,
+              "IsFreezed": true,
               "IsTextItem": true,
               "Left": 0.0,
               "Name": "Position",
               "Text": "1",
               "TextColor": "#FF000000",
-              "Top": 19.0,
+              "Top": 20.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 24.0
@@ -340,10 +309,10 @@
           "Group": true,
           "Height": 24.0,
           "Left": 0.0,
-          "Name": "Timetable",
+          "Name": "Timetables",
           "RepeatTopOffset": 29.0,
           "Repetitions": 10.0,
-          "Top": 19.0,
+          "Top": 20.0,
           "Visible": true,
           "Width": 85.0
         },
@@ -353,7 +322,8 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "if ([DataCorePlugin.GameData.Position]>11, 1, 0)"
+                "Expression": "return ( getplayerleaderboardposition() > 9 ) ? 1 : 0",
+                "Interpreter": 1
               },
               "Mode": 2,
               "TargetPropertyName": "Visible"
@@ -367,7 +337,7 @@
               "IsRectangleItem": true,
               "Left": 0.0,
               "Name": "RectangleItem",
-              "Top": 309.0,
+              "Top": 310.0,
               "Visible": true,
               "Width": 84.0
             },
@@ -376,16 +346,17 @@
               "BackgroundColor": "#00FFFFFF",
               "Bindings": {
                 "Text": {
-                  "FormatString": "+0.0",
+                  "FormatString": "",
                   "Formula": {
-                    "Expression": "if (abs(drivergaptoleader([DataCorePlugin.GameData.Position])) > 0, \r\n\tabs(drivergaptoleader([DataCorePlugin.GameData.Position])),\r\n\t'0.0'\r\n)\r\n"
+                    "Expression": "return ld_formatTimeShort( drivergaptoleader( getplayerleaderboardposition() ) - drivergaptoleader( getplayerleaderboardposition()-1 ) )",
+                    "Interpreter": 1
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Qualify' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Lone Qualify'\r\n\t) ? 0 : 1\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='QUALIFY'\r\n\t) ? 0 : 1\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Qualify'\r\n\t) ? 0 : 1\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\treturn ( \r\n\t\t$prop('GameRawData.PacketSessionData.m_sessionType') < 10\r\n\t\t// 0 = unknown, 1 = P1, 2 = P2, 3 = P3, 4 = Short P, 5 = Q1\r\n        // 6 = Q2, 7 = Q3, 8 = Short Q, 9 = OSQ, 10 = R, 11 = R2\r\n        // 12 = Time Trial\r\n\t) ? 0 : 1\r\n\r\n} else {\r\n\r\n\treturn ( \r\n\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='QUALIFY'\r\n\t) ? 0 : 1\r\n\t\r\n}",
+                    "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Qualify' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Lone Qualify' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Practice' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Offline Testing'\r\n\t) ? 0 : 1\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='QUALIFY' ||\r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='PRACTICE'\r\n\t) ? 0 : 1\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Qualify' ||\r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice'\r\n\t) ? 0 : 1\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\treturn ( \r\n\t\t$prop('GameRawData.PacketSessionData.m_sessionType') < 10\r\n\t\t// 0 = unknown, 1 = P1, 2 = P2, 3 = P3, 4 = Short P, 5 = Q1\r\n        // 6 = Q2, 7 = Q3, 8 = Short Q, 9 = OSQ, 10 = R, 11 = R2\r\n        // 12 = Time Trial\r\n\t) ? 0 : 1\r\n\r\n} else {\r\n\r\n\treturn ( \r\n\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='QUALIFY' ||\r\n\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='PRACTICE'\r\n\t) ? 0 : 1\r\n\t\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -399,31 +370,33 @@
               "Height": 24.0,
               "HorizontalAlignment": 2,
               "IsTextItem": true,
-              "Left": 25.0,
-              "Name": "Gap",
-              "SpecialCharsWidth": 4.0,
-              "Text": "+0.0",
+              "Left": 20.0,
+              "Name": "Int (Race)",
+              "SpecialCharsWidth": 5.0,
+              "Text": "0.000",
               "TextColor": "#FFFFE04C",
-              "Top": 308.0,
+              "Top": 310.0,
+              "UseMonospacedText": true,
               "VerticalAlignment": 1,
               "Visible": true,
-              "Width": 60.0
+              "Width": 65.0
             },
             {
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.LeaderboardOpponentDelta, SimHub.Plugins",
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "BackgroundColor": "#00FFFFFF",
               "Bindings": {
-                "LeaderboardPosition": {
+                "Text": {
+                  "FormatString": "",
                   "Formula": {
-                    "Expression": "return $prop('DataCorePlugin.GameData.Position')",
+                    "Expression": "return ld_formatTimeShort( driverdeltatobest( getplayerleaderboardposition() ) )",
                     "Interpreter": 1
                   },
                   "Mode": 2,
-                  "TargetPropertyName": "LeaderboardPosition"
+                  "TargetPropertyName": "Text"
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Qualify' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Lone Qualify'\r\n\t) ? 1 : 0\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='QUALIFY'\r\n\t) ? 1 : 0\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Qualify'\r\n\t) ? 1 : 0\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\treturn ( \r\n\t\t$prop('GameRawData.PacketSessionData.m_sessionType') < 10\r\n\t\t// 0 = unknown, 1 = P1, 2 = P2, 3 = P3, 4 = Short P, 5 = Q1\r\n        // 6 = Q2, 7 = Q3, 8 = Short Q, 9 = OSQ, 10 = R, 11 = R2\r\n        // 12 = Time Trial\r\n\t) ? 1 : 0\r\n\r\n} else {\r\n\r\n\treturn ( \r\n\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='QUALIFY'\r\n\t) ? 1 : 0\r\n\t\r\n}",
+                    "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Qualify' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Lone Qualify' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Practice' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Offline Testing'\r\n\t) ? 1 : 0\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='QUALIFY' ||\r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='PRACTICE'\r\n\t) ? 1 : 0\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Qualify' ||\r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice'\r\n\t) ? 1 : 0\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\treturn ( \r\n\t\t$prop('GameRawData.PacketSessionData.m_sessionType') < 10\r\n\t\t// 0 = unknown, 1 = P1, 2 = P2, 3 = P3, 4 = Short P, 5 = Q1\r\n        // 6 = Q2, 7 = Q3, 8 = Short Q, 9 = OSQ, 10 = R, 11 = R2\r\n        // 12 = Time Trial\r\n\t) ? 1 : 0\r\n\r\n} else {\r\n\r\n\treturn ( \r\n\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='QUALIFY' ||\r\n\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='PRACTICE'\r\n\t) ? 1 : 0\r\n\t\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -431,50 +404,22 @@
                 }
               },
               "CharWidth": 11.0,
-              "EmptyValueText": "0.000",
               "Font": "Roboto",
-              "FontSize": 17.0,
+              "FontSize": 20.0,
               "FontWeight": "Bold",
-              "Format": "0.000",
               "Height": 24.0,
               "HorizontalAlignment": 2,
-              "IsPlayer": false,
               "IsTextItem": true,
-              "LeaderboardMode": 0,
-              "LeaderboardPosition": 1,
-              "LeaderboardPositionRelativeToPlayer": false,
-              "LeaderboardPositionRelativeToPlayerOnTrack": false,
-              "Left": 25.0,
-              "Name": "Delta",
-              "NameStyle": 0,
-              "NoDataText": "",
-              "OpponentFontSize": 17.0,
-              "OpponentFontStyle": "Normal",
-              "OpponentFontWeight": "Bold",
-              "OpponentStyle": {
-                "FontSize": 17.0,
-                "FontStyle": "Normal",
-                "FontWeight": "Bold",
-                "TextColor": "#FFFFFFFF"
-              },
-              "OpponentTextColor": "#FFFFFFFF",
-              "PlayerFontSize": 17.0,
-              "PlayerFontStyle": "Normal",
-              "PlayerFontWeight": "Bold",
-              "PlayerStyle": {
-                "FontSize": 17.0,
-                "FontStyle": "Normal",
-                "FontWeight": "Bold",
-                "TextColor": "#FFFFE04C"
-              },
-              "PlayerStyleEnabled": true,
-              "PlayerTextColor": "#FFFFE04C",
-              "SpecialCharsWidth": 4.0,
-              "TextColor": "#FFFFFFFF",
-              "Top": 308.0,
+              "Left": 20.0,
+              "Name": "Delta (Quali)",
+              "SpecialCharsWidth": 5.0,
+              "Text": "0.000",
+              "TextColor": "#FFFFE04C",
+              "Top": 310.0,
+              "UseMonospacedText": true,
               "VerticalAlignment": 1,
-              "Visible": false,
-              "Width": 60.0
+              "Visible": true,
+              "Width": 65.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -482,7 +427,8 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "[DataCorePlugin.GameData.Position]"
+                    "Expression": "return getplayerleaderboardposition()",
+                    "Interpreter": 1
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
@@ -499,23 +445,24 @@
               "FontWeight": "Black",
               "Height": 24.0,
               "HorizontalAlignment": 1,
+              "IsFreezed": true,
               "IsTextItem": true,
               "Left": 0.0,
               "Name": "Position",
-              "Text": "11",
+              "Text": "00",
               "TextColor": "#FF000000",
-              "Top": 308.0,
+              "Top": 310.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 24.0
             }
           ],
           "Group": true,
-          "Height": 25.0,
+          "Height": 24.0,
           "Left": 0.0,
-          "Name": "Player",
+          "Name": "Driver",
           "RepeatTopOffset": 0.0,
-          "Top": 308.0,
+          "Top": 310.0,
           "Visible": true,
           "Width": 85.0
         },
@@ -525,7 +472,7 @@
           "Bindings": {
             "Text": {
               "Formula": {
-                "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Qualify' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Lone Qualify'\r\n\t) ? 'DELTA TO LDR' : 'GAP TO LDR'\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='QUALIFY'\r\n\t) ? 'DELTA TO LDR' : 'GAP TO LDR'\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Qualify'\r\n\t) ? 'DELTA TO LDR' : 'GAP TO LDR'\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\treturn ( \r\n\t\t$prop('GameRawData.PacketSessionData.m_sessionType') < 10\r\n\t\t// 0 = unknown, 1 = P1, 2 = P2, 3 = P3, 4 = Short P, 5 = Q1\r\n        // 6 = Q2, 7 = Q3, 8 = Short Q, 9 = OSQ, 10 = R, 11 = R2\r\n        // 12 = Time Trial\r\n\t) ? 'DELTA TO LDR' : 'GAP TO LDR'\r\n\r\n} else {\r\n\r\n\treturn ( \r\n\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='QUALIFY'\r\n\t) ? 'DELTA TO LDR' : 'GAP TO LDR'\r\n\t\r\n}",
+                "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Qualify' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Lone Qualify' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Practice' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Offline Testing'\r\n\t) ? 'GAP' : 'INT'\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='QUALIFY' ||\r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='PRACTICE'\r\n\t) ? 'GAP' : 'INT'\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Qualify' ||\r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice'\r\n\t) ? 'GAP' : 'INT'\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\treturn ( \r\n\t\t$prop('GameRawData.PacketSessionData.m_sessionType') < 10\r\n\t\t// 0 = unknown, 1 = P1, 2 = P2, 3 = P3, 4 = Short P, 5 = Q1\r\n        // 6 = Q2, 7 = Q3, 8 = Short Q, 9 = OSQ, 10 = R, 11 = R2\r\n        // 12 = Time Trial\r\n\t) ? 'GAP' : 'INT'\r\n\r\n} else {\r\n\r\n\treturn ( \r\n\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='QUALIFY' ||\r\n\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='PRACTICE'\r\n\t) ? 'GAP' : 'INT'\r\n\t\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -540,7 +487,7 @@
           "IsTextItem": true,
           "Left": 1.0,
           "Name": "TextItem",
-          "Text": "GAP TO LDR",
+          "Text": "GAP",
           "TextColor": "#FF878787",
           "Top": 0.0,
           "VerticalAlignment": 1,

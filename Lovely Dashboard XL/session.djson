@@ -3,14 +3,42 @@
   "BackgroundOpacity": 100.0,
   "BaseHeight": 80,
   "BaseWidth": 320,
+  "CarClassColorsOverrides": [],
   "DashboardDebugManager": {},
   "EnableClickThroughOverlay": true,
   "EnableOnDashboardMessaging": true,
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "19a6f57b-be14-4665-a8b9-93890e65471a",
-  "Images": [],
+  "Id": "0bbd1fe8-8552-43dc-8b7e-83d085ebe392",
+  "Images": [
+    {
+      "Extension": ".png",
+      "Height": 6,
+      "Length": 144,
+      "MD5": "ff4cee5fe364c1b8d6dbbaec38563828",
+      "Modified": false,
+      "Name": "pos-gain",
+      "Optimized": true,
+      "Width": 10
+    },
+    {
+      "Extension": ".png",
+      "Length": 148,
+      "MD5": "d6d2aeeba93e36231aedbb7fd9642ab6",
+      "Modified": false,
+      "Name": "pos-loss",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Length": 500,
+      "MD5": "d24f03f5fc7735db2999bed922827529",
+      "Modified": false,
+      "Name": "pos-same",
+      "Optimized": true
+    }
+  ],
   "IsOverlay": false,
   "Metadata": {
     "EnableOnDashboardMessaging": true,
@@ -44,7 +72,7 @@
           "Bindings": {
             "Height": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nreturn ( !settings || !settings.rpmLED || settings.rpmLED == 0) ? 80 : 70",
+                "Expression": "return ( !settings || !settings.rpmLED || settings.rpmLED == 0) ? 80 : 70",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -52,7 +80,7 @@
             },
             "Opacity": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
+                "Expression": "if ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -60,7 +88,7 @@
             },
             "Top": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nreturn ( !settings || !settings.rpmLED || settings.rpmLED == 0) ? 0 : 5",
+                "Expression": "return ( !settings || !settings.rpmLED || settings.rpmLED == 0) ? 0 : 5",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -79,7 +107,7 @@
             "Bindings": {
               "BorderColor": {
                 "Formula": {
-                  "Expression": "return ( $prop('IsInPitLane') ) ? dark_blue : white",
+                  "Expression": "return ( (!settings || settings.pitAlert == null || settings.pitAlert == 1) && $prop('IsInPitLane') ) ? dark_blue : white",
                   "Interpreter": 1
                 },
                 "Mode": 2,
@@ -336,7 +364,8 @@
                 "Text": {
                   "FormatString": "0",
                   "Formula": {
-                    "Expression": "[DataCorePlugin.GameData.Position]"
+                    "Expression": "return getplayerleaderboardposition()",
+                    "Interpreter": 1
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
@@ -357,6 +386,73 @@
               "VerticalAlignment": 2,
               "Visible": true,
               "Width": 35.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "return Math.abs( driverpositiongain( getplayerleaderboardposition() ) )",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "if ( driverpositiongain( getplayerleaderboardposition() ) > 0 ) {\r\n\treturn green\r\n} else if ( driverpositiongain( getplayerleaderboardposition() ) < 0 ) {\r\n\treturn red\r\n} else {\r\n\treturn light_gray\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "//return $prop('SessionTypeName') != 'PRACTICE'\r\n\r\n\r\n/*\r\n$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Qualify' || \r\n$prop('DataCorePlugin.GameData.SessionTypeName')=='Lone Qualify' || \r\n$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Practice' || \r\n$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice' || \r\n$prop('DataCorePlugin.GameData.SessionTypeName')=='Offline Testing'\r\n\r\n*/",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Visible"
+                }
+              },
+              "CharWidth": 10.0,
+              "Font": "Roboto",
+              "FontSize": 12.0,
+              "FontWeight": "Bold",
+              "Height": 14.0,
+              "HorizontalAlignment": 0,
+              "IsTextItem": true,
+              "Left": 131.0,
+              "Name": "PosGain",
+              "Text": "00",
+              "TextColor": "#FF00FF02",
+              "Top": 50.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 20.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "AutoSize": true,
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Image": {
+                  "Formula": {
+                    "Expression": "if ( driverpositiongain( getplayerleaderboardposition() ) > 0 ) {\r\n\treturn 'pos-gain'\r\n} else if ( driverpositiongain( getplayerleaderboardposition() ) < 0 ) {\r\n\treturn 'pos-loss'\r\n} else {\r\n\treturn 'pos-same'\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Image"
+                }
+              },
+              "Height": 6.0,
+              "Image": "pos-gain",
+              "Left": 118.0,
+              "Name": "ImageItem",
+              "Top": 53.0,
+              "Visible": true,
+              "Width": 10.0
             }
           ],
           "Group": true,
@@ -598,6 +694,7 @@
           ],
           "Group": true,
           "Height": 49.0,
+          "IsFreezed": true,
           "Left": 17.0,
           "Name": "Session Time",
           "Top": 15.0,
@@ -670,7 +767,7 @@
           "Bindings": {
             "Height": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nreturn ( !settings || !settings.rpmLED || settings.rpmLED == 0) ? 80 : 70",
+                "Expression": "return ( !settings || !settings.rpmLED || settings.rpmLED == 0) ? 80 : 70",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -678,7 +775,7 @@
             },
             "Opacity": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
+                "Expression": "if ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -686,7 +783,7 @@
             },
             "Top": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings)\r\n\r\nreturn ( !settings || !settings.rpmLED || settings.rpmLED == 0) ? 0 : 5",
+                "Expression": "return ( !settings || !settings.rpmLED || settings.rpmLED == 0) ? 0 : 5",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -705,7 +802,7 @@
             "Bindings": {
               "BorderColor": {
                 "Formula": {
-                  "Expression": "return ( $prop('IsInPitLane') ) ? dark_blue : white",
+                  "Expression": "return ( (!settings || settings.pitAlert == null || settings.pitAlert == 1) && $prop('IsInPitLane') ) ? dark_blue : white",
                   "Interpreter": 1
                 },
                 "Mode": 2,

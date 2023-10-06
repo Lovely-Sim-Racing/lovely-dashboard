@@ -3,16 +3,13 @@
   "BackgroundOpacity": 100.0,
   "BaseHeight": 333,
   "BaseWidth": 380,
-  "DashboardDebugManager": {
-    "LastPlacement": "458,315,501,314",
-    "Maximized": false
-  },
+  "DashboardDebugManager": {},
   "EnableClickThroughOverlay": true,
   "EnableOnDashboardMessaging": true,
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "dac6038e-1774-44bc-b500-4deb784f80f6",
+  "Id": "560f2eab-9e81-4dd3-8c95-7636d5aba1b8",
   "Images": [
     {
       "Extension": ".png",
@@ -1136,7 +1133,8 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "[DataCorePlugin.GameData.Position]"
+                    "Expression": "return getplayerleaderboardposition() ",
+                    "Interpreter": 1
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
@@ -1169,7 +1167,7 @@
               "Bindings": {
                 "LeaderboardPosition": {
                   "Formula": {
-                    "Expression": "return $prop('DataCorePlugin.GameData.Position')",
+                    "Expression": "return getplayerleaderboardposition() ",
                     "Interpreter": 1
                   },
                   "Mode": 2,

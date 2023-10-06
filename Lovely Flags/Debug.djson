@@ -9,7 +9,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": false,
-  "Id": "bd4b683b-e8b9-4dcd-a4e3-fd5dc3d007e9",
+  "Id": "164ee372-4149-41f1-99b9-bface37fbcfc",
   "Images": [],
   "IsOverlay": false,
   "Metadata": {
@@ -53,7 +53,7 @@
             },
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.debug || settings.debug == 0 ) {\r\n\treturn 0\r\n} else {\r\n\treturn 1\r\n}",
+                "Expression": "if ( !settings || !settings.debug || settings.debug == 0 ) {\r\n\treturn 0\r\n} else {\r\n\treturn 1\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -109,7 +109,7 @@
             },
             "Visible": {
               "Formula": {
-                "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.debug || settings.debug == 0 ) {\r\n\treturn 0\r\n} else {\r\n\treturn 1\r\n}",
+                "Expression": "if ( !settings || !settings.debug || settings.debug == 0 ) {\r\n\treturn 0\r\n} else {\r\n\treturn 1\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
