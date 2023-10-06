@@ -240,6 +240,12 @@ The interface changes to a blue color, indicating that you are in the Pit Lane.
 - **`0` (Default)** Off
 - `1` (Default) On
 
+#### `pitLarge`
+Display the large Pit Limiter alert
+
+- **`0` (Default)** Off
+- `1` (Default) On
+
 ---
 
 ### Sim Specific Settings
