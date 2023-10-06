@@ -42,6 +42,7 @@ The settings will work for the **Lovely Dashboard**, **Lovely Dashboard XL** and
 	* [Autmobilista 2](#automobilista2-automobilista-2)
 	* [rFactor 2](#rfactor2-rfactor-2)
 	* [Formula 1](#f1-formula-1)
+	* [Generic](#generic)
 
 ---
 
@@ -230,6 +231,14 @@ Display the Damage Alert every time there is a change in the overall vehicle dam
 Set how much time in milliseconds to display the Damage Alert. (eg. 1000 = 1 second)
 
 - **`7500` (Default)** - Display the Damage Alert for 7.5 seconds
+
+---
+
+#### `pitAlert`
+The interface changes to a blue color, indicating that you are in the Pit Lane.
+
+- **`0` (Default)** Off
+- `1` (Default) On
 
 ---
 
@@ -478,6 +487,57 @@ Set the active & default MFM pages for each sim seperately.
 ---
 
 ### `F1` Formula 1
+
+**Left, Right & Overlay Multi Function Module (MFM)**
+
+### Active Pages
+
+#### `activeLeftMFM: "0,1,2,3"` `activeRightMFM: "4,5,6,7,8"`
+
+* `0` Lap Times
+* `1` Sectors
+* `2` Relative
+* `3` Standings
+* `4` Tires
+* `5` Tire AVG
+* `6` Damage
+* `7` Status
+* `8` Map
+* `9` Opponents
+
+### Default Pages
+
+#### `leftMFM: 4` `rightMFM: 0` `overlayMFM: 0`
+
+* **`0` Lap Times**
+* `1` Sectors
+* `2` Relative
+* `3` Standings
+* **`4` Tires**
+* `5` Tire AVG
+* `6` Damage
+* `7` Status
+* `8` Map
+* `9` Opponents
+
+**Central**
+
+#### `centralModule: 0`
+* **`0` Full**
+* `1` Simple (no lap delta)
+* `2` Time (displays a real worl clock on top)
+* `3` Speedometer (prioritise the speedometer)
+
+**Fuel Calculator**
+
+#### `fuelModule: 0`
+* **`0` Fuel Data**
+* `1` Fuel Time Left
+* `2` Refuel Calculator (Refuel or Finish Line)
+
+---
+
+### `generic` For all not supported titles
 
 **Left, Right & Overlay Multi Function Module (MFM)**
 
