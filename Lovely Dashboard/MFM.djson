@@ -10,7 +10,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "66c654c8-9318-421d-a57d-8a6ed3e269af",
+  "Id": "b42f81bb-8c96-4a3a-849b-ce97c8380963",
   "Images": [
     {
       "Extension": ".png",
@@ -3827,7 +3827,7 @@
                     "Text": {
                       "FormatString": "",
                       "Formula": {
-                        "Expression": "return ld_formatTimeShort( drivergaptoleader( repeatindex() ) - drivergaptoleader( repeatindex()-1 ) )",
+                        "Expression": "return ld_formatTime( drivergaptoleader( repeatindex() ) - drivergaptoleader( repeatindex()-1 ) )",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -3843,7 +3843,7 @@
                     },
                     "Visible": {
                       "Formula": {
-                        "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Qualify' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Lone Qualify'\r\n\t) ? 0 : 1\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='QUALIFY'\r\n\t) ? 0 : 1\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Qualify'\r\n\t) ? 0 : 1\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\treturn ( \r\n\t\t$prop('GameRawData.PacketSessionData.m_sessionType') < 10\r\n\t\t// 0 = unknown, 1 = P1, 2 = P2, 3 = P3, 4 = Short P, 5 = Q1\r\n        // 6 = Q2, 7 = Q3, 8 = Short Q, 9 = OSQ, 10 = R, 11 = R2\r\n        // 12 = Time Trial\r\n\t) ? 0 : 1\r\n\r\n} else {\r\n\r\n\treturn ( \r\n\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='QUALIFY'\r\n\t) ? 0 : 1\r\n\t\r\n}",
+                        "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Qualify' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Lone Qualify' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Practice' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Offline Testing'\r\n\t) ? 0 : 1\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='QUALIFY' ||\r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='PRACTICE'\r\n\t) ? 0 : 1\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Qualify' ||\r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice'\r\n\t) ? 0 : 1\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\treturn ( \r\n\t\t$prop('GameRawData.PacketSessionData.m_sessionType') < 10\r\n\t\t// 0 = unknown, 1 = P1, 2 = P2, 3 = P3, 4 = Short P, 5 = Q1\r\n        // 6 = Q2, 7 = Q3, 8 = Short Q, 9 = OSQ, 10 = R, 11 = R2\r\n        // 12 = Time Trial\r\n\t) ? 0 : 1\r\n\r\n} else {\r\n\r\n\treturn ( \r\n\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='QUALIFY' ||\r\n\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='PRACTICE'\r\n\t) ? 0 : 1\r\n\t\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -3875,7 +3875,7 @@
                     "Text": {
                       "FormatString": "",
                       "Formula": {
-                        "Expression": "return ld_formatTimeShort( drivergaptoleader(repeatindex()) )",
+                        "Expression": "return ld_formatTime( driverdeltatobest( repeatindex() ) )",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -3891,7 +3891,7 @@
                     },
                     "Visible": {
                       "Formula": {
-                        "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Qualify' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Lone Qualify'\r\n\t) ? 1 : 0\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='QUALIFY'\r\n\t) ? 1 : 0\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Qualify'\r\n\t) ? 1 : 0\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\treturn ( \r\n\t\t$prop('GameRawData.PacketSessionData.m_sessionType') < 10\r\n\t\t// 0 = unknown, 1 = P1, 2 = P2, 3 = P3, 4 = Short P, 5 = Q1\r\n        // 6 = Q2, 7 = Q3, 8 = Short Q, 9 = OSQ, 10 = R, 11 = R2\r\n        // 12 = Time Trial\r\n\t) ? 1 : 0\r\n\r\n} else {\r\n\r\n\treturn ( \r\n\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='QUALIFY'\r\n\t) ? 1 : 0\r\n\t\r\n}",
+                        "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Qualify' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Lone Qualify' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Practice' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Offline Testing'\r\n\t) ? 1 : 0\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='QUALIFY' ||\r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='PRACTICE'\r\n\t) ? 1 : 0\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Qualify' ||\r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice'\r\n\t) ? 1 : 0\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\treturn ( \r\n\t\t$prop('GameRawData.PacketSessionData.m_sessionType') < 10\r\n\t\t// 0 = unknown, 1 = P1, 2 = P2, 3 = P3, 4 = Short P, 5 = Q1\r\n        // 6 = Q2, 7 = Q3, 8 = Short Q, 9 = OSQ, 10 = R, 11 = R2\r\n        // 12 = Time Trial\r\n\t) ? 1 : 0\r\n\r\n} else {\r\n\r\n\treturn ( \r\n\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='QUALIFY' ||\r\n\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='PRACTICE'\r\n\t) ? 1 : 0\r\n\t\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -4092,7 +4092,7 @@
                     },
                     "Visible": {
                       "Formula": {
-                        "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Qualify' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Lone Qualify'\r\n\t) ? 0 : 1\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='QUALIFY'\r\n\t) ? 0 : 1\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Qualify'\r\n\t) ? 0 : 1\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\treturn ( \r\n\t\t$prop('GameRawData.PacketSessionData.m_sessionType') < 10\r\n\t\t// 0 = unknown, 1 = P1, 2 = P2, 3 = P3, 4 = Short P, 5 = Q1\r\n        // 6 = Q2, 7 = Q3, 8 = Short Q, 9 = OSQ, 10 = R, 11 = R2\r\n        // 12 = Time Trial\r\n\t) ? 0 : 1\r\n\r\n} else {\r\n\r\n\treturn ( \r\n\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='QUALIFY'\r\n\t) ? 0 : 1\r\n\t\r\n}",
+                        "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Qualify' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Lone Qualify' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Practice' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Offline Testing'\r\n\t) ? 0 : 1\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='QUALIFY' ||\r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='PRACTICE'\r\n\t) ? 0 : 1\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Qualify' ||\r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice'\r\n\t) ? 0 : 1\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\treturn ( \r\n\t\t$prop('GameRawData.PacketSessionData.m_sessionType') < 10\r\n\t\t// 0 = unknown, 1 = P1, 2 = P2, 3 = P3, 4 = Short P, 5 = Q1\r\n        // 6 = Q2, 7 = Q3, 8 = Short Q, 9 = OSQ, 10 = R, 11 = R2\r\n        // 12 = Time Trial\r\n\t) ? 0 : 1\r\n\r\n} else {\r\n\r\n\treturn ( \r\n\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='QUALIFY' ||\r\n\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='PRACTICE'\r\n\t) ? 0 : 1\r\n\t\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -4124,7 +4124,7 @@
                     "Text": {
                       "FormatString": "",
                       "Formula": {
-                        "Expression": "return ld_formatTimeShort( drivergaptoleader( getplayerleaderboardposition() ) )",
+                        "Expression": "return ld_formatTimeShort( driverdeltatobest( getplayerleaderboardposition() ) )",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -4132,7 +4132,7 @@
                     },
                     "Visible": {
                       "Formula": {
-                        "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Qualify' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Lone Qualify'\r\n\t) ? 1 : 0\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='QUALIFY'\r\n\t) ? 1 : 0\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Qualify'\r\n\t) ? 1 : 0\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\treturn ( \r\n\t\t$prop('GameRawData.PacketSessionData.m_sessionType') < 10\r\n\t\t// 0 = unknown, 1 = P1, 2 = P2, 3 = P3, 4 = Short P, 5 = Q1\r\n        // 6 = Q2, 7 = Q3, 8 = Short Q, 9 = OSQ, 10 = R, 11 = R2\r\n        // 12 = Time Trial\r\n\t) ? 1 : 0\r\n\r\n} else {\r\n\r\n\treturn ( \r\n\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='QUALIFY'\r\n\t) ? 1 : 0\r\n\t\r\n}",
+                        "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Qualify' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Lone Qualify' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Practice' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Offline Testing'\r\n\t) ? 1 : 0\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='QUALIFY' ||\r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='PRACTICE'\r\n\t) ? 1 : 0\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Qualify' ||\r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice'\r\n\t) ? 1 : 0\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\treturn ( \r\n\t\t$prop('GameRawData.PacketSessionData.m_sessionType') < 10\r\n\t\t// 0 = unknown, 1 = P1, 2 = P2, 3 = P3, 4 = Short P, 5 = Q1\r\n        // 6 = Q2, 7 = Q3, 8 = Short Q, 9 = OSQ, 10 = R, 11 = R2\r\n        // 12 = Time Trial\r\n\t) ? 1 : 0\r\n\r\n} else {\r\n\r\n\treturn ( \r\n\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='QUALIFY' ||\r\n\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='PRACTICE'\r\n\t) ? 1 : 0\r\n\t\r\n}",
                         "Interpreter": 1
                       },
                       "Mode": 2,
