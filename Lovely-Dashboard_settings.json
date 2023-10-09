@@ -1,0 +1,255 @@
+{
+    "analytics": 1,
+        "analytics_help": "Enable the Dashboard to submit anonymous data regarding the Dashboard usage",
+    
+
+    "yourName": "",
+        "yourName_help": "Your Name (optional)",
+
+    "yourNumber": "",
+        "yourNumber_help": "Your Number (optional)",
+
+    "yourColor": "", 
+        "yourColor_help": "Red, Blue, #2B98FB (default)",
+
+    "yourLogo": "", 
+        "yourLogo_help": "./JavascriptExtensions/lovely-dash-bg.jpg - Image file path relative to the Simhub folder, max 800x270px",
+
+
+    "lfmID": "", 
+        "lfmID_help": "Your LFM ID",
+
+    "pitskillID": "",
+        "pitskillID_help": "Your Pitskill License ID",
+
+
+    "driverName": 1,
+        "driverName_help": "1: F. Lastname, 2: Firstname L., 3: Firstname Lastname",
+
+    "rpmLED": 0,
+        "rpmLED_help": "0: Hide, 1: Show the RPM LED lights",
+
+    "clutchMode": 1,
+        "clutchMode_help": "0: Always Off, 1: Show when engaged, 2: Always On",
+
+    "showFlags": 1,
+        "showFlags_help": "1: Show Flags, 0: Hide Flags",
+
+    "mapType": 1,
+        "mapType_help": "1: Static, 2: Animated - Map type for the map Screen",
+    
+    "mapTypeMFM": 1,
+        "mapTypeMFM_help": "1: Static, 2: Animated - Map type for the Map MFM",
+
+    "mapZoom": 100,
+        "mapZoom_help": "0-100: Map unzoom percentage. The larger the number, the more unzoomed the map gets relative to speed",
+
+    "uiMode": 3,
+        "uiMode_help": "1: Low, 2: Medium, 3: High",
+
+    "uiRadius": 45,
+        "uiRadius_help": "45: Pixel Radius of outer corners, Suggested Min:12, Max:50",
+
+    "nightMode": 1,
+        "nightMode_help": "0: Off, 1: On",
+
+    "tireLapAvg": 2,
+        "tireLapAvg_help": "2: Number of laps to extract AVG Data",
+
+    "tireLapAvgResetKey": "A",
+        "tireLapAvgResetKey_help": "Set a hot-key to reset the AVG Tyre Data. Requires 'Settings>Plugins>Keyboard Input' Plugin enabled in Simhub",
+
+
+    "lapReview": 2,
+        "lapReview_help": "0: Always Off, 1: Only Quali, 2: Always On",
+
+    "lapReviewDelay": 3500,
+        "lapReviewDelay_help": "3500: The time to display the Lap Review Alert in miliseconds",
+
+    "deltaReview": 1,
+        "deltaReview_help": "0: Off, 1:  On - Show or hide the delta and sector review for the previous lap review",
+
+    "deltaReviewDelay": 5000,
+        "deltaReviewDelay_help": "5000: The time to display the Delta & Sector Review Alert in miliseconds",
+
+    "alertView": 1,
+        "alertsView_help": "1: Normal, 2: Mini, 0: Off",
+
+    "alertDelay": 1000,
+        "alertDelay_help": "1000: The time to display the Alerts (TC, ABS etc) in miliseconds",
+
+    "damageAlert": 1,
+        "damageAlert_help": "0: Off, 1: On - Display the damage alert",
+
+    "damageAlertDelay": 7500,
+        "damageAlertDelay_help": "7500: Set the delay of the damage alert in miliseconds",
+
+        
+    "ACC" : {
+
+        "activeLeftMFM": "",
+            "activeLeftMFM_help": "0,1,2,3 - Select which available MFMs to activate in the Dashboard - Leave blank for all",
+
+        "activeRightMFM": "",
+            "activeRightMFM_help": "4,5,6,8 - Select which available MFMs to activate in the Dashboard - Leave blank for all",
+
+        "activeCentralMFM": "",
+            "activeCentralMFM_help": "0,1,2,3 - Select which available MFMs to activate in the Dashboard - Leave blank for all, 0: Quali, 1: Race, 2: PC Time, 3: Speedometer",
+
+        "leftMFM": 4,
+            "leftMFM_help": "0: Lap Times, 1: Sectors, 2: Relative, 3: Standings, 4: Tires, 5: Tire AVG, 6: Damage, 8: Map, 9: Opponents",
+
+        "rightMFM": 0,
+            "rightMFM_help": "0: Lap Times, 1: Sectors, 2: Relative, 3: Standings, 4: Tires, 5: Tire AVG, 6: Damage, 8: Map, 9: Opponents",
+            
+        "overlayMFM": 0,
+            "overlayMFM_help": "0: Lap Times, 1: Sectors, 2: Relative, 3: Standings, 4: Tires, 5: Tire AVG, 6: Damage, 8: Map, 9: Opponents",
+
+        "centralModule": 0,
+            "centralModule_help": "0: Lap Diff, 1: Nothing, 2: Real Time Clock",
+
+        "fuelModule": 0,
+            "fuelModule_help": "0: Fuel, 1: Fuel Time, 2: Refuel"
+
+    },
+
+    "AC" : {
+
+        "activeLeftMFM": "",
+            "activeLeftMFM_help": "0,1,2,3 - Select which available MFMs to activate in the Dashboard - Leave blank for all",
+
+        "activeRightMFM": "",
+            "activeRightMFM_help": "4,5,6,8 - Select which available MFMs to activate in the Dashboard - Leave blank for all",
+
+        "activeCentralMFM": "",
+        "activeCentralMFM_help": "0,1,2,3 - Select which available MFMs to activate in the Dashboard - Leave blank for all, 0: Quali, 1: Race, 2: PC Time, 3: Speedometer",
+
+        "leftMFM": 4,
+            "leftMFM_help": "0: Lap Times, 1: Sectors, 2: Relative, 3: Standings, 4: Tires, 5: Tire AVG, 6: Damage, 8: Map, 9: Opponents",
+
+        "rightMFM": 0,
+            "rightMFM_help": "0: Lap Times, 1: Sectors, 2: Relative, 3: Standings, 4: Tires, 5: Tire AVG, 6: Damage, 8: Map, 9: Opponents",
+
+        "overlayMFM": 0,
+            "overlayMFM_help": "0: Lap Times, 1: Sectors, 2: Relative, 3: Standings, 4: Tires, 5: Tire AVG, 6: Damage, 8: Map, 9: Opponents",
+
+        "centralModule": 0,
+            "centralModule_help": "0: Lap Diff, 1: Nothing, 2: Real Time Clock",
+
+        "fuelModule": 0,
+            "fuelModule_help": "0: Fuel, 1: Fuel Time, 2: Refuel"
+
+    },
+
+    "IRacing" : {
+
+        "activeLeftMFM": "",
+            "activeLeftMFM_help": "0,1,2,3 - Select which available MFMs to activate in the Dashboard - Leave blank for all",
+
+        "activeRightMFM": "",
+            "activeRightMFM_help": "4,7,8 - Select which available MFMs to activate in the Dashboard - Leave blank for all",
+ 
+        "activeCentralMFM": "",
+            "activeCentralMFM_help": "0,1,2,3 - Select which available MFMs to activate in the Dashboard - Leave blank for all, 0: Quali, 1: Race, 2: PC Time, 3: Speedometer",
+
+        "leftMFM": 7,
+            "leftMFM_help": "0: Lap Times, 1: Sectors, 2: Relative, 3: Standings, 4: Tires, 7: Status, 8: Map, 9: Opponents",
+
+        "rightMFM": 0,
+            "rightMFM_help": "0: Lap Times, 1: Sectors, 2: Relative, 3: Standings, 4: Tires, 7: Status, 8: Map, 9: Opponents",
+
+        "overlayMFM": 0,
+            "overlayMFM_help": "0: Lap Times, 1: Sectors, 2: Relative, 3: Standings, 4: Tires, 7: Status, 8: Map, 9: Opponents",
+
+        "centralModule": 0,
+            "centralModule_help": "0: Lap Diff, 1: Nothing, 2: Real Time Clock",
+
+        "fuelModule": 0,
+            "fuelModule_help": "0: Fuel, 1: Fuel Time, 2: Refuel"
+    
+    },
+
+    "Automobilista2" : {
+
+        "activeLeftMFM": "",
+            "activeLeftMFM_help": "0,1,2,3 - Select which available MFMs to activate in the Dashboard - Leave blank for all",
+
+        "activeRightMFM": "",
+            "activeRightMFM_help": "4,5,7,8 - Select which available MFMs to activate in the Dashboard - Leave blank for all",
+    
+        "activeCentralMFM": "",
+            "activeCentralMFM_help": "0,1,2,3 - Select which available MFMs to activate in the Dashboard - Leave blank for all, 0: Quali, 1: Race, 2: PC Time, 3: Speedometer",
+
+        "leftMFM": 4,
+            "leftMFM_help": "0: Lap Times, 1: Sectors, 2: Relative, 3: Standings, 4: Tires, 5: Tire AVG, 7: Status, 8: Map, 9: Opponents",
+
+        "rightMFM": 0,
+            "rightMFM_help": "0: Lap Times, 1: Sectors, 2: Relative, 3: Standings, 4: Tires, 5: Tire AVG, 7: Status, 8: Map, 9: Opponents",
+
+        "overlayMFM": 0,
+            "overlayMFM_help": "0: Lap Times, 1: Sectors, 2: Relative, 3: Standings, 4: Tires, 5: Tire AVG, 7: Status, 8: Map, 9: Opponents",
+
+        "centralModule": 0,
+            "centralModule_help": "0: Lap Diff, 1: Nothing, 2: Real Time Clock",
+
+        "fuelModule": 0,
+            "fuelModule_help": "0: Fuel, 1: Fuel Time, 2: Refuel"
+    
+    },
+
+    "RFactor2" : {
+
+        "activeLeftMFM": "",
+            "activeLeftMFM_help": "0,1,2,3 - Select which available MFMs to activate in the Dashboard - Leave blank for all",
+
+        "activeRightMFM": "",
+            "activeRightMFM_help": "4,5,8 - Select which available MFMs to activate in the Dashboard - Leave blank for all",
+    
+        "activeCentralMFM": "",
+            "activeCentralMFM_help": "0,1,2,3 - Select which available MFMs to activate in the Dashboard - Leave blank for all, 0: Quali, 1: Race, 2: PC Time, 3: Speedometer",
+
+        "leftMFM": 4,
+            "leftMFM_help": "0: Lap Times, 1: Sectors, 2: Relative, 3: Standings, 4: Tires, 5: Tire AVG, 8: Map, 9: Opponents",
+
+        "rightMFM": 0,
+            "rightMFM_help": "0: Lap Times, 1: Sectors, 2: Relative, 3: Standings, 4: Tires, 5: Tire AVG, 8: Map, 9: Opponents",
+
+        "overlayMFM": 0,
+            "overlayMFM_help": "0: Lap Times, 1: Sectors, 2: Relative, 3: Standings, 4: Tires, 5: Tire AVG, 8: Map, 9: Opponents",
+
+        "centralModule": 0,
+            "centralModule_help": "0: Lap Diff, 1: Nothing, 2: Real Time Clock",
+
+        "fuelModule": 0,
+            "fuelModule_help": "0: Fuel, 1: Fuel Time, 2: Refuel"
+    
+    },
+
+    "F1" : {
+
+        "activeLeftMFM": "",
+            "activeLeftMFM_help": "0,1,2,3 - Select which available MFMs to activate in the Dashboard - Leave blank for all",
+
+        "activeRightMFM": "",
+            "activeRightMFM_help": "4,5,6,7,8 - Select which available MFMs to activate in the Dashboard - Leave blank for all",
+
+        "activeCentralMFM": "",
+            "activeCentralMFM_help": "0,1,2 - Select which available MFMs to activate in the Dashboard - Leave blank for all",
+            
+        "leftMFM": 4,
+            "leftMFM_help": "0: Lap Times, 1: Sectors, 2: Relative, 3: Standings, 4: Tires, 5: Tire AVG, 6: Damage, 7: Status, 8: Map, 9: Opponents",
+
+        "rightMFM": 0,
+            "rightMFM_help": "0: Lap Times, 1: Sectors, 2: Relative, 3: Standings, 4: Tires, 5: Tire AVG, 6: Damage, 7: Status, 8: Map, 9: Opponents",
+
+        "overlayMFM": 0,
+            "overlayMFM_help": "0: Lap Times, 1: Sectors, 2: Relative, 3: Standings, 4: Tires, 5: Tire AVG, 6: Damage, 7: Status, 8: Map, 9: Opponents",
+
+        "centralModule": 0,
+            "centralModule_help": "0: Lap Diff, 1: Nothing, 2: Real Time Clock",
+
+        "fuelModule": 0,
+            "fuelModule_help": "0: Fuel, 1: Fuel Time, 2: Refuel"
+
+    }
+}
