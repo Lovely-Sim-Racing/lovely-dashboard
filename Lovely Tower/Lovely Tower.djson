@@ -2,24 +2,60 @@
   "BackgroundColor": "#FF000000",
   "BackgroundOpacity": 100.0,
   "BaseHeight": 850,
-  "BaseWidth": 300,
+  "BaseWidth": 370,
   "DashboardDebugManager": {},
   "EnableClickThroughOverlay": true,
   "EnableOnDashboardMessaging": true,
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "103b827e-6f21-4883-85e7-77bb40d3d34a",
+  "Id": "152747a5-46ea-4b2b-8e84-3f6dad06b6b0",
   "Images": [
     {
       "Extension": ".png",
-      "Height": 25,
-      "Length": 359,
-      "MD5": "8f9a460ffd166ffe3a74d264b3b3a134",
+      "Height": 120,
+      "Length": 3146,
+      "MD5": "608b3d577d86e813e4b91160ceaeeb21",
+      "Modified": false,
+      "Name": "Simhub Update",
+      "Optimized": true,
+      "Width": 148
+    },
+    {
+      "Extension": ".png",
+      "Height": 6,
+      "Length": 144,
+      "MD5": "ff4cee5fe364c1b8d6dbbaec38563828",
+      "Modified": false,
+      "Name": "pos-gain",
+      "Optimized": true,
+      "Width": 10
+    },
+    {
+      "Extension": ".png",
+      "Length": 148,
+      "MD5": "d6d2aeeba93e36231aedbb7fd9642ab6",
+      "Modified": false,
+      "Name": "pos-loss",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Length": 500,
+      "MD5": "d24f03f5fc7735db2999bed922827529",
+      "Modified": false,
+      "Name": "pos-same",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Height": 15,
+      "Length": 244,
+      "MD5": "be65fedc333b9890681f26dabfcde2d1",
       "Modified": false,
       "Name": "fastest-lap",
       "Optimized": true,
-      "Width": 21
+      "Width": 12
     }
   ],
   "IsOverlay": true,
@@ -32,16 +68,17 @@
       0
     ],
     "InGameScreensIndexs": [
-      1
+      1,
+      2
     ],
     "IsOverlay": true,
     "MainPreviewIndex": 1,
     "MetadataVersion": 2.0,
     "OverlaySizeWarning": false,
     "PitScreensIndexs": [],
-    "ScreenCount": 2.0,
+    "ScreenCount": 4.0,
     "Title": "Lovely Tower",
-    "Width": 300.0
+    "Width": 370.0
   },
   "Screens": [
     {
@@ -50,6 +87,7 @@
       "IdleScreen": true,
       "InGameScreen": false,
       "IsBackgroundLayer": false,
+      "IsEffectiveDelayConstrainer": true,
       "IsForegroundLayer": false,
       "IsOverlayLayer": false,
       "Items": [
@@ -68,15 +106,19 @@
             }
           },
           "ClickThrough": false,
-          "Height": 850.0,
+          "Height": 1.0,
+          "IsEffectiveDelayConstrainer": true,
           "Left": 0.0,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "Analytics",
+          "RenderingSkip": 0,
           "StartAddress": "",
-          "Top": 0.0,
+          "Top": 849.0,
           "Visible": true,
           "Width": 300.0
         }
       ],
+      "MinimumRefreshIntervalMS": 0.0,
       "Name": "Idle",
       "OverlayMaxDuration": 0,
       "OverlayMinDuration": 0,
@@ -84,6 +126,7 @@
         "Expression": ""
       },
       "PitScreen": false,
+      "RenderingSkip": 0,
       "ScreenEnabledExpression": {
         "Expression": ""
       },
@@ -95,6 +138,7 @@
       "IdleScreen": false,
       "InGameScreen": true,
       "IsBackgroundLayer": false,
+      "IsEffectiveDelayConstrainer": true,
       "IsForegroundLayer": false,
       "IsOverlayLayer": false,
       "Items": [
@@ -105,7 +149,7 @@
           "Bindings": {
             "StartAddress": {
               "Formula": {
-                "Expression": "if ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.dashName')+'&ver='+$prop('variable.dashVer')+'&screen=Primary'\r\n} else {\r\n\treturn ''\r\n}",
+                "Expression": "if ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.dashName')+'&ver='+$prop('variable.dashVer')+'&screen=Quali'\r\n} else {\r\n\treturn ''\r\n}",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -113,11 +157,14 @@
             }
           },
           "ClickThrough": false,
-          "Height": 850.0,
+          "Height": 1.0,
+          "IsEffectiveDelayConstrainer": true,
           "Left": 0.0,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "Analytics",
+          "RenderingSkip": 0,
           "StartAddress": "",
-          "Top": 0.0,
+          "Top": 849.0,
           "Visible": true,
           "Width": 300.0
         },
@@ -130,138 +177,12 @@
               "BackgroundColor": "#00FFFFFF",
               "Childrens": [
                 {
-                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
-                  "BackgroundColor": "#FF000000",
-                  "Height": 40.0,
-                  "IsRectangleItem": true,
-                  "Left": 60.0,
-                  "Name": "Backgrounf",
-                  "Opacity": 90.0,
-                  "Top": 169.0,
-                  "Visible": true,
-                  "Width": 240.0
-                },
-                {
-                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
-                  "AutoSize": true,
-                  "AutoSizeScale": 0.8,
-                  "BackgroundColor": "#00FFFFFF",
-                  "Bindings": {
-                    "Visible": {
-                      "Formula": {
-                        "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nif ( driverdeltatobest(repeatindex()+scrollPos) == 0 ) {\r\n\treturn 1\r\n} else {\r\n\treturn 0\r\n}",
-                        "Interpreter": 1
-                      },
-                      "Mode": 2,
-                      "TargetPropertyName": "Visible"
-                    }
-                  },
-                  "Height": 20.0,
-                  "Image": "fastest-lap",
-                  "Left": 271.6,
-                  "Name": "ImageItem",
-                  "RenderingSkip": 50,
-                  "Top": 179.0,
-                  "Visible": false,
-                  "Width": 16.8
-                },
-                {
-                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                  "BackgroundColor": "#00FFFFFF",
-                  "Bindings": {
-                    "Text": {
-                      "FormatString": "",
-                      "Formula": {
-                        "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nfunction changed(delay, value) {\r\n\troot['lap_time'] = Math.floor($prop('DataCorePlugin.CustomExpression.CurrentDateTime').getTime())/1000;\r\n\troot['lap_oldstate'] = root['lap_oldstate'] == null ? value : root['lap_newstate'];\r\n\troot['lap_newstate'] = value;\r\n\tif (root['lap_newstate'] != root['lap_oldstate']) {\r\n\t\troot['lap_triggerTime'] = root['lap_time'];\r\n\t}\r\n\treturn root['lap_triggerTime'] == null ? false : root['lap_time'] - root['lap_triggerTime'] <= delay/1000;\r\n}\r\n\r\n//return format(driverlastlap(repeatindex()+scrollPos), 'mm') + ':' + format(driverlastlap(repeatindex()+scrollPos), 'ss') + '.' + format(driverlastlap(repeatindex()+scrollPos), 'fff')\r\n\r\nif ( changed(5000, drivercurrentlap(repeatindex()+scrollPos)) ) {\r\n\treturn format(driverlastlap(repeatindex()+scrollPos), 'mm') + ':' + format(driverlastlap(repeatindex()+scrollPos), 'ss') + '.' + format(driverlastlap(repeatindex()+scrollPos), 'fff')\r\n} else {\r\n\treturn ld_GetDriverName(repeatindex()+scrollPos)\r\n}",
-                        "Interpreter": 1
-                      },
-                      "Mode": 2,
-                      "TargetPropertyName": "Text"
-                    },
-                    "TextColor": {
-                      "Formula": {
-                        "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nif ( isplayer(repeatindex()+scrollPos) ) {\r\n\treturn '#FFE04C'\r\n} else {\r\n\treturn '#FFFFFF'\r\n}",
-                        "Interpreter": 1
-                      },
-                      "Mode": 2,
-                      "TargetPropertyName": "TextColor"
-                    }
-                  },
-                  "Font": "Roboto",
-                  "FontSize": 18.0,
-                  "FontWeight": "Bold",
-                  "Height": 30.0,
-                  "HorizontalAlignment": 0,
-                  "IsTextItem": true,
-                  "Left": 105.0,
-                  "Name": "Name",
-                  "RenderingSkip": 50,
-                  "Text": "F. Lastname",
-                  "TextColor": "#FFFFFFFF",
-                  "Top": 174.0,
-                  "VerticalAlignment": 1,
-                  "Visible": true,
-                  "Width": 155.0
-                },
-                {
-                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                  "BackgroundColor": "#FFFFFFFF",
-                  "Bindings": {
-                    "BackgroundColor": {
-                      "Formula": {
-                        "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nif (isplayer(repeatindex()+scrollPos)) {\r\n\treturn '#FFE04C'\r\n} else {\r\n\treturn '#ffffff'\r\n}",
-                        "Interpreter": 1
-                      },
-                      "Mode": 2,
-                      "TargetPropertyName": "BackgroundColor"
-                    },
-                    "Text": {
-                      "FormatString": "",
-                      "Formula": {
-                        "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nreturn repeatindex()+scrollPos",
-                        "Interpreter": 1
-                      },
-                      "Mode": 2,
-                      "TargetPropertyName": "Text"
-                    },
-                    "Visible": {
-                      "Formula": {
-                        "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nif (repeatindex()+scrollPos > $prop('OpponentsCount')) {\r\n\treturn 0\r\n} else {\r\n\treturn 1\r\n}",
-                        "Interpreter": 1
-                      },
-                      "Mode": 2,
-                      "TargetPropertyName": "Visible"
-                    }
-                  },
-                  "BorderStyle": {
-                    "RadiusBottomLeft": 3,
-                    "RadiusBottomRight": 3,
-                    "RadiusTopLeft": 3,
-                    "RadiusTopRight": 3
-                  },
-                  "Font": "Roboto",
-                  "FontSize": 18.0,
-                  "FontWeight": "Bold",
-                  "Height": 30.0,
-                  "HorizontalAlignment": 1,
-                  "IsTextItem": true,
-                  "Left": 65.0,
-                  "Name": "Number",
-                  "RenderingSkip": 50,
-                  "Text": "#",
-                  "TextColor": "#FF000000",
-                  "Top": 174.0,
-                  "VerticalAlignment": 1,
-                  "Visible": true,
-                  "Width": 30.0
-                },
-                {
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
                   "BackgroundColor": "#00FFFFFF",
                   "Bindings": {
                     "Visible": {
                       "Formula": {
-                        "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nreturn( isplayer(repeatindex()+scrollPos) && ucase($prop('SessionTypeName')) =='RACE' ) ? 1 : 0\r\n",
+                        "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nreturn ( driveravailable( repeatindex()+scrollPos ) ) ? 1 : 0",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -270,60 +191,636 @@
                   },
                   "Childrens": [
                     {
-                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                      "BackgroundColor": "#C2000000",
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
                       "Bindings": {
-                        "Text": {
-                          "FormatString": "-0.0",
-                          "Formula": {
-                            "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nreturn Math.abs(drivergaptoplayer(repeatindex()+scrollPos+1))",
-                            "Interpreter": 1
-                          },
-                          "Mode": 2,
-                          "TargetPropertyName": "Text"
-                        },
                         "Visible": {
                           "Formula": {
-                            "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nreturn (  $prop('Position') == $prop('OpponentsCount') || drivergaptoplayer(repeatindex()+scrollPos-1) == null) ? 0 : 1",
+                            "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nif ( driverdeltatobest(repeatindex()+scrollPos) == 0 ) {\r\n\treturn 1\r\n} else {\r\n\treturn 0\r\n}",
                             "Interpreter": 1
                           },
                           "Mode": 2,
                           "TargetPropertyName": "Visible"
                         }
                       },
-                      "BorderStyle": {
-                        "RadiusBottomLeft": 3,
-                        "RadiusBottomRight": 3,
-                        "RadiusTopLeft": 3,
-                        "RadiusTopRight": 3
+                      "Childrens": [
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                          "BackgroundColor": "#FFFF00FF",
+                          "Bindings": {
+                            "Left": {
+                              "Formula": {
+                                "Expression": "return 241 + ld_sectorCount()*11",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "Left"
+                            }
+                          },
+                          "BorderStyle": {
+                            "RadiusBottomLeft": 4,
+                            "RadiusBottomRight": 4,
+                            "RadiusTopLeft": 4,
+                            "RadiusTopRight": 4
+                          },
+                          "Height": 26.0,
+                          "IsEffectiveDelayConstrainer": false,
+                          "IsRectangleItem": true,
+                          "Left": 274.0,
+                          "MinimumRefreshIntervalMS": 0.0,
+                          "Name": "Background2",
+                          "Opacity": 90.0,
+                          "RenderingSkip": 0,
+                          "Top": 177.0,
+                          "Visible": true,
+                          "Width": 26.0
+                        },
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                          "AutoSize": true,
+                          "BackgroundColor": "#00FFFFFF",
+                          "Bindings": {
+                            "Left": {
+                              "Formula": {
+                                "Expression": "return 248 + ld_sectorCount()*11",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "Left"
+                            }
+                          },
+                          "Height": 15.0,
+                          "Image": "fastest-lap",
+                          "IsEffectiveDelayConstrainer": true,
+                          "Left": 281.0,
+                          "MinimumRefreshIntervalMS": 500.0,
+                          "Name": "ImageItem",
+                          "RenderingSkip": 50,
+                          "Top": 182.0,
+                          "Visible": true,
+                          "Width": 12.0
+                        }
+                      ],
+                      "Group": true,
+                      "Height": 26.0,
+                      "IsEffectiveDelayConstrainer": false,
+                      "Left": 274.0,
+                      "MinimumRefreshIntervalMS": 0.0,
+                      "Name": "Fastest Lap",
+                      "RenderingSkip": 0,
+                      "Top": 177.0,
+                      "Visible": false,
+                      "Width": 26.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Visible": {
+                          "Formula": {
+                            "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\n\r\nreturn driveriscarinpit( repeatindex()+scrollPos ) || driveriscarinpitlane( repeatindex()+scrollPos )",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "Visible"
+                        }
                       },
-                      "Font": "Roboto",
-                      "FontSize": 14.0,
-                      "FontWeight": "Bold",
-                      "Height": 20.0,
-                      "HorizontalAlignment": 2,
-                      "IsTextItem": true,
-                      "Left": 15.0,
-                      "Name": "Behind Diff",
-                      "RenderingSkip": 5,
-                      "Text": "-0.0",
-                      "TextColor": "#FFFFFFFF",
-                      "TextPadding": {
-                        "PaddingRight": 5
-                      },
-                      "Top": 198.0,
-                      "VerticalAlignment": 1,
+                      "Childrens": [
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                          "BackgroundColor": "#FFDC143C",
+                          "Bindings": {
+                            "Left": {
+                              "Formula": {
+                                "Expression": "return 241 + ld_sectorCount()*11",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "Left"
+                            }
+                          },
+                          "BorderStyle": {
+                            "RadiusBottomLeft": 4,
+                            "RadiusBottomRight": 4,
+                            "RadiusTopLeft": 4,
+                            "RadiusTopRight": 4
+                          },
+                          "Font": "Roboto",
+                          "FontSize": 12.0,
+                          "FontWeight": "Bold",
+                          "Height": 25.0,
+                          "HorizontalAlignment": 1,
+                          "IsEffectiveDelayConstrainer": true,
+                          "IsTextItem": true,
+                          "Left": 274.0,
+                          "MinimumRefreshIntervalMS": 500.0,
+                          "Name": "Pit",
+                          "RenderingSkip": 50,
+                          "Text": "PIT",
+                          "TextColor": "#FFFFFFFF",
+                          "Top": 177.0,
+                          "VerticalAlignment": 1,
+                          "Visible": true,
+                          "Width": 25.0
+                        }
+                      ],
+                      "Group": true,
+                      "Height": 25.0,
+                      "IsEffectiveDelayConstrainer": false,
+                      "Left": 274.0,
+                      "MinimumRefreshIntervalMS": 0.0,
+                      "Name": "Pit",
+                      "RenderingSkip": 0,
+                      "Top": 177.0,
+                      "Visible": false,
+                      "Width": 25.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "Childrens": [
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                          "BackgroundColor": "#FF000000",
+                          "Bindings": {
+                            "Width": {
+                              "Formula": {
+                                "Expression": "return ld_sectorCount()*11 + 7",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "Width"
+                            }
+                          },
+                          "Height": 40.0,
+                          "IsEffectiveDelayConstrainer": false,
+                          "IsRectangleItem": true,
+                          "Left": 230.0,
+                          "MinimumRefreshIntervalMS": 0.0,
+                          "Name": "Background",
+                          "Opacity": 85.0,
+                          "RenderingSkip": 0,
+                          "Top": 170.0,
+                          "Visible": true,
+                          "Width": 40.0
+                        },
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                          "BackgroundColor": "#FFFF00FF",
+                          "Bindings": {
+                            "BackgroundColor": {
+                              "Formula": {
+                                "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nreturn ld_driverSectorSegmentColor( repeatindex()+scrollPos, 9)",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "BackgroundColor"
+                            },
+                            "Visible": {
+                              "Formula": {
+                                "Expression": "return ( ld_sectorCount() >= 9 ) ? 1 : 0",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "Visible"
+                            }
+                          },
+                          "BorderStyle": {
+                            "RadiusBottomLeft": 2,
+                            "RadiusBottomRight": 2,
+                            "RadiusTopLeft": 2,
+                            "RadiusTopRight": 2
+                          },
+                          "Height": 30.0,
+                          "IsEffectiveDelayConstrainer": false,
+                          "IsRectangleItem": true,
+                          "Left": 323.0,
+                          "MinimumRefreshIntervalMS": 0.0,
+                          "Name": "Sector 9",
+                          "RenderingSkip": 0,
+                          "Top": 175.0,
+                          "Visible": false,
+                          "Width": 8.0
+                        },
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                          "BackgroundColor": "#FFFF00FF",
+                          "Bindings": {
+                            "BackgroundColor": {
+                              "Formula": {
+                                "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nreturn ld_driverSectorSegmentColor( repeatindex()+scrollPos, 8)",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "BackgroundColor"
+                            },
+                            "Visible": {
+                              "Formula": {
+                                "Expression": "return ( ld_sectorCount() >= 8 ) ? 1 : 0",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "Visible"
+                            }
+                          },
+                          "BorderStyle": {
+                            "RadiusBottomLeft": 2,
+                            "RadiusBottomRight": 2,
+                            "RadiusTopLeft": 2,
+                            "RadiusTopRight": 2
+                          },
+                          "Height": 30.0,
+                          "IsEffectiveDelayConstrainer": false,
+                          "IsRectangleItem": true,
+                          "Left": 312.0,
+                          "MinimumRefreshIntervalMS": 0.0,
+                          "Name": "Sector 8",
+                          "RenderingSkip": 0,
+                          "Top": 175.0,
+                          "Visible": false,
+                          "Width": 8.0
+                        },
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                          "BackgroundColor": "#FFFF00FF",
+                          "Bindings": {
+                            "BackgroundColor": {
+                              "Formula": {
+                                "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nreturn ld_driverSectorSegmentColor( repeatindex()+scrollPos, 7)",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "BackgroundColor"
+                            },
+                            "Visible": {
+                              "Formula": {
+                                "Expression": "return ( ld_sectorCount() >= 7 ) ? 1 : 0",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "Visible"
+                            }
+                          },
+                          "BorderStyle": {
+                            "RadiusBottomLeft": 2,
+                            "RadiusBottomRight": 2,
+                            "RadiusTopLeft": 2,
+                            "RadiusTopRight": 2
+                          },
+                          "Height": 30.0,
+                          "IsEffectiveDelayConstrainer": false,
+                          "IsRectangleItem": true,
+                          "Left": 301.0,
+                          "MinimumRefreshIntervalMS": 0.0,
+                          "Name": "Sector 7",
+                          "RenderingSkip": 0,
+                          "Top": 175.0,
+                          "Visible": false,
+                          "Width": 8.0
+                        },
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                          "BackgroundColor": "#FFFF00FF",
+                          "Bindings": {
+                            "BackgroundColor": {
+                              "Formula": {
+                                "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nreturn ld_driverSectorSegmentColor( repeatindex()+scrollPos, 6)",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "BackgroundColor"
+                            },
+                            "Visible": {
+                              "Formula": {
+                                "Expression": "return ( ld_sectorCount() >= 6 ) ? 1 : 0",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "Visible"
+                            }
+                          },
+                          "BorderStyle": {
+                            "RadiusBottomLeft": 2,
+                            "RadiusBottomRight": 2,
+                            "RadiusTopLeft": 2,
+                            "RadiusTopRight": 2
+                          },
+                          "Height": 30.0,
+                          "IsEffectiveDelayConstrainer": false,
+                          "IsRectangleItem": true,
+                          "Left": 290.0,
+                          "MinimumRefreshIntervalMS": 0.0,
+                          "Name": "Sector 6",
+                          "RenderingSkip": 0,
+                          "Top": 175.0,
+                          "Visible": false,
+                          "Width": 8.0
+                        },
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                          "BackgroundColor": "#FFFF00FF",
+                          "Bindings": {
+                            "BackgroundColor": {
+                              "Formula": {
+                                "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nreturn ld_driverSectorSegmentColor( repeatindex()+scrollPos, 5)",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "BackgroundColor"
+                            },
+                            "Visible": {
+                              "Formula": {
+                                "Expression": "return ( ld_sectorCount() >= 5 ) ? 1 : 0",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "Visible"
+                            }
+                          },
+                          "BorderStyle": {
+                            "RadiusBottomLeft": 2,
+                            "RadiusBottomRight": 2,
+                            "RadiusTopLeft": 2,
+                            "RadiusTopRight": 2
+                          },
+                          "Height": 30.0,
+                          "IsEffectiveDelayConstrainer": false,
+                          "IsRectangleItem": true,
+                          "Left": 279.0,
+                          "MinimumRefreshIntervalMS": 0.0,
+                          "Name": "Sector 5",
+                          "RenderingSkip": 0,
+                          "Top": 175.0,
+                          "Visible": false,
+                          "Width": 8.0
+                        },
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                          "BackgroundColor": "#FFFF00FF",
+                          "Bindings": {
+                            "BackgroundColor": {
+                              "Formula": {
+                                "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nreturn ld_driverSectorSegmentColor( repeatindex()+scrollPos, 4)",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "BackgroundColor"
+                            },
+                            "Visible": {
+                              "Formula": {
+                                "Expression": "return ( ld_sectorCount() >= 4 ) ? 1 : 0",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "Visible"
+                            }
+                          },
+                          "BorderStyle": {
+                            "RadiusBottomLeft": 2,
+                            "RadiusBottomRight": 2,
+                            "RadiusTopLeft": 2,
+                            "RadiusTopRight": 2
+                          },
+                          "Height": 30.0,
+                          "IsEffectiveDelayConstrainer": false,
+                          "IsRectangleItem": true,
+                          "Left": 268.0,
+                          "MinimumRefreshIntervalMS": 0.0,
+                          "Name": "Sector 4",
+                          "RenderingSkip": 0,
+                          "Top": 175.0,
+                          "Visible": false,
+                          "Width": 8.0
+                        },
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                          "BackgroundColor": "#FFFF00FF",
+                          "Bindings": {
+                            "BackgroundColor": {
+                              "Formula": {
+                                "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nreturn ld_driverSectorSegmentColor( repeatindex()+scrollPos, 3)",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "BackgroundColor"
+                            },
+                            "Visible": {
+                              "Formula": {
+                                "Expression": "return ( ld_sectorCount() >= 3 ) ? 1 : 0",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "Visible"
+                            }
+                          },
+                          "BorderStyle": {
+                            "RadiusBottomLeft": 2,
+                            "RadiusBottomRight": 2,
+                            "RadiusTopLeft": 2,
+                            "RadiusTopRight": 2
+                          },
+                          "Height": 30.0,
+                          "IsEffectiveDelayConstrainer": false,
+                          "IsRectangleItem": true,
+                          "Left": 257.0,
+                          "MinimumRefreshIntervalMS": 0.0,
+                          "Name": "Sector 3",
+                          "RenderingSkip": 0,
+                          "Top": 175.0,
+                          "Visible": true,
+                          "Width": 8.0
+                        },
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                          "BackgroundColor": "#FFFF00FF",
+                          "Bindings": {
+                            "BackgroundColor": {
+                              "Formula": {
+                                "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nreturn ld_driverSectorSegmentColor( repeatindex()+scrollPos, 2)",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "BackgroundColor"
+                            },
+                            "Visible": {
+                              "Formula": {
+                                "Expression": "return ( ld_sectorCount() >= 2 ) ? 1 : 0",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "Visible"
+                            }
+                          },
+                          "BorderStyle": {
+                            "RadiusBottomLeft": 2,
+                            "RadiusBottomRight": 2,
+                            "RadiusTopLeft": 2,
+                            "RadiusTopRight": 2
+                          },
+                          "Height": 30.0,
+                          "IsEffectiveDelayConstrainer": false,
+                          "IsRectangleItem": true,
+                          "Left": 246.0,
+                          "MinimumRefreshIntervalMS": 0.0,
+                          "Name": "Sector 2 ",
+                          "RenderingSkip": 0,
+                          "Top": 175.0,
+                          "Visible": true,
+                          "Width": 8.0
+                        },
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                          "BackgroundColor": "#FFFF00FF",
+                          "Bindings": {
+                            "BackgroundColor": {
+                              "Formula": {
+                                "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nreturn ld_driverSectorSegmentColor( repeatindex()+scrollPos, 1)",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "BackgroundColor"
+                            },
+                            "Visible": {
+                              "Formula": {
+                                "Expression": "return ( ld_sectorCount() >= 1 ) ? 1 : 0",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "Visible"
+                            }
+                          },
+                          "BorderStyle": {
+                            "RadiusBottomLeft": 2,
+                            "RadiusBottomRight": 2,
+                            "RadiusTopLeft": 2,
+                            "RadiusTopRight": 2
+                          },
+                          "Height": 30.0,
+                          "IsEffectiveDelayConstrainer": false,
+                          "IsRectangleItem": true,
+                          "Left": 235.0,
+                          "MinimumRefreshIntervalMS": 0.0,
+                          "Name": "Sector 1",
+                          "RenderingSkip": 0,
+                          "Top": 175.0,
+                          "Visible": true,
+                          "Width": 8.0
+                        }
+                      ],
+                      "Group": true,
+                      "Height": 40.0,
+                      "IsEffectiveDelayConstrainer": false,
+                      "Left": 230.0,
+                      "MinimumRefreshIntervalMS": 0.0,
+                      "Name": "Sectors",
+                      "RenderingSkip": 0,
+                      "Top": 170.0,
                       "Visible": true,
-                      "Width": 40.0
+                      "Width": 101.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                      "BackgroundColor": "#FF000000",
+                      "Height": 40.0,
+                      "IsEffectiveDelayConstrainer": false,
+                      "IsRectangleItem": true,
+                      "Left": 0.0,
+                      "MinimumRefreshIntervalMS": 0.0,
+                      "Name": "Backgrounf",
+                      "Opacity": 90.0,
+                      "RenderingSkip": 0,
+                      "Top": 170.0,
+                      "Visible": true,
+                      "Width": 230.0
                     },
                     {
                       "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                      "BackgroundColor": "#C2000000",
+                      "BackgroundColor": "#00FFFFFF",
                       "Bindings": {
                         "Text": {
-                          "FormatString": "+0.0",
+                          "FormatString": "",
                           "Formula": {
-                            "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nreturn Math.abs(drivergaptoplayer(repeatindex()+scrollPos-1))",
+                            "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nvar gap = driverdeltatobest( repeatindex()+scrollPos )\r\n\r\nreturn ld_formatTimeShort( gap )",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "Text"
+                        }
+                      },
+                      "Font": "Roboto",
+                      "FontSize": 16.0,
+                      "FontWeight": "Light",
+                      "Height": 40.0,
+                      "HorizontalAlignment": 2,
+                      "IsEffectiveDelayConstrainer": true,
+                      "IsTextItem": true,
+                      "Left": 175.0,
+                      "MinimumRefreshIntervalMS": 500.0,
+                      "Name": "Time",
+                      "RenderingSkip": 50,
+                      "Text": "+00.0",
+                      "TextColor": "#FFFFFFFF",
+                      "Top": 170.0,
+                      "VerticalAlignment": 1,
+                      "Visible": true,
+                      "Width": 45.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Text": {
+                          "FormatString": "",
+                          "Formula": {
+                            "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nreturn ld_GetDriverName(repeatindex()+scrollPos)",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "Text"
+                        },
+                        "TextColor": {
+                          "Formula": {
+                            "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nif ( driverisplayer(repeatindex()+scrollPos) ) {\r\n\treturn yellow\r\n} else {\r\n\treturn white\r\n}",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "TextColor"
+                        }
+                      },
+                      "Font": "Roboto",
+                      "FontSize": 16.0,
+                      "FontWeight": "Bold",
+                      "Height": 40.0,
+                      "HorizontalAlignment": 0,
+                      "IsEffectiveDelayConstrainer": true,
+                      "IsTextItem": true,
+                      "Left": 45.0,
+                      "MinimumRefreshIntervalMS": 500.0,
+                      "Name": "Name",
+                      "RenderingSkip": 50,
+                      "Text": "F. Lastname",
+                      "TextColor": "#FFFFFFFF",
+                      "Top": 170.0,
+                      "VerticalAlignment": 1,
+                      "Visible": true,
+                      "Width": 130.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                      "BackgroundColor": "#FFFFFFFF",
+                      "Bindings": {
+                        "BackgroundColor": {
+                          "Formula": {
+                            "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nif ( driverisplayer(repeatindex()+scrollPos) ) {\r\n\treturn yellow\r\n} else {\r\n\treturn white\r\n}",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "BackgroundColor"
+                        },
+                        "Text": {
+                          "FormatString": "",
+                          "Formula": {
+                            "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nreturn repeatindex()+scrollPos",
                             "Interpreter": 1
                           },
                           "Mode": 2,
@@ -331,7 +828,7 @@
                         },
                         "Visible": {
                           "Formula": {
-                            "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nreturn ( drivergaptoplayer(repeatindex()+scrollPos+1) == null) ? 0 : 1",
+                            "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nif (repeatindex()+scrollPos > $prop('OpponentsCount')) {\r\n\treturn 0\r\n} else {\r\n\treturn 1\r\n}",
                             "Interpreter": 1
                           },
                           "Mode": 2,
@@ -345,179 +842,60 @@
                         "RadiusTopRight": 3
                       },
                       "Font": "Roboto",
-                      "FontSize": 14.0,
+                      "FontSize": 18.0,
                       "FontWeight": "Bold",
-                      "Height": 20.0,
-                      "HorizontalAlignment": 2,
+                      "Height": 30.0,
+                      "HorizontalAlignment": 1,
+                      "IsEffectiveDelayConstrainer": true,
                       "IsTextItem": true,
-                      "Left": 15.0,
-                      "Name": "Ahead Diff",
-                      "RenderingSkip": 5,
-                      "Text": "+0.0",
-                      "TextColor": "#FFFFFFFF",
-                      "TextPadding": {
-                        "PaddingRight": 5
-                      },
-                      "Top": 160.0,
+                      "Left": 5.0,
+                      "MinimumRefreshIntervalMS": 500.0,
+                      "Name": "Number",
+                      "RenderingSkip": 50,
+                      "Text": "#",
+                      "TextColor": "#FF000000",
+                      "Top": 175.0,
                       "VerticalAlignment": 1,
                       "Visible": true,
-                      "Width": 40.0
+                      "Width": 30.0
                     }
                   ],
                   "Group": true,
-                  "Height": 58.0,
-                  "Left": 15.0,
-                  "Name": "Gaps",
-                  "Top": 160.0,
-                  "Visible": false,
-                  "Width": 40.0
+                  "Height": 40.0,
+                  "IsEffectiveDelayConstrainer": false,
+                  "Left": 0.0,
+                  "MinimumRefreshIntervalMS": 0.0,
+                  "Name": "Row",
+                  "RenderingSkip": 0,
+                  "Top": 170.0,
+                  "Visible": true,
+                  "Width": 331.0
                 }
               ],
               "Group": true,
-              "Height": 58.0,
-              "Left": 15.0,
+              "Height": 40.0,
+              "IsEffectiveDelayConstrainer": false,
+              "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "Driver 4-20",
+              "RenderingSkip": 0,
               "RepeatTopOffset": 40.0,
               "Repetitions": 16.0,
-              "Top": 160.0,
+              "Top": 170.0,
               "Visible": true,
-              "Width": 285.0
+              "Width": 331.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
               "BackgroundColor": "#00FFFFFF",
               "Childrens": [
                 {
-                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
-                  "BackgroundColor": "#FF000000",
-                  "Height": 40.0,
-                  "IsRectangleItem": true,
-                  "Left": 60.0,
-                  "Name": "Background",
-                  "Opacity": 90.0,
-                  "Top": 45.0,
-                  "Visible": true,
-                  "Width": 240.0
-                },
-                {
-                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
-                  "AutoSize": true,
-                  "AutoSizeScale": 0.8,
-                  "BackgroundColor": "#00FFFFFF",
-                  "Bindings": {
-                    "Visible": {
-                      "Formula": {
-                        "Expression": "if ( driverdeltatobest(repeatindex()) == 0 ) {\r\n\treturn 1\r\n} else {\r\n\treturn 0\r\n}",
-                        "Interpreter": 1
-                      },
-                      "Mode": 2,
-                      "TargetPropertyName": "Visible"
-                    }
-                  },
-                  "Height": 20.0,
-                  "Image": "fastest-lap",
-                  "Left": 271.6,
-                  "Name": "ImageItem",
-                  "RenderingSkip": 50,
-                  "Top": 55.0,
-                  "Visible": false,
-                  "Width": 16.8
-                },
-                {
-                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                  "BackgroundColor": "#00FFFFFF",
-                  "Bindings": {
-                    "Text": {
-                      "FormatString": "",
-                      "Formula": {
-                        "Expression": "function changed(delay, value) {\r\n\troot['lap_time'] = Math.floor($prop('DataCorePlugin.CustomExpression.CurrentDateTime').getTime())/1000;\r\n\troot['lap_oldstate'] = root['lap_oldstate'] == null ? value : root['lap_newstate'];\r\n\troot['lap_newstate'] = value;\r\n\tif (root['lap_newstate'] != root['lap_oldstate']) {\r\n\t\troot['lap_triggerTime'] = root['lap_time'];\r\n\t}\r\n\treturn root['lap_triggerTime'] == null ? false : root['lap_time'] - root['lap_triggerTime'] <= delay/1000;\r\n}\r\n\r\nif ( changed(5000, drivercurrentlap(repeatindex())) ) {\r\n\treturn format(driverlastlap(repeatindex()), 'mm') + ':' + format(driverlastlap(repeatindex()), 'ss') + '.' + format(driverlastlap(repeatindex()), 'fff')\r\n} else {\r\n\treturn ld_GetDriverName(repeatindex())\r\n}",
-                        "Interpreter": 1
-                      },
-                      "Mode": 2,
-                      "TargetPropertyName": "Text"
-                    },
-                    "TextColor": {
-                      "Formula": {
-                        "Expression": "if (isplayer(repeatindex()), '#FFE04C', '#FFFFFF')"
-                      },
-                      "Mode": 2,
-                      "TargetPropertyName": "TextColor"
-                    }
-                  },
-                  "Font": "Roboto",
-                  "FontSize": 18.0,
-                  "FontWeight": "Bold",
-                  "Height": 30.0,
-                  "HorizontalAlignment": 0,
-                  "IsTextItem": true,
-                  "Left": 105.0,
-                  "Name": "Name",
-                  "RenderingSkip": 50,
-                  "Text": "F. Lastname",
-                  "TextColor": "#FFFFFFFF",
-                  "Top": 50.0,
-                  "VerticalAlignment": 1,
-                  "Visible": true,
-                  "Width": 155.0
-                },
-                {
-                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                  "BackgroundColor": "#FFFFFFFF",
-                  "Bindings": {
-                    "BackgroundColor": {
-                      "Formula": {
-                        "Expression": "if (isplayer(repeatindex())) {\r\n\treturn '#FFE04C'\r\n} else {\r\n\treturn '#ffffff'\r\n}",
-                        "Interpreter": 1
-                      },
-                      "Mode": 2,
-                      "TargetPropertyName": "BackgroundColor"
-                    },
-                    "Text": {
-                      "FormatString": "",
-                      "Formula": {
-                        "Expression": "repeatindex()"
-                      },
-                      "Mode": 2,
-                      "TargetPropertyName": "Text"
-                    },
-                    "Visible": {
-                      "Formula": {
-                        "Expression": "if (repeatindex() > $prop('OpponentsCount')) {\r\n\treturn 0\r\n} else {\r\n\treturn 1\r\n}",
-                        "Interpreter": 1
-                      },
-                      "Mode": 2,
-                      "TargetPropertyName": "Visible"
-                    }
-                  },
-                  "BorderStyle": {
-                    "RadiusBottomLeft": 3,
-                    "RadiusBottomRight": 3,
-                    "RadiusTopLeft": 3,
-                    "RadiusTopRight": 3
-                  },
-                  "Font": "Roboto",
-                  "FontSize": 18.0,
-                  "FontWeight": "Bold",
-                  "Height": 30.0,
-                  "HorizontalAlignment": 1,
-                  "IsTextItem": true,
-                  "Left": 65.0,
-                  "Name": "Number",
-                  "RenderingSkip": 50,
-                  "Text": "#",
-                  "TextColor": "#FF000000",
-                  "Top": 50.0,
-                  "VerticalAlignment": 1,
-                  "Visible": true,
-                  "Width": 30.0
-                },
-                {
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
                   "BackgroundColor": "#00FFFFFF",
                   "Bindings": {
                     "Visible": {
                       "Formula": {
-                        "Expression": "return ( isplayer(repeatindex()) && ucase($prop('SessionTypeName')) =='RACE' ) ? 1 : 0",
+                        "Expression": "return ( driveravailable( repeatindex() ) ) ? 1 : 0",
                         "Interpreter": 1
                       },
                       "Mode": 2,
@@ -526,68 +904,651 @@
                   },
                   "Childrens": [
                     {
-                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                      "BackgroundColor": "#C2000000",
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
                       "Bindings": {
-                        "Text": {
-                          "FormatString": "-0.0",
-                          "Formula": {
-                            "Expression": "return Math.abs(drivergaptoplayer(repeatindex()+1))",
-                            "Interpreter": 1
-                          },
-                          "Mode": 2,
-                          "TargetPropertyName": "Text"
-                        },
                         "Visible": {
                           "Formula": {
-                            "Expression": "return ( drivergaptoplayer(repeatindex()-1) == null ) ? 0 : 1",
+                            "Expression": "if ( driverdeltatobest(repeatindex()) == 0 ) {\r\n\treturn 1\r\n} else {\r\n\treturn 0\r\n}",
                             "Interpreter": 1
                           },
                           "Mode": 2,
                           "TargetPropertyName": "Visible"
                         }
                       },
-                      "BorderStyle": {
-                        "RadiusBottomLeft": 3,
-                        "RadiusBottomRight": 3,
-                        "RadiusTopLeft": 3,
-                        "RadiusTopRight": 3
+                      "Childrens": [
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                          "BackgroundColor": "#FFFF00FF",
+                          "Bindings": {
+                            "Left": {
+                              "Formula": {
+                                "Expression": "return 241 + ld_sectorCount()*11",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "Left"
+                            }
+                          },
+                          "BorderStyle": {
+                            "RadiusBottomLeft": 4,
+                            "RadiusBottomRight": 4,
+                            "RadiusTopLeft": 4,
+                            "RadiusTopRight": 4
+                          },
+                          "Height": 26.0,
+                          "IsEffectiveDelayConstrainer": false,
+                          "IsRectangleItem": true,
+                          "Left": 274.0,
+                          "MinimumRefreshIntervalMS": 0.0,
+                          "Name": "Background",
+                          "Opacity": 90.0,
+                          "RenderingSkip": 0,
+                          "Top": 52.0,
+                          "Visible": true,
+                          "Width": 26.0
+                        },
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                          "AutoSize": true,
+                          "BackgroundColor": "#00FFFFFF",
+                          "Bindings": {
+                            "Left": {
+                              "Formula": {
+                                "Expression": "return 248 + ld_sectorCount()*11",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "Left"
+                            }
+                          },
+                          "Height": 15.0,
+                          "Image": "fastest-lap",
+                          "IsEffectiveDelayConstrainer": true,
+                          "Left": 281.0,
+                          "MinimumRefreshIntervalMS": 500.0,
+                          "Name": "ImageItem",
+                          "RenderingSkip": 50,
+                          "Top": 57.0,
+                          "Visible": true,
+                          "Width": 12.0
+                        }
+                      ],
+                      "Group": true,
+                      "Height": 26.0,
+                      "IsEffectiveDelayConstrainer": false,
+                      "Left": 274.0,
+                      "MinimumRefreshIntervalMS": 0.0,
+                      "Name": "Fastest Lap",
+                      "RenderingSkip": 0,
+                      "Top": 52.0,
+                      "Visible": false,
+                      "Width": 26.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Visible": {
+                          "Formula": {
+                            "Expression": "return driveriscarinpit( repeatindex() ) || driveriscarinpitlane( repeatindex() )",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "Visible"
+                        }
                       },
-                      "Font": "Roboto",
-                      "FontSize": 14.0,
-                      "FontWeight": "Bold",
-                      "Height": 20.0,
-                      "HorizontalAlignment": 1,
-                      "IsTextItem": true,
-                      "Left": 15.0,
-                      "Name": "Behind Diff",
-                      "RenderingSkip": 5,
-                      "Text": "-0.0",
-                      "TextColor": "#FFFFFFFF",
-                      "TextPadding": {
-                        "PaddingRight": 5
-                      },
-                      "Top": 74.0,
-                      "VerticalAlignment": 1,
+                      "Childrens": [
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                          "BackgroundColor": "#FFDC143C",
+                          "Bindings": {
+                            "Left": {
+                              "Formula": {
+                                "Expression": "return 241 + ld_sectorCount()*11",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "Left"
+                            }
+                          },
+                          "BorderStyle": {
+                            "RadiusBottomLeft": 4,
+                            "RadiusBottomRight": 4,
+                            "RadiusTopLeft": 4,
+                            "RadiusTopRight": 4
+                          },
+                          "Font": "Roboto",
+                          "FontSize": 12.0,
+                          "FontWeight": "Bold",
+                          "Height": 26.0,
+                          "HorizontalAlignment": 1,
+                          "IsEffectiveDelayConstrainer": true,
+                          "IsTextItem": true,
+                          "Left": 274.0,
+                          "MinimumRefreshIntervalMS": 500.0,
+                          "Name": "PIT",
+                          "RenderingSkip": 50,
+                          "Text": "PIT",
+                          "TextColor": "#FFFFFFFF",
+                          "Top": 52.0,
+                          "VerticalAlignment": 1,
+                          "Visible": true,
+                          "Width": 26.0
+                        }
+                      ],
+                      "Group": true,
+                      "Height": 26.0,
+                      "IsEffectiveDelayConstrainer": false,
+                      "Left": 274.0,
+                      "MinimumRefreshIntervalMS": 0.0,
+                      "Name": "Pit",
+                      "RenderingSkip": 0,
+                      "Top": 52.0,
+                      "Visible": false,
+                      "Width": 26.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "Childrens": [
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                          "BackgroundColor": "#FF000000",
+                          "Bindings": {
+                            "Width": {
+                              "Formula": {
+                                "Expression": "return ld_sectorCount()*11 + 7",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "Width"
+                            }
+                          },
+                          "Height": 40.0,
+                          "IsEffectiveDelayConstrainer": false,
+                          "IsRectangleItem": true,
+                          "Left": 230.0,
+                          "MinimumRefreshIntervalMS": 0.0,
+                          "Name": "Background",
+                          "Opacity": 85.0,
+                          "RenderingSkip": 0,
+                          "Top": 45.0,
+                          "Visible": true,
+                          "Width": 40.0
+                        },
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                          "BackgroundColor": "#FFFF00FF",
+                          "Bindings": {
+                            "BackgroundColor": {
+                              "Formula": {
+                                "Expression": "return ld_driverSectorSegmentColor( repeatindex(), 9)",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "BackgroundColor"
+                            },
+                            "Visible": {
+                              "Formula": {
+                                "Expression": "return ( ld_sectorCount() >= 9 ) ? 1 : 0",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "Visible"
+                            }
+                          },
+                          "BorderStyle": {
+                            "RadiusBottomLeft": 2,
+                            "RadiusBottomRight": 2,
+                            "RadiusTopLeft": 2,
+                            "RadiusTopRight": 2
+                          },
+                          "Height": 30.0,
+                          "IsEffectiveDelayConstrainer": false,
+                          "IsRectangleItem": true,
+                          "Left": 323.0,
+                          "MinimumRefreshIntervalMS": 0.0,
+                          "Name": "Sector 9",
+                          "RenderingSkip": 0,
+                          "Top": 50.0,
+                          "Visible": false,
+                          "Width": 8.0
+                        },
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                          "BackgroundColor": "#FFFF00FF",
+                          "Bindings": {
+                            "BackgroundColor": {
+                              "Formula": {
+                                "Expression": "return ld_driverSectorSegmentColor( repeatindex(), 8)",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "BackgroundColor"
+                            },
+                            "Visible": {
+                              "Formula": {
+                                "Expression": "return ( ld_sectorCount() >= 8 ) ? 1 : 0",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "Visible"
+                            }
+                          },
+                          "BorderStyle": {
+                            "RadiusBottomLeft": 2,
+                            "RadiusBottomRight": 2,
+                            "RadiusTopLeft": 2,
+                            "RadiusTopRight": 2
+                          },
+                          "Height": 30.0,
+                          "IsEffectiveDelayConstrainer": false,
+                          "IsRectangleItem": true,
+                          "Left": 312.0,
+                          "MinimumRefreshIntervalMS": 0.0,
+                          "Name": "Sector 8",
+                          "RenderingSkip": 0,
+                          "Top": 50.0,
+                          "Visible": false,
+                          "Width": 8.0
+                        },
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                          "BackgroundColor": "#FFFF00FF",
+                          "Bindings": {
+                            "BackgroundColor": {
+                              "Formula": {
+                                "Expression": "return ld_driverSectorSegmentColor( repeatindex(), 7)",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "BackgroundColor"
+                            },
+                            "Visible": {
+                              "Formula": {
+                                "Expression": "return ( ld_sectorCount() >= 7 ) ? 1 : 0",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "Visible"
+                            }
+                          },
+                          "BorderStyle": {
+                            "RadiusBottomLeft": 2,
+                            "RadiusBottomRight": 2,
+                            "RadiusTopLeft": 2,
+                            "RadiusTopRight": 2
+                          },
+                          "Height": 30.0,
+                          "IsEffectiveDelayConstrainer": false,
+                          "IsRectangleItem": true,
+                          "Left": 301.0,
+                          "MinimumRefreshIntervalMS": 0.0,
+                          "Name": "Sector 7",
+                          "RenderingSkip": 0,
+                          "Top": 50.0,
+                          "Visible": false,
+                          "Width": 8.0
+                        },
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                          "BackgroundColor": "#FFFF00FF",
+                          "Bindings": {
+                            "BackgroundColor": {
+                              "Formula": {
+                                "Expression": "return ld_driverSectorSegmentColor( repeatindex(), 6)",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "BackgroundColor"
+                            },
+                            "Visible": {
+                              "Formula": {
+                                "Expression": "return ( ld_sectorCount() >= 6 ) ? 1 : 0",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "Visible"
+                            }
+                          },
+                          "BorderStyle": {
+                            "RadiusBottomLeft": 2,
+                            "RadiusBottomRight": 2,
+                            "RadiusTopLeft": 2,
+                            "RadiusTopRight": 2
+                          },
+                          "Height": 30.0,
+                          "IsEffectiveDelayConstrainer": false,
+                          "IsRectangleItem": true,
+                          "Left": 290.0,
+                          "MinimumRefreshIntervalMS": 0.0,
+                          "Name": "Sector 6",
+                          "RenderingSkip": 0,
+                          "Top": 50.0,
+                          "Visible": false,
+                          "Width": 8.0
+                        },
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                          "BackgroundColor": "#FFFF00FF",
+                          "Bindings": {
+                            "BackgroundColor": {
+                              "Formula": {
+                                "Expression": "return ld_driverSectorSegmentColor( repeatindex(), 5)",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "BackgroundColor"
+                            },
+                            "Visible": {
+                              "Formula": {
+                                "Expression": "return ( ld_sectorCount() >= 5 ) ? 1 : 0",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "Visible"
+                            }
+                          },
+                          "BorderStyle": {
+                            "RadiusBottomLeft": 2,
+                            "RadiusBottomRight": 2,
+                            "RadiusTopLeft": 2,
+                            "RadiusTopRight": 2
+                          },
+                          "Height": 30.0,
+                          "IsEffectiveDelayConstrainer": false,
+                          "IsRectangleItem": true,
+                          "Left": 279.0,
+                          "MinimumRefreshIntervalMS": 0.0,
+                          "Name": "Sector 5",
+                          "RenderingSkip": 0,
+                          "Top": 50.0,
+                          "Visible": false,
+                          "Width": 8.0
+                        },
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                          "BackgroundColor": "#FFFF00FF",
+                          "Bindings": {
+                            "BackgroundColor": {
+                              "Formula": {
+                                "Expression": "return ld_driverSectorSegmentColor( repeatindex(), 4)",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "BackgroundColor"
+                            },
+                            "Visible": {
+                              "Formula": {
+                                "Expression": "return ( ld_sectorCount() >= 4 ) ? 1 : 0",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "Visible"
+                            }
+                          },
+                          "BorderStyle": {
+                            "RadiusBottomLeft": 2,
+                            "RadiusBottomRight": 2,
+                            "RadiusTopLeft": 2,
+                            "RadiusTopRight": 2
+                          },
+                          "Height": 30.0,
+                          "IsEffectiveDelayConstrainer": false,
+                          "IsRectangleItem": true,
+                          "Left": 268.0,
+                          "MinimumRefreshIntervalMS": 0.0,
+                          "Name": "Sector 4",
+                          "RenderingSkip": 0,
+                          "Top": 50.0,
+                          "Visible": false,
+                          "Width": 8.0
+                        },
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                          "BackgroundColor": "#FFFF00FF",
+                          "Bindings": {
+                            "BackgroundColor": {
+                              "Formula": {
+                                "Expression": "return ld_driverSectorSegmentColor( repeatindex(), 3)",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "BackgroundColor"
+                            },
+                            "Visible": {
+                              "Formula": {
+                                "Expression": "return ( ld_sectorCount() >= 3 ) ? 1 : 0",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "Visible"
+                            }
+                          },
+                          "BorderStyle": {
+                            "RadiusBottomLeft": 2,
+                            "RadiusBottomRight": 2,
+                            "RadiusTopLeft": 2,
+                            "RadiusTopRight": 2
+                          },
+                          "Height": 30.0,
+                          "IsEffectiveDelayConstrainer": false,
+                          "IsRectangleItem": true,
+                          "Left": 257.0,
+                          "MinimumRefreshIntervalMS": 0.0,
+                          "Name": "Sector 3",
+                          "RenderingSkip": 0,
+                          "Top": 50.0,
+                          "Visible": true,
+                          "Width": 8.0
+                        },
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                          "BackgroundColor": "#FFFF00FF",
+                          "Bindings": {
+                            "BackgroundColor": {
+                              "Formula": {
+                                "Expression": "return ld_driverSectorSegmentColor( repeatindex(), 2)",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "BackgroundColor"
+                            },
+                            "Visible": {
+                              "Formula": {
+                                "Expression": "return ( ld_sectorCount() >= 2 ) ? 1 : 0",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "Visible"
+                            }
+                          },
+                          "BorderStyle": {
+                            "RadiusBottomLeft": 2,
+                            "RadiusBottomRight": 2,
+                            "RadiusTopLeft": 2,
+                            "RadiusTopRight": 2
+                          },
+                          "Height": 30.0,
+                          "IsEffectiveDelayConstrainer": false,
+                          "IsRectangleItem": true,
+                          "Left": 246.0,
+                          "MinimumRefreshIntervalMS": 0.0,
+                          "Name": "Sector 2 ",
+                          "RenderingSkip": 0,
+                          "Top": 50.0,
+                          "Visible": true,
+                          "Width": 8.0
+                        },
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                          "BackgroundColor": "#FFFF00FF",
+                          "Bindings": {
+                            "BackgroundColor": {
+                              "Formula": {
+                                "Expression": "return ld_driverSectorSegmentColor( repeatindex(), 1)",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "BackgroundColor"
+                            },
+                            "Visible": {
+                              "Formula": {
+                                "Expression": "return ( ld_sectorCount() >= 1 ) ? 1 : 0",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "Visible"
+                            }
+                          },
+                          "BorderStyle": {
+                            "RadiusBottomLeft": 2,
+                            "RadiusBottomRight": 2,
+                            "RadiusTopLeft": 2,
+                            "RadiusTopRight": 2
+                          },
+                          "Height": 30.0,
+                          "IsEffectiveDelayConstrainer": false,
+                          "IsRectangleItem": true,
+                          "Left": 235.0,
+                          "MinimumRefreshIntervalMS": 0.0,
+                          "Name": "Sector 1",
+                          "RenderingSkip": 0,
+                          "Top": 50.0,
+                          "Visible": true,
+                          "Width": 8.0
+                        }
+                      ],
+                      "Group": true,
+                      "Height": 40.0,
+                      "IsEffectiveDelayConstrainer": false,
+                      "Left": 230.0,
+                      "MinimumRefreshIntervalMS": 0.0,
+                      "Name": "Sectors",
+                      "RenderingSkip": 0,
+                      "Top": 45.0,
                       "Visible": true,
-                      "Width": 40.0
+                      "Width": 101.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                      "BackgroundColor": "#FF000000",
+                      "Height": 40.0,
+                      "IsEffectiveDelayConstrainer": false,
+                      "IsRectangleItem": true,
+                      "Left": 0.0,
+                      "MinimumRefreshIntervalMS": 0.0,
+                      "Name": "Background",
+                      "Opacity": 90.0,
+                      "RenderingSkip": 0,
+                      "Top": 45.0,
+                      "Visible": true,
+                      "Width": 230.0
                     },
                     {
                       "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                      "BackgroundColor": "#C2000000",
+                      "BackgroundColor": "#00FFFFFF",
                       "Bindings": {
                         "Text": {
-                          "FormatString": "+0.0",
+                          "FormatString": "",
                           "Formula": {
-                            "Expression": "return Math.abs(drivergaptoplayer(repeatindex()-1))",
+                            "Expression": "var gap = driverdeltatobest( repeatindex() )\r\n\r\nif ( (gap == 0 || gap == null) && timespantoseconds( driverbestlap( repeatindex() ) ) > 0 ) {\r\n\treturn format( driverbestlap( repeatindex() ), 'm\\\\:ss\\\\.fff', false)\r\n} else {\r\n\treturn ld_formatTimeShort( gap )\r\n}",
                             "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "Text"
+                        }
+                      },
+                      "Font": "Roboto",
+                      "FontSize": 16.0,
+                      "FontWeight": "Light",
+                      "Height": 40.0,
+                      "HorizontalAlignment": 2,
+                      "IsEffectiveDelayConstrainer": true,
+                      "IsTextItem": true,
+                      "Left": 155.0,
+                      "MinimumRefreshIntervalMS": 500.0,
+                      "Name": "Time",
+                      "RenderingSkip": 50,
+                      "Text": "0:00.000",
+                      "TextColor": "#FFFFFFFF",
+                      "Top": 45.0,
+                      "VerticalAlignment": 1,
+                      "Visible": true,
+                      "Width": 65.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Text": {
+                          "FormatString": "",
+                          "Formula": {
+                            "Expression": "return ld_GetDriverName(repeatindex())",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "Text"
+                        },
+                        "TextColor": {
+                          "Formula": {
+                            "Expression": "return ( driverisplayer( repeatindex() ) ) ? yellow : white",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "TextColor"
+                        },
+                        "Width": {
+                          "Formula": {
+                            "Expression": "var gap = driverdeltatobest( repeatindex() )\r\n\r\nif ( (gap == 0 || gap == null) && timespantoseconds( driverbestlap( repeatindex() ) ) > 0 ) {\r\n\treturn 110\r\n} else {\r\n\treturn 130\r\n}",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "Width"
+                        }
+                      },
+                      "Font": "Roboto",
+                      "FontSize": 16.0,
+                      "FontWeight": "Bold",
+                      "Height": 40.0,
+                      "HorizontalAlignment": 0,
+                      "IsEffectiveDelayConstrainer": true,
+                      "IsTextItem": true,
+                      "Left": 45.0,
+                      "MinimumRefreshIntervalMS": 500.0,
+                      "Name": "Name",
+                      "RenderingSkip": 50,
+                      "Text": "F. Lastname",
+                      "TextColor": "#FFFFFFFF",
+                      "Top": 45.0,
+                      "VerticalAlignment": 1,
+                      "Visible": true,
+                      "Width": 130.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                      "BackgroundColor": "#FFFFFFFF",
+                      "Bindings": {
+                        "BackgroundColor": {
+                          "Formula": {
+                            "Expression": "return ( driverisplayer( repeatindex() ) ) ? yellow : white",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "BackgroundColor"
+                        },
+                        "Text": {
+                          "FormatString": "",
+                          "Formula": {
+                            "Expression": "repeatindex()"
                           },
                           "Mode": 2,
                           "TargetPropertyName": "Text"
                         },
                         "Visible": {
                           "Formula": {
-                            "Expression": "return ( $prop('Position') == 1 || drivergaptoplayer(repeatindex()+1) == null) ? 0 : 1",
+                            "Expression": "if (repeatindex() > $prop('OpponentsCount')) {\r\n\treturn 0\r\n} else {\r\n\treturn 1\r\n}",
                             "Interpreter": 1
                           },
                           "Mode": 2,
@@ -601,52 +1562,61 @@
                         "RadiusTopRight": 3
                       },
                       "Font": "Roboto",
-                      "FontSize": 14.0,
+                      "FontSize": 18.0,
                       "FontWeight": "Bold",
-                      "Height": 20.0,
+                      "Height": 30.0,
                       "HorizontalAlignment": 1,
+                      "IsEffectiveDelayConstrainer": true,
                       "IsTextItem": true,
-                      "Left": 15.0,
-                      "Name": "Ahead Diff",
-                      "RenderingSkip": 5,
-                      "Text": "+0.0",
-                      "TextColor": "#FFFFFFFF",
-                      "TextPadding": {
-                        "PaddingRight": 5
-                      },
-                      "Top": 36.0,
+                      "Left": 5.0,
+                      "MinimumRefreshIntervalMS": 500.0,
+                      "Name": "Number",
+                      "RenderingSkip": 50,
+                      "Text": "#",
+                      "TextColor": "#FF000000",
+                      "Top": 50.0,
                       "VerticalAlignment": 1,
                       "Visible": true,
-                      "Width": 40.0
+                      "Width": 30.0
                     }
                   ],
                   "Group": true,
-                  "Height": 58.0,
-                  "Left": 15.0,
-                  "Name": "Gaps",
-                  "Top": 36.0,
-                  "Visible": false,
-                  "Width": 40.0
+                  "Height": 40.0,
+                  "IsEffectiveDelayConstrainer": false,
+                  "Left": 0.0,
+                  "MinimumRefreshIntervalMS": 0.0,
+                  "Name": "Row",
+                  "RenderingSkip": 0,
+                  "Top": 45.0,
+                  "Visible": true,
+                  "Width": 331.0
                 }
               ],
               "Group": true,
-              "Height": 58.0,
-              "Left": 15.0,
+              "Height": 40.0,
+              "IsEffectiveDelayConstrainer": false,
+              "IsFreezed": true,
+              "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "Driver 1-3",
+              "RenderingSkip": 0,
               "RepeatTopOffset": 40.0,
               "Repetitions": 2.0,
-              "Top": 36.0,
+              "Top": 45.0,
               "Visible": true,
-              "Width": 285.0
+              "Width": 331.0
             }
           ],
           "Group": true,
-          "Height": 182.0,
-          "Left": 15.0,
+          "Height": 165.0,
+          "IsEffectiveDelayConstrainer": true,
+          "Left": 0.0,
+          "MinimumRefreshIntervalMS": 500.0,
           "Name": "Drivers",
-          "Top": 36.0,
+          "RenderingSkip": 50,
+          "Top": 45.0,
           "Visible": true,
-          "Width": 285.0
+          "Width": 331.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
@@ -658,7 +1628,7 @@
               "Bindings": {
                 "BackgroundColor": {
                   "Formula": {
-                    "Expression": "if ($prop('Flag_Green')==1) {\r\n\treturn green\r\n} else if ($prop('Flag_Yellow')==1) {\r\n\treturn yellow\r\n} else {\r\n\treturn white\r\n}\r\n",
+                    "Expression": "if ($prop('Flag_Green')==1) {\r\n\treturn green\r\n} else if ($prop('Flag_Yellow')==1) {\r\n\treturn yellow\r\n} else {\r\n\treturn white\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -666,12 +1636,15 @@
                 }
               },
               "Height": 40.0,
+              "IsEffectiveDelayConstrainer": true,
               "IsRectangleItem": true,
-              "Left": 60.0,
+              "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "RectangleItem2",
+              "RenderingSkip": 0,
               "Top": 0.0,
               "Visible": true,
-              "Width": 240.0
+              "Width": 270.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -695,19 +1668,24 @@
                   "TargetPropertyName": "Visible"
                 }
               },
+              "CharWidth": 12.0,
               "Font": "Roboto",
               "FontSize": 22.0,
               "FontWeight": "Bold",
               "Height": 30.0,
               "HorizontalAlignment": 0,
+              "IsEffectiveDelayConstrainer": true,
               "IsTextItem": true,
-              "Left": 70.0,
+              "Left": 10.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "Session Type (<hour)",
+              "RenderingSkip": 0,
+              "SpecialCharsWidth": 8.0,
               "Text": "R 00:00",
               "TextColor": "#FF000000",
               "Top": 5.0,
               "VerticalAlignment": 1,
-              "Visible": false,
+              "Visible": true,
               "Width": 170.0
             },
             {
@@ -732,19 +1710,24 @@
                   "TargetPropertyName": "Visible"
                 }
               },
+              "CharWidth": 12.0,
               "Font": "Roboto",
               "FontSize": 22.0,
               "FontWeight": "Bold",
               "Height": 30.0,
               "HorizontalAlignment": 0,
+              "IsEffectiveDelayConstrainer": true,
               "IsTextItem": true,
-              "Left": 70.0,
+              "Left": 10.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "Session Type (>hour)",
+              "RenderingSkip": 0,
+              "SpecialCharsWidth": 8.0,
               "Text": "P 00:00:00",
               "TextColor": "#FF000000",
               "Top": 5.0,
               "VerticalAlignment": 1,
-              "Visible": true,
+              "Visible": false,
               "Width": 170.0
             },
             {
@@ -760,15 +1743,18 @@
                   "TargetPropertyName": "Text"
                 }
               },
-              "CharWidth": 10.0,
+              "CharWidth": 12.0,
               "Font": "Roboto",
               "FontSize": 22.0,
               "FontWeight": "Bold",
               "Height": 30.0,
               "HorizontalAlignment": 2,
+              "IsEffectiveDelayConstrainer": true,
               "IsTextItem": true,
-              "Left": 235.0,
+              "Left": 205.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "Session Lap",
+              "RenderingSkip": 0,
               "SpecialCharsWidth": 5.0,
               "Text": "L000",
               "TextColor": "#FF000000",
@@ -780,11 +1766,14 @@
           ],
           "Group": true,
           "Height": 40.0,
-          "Left": 60.0,
+          "IsEffectiveDelayConstrainer": true,
+          "Left": 0.0,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "Session Info",
+          "RenderingSkip": 0,
           "Top": 0.0,
           "Visible": true,
-          "Width": 240.0
+          "Width": 270.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
@@ -794,10 +1783,13 @@
           "FileName": "Debug.djson",
           "Height": 100.0,
           "InitialScreenIndex": 0,
+          "IsEffectiveDelayConstrainer": true,
           "Left": 20.0,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "Debug",
           "NextScreenCommand": 0,
           "PreviousScreenCommand": 0,
+          "RenderingSkip": 0,
           "Top": 730.0,
           "Variables": {
             "DashboardVariables": []
@@ -806,17 +1798,1258 @@
           "Width": 200.0
         }
       ],
-      "Name": "Tower",
+      "MinimumRefreshIntervalMS": 0.0,
+      "Name": "Quali",
       "OverlayMaxDuration": 0,
       "OverlayMinDuration": 0,
       "OverlayTriggerExpression": {
         "Expression": ""
       },
       "PitScreen": false,
+      "RenderingSkip": 0,
       "ScreenEnabledExpression": {
+        "Expression": "return ld_isQuali()",
+        "Interpreter": 1
+      },
+      "ScreenId": "3fb8dda4-f7dc-4149-8fb4-6bbc9bbc1c81"
+    },
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#00FFFFFF",
+      "IdleScreen": false,
+      "InGameScreen": true,
+      "IsBackgroundLayer": false,
+      "IsEffectiveDelayConstrainer": true,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": false,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WebPageItem, SimHub.Plugins",
+          "AllowTransparency": true,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "StartAddress": {
+              "Formula": {
+                "Expression": "if ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.dashName')+'&ver='+$prop('variable.dashVer')+'&screen=Race'\r\n} else {\r\n\treturn ''\r\n}",
+                "Interpreter": 1
+              },
+              "Mode": 2,
+              "TargetPropertyName": "StartAddress"
+            }
+          },
+          "ClickThrough": false,
+          "Height": 1.0,
+          "IsEffectiveDelayConstrainer": true,
+          "Left": 0.0,
+          "MinimumRefreshIntervalMS": 0.0,
+          "Name": "Analytics",
+          "RenderingSkip": 0,
+          "StartAddress": "",
+          "Top": 849.0,
+          "Visible": true,
+          "Width": 300.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Childrens": [
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nreturn ( driveravailable( repeatindex()+scrollPos ) ) ? 1 : 0",
+                        "Interpreter": 1
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Visible"
+                    }
+                  },
+                  "Childrens": [
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Visible": {
+                          "Formula": {
+                            "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nif ( driverdeltatobest(repeatindex()+scrollPos) == 0 ) {\r\n\treturn 1\r\n} else {\r\n\treturn 0\r\n}",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "Visible"
+                        }
+                      },
+                      "Childrens": [
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                          "BackgroundColor": "#FFFF00FF",
+                          "BorderStyle": {
+                            "RadiusBottomLeft": 4,
+                            "RadiusBottomRight": 4,
+                            "RadiusTopLeft": 4,
+                            "RadiusTopRight": 4
+                          },
+                          "Height": 26.0,
+                          "IsEffectiveDelayConstrainer": false,
+                          "IsRectangleItem": true,
+                          "Left": 274.0,
+                          "MinimumRefreshIntervalMS": 0.0,
+                          "Name": "Background2",
+                          "Opacity": 90.0,
+                          "RenderingSkip": 0,
+                          "Top": 177.0,
+                          "Visible": true,
+                          "Width": 26.0
+                        },
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                          "AutoSize": true,
+                          "AutoSizeScale": 0.6,
+                          "BackgroundColor": "#00FFFFFF",
+                          "Height": 9.0,
+                          "Image": "fastest-lap",
+                          "IsEffectiveDelayConstrainer": true,
+                          "Left": 281.0,
+                          "MinimumRefreshIntervalMS": 500.0,
+                          "Name": "ImageItem",
+                          "RenderingSkip": 50,
+                          "Top": 182.0,
+                          "Visible": true,
+                          "Width": 7.199999999999999
+                        }
+                      ],
+                      "Group": true,
+                      "Height": 26.0,
+                      "IsEffectiveDelayConstrainer": false,
+                      "Left": 274.0,
+                      "MinimumRefreshIntervalMS": 0.0,
+                      "Name": "Fastest Lap",
+                      "RenderingSkip": 0,
+                      "Top": 177.0,
+                      "Visible": false,
+                      "Width": 26.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Visible": {
+                          "Formula": {
+                            "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\n\r\nreturn driveriscarinpit( repeatindex()+scrollPos ) || driveriscarinpitlane( repeatindex()+scrollPos )",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "Visible"
+                        }
+                      },
+                      "Childrens": [
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                          "BackgroundColor": "#FFDC143C",
+                          "BorderStyle": {
+                            "RadiusBottomLeft": 4,
+                            "RadiusBottomRight": 4,
+                            "RadiusTopLeft": 4,
+                            "RadiusTopRight": 4
+                          },
+                          "Height": 26.0,
+                          "IsEffectiveDelayConstrainer": false,
+                          "IsRectangleItem": true,
+                          "Left": 274.0,
+                          "MinimumRefreshIntervalMS": 0.0,
+                          "Name": "Background",
+                          "Opacity": 90.0,
+                          "RenderingSkip": 0,
+                          "Top": 177.0,
+                          "Visible": true,
+                          "Width": 26.0
+                        },
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                          "BackgroundColor": "#00FFFFFF",
+                          "Font": "Roboto",
+                          "FontSize": 12.0,
+                          "FontWeight": "Bold",
+                          "Height": 25.0,
+                          "HorizontalAlignment": 1,
+                          "IsEffectiveDelayConstrainer": true,
+                          "IsTextItem": true,
+                          "Left": 274.0,
+                          "MinimumRefreshIntervalMS": 500.0,
+                          "Name": "Time",
+                          "RenderingSkip": 50,
+                          "Text": "PIT",
+                          "TextColor": "#FFFFFFFF",
+                          "Top": 177.0,
+                          "VerticalAlignment": 1,
+                          "Visible": true,
+                          "Width": 25.0
+                        }
+                      ],
+                      "Group": true,
+                      "Height": 26.0,
+                      "IsEffectiveDelayConstrainer": false,
+                      "Left": 274.0,
+                      "MinimumRefreshIntervalMS": 0.0,
+                      "Name": "Pit",
+                      "RenderingSkip": 0,
+                      "Top": 177.0,
+                      "Visible": false,
+                      "Width": 26.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "Childrens": [
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                          "BackgroundColor": "#FF000000",
+                          "Height": 40.0,
+                          "IsEffectiveDelayConstrainer": false,
+                          "IsRectangleItem": true,
+                          "Left": 230.0,
+                          "MinimumRefreshIntervalMS": 0.0,
+                          "Name": "Background",
+                          "Opacity": 85.0,
+                          "RenderingSkip": 0,
+                          "Top": 170.0,
+                          "Visible": true,
+                          "Width": 40.0
+                        },
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                          "BackgroundColor": "#00FFFFFF",
+                          "Bindings": {
+                            "Text": {
+                              "Formula": {
+                                "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nreturn Math.abs( driverpositiongain( repeatindex()+scrollPos ) )",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "Text"
+                            },
+                            "TextColor": {
+                              "Formula": {
+                                "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nif ( driverpositiongain( repeatindex()+scrollPos ) > 0 ) {\r\n\treturn green\r\n} else if ( driverpositiongain( repeatindex()+scrollPos ) < 0 ) {\r\n\treturn red\r\n} else {\r\n\treturn light_gray\r\n}",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "TextColor"
+                            },
+                            "Visible": {
+                              "Formula": {
+                                "Expression": "//return $prop('SessionTypeName') != 'PRACTICE'\r\n\r\n\r\n/*\r\n$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Qualify' || \r\n$prop('DataCorePlugin.GameData.SessionTypeName')=='Lone Qualify' || \r\n$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Practice' || \r\n$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice' || \r\n$prop('DataCorePlugin.GameData.SessionTypeName')=='Offline Testing'\r\n\r\n*/",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "Visible"
+                            }
+                          },
+                          "CharWidth": 8.0,
+                          "Font": "Roboto",
+                          "FontSize": 14.0,
+                          "Height": 40.0,
+                          "HorizontalAlignment": 0,
+                          "IsEffectiveDelayConstrainer": false,
+                          "IsTextItem": true,
+                          "Left": 248.0,
+                          "MinimumRefreshIntervalMS": 0.0,
+                          "Name": "PosGain",
+                          "RenderingSkip": 0,
+                          "Text": "00",
+                          "TextColor": "#FFFFFFFF",
+                          "Top": 170.0,
+                          "UseMonospacedText": true,
+                          "VerticalAlignment": 1,
+                          "Visible": true,
+                          "Width": 20.0
+                        },
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                          "AutoSize": true,
+                          "AutoSizeScale": 0.6,
+                          "BackgroundColor": "#00FFFFFF",
+                          "Bindings": {
+                            "Image": {
+                              "Formula": {
+                                "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nif ( driverpositiongain( repeatindex()+scrollPos ) > 0 ) {\r\n\treturn 'pos-gain'\r\n} else if ( driverpositiongain( repeatindex()+scrollPos ) < 0 ) {\r\n\treturn 'pos-loss'\r\n} else {\r\n\treturn 'pos-same'\r\n}",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "Image"
+                            }
+                          },
+                          "Height": 3.5999999999999996,
+                          "Image": "pos-gain",
+                          "IsEffectiveDelayConstrainer": false,
+                          "Left": 238.0,
+                          "MinimumRefreshIntervalMS": 0.0,
+                          "Name": "ImageItem2",
+                          "RenderingSkip": 0,
+                          "Top": 189.0,
+                          "Visible": true,
+                          "Width": 6.0
+                        }
+                      ],
+                      "Group": true,
+                      "Height": 40.0,
+                      "IsEffectiveDelayConstrainer": false,
+                      "IsFreezed": true,
+                      "Left": 230.0,
+                      "MinimumRefreshIntervalMS": 0.0,
+                      "Name": "Pos Gain",
+                      "RenderingSkip": 0,
+                      "Top": 170.0,
+                      "Visible": true,
+                      "Width": 40.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                      "BackgroundColor": "#FF000000",
+                      "Height": 40.0,
+                      "IsEffectiveDelayConstrainer": false,
+                      "IsRectangleItem": true,
+                      "Left": 0.0,
+                      "MinimumRefreshIntervalMS": 0.0,
+                      "Name": "Backgrounf",
+                      "Opacity": 90.0,
+                      "RenderingSkip": 0,
+                      "Top": 170.0,
+                      "Visible": true,
+                      "Width": 230.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Text": {
+                          "FormatString": "",
+                          "Formula": {
+                            "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\n\r\nvar interval = drivergaptoleader( repeatindex()+scrollPos ) - drivergaptoleader( repeatindex()+scrollPos-1 )\r\n\r\nif (interval == 0) {\r\n\treturn 'INT'\r\n} else {\r\n\treturn format( interval, '0.0', true )\r\n}",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "Text"
+                        }
+                      },
+                      "Font": "Roboto",
+                      "FontSize": 16.0,
+                      "FontWeight": "Light",
+                      "Height": 40.0,
+                      "HorizontalAlignment": 2,
+                      "IsEffectiveDelayConstrainer": true,
+                      "IsTextItem": true,
+                      "Left": 185.0,
+                      "MinimumRefreshIntervalMS": 500.0,
+                      "Name": "Time",
+                      "RenderingSkip": 50,
+                      "Text": "+0.0",
+                      "TextColor": "#FFFFFFFF",
+                      "Top": 170.0,
+                      "VerticalAlignment": 1,
+                      "Visible": true,
+                      "Width": 35.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Text": {
+                          "FormatString": "",
+                          "Formula": {
+                            "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nreturn ld_GetDriverName(repeatindex()+scrollPos)",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "Text"
+                        },
+                        "TextColor": {
+                          "Formula": {
+                            "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nreturn (driverisplayer( repeatindex()+scrollPos )) ? yellow : white",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "TextColor"
+                        }
+                      },
+                      "Font": "Roboto",
+                      "FontSize": 16.0,
+                      "FontWeight": "Bold",
+                      "Height": 40.0,
+                      "HorizontalAlignment": 0,
+                      "IsEffectiveDelayConstrainer": true,
+                      "IsTextItem": true,
+                      "Left": 45.0,
+                      "MinimumRefreshIntervalMS": 500.0,
+                      "Name": "Name",
+                      "RenderingSkip": 50,
+                      "Text": "F. Lastname",
+                      "TextColor": "#FFFFFFFF",
+                      "Top": 170.0,
+                      "VerticalAlignment": 1,
+                      "Visible": true,
+                      "Width": 130.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                      "BackgroundColor": "#FFFFFFFF",
+                      "Bindings": {
+                        "BackgroundColor": {
+                          "Formula": {
+                            "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nreturn (driverisplayer( repeatindex()+scrollPos )) ? yellow : white",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "BackgroundColor"
+                        },
+                        "Text": {
+                          "FormatString": "",
+                          "Formula": {
+                            "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nreturn repeatindex()+scrollPos",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "Text"
+                        },
+                        "Visible": {
+                          "Formula": {
+                            "Expression": "var maxScroll = $prop('OpponentsCount')-17\r\nvar currentPos = $prop('Position')\r\n\r\nif ( currentPos > 11 ) {\r\n\tif (maxScroll < currentPos - 8) {\r\n\t\tscrollPos = maxScroll\r\n\t} else {\r\n\t\tscrollPos = currentPos - 8\r\n\t}\r\n} else {\r\n\tscrollPos = 3\r\n}\r\n\r\nif (repeatindex()+scrollPos > $prop('OpponentsCount')) {\r\n\treturn 0\r\n} else {\r\n\treturn 1\r\n}",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "Visible"
+                        }
+                      },
+                      "BorderStyle": {
+                        "RadiusBottomLeft": 3,
+                        "RadiusBottomRight": 3,
+                        "RadiusTopLeft": 3,
+                        "RadiusTopRight": 3
+                      },
+                      "Font": "Roboto",
+                      "FontSize": 18.0,
+                      "FontWeight": "Bold",
+                      "Height": 30.0,
+                      "HorizontalAlignment": 1,
+                      "IsEffectiveDelayConstrainer": true,
+                      "IsTextItem": true,
+                      "Left": 5.0,
+                      "MinimumRefreshIntervalMS": 500.0,
+                      "Name": "Number",
+                      "RenderingSkip": 50,
+                      "Text": "#",
+                      "TextColor": "#FF000000",
+                      "Top": 175.0,
+                      "VerticalAlignment": 1,
+                      "Visible": true,
+                      "Width": 30.0
+                    }
+                  ],
+                  "Group": true,
+                  "Height": 40.0,
+                  "IsEffectiveDelayConstrainer": false,
+                  "Left": 0.0,
+                  "MinimumRefreshIntervalMS": 0.0,
+                  "Name": "Row",
+                  "RenderingSkip": 0,
+                  "Top": 170.0,
+                  "Visible": true,
+                  "Width": 300.0
+                }
+              ],
+              "Group": true,
+              "Height": 40.0,
+              "IsEffectiveDelayConstrainer": false,
+              "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Driver 4-20",
+              "RenderingSkip": 0,
+              "RepeatTopOffset": 40.0,
+              "Repetitions": 16.0,
+              "Top": 170.0,
+              "Visible": true,
+              "Width": 300.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Childrens": [
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "return ( driveravailable( repeatindex() ) ) ? 1 : 0",
+                        "Interpreter": 1
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Visible"
+                    }
+                  },
+                  "Childrens": [
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Visible": {
+                          "Formula": {
+                            "Expression": "if ( driverdeltatobest(repeatindex()) == 0 ) {\r\n\treturn 1\r\n} else {\r\n\treturn 0\r\n}",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "Visible"
+                        }
+                      },
+                      "Childrens": [
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                          "BackgroundColor": "#FFFF00FF",
+                          "BorderStyle": {
+                            "RadiusBottomLeft": 4,
+                            "RadiusBottomRight": 4,
+                            "RadiusTopLeft": 4,
+                            "RadiusTopRight": 4
+                          },
+                          "Height": 26.0,
+                          "IsEffectiveDelayConstrainer": false,
+                          "IsRectangleItem": true,
+                          "Left": 274.0,
+                          "MinimumRefreshIntervalMS": 0.0,
+                          "Name": "Background",
+                          "Opacity": 90.0,
+                          "RenderingSkip": 0,
+                          "Top": 52.0,
+                          "Visible": true,
+                          "Width": 26.0
+                        },
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                          "AutoSize": true,
+                          "AutoSizeScale": 0.6,
+                          "BackgroundColor": "#00FFFFFF",
+                          "Height": 9.0,
+                          "Image": "fastest-lap",
+                          "IsEffectiveDelayConstrainer": true,
+                          "Left": 281.0,
+                          "MinimumRefreshIntervalMS": 500.0,
+                          "Name": "ImageItem",
+                          "RenderingSkip": 50,
+                          "Top": 57.0,
+                          "Visible": true,
+                          "Width": 7.199999999999999
+                        }
+                      ],
+                      "Group": true,
+                      "Height": 26.0,
+                      "IsEffectiveDelayConstrainer": false,
+                      "Left": 274.0,
+                      "MinimumRefreshIntervalMS": 0.0,
+                      "Name": "Fastest Lap",
+                      "RenderingSkip": 0,
+                      "Top": 52.0,
+                      "Visible": false,
+                      "Width": 26.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Visible": {
+                          "Formula": {
+                            "Expression": "return driveriscarinpit( repeatindex() ) || driveriscarinpitlane( repeatindex() )",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "Visible"
+                        }
+                      },
+                      "Childrens": [
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                          "BackgroundColor": "#FFDC143C",
+                          "BorderStyle": {
+                            "RadiusBottomLeft": 4,
+                            "RadiusBottomRight": 4,
+                            "RadiusTopLeft": 4,
+                            "RadiusTopRight": 4
+                          },
+                          "Height": 26.0,
+                          "IsEffectiveDelayConstrainer": false,
+                          "IsRectangleItem": true,
+                          "Left": 274.0,
+                          "MinimumRefreshIntervalMS": 0.0,
+                          "Name": "Background",
+                          "Opacity": 90.0,
+                          "RenderingSkip": 0,
+                          "Top": 52.0,
+                          "Visible": true,
+                          "Width": 26.0
+                        },
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                          "BackgroundColor": "#00FFFFFF",
+                          "Font": "Roboto",
+                          "FontSize": 12.0,
+                          "FontWeight": "Bold",
+                          "Height": 26.0,
+                          "HorizontalAlignment": 1,
+                          "IsEffectiveDelayConstrainer": true,
+                          "IsTextItem": true,
+                          "Left": 274.0,
+                          "MinimumRefreshIntervalMS": 500.0,
+                          "Name": "Time",
+                          "RenderingSkip": 50,
+                          "Text": "PIT",
+                          "TextColor": "#FFFFFFFF",
+                          "Top": 52.0,
+                          "VerticalAlignment": 1,
+                          "Visible": true,
+                          "Width": 26.0
+                        }
+                      ],
+                      "Group": true,
+                      "Height": 26.0,
+                      "IsEffectiveDelayConstrainer": false,
+                      "Left": 274.0,
+                      "MinimumRefreshIntervalMS": 0.0,
+                      "Name": "Pit",
+                      "RenderingSkip": 0,
+                      "Top": 52.0,
+                      "Visible": false,
+                      "Width": 26.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "Childrens": [
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                          "BackgroundColor": "#FF000000",
+                          "Height": 40.0,
+                          "IsEffectiveDelayConstrainer": false,
+                          "IsRectangleItem": true,
+                          "Left": 230.0,
+                          "MinimumRefreshIntervalMS": 0.0,
+                          "Name": "Background",
+                          "Opacity": 85.0,
+                          "RenderingSkip": 0,
+                          "Top": 45.0,
+                          "Visible": true,
+                          "Width": 40.0
+                        },
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                          "BackgroundColor": "#00FFFFFF",
+                          "Bindings": {
+                            "Text": {
+                              "Formula": {
+                                "Expression": "return Math.abs( driverpositiongain( repeatindex() ) )",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "Text"
+                            },
+                            "TextColor": {
+                              "Formula": {
+                                "Expression": "if ( driverpositiongain( repeatindex() ) > 0 ) {\r\n\treturn green\r\n} else if ( driverpositiongain( repeatindex() ) < 0 ) {\r\n\treturn red\r\n} else {\r\n\treturn light_gray\r\n}",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "TextColor"
+                            },
+                            "Visible": {
+                              "Formula": {
+                                "Expression": "//return $prop('SessionTypeName') != 'PRACTICE'\r\n\r\n\r\n/*\r\n$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Qualify' || \r\n$prop('DataCorePlugin.GameData.SessionTypeName')=='Lone Qualify' || \r\n$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Practice' || \r\n$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice' || \r\n$prop('DataCorePlugin.GameData.SessionTypeName')=='Offline Testing'\r\n\r\n*/",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "Visible"
+                            }
+                          },
+                          "CharWidth": 8.0,
+                          "Font": "Roboto",
+                          "FontSize": 14.0,
+                          "Height": 40.0,
+                          "HorizontalAlignment": 0,
+                          "IsEffectiveDelayConstrainer": false,
+                          "IsTextItem": true,
+                          "Left": 248.0,
+                          "MinimumRefreshIntervalMS": 0.0,
+                          "Name": "PosGain",
+                          "RenderingSkip": 0,
+                          "Text": "00",
+                          "TextColor": "#FFFFFFFF",
+                          "Top": 45.0,
+                          "UseMonospacedText": true,
+                          "VerticalAlignment": 1,
+                          "Visible": true,
+                          "Width": 20.0
+                        },
+                        {
+                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                          "AutoSize": true,
+                          "AutoSizeScale": 0.6,
+                          "BackgroundColor": "#00FFFFFF",
+                          "Bindings": {
+                            "Image": {
+                              "Formula": {
+                                "Expression": "if ( driverpositiongain( repeatindex() ) > 0 ) {\r\n\treturn 'pos-gain'\r\n} else if ( driverpositiongain( repeatindex() ) < 0 ) {\r\n\treturn 'pos-loss'\r\n} else {\r\n\treturn 'pos-same'\r\n}",
+                                "Interpreter": 1
+                              },
+                              "Mode": 2,
+                              "TargetPropertyName": "Image"
+                            }
+                          },
+                          "Height": 3.5999999999999996,
+                          "Image": "pos-gain",
+                          "IsEffectiveDelayConstrainer": false,
+                          "Left": 238.0,
+                          "MinimumRefreshIntervalMS": 0.0,
+                          "Name": "ImageItem2",
+                          "RenderingSkip": 0,
+                          "Top": 64.0,
+                          "Visible": true,
+                          "Width": 6.0
+                        }
+                      ],
+                      "Group": true,
+                      "Height": 40.0,
+                      "IsEffectiveDelayConstrainer": false,
+                      "Left": 230.0,
+                      "MinimumRefreshIntervalMS": 0.0,
+                      "Name": "Pos Gain",
+                      "RenderingSkip": 0,
+                      "Top": 45.0,
+                      "Visible": true,
+                      "Width": 40.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                      "BackgroundColor": "#FF000000",
+                      "Height": 40.0,
+                      "IsEffectiveDelayConstrainer": false,
+                      "IsRectangleItem": true,
+                      "Left": 0.0,
+                      "MinimumRefreshIntervalMS": 0.0,
+                      "Name": "Background",
+                      "Opacity": 90.0,
+                      "RenderingSkip": 0,
+                      "Top": 45.0,
+                      "Visible": true,
+                      "Width": 230.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Text": {
+                          "FormatString": "",
+                          "Formula": {
+                            "Expression": "var interval = drivergaptoleader( repeatindex() ) - drivergaptoleader( repeatindex()-1 )\r\n\r\nif (interval == 0) {\r\n\treturn 'INT'\r\n} else {\r\n\treturn format( drivergaptoleader( repeatindex() ) - drivergaptoleader( repeatindex()-1 ), '0.0', true )\r\n}",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "Text"
+                        }
+                      },
+                      "Font": "Roboto",
+                      "FontSize": 16.0,
+                      "FontWeight": "Light",
+                      "Height": 40.0,
+                      "HorizontalAlignment": 2,
+                      "IsEffectiveDelayConstrainer": true,
+                      "IsTextItem": true,
+                      "Left": 185.0,
+                      "MinimumRefreshIntervalMS": 500.0,
+                      "Name": "Time",
+                      "RenderingSkip": 50,
+                      "Text": "+0.0",
+                      "TextColor": "#FFFFFFFF",
+                      "Top": 45.0,
+                      "VerticalAlignment": 1,
+                      "Visible": true,
+                      "Width": 35.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Text": {
+                          "FormatString": "",
+                          "Formula": {
+                            "Expression": "return ld_GetDriverName(repeatindex())",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "Text"
+                        },
+                        "TextColor": {
+                          "Formula": {
+                            "Expression": "return (driverisplayer(repeatindex())) ? yellow : white",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "TextColor"
+                        }
+                      },
+                      "Font": "Roboto",
+                      "FontSize": 16.0,
+                      "FontWeight": "Bold",
+                      "Height": 40.0,
+                      "HorizontalAlignment": 0,
+                      "IsEffectiveDelayConstrainer": true,
+                      "IsTextItem": true,
+                      "Left": 45.0,
+                      "MinimumRefreshIntervalMS": 500.0,
+                      "Name": "Name",
+                      "RenderingSkip": 50,
+                      "Text": "F. Lastname",
+                      "TextColor": "#FFFFFFFF",
+                      "Top": 45.0,
+                      "VerticalAlignment": 1,
+                      "Visible": true,
+                      "Width": 130.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                      "BackgroundColor": "#FFFFFFFF",
+                      "Bindings": {
+                        "BackgroundColor": {
+                          "Formula": {
+                            "Expression": "return (driverisplayer(repeatindex())) ? yellow : white",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "BackgroundColor"
+                        },
+                        "Text": {
+                          "FormatString": "",
+                          "Formula": {
+                            "Expression": "repeatindex()"
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "Text"
+                        },
+                        "Visible": {
+                          "Formula": {
+                            "Expression": "if (repeatindex() > $prop('OpponentsCount')) {\r\n\treturn 0\r\n} else {\r\n\treturn 1\r\n}",
+                            "Interpreter": 1
+                          },
+                          "Mode": 2,
+                          "TargetPropertyName": "Visible"
+                        }
+                      },
+                      "BorderStyle": {
+                        "RadiusBottomLeft": 3,
+                        "RadiusBottomRight": 3,
+                        "RadiusTopLeft": 3,
+                        "RadiusTopRight": 3
+                      },
+                      "Font": "Roboto",
+                      "FontSize": 18.0,
+                      "FontWeight": "Bold",
+                      "Height": 30.0,
+                      "HorizontalAlignment": 1,
+                      "IsEffectiveDelayConstrainer": true,
+                      "IsTextItem": true,
+                      "Left": 5.0,
+                      "MinimumRefreshIntervalMS": 500.0,
+                      "Name": "Number",
+                      "RenderingSkip": 50,
+                      "Text": "#",
+                      "TextColor": "#FF000000",
+                      "Top": 50.0,
+                      "VerticalAlignment": 1,
+                      "Visible": true,
+                      "Width": 30.0
+                    }
+                  ],
+                  "Group": true,
+                  "Height": 40.0,
+                  "IsEffectiveDelayConstrainer": false,
+                  "Left": 0.0,
+                  "MinimumRefreshIntervalMS": 0.0,
+                  "Name": "Row",
+                  "RenderingSkip": 0,
+                  "Top": 45.0,
+                  "Visible": true,
+                  "Width": 300.0
+                }
+              ],
+              "Group": true,
+              "Height": 40.0,
+              "IsEffectiveDelayConstrainer": false,
+              "IsFreezed": true,
+              "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Driver 1-3",
+              "RenderingSkip": 0,
+              "RepeatTopOffset": 40.0,
+              "Repetitions": 2.0,
+              "Top": 45.0,
+              "Visible": true,
+              "Width": 300.0
+            }
+          ],
+          "Group": true,
+          "Height": 165.0,
+          "IsEffectiveDelayConstrainer": true,
+          "Left": 0.0,
+          "MinimumRefreshIntervalMS": 500.0,
+          "Name": "Drivers",
+          "RenderingSkip": 50,
+          "Top": 45.0,
+          "Visible": true,
+          "Width": 300.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FFFFFFFF",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "if ($prop('Flag_Green')==1) {\r\n\treturn green\r\n} else if ($prop('Flag_Yellow')==1) {\r\n\treturn yellow\r\n} else {\r\n\treturn white\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "BackgroundColor"
+                }
+              },
+              "Height": 40.0,
+              "IsEffectiveDelayConstrainer": true,
+              "IsRectangleItem": true,
+              "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "RectangleItem2",
+              "RenderingSkip": 0,
+              "Top": 0.0,
+              "Visible": true,
+              "Width": 270.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "",
+                  "Formula": {
+                    "Expression": "return ucase($prop('SessionTypeName')).substring(0,1) + ' ' + \r\n\t\tformat($prop('SessionTimeLeft'), 'mm') + ':' +\r\n\t\tformat($prop('SessionTimeLeft'), 'ss')",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "if (format($prop('SessionTimeLeft'), 'hh') == 0) { \r\n\treturn 1 \r\n} else {\r\n\treturn 0\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Visible"
+                }
+              },
+              "CharWidth": 12.0,
+              "Font": "Roboto",
+              "FontSize": 22.0,
+              "FontWeight": "Bold",
+              "Height": 30.0,
+              "HorizontalAlignment": 0,
+              "IsEffectiveDelayConstrainer": true,
+              "IsTextItem": true,
+              "Left": 10.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Session Type (<hour)",
+              "RenderingSkip": 0,
+              "SpecialCharsWidth": 8.0,
+              "Text": "R 00:00",
+              "TextColor": "#FF000000",
+              "Top": 5.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 170.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "",
+                  "Formula": {
+                    "Expression": "return ucase($prop('SessionTypeName')).substring(0,1) + ' ' + \r\n\t\tformat($prop('SessionTimeLeft'), 'hh') + ':' +\r\n\t\tformat($prop('SessionTimeLeft'), 'mm') + ':' +\r\n\t\tformat($prop('SessionTimeLeft'), 'ss')",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "if (format($prop('SessionTimeLeft'), 'hh') > 0) { \r\n\treturn 1 \r\n} else {\r\n\treturn 0\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Visible"
+                }
+              },
+              "CharWidth": 12.0,
+              "Font": "Roboto",
+              "FontSize": 22.0,
+              "FontWeight": "Bold",
+              "Height": 30.0,
+              "HorizontalAlignment": 0,
+              "IsEffectiveDelayConstrainer": true,
+              "IsTextItem": true,
+              "Left": 10.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Session Type (>hour)",
+              "RenderingSkip": 0,
+              "SpecialCharsWidth": 8.0,
+              "Text": "P 00:00:00",
+              "TextColor": "#FF000000",
+              "Top": 5.0,
+              "VerticalAlignment": 1,
+              "Visible": false,
+              "Width": 170.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "mm\\:ss",
+                  "Formula": {
+                    "Expression": "'L'+[CurrentLap]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "CharWidth": 12.0,
+              "Font": "Roboto",
+              "FontSize": 22.0,
+              "FontWeight": "Bold",
+              "Height": 30.0,
+              "HorizontalAlignment": 2,
+              "IsEffectiveDelayConstrainer": true,
+              "IsTextItem": true,
+              "Left": 205.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Session Lap",
+              "RenderingSkip": 0,
+              "SpecialCharsWidth": 5.0,
+              "Text": "L000",
+              "TextColor": "#FF000000",
+              "Top": 5.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 55.0
+            }
+          ],
+          "Group": true,
+          "Height": 40.0,
+          "IsEffectiveDelayConstrainer": true,
+          "Left": 0.0,
+          "MinimumRefreshIntervalMS": 0.0,
+          "Name": "Session Info",
+          "RenderingSkip": 0,
+          "Top": 0.0,
+          "Visible": true,
+          "Width": 270.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
+          "AutoSize": true,
+          "BackgroundColor": "#00FFFFFF",
+          "EnableScreenRolesAndActivation": true,
+          "FileName": "Debug.djson",
+          "Height": 100.0,
+          "InitialScreenIndex": 0,
+          "IsEffectiveDelayConstrainer": true,
+          "Left": 20.0,
+          "MinimumRefreshIntervalMS": 0.0,
+          "Name": "Debug",
+          "NextScreenCommand": 0,
+          "PreviousScreenCommand": 0,
+          "RenderingSkip": 0,
+          "Top": 730.0,
+          "Variables": {
+            "DashboardVariables": []
+          },
+          "Visible": true,
+          "Width": 200.0
+        }
+      ],
+      "MinimumRefreshIntervalMS": 0.0,
+      "Name": "Race",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
         "Expression": ""
       },
+      "PitScreen": false,
+      "RenderingSkip": 0,
+      "ScreenEnabledExpression": {
+        "Expression": "return !ld_isQuali()",
+        "Interpreter": 1
+      },
       "ScreenId": "f5992e6f-eab1-4851-98e7-cc94a9497e64"
+    },
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#00FFFFFF",
+      "IdleScreen": false,
+      "InGameScreen": false,
+      "IsBackgroundLayer": false,
+      "IsEffectiveDelayConstrainer": true,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": true,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF000000",
+              "BorderStyle": {
+                "RadiusBottomLeft": 11,
+                "RadiusBottomRight": 11,
+                "RadiusTopLeft": 11,
+                "RadiusTopRight": 11
+              },
+              "Height": 160.0,
+              "IsEffectiveDelayConstrainer": true,
+              "IsRectangleItem": true,
+              "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Background",
+              "RenderingSkip": 0,
+              "Top": 690.0,
+              "Visible": true,
+              "Width": 300.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "return \"The Lovely Tower v\" + $prop('variable.dashVer') + \" requires SimHub v\"+ $prop('variable.shVer') +\"+, please download the latest version.\"",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 16.0,
+              "Height": 80.0,
+              "HorizontalAlignment": 1,
+              "IsEffectiveDelayConstrainer": true,
+              "IsTextItem": true,
+              "Left": 30.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Version",
+              "RenderingSkip": 0,
+              "Text": "Update Note",
+              "TextColor": "#FFFFFFFF",
+              "TextWrapping": 0,
+              "Top": 765.0,
+              "VerticalAlignment": 0,
+              "Visible": true,
+              "Width": 240.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FFFF0000",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "",
+                  "Formula": {
+                    "Expression": "return 'SIMHUB UPDATE REQUIRED'",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                }
+              },
+              "BorderStyle": {
+                "RadiusBottomLeft": 10,
+                "RadiusBottomRight": 10,
+                "RadiusTopLeft": 10,
+                "RadiusTopRight": 10
+              },
+              "Font": "Roboto",
+              "FontSize": 16.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 1,
+              "IsEffectiveDelayConstrainer": true,
+              "IsTextItem": true,
+              "Left": 35.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "New Version Alert",
+              "RenderingSkip": 0,
+              "Text": "SIMHUB UPDATE REQUIRED",
+              "TextColor": "#FFFFFFFF",
+              "Top": 730.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 230.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "AutoSize": true,
+              "AutoSizeScale": 0.5,
+              "BackgroundColor": "#00FFFFFF",
+              "Height": 60.0,
+              "Image": "Simhub Update",
+              "IsEffectiveDelayConstrainer": true,
+              "Left": 113.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "ImageItem",
+              "RenderingSkip": 0,
+              "Top": 660.0,
+              "Visible": true,
+              "Width": 74.0
+            }
+          ],
+          "Group": true,
+          "Height": 190.0,
+          "IsEffectiveDelayConstrainer": true,
+          "Left": 0.0,
+          "MinimumRefreshIntervalMS": 0.0,
+          "Name": "Layer",
+          "RenderingSkip": 0,
+          "Top": 660.0,
+          "Visible": true,
+          "Width": 300.0
+        }
+      ],
+      "MinimumRefreshIntervalMS": 0.0,
+      "Name": "Simhub",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": "var currentVer = $prop('DataCorePlugin.SimHubVersion')\r\nvar minVer = $prop('variable.shVer')\r\n\r\nif ( compareversions( currentVer, minVer ) == '-1') {\r\n\treturn true\r\n} else {\r\n\treturn false\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
+        "Interpreter": 1
+      },
+      "PitScreen": false,
+      "RenderingSkip": 0,
+      "ScreenEnabledExpression": {
+        "Expression": "var currentVer = $prop('DataCorePlugin.SimHubVersion')\r\nvar minVer = $prop('variable.shVer')\r\n\r\nif ( compareversions( currentVer, minVer ) == '-1') {\r\n\treturn true\r\n} else {\r\n\treturn false\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
+        "Interpreter": 1
+      },
+      "ScreenId": "966e54e6-7f8c-4860-8da2-9c2732872db6"
     }
   ],
   "ShowBackground": true,
@@ -838,7 +3071,7 @@
         "EvaluateOnlyOnce": false,
         "OverrideWithParentDashboardVariableWhenAvailable": false,
         "ValueExpression": {
-          "Expression": "'1.2.2'"
+          "Expression": "'1.3.0'"
         },
         "VariableName": "dashVer"
       },
@@ -846,7 +3079,7 @@
         "EvaluateOnlyOnce": false,
         "OverrideWithParentDashboardVariableWhenAvailable": false,
         "ValueExpression": {
-          "Expression": "'8.4.11'"
+          "Expression": "'9.1.2'"
         },
         "VariableName": "shVer"
       }
