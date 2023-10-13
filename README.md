@@ -137,16 +137,20 @@ If you were wondering why this is the best SimHub dashboard out there, wonder no
 ![Basic Feature Set](docs/images/AllFeatures.png)
 
 ### Lovely Dashboard XL (for 10" DDU's)
-![Lovely Dashboard XL](docs/images/Lovely Dashboard XL.png)
+
+![Lovely Dashboard XL](docs/images/LovelyDashboardXL.png)
 
 ### Lovely Overlay
-![Lovely Overlay](docs/images/Lovely Overlay.png)
+
+![Lovely Overlay](docs/images/LovelyOverlay.png)
 
 ### Lovely Tower
-![Lovely Tower](docs/images/Lovely Tower.png)
+
+![Lovely Tower](docs/images/LovelyTower.png)
 
 ### Lovely Flags
-![Lovely Flags](docs/images/Lovely Flags.gif)	
+
+![Lovely Flags](docs/images/LovelyFlags.gif)	
 
 ## Contributing
 Would you like to contribute to the **Lovely Dashboard**? Then head on over to the [**Developers Docs**](docs/developers.md) and find out how you can get started.
