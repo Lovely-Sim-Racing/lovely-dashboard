@@ -3,14 +3,13 @@
   "BackgroundOpacity": 100.0,
   "BaseHeight": 333,
   "BaseWidth": 85,
-  "CarClassColorsOverrides": [],
   "DashboardDebugManager": {},
   "EnableClickThroughOverlay": true,
   "EnableOnDashboardMessaging": true,
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "a260b7ec-1de5-4605-b567-3f58885df48e",
+  "Id": "a4d43472-89ef-4a9d-987e-a9ddc9359d27",
   "Images": [],
   "IsOverlay": false,
   "Metadata": {
@@ -35,6 +34,7 @@
       "IdleScreen": false,
       "InGameScreen": true,
       "IsBackgroundLayer": false,
+      "IsEffectiveDelayConstrainer": true,
       "IsForegroundLayer": false,
       "IsOverlayLayer": false,
       "Items": [
@@ -52,9 +52,12 @@
                 "RadiusTopRight": 5
               },
               "Height": 24.0,
+              "IsEffectiveDelayConstrainer": false,
               "IsRectangleItem": true,
               "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "RectangleItem",
+              "RenderingSkip": 0,
               "Top": 309.0,
               "Visible": true,
               "Width": 85.0
@@ -69,9 +72,12 @@
                 "RadiusTopRight": 5
               },
               "Height": 24.0,
+              "IsEffectiveDelayConstrainer": false,
               "IsRectangleItem": true,
               "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "RectangleItem5",
+              "RenderingSkip": 0,
               "Top": 251.0,
               "Visible": true,
               "Width": 85.0
@@ -86,9 +92,12 @@
                 "RadiusTopRight": 5
               },
               "Height": 24.0,
+              "IsEffectiveDelayConstrainer": false,
               "IsRectangleItem": true,
               "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "RectangleItem4",
+              "RenderingSkip": 0,
               "Top": 193.0,
               "Visible": true,
               "Width": 85.0
@@ -103,9 +112,12 @@
                 "RadiusTopRight": 5
               },
               "Height": 24.0,
+              "IsEffectiveDelayConstrainer": false,
               "IsRectangleItem": true,
               "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "RectangleItem3",
+              "RenderingSkip": 0,
               "Top": 135.0,
               "Visible": true,
               "Width": 85.0
@@ -120,9 +132,12 @@
                 "RadiusTopRight": 5
               },
               "Height": 24.0,
+              "IsEffectiveDelayConstrainer": false,
               "IsRectangleItem": true,
               "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "RectangleItem2",
+              "RenderingSkip": 0,
               "Top": 77.0,
               "Visible": true,
               "Width": 85.0
@@ -137,9 +152,12 @@
                 "RadiusTopRight": 5
               },
               "Height": 24.0,
+              "IsEffectiveDelayConstrainer": false,
               "IsRectangleItem": true,
               "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "RectangleItem0",
+              "RenderingSkip": 0,
               "Top": 19.0,
               "Visible": true,
               "Width": 85.0
@@ -147,8 +165,11 @@
           ],
           "Group": true,
           "Height": 314.0,
+          "IsEffectiveDelayConstrainer": true,
           "Left": 0.0,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "Standings BG",
+          "RenderingSkip": 0,
           "Top": 19.0,
           "Visible": true,
           "Width": 85.0
@@ -173,7 +194,7 @@
                 "Text": {
                   "FormatString": "",
                   "Formula": {
-                    "Expression": "return ld_formatTimeShort( drivergaptoleader( repeatindex() ) - drivergaptoleader( repeatindex()-1 ) )",
+                    "Expression": "var interval = drivergaptoleader( repeatindex() ) - drivergaptoleader( repeatindex()-1 )\r\n\r\nif (interval == 0) {\r\n\treturn 'L'+drivercurrentlap( repeatindex() )\r\n} else {\r\n\treturn ld_formatTimeShort( drivergaptoleader( repeatindex() ) - drivergaptoleader( repeatindex()-1 ))\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -189,30 +210,33 @@
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Qualify' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Lone Qualify' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Practice' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Offline Testing'\r\n\t) ? 0 : 1\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='QUALIFY' ||\r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='PRACTICE'\r\n\t) ? 0 : 1\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Qualify' ||\r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice'\r\n\t) ? 0 : 1\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\treturn ( \r\n\t\t$prop('GameRawData.PacketSessionData.m_sessionType') < 10\r\n\t\t// 0 = unknown, 1 = P1, 2 = P2, 3 = P3, 4 = Short P, 5 = Q1\r\n        // 6 = Q2, 7 = Q3, 8 = Short Q, 9 = OSQ, 10 = R, 11 = R2\r\n        // 12 = Time Trial\r\n\t) ? 0 : 1\r\n\r\n} else {\r\n\r\n\treturn ( \r\n\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='QUALIFY' ||\r\n\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='PRACTICE'\r\n\t) ? 0 : 1\r\n\t\r\n}",
+                    "Expression": "return !ld_isQuali()",
                     "Interpreter": 1
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Visible"
                 }
               },
-              "CharWidth": 11.0,
+              "CharWidth": 10.0,
               "Font": "Roboto",
-              "FontSize": 20.0,
-              "FontWeight": "Bold",
+              "FontSize": 18.0,
+              "FontWeight": "Light",
               "Height": 24.0,
               "HorizontalAlignment": 2,
+              "IsEffectiveDelayConstrainer": false,
               "IsTextItem": true,
-              "Left": 20.0,
+              "Left": 25.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "Int (Race)",
-              "SpecialCharsWidth": 5.0,
-              "Text": "0.000",
+              "RenderingSkip": 0,
+              "SpecialCharsWidth": 3.0,
+              "Text": "0.00",
               "TextColor": "#FFFFFFFF",
               "Top": 20.0,
               "UseMonospacedText": true,
               "VerticalAlignment": 1,
-              "Visible": true,
-              "Width": 65.0
+              "Visible": false,
+              "Width": 60.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -221,7 +245,7 @@
                 "Text": {
                   "FormatString": "",
                   "Formula": {
-                    "Expression": "return ld_formatTimeShort( driverdeltatobest( repeatindex() ) )",
+                    "Expression": "var gap = driverdeltatobest( repeatindex() )\r\n\r\nif ( (gap == 0 || gap == null) && timespantoseconds( driverbestlap( repeatindex() ) ) > 0 ) {\r\n\treturn format( driverbestlap( repeatindex() ), 'm\\\\:ss\\\\.ff', false)\r\n} else {\r\n\treturn ld_formatTimeShort( gap )\r\n}",
                     "Interpreter": 1
                   },
                   "Mode": 2,
@@ -237,30 +261,33 @@
                 },
                 "Visible": {
                   "Formula": {
-                    "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Qualify' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Lone Qualify' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Practice' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Offline Testing'\r\n\t) ? 1 : 0\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='QUALIFY' ||\r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='PRACTICE'\r\n\t) ? 1 : 0\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Qualify' ||\r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice'\r\n\t) ? 1 : 0\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\treturn ( \r\n\t\t$prop('GameRawData.PacketSessionData.m_sessionType') < 10\r\n\t\t// 0 = unknown, 1 = P1, 2 = P2, 3 = P3, 4 = Short P, 5 = Q1\r\n        // 6 = Q2, 7 = Q3, 8 = Short Q, 9 = OSQ, 10 = R, 11 = R2\r\n        // 12 = Time Trial\r\n\t) ? 1 : 0\r\n\r\n} else {\r\n\r\n\treturn ( \r\n\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='QUALIFY' ||\r\n\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='PRACTICE'\r\n\t) ? 1 : 0\r\n\t\r\n}",
+                    "Expression": "return ld_isQuali()",
                     "Interpreter": 1
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Visible"
                 }
               },
-              "CharWidth": 11.0,
+              "CharWidth": 10.0,
               "Font": "Roboto",
-              "FontSize": 20.0,
-              "FontWeight": "Bold",
+              "FontSize": 18.0,
+              "FontWeight": "Light",
               "Height": 24.0,
               "HorizontalAlignment": 2,
+              "IsEffectiveDelayConstrainer": false,
               "IsTextItem": true,
-              "Left": 20.0,
+              "Left": 25.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "Delta (Quali)",
-              "SpecialCharsWidth": 5.0,
-              "Text": "0.000",
+              "RenderingSkip": 0,
+              "SpecialCharsWidth": 3.0,
+              "Text": "+0.00",
               "TextColor": "#FFFFFFFF",
               "Top": 20.0,
               "UseMonospacedText": true,
               "VerticalAlignment": 1,
               "Visible": true,
-              "Width": 65.0
+              "Width": 60.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -294,10 +321,13 @@
               "FontWeight": "Black",
               "Height": 24.0,
               "HorizontalAlignment": 1,
+              "IsEffectiveDelayConstrainer": false,
               "IsFreezed": true,
               "IsTextItem": true,
               "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "Position",
+              "RenderingSkip": 0,
               "Text": "1",
               "TextColor": "#FF000000",
               "Top": 20.0,
@@ -308,8 +338,11 @@
           ],
           "Group": true,
           "Height": 24.0,
+          "IsEffectiveDelayConstrainer": true,
           "Left": 0.0,
+          "MinimumRefreshIntervalMS": 500.0,
           "Name": "Timetables",
+          "RenderingSkip": 50,
           "RepeatTopOffset": 29.0,
           "Repetitions": 10.0,
           "Top": 20.0,
@@ -334,9 +367,12 @@
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
               "BackgroundColor": "#FF000000",
               "Height": 24.0,
+              "IsEffectiveDelayConstrainer": false,
               "IsRectangleItem": true,
               "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "RectangleItem",
+              "RenderingSkip": 0,
               "Top": 310.0,
               "Visible": true,
               "Width": 84.0
@@ -363,23 +399,26 @@
                   "TargetPropertyName": "Visible"
                 }
               },
-              "CharWidth": 11.0,
+              "CharWidth": 10.0,
               "Font": "Roboto",
               "FontSize": 20.0,
-              "FontWeight": "Bold",
+              "FontWeight": "Light",
               "Height": 24.0,
               "HorizontalAlignment": 2,
+              "IsEffectiveDelayConstrainer": false,
               "IsTextItem": true,
-              "Left": 20.0,
+              "Left": 25.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "Int (Race)",
-              "SpecialCharsWidth": 5.0,
-              "Text": "0.000",
+              "RenderingSkip": 0,
+              "SpecialCharsWidth": 3.0,
+              "Text": "+0.00",
               "TextColor": "#FFFFE04C",
               "Top": 310.0,
               "UseMonospacedText": true,
               "VerticalAlignment": 1,
-              "Visible": true,
-              "Width": 65.0
+              "Visible": false,
+              "Width": 60.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -403,23 +442,26 @@
                   "TargetPropertyName": "Visible"
                 }
               },
-              "CharWidth": 11.0,
+              "CharWidth": 10.0,
               "Font": "Roboto",
               "FontSize": 20.0,
-              "FontWeight": "Bold",
+              "FontWeight": "Light",
               "Height": 24.0,
               "HorizontalAlignment": 2,
+              "IsEffectiveDelayConstrainer": false,
               "IsTextItem": true,
-              "Left": 20.0,
+              "Left": 25.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "Delta (Quali)",
-              "SpecialCharsWidth": 5.0,
-              "Text": "0.000",
+              "RenderingSkip": 0,
+              "SpecialCharsWidth": 3.0,
+              "Text": "0.00",
               "TextColor": "#FFFFE04C",
               "Top": 310.0,
               "UseMonospacedText": true,
               "VerticalAlignment": 1,
               "Visible": true,
-              "Width": 65.0
+              "Width": 60.0
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -445,10 +487,13 @@
               "FontWeight": "Black",
               "Height": 24.0,
               "HorizontalAlignment": 1,
+              "IsEffectiveDelayConstrainer": false,
               "IsFreezed": true,
               "IsTextItem": true,
               "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "Position",
+              "RenderingSkip": 0,
               "Text": "00",
               "TextColor": "#FF000000",
               "Top": 310.0,
@@ -459,8 +504,11 @@
           ],
           "Group": true,
           "Height": 24.0,
+          "IsEffectiveDelayConstrainer": true,
           "Left": 0.0,
+          "MinimumRefreshIntervalMS": 500.0,
           "Name": "Driver",
+          "RenderingSkip": 50,
           "RepeatTopOffset": 0.0,
           "Top": 310.0,
           "Visible": true,
@@ -472,7 +520,7 @@
           "Bindings": {
             "Text": {
               "Formula": {
-                "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Qualify' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Lone Qualify' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Open Practice' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice' || \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Offline Testing'\r\n\t) ? 'GAP' : 'INT'\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='QUALIFY' ||\r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='PRACTICE'\r\n\t) ? 'GAP' : 'INT'\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\treturn ( \r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Qualify' ||\r\n\t\t$prop('DataCorePlugin.GameData.SessionTypeName')=='Practice'\r\n\t) ? 'GAP' : 'INT'\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\treturn ( \r\n\t\t$prop('GameRawData.PacketSessionData.m_sessionType') < 10\r\n\t\t// 0 = unknown, 1 = P1, 2 = P2, 3 = P3, 4 = Short P, 5 = Q1\r\n        // 6 = Q2, 7 = Q3, 8 = Short Q, 9 = OSQ, 10 = R, 11 = R2\r\n        // 12 = Time Trial\r\n\t) ? 'GAP' : 'INT'\r\n\r\n} else {\r\n\r\n\treturn ( \r\n\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='QUALIFY' ||\r\n\t\tucase($prop('DataCorePlugin.GameData.SessionTypeName')) =='PRACTICE'\r\n\t) ? 'GAP' : 'INT'\r\n\t\r\n}",
+                "Expression": "return ( ld_isQuali() ) ? 'GAP' : 'INTERVAL'",
                 "Interpreter": 1
               },
               "Mode": 2,
@@ -484,9 +532,12 @@
           "FontWeight": "Bold",
           "Height": 14.0,
           "HorizontalAlignment": 2,
+          "IsEffectiveDelayConstrainer": true,
           "IsTextItem": true,
           "Left": 1.0,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "TextItem",
+          "RenderingSkip": 0,
           "Text": "GAP",
           "TextColor": "#FF878787",
           "Top": 0.0,
@@ -495,6 +546,7 @@
           "Width": 84.0
         }
       ],
+      "MinimumRefreshIntervalMS": 0.0,
       "Name": "Screen1",
       "OverlayMaxDuration": 0,
       "OverlayMinDuration": 0,
@@ -502,6 +554,7 @@
         "Expression": ""
       },
       "PitScreen": false,
+      "RenderingSkip": 0,
       "ScreenEnabledExpression": {
         "Expression": ""
       },
