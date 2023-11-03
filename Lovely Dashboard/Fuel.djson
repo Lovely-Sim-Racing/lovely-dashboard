@@ -9,7 +9,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "57ed1825-b2c0-46c4-9da8-296a38478fc6",
+  "Id": "5cdb9185-6797-42b2-96f0-78d491eba9a9",
   "Images": [],
   "IsOverlay": false,
   "Metadata": {
@@ -50,10 +50,10 @@
             "Opacity": {
               "Formula": {
                 "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Opacity"
+              "Mode": 2
             }
           },
           "BorderStyle": {
@@ -61,10 +61,10 @@
               "RadiusBottomRight": {
                 "Formula": {
                   "Expression": "if ( $prop('variable.dashName') == 'LovelyDashboardXL') {\r\n\r\n\treturn 12\r\n\t\r\n} else {\r\n\r\n\tconst json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\n\tconst settings = JSON.parse(json_settings);\r\n\t\r\n\tif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\t\tuiRadius = 45\r\n\t} else {\r\n\t\tuiRadius = settings.uiRadius\r\n\t}\r\n\t\r\n\treturn uiRadius\r\n\r\n}",
-                  "Interpreter": 1
+                  "Interpreter": 1,
+                  "JSExt": 3
                 },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusBottomRight"
+                "Mode": 2
               }
             },
             "BorderBottom": 2,
@@ -79,7 +79,9 @@
           "Height": 85.0,
           "IsRectangleItem": true,
           "Left": 0.0,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "RectangleItem6",
+          "RenderingSkip": 0,
           "Top": 7.0,
           "Visible": true,
           "Width": 324.0
@@ -91,10 +93,10 @@
             "Text": {
               "Formula": {
                 "Expression": "return ucase( $prop('DataCorePlugin.GameData.FuelUnit'))",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Text"
+              "Mode": 2
             }
           },
           "Font": "Roboto",
@@ -105,7 +107,9 @@
           "IsFreezed": true,
           "IsTextItem": true,
           "Left": 31.0,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "Fuel Label",
+          "RenderingSkip": 0,
           "Text": "LITRES",
           "TextColor": "#FF878787",
           "Top": 73.0,
@@ -124,7 +128,9 @@
           "IsFreezed": true,
           "IsTextItem": true,
           "Left": 241.0,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "Laps Label",
+          "RenderingSkip": 0,
           "Text": "LAPS",
           "TextColor": "#FF878787",
           "Top": 73.0,
@@ -143,7 +149,9 @@
           "IsFreezed": true,
           "IsTextItem": true,
           "Left": 138.0,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "AVG Label",
+          "RenderingSkip": 0,
           "Text": "AVG",
           "TextColor": "#FF878787",
           "Top": 73.0,
@@ -158,19 +166,19 @@
             "Text": {
               "FormatString": "0",
               "Formula": {
-                "Expression": "if ($prop('DataCorePlugin.GameData.Fuel')>9 || $prop('DataCorePlugin.GameData.Fuel')==0) {\r\n\treturn Math.round($prop('DataCorePlugin.GameData.Fuel'))\r\n} else {\r\n\treturn $prop('DataCorePlugin.GameData.Fuel').toFixed(1)\r\n}",
-                "Interpreter": 1
+                "Expression": "return ld_formatNumberVeryShort( $prop('DataCorePlugin.GameData.Fuel') )",
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Text"
+              "Mode": 2
             },
             "Visible": {
               "Formula": {
                 "Expression": "return ( $prop('DataCorePlugin.Computed.Fuel_Percent')<=10 && $prop('DataCorePlugin.Computed.Fuel_Percent')>5 ) ? 1 : 0",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "BlinkDelay": 500.0,
@@ -183,6 +191,7 @@
           "IsFreezed": true,
           "IsTextItem": true,
           "Left": 6.0,
+          "MinimumRefreshIntervalMS": 150.0,
           "Name": "Fuel2",
           "RenderingSkip": 15,
           "SpecialCharsWidth": 11.0,
@@ -201,27 +210,27 @@
             "BlinkEnabled": {
               "Formula": {
                 "Expression": "return ($prop('DataCorePlugin.Computed.Fuel_Percent')<=10 && $prop('DataCorePlugin.Computed.Fuel_Percent')>5) ? 1 : 0",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "BlinkEnabled"
+              "Mode": 2
             },
             "Text": {
               "FormatString": "0",
               "Formula": {
-                "Expression": "if ($prop('DataCorePlugin.GameData.Fuel')>9 || $prop('DataCorePlugin.GameData.Fuel')==0) {\r\n\treturn Math.round($prop('DataCorePlugin.GameData.Fuel'))\r\n} else {\r\n\treturn $prop('DataCorePlugin.GameData.Fuel').toFixed(1)\r\n}",
-                "Interpreter": 1
+                "Expression": "return ld_formatNumberVeryShort( $prop('DataCorePlugin.GameData.Fuel') )",
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Text"
+              "Mode": 2
             },
             "TextColor": {
               "Formula": {
                 "Expression": "return ( $prop('DataCorePlugin.Computed.Fuel_Percent')<=10 && $prop('DataCorePlugin.Computed.Fuel_Percent')>5 ) ? '#FA0000' : '#FFFFFF'",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "TextColor"
+              "Mode": 2
             }
           },
           "BlinkDelay": 500.0,
@@ -234,6 +243,7 @@
           "IsFreezed": true,
           "IsTextItem": true,
           "Left": 6.0,
+          "MinimumRefreshIntervalMS": 150.0,
           "Name": "Fuel",
           "RenderingSkip": 15,
           "SpecialCharsWidth": 11.0,
@@ -247,15 +257,14 @@
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
           "Bindings": {
             "Visible": {
               "Formula": {
                 "Expression": "return ( $prop('DataCorePlugin.Computed.Fuel_Percent')<=5 && $prop('DataCorePlugin.Computed.Fuel_Percent')>0 ) ? 1 : 0",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "Childrens": [
@@ -267,10 +276,10 @@
                   "RadiusBottomRight": {
                     "Formula": {
                       "Expression": "if ( $prop('variable.dashName') == 'LovelyDashboardXL') {\r\n\r\n\treturn 12\r\n\t\r\n} else {\r\n\r\n\tconst json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\n\tconst settings = JSON.parse(json_settings);\r\n\t\r\n\tif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\t\tuiRadius = 40\r\n\t} else {\r\n\t\tuiRadius = settings.uiRadius-5\r\n\t}\r\n\t\r\n\treturn uiRadius\r\n\r\n}",
-                      "Interpreter": 1
+                      "Interpreter": 1,
+                      "JSExt": 3
                     },
-                    "Mode": 2,
-                    "TargetPropertyName": "RadiusBottomRight"
+                    "Mode": 2
                   }
                 },
                 "RadiusBottomLeft": 8,
@@ -281,7 +290,9 @@
               "Height": 78.0,
               "IsRectangleItem": true,
               "Left": 4.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "RectangleItem2",
+              "RenderingSkip": 0,
               "Top": 10.0,
               "Visible": true,
               "Width": 316.0
@@ -294,8 +305,7 @@
                   "Formula": {
                     "Expression": "ucase([DataCorePlugin.GameData.FuelUnit])"
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 }
               },
               "Font": "Roboto",
@@ -305,7 +315,9 @@
               "HorizontalAlignment": 1,
               "IsTextItem": true,
               "Left": 31.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem22",
+              "RenderingSkip": 0,
               "Text": "LITRES",
               "TextColor": "#FFFFFFFF",
               "Top": 73.0,
@@ -323,7 +335,9 @@
               "HorizontalAlignment": 1,
               "IsTextItem": true,
               "Left": 241.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem24",
+              "RenderingSkip": 0,
               "Text": "LAPS",
               "TextColor": "#FFFFFFFF",
               "Top": 73.0,
@@ -341,7 +355,9 @@
               "HorizontalAlignment": 1,
               "IsTextItem": true,
               "Left": 138.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem23",
+              "RenderingSkip": 0,
               "Text": "AVG",
               "TextColor": "#FFFFFFFF",
               "Top": 73.0,
@@ -356,11 +372,11 @@
                 "Text": {
                   "FormatString": "0",
                   "Formula": {
-                    "Expression": "if ($prop('DataCorePlugin.GameData.Fuel')>9 || $prop('DataCorePlugin.GameData.Fuel')==0) {\r\n\treturn Math.round($prop('DataCorePlugin.GameData.Fuel'))\r\n} else {\r\n\treturn $prop('DataCorePlugin.GameData.Fuel').toFixed(1)\r\n}",
-                    "Interpreter": 1
+                    "Expression": "return ld_formatNumberVeryShort( $prop('DataCorePlugin.GameData.Fuel') )",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 }
               },
               "BlinkDelay": 500.0,
@@ -372,7 +388,9 @@
               "HorizontalAlignment": 1,
               "IsTextItem": true,
               "Left": 6.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem5",
+              "RenderingSkip": 0,
               "SpecialCharsWidth": 11.0,
               "Text": "0.0",
               "TextColor": "#FFFFFFFF",
@@ -384,12 +402,11 @@
             }
           ],
           "Group": true,
-          "Height": 90.0,
-          "Left": 4.0,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "Alarm",
-          "Top": 5.0,
-          "Visible": false,
-          "Width": 316.0
+          "RenderingSkip": 0,
+          "Repetitions": 0,
+          "Visible": false
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -398,11 +415,11 @@
             "Text": {
               "FormatString": "0.00",
               "Formula": {
-                "Expression": "if ( \r\n\t$prop('DataCorePlugin.CurrentGame') == 'IRacing' ||\r\n\t$prop('DataCorePlugin.CurrentGame') == 'RFactor2' ||\r\n\t$prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ||\r\n\t$prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa' ) {\r\n\r\n\treturn $prop('DataCorePlugin.Computed.Fuel_LitersPerLap')\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\r\n\treturn (($prop('GameRawData.PlayerCarSetup.m_fuelLoad') - $prop('GameRawData.PlayerCarStatusData.m_fuelInTank')) / $prop('CurrentLap')).toFixed(1)\r\n\r\n} else {\r\n\r\n\treturn $prop('DataCorePlugin.GameRawData.Graphics.FuelXLap')\r\n\r\n}",
-                "Interpreter": 1
+                "Expression": "if ( \r\n\t$prop('DataCorePlugin.CurrentGame') == 'IRacing' ||\r\n\t$prop('DataCorePlugin.CurrentGame') == 'RFactor2' ||\r\n\t$prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ||\r\n\t$prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa' ) {\r\n\r\n\treturn ld_formatNumberShort( $prop('DataCorePlugin.Computed.Fuel_LitersPerLap') )\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\r\n\treturn (($prop('GameRawData.PlayerCarSetup.m_fuelLoad') - $prop('GameRawData.PlayerCarStatusData.m_fuelInTank')) / $prop('CurrentLap')).toFixed(1)\r\n\r\n} else {\r\n\r\n\treturn ld_formatNumberShort( $prop('DataCorePlugin.GameRawData.Graphics.FuelXLap') )\r\n\r\n}",
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Text"
+              "Mode": 2
             }
           },
           "CharWidth": 28.0,
@@ -414,6 +431,7 @@
           "IsFreezed": true,
           "IsTextItem": true,
           "Left": 109.0,
+          "MinimumRefreshIntervalMS": 150.0,
           "Name": "AVG",
           "RenderingSkip": 15,
           "SpecialCharsWidth": 11.0,
@@ -433,10 +451,10 @@
               "FormatString": "0",
               "Formula": {
                 "Expression": "if ( \r\n\t$prop('DataCorePlugin.CurrentGame') == 'IRacing' ||\r\n\t$prop('DataCorePlugin.CurrentGame') == 'RFactor2' ||\r\n\t$prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ||\r\n\t$prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa' ) {\r\n\r\n\tif ($prop('DataCorePlugin.Computed.Fuel_RemainingLaps')>5 || $prop('DataCorePlugin.Computed.Fuel_RemainingLaps')==0) {\r\n\t\treturn Math.round($prop('DataCorePlugin.Computed.Fuel_RemainingLaps'))\r\n\t} else {\r\n\t\treturn $prop('DataCorePlugin.Computed.Fuel_RemainingLaps').toFixed(1)\r\n\t}\r\n\r\n\r\n}  else if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\r\n\tif ($prop('DataCorePlugin.GameRawData.PlayerCarStatusData.m_fuelRemainingLaps')>5 || $prop('DataCorePlugin.GameRawData.PlayerCarStatusData.m_fuelRemainingLaps')==0) {\r\n\t\treturn Math.round($prop('DataCorePlugin.GameRawData.PlayerCarStatusData.m_fuelRemainingLaps'))\r\n\t} else {\r\n\t\treturn $prop('DataCorePlugin.GameRawData.PlayerCarStatusData.m_fuelRemainingLaps').toFixed(1)\r\n\t}\r\n\t\r\n} else {\r\n\r\n\tif ($prop('DataCorePlugin.GameRawData.Graphics.fuelEstimatedLaps')>5 || $prop('DataCorePlugin.GameRawData.Graphics.fuelEstimatedLaps')==0) {\r\n\t\treturn Math.round($prop('DataCorePlugin.GameRawData.Graphics.fuelEstimatedLaps'))\r\n\t} else {\r\n\t\treturn $prop('DataCorePlugin.GameRawData.Graphics.fuelEstimatedLaps').toFixed(1)\r\n\t}\r\n\r\n}",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Text"
+              "Mode": 2
             }
           },
           "CharWidth": 28.0,
@@ -448,6 +466,7 @@
           "IsFreezed": true,
           "IsTextItem": true,
           "Left": 216.0,
+          "MinimumRefreshIntervalMS": 150.0,
           "Name": "Laps",
           "RenderingSkip": 15,
           "SpecialCharsWidth": 11.0,
@@ -476,7 +495,9 @@
           "IsFreezed": true,
           "IsTextItem": true,
           "Left": 142.0,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "Title",
+          "RenderingSkip": 0,
           "Text": "FUEL",
           "TextColor": "#FFFFFFFF",
           "Top": 0.0,
@@ -485,6 +506,7 @@
           "Width": 50.0
         }
       ],
+      "MinimumRefreshIntervalMS": 0.0,
       "Name": "Fuel",
       "OverlayMaxDuration": 0,
       "OverlayMinDuration": 0,
@@ -492,6 +514,7 @@
         "Expression": ""
       },
       "PitScreen": false,
+      "RenderingSkip": 0,
       "ScreenEnabledExpression": {
         "Expression": ""
       },
@@ -513,10 +536,10 @@
             "Opacity": {
               "Formula": {
                 "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Opacity"
+              "Mode": 2
             }
           },
           "BorderStyle": {
@@ -524,10 +547,10 @@
               "RadiusBottomRight": {
                 "Formula": {
                   "Expression": "if ( $prop('variable.dashName') == 'LovelyDashboardXL') {\r\n\r\n\treturn 12\r\n\t\r\n} else {\r\n\r\n\tconst json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\n\tconst settings = JSON.parse(json_settings);\r\n\t\r\n\tif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\t\tuiRadius = 45\r\n\t} else {\r\n\t\tuiRadius = settings.uiRadius\r\n\t}\r\n\t\r\n\treturn uiRadius\r\n\r\n}",
-                  "Interpreter": 1
+                  "Interpreter": 1,
+                  "JSExt": 3
                 },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusBottomRight"
+                "Mode": 2
               }
             },
             "BorderBottom": 2,
@@ -542,7 +565,9 @@
           "Height": 85.0,
           "IsRectangleItem": true,
           "Left": 0.0,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "RectangleItem6",
+          "RenderingSkip": 0,
           "Top": 7.0,
           "Visible": true,
           "Width": 324.0
@@ -557,7 +582,9 @@
           "HorizontalAlignment": 1,
           "IsTextItem": true,
           "Left": 109.0,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "Label",
+          "RenderingSkip": 0,
           "Text": "EST. TIME LEFT",
           "TextColor": "#FF878787",
           "Top": 73.0,
@@ -567,15 +594,14 @@
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
           "Bindings": {
             "Visible": {
               "Formula": {
                 "Expression": "return ( $prop('DataCorePlugin.Computed.Fuel_Percent')<=5 && $prop('DataCorePlugin.Computed.Fuel_Percent')>0 ) ? 1 : 0",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "Childrens": [
@@ -587,10 +613,10 @@
                   "RadiusBottomRight": {
                     "Formula": {
                       "Expression": "if ( $prop('variable.dashName') == 'LovelyDashboardXL') {\r\n\r\n\treturn 12\r\n\t\r\n} else {\r\n\r\n\tconst json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\n\tconst settings = JSON.parse(json_settings);\r\n\t\r\n\tif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\t\tuiRadius = 40\r\n\t} else {\r\n\t\tuiRadius = settings.uiRadius-5\r\n\t}\r\n\t\r\n\treturn uiRadius\r\n\r\n}",
-                      "Interpreter": 1
+                      "Interpreter": 1,
+                      "JSExt": 3
                     },
-                    "Mode": 2,
-                    "TargetPropertyName": "RadiusBottomRight"
+                    "Mode": 2
                   }
                 },
                 "RadiusBottomLeft": 8,
@@ -601,7 +627,9 @@
               "Height": 78.0,
               "IsRectangleItem": true,
               "Left": 4.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "RectangleItem0",
+              "RenderingSkip": 0,
               "Top": 10.0,
               "Visible": true,
               "Width": 316.0
@@ -616,7 +644,9 @@
               "HorizontalAlignment": 1,
               "IsTextItem": true,
               "Left": 109.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem22",
+              "RenderingSkip": 0,
               "Text": "EST. TIME LEFT",
               "TextColor": "#FFFFFFFF",
               "Top": 73.0,
@@ -626,12 +656,11 @@
             }
           ],
           "Group": true,
-          "Height": 78.0,
-          "Left": 4.0,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "Alarm",
-          "Top": 10.0,
-          "Visible": false,
-          "Width": 316.0
+          "RenderingSkip": 0,
+          "Repetitions": 0,
+          "Visible": false
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -641,10 +670,10 @@
               "FormatString": "hh\\:mm\\:ss",
               "Formula": {
                 "Expression": "if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\r\n\treturn secondstotimespan($prop('GameRawData.PlayerCarStatusData.m_fuelRemainingLaps') * timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')))\r\n\r\n} else {\r\n\r\n\treturn $prop('DataCorePlugin.Computed.Fuel_RemainingTime')\r\n\t\r\n}\r\n",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Text"
+              "Mode": 2
             }
           },
           "CharWidth": 28.0,
@@ -655,7 +684,9 @@
           "HorizontalAlignment": 1,
           "IsTextItem": true,
           "Left": 61.5,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "Time Left",
+          "RenderingSkip": 0,
           "SpecialCharsWidth": 11.0,
           "Text": "00:00:00",
           "TextColor": "#FFFFFFFF",
@@ -667,15 +698,14 @@
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
           "Bindings": {
             "Visible": {
               "Formula": {
                 "Expression": "if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\r\n\treturn $prop('GameRawData.PlayerCarStatusData.m_fuelRemainingLaps') * timespantoseconds($prop('PersistantTrackerPlugin.EstimatedLapTime')) <= 0\r\n\r\n} else {\r\n\r\n\treturn ( timespantoseconds( $prop('DataCorePlugin.Computed.Fuel_RemainingTime') ) <= 0 ) ? 1 : 0\r\n\t\r\n}\r\n\r\n",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "Childrens": [
@@ -691,7 +721,9 @@
               "Height": 78.0,
               "IsRectangleItem": true,
               "Left": 4.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "RectangleItem0",
+              "RenderingSkip": 0,
               "Top": 10.0,
               "Visible": true,
               "Width": 316.0
@@ -706,7 +738,9 @@
               "HorizontalAlignment": 1,
               "IsTextItem": true,
               "Left": 88.5,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem22",
+              "RenderingSkip": 0,
               "Text": "INSUFFICIENT DATA",
               "TextColor": "#FFFFFFFF",
               "Top": 32.0,
@@ -724,7 +758,9 @@
               "HorizontalAlignment": 1,
               "IsTextItem": true,
               "Left": 56.5,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem23",
+              "RenderingSkip": 0,
               "Text": "  YOU NEED TO DRIVE SOME MORE BEFORE I CAN START CALCULATING",
               "TextColor": "#FF878787",
               "TextWrapping": 2,
@@ -735,12 +771,11 @@
             }
           ],
           "Group": true,
-          "Height": 78.0,
-          "Left": 4.0,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "Insufficient Data",
-          "Top": 10.0,
-          "Visible": false,
-          "Width": 316.0
+          "RenderingSkip": 0,
+          "Repetitions": 0,
+          "Visible": false
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -759,7 +794,9 @@
           "IsFreezed": true,
           "IsTextItem": true,
           "Left": 124.0,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "Title",
+          "RenderingSkip": 0,
           "Text": "FUEL TIME",
           "TextColor": "#FFFFFFFF",
           "Top": 0.0,
@@ -768,6 +805,7 @@
           "Width": 80.0
         }
       ],
+      "MinimumRefreshIntervalMS": 0.0,
       "Name": "Fuel Time",
       "OverlayMaxDuration": 0,
       "OverlayMinDuration": 0,
@@ -775,6 +813,7 @@
         "Expression": ""
       },
       "PitScreen": false,
+      "RenderingSkip": 0,
       "ScreenEnabledExpression": {
         "Expression": ""
       },
@@ -796,10 +835,10 @@
             "Opacity": {
               "Formula": {
                 "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Opacity"
+              "Mode": 2
             }
           },
           "BorderStyle": {
@@ -807,10 +846,10 @@
               "RadiusBottomRight": {
                 "Formula": {
                   "Expression": "if ( $prop('variable.dashName') == 'LovelyDashboardXL') {\r\n\r\n\treturn 12\r\n\t\r\n} else {\r\n\r\n\tconst json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\n\tconst settings = JSON.parse(json_settings);\r\n\t\r\n\tif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\t\tuiRadius = 45\r\n\t} else {\r\n\t\tuiRadius = settings.uiRadius\r\n\t}\r\n\t\r\n\treturn uiRadius\r\n\r\n}",
-                  "Interpreter": 1
+                  "Interpreter": 1,
+                  "JSExt": 3
                 },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusBottomRight"
+                "Mode": 2
               }
             },
             "BorderBottom": 2,
@@ -825,7 +864,9 @@
           "Height": 85.0,
           "IsRectangleItem": true,
           "Left": 0.0,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "RectangleItem6",
+          "RenderingSkip": 0,
           "Top": 7.0,
           "Visible": true,
           "Width": 324.0
@@ -840,7 +881,9 @@
           "HorizontalAlignment": 1,
           "IsTextItem": true,
           "Left": 33.5,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "Refuel Label",
+          "RenderingSkip": 0,
           "Text": "REFUEL",
           "TextColor": "#FF878787",
           "Top": 73.0,
@@ -858,7 +901,9 @@
           "HorizontalAlignment": 1,
           "IsTextItem": true,
           "Left": 188.5,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "Finish Label",
+          "RenderingSkip": 0,
           "Text": "FINISH",
           "TextColor": "#FF878787",
           "Top": 73.0,
@@ -868,15 +913,14 @@
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
           "Bindings": {
             "Visible": {
               "Formula": {
                 "Expression": "return ( $prop('DataCorePlugin.Computed.Fuel_Percent')<=5 && $prop('DataCorePlugin.Computed.Fuel_Percent')>0 ) ? 1 : 0",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "Childrens": [
@@ -888,10 +932,10 @@
                   "RadiusBottomRight": {
                     "Formula": {
                       "Expression": "if ( $prop('variable.dashName') == 'LovelyDashboardXL') {\r\n\r\n\treturn 12\r\n\t\r\n} else {\r\n\r\n\tconst json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\n\tconst settings = JSON.parse(json_settings);\r\n\t\r\n\tif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\t\tuiRadius = 40\r\n\t} else {\r\n\t\tuiRadius = settings.uiRadius-5\r\n\t}\r\n\t\r\n\treturn uiRadius\r\n\r\n}",
-                      "Interpreter": 1
+                      "Interpreter": 1,
+                      "JSExt": 3
                     },
-                    "Mode": 2,
-                    "TargetPropertyName": "RadiusBottomRight"
+                    "Mode": 2
                   }
                 },
                 "RadiusBottomLeft": 8,
@@ -902,7 +946,9 @@
               "Height": 78.0,
               "IsRectangleItem": true,
               "Left": 4.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "RectangleItem0",
+              "RenderingSkip": 0,
               "Top": 10.0,
               "Visible": true,
               "Width": 316.0
@@ -917,7 +963,9 @@
               "HorizontalAlignment": 1,
               "IsTextItem": true,
               "Left": 33.5,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem22",
+              "RenderingSkip": 0,
               "Text": "REFUEL",
               "TextColor": "#FFFFFFFF",
               "Top": 73.0,
@@ -935,7 +983,9 @@
               "HorizontalAlignment": 1,
               "IsTextItem": true,
               "Left": 188.5,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem23",
+              "RenderingSkip": 0,
               "Text": "FINISH",
               "TextColor": "#FFFFFFFF",
               "Top": 73.0,
@@ -945,12 +995,11 @@
             }
           ],
           "Group": true,
-          "Height": 78.0,
-          "Left": 4.0,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "Alarm",
-          "Top": 10.0,
-          "Visible": false,
-          "Width": 316.0
+          "RenderingSkip": 0,
+          "Repetitions": 0,
+          "Visible": false
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -960,10 +1009,10 @@
               "FormatString": "0.0",
               "Formula": {
                 "Expression": "var estTotalLaps // Estimated laps left for the race\r\nvar fuelRequired // Fuel requried for the entire race\r\nvar reFuel // Re Fuel amount, if required\r\nvar timeAgainst // Best or Last lap\r\nvar carMaxFuel // Max Fuel Capacity\r\nvar totalLaps // Total laps for lap based races\r\nvar remainingLaps // Remaining laps for lap based races\r\n\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\t\r\n\tif ($prop('DataCorePlugin.GameRawData.SessionData.SessionInfo.Sessions01.IsLimitedSessionLaps')) { \r\n\t\t// Lap based\t\r\n\t\tcarMaxFuel = $prop('DataCorePlugin.GameData.CarSettings_MaxFUEL');\r\n\t\ttotalLaps = $prop('DataCorePlugin.GameRawData.Telemetry.SessionLapsRemain')\r\n\t\tremainingLaps = totalLaps + (1-$prop('DataCorePlugin.GameRawData.Telemetry.LapDistPct'))\r\n\t\tfuelRequired = remainingLaps * $prop('DataCorePlugin.Computed.Fuel_LitersPerLap');\r\n\t\treFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel');\r\n\t\t\r\n\t\tif (reFuel > 0) {\r\n\t\t\tif (reFuel >= carMaxFuel) {\r\n\t\t\t\treturn carMaxFuel\r\n\t\t\t} else {\r\n\t\t\t\treturn Math.abs(reFuel)\r\n\t\t\t}\r\n\t\t} else {\r\n\t\t\treturn 0\r\n\t\t}\r\n\r\n\t \r\n\t } else { \r\n\t \r\n\t \t// Time based\r\n\t\tif ( $prop('DataCorePlugin.GameData.BestLapTime')=='00:00:00' ) {\r\n\t\t\ttimeAgainst = $prop('DataCorePlugin.GameRawData.Telemetry.LapLastLapTime')\r\n\t\t} else {\r\n\t\t\ttimeAgainst = $prop('DataCorePlugin.GameRawData.Telemetry.LapBestLapTime')\r\n\t\t}\r\n\t\t\r\n\t\tvar carMaxFuel = $prop('DataCorePlugin.GameData.CarSettings_MaxFUEL')\r\n\t\testTotalLaps = $prop('DataCorePlugin.GameRawData.Telemetry.SessionTimeRemain') / timeAgainst;\r\n\t\tfuelRequired = estTotalLaps * $prop('DataCorePlugin.Computed.Fuel_LitersPerLap')\r\n\t\treFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel')\r\n\t\t\r\n\t\tif (reFuel > 0) {\r\n\t\t\tif (reFuel >= carMaxFuel) {\r\n\t\t\t\treturn carMaxFuel\r\n\t\t\t} else {\r\n\t\t\t\treturn Math.abs(reFuel)\r\n\t\t\t}\r\n\t\t} else {\r\n\t\t\treturn 0\r\n\t\t}\r\n\r\n\t \r\n\t }\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\tif ( $prop('TotalLaps') > 0) {\r\n\t\t// Lap Based\r\n\t\tcarMaxFuel = $prop('DataCorePlugin.GameData.CarSettings_MaxFUEL');\r\n\t\ttotalLaps = $prop('DataCorePlugin.GameData.TotalLaps');\r\n\t\tfuelRequired = totalLaps * $prop('DataCorePlugin.Computed.Fuel_LitersPerLap');\r\n\t\treFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel');\r\n\t\tif (reFuel > 0) {\r\n\t\t\tif (reFuel >= carMaxFuel) {\r\n\t\t\t\treturn carMaxFuel\r\n\t\t\t} else {\r\n\t\t\t\treturn Math.abs(reFuel)\r\n\t\t\t}\r\n\t\t} else {\r\n\t\t\treturn 0\r\n\t\t}\r\n\t} else {\r\n\t\t// Time Based\r\n\t\tif ( $prop('DataCorePlugin.GameRawData.mSessionFastestLapTime') == '-1' ) {\r\n\t\t\ttimeAgainst = $prop('DataCorePlugin.GameRawData.mLastLapTime')\r\n\t\t} else {\r\n\t\t\ttimeAgainst = $prop('DataCorePlugin.GameRawData.mSessionFastestLapTime')\r\n\t\t}\r\n\t\tcarMaxFuel = $prop('DataCorePlugin.GameData.MaxFuel');\r\n\t\testTotalLaps = timespantoseconds($prop('DataCorePlugin.GameData.SessionTimeLeft')) / timeAgainst\r\n\t\tfuelRequired = estTotalLaps * $prop('DataCorePlugin.Computed.Fuel_LitersPerLap')\r\n\t\treFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel');\r\n\t\tif (reFuel > 0) {\r\n\t\t\tif (reFuel >= carMaxFuel) {\r\n\t\t\t\treturn carMaxFuel\r\n\t\t\t} else {\r\n\t\t\t\treturn Math.abs(reFuel)\r\n\t\t\t}\r\n\t\t} else {\r\n\t\t\treturn 0\r\n\t\t}\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameRawData.mLapsInEvent') > 0) {\r\n\t\t// Lap Based\r\n\t\tcarMaxFuel = $prop('DataCorePlugin.GameData.CarSettings_MaxFUEL');\r\n\t\ttotalLaps = $prop('DataCorePlugin.GameData.TotalLaps');\r\n\t\tfuelRequired = totalLaps * $prop('DataCorePlugin.Computed.Fuel_LitersPerLap');\r\n\t\treFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel');\r\n\t\tif (reFuel > 0) {\r\n\t\t\tif (reFuel >= carMaxFuel) {\r\n\t\t\t\treturn carMaxFuel\r\n\t\t\t} else {\r\n\t\t\t\treturn Math.abs(reFuel)\r\n\t\t\t}\r\n\t\t} else {\r\n\t\t\treturn 0\r\n\t\t}\r\n\t} else {\r\n\t\t// Time Based\r\n\t\tif ( $prop('DataCorePlugin.GameRawData.mSessionFastestLapTime') == '-1' ) {\r\n\t\t\ttimeAgainst = $prop('DataCorePlugin.GameRawData.mLastLapTime')\r\n\t\t} else {\r\n\t\t\ttimeAgainst = $prop('DataCorePlugin.GameRawData.mSessionFastestLapTime')\r\n\t\t}\r\n\t\tcarMaxFuel = $prop('DataCorePlugin.GameData.MaxFuel');\r\n\t\testTotalLaps = timespantoseconds($prop('DataCorePlugin.GameData.SessionTimeLeft')) / timeAgainst\r\n\t\tfuelRequired = estTotalLaps * $prop('DataCorePlugin.Computed.Fuel_LitersPerLap')\r\n\t\treFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel');\r\n\t\tif (reFuel > 0) {\r\n\t\t\tif (reFuel >= carMaxFuel) {\r\n\t\t\t\treturn carMaxFuel\r\n\t\t\t} else {\r\n\t\t\t\treturn Math.abs(reFuel)\r\n\t\t\t}\r\n\t\t} else {\r\n\t\t\treturn 0\r\n\t\t}\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\r\n\r\n\t\r\n\tif ( timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) == 0 && timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) == 0 ) {\r\n\t\treturn '-'\r\n\t}\r\n\t\r\n\tif ( timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) == 0 ) {\r\n\t\ttimeAgainst = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime'));\r\n\t} else {\r\n\t\ttimeAgainst = timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime'));\r\n\t}\r\n\t\r\n\tcarMaxFuel = $prop('DataCorePlugin.GameData.MaxFuel');\r\n\t\r\n\testTotalLaps = $prop('GameRawData.PacketSessionData.m_sessionTimeLeft') / timeAgainst;\r\n\t\r\n\tfuelRequired = estTotalLaps * ($prop('GameRawData.PlayerCarSetup.m_fuelLoad')-$prop('GameRawData.PlayerCarStatusData.m_fuelInTank'))/$prop('CurrentLap');\r\n\t\r\n\t\r\n\treFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel');\r\n\t\r\n\tif (reFuel > 0) {\r\n\t\tif (reFuel >= carMaxFuel) {\r\n\t\t\treturn carMaxFuel\r\n\t\t} else {\r\n\t\t\treturn Math.abs(reFuel)\r\n\t\t}\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\r\n} else {\r\n\r\n\tif ( timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) == 0 ) {\r\n\t\ttimeAgainst = $prop('DataCorePlugin.GameRawData.Graphics.iLastTime')\r\n\t} else {\r\n\t\ttimeAgainst = $prop('DataCorePlugin.GameRawData.Graphics.iBestTime')\r\n\t}\r\n\t\r\n\tcarMaxFuel = $prop('DataCorePlugin.GameData.MaxFuel')\r\n\testTotalLaps = $prop('DataCorePlugin.GameRawData.Graphics.SessionTimeLeft') / timeAgainst\r\n\tfuelRequired = estTotalLaps * $prop('DataCorePlugin.GameRawData.Graphics.FuelXLap')\r\n\treFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel')\r\n\t\r\n\tif (reFuel > 0) {\r\n\t\tif (reFuel >= carMaxFuel) {\r\n\t\t\treturn carMaxFuel\r\n\t\t} else {\r\n\t\t\treturn Math.abs(reFuel)\r\n\t\t}\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n}",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Text"
+              "Mode": 2
             }
           },
           "CharWidth": 28.0,
@@ -974,6 +1023,7 @@
           "HorizontalAlignment": 1,
           "IsTextItem": true,
           "Left": 23.5,
+          "MinimumRefreshIntervalMS": 1000.0,
           "Name": "Refuel",
           "RenderingSkip": 100,
           "SpecialCharsWidth": 11.0,
@@ -993,10 +1043,10 @@
               "FormatString": "0.0",
               "Formula": {
                 "Expression": "var estTotalLaps // Estimated laps left for the race\r\nvar fuelRequired // Fuel requried for the entire race\r\nvar reFuel // Re Fuel amount, if required\r\nvar timeAgainst // Best or Last lap\r\nvar totalLaps // Total laps for lap based races\r\nvar remainingLaps // Remaining laps for lap based races\r\n\r\n\r\nif ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\tif ($prop('DataCorePlugin.GameRawData.SessionData.SessionInfo.Sessions01.IsLimitedSessionLaps')) { \r\n\t\t// Lap based\r\n\t\ttotalLaps = $prop('DataCorePlugin.GameRawData.Telemetry.SessionLapsRemain')\r\n\t\tremainingLaps = totalLaps + (1-$prop('DataCorePlugin.GameRawData.Telemetry.LapDistPct'))\r\n\t\tfuelRequired = remainingLaps * $prop('DataCorePlugin.Computed.Fuel_LitersPerLap')\r\n\t\treFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel')\r\n\t\t\r\n\t\treturn (reFuel < 0) ? Math.abs(reFuel) : 0\r\n\t\t\r\n\t} else {\r\n\t\t\r\n\t\t// Time based\r\n\t\tif ( $prop('DataCorePlugin.GameRawData.Telemetry.LapBestLapTime') == '-1' ) {\r\n\t\t\ttimeAgainst = $prop('DataCorePlugin.GameRawData.Telemetry.LapLastLapTime')\r\n\t\t} else {\r\n\t\t\ttimeAgainst = $prop('DataCorePlugin.GameRawData.Telemetry.LapBestLapTime')\r\n\t\t}\r\n\t\t\r\n\t\testTotalLaps = $prop('DataCorePlugin.GameRawData.Telemetry.SessionTimeRemain') / timeAgainst;\r\n\t\tfuelRequired = estTotalLaps * $prop('DataCorePlugin.Computed.Fuel_LitersPerLap')\r\n\t\treFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel')\r\n\t\t\r\n\t\treturn (reFuel < 0) ? Math.abs(reFuel) : 0\r\n\t\t\r\n\t}\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\t\r\n\tif ( $prop('TotalLaps') > 0) {\r\n\t\t// Lap Based\r\n\t\ttotalLaps = $prop('DataCorePlugin.GameData.RemainingLaps')\r\n\t\tremainingLaps = totalLaps + (1-$prop('DataCorePlugin.GameRawData.Telemetry.LapDistPct'))\r\n\t\tfuelRequired = remainingLaps * $prop('DataCorePlugin.Computed.Fuel_LitersPerLap');\r\n\t\treFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel');\r\n\t\t\r\n\t\tif (reFuel < 0) {\r\n\t\t\treturn Math.abs(reFuel)\r\n\t\t} else {\r\n\t\t\treturn 0\r\n\t\t}\r\n\t\r\n\t} else {\r\n\t\t// Time Based\r\n\t\tif ( $prop('DataCorePlugin.GameRawData.mSessionFastestLapTime') == '-1' ) {\r\n\t\t\ttimeAgainst = $prop('DataCorePlugin.GameRawData.mLastLapTime')\r\n\t\t} else {\r\n\t\t\ttimeAgainst = $prop('DataCorePlugin.GameRawData.mSessionFastestLapTime')\r\n\t\t}\r\n\t\testTotalLaps = timespantoseconds($prop('DataCorePlugin.GameData.SessionTimeLeft')) / timeAgainst\r\n\t\tfuelRequired = estTotalLaps * $prop('DataCorePlugin.Computed.Fuel_LitersPerLap')\r\n\t\treFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel')\r\n\t\tif (reFuel < 0) {\r\n\t\t\treturn Math.abs(reFuel)\r\n\t\t} else {\r\n\t\t\treturn 0\r\n\t\t}\r\n\t}\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\t\r\n\tif ( $prop('DataCorePlugin.GameRawData.mLapsInEvent') > 0) {\r\n\t\t// Lap Based\r\n\t\ttotalLaps = $prop('DataCorePlugin.GameData.RemainingLaps')\r\n\t\tremainingLaps = totalLaps + (1-$prop('DataCorePlugin.GameRawData.Telemetry.LapDistPct'))\r\n\t\tfuelRequired = remainingLaps * $prop('DataCorePlugin.Computed.Fuel_LitersPerLap');\r\n\t\treFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel');\r\n\t\t\r\n\t\tif (reFuel < 0) {\r\n\t\t\treturn Math.abs(reFuel)\r\n\t\t} else {\r\n\t\t\treturn 0\r\n\t\t}\r\n\t\r\n\t} else {\r\n\t\t// Time Based\r\n\t\tif ( $prop('DataCorePlugin.GameRawData.mSessionFastestLapTime') == '-1' ) {\r\n\t\t\ttimeAgainst = $prop('DataCorePlugin.GameRawData.mLastLapTime')\r\n\t\t} else {\r\n\t\t\ttimeAgainst = $prop('DataCorePlugin.GameRawData.mSessionFastestLapTime')\r\n\t\t}\r\n\t\testTotalLaps = timespantoseconds($prop('DataCorePlugin.GameData.SessionTimeLeft')) / timeAgainst\r\n\t\tfuelRequired = estTotalLaps * $prop('DataCorePlugin.Computed.Fuel_LitersPerLap')\r\n\t\treFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel')\r\n\t\tif (reFuel < 0) {\r\n\t\t\treturn Math.abs(reFuel)\r\n\t\t} else {\r\n\t\t\treturn 0\r\n\t\t}\r\n\t}\r\n} else if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\t\r\n\tif ( timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) == 0 && timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) == 0 ) {\r\n\t\treturn '-'\r\n\t}\r\n\t\r\n\tif ( timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) == 0 ) {\r\n\t\ttimeAgainst = timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime'));\r\n\t} else {\r\n\t\ttimeAgainst = timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime'));\r\n\t}\r\n\t\r\n\testTotalLaps = $prop('GameRawData.PacketSessionData.m_sessionTimeLeft') / timeAgainst;\r\n\t\r\n\tfuelRequired = estTotalLaps * ($prop('GameRawData.PlayerCarSetup.m_fuelLoad')-$prop('GameRawData.PlayerCarStatusData.m_fuelInTank'))/$prop('CurrentLap');\r\n\t\r\n\treFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel');\r\n\t\r\n\tif (reFuel < 0) {\r\n\t\treturn Math.abs(reFuel)\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\r\n} else {\r\n\r\n\tif ( timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) == 0 ) {\r\n\t\ttimeAgainst = $prop('DataCorePlugin.GameRawData.Graphics.iLastTime')\r\n\t} else {\r\n\t\ttimeAgainst = $prop('DataCorePlugin.GameRawData.Graphics.iBestTime')\r\n\t}\r\n\t\r\n\testTotalLaps = $prop('DataCorePlugin.GameRawData.Graphics.SessionTimeLeft') / timeAgainst\r\n\tfuelRequired = estTotalLaps * $prop('DataCorePlugin.GameRawData.Graphics.FuelXLap')\r\n\treFuel = fuelRequired - $prop('DataCorePlugin.GameData.Fuel')\r\n\t\r\n\treturn (reFuel < 0) ? Math.abs(reFuel) : 0\r\n\t\r\n}\r\n",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Text"
+              "Mode": 2
             }
           },
           "CharWidth": 28.0,
@@ -1007,6 +1057,7 @@
           "HorizontalAlignment": 1,
           "IsTextItem": true,
           "Left": 178.5,
+          "MinimumRefreshIntervalMS": 1000.0,
           "Name": "Finish",
           "RenderingSkip": 100,
           "SpecialCharsWidth": 11.0,
@@ -1020,15 +1071,14 @@
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
           "Bindings": {
             "Visible": {
               "Formula": {
                 "Expression": "return ( timespantoseconds($prop('DataCorePlugin.GameData.BestLapTime')) == '0' && timespantoseconds($prop('DataCorePlugin.GameData.LastLapTime')) == '0' ) ? 1 : 0",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "Childrens": [
@@ -1040,10 +1090,10 @@
                   "RadiusBottomRight": {
                     "Formula": {
                       "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius-5",
-                      "Interpreter": 1
+                      "Interpreter": 1,
+                      "JSExt": 3
                     },
-                    "Mode": 2,
-                    "TargetPropertyName": "RadiusBottomRight"
+                    "Mode": 2
                   }
                 },
                 "RadiusBottomLeft": 8,
@@ -1054,7 +1104,9 @@
               "Height": 78.0,
               "IsRectangleItem": true,
               "Left": 4.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "RectangleItem0",
+              "RenderingSkip": 0,
               "Top": 10.0,
               "Visible": true,
               "Width": 316.0
@@ -1069,7 +1121,9 @@
               "HorizontalAlignment": 1,
               "IsTextItem": true,
               "Left": 88.5,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem22",
+              "RenderingSkip": 0,
               "Text": "INSUFFICIENT DATA",
               "TextColor": "#FFFFFFFF",
               "Top": 32.0,
@@ -1087,7 +1141,9 @@
               "HorizontalAlignment": 1,
               "IsTextItem": true,
               "Left": 56.5,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem23",
+              "RenderingSkip": 0,
               "Text": "  YOU NEED TO DRIVE SOME MORE BEFORE I CAN START CALCULATING",
               "TextColor": "#FF878787",
               "TextWrapping": 2,
@@ -1098,12 +1154,11 @@
             }
           ],
           "Group": true,
-          "Height": 78.0,
-          "Left": 4.0,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "Insufficient Data",
-          "Top": 10.0,
-          "Visible": false,
-          "Width": 316.0
+          "RenderingSkip": 0,
+          "Repetitions": 0,
+          "Visible": false
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -1121,7 +1176,9 @@
           "HorizontalAlignment": 1,
           "IsTextItem": true,
           "Left": 134.0,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "Title",
+          "RenderingSkip": 0,
           "Text": "REFUEL",
           "TextColor": "#FFFFFFFF",
           "Top": 0.0,
@@ -1130,6 +1187,7 @@
           "Width": 60.0
         }
       ],
+      "MinimumRefreshIntervalMS": 0.0,
       "Name": "Refuel",
       "OverlayMaxDuration": 0,
       "OverlayMinDuration": 0,
@@ -1137,6 +1195,7 @@
         "Expression": ""
       },
       "PitScreen": false,
+      "RenderingSkip": 0,
       "ScreenEnabledExpression": {
         "Expression": ""
       },

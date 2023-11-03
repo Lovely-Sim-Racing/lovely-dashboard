@@ -9,7 +9,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "a7b6e3d6-20a6-41eb-bdcc-ecf330dd1798",
+  "Id": "c9e9d0b9-343e-48a8-8b4f-780eb86674fd",
   "Images": [
     {
       "Extension": ".png",
@@ -312,7 +312,6 @@
       "IdleScreen": true,
       "InGameScreen": false,
       "IsBackgroundLayer": false,
-      "IsEffectiveDelayConstrainer": true,
       "IsForegroundLayer": false,
       "IsOverlayLayer": false,
       "Items": [
@@ -324,15 +323,14 @@
             "StartAddress": {
               "Formula": {
                 "Expression": "if ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.dashName')+'&ver='+$prop('variable.dashVer')+'&screen=Idle'\r\n} else {\r\n\treturn ''\r\n}",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "StartAddress"
+              "Mode": 2
             }
           },
           "ClickThrough": false,
           "Height": 370.0,
-          "IsEffectiveDelayConstrainer": true,
           "IsFreezed": true,
           "Left": 0.0,
           "MinimumRefreshIntervalMS": 0.0,
@@ -353,7 +351,6 @@
             "RadiusTopRight": 5
           },
           "Height": 380.0,
-          "IsEffectiveDelayConstrainer": true,
           "IsFreezed": true,
           "IsRectangleItem": true,
           "Left": 0.0,
@@ -372,7 +369,6 @@
           "FontSize": 12.0,
           "Height": 20.0,
           "HorizontalAlignment": 1,
-          "IsEffectiveDelayConstrainer": true,
           "IsFreezed": true,
           "IsTextItem": true,
           "Left": 155.0,
@@ -394,7 +390,6 @@
           "FontSize": 12.0,
           "Height": 30.0,
           "HorizontalAlignment": 1,
-          "IsEffectiveDelayConstrainer": true,
           "IsFreezed": true,
           "IsTextItem": true,
           "Left": 155.0,
@@ -416,17 +411,16 @@
             "Text": {
               "Formula": {
                 "Expression": "return \"Lovely Overlay v\" + $prop('variable.dashVer')\r\n",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Text"
+              "Mode": 2
             }
           },
           "Font": "Roboto",
           "FontSize": 16.0,
           "Height": 25.0,
           "HorizontalAlignment": 1,
-          "IsEffectiveDelayConstrainer": true,
           "IsFreezed": true,
           "IsTextItem": true,
           "Left": 370.0,
@@ -448,18 +442,18 @@
               "FormatString": "",
               "Formula": {
                 "Expression": "const json_version = downloadstringasync(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.json')\r\n\r\n// Break if error in JSON\r\nif ( json_version == null || json_version.startsWith('ERROR') ) { return 0 }\r\n\r\nconst latestVer = JSON.parse(json_version)\r\n\r\nreturn 'NEW VERSION AVAILABLE: ' + latestVer.LovelyOverlay + ' - Visit j76.me/Update'",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Text"
+              "Mode": 2
             },
             "Visible": {
               "Formula": {
                 "Expression": "var currentVer = $prop('variable.dashVer')\r\nconst json_version = downloadstringasync(86400,'https://raw.githubusercontent.com/cdemetriadis/lovely-dashboard/main/version.json')\r\n\r\n// Break if error in JSON\r\nif ( json_version == null || json_version.startsWith('ERROR') ) { return 0 }\r\n\r\nconst latestVer = JSON.parse(json_version)\r\n\r\nif ( compareversions( currentVer, latestVer.LovelyOverlay ) == '-1') {\r\n\treturn true\r\n} else {\r\n\treturn false\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "BorderStyle": {
@@ -473,7 +467,6 @@
           "FontWeight": "Bold",
           "Height": 25.0,
           "HorizontalAlignment": 1,
-          "IsEffectiveDelayConstrainer": true,
           "IsTextItem": true,
           "Left": 275.0,
           "MinimumRefreshIntervalMS": 0.0,
@@ -495,15 +488,14 @@
             "Visible": {
               "Formula": {
                 "Expression": "if ( !settings || settings.yourNumber == \"\" || settings.yourName == \"\" ) {\r\n\treturn 1\r\n} else {\r\n\treturn 0\r\n}",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "Height": 240.0,
           "Image": "lr-team-icon",
-          "IsEffectiveDelayConstrainer": true,
           "IsFreezed": true,
           "Left": 380.0,
           "MinimumRefreshIntervalMS": 0.0,
@@ -515,15 +507,14 @@
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
           "Bindings": {
             "Visible": {
               "Formula": {
                 "Expression": "if ( !settings || settings.yourNumber == \"\" || settings.yourName == \"\" ) {\r\n\treturn 0\r\n} else {\r\n\treturn 1\r\n}",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "Childrens": [
@@ -534,7 +525,6 @@
               "BackgroundColor": "#00FFFFFF",
               "Height": 40.0,
               "Image": "lr-team-icon",
-              "IsEffectiveDelayConstrainer": false,
               "Left": 480.0,
               "MinimumRefreshIntervalMS": 0.0,
               "Name": "ImageItem2",
@@ -550,10 +540,10 @@
                 "Text": {
                   "Formula": {
                     "Expression": "if ( settings && settings.yourName ) {\r\n\treturn ucase(settings.yourName.trim())\r\n} else {\r\n\treturn ''\r\n}\r\n",
-                    "Interpreter": 1
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 }
               },
               "BorderStyle": {
@@ -564,7 +554,6 @@
               "FontWeight": "ExtraBlack",
               "Height": 50.0,
               "HorizontalAlignment": 1,
-              "IsEffectiveDelayConstrainer": false,
               "IsTextItem": true,
               "Left": 90.0,
               "MinimumRefreshIntervalMS": 0.0,
@@ -586,18 +575,18 @@
                 "Text": {
                   "Formula": {
                     "Expression": "if ( settings && settings.yourNumber ) {\r\n\treturn settings.yourNumber.trim()\r\n} else {\r\n\treturn ''\r\n}",
-                    "Interpreter": 1
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 },
                 "TextColor": {
                   "Formula": {
                     "Expression": "if ( settings && settings.yourColor ) {\r\n\treturn settings.yourColor.trim()\r\n} else {\r\n\treturn lovely_blue\r\n}",
-                    "Interpreter": 1
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
+                  "Mode": 2
                 }
               },
               "CharWidth": 62.0,
@@ -607,7 +596,6 @@
               "FontWeight": "ExtraBlack",
               "Height": 210.0,
               "HorizontalAlignment": 1,
-              "IsEffectiveDelayConstrainer": false,
               "IsTextItem": true,
               "Left": 65.0,
               "MinimumRefreshIntervalMS": 0.0,
@@ -622,15 +610,11 @@
             }
           ],
           "Group": true,
-          "Height": 291.0,
-          "IsEffectiveDelayConstrainer": true,
-          "Left": 65.0,
           "MinimumRefreshIntervalMS": 0.0,
           "Name": "User name",
           "RenderingSkip": 0,
-          "Top": 11.0,
-          "Visible": false,
-          "Width": 865.0
+          "Repetitions": 0,
+          "Visible": false
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
@@ -638,9 +622,9 @@
           "BackgroundColor": "#00FFFFFF",
           "EnableScreenRolesAndActivation": false,
           "FileName": "Debug.djson",
+          "FreezePageChanges": false,
           "Height": 100.0,
           "InitialScreenIndex": 0,
-          "IsEffectiveDelayConstrainer": true,
           "Left": 20.0,
           "MinimumRefreshIntervalMS": 0.0,
           "Name": "Debug",
@@ -675,7 +659,6 @@
       "IdleScreen": false,
       "InGameScreen": true,
       "IsBackgroundLayer": false,
-      "IsEffectiveDelayConstrainer": false,
       "IsForegroundLayer": false,
       "IsOverlayLayer": false,
       "Items": [
@@ -687,15 +670,14 @@
             "StartAddress": {
               "Formula": {
                 "Expression": "if ( !settings || settings.analytics == null || settings.analytics == 1 ) {\r\n\treturn 'https://dash.ohmylovely.com/analytics/tracking.php?sim='+ $prop('DataCorePlugin.CurrentGame') +'&app='+$prop('variable.dashName')+'&ver='+$prop('variable.dashVer')+'&screen=Primary'\r\n} else {\r\n\treturn ''\r\n}",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "StartAddress"
+              "Mode": 2
             }
           },
           "ClickThrough": false,
           "Height": 480.0,
-          "IsEffectiveDelayConstrainer": false,
           "Left": 0.0,
           "MinimumRefreshIntervalMS": 0.0,
           "Name": "Analytics",
@@ -715,7 +697,6 @@
             "RadiusTopRight": 5
           },
           "Height": 380.0,
-          "IsEffectiveDelayConstrainer": false,
           "IsRectangleItem": true,
           "Left": 315.0,
           "MinimumRefreshIntervalMS": 0.0,
@@ -736,7 +717,6 @@
             "RadiusTopRight": 5
           },
           "Height": 300.0,
-          "IsEffectiveDelayConstrainer": false,
           "IsRectangleItem": true,
           "Left": 0.0,
           "MinimumRefreshIntervalMS": 0.0,
@@ -757,7 +737,6 @@
             "RadiusTopRight": 5
           },
           "Height": 70.0,
-          "IsEffectiveDelayConstrainer": false,
           "IsRectangleItem": true,
           "Left": 0.0,
           "MinimumRefreshIntervalMS": 0.0,
@@ -774,9 +753,9 @@
           "BackgroundColor": "#00FFFFFF",
           "EnableScreenRolesAndActivation": false,
           "FileName": "Environment.djson",
+          "FreezePageChanges": false,
           "Height": 50.0,
           "InitialScreenIndex": 0,
-          "IsEffectiveDelayConstrainer": false,
           "Left": 840.0,
           "MinimumRefreshIntervalMS": 0.0,
           "Name": "Environment",
@@ -796,9 +775,9 @@
           "BackgroundColor": "#00FFFFFF",
           "EnableScreenRolesAndActivation": false,
           "FileName": "Central.djson",
+          "FreezePageChanges": false,
           "Height": 330.0,
           "InitialScreenIndex": 0,
-          "IsEffectiveDelayConstrainer": false,
           "Left": 840.0,
           "MinimumRefreshIntervalMS": 0.0,
           "Name": "Central",
@@ -820,17 +799,17 @@
             "InitialScreenIndex": {
               "Formula": {
                 "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\tif ( settings && settings.IRacing.overlayMFM ) {\r\n\t\treturn settings.IRacing.overlayMFM\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\tif ( settings && settings.Automobilista2.overlayMFM ) {\r\n\t\treturn settings.Automobilista2.overlayMFM\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\tif ( settings && settings.RFactor2.overlayMFM ) {\r\n\t\treturn settings.RFactor2.overlayMFM\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa' ) {\r\n\r\n\tif ( settings && settings.AC.overlayMFM ) {\r\n\t\treturn settings.AC.overlayMFM\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\r\n\tif ( settings && settings.F1.overlayMFM ) {\r\n\t\treturn settings.F1.overlayMFM\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\r\n} else {\r\n\r\n\tif ( settings && settings.ACC.overlayMFM ) {\r\n\t\treturn settings.ACC.overlayMFM\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n}",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "InitialScreenIndex"
+              "Mode": 2
             }
           },
           "EnableScreenRolesAndActivation": true,
           "FileName": "MFM.djson",
+          "FreezePageChanges": false,
           "Height": 270.0,
           "InitialScreenIndex": 0,
-          "IsEffectiveDelayConstrainer": false,
           "Left": -5.0,
           "MinimumRefreshIntervalMS": 0.0,
           "Name": "MFM",
@@ -859,9 +838,9 @@
           "BackgroundColor": "#00FFFFFF",
           "EnableScreenRolesAndActivation": false,
           "FileName": "Session.djson",
+          "FreezePageChanges": false,
           "Height": 80.0,
           "InitialScreenIndex": 0,
-          "IsEffectiveDelayConstrainer": false,
           "Left": -4.0,
           "MinimumRefreshIntervalMS": 0.0,
           "Name": "Session",
@@ -884,15 +863,14 @@
               "Formula": {
                 "Expression": "if([DataCorePlugin.GameData.BestLapOpponentPosition]>=0, '288', '314')"
               },
-              "Mode": 2,
-              "TargetPropertyName": "Height"
+              "Mode": 2
             }
           },
           "EnableScreenRolesAndActivation": false,
           "FileName": "Relative Native.djson",
+          "FreezePageChanges": false,
           "Height": 333.0,
           "InitialScreenIndex": 0,
-          "IsEffectiveDelayConstrainer": false,
           "Left": 325.0,
           "MinimumRefreshIntervalMS": 0.0,
           "Name": "Relative ",
@@ -908,14 +886,12 @@
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
           "Bindings": {
             "Visible": {
               "Formula": {
                 "Expression": "if([DataCorePlugin.GameData.BestLapOpponentPosition]>=0, 1, 0)"
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "Childrens": [
@@ -927,8 +903,7 @@
                   "Formula": {
                     "Expression": "[DataCorePlugin.GameData.BestLapOpponentPosition]+1"
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 }
               },
               "BorderStyle": {
@@ -942,7 +917,6 @@
               "FontWeight": "Black",
               "Height": 24.0,
               "HorizontalAlignment": 1,
-              "IsEffectiveDelayConstrainer": false,
               "IsTextItem": true,
               "Left": 541.0,
               "MinimumRefreshIntervalMS": 0.0,
@@ -962,10 +936,10 @@
                 "Text": {
                   "Formula": {
                     "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings ) {\r\n\tdriverName = 0\r\n} else {\r\n\tdriverName = settings.driverName\r\n}\r\n\r\nvar name = drivername($prop('DataCorePlugin.GameData.BestLapOpponentPosition')+1);\r\nvar full_name = name.split(' ');\r\n\r\nif (driverName == 1) {\r\n return full_name[0] + ' ' + full_name[full_name.length-1].substr(0,1) + '.'\r\n} else {\r\n return full_name[0].substr(0,1) + '. ' + full_name[full_name.length-1]\r\n}",
-                    "Interpreter": 1
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 }
               },
               "Font": "Roboto",
@@ -973,7 +947,6 @@
               "FontWeight": "Bold",
               "Height": 24.0,
               "HorizontalAlignment": 0,
-              "IsEffectiveDelayConstrainer": false,
               "IsTextItem": true,
               "Left": 576.0,
               "MinimumRefreshIntervalMS": 0.0,
@@ -995,8 +968,7 @@
                   "Formula": {
                     "Expression": "isnull(driverbestlap([DataCorePlugin.GameData.BestLapOpponentPosition]+1), '0:00.000')"
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 }
               },
               "Font": "Roboto",
@@ -1004,7 +976,6 @@
               "FontWeight": "Bold",
               "Height": 24.0,
               "HorizontalAlignment": 2,
-              "IsEffectiveDelayConstrainer": false,
               "IsTextItem": true,
               "Left": 744.0,
               "MinimumRefreshIntervalMS": 0.0,
@@ -1024,7 +995,6 @@
               "FontSize": 16.0,
               "Height": 24.0,
               "HorizontalAlignment": 0,
-              "IsEffectiveDelayConstrainer": false,
               "IsTextItem": true,
               "Left": 416.0,
               "MinimumRefreshIntervalMS": 0.0,
@@ -1041,7 +1011,6 @@
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
               "BackgroundColor": "#FF696969",
               "Height": 1.0,
-              "IsEffectiveDelayConstrainer": false,
               "IsRectangleItem": true,
               "Left": 325.0,
               "MinimumRefreshIntervalMS": 0.0,
@@ -1053,16 +1022,12 @@
             }
           ],
           "Group": true,
-          "Height": 27.0,
-          "IsEffectiveDelayConstrainer": false,
-          "Left": 325.0,
           "MinimumRefreshIntervalMS": 0.0,
           "Name": "Fastest Lap",
           "RenderingSkip": 0,
           "RepeatTopOffset": 0.0,
-          "Top": 346.0,
-          "Visible": true,
-          "Width": 505.0
+          "Repetitions": 0,
+          "Visible": true
         }
       ],
       "MinimumRefreshIntervalMS": 0.0,
@@ -1085,7 +1050,6 @@
       "IdleScreen": false,
       "InGameScreen": false,
       "IsBackgroundLayer": false,
-      "IsEffectiveDelayConstrainer": false,
       "IsForegroundLayer": false,
       "IsOverlayLayer": true,
       "Items": [
@@ -1097,34 +1061,34 @@
               "RadiusBottomLeft": {
                 "Formula": {
                   "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius + 5",
-                  "Interpreter": 1
+                  "Interpreter": 1,
+                  "JSExt": 3
                 },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusBottomLeft"
+                "Mode": 2
               },
               "RadiusBottomRight": {
                 "Formula": {
                   "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius + 5",
-                  "Interpreter": 1
+                  "Interpreter": 1,
+                  "JSExt": 3
                 },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusBottomRight"
+                "Mode": 2
               },
               "RadiusTopLeft": {
                 "Formula": {
                   "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius + 5",
-                  "Interpreter": 1
+                  "Interpreter": 1,
+                  "JSExt": 3
                 },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusTopLeft"
+                "Mode": 2
               },
               "RadiusTopRight": {
                 "Formula": {
                   "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius + 5",
-                  "Interpreter": 1
+                  "Interpreter": 1,
+                  "JSExt": 3
                 },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusTopRight"
+                "Mode": 2
               }
             },
             "RadiusBottomLeft": 50,
@@ -1133,7 +1097,6 @@
             "RadiusTopRight": 50
           },
           "Height": 380.0,
-          "IsEffectiveDelayConstrainer": false,
           "IsRectangleItem": true,
           "Left": 0.0,
           "MinimumRefreshIntervalMS": 0.0,
@@ -1150,17 +1113,16 @@
             "Text": {
               "Formula": {
                 "Expression": "return \"The Lovely Overlay v\" + $prop('variable.dashVer') + \" requires a newer version of SimHub, please visit the official website to download it.\\n\\nvisit: j76.me/simhub\"",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Text"
+              "Mode": 2
             }
           },
           "Font": "Roboto",
           "FontSize": 16.0,
           "Height": 80.0,
           "HorizontalAlignment": 1,
-          "IsEffectiveDelayConstrainer": false,
           "IsTextItem": true,
           "Left": 294.0,
           "MinimumRefreshIntervalMS": 0.0,
@@ -1182,10 +1144,10 @@
               "FormatString": "",
               "Formula": {
                 "Expression": "return 'SIMHUB UPDATE REQUIRED: v' + $prop('variable.shVer') + ' or higher'",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Text"
+              "Mode": 2
             }
           },
           "BorderStyle": {
@@ -1199,7 +1161,6 @@
           "FontWeight": "Bold",
           "Height": 24.0,
           "HorizontalAlignment": 1,
-          "IsEffectiveDelayConstrainer": false,
           "IsTextItem": true,
           "Left": 320.0,
           "MinimumRefreshIntervalMS": 0.0,
@@ -1218,7 +1179,6 @@
           "BackgroundColor": "#00FFFFFF",
           "Height": 120.0,
           "Image": "Simhub Update",
-          "IsEffectiveDelayConstrainer": false,
           "Left": 426.0,
           "MinimumRefreshIntervalMS": 0.0,
           "Name": "ImageItem",
@@ -1234,7 +1194,8 @@
       "OverlayMinDuration": 0,
       "OverlayTriggerExpression": {
         "Expression": "var currentVer = $prop('DataCorePlugin.SimHubVersion')\r\nvar minVer = $prop('variable.shVer')\r\n\r\nif ( compareversions( currentVer, minVer ) == '-1') {\r\n\treturn true\r\n} else {\r\n\treturn false\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
-        "Interpreter": 1
+        "Interpreter": 1,
+        "JSExt": 3
       },
       "PitScreen": false,
       "RenderingSkip": 0,
@@ -1263,7 +1224,7 @@
         "EvaluateOnlyOnce": false,
         "OverrideWithParentDashboardVariableWhenAvailable": false,
         "ValueExpression": {
-          "Expression": "'2.5.1'"
+          "Expression": "'2.5.2'"
         },
         "VariableName": "dashVer"
       },
@@ -1271,7 +1232,7 @@
         "EvaluateOnlyOnce": false,
         "OverrideWithParentDashboardVariableWhenAvailable": false,
         "ValueExpression": {
-          "Expression": "'9.1.2'"
+          "Expression": "'9.1.6'"
         },
         "VariableName": "shVer"
       }
