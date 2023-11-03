@@ -9,15 +9,24 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": false,
-  "Id": "bd1bc98c-9eaf-42bd-97f6-fd05f0a3c10c",
+  "Id": "c958e2e5-acbe-4eae-9dba-11744f372ef0",
   "Images": [
     {
       "Extension": ".png",
       "Height": 50,
-      "Length": 679,
-      "MD5": "9efe4ed066fbf6ed001ad1851353d914",
+      "Length": 0,
       "Modified": false,
       "Name": "Checkered Flag",
+      "Optimized": true,
+      "Width": 286
+    },
+    {
+      "Extension": ".png",
+      "Height": 50,
+      "Length": 679,
+      "MD5": "19b15d0d6acdd91686c4c85d55ebfa54",
+      "Modified": false,
+      "Name": "flag-checkered",
       "Optimized": true,
       "Width": 286
     },
@@ -65,13 +74,23 @@
             "Visible": {
               "Formula": {
                 "Expression": "if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\r\n\treturn ( $prop('GameRawData.PlayerCarStatusData.m_vehicleFiaFlags') == 4 )\r\n\r\n} else {\r\n\r\n\treturn 0\r\n\t\r\n}",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "BorderStyle": {
+            "Bindings": {
+              "RadiusTopLeft": {
+                "Formula": {
+                  "Expression": "if ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
+                  "Interpreter": 1,
+                  "JSExt": 1
+                },
+                "Mode": 2
+              }
+            },
             "RadiusBottomLeft": 5,
             "RadiusBottomRight": 5,
             "RadiusTopLeft": 25,
@@ -80,7 +99,9 @@
           "Height": 50.0,
           "IsRectangleItem": true,
           "Left": 0.0,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "Red",
+          "RenderingSkip": 0,
           "Top": 0.0,
           "Visible": false,
           "Width": 286.0
@@ -93,19 +114,18 @@
               "Formula": {
                 "Expression": "[DataCorePlugin.GameData.Flag_White]"
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "BorderStyle": {
             "Bindings": {
               "RadiusTopLeft": {
                 "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
-                  "Interpreter": 1
+                  "Expression": "if ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
+                  "Interpreter": 1,
+                  "JSExt": 1
                 },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusTopLeft"
+                "Mode": 2
               }
             },
             "RadiusBottomLeft": 5,
@@ -116,7 +136,9 @@
           "Height": 50.0,
           "IsRectangleItem": true,
           "Left": 0.0,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "White",
+          "RenderingSkip": 0,
           "Top": 0.0,
           "Visible": false,
           "Width": 286.0
@@ -130,19 +152,18 @@
               "Formula": {
                 "Expression": "[DataCorePlugin.GameData.Flag_Orange]"
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "BorderStyle": {
             "Bindings": {
               "RadiusTopLeft": {
                 "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
-                  "Interpreter": 1
+                  "Expression": "if ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
+                  "Interpreter": 1,
+                  "JSExt": 1
                 },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusTopLeft"
+                "Mode": 2
               }
             },
             "RadiusBottomLeft": 5,
@@ -153,7 +174,9 @@
           "Height": 50.0,
           "Image": "flag-orange",
           "Left": 0.0,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "Orange",
+          "RenderingSkip": 0,
           "Top": 0.0,
           "Visible": false,
           "Width": 286.0
@@ -167,19 +190,18 @@
               "Formula": {
                 "Expression": "[DataCorePlugin.GameData.Flag_Checkered]"
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "BorderStyle": {
             "Bindings": {
               "RadiusTopLeft": {
                 "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
-                  "Interpreter": 1
+                  "Expression": "if ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
+                  "Interpreter": 1,
+                  "JSExt": 1
                 },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusTopLeft"
+                "Mode": 2
               }
             },
             "RadiusBottomLeft": 5,
@@ -188,9 +210,11 @@
             "RadiusTopRight": 5
           },
           "Height": 50.0,
-          "Image": "Checkered Flag",
+          "Image": "flag-checkered",
           "Left": 0.0,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "Checkered",
+          "RenderingSkip": 0,
           "Top": 0.0,
           "Visible": false,
           "Width": 286.0
@@ -203,19 +227,18 @@
               "Formula": {
                 "Expression": "[DataCorePlugin.GameData.Flag_Green]"
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "BorderStyle": {
             "Bindings": {
               "RadiusTopLeft": {
                 "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
-                  "Interpreter": 1
+                  "Expression": "if ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
+                  "Interpreter": 1,
+                  "JSExt": 1
                 },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusTopLeft"
+                "Mode": 2
               }
             },
             "RadiusBottomLeft": 5,
@@ -226,7 +249,9 @@
           "Height": 50.0,
           "IsRectangleItem": true,
           "Left": 0.0,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "Geen",
+          "RenderingSkip": 0,
           "Top": 0.0,
           "Visible": false,
           "Width": 286.0
@@ -239,19 +264,18 @@
               "Formula": {
                 "Expression": "[DataCorePlugin.GameData.Flag_Blue]"
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "BorderStyle": {
             "Bindings": {
               "RadiusTopLeft": {
                 "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
-                  "Interpreter": 1
+                  "Expression": "if ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
+                  "Interpreter": 1,
+                  "JSExt": 1
                 },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusTopLeft"
+                "Mode": 2
               }
             },
             "RadiusBottomLeft": 5,
@@ -262,7 +286,9 @@
           "Height": 50.0,
           "IsRectangleItem": true,
           "Left": 0.0,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "Blue",
+          "RenderingSkip": 0,
           "Top": 0.0,
           "Visible": false,
           "Width": 286.0
@@ -274,21 +300,21 @@
             "Visible": {
               "Formula": {
                 "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn 0\r\n\r\n} else {\r\n\r\n\tif ($prop('GameRawData.Graphics.globalYellow1')==1 || $prop('GameRawData.Graphics.globalYellow2')==1 || $prop('GameRawData.Graphics.globalYellow3')==1 ) {\r\n\t\treturn 1\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n}",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "BorderStyle": {
             "Bindings": {
               "RadiusTopLeft": {
                 "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
-                  "Interpreter": 1
+                  "Expression": "if ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
+                  "Interpreter": 1,
+                  "JSExt": 1
                 },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusTopLeft"
+                "Mode": 2
               }
             },
             "RadiusBottomLeft": 5,
@@ -299,7 +325,9 @@
           "Height": 50.0,
           "IsRectangleItem": true,
           "Left": 0.0,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "Yellow BG",
+          "RenderingSkip": 0,
           "Top": 0.0,
           "Visible": false,
           "Width": 286.0
@@ -311,21 +339,21 @@
             "Visible": {
               "Formula": {
                 "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn 0\r\n\r\n} else {\r\n\r\n\treturn ( $prop('GameRawData.Graphics.globalYellow1') == 1 ) ? 1 : 0\r\n\t\r\n}",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "BorderStyle": {
             "Bindings": {
               "RadiusTopLeft": {
                 "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
-                  "Interpreter": 1
+                  "Expression": "if ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
+                  "Interpreter": 1,
+                  "JSExt": 1
                 },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusTopLeft"
+                "Mode": 2
               }
             },
             "RadiusBottomLeft": 5,
@@ -340,7 +368,9 @@
           "HorizontalAlignment": 1,
           "IsTextItem": true,
           "Left": 0.0,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "Sector 1",
+          "RenderingSkip": 0,
           "Text": "1",
           "TextColor": "#FF000000",
           "Top": 0.0,
@@ -355,10 +385,10 @@
             "Visible": {
               "Formula": {
                 "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn 0\r\n\r\n} else {\r\n\r\n\treturn ( $prop('GameRawData.Graphics.globalYellow2') == 1 ) ? 1 : 0\r\n\t\r\n}",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "BorderStyle": {
@@ -374,7 +404,9 @@
           "HorizontalAlignment": 1,
           "IsTextItem": true,
           "Left": 95.0,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "Sector 2 ",
+          "RenderingSkip": 0,
           "Text": "2",
           "TextColor": "#FF000000",
           "Top": 0.0,
@@ -389,10 +421,10 @@
             "Visible": {
               "Formula": {
                 "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn 0\r\n\r\n} else {\r\n\r\n\treturn ( $prop('GameRawData.Graphics.globalYellow3') == 1 ) ? 1 : 0\r\n\t\r\n}",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "BorderStyle": {
@@ -408,7 +440,9 @@
           "HorizontalAlignment": 1,
           "IsTextItem": true,
           "Left": 191.0,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "Sector 3",
+          "RenderingSkip": 0,
           "Text": "3",
           "TextColor": "#FF000000",
           "Top": 0.0,
@@ -422,22 +456,22 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "return ( $prop('Flag_Yellow') || $prop('GameRawData.Graphics.globalYellow') ) ? 1 : 0",
-                "Interpreter": 1
+                "Expression": "return ( $prop('Flag_Yellow') || $prop('GameRawData.Graphics.globalYellow') && ld_getSim() != 'ACC' ) ? 1 : 0",
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "BorderStyle": {
             "Bindings": {
               "RadiusTopLeft": {
                 "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
-                  "Interpreter": 1
+                  "Expression": "if ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
+                  "Interpreter": 1,
+                  "JSExt": 1
                 },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusTopLeft"
+                "Mode": 2
               }
             },
             "RadiusBottomLeft": 5,
@@ -452,13 +486,15 @@
           "HorizontalAlignment": 1,
           "IsTextItem": true,
           "Left": 0.0,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "Global Yellow",
+          "RenderingSkip": 0,
           "Text": " ",
           "TextColor": "#FF000000",
           "Top": 0.0,
           "VerticalAlignment": 1,
           "Visible": false,
-          "Width": 285.0
+          "Width": 286.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
@@ -468,19 +504,28 @@
               "Formula": {
                 "Expression": "if([DataCorePlugin.GameData.Flag_Orange], 'White', 'Black')"
               },
-              "Mode": 2,
-              "TargetPropertyName": "TextColor"
+              "Mode": 2
             },
             "Visible": {
               "Formula": {
                 "Expression": "if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\r\n\treturn ($prop('DataCorePlugin.GameRawData.PacketSessionData.m_safetyCarStatus')==1 && $prop('DataCorePlugin.GameRawData.PlayerLapData.m_safetyCarDelta')>=0)\r\n\t\r\n\r\n} else {\r\n\r\n\treturn 0\r\n\t\r\n}",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "BorderStyle": {
+            "Bindings": {
+              "RadiusTopLeft": {
+                "Formula": {
+                  "Expression": "if ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
+                  "Interpreter": 1,
+                  "JSExt": 1
+                },
+                "Mode": 2
+              }
+            },
             "BorderColor": "#FFFFE04C",
             "RadiusBottomLeft": 5,
             "RadiusBottomRight": 5,
@@ -494,7 +539,9 @@
           "HorizontalAlignment": 1,
           "IsTextItem": true,
           "Left": 0.0,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "SC",
+          "RenderingSkip": 0,
           "Text": "SC",
           "TextColor": "#FF000000",
           "Top": 0.0,
@@ -510,19 +557,28 @@
               "Formula": {
                 "Expression": "if([DataCorePlugin.GameData.Flag_Orange], 'White', 'Black')"
               },
-              "Mode": 2,
-              "TargetPropertyName": "TextColor"
+              "Mode": 2
             },
             "Visible": {
               "Formula": {
                 "Expression": "if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\r\n\treturn ($prop('DataCorePlugin.GameRawData.PacketSessionData.m_safetyCarStatus')==2 && $prop('DataCorePlugin.GameRawData.PlayerLapData.m_safetyCarDelta')>=0)\r\n\t\r\n\r\n} else {\r\n\r\n\treturn 0\r\n\t\r\n}",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "BorderStyle": {
+            "Bindings": {
+              "RadiusTopLeft": {
+                "Formula": {
+                  "Expression": "if ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
+                  "Interpreter": 1,
+                  "JSExt": 1
+                },
+                "Mode": 2
+              }
+            },
             "BorderColor": "#FFFFE04C",
             "RadiusBottomLeft": 5,
             "RadiusBottomRight": 5,
@@ -536,7 +592,9 @@
           "HorizontalAlignment": 1,
           "IsTextItem": true,
           "Left": 0.0,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "VSC",
+          "RenderingSkip": 0,
           "Text": "VSC",
           "TextColor": "#FF000000",
           "Top": 0.0,
@@ -552,20 +610,29 @@
               "Formula": {
                 "Expression": "if([DataCorePlugin.GameData.Flag_Orange], 'White', 'Black')"
               },
-              "Mode": 2,
-              "TargetPropertyName": "TextColor"
+              "Mode": 2
             },
             "Visible": {
               "Formula": {
                 "Expression": "if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\r\n\treturn (($prop('DataCorePlugin.GameRawData.PacketSessionData.m_safetyCarStatus')==1 || $prop('DataCorePlugin.GameRawData.PlayerLapData.m_safetyCarDelta')==2) && $prop('DataCorePlugin.GameRawData.PlayerLapData.m_safetyCarDelta')<0)\r\n\t\r\n\r\n} else {\r\n\r\n\treturn 0\r\n\t\r\n}",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "BlinkEnabled": true,
           "BorderStyle": {
+            "Bindings": {
+              "RadiusTopLeft": {
+                "Formula": {
+                  "Expression": "if ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
+                  "Interpreter": 1,
+                  "JSExt": 1
+                },
+                "Mode": 2
+              }
+            },
             "BorderColor": "#FFFFE04C",
             "RadiusBottomLeft": 5,
             "RadiusBottomRight": 5,
@@ -579,7 +646,9 @@
           "HorizontalAlignment": 1,
           "IsTextItem": true,
           "Left": 0.0,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "Stay Positive",
+          "RenderingSkip": 0,
           "Text": "STAY POSITIVE",
           "TextColor": "#FF000000",
           "Top": 0.0,
@@ -588,6 +657,7 @@
           "Width": 286.0
         }
       ],
+      "MinimumRefreshIntervalMS": 0.0,
       "Name": "Screen1",
       "OverlayMaxDuration": 0,
       "OverlayMinDuration": 0,
@@ -595,6 +665,7 @@
         "Expression": ""
       },
       "PitScreen": false,
+      "RenderingSkip": 0,
       "ScreenEnabledExpression": {
         "Expression": ""
       },
@@ -607,7 +678,16 @@
   "ShowOnScreenControls": true,
   "SnapToGrid": false,
   "Variables": {
-    "DashboardVariables": []
+    "DashboardVariables": [
+      {
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "dashName"
+      }
+    ]
   },
   "Version": 2
 }

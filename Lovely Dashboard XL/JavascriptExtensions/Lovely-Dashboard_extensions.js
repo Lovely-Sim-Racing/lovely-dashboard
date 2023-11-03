@@ -11,9 +11,13 @@ var purple = '#FFC500CE'
 var orange = '#FFFF7400'
 var blue = '#FF00BFFF'
 var dark_blue = '#FF0000FF'
+var transparent = '#00000000'
 
 const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')
-const settings = JSON.parse(json_settings);
+const settings = JSON.parse(json_settings)
+
+const json_tracks = readtextfile('./DashTemplates/Lovely Dashboard XL/JavascriptExtensions/Lovely-Dashboard_tracks.json')
+const ld_tracks = JSON.parse(json_tracks)
 
 function ld_GetPlayerName() {
     if ( !settings || !settings.driverName ) {
@@ -257,7 +261,17 @@ function ld_getAvgValue(getAvgForProp, lapAvg, resetKey) {
         root['prop'] = []
     }
 
-    return ld_getAverage(root['prop'])
+    return ( Number.isNaN(ld_getAverage(root['prop'])) ) ? '---' : ld_getAverage(root['prop'])
+
+}
+
+function ld_saveValue(value) {
+    
+    if (!$prop('DataCorePlugin.GamePaused') && !$prop('DataCorePlugin.GameData.IsInPitLane') && !$prop('DataCorePlugin.GameRawData.Graphics.IsSetupMenuVisible') && value != 0) {
+        root['savedValue'] = value
+    }
+
+    return ( Number.isNaN(root['savedValue']) ) ? '---' : root['savedValue']
 
 }
 
@@ -657,6 +671,22 @@ function ld_getSim() {
 	
 }
 
+function ld_getTurn() {
+    var sim = ld_getSim()
+    var track = eval( "ld_tracks." + sim + "." + $prop('TrackId') )
+    if ( !track || track == undefined ) { return null }
+
+    var trackTurns = eval( "ld_tracks." + sim + "." + $prop('TrackId') + ".turns" )
+    var currentPosition = drivertrackpositionpercent( getplayerleaderboardposition() ).toFixed(3)
+    var margin = 0.03
+    for ( const turn in trackTurns ) {
+        if ( currentPosition >= (trackTurns[turn] - margin) && currentPosition <= (trackTurns[turn] + margin) ) {
+            return turn
+        }
+    }
+    return null
+}
+
 function ld_formatTime(time) {
     if (time > -10 && time < 10) {
 		return format(time, '0.000', true)
@@ -689,6 +719,38 @@ function ld_formatTimeVeryShort(time) {
 	}
 }
 
+function ld_formatNumber(time) {
+    if (time > -10 && time < 10) {
+		return format(time, '0.000', false)
+	} else if (time > -100 && time < 100) {
+		return format(time, '00.00', false)
+	} else if (time > -1000 && time < 1000) {
+		return format(time, '000.0', false)
+	} else {
+		return format(time, '000', false)
+	}
+}
+
+function ld_formatNumberShort(time) {
+    if (time > -10 && time < 10) {
+		return format(time, '0.00', false)
+	} else if (time > -100 && time < 100) {
+		return format(time, '00.0', false)
+	} else {
+		return format(time, '000', false)
+	}
+}
+
+function ld_formatNumberVeryShort(time) {
+    if (time > -10 && time < 10) {
+		return format(time, '0.0', false)
+	} else if (time > -100 && time < 100) {
+		return format(time, '00', false)
+	} else {
+		return format(time, '00', false)
+	}
+}
+
 function ld_isIncreasing(value) {
     
     if(root['value']==null){
@@ -703,4 +765,29 @@ function ld_isIncreasing(value) {
    
     return (expect < 0) ? true : false
 
+}
+
+function ld_boardScroll(boardHeight) {
+    //
+    // I'm assuming all calculations will start after P3
+    // boardHeight = Number of rows
+    var maxScroll = $prop('OpponentsCount')-boardHeight
+    var currentPos = $prop('Position')
+    var midPos = Math.round(boardHeight/2 + 3)
+    var maxPos = Math.round(boardHeight/2)
+    
+    // maxScroll can't be smaller than 3 (P3)
+    maxScroll = ( maxScroll < 3 ) ? 3 : maxScroll
+
+    if ( currentPos > midPos ) {
+        if (maxScroll < currentPos - maxPos) {
+            scrollPos = maxScroll
+        } else {
+            scrollPos = currentPos - maxPos
+        }
+    } else {
+        scrollPos = 3 // Start board after P3 ...
+    }
+
+    return scrollPos
 }
