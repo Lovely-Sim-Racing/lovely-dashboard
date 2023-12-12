@@ -52,7 +52,7 @@ The settings will work for the **Lovely Dashboard**, **Lovely Dashboard XL** and
 Enable anonymous data usage of the Dashboard. Going forward, the Lovely Dashboard will rely on this data in order to improve the experience and understanding the usage. **It is recommended to leave this on.**
 
 - `0` Off, no data is collected
-- **`1` (Default & recommended)** - On, anonymous data is collected 
+- **`1` (Recommended)** - On, anonymous data is collected 
 
 ---
 

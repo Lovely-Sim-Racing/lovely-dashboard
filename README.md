@@ -152,8 +152,8 @@ If you were wondering why this is the best SimHub dashboard out there, wonder no
 
 ![Lovely Flags](docs/images/LovelyFlags.gif)	
 
-## Contributing
-Would you like to contribute to the **Lovely Dashboard**? Then head on over to the [**Developers Docs**](docs/developers.md) and find out how you can get started.
+## Analytics
+#### The **Lovely Dashboard** uses Google Analytics to analyse anonymous data on Product Interactions & Usage. **We do not track or store any personal data. Users are free to opt-in or opt-out via the optional [**Settings File**](./docs/settings.md).**
 
 ## Special Thanks
 A special thanks to all of you who have supported this project in [one way](http://j76.me/BuyMeCoffee) or [another](http://j76.me/LSRStore). It could not have been done without you. Special thanks also to these fellas that have contributed to the code:
