@@ -12,9 +12,9 @@ A multifunctional feature packed SimHub Dashboard (DDU) and ecosystem.
 
 <strong>Used by thousands* of sim racers across the world, the Lovely Dashboard has become a staple in all of your sim racing setups. From professionals like <strong>Tony Kanaan</strong> all the way to rookies, the Lovely Dashboard delivers the best and most consistent information for all simulators.</strong>
 
-<strong>*</strong> Google Analytics: 6.2k Unique Users Mar-July 2023
+<strong>*</strong> Google Analytics: 18k Unique Users Mar 2023 - Jan 2024
 
-![Basic Feature Set](docs/images/Primary.png)
+![Basic Feature Set](docs/images/primary-tdm.gif)
 
 <p align="center">
 <span><strong>Native Simulator Support</strong></span></br>
@@ -33,24 +33,23 @@ A multifunctional feature packed SimHub Dashboard (DDU) and ecosystem.
 <span><strong>Lovely Partners</strong></span></br>
 <a href="https://www.simhubdash.com" target="_blank"><img width="80" height="80" alt="SimHub" src="docs/images/icon-simhub.png"></a>
 <a href="https://www.facebook.com/SimDash.pt" target="_blank"><img width="80" height="80" alt="SimDash" src="docs/images/icon-simdash.png"></a>
-<a href="https://www.simutec.co.uk" target="_blank"><img width="80" height="80" alt="Simutec" src="docs/images/icon-simutec.png"></a>
-<a href="https://gomezsimindustries.com" target="_blank"><img width="80" height="80" alt="Gomez Sim Industries" src="docs/images/icon-gsi.png"></a>
+<a href="https://www.tonykanaan.com" target="_blank"><img width="80" height="80" alt="Tony Kanaan" src="docs/images/icon-tony-kanaan.png"></a>
 <a href="https://www.turnracing.com" target="_blank"><img width="80" height="80" alt="Turn Racing" src="docs/images/icon-turn.png"></a>
-<a href="https://lowfuelmotorsport.com" target="_blank"><img width="80" height="80" alt="Low Fuel Motorsport" src="docs/images/icon-lfm.png"></a>
-<a href="https://pitskill.io" target="_blank"><img width="80" height="80" alt="Pitskill.io" src="docs/images/icon-pitskill.png"></a>
+<a href="https://gomezsimindustries.com" target="_blank"><img width="80" height="80" alt="Gomez Sim Industries" src="docs/images/icon-gsi.png"></a>
+<a href="https://www.simutec.co.uk" target="_blank"><img width="80" height="80" alt="Simutec" src="docs/images/icon-simutec.png"></a>
 </p>
  
 ---
 
 <div align="center">
 <p><img width="80" height="80" alt="Lovely Discord" src="docs/images/icon-discord.png"></br>
-<strong><em>JOIN over 3100 Lovely Sim Racers on Discord</em></strong><br/>
+<strong><em>JOIN over 5000 Lovely Sim Racers on Discord</em></strong><br/>
 Join the Lovely Sim Racing Discord Server and help develop a better version.<br/>
 👉 <a href="http://j76.me/LSRDiscord"><strong>Lovely Discord Server</strong></a></p>
 </div>
 </br>
  
-### 🔌 If you like this dashboard & overlay, please consider subscribing to my Youtube Channel [Lovely Sim Racing](http://j76.me/LSR), where I stream as often as I can.
+### 🔌 If you like this project, please consider subscribing to my Youtube Channel [Lovely Sim Racing](http://j76.me/LSR), where I stream as often as I can.
 
 ### Please consider [buying me a coffee](http://j76.me/BuyMeCoffee) :coffee: or snagging some [Lovely Merch](http://j76.me/LSRStore) 
 
@@ -60,15 +59,22 @@ Join the Lovely Sim Racing Discord Server and help develop a better version.<br/
 
 ---
 
-## Video Walkthrough
+## Video Tours & Guides
 
-Learn your way around the Lovely Dashboard with this video. Although it is a bit old, the basic principles are the same.
+Learn your way around the Lovely Dashboard with this video. 
 <h4 align="center">
-<a href="https://youtu.be/1XCZ4Z6RqOA">
-<img src="docs/images/LSRM - Lovely Dashboard Walkthrough.png" /><br/>
-Watch the Lovely Dashboard 1.6.3 Walkthrough video
+<a href="https://youtube.com/live/mhGbmHBr7g4">
+<img src="docs/images/LSRM - Lovely Dashboard v2.6.0 Walkthrough.png" /><br/>
+Watch the Lovely Dashboard 2.6.0 Walkthrough
 </a>
-</h4> 
+</h4>
+
+<h4 align="center">
+<a href="https://youtu.be/QkQtfakUxRk">
+<img src="docs/images/LSRM - Lovely Dashboard Configurator.png" /><br/>
+Watch the Lovely Dashboard Configurator
+</a>
+</h4>
 
 ## What's Included
 In the [Releases](https://github.com/cdemetriadis/lovely-dashboard/releases) section, you will find:
@@ -80,31 +86,33 @@ In the [Releases](https://github.com/cdemetriadis/lovely-dashboard/releases) sec
 5. **Lovely Flags** - A "simple" dashboard to display race flags and platform integration
 
 ## Download & Install
-This is a SimHub Dashboard, therefore **SimHub Dash** app is required to run it (Doh!). Also, since the UI was a considerate design, you will also need to download and install the **Roboto Font Family** from Google (free).
-
-:people_holding_hands: **For more information, tips & feedback, please join the [Lovely Discord](http://j76.me/LSRDiscord)**
-
 ### First time install
 If this is your first time installing the **Lovely Dashboard**, please follow these steps, and make sure you've completed each before proceeding to the next one.
 
-1. Download & Install [**SimHub Dash**](https://www.simhubdash.com) app
+1. Download & Install [**SimHub**](https://www.simhubdash.com) app
 2. Download & Install [**Roboto Font Family**](https://fonts.google.com/specimen/Roboto) by Christian Robertson
 3. Download & Install the [**Lovely Dashboard Latest Release**](https://github.com/cdemetriadis/lovely-dashboard/releases)
 4. Setup your [**SimHub Action Triggers**](./docs/actions.md) to control the Lovely Dashboard UI
-5. ***Optionally***, you can also copy and edit the [**Settings File**](./docs/settings.md) and add the `lovely-dash-bg.jpg` into the `./SimHub/JavascriptExtensions` folder.
+5. ***Optionally***, you can extend and personalise the Lovely Dashboard by using the [**Settings File**](./docs/settings.md).
+6. **For iRACING USE ONLY** you will also want to include Romainrob's plugin. Download `RSC.iRacingExtraProperties.dll` and `RSC.iRacingExtraPorperties.pdb` from the [**Official Google Drive**](https://drive.google.com/drive/folders/1AiIWHviD4j-_D-zgRrjJU1AFhJ_xmass) and copy them into your Simhub root folder.
 
 ### Updating
 If you have received a notification on your **Lovely Dashboard** of a new update, please follow the below steps:
 
 1. Download & Install the [**Lovely Dashboard Latest Release**](https://github.com/cdemetriadis/lovely-dashboard/releases)
-2. Read the changelog and if prompted, you may also need to update [**SimHub Dash**](https://www.simhubdash.com) and/or the [**Settings File**](./docs/settings.md)
+2. Read the changelog and if prompted, you may also need to update [**SimHub**](https://www.simhubdash.com) and/or the [**Settings File**](./docs/settings.md)
+
+> [!TIP]
+> :people_holding_hands: **For more information, tips & feedback, please join the [Lovely Discord](http://j76.me/LSRDiscord)**
 
 ## Settings
 The Lovely Dashboard is a highly customizable dashboard. You can tailor it to your personal brand, but also adapt how it functions. To take full advantage of the Lovely Dashboard you'll need to copy the file `Lovely-Dashboard_settings.json` into the `./Simhub/JavascriptExtensions` folder. 
 
 ![Copy the settings file into the JavascriptExtensions folder](docs/images/settings-file.png)
 
-To change your personal settings, you can edit the file `Lovely-Dashboard_settings.json` in any text editor. The available settings are outlined in the dedicated [**Settings File**](./docs/settings.md) page.
+To change your personal settings, you can either edit the file `Lovely-Dashboard_settings.json` directly in any text editor **OR** use the new [**Settings File Configurator**](https://lsr.gg/configurator).
+
+The available settings are outlined in the dedicated [**Settings File**](./docs/settings.md) page.
   
 ## Compatibility
 
@@ -126,13 +134,13 @@ The Lovely Dashboard offers native support for many sims, but will work with ANY
 
 #### Untested Support
 
-The new **Lovely Dashboard v2.0.0** is no longer locked to any sim. There's a provision for natively supporting a few of the most popular simulators, but it can also be run with ANY simulator. If the data is available, then it will display...
+As of v2.0.0, the **Lovely Dashboard** is no longer locked to any sim. There's a provision for natively supporting a few of the most popular simulators, but it can also be run with ANY simulator. If the data is available, then it will display...
 
 ## Lovely Dashboard Ecosystem
 If you were wondering why this is the best SimHub dashboard out there, wonder no more. It's good looking and feature packed but with considered design and proper information architecture. 
 
 ### Lovely Dashboard
-![Basic Feature Set](docs/images/Primary.png)
+![Basic Feature Set](docs/images/primary-tdm.gif)
 
 ![Basic Feature Set](docs/images/AllFeatures.png)
 
@@ -155,11 +163,15 @@ If you were wondering why this is the best SimHub dashboard out there, wonder no
 ## Analytics
 #### The **Lovely Dashboard** uses Google Analytics to analyse anonymous data on Product Interactions & Usage. **We do not track or store any personal data. Users are free to opt-in or opt-out via the optional [**Settings File**](./docs/settings.md).**
 
+> [!NOTE]
+> By downloading and installing the settings file, you accept that the Lovely Dashboard will use cookies to collect anonymous data. You have the option to opt-out in the settings file.
+
 ## Special Thanks
 A special thanks to all of you who have supported this project in [one way](http://j76.me/BuyMeCoffee) or [another](http://j76.me/LSRStore). It could not have been done without you. Special thanks also to these fellas that have contributed to the code:
 
 * **Mike Bowen** (iRacing ERS & MGU)
-* **Steve Mattar** (F1 Support)
+* **Steve Mattar** (F1 Support)~
+* **Joerg Behrens** (Settings Configurator)
 
 ## Marketing Inquiries
 For all marketing inquiries please contact me directly. 
@@ -175,11 +187,10 @@ For all marketing inquiries please contact me directly.
 <span><strong>Lovely Partners</strong></span></br>
 <a href="https://www.simhubdash.com" target="_blank"><img width="80" height="80" alt="SimHub" src="docs/images/icon-simhub.png"></a>
 <a href="https://www.facebook.com/SimDash.pt" target="_blank"><img width="80" height="80" alt="SimDash" src="docs/images/icon-simdash.png"></a>
-<a href="https://www.simutec.co.uk" target="_blank"><img width="80" height="80" alt="Simutec" src="docs/images/icon-simutec.png"></a>
-<a href="https://gomezsimindustries.com" target="_blank"><img width="80" height="80" alt="Gomez Sim Industries" src="docs/images/icon-gsi.png"></a>
+<a href="https://www.tonykanaan.com" target="_blank"><img width="80" height="80" alt="Tony Kanaan" src="docs/images/icon-tony-kanaan.png"></a>
 <a href="https://www.turnracing.com" target="_blank"><img width="80" height="80" alt="Turn Racing" src="docs/images/icon-turn.png"></a>
-<a href="https://lowfuelmotorsport.com" target="_blank"><img width="80" height="80" alt="Low Fuel Motorsport" src="docs/images/icon-lfm.png"></a>
-<a href="https://pitskill.io" target="_blank"><img width="80" height="80" alt="Pitskill.io" src="docs/images/icon-pitskill.png"></a>
+<a href="https://gomezsimindustries.com" target="_blank"><img width="80" height="80" alt="Gomez Sim Industries" src="docs/images/icon-gsi.png"></a>
+<a href="https://www.simutec.co.uk" target="_blank"><img width="80" height="80" alt="Simutec" src="docs/images/icon-simutec.png"></a>
 </p>
  
 ---
