@@ -26,7 +26,7 @@ You can use the new online Settings File Configurator, to create a **new Setting
 
 [![Settings File Configurator](./images/settings-file-button.png)](https://lsr.gg/configurator)
 
-### Manually Edit Directly
+### Direct File Edit
 You can also directly edit the Settings File with a text editor of your choice (we recommend VS Code or NotePad++). To change your personal settings, you will need to edit the `Lovely-Dashboard_settings.json`.
 
 > [!WARNING]
@@ -42,6 +42,8 @@ The settings will work for the **Lovely Dashboard**, **Lovely Dashboard XL** and
 * [Idle Screen Personalisation](#idle-screen-personlisation)
 * [Platform Integrations](#platform-integrations)
 * [UI Customisation](#ui-customisation)
+* [Night Mode](#night-mode)
+* [True Dark Mode](#true-dark-mode)
 * [Alerts](#alerts)
 * Sim Specific Settings
 	* [Assetto Corsa Competizione](#acc-assetto-corsa-competizione)
