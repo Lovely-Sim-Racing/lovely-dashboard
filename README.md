@@ -57,7 +57,7 @@ A multifunctional feature packed SimHub Dashboard (DDU) and ecosystem.
 <p><img width="80" height="80" alt="Lovely Discord" src="docs/images/icon-discord.png"><br/>
 <strong><em>JOIN over 5000 Lovely Sim Racers on Discord</em></strong><br/>
 Join the Lovely Sim Racing Discord Server and help develop a better version.<br/>
-👉 <a href="http://j76.me/LSRDiscord"><strong>Lovely Discord Server</strong></a></p>
+👉 <a href="https://lsr.gg/discord"><strong>Lovely Discord Server</strong></a></p>
 </div>
 
 <br/>
@@ -108,7 +108,7 @@ If you have received a notification on your **Lovely Dashboard** of a new update
 2. Read the changelog and if prompted, you may also need to update [**SimHub**](https://www.simhubdash.com) and/or the [**Settings File**](./docs/settings.md)
 
 > [!TIP]
-> :people_holding_hands: **For more information, tips & feedback, please join the [Lovely Discord](http://j76.me/LSRDiscord)**
+> :people_holding_hands: **For more information, tips & feedback, please join the [Lovely Discord](https://lsr.gg/discord)**
 
 
 ## Settings
