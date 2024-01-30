@@ -20,6 +20,7 @@ As of **SimHub v9+**, all devices should be added to the Devices section.
 	* For **Generic Devices**: Select `Generic Vocore Screen`
 
 # Setup Touch Triggers
+> [!TIP]
 > For all devices wth **Touch Inputs** (Mobile Phones, Tablets, DDUs with Touch Screens etc) 
  
 The Lovely Dashboard is pre-configured out-of-the-box to work with touch gestures. 
@@ -37,7 +38,7 @@ The areas which you can use to control your Lovely Dashboard are shown below.
 ![Pre-Defined Triggers](./images/PrimaryActionsOnlyTouch.png)
 
 # Setup Physical Buttons
-
+> [!TIP]
 > For all devices (Touch and non-touch enabled)
 
 If you prefer to control your device with physical buttons, you can assign specific actions to your Steering Wheel, Button Box etc.
@@ -59,4 +60,12 @@ Clicking on any of the physical buttons you just assigned, should change the scr
 
 ![Pre-Defined Triggers](./images/PrimaryActionsOnly.png)
 
+# Setup Hot keys
+> [!TIP]
+> Enable extra features like True Dark Mode!
 
+There are a few cases where setting up a Hot-Key will come in handy. The latest version of the Lovely Dashboard (v2.6.0) has new features that require a Hot-Key in order for them to trigger.
+
+A Hot-Key is a keyboard combination that triggers an action inside the Lovely Dashboard, just like CTRL+C is used to Copy an item on your PC.
+
+To use Hot-Keys, you will need to enable two Plugins in Simhub.

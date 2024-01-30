@@ -14,6 +14,12 @@ A multifunctional feature packed SimHub Dashboard (DDU) and ecosystem.
 
 <br/>
 
+<h4 align="center"><strong>
+<a href="#video-tours--guides">Video Guides</a> - <a href="#download--install">Download & Install</a> - <a href="#settings">Settings</a> - <a href="#lovely-membership">Lovely Membership</a> - <a href="#lovely-dashboard-ecosystem">Lovely Ecosystem</a>
+</strong></h4>
+
+<br/>
+
 ---
 
 ### The Lovely Dashboard, used by thousands* of sim racers across the world, has become a staple in all of your sim racing setups. From professionals like **Tony Kanaan** all the way to rookies, the Lovely Dashboard delivers the best and most consistent information for all simulators.
@@ -106,7 +112,7 @@ If you have received a notification on your **Lovely Dashboard** of a new update
 
 
 ## Settings
-The Lovely Dashboard is a highly customizable dashboard. You can tailor it to your personal brand, but also adapt how it functions. To take full advantage of the Lovely Dashboard you'll need to copy the file `Lovely-Dashboard_settings.json` into the `./Simhub/JavascriptExtensions` folder. 
+The Lovely Dashboard is a highly customizable dashboard. You can tailor it to your personal needs and adapt how it functions. To take full advantage of the Lovely Dashboard you'll need to copy the file `Lovely-Dashboard_settings.json` into the `./Simhub/JavascriptExtensions` folder. 
 
 ![Copy the settings file into the JavascriptExtensions folder](docs/images/settings-file.png)
 
@@ -141,7 +147,7 @@ As of v2.0.0, the **Lovely Dashboard** is no longer locked to any sim. There's a
 <br/>
 
 ## Lovely Membership
-Become a Lovely Member and gain access to exlcusive perks! All Lovely Members have access to frequent updates and releases of the Lovely Dashboard, while Pro & Gold Lovely Members alos have access to the Lovely Pit Wall.
+**Become a Lovely Member and gain access to exlcusive perks!** All Lovely Members have access to frequent updates and releases of the Lovely Dashboard, while Pro & Gold Lovely Members also have access to the Lovely Pit Wall.
  
 <h4 align="center">
 <a href="https://lsr.gg/membership">
@@ -182,14 +188,14 @@ Available to [**Pro & Gold Lovely Members**](#lovely-membership) only.
 ![Lovely Flags](docs/images/LovelyFlags.gif)	
 
 ## Analytics
-#### The **Lovely Dashboard** uses Google Analytics to analyse anonymous data on Product Interactions & Usage. **We do not track or store any personal data. Users are free to opt-in or opt-out via the optional [**Settings File**](./docs/settings.md).**
+#### The **Lovely Dashboard** uses Google Analytics to collect anonymous data on Product Interactions & Usage. **We do not track or store any personal data. Users are free to opt-in or opt-out via the optional [**Settings File**](./docs/settings.md).**
 
 > [!NOTE]
 > By downloading and installing the settings file, you accept that the Lovely Dashboard will use cookies to collect anonymous data. You have the option to opt-out in the settings file.
 
 
 ## Special Thanks
-A special thanks to all of you who have supported this project in [one way](http://j76.me/BuyMeCoffee) or [another](http://j76.me/LSRStore). It could not have been done without you. Special thanks also to these fellas that have contributed to the code:
+A special thanks to all of you who have supported this project in [one way](https://lsr.gg/membership) or [another](https://lsr.gg/store). It could not have been done without you. Special thanks also to these fellas that have contributed to the code:
 
 * **Mike Bowen** (iRacing ERS & MGU)
 * **Steve Mattar** (F1 Support)~
