@@ -133,21 +133,20 @@ In extended driving sessions, especially during the late hours, light may be sca
 
 **Blue light not only suppresses melatonin, it also enables the circadian rhythm to help the body maintain alertness.**
 
-Switching to the **Blue True Dark Mode** during these long low-lit driving stints woudld decrease the amount of melatonin in our body, maintaining alertness.
+Switching to the **Blue True Dark Mode** during these long low-lit driving stints would decrease the amount of melatonin in our body, maintaining alertness.
 
 > [!TIP]
 > To use True Dark Mode, you will need to [enable it in the Settings File](./docs/settings.md#true-dark-mode) and [setup your Hot-Key in Simhub](./docs/actions.md#setup-hot-keys).
 
 ![True Dark Mode in Blue helps maintain alertness](./docs/images/primary-tdm-blue.png)
 
-*Source: [Sleep Foundation](https://www.sleepfoundation.org/bedroom-environment/what-color-light-helps-you-sleep#:~:text=Exposure%20to%20bright%20lights%20and,that%20disrupt%20the%20circadian%20rhythm)*
+*Source: [Sleep Foundation](https://www.sleepfoundation.org/bedroom-environment/what-color-light-helps-you-sleep)*
 
 ## Compatibility
 
 ### Screen Size
 * Any device compatible with SimHub Dash
 * Native **5" (850x480)** and **10" (1920x720)** DDU Screens are supported
-* Any SimHub compatible screen or device
 
 ### Compatible Sims
 The Lovely Dashboard offers native support for many sims, but will work with ANY simulator that offers native data to SimHub.
@@ -168,13 +167,9 @@ As of v2.0.0, the **Lovely Dashboard** is no longer locked to any sim. There's a
 <br/>
 
 ## Lovely Membership
-**Become a Lovely Member and gain access to exlcusive perks!** All Lovely Members have access to frequent updates and releases of the Lovely Dashboard, while Pro & Gold Lovely Members also have access to the Lovely Pit Wall.
+**Become a Lovely Member and gain access to exclusive perks!** All **Lovely Members** have access to frequent updates and releases of the Lovely Dashboard, while **Pro & Gold Lovely Members** also have access to the **Lovely Pit Wall**.
  
-<h4 align="center">
-<a href="https://lsr.gg/membership">
-<img src="docs/images/lovely-membership.png" />
-</a>
-</h4>
+[![Basic Feature Set](./docs/images/lovely-membership.png)](https://lsr.gg/membership)
 
 <br/><br/>
 
