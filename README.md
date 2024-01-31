@@ -99,7 +99,11 @@ If this is your first time installing the **Lovely Dashboard**, please follow th
 3. Download & Install the [**Lovely Dashboard**](https://github.com/cdemetriadis/lovely-dashboard/releases) you need
 4. Setup your [**SimHub Action Triggers**](./docs/actions.md) to control the Lovely Dashboard UI
 5. ***Optionally***, you can extend and personalise the Lovely Dashboard by using the [**Settings File**](./docs/settings.md).
-6. **For iRACING USE ONLY** you will also want to include Romainrob's plugin. Download `RSC.iRacingExtraProperties.dll` and `RSC.iRacingExtraPorperties.pdb` from the [**Official Google Drive**](https://drive.google.com/drive/folders/1AiIWHviD4j-_D-zgRrjJU1AFhJ_xmass) and copy them into your Simhub root folder.
+
+### iRacing Extra Properties required
+**For iRACING USE ONLY** you will also want to download and enable Romainrob's plugin. Download **`RSC.iRacingExtraProperties.dll`** and **`RSC.iRacingExtraPorperties.pdb`** from the [**Official Google Drive**](https://drive.google.com/drive/folders/1AiIWHviD4j-_D-zgRrjJU1AFhJ_xmass) and copy them into your Simhub root folder. Restart Simhub, and then in `Simhub > Settings > Plugins` enable the Plugin:
+
+![](./docs/images/simhub-plugins-romainrob.png)
 
 ### Updating
 If you have received a notification on your **Lovely Dashboard** of a new update, please follow the below steps:
@@ -120,6 +124,23 @@ To change your personal settings, you can either edit the file `Lovely-Dashboard
 
 The available settings are outlined in the dedicated [**Settings File**](./docs/settings.md) page.
 
+## What is True Dark Mode?
+**True Dark Mode** in the Lovely Dashboard is more than just pretty colors. Alongside a new theming architecture responsible for changing the colours and icons, True Dark Mode does more for you than you may think.
+
+**Melatonin** is a hormone made in the body. It regulates night and day cycles or sleep-wake cycles. Darkness triggers the body to make more melatonin, which signals the body to sleep. Light decreases melatonin production and signals the body to be awake. 
+
+In extended driving sessions, especially during the late hours, light may be scarce and the mind starts slipping into a night cycle. To counter the effect of melatonin and reduce the amounts produced in our body, we need to reverse the trigger by using colour hues that negate the melatonin. 
+
+**Blue light not only suppresses melatonin, it also enables the circadian rhythm to help the body maintain alertness.**
+
+Switching to the **Blue True Dark Mode** during these long low-lit driving stints woudld decrease the amount of melatonin in our body, maintaining alertness.
+
+> [!TIP]
+> To use True Dark Mode, you will need to [enable it in the Settings File](./docs/settings.md#true-dark-mode) and [setup your Hot-Key in Simhub](./docs/actions.md#setup-hot-keys).
+
+![True Dark Mode in Blue helps maintain alertness](./docs/images/primary-tdm-blue.png)
+
+*Source: [Sleep Foundation](https://www.sleepfoundation.org/bedroom-environment/what-color-light-helps-you-sleep#:~:text=Exposure%20to%20bright%20lights%20and,that%20disrupt%20the%20circadian%20rhythm)*
 
 ## Compatibility
 

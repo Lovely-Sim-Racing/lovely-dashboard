@@ -62,10 +62,29 @@ Clicking on any of the physical buttons you just assigned, should change the scr
 
 # Setup Hot keys
 > [!TIP]
-> Enable extra features like True Dark Mode!
+> Hot-Keys Enable extra features like True Dark Mode on all simulators!
 
 There are a few cases where setting up a Hot-Key will come in handy. The latest version of the Lovely Dashboard (v2.6.0) has new features that require a Hot-Key in order for them to trigger.
 
-A Hot-Key is a keyboard combination that triggers an action inside the Lovely Dashboard, just like CTRL+C is used to Copy an item on your PC.
+A Hot-Key is a keyboard combination that triggers an action inside the Lovely Dashboard, just like CTRL+C is used to Copy an item on your PC. To use Hot-Keys in Simhub, you will need to enable two Plugins in Simhub.
 
-To use Hot-Keys, you will need to enable two Plugins in Simhub.
+### Step 1
+Navigate to `Simhub > Settings > Plugins` and enable the following plugins:
+
+* `Keyboard Emulator`
+* `Keyboard Input`
+
+![Hot-Key Plugins](./images/simhub-plugins-hotkey.png)
+
+### Step 2
+Navigate to `Controls and events > Keyboard Emulation` and add the mappings you want. By default, the Dashboard uses:
+
+* `Shift+A` Reset the AVG Tire data
+* `Shift+D` Toggles the True Dark Mode
+
+You can now continue to `Add mapping` in Simhub. Here's an example of my settings:
+
+![Keybard Emulation Example](./images/simhub-emulator.png)
+
+> [!WARNING]
+> If these hot-keys conflict with other commands on your system you can change them in the [Settings File](settings.md), and make sure to update the mappings above.
