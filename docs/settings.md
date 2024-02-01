@@ -190,8 +190,8 @@ Enable or disable True Dark Mode for your Lovely Dashboard & Lovely Dashboard XL
 #### `trueDarkModeNative`
 When a simulator has more than one light stage, you can enable `trueDarkModeNative` which will use the high beam stage to activate True Dark Mode. Currently, only Assetto Corsa Competizione supports this feature, but not all cars do. Be careful, and test your car before enabling this feature.
 
-- **`0` (Default)** Disabled: Will always use the Hot-Key as a trigger.
-- `1` Enabled: Will use the second light stage as a trigger.
+- `0` (Default) Disabled: Will always use the Hot-Key as a trigger.
+- **`1` (Default)** Enabled: Will use the second light stage as a trigger.
         
 #### `trueDarkModeHotKey`
 Set a hot-key to enable True Dark Mode. 
