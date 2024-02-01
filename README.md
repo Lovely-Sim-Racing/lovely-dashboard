@@ -29,13 +29,16 @@ A multifunctional feature packed SimHub Dashboard (DDU) and ecosystem.
 ![Basic Feature Set](docs/images/primary-tdm.gif)
 
 <p align="center">
-<span><strong>Native Simulator Support</strong></span><br/>
+<span><strong>Native Simulator & Platform Support</strong></span><br/>
 <img width="80" height="80" alt="Assetto Corsa Competizione" src="docs/images/icon-acc.png">
 <img width="80" height="80" alt="Assetto Corsa" src="docs/images/icon-ac.png">
 <img width="80" height="80" alt="iRacing" src="docs/images/icon-iracing.png">
 <img width="80" height="80" alt="Automobilista 2" src="docs/images/icon-ams2.png">
 <img width="80" height="80" alt="rFactor 2" src="docs/images/icon-rf2.png">
-<img width="80" height="80" alt="Formula 1" src="docs/images/icon-f1.png"></br>
+<img width="80" height="80" alt="Formula 1" src="docs/images/icon-f1.png">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img width="80" height="80" alt="Low Fuel Motorsport" src="docs/images/icon-lfm.png">
+<img width="80" height="80" alt="Pitskill.io" src="docs/images/icon-pitskill.png"></br>
 <span>+ generic support for all simulators that work with SimHub</span>
 </p>
 
@@ -45,6 +48,7 @@ A multifunctional feature packed SimHub Dashboard (DDU) and ecosystem.
 <span><strong>Lovely Partners</strong></span><br/>
 <a href="https://www.simhubdash.com" target="_blank"><img width="80" height="80" alt="SimHub" src="docs/images/icon-simhub.png"></a>
 <a href="https://www.facebook.com/SimDash.pt" target="_blank"><img width="80" height="80" alt="SimDash" src="docs/images/icon-simdash.png"></a>
+<a href="https://lsr.gg/dnr" target="_blank"><img width="100" height="80" alt="Daniel Newman Racing" src="docs/images/icon-dnr.png"></a> 
 <a href="https://www.tonykanaan.com.br/en/esports" target="_blank"><img width="80" height="80" alt="Tony Kanaan" src="docs/images/icon-tony-kanaan.png"></a>
 <a href="https://www.turnracing.com" target="_blank"><img width="80" height="80" alt="Turn Racing" src="docs/images/icon-turn.png"></a>
 <a href="https://gomezsimindustries.com" target="_blank"><img width="80" height="80" alt="Gomez Sim Industries" src="docs/images/icon-gsi.png"></a>
@@ -232,7 +236,8 @@ For all marketing inquiries please contact me directly.
 <span><strong>Lovely Partners</strong></span><br/>
 <a href="https://www.simhubdash.com" target="_blank"><img width="80" height="80" alt="SimHub" src="docs/images/icon-simhub.png"></a>
 <a href="https://www.facebook.com/SimDash.pt" target="_blank"><img width="80" height="80" alt="SimDash" src="docs/images/icon-simdash.png"></a>
-<a href="https://www.tonykanaan.com" target="_blank"><img width="80" height="80" alt="Tony Kanaan" src="docs/images/icon-tony-kanaan.png"></a>
+<a href="https://lsr.gg/dnr" target="_blank"><img width="100" height="80" alt="Daniel Newman Racing" src="docs/images/icon-dnr.png"></a> 
+<a href="https://www.tonykanaan.com.br/en/esports" target="_blank"><img width="80" height="80" alt="Tony Kanaan" src="docs/images/icon-tony-kanaan.png"></a>
 <a href="https://www.turnracing.com" target="_blank"><img width="80" height="80" alt="Turn Racing" src="docs/images/icon-turn.png"></a>
 <a href="https://gomezsimindustries.com" target="_blank"><img width="80" height="80" alt="Gomez Sim Industries" src="docs/images/icon-gsi.png"></a>
 <a href="https://www.simutec.co.uk" target="_blank"><img width="80" height="80" alt="Simutec" src="docs/images/icon-simutec.png"></a>
