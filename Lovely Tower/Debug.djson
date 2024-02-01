@@ -9,7 +9,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": false,
-  "Id": "164ee372-4149-41f1-99b9-bface37fbcfc",
+  "Id": "f7dbbd4f-b0b7-4f4d-912f-59759e29cf3f",
   "Images": [],
   "IsOverlay": false,
   "Metadata": {
@@ -27,6 +27,7 @@
     "OverlaySizeWarning": false,
     "PitScreensIndexs": [],
     "ScreenCount": 1.0,
+    "SimHubVersion": "9.1.13",
     "Width": 200.0
   },
   "Screens": [
@@ -46,18 +47,18 @@
             "Text": {
               "Formula": {
                 "Expression": "return $prop('variable.dashName') + '\\n' + \r\n\t\t'v' + $prop('variable.dashVer') + '\\n' +\r\n\t\t'Simhub Ver: ' + $prop('DataCorePlugin.SimHubVersion') + '\\n' +\r\n\t\t'Simhub Min Ver: ' + $prop('variable.shVer')",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Text"
+              "Mode": 2
             },
             "Visible": {
               "Formula": {
-                "Expression": "if ( !settings || !settings.debug || settings.debug == 0 ) {\r\n\treturn 0\r\n} else {\r\n\treturn 1\r\n}",
-                "Interpreter": 1
+                "Expression": "return (!settings || typeof(settings.debug) === 'undefined') ? 0 : parseInt(settings.debug)",
+                "Interpreter": 1,
+                "JSExt": 1
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "BorderStyle": {
@@ -72,7 +73,9 @@
           "HorizontalAlignment": 0,
           "IsTextItem": true,
           "Left": 0.0,
+          "MinimumRefreshIntervalMS": 100000.0,
           "Name": "Debug",
+          "RenderingSkip": 10000,
           "Text": "Text",
           "TextColor": "#FF00FFFF",
           "TextPadding": {
@@ -94,26 +97,26 @@
               "FormatString": "0.0",
               "Formula": {
                 "Expression": "return 'FPS: ' + Math.round( $prop('DataCorePlugin.DataUpdateFps') )",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Text"
+              "Mode": 2
             },
             "TextColor": {
               "Formula": {
                 "Expression": "if ( $prop('DataCorePlugin.DataUpdateFps') > 50 ) {\r\n\r\n\treturn green \r\n\r\n} else if ( $prop('DataCorePlugin.DataUpdateFps') > 35 ) {\r\n\r\n\treturn blue\r\n\t\r\n} else if ( $prop('DataCorePlugin.DataUpdateFps') > 10 ) {\r\n\r\n\treturn orange\r\n\t\r\n} else {\r\n\r\n\treturn red\r\n\t\r\n}",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "TextColor"
+              "Mode": 2
             },
             "Visible": {
               "Formula": {
-                "Expression": "if ( !settings || !settings.debug || settings.debug == 0 ) {\r\n\treturn 0\r\n} else {\r\n\treturn 1\r\n}",
-                "Interpreter": 1
+                "Expression": "return (!settings || typeof(settings.debug) === 'undefined') ? 0 : parseInt(settings.debug)",
+                "Interpreter": 1,
+                "JSExt": 1
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "BorderStyle": {
@@ -129,7 +132,9 @@
           "HorizontalAlignment": 0,
           "IsTextItem": true,
           "Left": 0.0,
+          "MinimumRefreshIntervalMS": 1000.0,
           "Name": "fps",
+          "RenderingSkip": 100,
           "Text": "Text",
           "TextColor": "#FFFFFFFF",
           "TextPadding": {
@@ -144,6 +149,7 @@
           "Width": 200.0
         }
       ],
+      "MinimumRefreshIntervalMS": 0.0,
       "Name": "Screen",
       "OverlayMaxDuration": 0,
       "OverlayMinDuration": 0,
@@ -151,6 +157,7 @@
         "Expression": ""
       },
       "PitScreen": false,
+      "RenderingSkip": 0,
       "ScreenEnabledExpression": {
         "Expression": ""
       },

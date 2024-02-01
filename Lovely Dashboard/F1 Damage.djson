@@ -3,15 +3,13 @@
   "BackgroundOpacity": 100.0,
   "BaseHeight": 326,
   "BaseWidth": 132,
-  "DashboardDebugManager": {
-    "Maximized": false
-  },
+  "DashboardDebugManager": {},
   "EnableClickThroughOverlay": true,
   "EnableOnDashboardMessaging": true,
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "0109d3e5-df4a-44ba-ac55-381f88c734d3",
+  "Id": "45086de8-ca84-4e9f-a718-d69570d399ab",
   "Images": [
     {
       "Extension": ".png",
@@ -64,16 +62,6 @@
       "Modified": false,
       "Name": "engine-medium",
       "Optimized": true
-    },
-    {
-      "Extension": ".png",
-      "Height": 326,
-      "Length": 7837,
-      "MD5": "8eee4e4bf322a65f2d77154ee3270433",
-      "Modified": false,
-      "Name": "f1-status",
-      "Optimized": true,
-      "Width": 132
     },
     {
       "Extension": ".png",
@@ -230,6 +218,16 @@
       "Modified": false,
       "Name": "gearbox-medium",
       "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Height": 326,
+      "Length": 6946,
+      "MD5": "86afcffb48ed6efa7de5655f5ae4ab89",
+      "Modified": false,
+      "Name": "f1-status",
+      "Optimized": true,
+      "Width": 132
     }
   ],
   "IsOverlay": false,
@@ -248,6 +246,7 @@
     "OverlaySizeWarning": false,
     "PitScreensIndexs": [],
     "ScreenCount": 1.0,
+    "SimHubVersion": "9.1.28",
     "Width": 132.0
   },
   "Screens": [
@@ -268,15 +267,16 @@
           "Image": "f1-status",
           "IsFreezed": true,
           "Left": 0.0,
+          "MinimumRefreshIntervalMS": 320.0,
           "Name": "F1",
-          "Opacity": 50.0,
+          "Opacity": 60.0,
+          "RenderingSkip": 32,
           "Top": 0.0,
           "Visible": true,
           "Width": 132.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
           "Childrens": [
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
@@ -288,14 +288,14 @@
                   "EndColorValue": 1000.0,
                   "Formula": {
                     "Expression": "return $prop('BrakeTemperatureRearRight')",
-                    "Interpreter": 1
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
                   "MiddleColor": "#FFFFD700",
                   "MiddleColorValue": 750.0,
                   "Mode": 4,
                   "StartColor": "#FF00FF00",
-                  "StartColorValue": 100.0,
-                  "TargetPropertyName": "BackgroundColor"
+                  "StartColorValue": 100.0
                 }
               },
               "BorderStyle": {
@@ -308,7 +308,9 @@
               "IsFreezed": true,
               "IsRectangleItem": true,
               "Left": 89.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "RR Brake",
+              "RenderingSkip": 0,
               "Top": 262.0,
               "Visible": false,
               "Width": 7.0
@@ -323,14 +325,14 @@
                   "EndColorValue": 1000.0,
                   "Formula": {
                     "Expression": "return $prop('BrakeTemperatureRearLeft')",
-                    "Interpreter": 1
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
                   "MiddleColor": "#FFFFD700",
                   "MiddleColorValue": 750.0,
                   "Mode": 4,
                   "StartColor": "#FF00FF00",
-                  "StartColorValue": 100.0,
-                  "TargetPropertyName": "BackgroundColor"
+                  "StartColorValue": 100.0
                 }
               },
               "BorderStyle": {
@@ -343,7 +345,9 @@
               "IsFreezed": true,
               "IsRectangleItem": true,
               "Left": 36.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "RL Brake",
+              "RenderingSkip": 0,
               "Top": 262.0,
               "Visible": false,
               "Width": 7.0
@@ -358,14 +362,14 @@
                   "EndColorValue": 1000.0,
                   "Formula": {
                     "Expression": "return $prop('BrakeTemperatureFrontRight')",
-                    "Interpreter": 1
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
                   "MiddleColor": "#FFFFD700",
                   "MiddleColorValue": 750.0,
                   "Mode": 4,
                   "StartColor": "#FF00FF00",
-                  "StartColorValue": 100.0,
-                  "TargetPropertyName": "BackgroundColor"
+                  "StartColorValue": 100.0
                 }
               },
               "BorderStyle": {
@@ -378,7 +382,9 @@
               "IsFreezed": true,
               "IsRectangleItem": true,
               "Left": 93.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "FR Brake",
+              "RenderingSkip": 0,
               "Top": 64.0,
               "Visible": false,
               "Width": 7.0
@@ -393,14 +399,14 @@
                   "EndColorValue": 1000.0,
                   "Formula": {
                     "Expression": "return $prop('BrakeTemperatureFrontLeft')",
-                    "Interpreter": 1
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
                   "MiddleColor": "#FFFFD700",
                   "MiddleColorValue": 750.0,
                   "Mode": 4,
                   "StartColor": "#FF00FF00",
-                  "StartColorValue": 100.0,
-                  "TargetPropertyName": "BackgroundColor"
+                  "StartColorValue": 100.0
                 }
               },
               "BorderStyle": {
@@ -413,7 +419,9 @@
               "IsFreezed": true,
               "IsRectangleItem": true,
               "Left": 32.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "FL Brake",
+              "RenderingSkip": 0,
               "Top": 64.0,
               "Visible": false,
               "Width": 7.0
@@ -428,14 +436,14 @@
                   "EndColorValue": 90.0,
                   "Formula": {
                     "Expression": "return 100 - $prop('TyreWearFrontLeft')",
-                    "Interpreter": 1
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
                   "MiddleColor": "#FFFFD700",
                   "MiddleColorValue": 30.0,
                   "Mode": 4,
                   "StartColor": "#FF00FF00",
-                  "StartColorValue": 0.0,
-                  "TargetPropertyName": "BackgroundColor"
+                  "StartColorValue": 0.0
                 }
               },
               "BorderStyle": {
@@ -447,7 +455,9 @@
               "Height": 39.0,
               "IsRectangleItem": true,
               "Left": 10.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "FL Tire",
+              "RenderingSkip": 0,
               "Top": 55.0,
               "Visible": true,
               "Width": 20.0
@@ -462,14 +472,14 @@
                   "EndColorValue": 90.0,
                   "Formula": {
                     "Expression": "return 100 - $prop('TyreWearFrontRight')",
-                    "Interpreter": 1
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
                   "MiddleColor": "#FFFFD700",
                   "MiddleColorValue": 30.0,
                   "Mode": 4,
                   "StartColor": "#FF00FF00",
-                  "StartColorValue": 0.0,
-                  "TargetPropertyName": "BackgroundColor"
+                  "StartColorValue": 0.0
                 }
               },
               "BorderStyle": {
@@ -481,7 +491,9 @@
               "Height": 39.0,
               "IsRectangleItem": true,
               "Left": 102.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "FR Tire",
+              "RenderingSkip": 0,
               "Top": 55.0,
               "Visible": true,
               "Width": 20.0
@@ -496,14 +508,14 @@
                   "EndColorValue": 90.0,
                   "Formula": {
                     "Expression": "return 100 - $prop('TyreWearRearLeft')",
-                    "Interpreter": 1
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
                   "MiddleColor": "#FFFFD700",
                   "MiddleColorValue": 30.0,
                   "Mode": 4,
                   "StartColor": "#FF00FF00",
-                  "StartColorValue": 0.0,
-                  "TargetPropertyName": "BackgroundColor"
+                  "StartColorValue": 0.0
                 }
               },
               "BorderStyle": {
@@ -515,8 +527,10 @@
               "Height": 41.0,
               "IsRectangleItem": true,
               "Left": 10.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "RL Tire",
-              "Top": 252.0,
+              "RenderingSkip": 0,
+              "Top": 249.0,
               "Visible": true,
               "Width": 24.0
             },
@@ -530,14 +544,14 @@
                   "EndColorValue": 90.0,
                   "Formula": {
                     "Expression": "return 100 - $prop('TyreWearRearRight')",
-                    "Interpreter": 1
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
                   "MiddleColor": "#FFFFD700",
                   "MiddleColorValue": 30.0,
                   "Mode": 4,
                   "StartColor": "#FF00FF00",
-                  "StartColorValue": 0.0,
-                  "TargetPropertyName": "BackgroundColor"
+                  "StartColorValue": 0.0
                 }
               },
               "BorderStyle": {
@@ -549,23 +563,23 @@
               "Height": 41.0,
               "IsRectangleItem": true,
               "Left": 98.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "RR Tire",
-              "Top": 252.0,
+              "RenderingSkip": 0,
+              "Top": 249.0,
               "Visible": true,
               "Width": 24.0
             }
           ],
           "Group": false,
-          "Height": 238.0,
-          "Left": 10.0,
+          "MinimumRefreshIntervalMS": 320.0,
           "Name": "Tyres2",
-          "Top": 55.0,
-          "Visible": true,
-          "Width": 112.0
+          "RenderingSkip": 32,
+          "Repetitions": 0,
+          "Visible": false
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
           "Childrens": [
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
@@ -585,7 +599,9 @@
               "IsFreezed": true,
               "IsRectangleItem": true,
               "Left": 89.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "RR Brake",
+              "RenderingSkip": 0,
               "Top": 262.0,
               "Visible": true,
               "Width": 7.0
@@ -608,7 +624,9 @@
               "IsFreezed": true,
               "IsRectangleItem": true,
               "Left": 36.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "RL Brake",
+              "RenderingSkip": 0,
               "Top": 262.0,
               "Visible": true,
               "Width": 7.0
@@ -631,7 +649,9 @@
               "IsFreezed": true,
               "IsRectangleItem": true,
               "Left": 93.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "FR Brake",
+              "RenderingSkip": 0,
               "Top": 64.0,
               "Visible": true,
               "Width": 7.0
@@ -654,7 +674,9 @@
               "IsFreezed": true,
               "IsRectangleItem": true,
               "Left": 32.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "FL Brake",
+              "RenderingSkip": 0,
               "Top": 64.0,
               "Visible": true,
               "Width": 7.0
@@ -676,7 +698,9 @@
               "Height": 39.0,
               "IsRectangleItem": true,
               "Left": 10.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "FL Tire",
+              "RenderingSkip": 0,
               "Top": 55.0,
               "Visible": false,
               "Width": 20.0
@@ -698,7 +722,9 @@
               "Height": 39.0,
               "IsRectangleItem": true,
               "Left": 102.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "FR Tire",
+              "RenderingSkip": 0,
               "Top": 55.0,
               "Visible": false,
               "Width": 20.0
@@ -720,7 +746,9 @@
               "Height": 41.0,
               "IsRectangleItem": true,
               "Left": 10.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "RL Tire",
+              "RenderingSkip": 0,
               "Top": 252.0,
               "Visible": false,
               "Width": 24.0
@@ -742,20 +770,21 @@
               "Height": 41.0,
               "IsRectangleItem": true,
               "Left": 98.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "RR Tire",
+              "RenderingSkip": 0,
               "Top": 252.0,
               "Visible": false,
               "Width": 24.0
             }
           ],
           "Group": false,
-          "Height": 238.0,
-          "Left": 10.0,
+          "MinimumRefreshIntervalMS": 320.0,
           "Name": "Tyres",
           "Opacity": 50.0,
-          "Top": 55.0,
-          "Visible": true,
-          "Width": 112.0
+          "RenderingSkip": 32,
+          "Repetitions": 0,
+          "Visible": false
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
@@ -765,17 +794,19 @@
             "Image": {
               "Formula": {
                 "Expression": "if ( $prop('GameRawData.PlayerCarDamageData.m_frontLeftWingDamage') <= 5 ) {\r\n\treturn ''\r\n} else if ( $prop('GameRawData.PlayerCarDamageData.m_frontLeftWingDamage') > 5 && $prop('GameRawData.PlayerCarDamageData.m_frontLeftWingDamage') <= 30) {\r\n\treturn 'fl-wing-light'\r\n} else if ( $prop('GameRawData.PlayerCarDamageData.m_frontLeftWingDamage') > 30 && $prop('GameRawData.PlayerCarDamageData.m_frontLeftWingDamage') <= 70) {\r\n\treturn 'fl-wing-medium'\r\n} else if ( $prop('GameRawData.PlayerCarDamageData.m_frontLeftWingDamage') > 70 ) {\r\n\treturn 'fl-wing-heavy'\r\n}",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Image"
+              "Mode": 2
             }
           },
           "Height": 45.0,
           "Image": "fl-wing-light",
           "IsFreezed": true,
           "Left": 13.0,
+          "MinimumRefreshIntervalMS": 320.0,
           "Name": "FL Wing",
+          "RenderingSkip": 32,
           "Top": 4.0,
           "Visible": true,
           "Width": 51.0
@@ -788,17 +819,19 @@
             "Image": {
               "Formula": {
                 "Expression": "if ( $prop('GameRawData.PlayerCarDamageData.m_frontRightWingDamage') <= 5 ) {\r\n\treturn ''\r\n} else if ( $prop('GameRawData.PlayerCarDamageData.m_frontRightWingDamage') > 5 && $prop('GameRawData.PlayerCarDamageData.m_frontRightWingDamage') <= 30) {\r\n\treturn 'fr-wing-light'\r\n} else if ( $prop('GameRawData.PlayerCarDamageData.m_frontRightWingDamage') > 30 && $prop('GameRawData.PlayerCarDamageData.m_frontRightWingDamage') <= 70) {\r\n\treturn 'fr-wing-medium'\r\n} else if ( $prop('GameRawData.PlayerCarDamageData.m_frontRightWingDamage') > 70 ) {\r\n\treturn 'fr-wing-heavy'\r\n}",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Image"
+              "Mode": 2
             }
           },
           "Height": 44.0,
           "Image": "fr-wing-light",
           "IsFreezed": true,
           "Left": 68.0,
+          "MinimumRefreshIntervalMS": 320.0,
           "Name": "FR Wing",
+          "RenderingSkip": 32,
           "Top": 4.0,
           "Visible": true,
           "Width": 51.0
@@ -811,17 +844,19 @@
             "Image": {
               "Formula": {
                 "Expression": "if ( $prop('GameRawData.PlayerCarDamageData.m_rearWingDamage') <= 5 ) {\r\n\treturn ''\r\n} else if ( $prop('GameRawData.PlayerCarDamageData.m_rearWingDamage') > 5 && $prop('GameRawData.PlayerCarDamageData.m_rearWingDamage') <= 30) {\r\n\treturn 'r-wing-light'\r\n} else if ( $prop('GameRawData.PlayerCarDamageData.m_rearWingDamage') > 30 && $prop('GameRawData.PlayerCarDamageData.m_rearWingDamage') <= 70) {\r\n\treturn 'r-wing-medium'\r\n} else if ( $prop('GameRawData.PlayerCarDamageData.m_rearWingDamage') > 70 ) {\r\n\treturn 'r-wing-heavy'\r\n}",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Image"
+              "Mode": 2
             }
           },
           "Height": 28.0,
           "Image": "r-wing-light",
           "IsFreezed": true,
           "Left": 33.0,
+          "MinimumRefreshIntervalMS": 320.0,
           "Name": "R Wing",
+          "RenderingSkip": 32,
           "Top": 289.0,
           "Visible": true,
           "Width": 66.0
@@ -834,17 +869,19 @@
             "Image": {
               "Formula": {
                 "Expression": "if ( $prop('GameRawData.PlayerCarDamageData.m_floorDamage') <= 5 ) {\r\n\treturn ''\r\n} else if ( $prop('GameRawData.PlayerCarDamageData.m_floorDamage') > 5 && $prop('GameRawData.PlayerCarDamageData.m_rearWingDamage') <= 30) {\r\n\treturn 'floor-light'\r\n} else if ( $prop('GameRawData.PlayerCarDamageData.m_floorDamage') > 30 && $prop('GameRawData.PlayerCarDamageData.m_floorDamage') <= 70) {\r\n\treturn 'floor-medium'\r\n} else if ( $prop('GameRawData.PlayerCarDamageData.m_floorDamage') > 70 ) {\r\n\treturn 'floor-heavy'\r\n}",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Image"
+              "Mode": 2
             }
           },
           "Height": 147.0,
           "Image": "floor-light",
           "IsFreezed": true,
           "Left": 15.0,
+          "MinimumRefreshIntervalMS": 320.0,
           "Name": "Floor",
+          "RenderingSkip": 32,
           "Top": 102.0,
           "Visible": true,
           "Width": 101.0
@@ -857,17 +894,19 @@
             "Image": {
               "Formula": {
                 "Expression": "if ( $prop('GameRawData.PlayerCarDamageData.m_sidepodDamage') <= 5 ) {\r\n\treturn ''\r\n} else if ( $prop('GameRawData.PlayerCarDamageData.m_sidepodDamage') > 5 && $prop('GameRawData.PlayerCarDamageData.m_sidepodDamage') <= 30) {\r\n\treturn 'sidepod-light'\r\n} else if ( $prop('GameRawData.PlayerCarDamageData.m_sidepodDamage') > 30 && $prop('GameRawData.PlayerCarDamageData.m_sidepodDamage') <= 70) {\r\n\treturn 'sidepod-medium'\r\n} else if ( $prop('GameRawData.PlayerCarDamageData.m_sidepodDamage') > 70 ) {\r\n\treturn 'sidepod-heavy'\r\n}",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Image"
+              "Mode": 2
             }
           },
           "Height": 118.0,
           "Image": "sidepod-light",
           "IsFreezed": true,
           "Left": 24.0,
+          "MinimumRefreshIntervalMS": 320.0,
           "Name": "Sidepod",
+          "RenderingSkip": 32,
           "Top": 125.0,
           "Visible": true,
           "Width": 84.0
@@ -880,10 +919,18 @@
               "FormatString": "0\u00b0",
               "Formula": {
                 "Expression": "return $prop('GameRawData.PlayerCarTelemetryData.m_engineTemperature')",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Text"
+              "Mode": 2
+            },
+            "TextColor": {
+              "Formula": {
+                "Expression": "return ld_theme('ld_uiTitle')",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
             }
           },
           "Font": "Roboto",
@@ -894,12 +941,14 @@
           "IsFreezed": true,
           "IsTextItem": true,
           "Left": 33.0,
+          "MinimumRefreshIntervalMS": 320.0,
           "Name": "EngineTemp",
+          "RenderingSkip": 32,
           "Text": "100\u00b0",
           "TextColor": "#FFFFFFFF",
           "Top": 196.0,
           "VerticalAlignment": 1,
-          "Visible": false,
+          "Visible": true,
           "Width": 70.0
         },
         {
@@ -910,17 +959,19 @@
             "Image": {
               "Formula": {
                 "Expression": "if ( $prop('GameRawData.PlayerCarDamageData.m_engineBlown') <= 5 ) {\r\n\treturn ''\r\n} else if ( $prop('GameRawData.PlayerCarDamageData.m_engineBlown') > 5 && $prop('GameRawData.PlayerCarDamageData.m_engineBlown') <= 30) {\r\n\treturn 'engine-light'\r\n} else if ( $prop('GameRawData.PlayerCarDamageData.m_engineBlown') > 30 && $prop('GameRawData.PlayerCarDamageData.m_engineBlown') <= 70) {\r\n\treturn 'engine-medium'\r\n} else if ( $prop('GameRawData.PlayerCarDamageData.m_engineBlown') > 70 ) {\r\n\treturn 'engine-heavy'\r\n}",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Image"
+              "Mode": 2
             }
           },
           "Height": 41.0,
           "Image": "engine-light",
           "IsFreezed": true,
           "Left": 41.0,
+          "MinimumRefreshIntervalMS": 320.0,
           "Name": "Engine",
+          "RenderingSkip": 32,
           "Top": 190.0,
           "Visible": true,
           "Width": 50.0
@@ -933,16 +984,18 @@
             "Image": {
               "Formula": {
                 "Expression": "if ( $prop('GameRawData.PlayerCarDamageData.m_gearBoxDamage') <= 40 ) {\r\n\treturn ''\r\n} else if ( $prop('GameRawData.PlayerCarDamageData.m_gearBoxDamage') > 40 && $prop('GameRawData.PlayerCarDamageData.m_gearBoxDamage') <= 60) {\r\n\treturn 'gearbox-light'\r\n} else if ( $prop('GameRawData.PlayerCarDamageData.m_gearBoxDamage') > 60 && $prop('GameRawData.PlayerCarDamageData.m_gearBoxDamage') <= 80) {\r\n\treturn 'gearbox-medium'\r\n} else if ( $prop('GameRawData.PlayerCarDamageData.m_gearBoxDamage') > 80 ) {\r\n\treturn 'gearbox-heavy'\r\n}",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Image"
+              "Mode": 2
             }
           },
           "Height": 47.0,
           "Image": "gearbox-light",
           "Left": 54.0,
+          "MinimumRefreshIntervalMS": 320.0,
           "Name": "Gearbox",
+          "RenderingSkip": 32,
           "Top": 234.0,
           "Visible": true,
           "Width": 24.0
@@ -955,21 +1008,24 @@
             "Image": {
               "Formula": {
                 "Expression": "if ( $prop('GameRawData.PlayerCarDamageData.m_diffuserDamage') <= 5 ) {\r\n\treturn ''\r\n} else if ( $prop('GameRawData.PlayerCarDamageData.m_diffuserDamage') > 5 && $prop('GameRawData.PlayerCarDamageData.m_diffuserDamage') <= 30) {\r\n\treturn 'diffusor-light'\r\n} else if ( $prop('GameRawData.PlayerCarDamageData.m_diffuserDamage') > 30 && $prop('GameRawData.PlayerCarDamageData.m_diffuserDamage') <= 70) {\r\n\treturn 'diffusor-medium'\r\n} else if ( $prop('GameRawData.PlayerCarDamageData.m_diffuserDamage') > 70 ) {\r\n\treturn 'diffusor-heavy'\r\n}",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Image"
+              "Mode": 2
             }
           },
           "Height": 42.0,
           "Image": "diffusor-light",
           "Left": 46.0,
+          "MinimumRefreshIntervalMS": 320.0,
           "Name": "Diffusor",
+          "RenderingSkip": 32,
           "Top": 244.0,
           "Visible": true,
           "Width": 40.0
         }
       ],
+      "MinimumRefreshIntervalMS": 0.0,
       "Name": "Screen",
       "OverlayMaxDuration": 0,
       "OverlayMinDuration": 0,
@@ -977,6 +1033,7 @@
         "Expression": ""
       },
       "PitScreen": false,
+      "RenderingSkip": 0,
       "ScreenEnabledExpression": {
         "Expression": ""
       },
@@ -989,7 +1046,16 @@
   "ShowOnScreenControls": true,
   "SnapToGrid": false,
   "Variables": {
-    "DashboardVariables": []
+    "DashboardVariables": [
+      {
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "folderName"
+      }
+    ]
   },
   "Version": 2
 }

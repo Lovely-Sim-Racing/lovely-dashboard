@@ -21,19 +21,29 @@ To customise the **Lovely Dashboard**, you will need to copy the Settings File (
 
 ## Editing the settings
 
-To change your personal settings, you will need to edit the `Lovely-Dashboard_settings.json` file in any text editor. 
+### Use the Online Settings File Configurator
+You can use the new online Settings File Configurator, to create a **new Settings File** from scratch or **update your existing** one.
 
-> [!NOTE]
+[![Settings File Configurator](./images/settings-file-button.png)](https://lsr.gg/configurator)
+
+### Direct File Edit
+You can also directly edit the Settings File with a text editor of your choice (we recommend VS Code or NotePad++). To change your personal settings, you will need to edit the `Lovely-Dashboard_settings.json`.
+
+> [!WARNING]
+> Every time you make a change in the Settings File, you will need to restart your Dashboard. The Settings File is always loaded into the dashboard memory for better performance.
+
+> [!TIP]
 > If you do not copy the settings file, the default values will be used
 
-
 ## Settings
-The settings will work for the **Lovely Dashboard**, **Lovely Dashboard XL** and **Lovely Overlay***. 
+The settings will work for the **Lovely Dashboard**, **Lovely Dashboard XL** and **Lovely Overlay**. 
 
 * [Analytics](#analytics)
 * [Idle Screen Personalisation](#idle-screen-personlisation)
 * [Platform Integrations](#platform-integrations)
 * [UI Customisation](#ui-customisation)
+* [Night Mode](#night-mode)
+* [True Dark Mode](#true-dark-mode)
 * [Alerts](#alerts)
 * Sim Specific Settings
 	* [Assetto Corsa Competizione](#acc-assetto-corsa-competizione)
@@ -49,17 +59,17 @@ The settings will work for the **Lovely Dashboard**, **Lovely Dashboard XL** and
 ### Analytics
 
 #### `analytics`
-Enable anonymous data usage of the Dashboard. Going forward, the Lovely Dashboard will rely on this data in order to improve the experience and understanding the usage. **It is recommended to leave this on.**
+Enable anonymous data usage of the Dashboard. Going forward, the Lovely Dashboard will rely on this data in order to improve the experience and understanding the usage. **It is recommended to turn this on.**
 
-- `0` Off, no data is collected
-- **`1` (Default & recommended)** - On, anonymous data is collected 
+- `0` Disabled: no data is collected
+- **`1` (Recommended)** - Enabled: anonymous data is collected 
 
 ---
 
 ### Idle Screen Personlisation
 
 #### `yourName`, `yourNumber`
-Setup the custom splash screen with your Name & Number. If you do not specify a name and number, the default idle screen will be displayed.
+Setup the custom splash screen with your Name & Number. If you do not specify a name and number, the default idle screen will be displayed. You can use a blank space to hide these, exposing only the backgroud image (`yourLogo`).
 
 #### `yourColor`
 If you've set a Name & Number, you can also change it to your Color. You can use any web safe name or hex code 
@@ -67,7 +77,7 @@ If you've set a Name & Number, you can also change it to your Color. You can use
 * Example: `Light Blue` or`#2B98FB`
 
 #### `yourLogo`
-Setup the custom idle screen with your Logo or Image. The image file path must be relative to the SimHub folder, you can use the `./JavascriptExtensions`. Recommended image size is `800 x 270px`, but will scale to fit. The image can be used alongside your Name and Number as a background, or on its' own by not using a Name and Number at all.
+Setup the custom idle screen with your Logo or Image. The image file path must be relative to the SimHub folder, eg `./JavascriptExtensions`. Recommended image size is `800 x 270px`, but it will scale to fit. The image can be used alongside your Name and Number as a background, or on its' own by not using a Name and Number at all.
 
 * Example:  `./JavascriptExtensions/lovely-dash-bg.jpg`
 
@@ -156,11 +166,40 @@ Change the dashboard's outer corner radii to match that of your physical device.
 
 ---
 
+### Night Mode
+
 #### `nightMode`
 For sims that support night races and provide info on Lights (currently ACC and AMS2), when you turn on the lights, it will activate a dimmer view of the dashboard. You can enable this or disable this feature:
 
 - `0` Disabled: Will always remain bright
 - **`1` (Default)** Enabled: Will dim the screen when lights are on
+
+---
+
+### True Dark Mode
+
+#### `trueDarkMode`
+Enable or disable True Dark Mode for your Lovely Dashboard & Lovely Dashboard XL. You can also define the True Dark Mode colour.
+
+- `0` Disabled: your dashboard will not go into True Dark Mode
+- **`1` (Default)** Red
+- `2` Blue
+- `3` Purple
+- `4` Orange
+
+#### `trueDarkModeNative`
+When a simulator has more than one light stage, you can enable `trueDarkModeNative` which will use the high beam stage to activate True Dark Mode. Currently, only Assetto Corsa Competizione supports this feature, but not all cars do. Be careful, and test your car before enabling this feature.
+
+- **`0` (Default)** Disabled: Will always use the Hot-Key as a trigger.
+- `1` Enabled: Will use the second light stage as a trigger.
+        
+#### `trueDarkModeHotKey`
+Set a hot-key to enable True Dark Mode. 
+
+- **`Shift+D` (Default)**
+
+> [!NOTE]
+> Requires `Settings > Plugins > Keyboard Emulator` & `Keyboard Input` Plugin enabled in Simhub.
 
 ---
 
@@ -172,9 +211,12 @@ Specify the number of laps to collect tire data.
 #### `tireLapAvgResetKey` (Experimental)
 Set a hot-key to reset the AVG Tire data. 
 
-- **`A` (Default)** - The hot-key or key-combination of your choice
+- **`Shift+A` (Default)** - The hot-key or key-combination of your choice
 
 :warning: **Warning:** This is still a bit buggy. If the data does not resume collecting, you will need to restart your DDU/Device.
+
+> [!NOTE]
+> Requires `Settings > Plugins > Keyboard Emulator` & `Keyboard Input` Plugin enabled in Simhub.
 
 ---
 

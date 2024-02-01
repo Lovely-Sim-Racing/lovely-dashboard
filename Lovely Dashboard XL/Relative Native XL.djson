@@ -9,7 +9,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "560f2eab-9e81-4dd3-8c95-7636d5aba1b8",
+  "Id": "9e3eb6d5-da94-4dd9-9d2e-39c24bcd227c",
   "Images": [
     {
       "Extension": ".png",
@@ -180,6 +180,7 @@
     "OverlaySizeWarning": false,
     "PitScreensIndexs": [],
     "ScreenCount": 1.0,
+    "SimHubVersion": "9.1.20",
     "Width": 380.0
   },
   "Screens": [
@@ -194,11 +195,20 @@
       "Items": [
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
           "Childrens": [
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
               "BackgroundColor": "#FF212121",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_tableBg')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
               "BorderStyle": {
                 "RadiusBottomLeft": 5,
                 "RadiusBottomRight": 5,
@@ -208,7 +218,9 @@
               "Height": 24.0,
               "IsRectangleItem": true,
               "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "RectangleItem",
+              "RenderingSkip": 0,
               "Top": 309.0,
               "Visible": true,
               "Width": 380.0
@@ -216,6 +228,16 @@
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
               "BackgroundColor": "#FF212121",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_tableBg')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
               "BorderStyle": {
                 "RadiusBottomLeft": 5,
                 "RadiusBottomRight": 5,
@@ -225,7 +247,9 @@
               "Height": 24.0,
               "IsRectangleItem": true,
               "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "RectangleItem5",
+              "RenderingSkip": 0,
               "Top": 251.0,
               "Visible": true,
               "Width": 380.0
@@ -233,6 +257,16 @@
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
               "BackgroundColor": "#FF212121",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_tableBg')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
               "BorderStyle": {
                 "RadiusBottomLeft": 5,
                 "RadiusBottomRight": 5,
@@ -242,7 +276,9 @@
               "Height": 24.0,
               "IsRectangleItem": true,
               "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "RectangleItem4",
+              "RenderingSkip": 0,
               "Top": 193.0,
               "Visible": true,
               "Width": 380.0
@@ -250,6 +286,16 @@
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
               "BackgroundColor": "#FF212121",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_tableBg')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
               "BorderStyle": {
                 "RadiusBottomLeft": 5,
                 "RadiusBottomRight": 5,
@@ -259,7 +305,9 @@
               "Height": 24.0,
               "IsRectangleItem": true,
               "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "RectangleItem3",
+              "RenderingSkip": 0,
               "Top": 135.0,
               "Visible": true,
               "Width": 380.0
@@ -267,6 +315,16 @@
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
               "BackgroundColor": "#FF212121",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_tableBg')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
               "BorderStyle": {
                 "RadiusBottomLeft": 5,
                 "RadiusBottomRight": 5,
@@ -276,7 +334,9 @@
               "Height": 24.0,
               "IsRectangleItem": true,
               "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "RectangleItem2",
+              "RenderingSkip": 0,
               "Top": 77.0,
               "Visible": true,
               "Width": 380.0
@@ -284,6 +344,16 @@
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
               "BackgroundColor": "#FF212121",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_tableBg')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
               "BorderStyle": {
                 "RadiusBottomLeft": 5,
                 "RadiusBottomRight": 5,
@@ -293,30 +363,29 @@
               "Height": 24.0,
               "IsRectangleItem": true,
               "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "RectangleItem0",
+              "RenderingSkip": 0,
               "Top": 19.0,
               "Visible": true,
               "Width": 380.0
             }
           ],
           "Group": true,
-          "Height": 314.0,
-          "Left": 0.0,
+          "MinimumRefreshIntervalMS": 160.0,
           "Name": "Relative BG",
-          "Top": 19.0,
-          "Visible": true,
-          "Width": 380.0
+          "RenderingSkip": 16,
+          "Repetitions": 0,
+          "Visible": true
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "if (isnull([PersistantTrackerPlugin.DriverAhead_04_CarNumber]), 0, 1)"
+                "Expression": "if (isnull([PersistantTrackerPlugin.DriverBehind_04_CarNumber]), 0, 1)"
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "Childrens": [
@@ -324,12 +393,27 @@
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "BackgroundColor": "#FFFFFFFF",
               "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return drivercarclasscolor( getopponentleaderboardposition_aheadbehind(5) )",
+                    "Interpreter": 1,
+                    "JSExt": 0
+                  },
+                  "Mode": 2
+                },
                 "Text": {
                   "Formula": {
-                    "Expression": "[PersistantTrackerPlugin.DriverAhead_04_Position]"
+                    "Expression": "[PersistantTrackerPlugin.DriverBehind_04_Position]"
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return drivercarclasstextcolor( getopponentleaderboardposition_aheadbehind(5) )",
+                    "Interpreter": 1,
+                    "JSExt": 0
+                  },
+                  "Mode": 2
                 }
               },
               "BorderStyle": {
@@ -345,10 +429,12 @@
               "HorizontalAlignment": 1,
               "IsTextItem": true,
               "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem0",
+              "RenderingSkip": 0,
               "Text": "00",
               "TextColor": "#FF000000",
-              "Top": 19.0,
+              "Top": 309.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 24.0
@@ -358,20 +444,20 @@
               "BackgroundColor": "#00FFFFFF",
               "Bindings": {
                 "Text": {
-                  "FormatString": "0",
                   "Formula": {
-                    "Expression": "'#'+[PersistantTrackerPlugin.DriverAhead_04_CarNumber]"
+                    "Expression": "return '#'+ drivercarnumber(getopponentleaderboardposition_aheadbehind(5))",
+                    "Interpreter": 1,
+                    "JSExt": 0
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverColor('Ahead_04')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverColor('Behind_04')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
+                  "Mode": 2
                 }
               },
               "Font": "Roboto",
@@ -381,10 +467,12 @@
               "HorizontalAlignment": 2,
               "IsTextItem": true,
               "Left": 28.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem5",
+              "RenderingSkip": 0,
               "Text": "#000",
               "TextColor": "#FFFFFFFF",
-              "Top": 19.0,
+              "Top": 309.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 48.0
@@ -395,19 +483,19 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverName('Ahead_04')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverName('Behind_04')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverColor('Ahead_04')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverColor('Behind_04')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
+                  "Mode": 2
                 }
               },
               "Font": "Roboto",
@@ -417,10 +505,12 @@
               "HorizontalAlignment": 0,
               "IsTextItem": true,
               "Left": 90.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem6",
+              "RenderingSkip": 0,
               "Text": "A Driver",
               "TextColor": "#FFFFFFFF",
-              "Top": 19.0,
+              "Top": 309.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 170.0
@@ -430,20 +520,19 @@
               "BackgroundColor": "#00FFFFFF",
               "Bindings": {
                 "Text": {
-                  "FormatString": "+0.0",
+                  "FormatString": "-0.0",
                   "Formula": {
-                    "Expression": "abs([PersistantTrackerPlugin.DriverAhead_04_Gap])"
+                    "Expression": "abs([PersistantTrackerPlugin.DriverBehind_04_Gap])"
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverColor('Ahead_04')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverColor('Behind_04')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
+                  "Mode": 2
                 }
               },
               "Font": "Roboto",
@@ -453,34 +542,33 @@
               "HorizontalAlignment": 2,
               "IsTextItem": true,
               "Left": 315.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem7",
-              "Text": "+0.0",
+              "RenderingSkip": 0,
+              "Text": "-0.0",
               "TextColor": "#FFFFFFFF",
-              "Top": 19.0,
+              "Top": 309.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 65.0
             }
           ],
           "Group": true,
-          "Height": 24.0,
-          "Left": 0.0,
-          "Name": "Ahead 04",
+          "MinimumRefreshIntervalMS": 160.0,
+          "Name": "Behind 04",
+          "RenderingSkip": 16,
           "RepeatTopOffset": 0.0,
-          "Top": 19.0,
-          "Visible": true,
-          "Width": 380.0
+          "Repetitions": 0,
+          "Visible": true
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "if (isnull([PersistantTrackerPlugin.DriverAhead_03_CarNumber]), 0, 1)"
+                "Expression": "if (isnull([PersistantTrackerPlugin.DriverBehind_03_CarNumber]), 0, 1)"
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "Childrens": [
@@ -488,12 +576,27 @@
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "BackgroundColor": "#FFFFFFFF",
               "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return drivercarclasscolor( getopponentleaderboardposition_aheadbehind(4) )",
+                    "Interpreter": 1,
+                    "JSExt": 0
+                  },
+                  "Mode": 2
+                },
                 "Text": {
                   "Formula": {
-                    "Expression": "[PersistantTrackerPlugin.DriverAhead_03_Position]"
+                    "Expression": "[PersistantTrackerPlugin.DriverBehind_03_Position]"
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return drivercarclasstextcolor( getopponentleaderboardposition_aheadbehind(4) )",
+                    "Interpreter": 1,
+                    "JSExt": 0
+                  },
+                  "Mode": 2
                 }
               },
               "BorderStyle": {
@@ -509,10 +612,12 @@
               "HorizontalAlignment": 1,
               "IsTextItem": true,
               "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem0",
+              "RenderingSkip": 0,
               "Text": "00",
               "TextColor": "#FF000000",
-              "Top": 48.0,
+              "Top": 280.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 24.0
@@ -523,18 +628,19 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "'#'+[PersistantTrackerPlugin.DriverAhead_03_CarNumber]"
+                    "Expression": "return '#'+ drivercarnumber(getopponentleaderboardposition_aheadbehind(4))",
+                    "Interpreter": 1,
+                    "JSExt": 0
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverColor('Ahead_03')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverColor('Behind_03')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
+                  "Mode": 2
                 }
               },
               "Font": "Roboto",
@@ -544,10 +650,12 @@
               "HorizontalAlignment": 2,
               "IsTextItem": true,
               "Left": 28.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem5",
+              "RenderingSkip": 0,
               "Text": "#000",
               "TextColor": "#FFFFFFFF",
-              "Top": 48.0,
+              "Top": 280.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 48.0
@@ -558,19 +666,19 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverName('Ahead_03')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverName('Behind_03')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverColor('Ahead_03')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverColor('Behind_03')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
+                  "Mode": 2
                 }
               },
               "Font": "Roboto",
@@ -580,10 +688,12 @@
               "HorizontalAlignment": 0,
               "IsTextItem": true,
               "Left": 90.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem6",
+              "RenderingSkip": 0,
               "Text": "A Driver",
               "TextColor": "#FFFFFFFF",
-              "Top": 48.0,
+              "Top": 280.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 170.0
@@ -593,20 +703,19 @@
               "BackgroundColor": "#00FFFFFF",
               "Bindings": {
                 "Text": {
-                  "FormatString": "+0.0",
+                  "FormatString": "-0.0",
                   "Formula": {
-                    "Expression": "abs([PersistantTrackerPlugin.DriverAhead_03_Gap])"
+                    "Expression": "abs([PersistantTrackerPlugin.DriverBehind_03_Gap])"
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverColor('Ahead_03')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverColor('Behind_03')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
+                  "Mode": 2
                 }
               },
               "Font": "Roboto",
@@ -616,34 +725,33 @@
               "HorizontalAlignment": 2,
               "IsTextItem": true,
               "Left": 315.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem7",
-              "Text": "+0.0",
+              "RenderingSkip": 0,
+              "Text": "-0.0",
               "TextColor": "#FFFFFFFF",
-              "Top": 48.0,
+              "Top": 280.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 65.0
             }
           ],
           "Group": true,
-          "Height": 24.0,
-          "Left": 0.0,
-          "Name": "Ahead 03",
+          "MinimumRefreshIntervalMS": 160.0,
+          "Name": "Behind 03",
+          "RenderingSkip": 16,
           "RepeatTopOffset": 0.0,
-          "Top": 48.0,
-          "Visible": true,
-          "Width": 380.0
+          "Repetitions": 0,
+          "Visible": true
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "if (isnull([PersistantTrackerPlugin.DriverAhead_02_CarNumber]), 0, 1)"
+                "Expression": "if (isnull([PersistantTrackerPlugin.DriverBehind_02_CarNumber]), 0, 1)"
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "Childrens": [
@@ -651,12 +759,27 @@
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "BackgroundColor": "#FFFFFFFF",
               "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return drivercarclasscolor( getopponentleaderboardposition_aheadbehind(3) )",
+                    "Interpreter": 1,
+                    "JSExt": 0
+                  },
+                  "Mode": 2
+                },
                 "Text": {
                   "Formula": {
-                    "Expression": "[PersistantTrackerPlugin.DriverAhead_02_Position]"
+                    "Expression": "[PersistantTrackerPlugin.DriverBehind_02_Position]"
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return drivercarclasstextcolor( getopponentleaderboardposition_aheadbehind(3) )",
+                    "Interpreter": 1,
+                    "JSExt": 0
+                  },
+                  "Mode": 2
                 }
               },
               "BorderStyle": {
@@ -672,10 +795,12 @@
               "HorizontalAlignment": 1,
               "IsTextItem": true,
               "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem0",
+              "RenderingSkip": 0,
               "Text": "00",
               "TextColor": "#FF000000",
-              "Top": 77.0,
+              "Top": 251.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 24.0
@@ -686,18 +811,19 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "'#'+[PersistantTrackerPlugin.DriverAhead_02_CarNumber]"
+                    "Expression": "return '#'+ drivercarnumber(getopponentleaderboardposition_aheadbehind(3))",
+                    "Interpreter": 1,
+                    "JSExt": 0
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverColor('Ahead_02')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverColor('Behind_02')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
+                  "Mode": 2
                 }
               },
               "Font": "Roboto",
@@ -707,10 +833,12 @@
               "HorizontalAlignment": 2,
               "IsTextItem": true,
               "Left": 28.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem5",
+              "RenderingSkip": 0,
               "Text": "#000",
               "TextColor": "#FFFFFFFF",
-              "Top": 77.0,
+              "Top": 251.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 48.0
@@ -721,19 +849,19 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverName('Ahead_02')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverName('Behind_02')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverColor('Ahead_02')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverColor('Behind_02')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
+                  "Mode": 2
                 }
               },
               "Font": "Roboto",
@@ -743,10 +871,12 @@
               "HorizontalAlignment": 0,
               "IsTextItem": true,
               "Left": 90.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem6",
+              "RenderingSkip": 0,
               "Text": "A Driver",
               "TextColor": "#FFFFFFFF",
-              "Top": 77.0,
+              "Top": 251.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 170.0
@@ -756,20 +886,19 @@
               "BackgroundColor": "#00FFFFFF",
               "Bindings": {
                 "Text": {
-                  "FormatString": "+0.0",
+                  "FormatString": "-0.0",
                   "Formula": {
-                    "Expression": "abs([PersistantTrackerPlugin.DriverAhead_02_Gap])"
+                    "Expression": "abs([PersistantTrackerPlugin.DriverBehind_02_Gap])"
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverColor('Ahead_02')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverColor('Behind_02')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
+                  "Mode": 2
                 }
               },
               "Font": "Roboto",
@@ -779,34 +908,33 @@
               "HorizontalAlignment": 2,
               "IsTextItem": true,
               "Left": 315.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem7",
-              "Text": "+0.0",
+              "RenderingSkip": 0,
+              "Text": "-0.0",
               "TextColor": "#FFFFFFFF",
-              "Top": 77.0,
+              "Top": 251.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 65.0
             }
           ],
           "Group": true,
-          "Height": 24.0,
-          "Left": 0.0,
-          "Name": "Ahead 02",
+          "MinimumRefreshIntervalMS": 160.0,
+          "Name": "Behind 02",
+          "RenderingSkip": 16,
           "RepeatTopOffset": 0.0,
-          "Top": 77.0,
-          "Visible": true,
-          "Width": 380.0
+          "Repetitions": 0,
+          "Visible": true
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "if (isnull([PersistantTrackerPlugin.DriverAhead_01_CarNumber]), 0, 1)"
+                "Expression": "if (isnull([PersistantTrackerPlugin.DriverBehind_01_CarNumber]), 0, 1)"
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "Childrens": [
@@ -814,12 +942,27 @@
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "BackgroundColor": "#FFFFFFFF",
               "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return drivercarclasscolor( getopponentleaderboardposition_aheadbehind(2) )",
+                    "Interpreter": 1,
+                    "JSExt": 0
+                  },
+                  "Mode": 2
+                },
                 "Text": {
                   "Formula": {
-                    "Expression": "[PersistantTrackerPlugin.DriverAhead_01_Position]"
+                    "Expression": "[PersistantTrackerPlugin.DriverBehind_01_Position]"
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return drivercarclasstextcolor( getopponentleaderboardposition_aheadbehind(2) )",
+                    "Interpreter": 1,
+                    "JSExt": 0
+                  },
+                  "Mode": 2
                 }
               },
               "BorderStyle": {
@@ -835,10 +978,12 @@
               "HorizontalAlignment": 1,
               "IsTextItem": true,
               "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem0",
+              "RenderingSkip": 0,
               "Text": "00",
               "TextColor": "#FF000000",
-              "Top": 106.0,
+              "Top": 222.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 24.0
@@ -849,18 +994,19 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "'#'+[PersistantTrackerPlugin.DriverAhead_01_CarNumber]"
+                    "Expression": "return '#'+ drivercarnumber(getopponentleaderboardposition_aheadbehind(2))",
+                    "Interpreter": 1,
+                    "JSExt": 0
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverColor('Ahead_01')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverColor('Behind_01')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
+                  "Mode": 2
                 }
               },
               "Font": "Roboto",
@@ -870,10 +1016,12 @@
               "HorizontalAlignment": 2,
               "IsTextItem": true,
               "Left": 28.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem5",
+              "RenderingSkip": 0,
               "Text": "#000",
               "TextColor": "#FFFFFFFF",
-              "Top": 106.0,
+              "Top": 222.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 48.0
@@ -884,19 +1032,19 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverName('Ahead_01')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverName('Behind_01')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverColor('Ahead_01')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverColor('Behind_01')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
+                  "Mode": 2
                 }
               },
               "Font": "Roboto",
@@ -906,10 +1054,12 @@
               "HorizontalAlignment": 0,
               "IsTextItem": true,
               "Left": 90.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem6",
+              "RenderingSkip": 0,
               "Text": "A Driver",
               "TextColor": "#FFFFFFFF",
-              "Top": 106.0,
+              "Top": 222.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 170.0
@@ -919,20 +1069,19 @@
               "BackgroundColor": "#00FFFFFF",
               "Bindings": {
                 "Text": {
-                  "FormatString": "+0.0",
+                  "FormatString": "-0.0",
                   "Formula": {
-                    "Expression": "abs([PersistantTrackerPlugin.DriverAhead_01_Gap])"
+                    "Expression": "abs([PersistantTrackerPlugin.DriverBehind_01_Gap])"
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverColor('Ahead_01')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverColor('Behind_01')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
+                  "Mode": 2
                 }
               },
               "Font": "Roboto",
@@ -942,34 +1091,33 @@
               "HorizontalAlignment": 2,
               "IsTextItem": true,
               "Left": 315.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem7",
-              "Text": "+0.0",
+              "RenderingSkip": 0,
+              "Text": "-0.0",
               "TextColor": "#FFFFFFFF",
-              "Top": 106.0,
+              "Top": 222.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 65.0
             }
           ],
           "Group": true,
-          "Height": 24.0,
-          "Left": 0.0,
-          "Name": "Ahead 01",
+          "MinimumRefreshIntervalMS": 160.0,
+          "Name": "Behind 01",
+          "RenderingSkip": 16,
           "RepeatTopOffset": 0.0,
-          "Top": 106.0,
-          "Visible": true,
-          "Width": 380.0
+          "Repetitions": 0,
+          "Visible": true
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "if (isnull([PersistantTrackerPlugin.DriverAhead_00_CarNumber]), 0, 1)"
+                "Expression": "if (isnull([PersistantTrackerPlugin.DriverBehind_00_CarNumber]), 0, 1)"
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "Childrens": [
@@ -977,12 +1125,27 @@
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "BackgroundColor": "#FFFFFFFF",
               "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return drivercarclasscolor( getopponentleaderboardposition_aheadbehind(1) )",
+                    "Interpreter": 1,
+                    "JSExt": 0
+                  },
+                  "Mode": 2
+                },
                 "Text": {
                   "Formula": {
-                    "Expression": "[PersistantTrackerPlugin.DriverAhead_00_Position]"
+                    "Expression": "[PersistantTrackerPlugin.DriverBehind_00_Position]"
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return drivercarclasstextcolor( getopponentleaderboardposition_aheadbehind(1) )",
+                    "Interpreter": 1,
+                    "JSExt": 0
+                  },
+                  "Mode": 2
                 }
               },
               "BorderStyle": {
@@ -998,10 +1161,12 @@
               "HorizontalAlignment": 1,
               "IsTextItem": true,
               "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem0",
+              "RenderingSkip": 0,
               "Text": "00",
               "TextColor": "#FF000000",
-              "Top": 135.0,
+              "Top": 193.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 24.0
@@ -1012,18 +1177,19 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "'#'+[PersistantTrackerPlugin.DriverAhead_00_CarNumber]"
+                    "Expression": "return '#'+ drivercarnumber(getopponentleaderboardposition_aheadbehind(1))",
+                    "Interpreter": 1,
+                    "JSExt": 0
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverColor('Ahead_00')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverColor('Behind_00')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
+                  "Mode": 2
                 }
               },
               "Font": "Roboto",
@@ -1033,10 +1199,12 @@
               "HorizontalAlignment": 2,
               "IsTextItem": true,
               "Left": 28.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem5",
+              "RenderingSkip": 0,
               "Text": "#000",
               "TextColor": "#FFFFFFFF",
-              "Top": 135.0,
+              "Top": 193.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 48.0
@@ -1047,19 +1215,19 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverName('Ahead_00')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverName('Behind_00')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverColor('Ahead_00')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverColor('Behind_00')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
+                  "Mode": 2
                 }
               },
               "Font": "Roboto",
@@ -1069,10 +1237,12 @@
               "HorizontalAlignment": 0,
               "IsTextItem": true,
               "Left": 90.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem6",
+              "RenderingSkip": 0,
               "Text": "A Driver",
               "TextColor": "#FFFFFFFF",
-              "Top": 135.0,
+              "Top": 193.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 170.0
@@ -1082,20 +1252,19 @@
               "BackgroundColor": "#00FFFFFF",
               "Bindings": {
                 "Text": {
-                  "FormatString": "+0.0",
+                  "FormatString": "-0.0",
                   "Formula": {
-                    "Expression": "abs([PersistantTrackerPlugin.DriverAhead_00_Gap])"
+                    "Expression": "abs([PersistantTrackerPlugin.DriverBehind_00_Gap])"
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverColor('Ahead_00')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverColor('Behind_00')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
+                  "Mode": 2
                 }
               },
               "Font": "Roboto",
@@ -1105,39 +1274,55 @@
               "HorizontalAlignment": 2,
               "IsTextItem": true,
               "Left": 315.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem7",
-              "Text": "+0.0",
+              "RenderingSkip": 0,
+              "Text": "-0.0",
               "TextColor": "#FFFFFFFF",
-              "Top": 135.0,
+              "Top": 193.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 65.0
             }
           ],
           "Group": true,
-          "Height": 24.0,
-          "Left": 0.0,
-          "Name": "Ahead 00",
+          "MinimumRefreshIntervalMS": 160.0,
+          "Name": "Behind 00",
+          "RenderingSkip": 16,
           "RepeatTopOffset": 0.0,
-          "Top": 135.0,
-          "Visible": true,
-          "Width": 380.0
+          "Repetitions": 0,
+          "Visible": true
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
           "Childrens": [
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "BackgroundColor": "#FFFFE04C",
               "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return drivercarclasscolor( getplayerleaderboardposition() )",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
                 "Text": {
                   "Formula": {
                     "Expression": "return getplayerleaderboardposition() ",
-                    "Interpreter": 1
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return drivercarclasstextcolor( getplayerleaderboardposition() )",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
                 }
               },
               "BorderStyle": {
@@ -1153,7 +1338,9 @@
               "HorizontalAlignment": 1,
               "IsTextItem": true,
               "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem0",
+              "RenderingSkip": 0,
               "Text": "00",
               "TextColor": "#FF000000",
               "Top": 164.0,
@@ -1168,10 +1355,18 @@
                 "LeaderboardPosition": {
                   "Formula": {
                     "Expression": "return getplayerleaderboardposition() ",
-                    "Interpreter": 1
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "LeaderboardPosition"
+                  "Mode": 2
+                },
+                "OpponentTextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_tableDriver')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
                 }
               },
               "Font": "Roboto",
@@ -1186,6 +1381,7 @@
               "LeaderboardPositionRelativeToPlayer": false,
               "LeaderboardPositionRelativeToPlayerOnTrack": false,
               "Left": 28.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "LeaderboardOpponentCarNumberText0",
               "NameStyle": 0,
               "OpponentFontSize": 18.0,
@@ -1209,6 +1405,7 @@
               },
               "PlayerStyleEnabled": false,
               "PlayerTextColor": "#FFFFE04C",
+              "RenderingSkip": 0,
               "TextBeforeValue": " #",
               "TextColor": "#FFFFE04C",
               "Top": 164.0,
@@ -1224,10 +1421,18 @@
                   "FormatString": "",
                   "Formula": {
                     "Expression": "return ld_GetPlayerName()",
-                    "Interpreter": 1
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_tableDriver')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
                 }
               },
               "Font": "Roboto",
@@ -1237,7 +1442,9 @@
               "HorizontalAlignment": 0,
               "IsTextItem": true,
               "Left": 90.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem6",
+              "RenderingSkip": 0,
               "Text": "A Driver",
               "TextColor": "#FFFFE04C",
               "Top": 164.0,
@@ -1248,6 +1455,16 @@
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_tableDriver')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
               "Font": "Roboto",
               "FontSize": 20.0,
               "FontWeight": "Bold",
@@ -1255,7 +1472,9 @@
               "HorizontalAlignment": 2,
               "IsTextItem": true,
               "Left": 315.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem7",
+              "RenderingSkip": 0,
               "Text": "0.0",
               "TextColor": "#FFFFE04C",
               "Top": 164.0,
@@ -1265,24 +1484,21 @@
             }
           ],
           "Group": true,
-          "Height": 24.0,
-          "Left": 0.0,
+          "MinimumRefreshIntervalMS": 160.0,
           "Name": "Driver",
+          "RenderingSkip": 16,
           "RepeatTopOffset": 0.0,
-          "Top": 164.0,
-          "Visible": true,
-          "Width": 380.0
+          "Repetitions": 0,
+          "Visible": true
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "if (isnull([PersistantTrackerPlugin.DriverBehind_00_CarNumber]), 0, 1)"
+                "Expression": "if (isnull([PersistantTrackerPlugin.DriverAhead_00_CarNumber]), 0, 1)"
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "Childrens": [
@@ -1290,12 +1506,27 @@
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "BackgroundColor": "#FFFFFFFF",
               "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return drivercarclasscolor( getopponentleaderboardposition_aheadbehind(-1) )",
+                    "Interpreter": 1,
+                    "JSExt": 0
+                  },
+                  "Mode": 2
+                },
                 "Text": {
                   "Formula": {
-                    "Expression": "[PersistantTrackerPlugin.DriverBehind_00_Position]"
+                    "Expression": "[PersistantTrackerPlugin.DriverAhead_00_Position]"
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return drivercarclasstextcolor( getopponentleaderboardposition_aheadbehind(-1) )",
+                    "Interpreter": 1,
+                    "JSExt": 0
+                  },
+                  "Mode": 2
                 }
               },
               "BorderStyle": {
@@ -1311,10 +1542,12 @@
               "HorizontalAlignment": 1,
               "IsTextItem": true,
               "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem0",
+              "RenderingSkip": 0,
               "Text": "00",
               "TextColor": "#FF000000",
-              "Top": 193.0,
+              "Top": 135.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 24.0
@@ -1325,18 +1558,19 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "'#'+[PersistantTrackerPlugin.DriverBehind_00_CarNumber]"
+                    "Expression": "return '#'+ drivercarnumber(getopponentleaderboardposition_aheadbehind(-1))",
+                    "Interpreter": 1,
+                    "JSExt": 0
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverColor('Behind_00')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverColor('Ahead_00')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
+                  "Mode": 2
                 }
               },
               "Font": "Roboto",
@@ -1346,10 +1580,12 @@
               "HorizontalAlignment": 2,
               "IsTextItem": true,
               "Left": 28.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem5",
+              "RenderingSkip": 0,
               "Text": "#000",
               "TextColor": "#FFFFFFFF",
-              "Top": 193.0,
+              "Top": 135.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 48.0
@@ -1360,19 +1596,19 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverName('Behind_00')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverName('Ahead_00')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverColor('Behind_00')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverColor('Ahead_00')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
+                  "Mode": 2
                 }
               },
               "Font": "Roboto",
@@ -1382,10 +1618,12 @@
               "HorizontalAlignment": 0,
               "IsTextItem": true,
               "Left": 90.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem6",
+              "RenderingSkip": 0,
               "Text": "A Driver",
               "TextColor": "#FFFFFFFF",
-              "Top": 193.0,
+              "Top": 135.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 170.0
@@ -1395,20 +1633,19 @@
               "BackgroundColor": "#00FFFFFF",
               "Bindings": {
                 "Text": {
-                  "FormatString": "-0.0",
+                  "FormatString": "+0.0",
                   "Formula": {
-                    "Expression": "abs([PersistantTrackerPlugin.DriverBehind_00_Gap])"
+                    "Expression": "abs([PersistantTrackerPlugin.DriverAhead_00_Gap])"
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverColor('Behind_00')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverColor('Ahead_00')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
+                  "Mode": 2
                 }
               },
               "Font": "Roboto",
@@ -1418,34 +1655,33 @@
               "HorizontalAlignment": 2,
               "IsTextItem": true,
               "Left": 315.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem7",
-              "Text": "-0.0",
+              "RenderingSkip": 0,
+              "Text": "+0.0",
               "TextColor": "#FFFFFFFF",
-              "Top": 193.0,
+              "Top": 135.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 65.0
             }
           ],
           "Group": true,
-          "Height": 24.0,
-          "Left": 0.0,
-          "Name": "Behind 00",
+          "MinimumRefreshIntervalMS": 160.0,
+          "Name": "Ahead 00",
+          "RenderingSkip": 16,
           "RepeatTopOffset": 0.0,
-          "Top": 193.0,
-          "Visible": true,
-          "Width": 380.0
+          "Repetitions": 0,
+          "Visible": true
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "if (isnull([PersistantTrackerPlugin.DriverBehind_01_CarNumber]), 0, 1)"
+                "Expression": "if (isnull([PersistantTrackerPlugin.DriverAhead_01_CarNumber]), 0, 1)"
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "Childrens": [
@@ -1453,12 +1689,27 @@
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "BackgroundColor": "#FFFFFFFF",
               "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return drivercarclasscolor( getopponentleaderboardposition_aheadbehind(-2) )",
+                    "Interpreter": 1,
+                    "JSExt": 0
+                  },
+                  "Mode": 2
+                },
                 "Text": {
                   "Formula": {
-                    "Expression": "[PersistantTrackerPlugin.DriverBehind_01_Position]"
+                    "Expression": "[PersistantTrackerPlugin.DriverAhead_01_Position]"
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return drivercarclasstextcolor( getopponentleaderboardposition_aheadbehind(-2) )",
+                    "Interpreter": 1,
+                    "JSExt": 0
+                  },
+                  "Mode": 2
                 }
               },
               "BorderStyle": {
@@ -1474,10 +1725,12 @@
               "HorizontalAlignment": 1,
               "IsTextItem": true,
               "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem0",
+              "RenderingSkip": 0,
               "Text": "00",
               "TextColor": "#FF000000",
-              "Top": 222.0,
+              "Top": 106.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 24.0
@@ -1488,18 +1741,19 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "'#'+[PersistantTrackerPlugin.DriverBehind_01_CarNumber]"
+                    "Expression": "return '#'+ drivercarnumber(getopponentleaderboardposition_aheadbehind(-2))",
+                    "Interpreter": 1,
+                    "JSExt": 0
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverColor('Behind_01')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverColor('Ahead_01')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
+                  "Mode": 2
                 }
               },
               "Font": "Roboto",
@@ -1509,10 +1763,12 @@
               "HorizontalAlignment": 2,
               "IsTextItem": true,
               "Left": 28.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem5",
+              "RenderingSkip": 0,
               "Text": "#000",
               "TextColor": "#FFFFFFFF",
-              "Top": 222.0,
+              "Top": 106.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 48.0
@@ -1523,19 +1779,19 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverName('Behind_01')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverName('Ahead_01')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverColor('Behind_01')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverColor('Ahead_01')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
+                  "Mode": 2
                 }
               },
               "Font": "Roboto",
@@ -1545,10 +1801,12 @@
               "HorizontalAlignment": 0,
               "IsTextItem": true,
               "Left": 90.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem6",
+              "RenderingSkip": 0,
               "Text": "A Driver",
               "TextColor": "#FFFFFFFF",
-              "Top": 222.0,
+              "Top": 106.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 170.0
@@ -1558,20 +1816,19 @@
               "BackgroundColor": "#00FFFFFF",
               "Bindings": {
                 "Text": {
-                  "FormatString": "-0.0",
+                  "FormatString": "+0.0",
                   "Formula": {
-                    "Expression": "abs([PersistantTrackerPlugin.DriverBehind_01_Gap])"
+                    "Expression": "abs([PersistantTrackerPlugin.DriverAhead_01_Gap])"
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverColor('Behind_01')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverColor('Ahead_01')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
+                  "Mode": 2
                 }
               },
               "Font": "Roboto",
@@ -1581,34 +1838,33 @@
               "HorizontalAlignment": 2,
               "IsTextItem": true,
               "Left": 315.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem7",
-              "Text": "-0.0",
+              "RenderingSkip": 0,
+              "Text": "+0.0",
               "TextColor": "#FFFFFFFF",
-              "Top": 222.0,
+              "Top": 106.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 65.0
             }
           ],
           "Group": true,
-          "Height": 24.0,
-          "Left": 0.0,
-          "Name": "Behind 01",
+          "MinimumRefreshIntervalMS": 160.0,
+          "Name": "Ahead 01",
+          "RenderingSkip": 16,
           "RepeatTopOffset": 0.0,
-          "Top": 222.0,
-          "Visible": true,
-          "Width": 380.0
+          "Repetitions": 0,
+          "Visible": true
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "if (isnull([PersistantTrackerPlugin.DriverBehind_02_CarNumber]), 0, 1)"
+                "Expression": "if (isnull([PersistantTrackerPlugin.DriverAhead_02_CarNumber]), 0, 1)"
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "Childrens": [
@@ -1616,12 +1872,27 @@
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "BackgroundColor": "#FFFFFFFF",
               "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return drivercarclasscolor( getopponentleaderboardposition_aheadbehind(-3) )",
+                    "Interpreter": 1,
+                    "JSExt": 0
+                  },
+                  "Mode": 2
+                },
                 "Text": {
                   "Formula": {
-                    "Expression": "[PersistantTrackerPlugin.DriverBehind_02_Position]"
+                    "Expression": "[PersistantTrackerPlugin.DriverAhead_02_Position]"
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return drivercarclasstextcolor( getopponentleaderboardposition_aheadbehind(-3) )",
+                    "Interpreter": 1,
+                    "JSExt": 0
+                  },
+                  "Mode": 2
                 }
               },
               "BorderStyle": {
@@ -1637,10 +1908,12 @@
               "HorizontalAlignment": 1,
               "IsTextItem": true,
               "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem0",
+              "RenderingSkip": 0,
               "Text": "00",
               "TextColor": "#FF000000",
-              "Top": 251.0,
+              "Top": 77.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 24.0
@@ -1651,18 +1924,19 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "'#'+[PersistantTrackerPlugin.DriverBehind_02_CarNumber]"
+                    "Expression": "return '#'+ drivercarnumber(getopponentleaderboardposition_aheadbehind(-3))",
+                    "Interpreter": 1,
+                    "JSExt": 0
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverColor('Behind_02')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverColor('Ahead_02')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
+                  "Mode": 2
                 }
               },
               "Font": "Roboto",
@@ -1672,10 +1946,12 @@
               "HorizontalAlignment": 2,
               "IsTextItem": true,
               "Left": 28.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem5",
+              "RenderingSkip": 0,
               "Text": "#000",
               "TextColor": "#FFFFFFFF",
-              "Top": 251.0,
+              "Top": 77.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 48.0
@@ -1686,19 +1962,19 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverName('Behind_02')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverName('Ahead_02')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverColor('Behind_02')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverColor('Ahead_02')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
+                  "Mode": 2
                 }
               },
               "Font": "Roboto",
@@ -1708,10 +1984,12 @@
               "HorizontalAlignment": 0,
               "IsTextItem": true,
               "Left": 90.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem6",
+              "RenderingSkip": 0,
               "Text": "A Driver",
               "TextColor": "#FFFFFFFF",
-              "Top": 251.0,
+              "Top": 77.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 170.0
@@ -1721,20 +1999,19 @@
               "BackgroundColor": "#00FFFFFF",
               "Bindings": {
                 "Text": {
-                  "FormatString": "-0.0",
+                  "FormatString": "+0.0",
                   "Formula": {
-                    "Expression": "abs([PersistantTrackerPlugin.DriverBehind_02_Gap])"
+                    "Expression": "abs([PersistantTrackerPlugin.DriverAhead_02_Gap])"
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverColor('Behind_02')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverColor('Ahead_02')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
+                  "Mode": 2
                 }
               },
               "Font": "Roboto",
@@ -1744,34 +2021,33 @@
               "HorizontalAlignment": 2,
               "IsTextItem": true,
               "Left": 315.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem7",
-              "Text": "-0.0",
+              "RenderingSkip": 0,
+              "Text": "+0.0",
               "TextColor": "#FFFFFFFF",
-              "Top": 251.0,
+              "Top": 77.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 65.0
             }
           ],
           "Group": true,
-          "Height": 24.0,
-          "Left": 0.0,
-          "Name": "Behind 02",
+          "MinimumRefreshIntervalMS": 160.0,
+          "Name": "Ahead 02",
+          "RenderingSkip": 16,
           "RepeatTopOffset": 0.0,
-          "Top": 251.0,
-          "Visible": true,
-          "Width": 380.0
+          "Repetitions": 0,
+          "Visible": true
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "if (isnull([PersistantTrackerPlugin.DriverBehind_03_CarNumber]), 0, 1)"
+                "Expression": "if (isnull([PersistantTrackerPlugin.DriverAhead_03_CarNumber]), 0, 1)"
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "Childrens": [
@@ -1779,12 +2055,27 @@
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "BackgroundColor": "#FFFFFFFF",
               "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return drivercarclasscolor( getopponentleaderboardposition_aheadbehind(-4) )",
+                    "Interpreter": 1,
+                    "JSExt": 0
+                  },
+                  "Mode": 2
+                },
                 "Text": {
                   "Formula": {
-                    "Expression": "[PersistantTrackerPlugin.DriverBehind_03_Position]"
+                    "Expression": "[PersistantTrackerPlugin.DriverAhead_03_Position]"
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return drivercarclasstextcolor( getopponentleaderboardposition_aheadbehind(-4) )",
+                    "Interpreter": 1,
+                    "JSExt": 0
+                  },
+                  "Mode": 2
                 }
               },
               "BorderStyle": {
@@ -1800,10 +2091,12 @@
               "HorizontalAlignment": 1,
               "IsTextItem": true,
               "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem0",
+              "RenderingSkip": 0,
               "Text": "00",
               "TextColor": "#FF000000",
-              "Top": 280.0,
+              "Top": 48.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 24.0
@@ -1814,18 +2107,19 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "'#'+[PersistantTrackerPlugin.DriverBehind_03_CarNumber]"
+                    "Expression": "return '#'+ drivercarnumber(getopponentleaderboardposition_aheadbehind(-4))",
+                    "Interpreter": 1,
+                    "JSExt": 0
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverColor('Behind_03')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverColor('Ahead_03')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
+                  "Mode": 2
                 }
               },
               "Font": "Roboto",
@@ -1835,10 +2129,12 @@
               "HorizontalAlignment": 2,
               "IsTextItem": true,
               "Left": 28.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem5",
+              "RenderingSkip": 0,
               "Text": "#000",
               "TextColor": "#FFFFFFFF",
-              "Top": 280.0,
+              "Top": 48.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 48.0
@@ -1849,19 +2145,19 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverName('Behind_03')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverName('Ahead_03')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverColor('Behind_03')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverColor('Ahead_03')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
+                  "Mode": 2
                 }
               },
               "Font": "Roboto",
@@ -1871,10 +2167,12 @@
               "HorizontalAlignment": 0,
               "IsTextItem": true,
               "Left": 90.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem6",
+              "RenderingSkip": 0,
               "Text": "A Driver",
               "TextColor": "#FFFFFFFF",
-              "Top": 280.0,
+              "Top": 48.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 170.0
@@ -1884,20 +2182,19 @@
               "BackgroundColor": "#00FFFFFF",
               "Bindings": {
                 "Text": {
-                  "FormatString": "-0.0",
+                  "FormatString": "+0.0",
                   "Formula": {
-                    "Expression": "abs([PersistantTrackerPlugin.DriverBehind_03_Gap])"
+                    "Expression": "abs([PersistantTrackerPlugin.DriverAhead_03_Gap])"
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverColor('Behind_03')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverColor('Ahead_03')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
+                  "Mode": 2
                 }
               },
               "Font": "Roboto",
@@ -1907,34 +2204,33 @@
               "HorizontalAlignment": 2,
               "IsTextItem": true,
               "Left": 315.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem7",
-              "Text": "-0.0",
+              "RenderingSkip": 0,
+              "Text": "+0.0",
               "TextColor": "#FFFFFFFF",
-              "Top": 280.0,
+              "Top": 48.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 65.0
             }
           ],
           "Group": true,
-          "Height": 24.0,
-          "Left": 0.0,
-          "Name": "Behind 03",
+          "MinimumRefreshIntervalMS": 160.0,
+          "Name": "Ahead 03",
+          "RenderingSkip": 16,
           "RepeatTopOffset": 0.0,
-          "Top": 280.0,
-          "Visible": true,
-          "Width": 380.0
+          "Repetitions": 0,
+          "Visible": true
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "if (isnull([PersistantTrackerPlugin.DriverBehind_04_CarNumber]), 0, 1)"
+                "Expression": "if (isnull([PersistantTrackerPlugin.DriverAhead_04_CarNumber]), 0, 1)"
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "Childrens": [
@@ -1942,12 +2238,27 @@
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "BackgroundColor": "#FFFFFFFF",
               "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return drivercarclasscolor( getopponentleaderboardposition_aheadbehind(-5) )",
+                    "Interpreter": 1,
+                    "JSExt": 0
+                  },
+                  "Mode": 2
+                },
                 "Text": {
                   "Formula": {
-                    "Expression": "[PersistantTrackerPlugin.DriverBehind_04_Position]"
+                    "Expression": "[PersistantTrackerPlugin.DriverAhead_04_Position]"
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return drivercarclasstextcolor( getopponentleaderboardposition_aheadbehind(-5) )",
+                    "Interpreter": 1,
+                    "JSExt": 0
+                  },
+                  "Mode": 2
                 }
               },
               "BorderStyle": {
@@ -1963,10 +2274,12 @@
               "HorizontalAlignment": 1,
               "IsTextItem": true,
               "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem0",
+              "RenderingSkip": 0,
               "Text": "00",
               "TextColor": "#FF000000",
-              "Top": 309.0,
+              "Top": 19.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 24.0
@@ -1976,19 +2289,21 @@
               "BackgroundColor": "#00FFFFFF",
               "Bindings": {
                 "Text": {
+                  "FormatString": "0",
                   "Formula": {
-                    "Expression": "'#'+[PersistantTrackerPlugin.DriverBehind_04_CarNumber]"
+                    "Expression": "return '#'+ drivercarnumber(getopponentleaderboardposition_aheadbehind(-5))",
+                    "Interpreter": 1,
+                    "JSExt": 0
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverColor('Behind_04')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverColor('Ahead_04')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
+                  "Mode": 2
                 }
               },
               "Font": "Roboto",
@@ -1998,10 +2313,12 @@
               "HorizontalAlignment": 2,
               "IsTextItem": true,
               "Left": 28.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem5",
+              "RenderingSkip": 0,
               "Text": "#000",
               "TextColor": "#FFFFFFFF",
-              "Top": 309.0,
+              "Top": 19.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 48.0
@@ -2012,19 +2329,19 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverName('Behind_04')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverName('Ahead_04')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverColor('Behind_04')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverColor('Ahead_04')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
+                  "Mode": 2
                 }
               },
               "Font": "Roboto",
@@ -2034,10 +2351,12 @@
               "HorizontalAlignment": 0,
               "IsTextItem": true,
               "Left": 90.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem6",
+              "RenderingSkip": 0,
               "Text": "A Driver",
               "TextColor": "#FFFFFFFF",
-              "Top": 309.0,
+              "Top": 19.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 170.0
@@ -2047,20 +2366,19 @@
               "BackgroundColor": "#00FFFFFF",
               "Bindings": {
                 "Text": {
-                  "FormatString": "-0.0",
+                  "FormatString": "+0.0",
                   "Formula": {
-                    "Expression": "abs([PersistantTrackerPlugin.DriverBehind_04_Gap])"
+                    "Expression": "abs([PersistantTrackerPlugin.DriverAhead_04_Gap])"
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
                 },
                 "TextColor": {
                   "Formula": {
-                    "Expression": "return ld_GetRelDriverColor('Behind_04')",
-                    "Interpreter": 1
+                    "Expression": "return ld_GetRelDriverColor('Ahead_04')",
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "TextColor"
+                  "Mode": 2
                 }
               },
               "Font": "Roboto",
@@ -2070,31 +2388,41 @@
               "HorizontalAlignment": 2,
               "IsTextItem": true,
               "Left": 315.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem7",
-              "Text": "-0.0",
+              "RenderingSkip": 0,
+              "Text": "+0.0",
               "TextColor": "#FFFFFFFF",
-              "Top": 309.0,
+              "Top": 19.0,
               "VerticalAlignment": 1,
               "Visible": true,
               "Width": 65.0
             }
           ],
           "Group": true,
-          "Height": 24.0,
-          "Left": 0.0,
-          "Name": "Behind 04",
+          "MinimumRefreshIntervalMS": 160.0,
+          "Name": "Ahead 04",
+          "RenderingSkip": 16,
           "RepeatTopOffset": 0.0,
-          "Top": 309.0,
-          "Visible": true,
-          "Width": 380.0
+          "Repetitions": 0,
+          "Visible": true
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
           "Childrens": [
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiLabel')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
               "Font": "Roboto",
               "FontSize": 12.0,
               "FontWeight": "Bold",
@@ -2103,7 +2431,9 @@
               "IsFreezed": true,
               "IsTextItem": true,
               "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem23",
+              "RenderingSkip": 0,
               "Text": "RELATIVE",
               "TextColor": "#FF878787",
               "Top": 0.0,
@@ -2114,6 +2444,16 @@
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiLabel')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
               "Font": "Roboto",
               "FontSize": 12.0,
               "FontWeight": "Bold",
@@ -2122,7 +2462,9 @@
               "IsFreezed": true,
               "IsTextItem": true,
               "Left": 315.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TextItem1",
+              "RenderingSkip": 0,
               "Text": "GAP",
               "TextColor": "#FF878787",
               "Top": 0.0,
@@ -2132,14 +2474,14 @@
             }
           ],
           "Group": true,
-          "Height": 14.0,
-          "Left": 0.0,
+          "MinimumRefreshIntervalMS": 160.0,
           "Name": "Labels",
-          "Top": 0.0,
-          "Visible": true,
-          "Width": 380.0
+          "RenderingSkip": 16,
+          "Repetitions": 0,
+          "Visible": true
         }
       ],
+      "MinimumRefreshIntervalMS": 0.0,
       "Name": "Screen1",
       "OverlayMaxDuration": 0,
       "OverlayMinDuration": 0,
@@ -2147,6 +2489,7 @@
         "Expression": ""
       },
       "PitScreen": false,
+      "RenderingSkip": 0,
       "ScreenEnabledExpression": {
         "Expression": ""
       },
@@ -2159,7 +2502,24 @@
   "ShowOnScreenControls": true,
   "SnapToGrid": false,
   "Variables": {
-    "DashboardVariables": []
+    "DashboardVariables": [
+      {
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "folderName"
+      },
+      {
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "trueDarkMode"
+      }
+    ]
   },
   "Version": 2
 }
