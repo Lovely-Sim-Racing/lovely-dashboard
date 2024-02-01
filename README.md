@@ -214,7 +214,7 @@ Available to [**Pro & Gold Lovely Members**](#lovely-membership) only.
 A special thanks to all of you who have supported this project in [one way](https://lsr.gg/membership) or [another](https://lsr.gg/store). It could not have been done without you. Special thanks also to these fellas that have contributed to the code:
 
 * **Mike Bowen** (iRacing ERS & MGU)
-* **Steve Mattar** (F1 Support)~
+* **Steve Mattar** (F1 Support)
 * **Joerg Behrens** (Settings Configurator)
 
 

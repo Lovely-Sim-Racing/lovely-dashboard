@@ -199,7 +199,7 @@ Set a hot-key to enable True Dark Mode.
 - **`Shift+D` (Default)**
 
 > [!NOTE]
-> Requires `Settings>Plugins>Keyboard Input` Plugin enabled in Simhub.
+> Requires `Settings > Plugins > Keyboard Emulator` & `Keyboard Input` Plugin enabled in Simhub.
 
 ---
 
@@ -216,7 +216,7 @@ Set a hot-key to reset the AVG Tire data.
 :warning: **Warning:** This is still a bit buggy. If the data does not resume collecting, you will need to restart your DDU/Device.
 
 > [!NOTE]
-> Requires `Settings>Plugins>Keyboard Input` Plugin enabled in Simhub.
+> Requires `Settings > Plugins > Keyboard Emulator` & `Keyboard Input` Plugin enabled in Simhub.
 
 ---
 
