@@ -9,7 +9,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "6d743474-aae9-481f-810d-6699d8df3ede",
+  "Id": "834770e8-cd5c-4eb3-bf2d-24da38792e8b",
   "Images": [],
   "IsOverlay": false,
   "Metadata": {
@@ -25,6 +25,7 @@
     "OverlaySizeWarning": false,
     "PitScreensIndexs": [],
     "ScreenCount": 1.0,
+    "SimHubVersion": "9.1.19",
     "Width": 850.0
   },
   "Screens": [
@@ -45,39 +46,41 @@
             "InitialScreenIndex": {
               "Formula": {
                 "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\tif ( settings && settings.IRacing.fuelModule ) {\r\n\t\treturn settings.IRacing.fuelModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\r\n\tif ( settings && settings.Automobilista2.fuelModule ) {\r\n\t\treturn settings.Automobilista2.fuelModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\r\n\tif ( settings && settings.RFactor2.fuelModule ) {\r\n\t\treturn settings.RFactor2.fuelModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n} else {\r\n\r\n\tif ( settings && settings.ACC.fuelModule ) {\r\n\t\treturn settings.ACC.fuelModule\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n}",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "InitialScreenIndex"
+              "Mode": 2
             }
           },
           "EnableScreenRolesAndActivation": true,
           "FileName": "Fuel.djson",
+          "FreezePageChanges": false,
           "Height": 97.0,
           "InitialScreenIndex": 0,
           "IsFreezed": true,
-          "Left": 521.0,
+          "Left": 520.0,
+          "MinimumRefreshIntervalMS": 0.0,
           "Name": "Fuel",
           "NextScreenCommand": 4,
           "PreviousScreenCommand": 0,
+          "RenderingSkip": 0,
           "Top": 0.0,
           "Variables": {
             "DashboardVariables": []
           },
           "Visible": true,
-          "Width": 329.0
+          "Width": 330.0
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
           "Bindings": {
             "Visible": {
               "Formula": {
                 "Expression": "if ( $prop('DataCorePlugin.CurrentGame')=='IRacing' ) {\r\n\r\n\treturn ( $prop('GameRawData.Telemetry.EnergyERSBattery') == null ) ? 1 : 0\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa' ) {\r\n\t\r\n\treturn ( $prop('GameRawData.StaticInfo.HasERS') == 0 ) ? 1 : 0\r\n\r\n/* } else if ( $prop('DataCorePlugin.CurrentGame') == 'RFactor2' ) {\r\n\t\r\n\treturn ($prop('DataCorePlugin.GameData.EngineMap')>0) ? 1 : 0\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' ) {\r\n\t\r\n\treturn ($prop('DataCorePlugin.GameData.EngineMap')>0) ? 1 : 0\r\n*/\r\n} else if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\r\n\treturn ($prop('DataCorePlugin.GameData.EngineMap')>0) ? 1 : 0\r\n\t\r\n} else {\r\n\r\n\treturn 1\r\n\r\n}",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "Childrens": [
@@ -87,14 +90,24 @@
               "Bindings": {
                 "Opacity": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
-                    "Interpreter": 1
+                    "Expression": "if ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 1
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Opacity"
+                  "Mode": 2
                 }
               },
               "BorderStyle": {
+                "Bindings": {
+                  "BorderColor": {
+                    "Formula": {
+                      "Expression": "return ld_theme('ld_uiGreen')",
+                      "Interpreter": 1,
+                      "JSExt": 1
+                    },
+                    "Mode": 2
+                  }
+                },
                 "BorderBottom": 2,
                 "BorderColor": "#FF00FF02",
                 "BorderLeft": 2,
@@ -108,8 +121,10 @@
               "Height": 85.0,
               "IsFreezed": true,
               "IsRectangleItem": true,
-              "Left": 425.0,
+              "Left": 429.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "RectangleItem5",
+              "RenderingSkip": 0,
               "Top": 7.0,
               "Visible": true,
               "Width": 86.0
@@ -121,19 +136,27 @@
                 "Opacity": {
                   "Formula": {
                     "Expression": "if ( $prop('DataCorePlugin.CurrentGame')=='IRacing' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameRawData.Telemetry.dcFuelMixture') != null ) {\r\n\t\treturn 100\r\n\t} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') != null ) {\r\n\t\treturn 100\r\n\t} else {\r\n\t\treturn 35\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\r\n\treturn $prop('GameRawData.PlayerCarStatusData.m_fuelMix') != null ? 100 : 35\r\n\t\r\n} else {\r\n\r\n\treturn 100\r\n\t\r\n}",
-                    "Interpreter": 1
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Opacity"
+                  "Mode": 2
                 },
                 "Text": {
                   "FormatString": "0",
                   "Formula": {
                     "Expression": "if ( $prop('DataCorePlugin.CurrentGame')=='IRacing' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameRawData.Telemetry.dcFuelMixture') != null ) {\r\n\t\treturn $prop('DataCorePlugin.GameRawData.Telemetry.dcFuelMixture')\r\n\t} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') != null ) {\r\n\t\treturn $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape')\r\n\t} else {\r\n\t\treturn '-'\r\n\t}\r\n\t\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\r\n\treturn $prop('GameRawData.PlayerCarStatusData.m_fuelMix')\r\n\r\n} else {\r\n\r\n\treturn ( $prop('DataCorePlugin.GameData.EngineMap') == '-1' ) ? '-' : $prop('DataCorePlugin.GameData.EngineMap')\r\n\r\n}\r\n",
-                    "Interpreter": 1
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiGreen')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
                 }
               },
               "BorderStyle": {
@@ -147,8 +170,10 @@
               "HorizontalAlignment": 1,
               "IsFreezed": true,
               "IsTextItem": true,
-              "Left": 425.0,
+              "Left": 429.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "MAP",
+              "RenderingSkip": 0,
               "SpecialCharsWidth": 11.0,
               "Text": "1",
               "TextColor": "#FF00FF02",
@@ -165,10 +190,18 @@
                 "Text": {
                   "Formula": {
                     "Expression": "if ( $prop('DataCorePlugin.CurrentGame')=='IRacing' ) {\r\n\r\n\tif ( $prop('DataCorePlugin.GameRawData.Telemetry.dcThrottleShape') != null ) {\r\n\t\treturn 'THRTTL'\r\n\t} else {\r\n\t\treturn 'ENGINE'\r\n\t}\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\t\r\n\treturn 'MIX'\r\n\r\n} else {\r\n\r\n\treturn 'MAP'\r\n\r\n}",
-                    "Interpreter": 1
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiGreen')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
                 }
               },
               "BorderStyle": {
@@ -184,8 +217,10 @@
               "HorizontalAlignment": 1,
               "IsFreezed": true,
               "IsTextItem": true,
-              "Left": 443.0,
+              "Left": 447.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "Label",
+              "RenderingSkip": 0,
               "Text": "MAP",
               "TextColor": "#FF00FF02",
               "Top": 0.0,
@@ -195,24 +230,23 @@
             }
           ],
           "Group": true,
-          "Height": 95.0,
-          "Left": 425.0,
+          "IsFreezed": true,
+          "MinimumRefreshIntervalMS": 80.0,
           "Name": "Map",
-          "Top": 0.0,
-          "Visible": true,
-          "Width": 86.0
+          "RenderingSkip": 8,
+          "Repetitions": 0,
+          "Visible": true
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
           "Bindings": {
             "Visible": {
               "Formula": {
                 "Expression": "if ( $prop('DataCorePlugin.CurrentGame')=='IRacing' ) {\r\n\r\n\treturn ( $prop('GameRawData.Telemetry.EnergyERSBattery') != null ) ? 1 : 0\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa' ) {\r\n\t\r\n\treturn ( $prop('GameRawData.StaticInfo.HasERS') == 1 ) ? 1 : 0\r\n\t\r\n} else {\r\n\r\n\treturn 0\r\n\r\n}",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "Childrens": [
@@ -222,14 +256,24 @@
               "Bindings": {
                 "Opacity": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
-                    "Interpreter": 1
+                    "Expression": "if ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 1
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Opacity"
+                  "Mode": 2
                 }
               },
               "BorderStyle": {
+                "Bindings": {
+                  "BorderColor": {
+                    "Formula": {
+                      "Expression": "return ld_theme('ld_uiGreen')",
+                      "Interpreter": 1,
+                      "JSExt": 1
+                    },
+                    "Mode": 2
+                  }
+                },
                 "BorderBottom": 2,
                 "BorderColor": "#FF00FF02",
                 "BorderLeft": 2,
@@ -243,8 +287,10 @@
               "Height": 85.0,
               "IsFreezed": true,
               "IsRectangleItem": true,
-              "Left": 425.0,
+              "Left": 429.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "RectangleItem5",
+              "RenderingSkip": 0,
               "Top": 7.0,
               "Visible": true,
               "Width": 86.0
@@ -256,27 +302,35 @@
                 "FontSize": {
                   "Formula": {
                     "Expression": "if ( \r\n\t($prop('DataCorePlugin.CurrentGame')=='IRacing' &&\r\n\t$prop('DataCorePlugin.GameRawData.Telemetry.EnergyERSBatteryPct') < 1) ||\r\n\t\r\n\t($prop('DataCorePlugin.CurrentGame')=='AssettoCorsa' &&\r\n\t$prop('GameRawData.Physics.KersCharge') < 1)\r\n\t\r\n\t) {\r\n\treturn 50\r\n} else { \r\n\treturn 40\r\n}",
-                    "Interpreter": 1
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "FontSize"
+                  "Mode": 2
                 },
                 "Opacity": {
                   "Formula": {
                     "Expression": "if ( $prop('DataCorePlugin.CurrentGame')=='IRacing' ) {\r\n\r\n\tif ( $prop('GameRawData.Telemetry.EnergyERSBattery') != null ) {\r\n\t\treturn 100\r\n\t} else {\r\n\t\treturn 35\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa' ) {\r\n\r\n\tif ( $prop('GameRawData.Physics.ErsRecoveryLevel') != null ) {\r\n\t\treturn 100\r\n\t} else {\r\n\t\treturn 35\r\n\t}\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t \r\n\t return 100\r\n\t \r\n} else {\r\n\r\n\treturn 100\r\n\t\r\n}",
-                    "Interpreter": 1
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Opacity"
+                  "Mode": 2
                 },
                 "Text": {
                   "FormatString": "0",
                   "Formula": {
                     "Expression": "if ( $prop('DataCorePlugin.CurrentGame')=='IRacing' ) {\r\n\r\n\tif ( $prop('GameRawData.Telemetry.EnergyERSBattery') != null ) {\r\n\t\treturn Math.floor($prop('GameRawData.Telemetry.EnergyERSBatteryPct')*100)\r\n\t} else {\r\n\t\treturn '-'\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa' ) {\r\n\r\n\tif ( $prop('GameRawData.Physics.ErsRecoveryLevel') != null ) {\r\n\t\treturn Math.floor($prop('GameRawData.Physics.KersCharge')*100)\r\n\t} else {\r\n\t\treturn '-'\r\n\t}\r\n\t\r\n} else {\r\n\r\n\treturn $prop('DataCorePlugin.GameData.EngineMap')\r\n\r\n}\r\n",
-                    "Interpreter": 1
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiGreen')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
                 }
               },
               "BorderStyle": {
@@ -290,8 +344,10 @@
               "HorizontalAlignment": 1,
               "IsFreezed": true,
               "IsTextItem": true,
-              "Left": 425.0,
+              "Left": 429.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "ERS",
+              "RenderingSkip": 0,
               "SpecialCharsWidth": 9.0,
               "Text": "000",
               "TextColor": "#FF00FF02",
@@ -307,27 +363,35 @@
                 "FontSize": {
                   "Formula": {
                     "Expression": "if ( $prop('GameRawData.Physics.ErsRecoveryLevel') > 0 && $prop('GameRawData.Physics.ErsRecoveryLevel') < 10) {\r\n\treturn 50\r\n} else {\r\n\treturn 40\r\n}",
-                    "Interpreter": 1
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "FontSize"
+                  "Mode": 2
                 },
                 "Opacity": {
                   "Formula": {
                     "Expression": "if ( $prop('DataCorePlugin.CurrentGame')=='IRacing' ) {\r\n\r\n\tif ( $prop('GameRawData.Telemetry.EnergyERSBattery') != null ) {\r\n\t\treturn 100\r\n\t} else {\r\n\t\treturn 35\r\n\t}\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa' ) {\r\n\r\n\tif ( $prop('GameRawData.Physics.ErsRecoveryLevel') != null ) {\r\n\t\treturn 100\r\n\t} else {\r\n\t\treturn 35\r\n\t}\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t \r\n\t return 100\r\n\t \r\n} else {\r\n\r\n\treturn 100\r\n\t\r\n}",
-                    "Interpreter": 1
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Opacity"
+                  "Mode": 2
                 },
                 "Text": {
                   "FormatString": "0",
                   "Formula": {
                     "Expression": "if ( $prop('GameRawData.Physics.ErsRecoveryLevel') > 0 ) {\r\n\treturn $prop('GameRawData.Physics.ErsRecoveryLevel')*10\r\n} else if ( $prop('GameRawData.Physics.ErsRecoveryLevel') == 0 ) {\r\n\treturn 'OFF'\r\n} else if ($prop('ERSPercent') > 0) {\r\n\treturn Math.round($prop('ERSPercent'))\r\n} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.PowerMGU_K') < 0 ) {\r\n\treturn 'BUI'\r\n} else if ( $prop('DataCorePlugin.GameRawData.Telemetry.PowerMGU_K') > 0 ) {\r\n\treturn 'DEP'\r\n} else {\r\n\treturn 'OFF'\r\n}",
-                    "Interpreter": 1
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiGreen')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
                 }
               },
               "BorderStyle": {
@@ -340,8 +404,10 @@
               "Height": 90.0,
               "HorizontalAlignment": 1,
               "IsTextItem": true,
-              "Left": 425.0,
+              "Left": 429.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "MGU-K",
+              "RenderingSkip": 0,
               "SpecialCharsWidth": 9.0,
               "Text": "000",
               "TextColor": "#FF00FF02",
@@ -357,10 +423,18 @@
                 "Text": {
                   "Formula": {
                     "Expression": "if ( \r\n\t$prop('DataCorePlugin.CurrentGame')=='IRacing' ||\r\n\t$prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa'\r\n) {\r\n\r\n\treturn 'MGU-K'\r\n} else {\r\n\r\n\treturn 'MAP'\r\n\r\n}",
-                    "Interpreter": 1
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiGreen')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
                 }
               },
               "BorderStyle": {
@@ -376,8 +450,10 @@
               "HorizontalAlignment": 1,
               "IsFreezed": true,
               "IsTextItem": true,
-              "Left": 438.0,
+              "Left": 442.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "Label",
+              "RenderingSkip": 0,
               "Text": "MAP",
               "TextColor": "#FF00FF02",
               "Top": 0.0,
@@ -387,16 +463,15 @@
             }
           ],
           "Group": true,
-          "Height": 95.0,
-          "Left": 425.0,
+          "IsFreezed": true,
+          "MinimumRefreshIntervalMS": 80.0,
           "Name": "MGU-K",
-          "Top": 0.0,
-          "Visible": false,
-          "Width": 86.0
+          "RenderingSkip": 8,
+          "Repetitions": 0,
+          "Visible": false
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
           "Childrens": [
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
@@ -404,19 +479,29 @@
               "Bindings": {
                 "Opacity": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
-                    "Interpreter": 1
+                    "Expression": "if ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 1
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Opacity"
+                  "Mode": 2
                 }
               },
               "BorderStyle": {
-                "BorderBottom": 3,
+                "Bindings": {
+                  "BorderColor": {
+                    "Formula": {
+                      "Expression": "return ld_theme('ld_uiRed')",
+                      "Interpreter": 1,
+                      "JSExt": 1
+                    },
+                    "Mode": 2
+                  }
+                },
+                "BorderBottom": 2,
                 "BorderColor": "#FFFF0000",
-                "BorderLeft": 3,
-                "BorderRight": 3,
-                "BorderTop": 3,
+                "BorderLeft": 2,
+                "BorderRight": 2,
+                "BorderTop": 2,
                 "RadiusBottomLeft": 12,
                 "RadiusBottomRight": 12,
                 "RadiusTopLeft": 12,
@@ -425,8 +510,10 @@
               "Height": 85.0,
               "IsFreezed": true,
               "IsRectangleItem": true,
-              "Left": 293.0,
+              "Left": 296.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "RectangleItem4",
+              "RenderingSkip": 0,
               "Top": 7.0,
               "Visible": true,
               "Width": 122.0
@@ -439,10 +526,18 @@
                   "FormatString": "0",
                   "Formula": {
                     "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ) {\r\n\r\n\tvar bb = $prop('DataCorePlugin.GameData.BrakeBias');\r\n\tvar bb_comp;\r\n\tvar bb_final;\r\n\t\r\n\tswitch ( $prop('DataCorePlugin.GameData.CarModel') ) {\r\n\t  \r\n\t  // GT3 2019\r\n\t  case 'honda_nsx_gt3_evo':\r\n\t    bb_comp = -6; // -14\r\n\t    break;\r\n\t\r\n\t  default:\r\n\t    bb_comp = 0;\r\n\t}\r\n\t\r\n\t(bb <= 0) ?\tbb_final = 0 : bb_final = bb + bb_comp\r\n\t\r\n\treturn bb_final.toFixed(1)\r\n\r\n} else {\r\n\r\n\treturn $prop('DataCorePlugin.GameData.BrakeBias').toFixed(1)\r\n\r\n}",
-                    "Interpreter": 1
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiRed')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
                 }
               },
               "CharWidth": 28.0,
@@ -453,8 +548,10 @@
               "HorizontalAlignment": 1,
               "IsFreezed": true,
               "IsTextItem": true,
-              "Left": 291.0,
+              "Left": 294.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "BB",
+              "RenderingSkip": 0,
               "SpecialCharsWidth": 11.0,
               "Text": "00.0",
               "TextColor": "#FFFA0000",
@@ -467,6 +564,16 @@
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "BackgroundColor": "#FF000000",
+              "Bindings": {
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiRed')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
               "BorderStyle": {
                 "RadiusBottomLeft": 8,
                 "RadiusBottomRight": 8,
@@ -480,8 +587,10 @@
               "HorizontalAlignment": 1,
               "IsFreezed": true,
               "IsTextItem": true,
-              "Left": 329.5,
+              "Left": 332.5,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "Label",
+              "RenderingSkip": 0,
               "Text": "BB",
               "TextColor": "#FFFA0000",
               "Top": 0.0,
@@ -491,16 +600,15 @@
             }
           ],
           "Group": true,
-          "Height": 95.0,
-          "Left": 291.0,
+          "IsFreezed": true,
+          "MinimumRefreshIntervalMS": 80.0,
           "Name": "BB",
-          "Top": 0.0,
-          "Visible": true,
-          "Width": 127.0
+          "RenderingSkip": 8,
+          "Repetitions": 0,
+          "Visible": true
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
           "Childrens": [
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
@@ -508,14 +616,24 @@
               "Bindings": {
                 "Opacity": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
-                    "Interpreter": 1
+                    "Expression": "if ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 1
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Opacity"
+                  "Mode": 2
                 }
               },
               "BorderStyle": {
+                "Bindings": {
+                  "BorderColor": {
+                    "Formula": {
+                      "Expression": "return ld_theme('ld_uiYellow')",
+                      "Interpreter": 1,
+                      "JSExt": 1
+                    },
+                    "Mode": 2
+                  }
+                },
                 "BorderBottom": 2,
                 "BorderColor": "#FFFFE04C",
                 "BorderLeft": 2,
@@ -529,8 +647,10 @@
               "Height": 85.0,
               "IsFreezed": true,
               "IsRectangleItem": true,
-              "Left": 197.0,
+              "Left": 199.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "RectangleItem3",
+              "RenderingSkip": 0,
               "Top": 7.0,
               "Visible": true,
               "Width": 86.0
@@ -543,16 +663,22 @@
                   "Formula": {
                     "Expression": "if ( [DataCorePlugin.GameData.ABSLevel]==0, 35, 100)"
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Opacity"
+                  "Mode": 2
                 },
                 "Text": {
                   "FormatString": "0",
                   "Formula": {
                     "Expression": "[DataCorePlugin.GameData.ABSLevel]"
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiYellow')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
                 }
               },
               "CharWidth": 28.0,
@@ -563,8 +689,10 @@
               "HorizontalAlignment": 1,
               "IsFreezed": true,
               "IsTextItem": true,
-              "Left": 197.0,
+              "Left": 199.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "ABS",
+              "RenderingSkip": 0,
               "SpecialCharsWidth": 11.0,
               "Text": "0",
               "TextColor": "#FFFFE04C",
@@ -576,21 +704,30 @@
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
               "Bindings": {
                 "Visible": {
                   "Formula": {
                     "Expression": "if ($prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione') {\r\n\r\n\tif (isnull($prop('DataCorePlugin.GameRawData.Graphics.ABS'),0) > 0) {\r\n\t\treturn ld_changed(300, $prop('DataCorePlugin.GameData.ABSActive'))\r\n\t}\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\tif ($prop('DataCorePlugin.GameData.ABSLevel') > 0) {\r\n\t\t\r\n\t\treturn\t$prop('GameRawData.PlayerMotionData.m_wheelSlip01') * 100 < -5 ||\r\n\t\t\t\t$prop('GameRawData.PlayerMotionData.m_wheelSlip02') * 100 < -5 ||\r\n\t\t\t\t$prop('GameRawData.PlayerMotionData.m_wheelSlip03') * 100 < -5 ||\r\n\t\t\t\t$prop('GameRawData.PlayerMotionData.m_wheelSlip04') * 100 < -5\r\n\t\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n\r\n} else {\r\n\r\n\tif (isnull($prop('DataCorePlugin.GameData.ABSLevel'),0) > 0) {\r\n\t\treturn ld_changed(300, $prop('DataCorePlugin.GameData.ABSActive'))\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n}\r\n",
-                    "Interpreter": 1
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Visible"
+                  "Mode": 2
                 }
               },
               "Childrens": [
                 {
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
                   "BackgroundColor": "#FFFFE04C",
+                  "Bindings": {
+                    "BackgroundColor": {
+                      "Formula": {
+                        "Expression": "return ld_theme('ld_uiYellow')",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    }
+                  },
                   "BorderStyle": {
                     "RadiusBottomLeft": 8,
                     "RadiusBottomRight": 8,
@@ -600,8 +737,10 @@
                   "Height": 75.0,
                   "IsFreezed": true,
                   "IsRectangleItem": true,
-                  "Left": 202.0,
+                  "Left": 204.0,
+                  "MinimumRefreshIntervalMS": 0.0,
                   "Name": "RectangleItem",
+                  "RenderingSkip": 0,
                   "Top": 12.0,
                   "Visible": true,
                   "Width": 76.0
@@ -615,8 +754,15 @@
                       "Formula": {
                         "Expression": "[DataCorePlugin.GameData.ABSLevel]"
                       },
-                      "Mode": 2,
-                      "TargetPropertyName": "Text"
+                      "Mode": 2
+                    },
+                    "TextColor": {
+                      "Formula": {
+                        "Expression": "return ld_theme('ld_uiYellowText')",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
                     }
                   },
                   "CharWidth": 28.0,
@@ -627,8 +773,10 @@
                   "HorizontalAlignment": 1,
                   "IsFreezed": true,
                   "IsTextItem": true,
-                  "Left": 197.0,
+                  "Left": 199.0,
+                  "MinimumRefreshIntervalMS": 0.0,
                   "Name": "ABS",
+                  "RenderingSkip": 0,
                   "SpecialCharsWidth": 11.0,
                   "Text": "0",
                   "TextColor": "#FF000000",
@@ -640,16 +788,25 @@
                 }
               ],
               "Group": true,
-              "Height": 90.0,
-              "Left": 197.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "ABS Active",
-              "Top": 5.0,
-              "Visible": false,
-              "Width": 86.0
+              "RenderingSkip": 0,
+              "Repetitions": 0,
+              "Visible": false
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "BackgroundColor": "#FF000000",
+              "Bindings": {
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiYellow')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
               "BorderStyle": {
                 "RadiusBottomLeft": 8,
                 "RadiusBottomRight": 8,
@@ -663,8 +820,10 @@
               "HorizontalAlignment": 1,
               "IsFreezed": true,
               "IsTextItem": true,
-              "Left": 215.0,
+              "Left": 217.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "Label",
+              "RenderingSkip": 0,
               "Text": "ABS",
               "TextColor": "#FFFFE04C",
               "Top": 0.0,
@@ -674,24 +833,23 @@
             }
           ],
           "Group": true,
-          "Height": 95.0,
-          "Left": 197.0,
+          "IsFreezed": true,
+          "MinimumRefreshIntervalMS": 80.0,
           "Name": "ABS",
-          "Top": 0.0,
-          "Visible": true,
-          "Width": 86.0
+          "RenderingSkip": 8,
+          "Repetitions": 0,
+          "Visible": true
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
           "Bindings": {
             "Visible": {
               "Formula": {
                 "Expression": "return ( \r\n\t$prop('DataCorePlugin.CurrentGame').startsWith('F120')\r\n\t\t) ? 1 : 0",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "Childrens": [
@@ -701,14 +859,24 @@
               "Bindings": {
                 "Opacity": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
-                    "Interpreter": 1
+                    "Expression": "if ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 1
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Opacity"
+                  "Mode": 2
                 }
               },
               "BorderStyle": {
+                "Bindings": {
+                  "BorderColor": {
+                    "Formula": {
+                      "Expression": "return ld_theme('ld_uiSilver')",
+                      "Interpreter": 1,
+                      "JSExt": 1
+                    },
+                    "Mode": 2
+                  }
+                },
                 "BorderBottom": 2,
                 "BorderColor": "#FFC0C0C0",
                 "BorderLeft": 2,
@@ -722,8 +890,10 @@
               "Height": 85.0,
               "IsFreezed": true,
               "IsRectangleItem": true,
-              "Left": 101.0,
+              "Left": 102.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "RectangleItem2",
+              "RenderingSkip": 0,
               "Top": 7.0,
               "Visible": true,
               "Width": 86.0
@@ -735,19 +905,27 @@
                 "Opacity": {
                   "Formula": {
                     "Expression": "return isnull($prop('DataCorePlugin.GameRawData.PlayerCarSetup.m_onThrottle'),0) == 0 ? 35 : 100",
-                    "Interpreter": 1
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Opacity"
+                  "Mode": 2
                 },
                 "Text": {
                   "FormatString": "0",
                   "Formula": {
                     "Expression": "return isnull( $prop('DataCorePlugin.GameRawData.PlayerCarSetup.m_onThrottle'), 0).toFixed(0)\r\n\t",
-                    "Interpreter": 1
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiSilver')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
                 }
               },
               "CharWidth": 28.0,
@@ -758,8 +936,10 @@
               "HorizontalAlignment": 1,
               "IsFreezed": true,
               "IsTextItem": true,
-              "Left": 101.0,
+              "Left": 102.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "DIFF",
+              "RenderingSkip": 0,
               "SpecialCharsWidth": 11.0,
               "Text": "0",
               "TextColor": "#FFC0C0C0",
@@ -772,6 +952,16 @@
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "BackgroundColor": "#FF000000",
+              "Bindings": {
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiSilver')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
               "BorderStyle": {
                 "RadiusBottomLeft": 8,
                 "RadiusBottomRight": 8,
@@ -785,8 +975,10 @@
               "HorizontalAlignment": 1,
               "IsFreezed": true,
               "IsTextItem": true,
-              "Left": 119.0,
+              "Left": 120.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "Label",
+              "RenderingSkip": 0,
               "Text": "DIFF",
               "TextColor": "#FFC0C0C0",
               "Top": 0.0,
@@ -796,24 +988,23 @@
             }
           ],
           "Group": true,
-          "Height": 95.0,
-          "Left": 101.0,
+          "IsFreezed": true,
+          "MinimumRefreshIntervalMS": 80.0,
           "Name": "DIFF",
-          "Top": 0.0,
-          "Visible": true,
-          "Width": 86.0
+          "RenderingSkip": 8,
+          "Repetitions": 0,
+          "Visible": false
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
           "Bindings": {
             "Visible": {
               "Formula": {
                 "Expression": "return ( \r\n\t$prop('DataCorePlugin.CurrentGame').startsWith('F120')\r\n\t\t) ? 0 : 1",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "Childrens": [
@@ -823,14 +1014,24 @@
               "Bindings": {
                 "Opacity": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
-                    "Interpreter": 1
+                    "Expression": "if ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 1
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Opacity"
+                  "Mode": 2
                 }
               },
               "BorderStyle": {
+                "Bindings": {
+                  "BorderColor": {
+                    "Formula": {
+                      "Expression": "return ld_theme('ld_uiBlue')",
+                      "Interpreter": 1,
+                      "JSExt": 1
+                    },
+                    "Mode": 2
+                  }
+                },
                 "BorderBottom": 2,
                 "BorderColor": "#FF00BFFF",
                 "BorderLeft": 2,
@@ -844,8 +1045,10 @@
               "Height": 85.0,
               "IsFreezed": true,
               "IsRectangleItem": true,
-              "Left": 101.0,
+              "Left": 102.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "RectangleItem2",
+              "RenderingSkip": 0,
               "Top": 7.0,
               "Visible": true,
               "Width": 86.0
@@ -857,19 +1060,27 @@
                 "Opacity": {
                   "Formula": {
                     "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn ( isnull($prop('DataCorePlugin.GameRawData.Telemetry.dcTractionControl2'),0)==0 ) ? 35 : 100\r\n\t\r\n} else {\r\n\r\n\treturn ( isnull($prop('DataCorePlugin.GameRawData.Graphics.TCCut'),0)==0 ) ? 35 : 100\r\n\t\r\n}",
-                    "Interpreter": 1
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Opacity"
+                  "Mode": 2
                 },
                 "Text": {
                   "FormatString": "0",
                   "Formula": {
                     "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn isnull( $prop('DataCorePlugin.GameRawData.Telemetry.dcTractionControl2'), 0)\r\n\t\r\n} else {\r\n\r\n\treturn isnull( $prop('DataCorePlugin.GameRawData.Graphics.TCCut'), 0)\r\n\t\r\n}",
-                    "Interpreter": 1
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiBlue')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
                 }
               },
               "CharWidth": 28.0,
@@ -880,8 +1091,10 @@
               "HorizontalAlignment": 1,
               "IsFreezed": true,
               "IsTextItem": true,
-              "Left": 101.0,
+              "Left": 102.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TC2",
+              "RenderingSkip": 0,
               "SpecialCharsWidth": 11.0,
               "Text": "0",
               "TextColor": "#FF00BFFF",
@@ -893,21 +1106,30 @@
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
               "Bindings": {
                 "Visible": {
                   "Formula": {
                     "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn 0\r\n\t\r\n} else {\r\n\r\n\treturn $prop('DataCorePlugin.GameData.TCActive')\r\n\t\r\n}",
-                    "Interpreter": 1
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Visible"
+                  "Mode": 2
                 }
               },
               "Childrens": [
                 {
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
                   "BackgroundColor": "#FF00BFFF",
+                  "Bindings": {
+                    "BackgroundColor": {
+                      "Formula": {
+                        "Expression": "return ld_theme('ld_uiBlue')",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    }
+                  },
                   "BorderStyle": {
                     "RadiusBottomLeft": 8,
                     "RadiusBottomRight": 8,
@@ -917,8 +1139,10 @@
                   "Height": 75.0,
                   "IsFreezed": true,
                   "IsRectangleItem": true,
-                  "Left": 106.0,
+                  "Left": 107.0,
+                  "MinimumRefreshIntervalMS": 0.0,
                   "Name": "RectangleItem",
+                  "RenderingSkip": 0,
                   "Top": 12.0,
                   "Visible": true,
                   "Width": 76.0
@@ -932,8 +1156,15 @@
                       "Formula": {
                         "Expression": "isnull([GameRawData.Graphics.TCCut],0)"
                       },
-                      "Mode": 2,
-                      "TargetPropertyName": "Text"
+                      "Mode": 2
+                    },
+                    "TextColor": {
+                      "Formula": {
+                        "Expression": "return ld_theme('ld_uiBlueText')",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
                     }
                   },
                   "CharWidth": 28.0,
@@ -944,8 +1175,10 @@
                   "HorizontalAlignment": 1,
                   "IsFreezed": true,
                   "IsTextItem": true,
-                  "Left": 101.0,
+                  "Left": 102.0,
+                  "MinimumRefreshIntervalMS": 0.0,
                   "Name": "TC2",
+                  "RenderingSkip": 0,
                   "SpecialCharsWidth": 11.0,
                   "Text": "0",
                   "TextColor": "#FF000000",
@@ -957,16 +1190,25 @@
                 }
               ],
               "Group": true,
-              "Height": 90.0,
-              "Left": 101.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TC2 Active",
-              "Top": 5.0,
-              "Visible": false,
-              "Width": 86.0
+              "RenderingSkip": 0,
+              "Repetitions": 0,
+              "Visible": false
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "BackgroundColor": "#FF000000",
+              "Bindings": {
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiBlue')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
               "BorderStyle": {
                 "RadiusBottomLeft": 8,
                 "RadiusBottomRight": 8,
@@ -980,8 +1222,10 @@
               "HorizontalAlignment": 1,
               "IsFreezed": true,
               "IsTextItem": true,
-              "Left": 119.0,
+              "Left": 120.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "Label",
+              "RenderingSkip": 0,
               "Text": "TC CUT",
               "TextColor": "#FF00BFFF",
               "Top": 0.0,
@@ -991,16 +1235,15 @@
             }
           ],
           "Group": true,
-          "Height": 95.0,
-          "Left": 101.0,
+          "IsFreezed": true,
+          "MinimumRefreshIntervalMS": 80.0,
           "Name": "TC2",
-          "Top": 0.0,
-          "Visible": true,
-          "Width": 86.0
+          "RenderingSkip": 8,
+          "Repetitions": 0,
+          "Visible": true
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
           "Childrens": [
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
@@ -1008,22 +1251,30 @@
               "Bindings": {
                 "Opacity": {
                   "Formula": {
-                    "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
-                    "Interpreter": 1
+                    "Expression": "if ( !settings || !settings.uiMode ) {\r\n\treturn 100\r\n} else {\r\n\tswitch (settings.uiMode) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 1
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Opacity"
+                  "Mode": 2
                 }
               },
               "BorderStyle": {
                 "Bindings": {
+                  "BorderColor": {
+                    "Formula": {
+                      "Expression": "return ld_theme('ld_uiBlue')",
+                      "Interpreter": 1,
+                      "JSExt": 1
+                    },
+                    "Mode": 2
+                  },
                   "RadiusBottomLeft": {
                     "Formula": {
-                      "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
-                      "Interpreter": 1
+                      "Expression": "if ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius",
+                      "Interpreter": 1,
+                      "JSExt": 3
                     },
-                    "Mode": 2,
-                    "TargetPropertyName": "RadiusBottomLeft"
+                    "Mode": 2
                   }
                 },
                 "BorderBottom": 2,
@@ -1040,7 +1291,9 @@
               "IsFreezed": true,
               "IsRectangleItem": true,
               "Left": 5.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "RectangleItem",
+              "RenderingSkip": 0,
               "Top": 7.0,
               "Visible": true,
               "Width": 86.0
@@ -1052,19 +1305,27 @@
                 "Opacity": {
                   "Formula": {
                     "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ) {\r\n\r\n\treturn ( isnull($prop('DataCorePlugin.GameRawData.Graphics.TC'),0)==0 ) ? 35 : 100\r\n\r\n} else {\r\n\r\n\treturn ( isnull($prop('DataCorePlugin.GameData.NewData.TCLevel'),0)==0 ) ? 35 : 100\r\n\t\r\n}",
-                    "Interpreter": 1
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Opacity"
+                  "Mode": 2
                 },
                 "Text": {
                   "FormatString": "0",
                   "Formula": {
                     "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ) {\r\n\r\n\treturn $prop('DataCorePlugin.GameRawData.Graphics.TC')\r\n\r\n} else {\r\n\r\n\treturn $prop('DataCorePlugin.GameData.NewData.TCLevel')\r\n\t\r\n}",
-                    "Interpreter": 1
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Text"
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiBlue')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
                 }
               },
               "CharWidth": 28.0,
@@ -1076,7 +1337,9 @@
               "IsFreezed": true,
               "IsTextItem": true,
               "Left": 5.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TC",
+              "RenderingSkip": 0,
               "SpecialCharsWidth": 11.0,
               "Text": "0",
               "TextColor": "#FF00BFFF",
@@ -1088,30 +1351,39 @@
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-              "BackgroundColor": "#00FFFFFF",
               "Bindings": {
                 "Visible": {
                   "Formula": {
                     "Expression": "if ($prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione') {\r\n\r\n\tif (isnull($prop('DataCorePlugin.GameRawData.Graphics.TC'),0) > 0) {\r\n\t\treturn ld_changed(300, $prop('DataCorePlugin.GameData.TCActive'))\r\n\t}\r\n\r\n} else if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\t\r\n\tif ($prop('DataCorePlugin.GameData.TCLevel') > 0) {\r\n\t\t\r\n\t\treturn\t$prop('GameRawData.PlayerMotionData.m_wheelSlip01') * 100 > 5 ||\r\n\t\t\t\t$prop('GameRawData.PlayerMotionData.m_wheelSlip02') * 100 > 5 ||\r\n\t\t\t\t$prop('GameRawData.PlayerMotionData.m_wheelSlip03') * 100 > 5 ||\r\n\t\t\t\t$prop('GameRawData.PlayerMotionData.m_wheelSlip04') * 100 > 5\r\n\t\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n\r\n} else {\r\n\r\n\tif (isnull($prop('DataCorePlugin.GameData.TCLevel'),0) > 0) {\r\n\t\treturn ld_changed(300, $prop('DataCorePlugin.GameData.TCActive'))\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n}\r\n",
-                    "Interpreter": 1
+                    "Interpreter": 1,
+                    "JSExt": 3
                   },
-                  "Mode": 2,
-                  "TargetPropertyName": "Visible"
+                  "Mode": 2
                 }
               },
               "Childrens": [
                 {
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
                   "BackgroundColor": "#FF00BFFF",
+                  "Bindings": {
+                    "BackgroundColor": {
+                      "Formula": {
+                        "Expression": "return ld_theme('ld_uiBlue')",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    }
+                  },
                   "BorderStyle": {
                     "Bindings": {
                       "RadiusBottomLeft": {
                         "Formula": {
                           "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 45\r\n} else {\r\n\tuiRadius = settings.uiRadius\r\n}\r\n\r\nreturn uiRadius-5",
-                          "Interpreter": 1
+                          "Interpreter": 1,
+                          "JSExt": 3
                         },
-                        "Mode": 2,
-                        "TargetPropertyName": "RadiusBottomLeft"
+                        "Mode": 2
                       }
                     },
                     "RadiusBottomLeft": 40,
@@ -1123,7 +1395,9 @@
                   "IsFreezed": true,
                   "IsRectangleItem": true,
                   "Left": 10.0,
+                  "MinimumRefreshIntervalMS": 0.0,
                   "Name": "RectangleItem",
+                  "RenderingSkip": 0,
                   "Top": 12.0,
                   "Visible": true,
                   "Width": 76.0
@@ -1136,10 +1410,18 @@
                       "FormatString": "0",
                       "Formula": {
                         "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsaCompetizione' ) {\r\n\r\n\treturn $prop('DataCorePlugin.GameRawData.Graphics.TC')\r\n\r\n} else {\r\n\r\n\treturn $prop('DataCorePlugin.GameData.NewData.TCLevel')\r\n\t\r\n}",
-                        "Interpreter": 1
+                        "Interpreter": 1,
+                        "JSExt": 3
                       },
-                      "Mode": 2,
-                      "TargetPropertyName": "Text"
+                      "Mode": 2
+                    },
+                    "TextColor": {
+                      "Formula": {
+                        "Expression": "return ld_theme('ld_uiBlueText')",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
                     }
                   },
                   "CharWidth": 28.0,
@@ -1151,7 +1433,9 @@
                   "IsFreezed": true,
                   "IsTextItem": true,
                   "Left": 5.0,
+                  "MinimumRefreshIntervalMS": 0.0,
                   "Name": "TC",
+                  "RenderingSkip": 0,
                   "SpecialCharsWidth": 11.0,
                   "Text": "0",
                   "TextColor": "#FF000000",
@@ -1163,16 +1447,25 @@
                 }
               ],
               "Group": true,
-              "Height": 90.0,
-              "Left": 5.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "TC Active",
-              "Top": 5.0,
-              "Visible": false,
-              "Width": 86.0
+              "RenderingSkip": 0,
+              "Repetitions": 0,
+              "Visible": false
             },
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "BackgroundColor": "#FF000000",
+              "Bindings": {
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiBlue')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
               "BorderStyle": {
                 "RadiusBottomLeft": 8,
                 "RadiusBottomRight": 8,
@@ -1187,7 +1480,9 @@
               "IsFreezed": true,
               "IsTextItem": true,
               "Left": 23.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "Label",
+              "RenderingSkip": 0,
               "Text": "TC",
               "TextColor": "#FF00BFFF",
               "Top": 0.0,
@@ -1197,14 +1492,15 @@
             }
           ],
           "Group": true,
-          "Height": 95.0,
-          "Left": 5.0,
+          "IsFreezed": true,
+          "MinimumRefreshIntervalMS": 80.0,
           "Name": "TC",
-          "Top": 0.0,
-          "Visible": true,
-          "Width": 86.0
+          "RenderingSkip": 8,
+          "Repetitions": 0,
+          "Visible": true
         }
       ],
+      "MinimumRefreshIntervalMS": 0.0,
       "Name": "Fuel",
       "OverlayMaxDuration": 0,
       "OverlayMinDuration": 0,
@@ -1212,6 +1508,7 @@
         "Expression": ""
       },
       "PitScreen": false,
+      "RenderingSkip": 0,
       "ScreenEnabledExpression": {
         "Expression": ""
       },
@@ -1232,6 +1529,22 @@
           "Expression": ""
         },
         "VariableName": "dashName"
+      },
+      {
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "folderName"
+      },
+      {
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "trueDarkMode"
       }
     ]
   },

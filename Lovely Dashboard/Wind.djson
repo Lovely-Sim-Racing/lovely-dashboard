@@ -3,15 +3,13 @@
   "BackgroundOpacity": 100.0,
   "BaseHeight": 70,
   "BaseWidth": 150,
-  "DashboardDebugManager": {
-    "Maximized": false
-  },
+  "DashboardDebugManager": {},
   "EnableClickThroughOverlay": true,
   "EnableOnDashboardMessaging": true,
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "3a711b4e-8095-48bb-a4ee-76487608ffd4",
+  "Id": "a5b569eb-2b34-4b45-820c-c9ff8a9815e9",
   "Images": [],
   "IsOverlay": false,
   "Metadata": {
@@ -29,6 +27,7 @@
     "OverlaySizeWarning": false,
     "PitScreensIndexs": [],
     "ScreenCount": 1.0,
+    "SimHubVersion": "9.1.16",
     "Width": 150.0
   },
   "Screens": [
@@ -44,13 +43,25 @@
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.EllipseItem, SimHub.Plugins",
           "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "EllipseColor": {
+              "Formula": {
+                "Expression": "return ld_theme('ld_uiLabel')",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
           "EllipseColor": "#FF808080",
           "EllipseThickness": 2.0,
           "FillColor": "#00FFFFFF",
           "Height": 30.0,
           "IsFreezed": true,
           "Left": 20.0,
+          "MinimumRefreshIntervalMS": 640.0,
           "Name": "EllipseItem",
+          "RenderingSkip": 64,
           "Top": 20.0,
           "Visible": true,
           "Width": 30.0
@@ -58,6 +69,16 @@
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
           "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "TextColor": {
+              "Formula": {
+                "Expression": "return ld_theme('ld_uiLabel')",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
           "Font": "Roboto",
           "FontSize": 12.0,
           "FontWeight": "Bold",
@@ -66,7 +87,9 @@
           "IsFreezed": true,
           "IsTextItem": true,
           "Left": 15.0,
+          "MinimumRefreshIntervalMS": 640.0,
           "Name": "N",
+          "RenderingSkip": 64,
           "Text": "N",
           "TextColor": "#FF878787",
           "Top": 0.0,
@@ -77,6 +100,16 @@
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
           "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "TextColor": {
+              "Formula": {
+                "Expression": "return ld_theme('ld_uiLabel')",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
           "Font": "Roboto",
           "FontSize": 12.0,
           "FontWeight": "Bold",
@@ -85,7 +118,9 @@
           "IsFreezed": true,
           "IsTextItem": true,
           "Left": 15.0,
+          "MinimumRefreshIntervalMS": 640.0,
           "Name": "S",
+          "RenderingSkip": 64,
           "Text": "S",
           "TextColor": "#FF878787",
           "Top": 60.0,
@@ -96,6 +131,16 @@
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
           "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "TextColor": {
+              "Formula": {
+                "Expression": "return ld_theme('ld_uiLabel')",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
           "Font": "Roboto",
           "FontSize": 12.0,
           "FontWeight": "Bold",
@@ -104,7 +149,9 @@
           "IsFreezed": true,
           "IsTextItem": true,
           "Left": 65.0,
+          "MinimumRefreshIntervalMS": 640.0,
           "Name": "E",
+          "RenderingSkip": 64,
           "Text": "E",
           "TextColor": "#FF878787",
           "Top": 15.0,
@@ -115,6 +162,16 @@
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
           "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "TextColor": {
+              "Formula": {
+                "Expression": "return ld_theme('ld_uiLabel')",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
           "Font": "Roboto",
           "FontSize": 12.0,
           "FontWeight": "Bold",
@@ -123,7 +180,9 @@
           "IsFreezed": true,
           "IsTextItem": true,
           "Left": 0.0,
+          "MinimumRefreshIntervalMS": 640.0,
           "Name": "W",
+          "RenderingSkip": 64,
           "Text": "W",
           "TextColor": "#FF878787",
           "Top": 15.0,
@@ -139,10 +198,18 @@
               "FormatString": "0.0",
               "Formula": {
                 "Expression": "if ($prop('DataCorePlugin.CurrentGame') == 'Autmobilista2' ) {\r\n\t// AMS2\r\n\treturn format($prop('DataCorePlugin.GameRawData.mWindSpeed'), '0.0') + ' m/s'\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\t// iRacing\r\n\treturn format($prop('DataCorePlugin.GameRawData.Telemetry.WindVel'), '0.0') + ' m/s'\r\n\t\r\n} else {\r\n\r\n\t// ACC\r\n\treturn format($prop('DataCorePlugin.GameRawData.Graphics.WindSpeed'), '0.0') + ' m/s'\r\n\t\r\n}\r\n\r\n\r\n",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Text"
+              "Mode": 2
+            },
+            "TextColor": {
+              "Formula": {
+                "Expression": "return ld_theme('ld_uiTitle')",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
             }
           },
           "Font": "Segoe UI",
@@ -151,7 +218,9 @@
           "HorizontalAlignment": 0,
           "IsTextItem": true,
           "Left": 60.0,
+          "MinimumRefreshIntervalMS": 640.0,
           "Name": "TextItem",
+          "RenderingSkip": 64,
           "Text": "0.0 m/s",
           "TextColor": "#FFFFFFFF",
           "Top": 50.0,
@@ -194,10 +263,10 @@
             "Value": {
               "Formula": {
                 "Expression": "if ($prop('DataCorePlugin.CurrentGame') == 'Autmobilista2' ) {\r\n\t// AMS2\r\n\treturn (($prop('DataCorePlugin.GameRawData.mWindDirectionX') / $prop('DataCorePlugin.GameRawData.mWindDirectionY')) * 180) / 3.14\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\t// iRacing\r\n\treturn ($prop('DataCorePlugin.GameRawData.Telemetry.WindDir') * 180/3.14) + 180\r\n\t\r\n} else {\r\n\r\n\t// ACC\r\n\treturn $prop('DataCorePlugin.GameRawData.Graphics.WindDirection')\r\n\t\r\n}",
-                "Interpreter": 1
+                "Interpreter": 1,
+                "JSExt": 3
               },
-              "Mode": 2,
-              "TargetPropertyName": "Value"
+              "Mode": 2
             }
           },
           "CapRadius": 0.0,
@@ -227,6 +296,7 @@
           "MajorTickSize": "20,4",
           "Maximum": 360.0,
           "Minimum": 0.0,
+          "MinimumRefreshIntervalMS": 640.0,
           "MinorDivisionsCount": 0.0,
           "MinorTickColor": "#FFFFFFFF",
           "MinorTickRadius": 0.0,
@@ -254,6 +324,7 @@
           "RangeIndicatorThickness": 10.0,
           "RangeOptimalEndValue": 4.0,
           "RangeOptimalStartValue": 3.0,
+          "RenderingSkip": 64,
           "ScaleGlowColor": "#FFFF0000",
           "ScaleGlowRadius": 0.0,
           "ScaleLabelStyle": {
@@ -278,6 +349,7 @@
           "Width": 40.0
         }
       ],
+      "MinimumRefreshIntervalMS": 0.0,
       "Name": "Screen",
       "OverlayMaxDuration": 0,
       "OverlayMinDuration": 0,
@@ -285,6 +357,7 @@
         "Expression": ""
       },
       "PitScreen": false,
+      "RenderingSkip": 0,
       "ScreenEnabledExpression": {
         "Expression": ""
       },
@@ -296,5 +369,41 @@
   "ShowForeground": true,
   "ShowOnScreenControls": true,
   "SnapToGrid": false,
+  "Variables": {
+    "DashboardVariables": [
+      {
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "folderName"
+      },
+      {
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "dashName"
+      },
+      {
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "NewVar"
+      },
+      {
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "trueDarkMode"
+      }
+    ]
+  },
   "Version": 2
 }

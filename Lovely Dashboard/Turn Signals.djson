@@ -3,15 +3,13 @@
   "BackgroundOpacity": 100.0,
   "BaseHeight": 103,
   "BaseWidth": 814,
-  "DashboardDebugManager": {
-    "Maximized": false
-  },
+  "DashboardDebugManager": {},
   "EnableClickThroughOverlay": true,
   "EnableOnDashboardMessaging": true,
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": false,
-  "Id": "463d880e-14ce-41e3-a823-e4bc6b8f889a",
+  "Id": "60e3e6ce-6b86-41c0-8c44-2eb0bd4c5670",
   "Images": [
     {
       "Extension": ".png",
@@ -48,6 +46,7 @@
     "OverlaySizeWarning": false,
     "PitScreensIndexs": [],
     "ScreenCount": 1.0,
+    "SimHubVersion": "9.1.16",
     "Width": 814.0
   },
   "Screens": [
@@ -62,14 +61,12 @@
       "Items": [
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
           "Bindings": {
             "Visible": {
               "Formula": {
                 "Expression": "[DataCorePlugin.GameData.TurnIndicatorLeft]"
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "BlinkDelay": 500.0,
@@ -92,7 +89,9 @@
               "Height": 100.0,
               "IsRectangleItem": true,
               "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "RectangleItem0",
+              "RenderingSkip": 0,
               "Top": 1.0,
               "Visible": true,
               "Width": 100.0
@@ -104,30 +103,29 @@
               "Height": 33.0,
               "Image": "Left",
               "Left": 26.5,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "ImageItem0",
+              "RenderingSkip": 0,
               "Top": 34.5,
               "Visible": true,
               "Width": 47.0
             }
           ],
           "Group": true,
-          "Height": 100.0,
-          "Left": 0.0,
+          "MinimumRefreshIntervalMS": 320.0,
           "Name": "Turn Left",
-          "Top": 1.0,
-          "Visible": false,
-          "Width": 100.0
+          "RenderingSkip": 32,
+          "Repetitions": 0,
+          "Visible": false
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
           "Bindings": {
             "Visible": {
               "Formula": {
                 "Expression": "[DataCorePlugin.GameData.TurnIndicatorRight]"
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Mode": 2
             }
           },
           "BlinkDelay": 500.0,
@@ -150,7 +148,9 @@
               "Height": 100.0,
               "IsRectangleItem": true,
               "Left": 714.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "RectangleItem0",
+              "RenderingSkip": 0,
               "Top": 1.0,
               "Visible": true,
               "Width": 100.0
@@ -162,21 +162,23 @@
               "Height": 33.0,
               "Image": "Right",
               "Left": 740.0,
+              "MinimumRefreshIntervalMS": 0.0,
               "Name": "ImageItem0",
+              "RenderingSkip": 0,
               "Top": 34.0,
               "Visible": true,
               "Width": 47.0
             }
           ],
           "Group": true,
-          "Height": 100.0,
-          "Left": 714.0,
+          "MinimumRefreshIntervalMS": 320.0,
           "Name": "Turn Right",
-          "Top": 1.0,
-          "Visible": false,
-          "Width": 100.0
+          "RenderingSkip": 32,
+          "Repetitions": 0,
+          "Visible": false
         }
       ],
+      "MinimumRefreshIntervalMS": 0.0,
       "Name": "Screen1",
       "OverlayMaxDuration": 0,
       "OverlayMinDuration": 0,
@@ -184,6 +186,7 @@
         "Expression": ""
       },
       "PitScreen": false,
+      "RenderingSkip": 0,
       "ScreenEnabledExpression": {
         "Expression": ""
       },
@@ -195,5 +198,8 @@
   "ShowForeground": true,
   "ShowOnScreenControls": true,
   "SnapToGrid": false,
+  "Variables": {
+    "DashboardVariables": []
+  },
   "Version": 2
 }

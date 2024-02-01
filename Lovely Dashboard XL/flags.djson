@@ -9,15 +9,15 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": false,
-  "Id": "bd1bc98c-9eaf-42bd-97f6-fd05f0a3c10c",
+  "Id": "9850fbf4-4e7c-4516-8dd5-29efee9b862f",
   "Images": [
     {
       "Extension": ".png",
       "Height": 50,
       "Length": 679,
-      "MD5": "9efe4ed066fbf6ed001ad1851353d914",
+      "MD5": "19b15d0d6acdd91686c4c85d55ebfa54",
       "Modified": false,
-      "Name": "Checkered Flag",
+      "Name": "flag-checkered",
       "Optimized": true,
       "Width": 286
     },
@@ -46,6 +46,7 @@
     "OverlaySizeWarning": false,
     "PitScreensIndexs": [],
     "ScreenCount": 1.0,
+    "SimHubVersion": "9.1.22",
     "Width": 286.0
   },
   "Screens": [
@@ -59,535 +60,694 @@
       "IsOverlayLayer": false,
       "Items": [
         {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
-          "BackgroundColor": "#FFFA0000",
-          "Bindings": {
-            "Visible": {
-              "Formula": {
-                "Expression": "if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\r\n\treturn ( $prop('GameRawData.PlayerCarStatusData.m_vehicleFiaFlags') == 4 )\r\n\r\n} else {\r\n\r\n\treturn 0\r\n\t\r\n}",
-                "Interpreter": 1
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
-            }
-          },
-          "BorderStyle": {
-            "RadiusBottomLeft": 5,
-            "RadiusBottomRight": 5,
-            "RadiusTopLeft": 25,
-            "RadiusTopRight": 5
-          },
-          "Height": 50.0,
-          "IsRectangleItem": true,
-          "Left": 0.0,
-          "Name": "Red",
-          "Top": 0.0,
-          "Visible": false,
-          "Width": 286.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
-          "BackgroundColor": "#FFFFFFFF",
-          "Bindings": {
-            "Visible": {
-              "Formula": {
-                "Expression": "[DataCorePlugin.GameData.Flag_White]"
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
-            }
-          },
-          "BorderStyle": {
-            "Bindings": {
-              "RadiusTopLeft": {
-                "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
-                  "Interpreter": 1
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FFFF0000",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_flagRed')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
                 },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusTopLeft"
-              }
-            },
-            "RadiusBottomLeft": 5,
-            "RadiusBottomRight": 5,
-            "RadiusTopLeft": 25,
-            "RadiusTopRight": 5
-          },
-          "Height": 50.0,
-          "IsRectangleItem": true,
-          "Left": 0.0,
-          "Name": "White",
-          "Top": 0.0,
-          "Visible": false,
-          "Width": 286.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
-          "AutoSize": true,
-          "BackgroundColor": "#00FFFFFF",
-          "Bindings": {
-            "Visible": {
-              "Formula": {
-                "Expression": "[DataCorePlugin.GameData.Flag_Orange]"
+                "Visible": {
+                  "Formula": {
+                    "Expression": "if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\r\n\treturn ( $prop('GameRawData.PlayerCarStatusData.m_vehicleFiaFlags') == 4 )\r\n\r\n} else {\r\n\r\n\treturn 0\r\n\t\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 3
+                  },
+                  "Mode": 2
+                }
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
-            }
-          },
-          "BorderStyle": {
-            "Bindings": {
-              "RadiusTopLeft": {
-                "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
-                  "Interpreter": 1
+              "BorderStyle": {
+                "Bindings": {
+                  "RadiusTopLeft": {
+                    "Formula": {
+                      "Expression": "if ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
+                      "Interpreter": 1,
+                      "JSExt": 1
+                    },
+                    "Mode": 2
+                  }
                 },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusTopLeft"
-              }
-            },
-            "RadiusBottomLeft": 5,
-            "RadiusBottomRight": 5,
-            "RadiusTopLeft": 25,
-            "RadiusTopRight": 5
-          },
-          "Height": 50.0,
-          "Image": "flag-orange",
-          "Left": 0.0,
-          "Name": "Orange",
-          "Top": 0.0,
-          "Visible": false,
-          "Width": 286.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
-          "AutoSize": true,
-          "BackgroundColor": "#00FFFFFF",
-          "Bindings": {
-            "Visible": {
-              "Formula": {
-                "Expression": "[DataCorePlugin.GameData.Flag_Checkered]"
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 25,
+                "RadiusTopRight": 5
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
-            }
-          },
-          "BorderStyle": {
-            "Bindings": {
-              "RadiusTopLeft": {
-                "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
-                  "Interpreter": 1
+              "Height": 50.0,
+              "IsRectangleItem": true,
+              "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Red",
+              "RenderingSkip": 0,
+              "Top": 0.0,
+              "Visible": false,
+              "Width": 286.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FFFFFFFF",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_flagWhite')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
                 },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusTopLeft"
-              }
-            },
-            "RadiusBottomLeft": 5,
-            "RadiusBottomRight": 5,
-            "RadiusTopLeft": 25,
-            "RadiusTopRight": 5
-          },
-          "Height": 50.0,
-          "Image": "Checkered Flag",
-          "Left": 0.0,
-          "Name": "Checkered",
-          "Top": 0.0,
-          "Visible": false,
-          "Width": 286.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
-          "BackgroundColor": "#FF00D901",
-          "Bindings": {
-            "Visible": {
-              "Formula": {
-                "Expression": "[DataCorePlugin.GameData.Flag_Green]"
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
-            }
-          },
-          "BorderStyle": {
-            "Bindings": {
-              "RadiusTopLeft": {
-                "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
-                  "Interpreter": 1
+                "Text": {
+                  "Formula": {
+                    "Expression": "if ( ld_getSim() == 'ACC' && $prop('DataCorePlugin.GameRawData.Graphics.FlagsDetails.IsACC_WHITE_FLAG') ) {\r\n\treturn 'SLOW CAR';\r\n} else if ( ld_getSim() == 'ACC' && $prop('DataCorePlugin.GameRawData.Graphics.globalWhite') ) {\r\n\treturn 'FINAL LAP';\r\n} else {\r\n\treturn '';\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
                 },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusTopLeft"
-              }
-            },
-            "RadiusBottomLeft": 5,
-            "RadiusBottomRight": 5,
-            "RadiusTopLeft": 25,
-            "RadiusTopRight": 5
-          },
-          "Height": 50.0,
-          "IsRectangleItem": true,
-          "Left": 0.0,
-          "Name": "Geen",
-          "Top": 0.0,
-          "Visible": false,
-          "Width": 286.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
-          "BackgroundColor": "#FF00BFFF",
-          "Bindings": {
-            "Visible": {
-              "Formula": {
-                "Expression": "[DataCorePlugin.GameData.Flag_Blue]"
+                "Visible": {
+                  "Formula": {
+                    "Expression": "[DataCorePlugin.GameData.Flag_White]"
+                  },
+                  "Mode": 2
+                }
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
-            }
-          },
-          "BorderStyle": {
-            "Bindings": {
-              "RadiusTopLeft": {
-                "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
-                  "Interpreter": 1
+              "BorderStyle": {
+                "Bindings": {
+                  "RadiusTopLeft": {
+                    "Formula": {
+                      "Expression": "if ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
+                      "Interpreter": 1,
+                      "JSExt": 1
+                    },
+                    "Mode": 2
+                  }
                 },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusTopLeft"
-              }
-            },
-            "RadiusBottomLeft": 5,
-            "RadiusBottomRight": 5,
-            "RadiusTopLeft": 25,
-            "RadiusTopRight": 5
-          },
-          "Height": 50.0,
-          "IsRectangleItem": true,
-          "Left": 0.0,
-          "Name": "Blue",
-          "Top": 0.0,
-          "Visible": false,
-          "Width": 286.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
-          "BackgroundColor": "#7D000000",
-          "Bindings": {
-            "Visible": {
-              "Formula": {
-                "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn 0\r\n\r\n} else {\r\n\r\n\tif ($prop('GameRawData.Graphics.globalYellow1')==1 || $prop('GameRawData.Graphics.globalYellow2')==1 || $prop('GameRawData.Graphics.globalYellow3')==1 ) {\r\n\t\treturn 1\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n}",
-                "Interpreter": 1
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 25,
+                "RadiusTopRight": 5
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
-            }
-          },
-          "BorderStyle": {
-            "Bindings": {
-              "RadiusTopLeft": {
-                "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
-                  "Interpreter": 1
+              "Font": "Roboto",
+              "FontSize": 28.0,
+              "FontWeight": "Bold",
+              "Height": 50.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "White",
+              "RenderingSkip": 0,
+              "Text": "Text",
+              "TextColor": "#FF000000",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": false,
+              "Width": 286.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "AutoSize": true,
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Visible": {
+                  "Formula": {
+                    "Expression": "[DataCorePlugin.GameData.Flag_Orange]"
+                  },
+                  "Mode": 2
+                }
+              },
+              "BorderStyle": {
+                "Bindings": {
+                  "RadiusTopLeft": {
+                    "Formula": {
+                      "Expression": "if ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
+                      "Interpreter": 1,
+                      "JSExt": 1
+                    },
+                    "Mode": 2
+                  }
                 },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusTopLeft"
-              }
-            },
-            "RadiusBottomLeft": 5,
-            "RadiusBottomRight": 5,
-            "RadiusTopLeft": 25,
-            "RadiusTopRight": 5
-          },
-          "Height": 50.0,
-          "IsRectangleItem": true,
-          "Left": 0.0,
-          "Name": "Yellow BG",
-          "Top": 0.0,
-          "Visible": false,
-          "Width": 286.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "BackgroundColor": "#FFFFE04C",
-          "Bindings": {
-            "Visible": {
-              "Formula": {
-                "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn 0\r\n\r\n} else {\r\n\r\n\treturn ( $prop('GameRawData.Graphics.globalYellow1') == 1 ) ? 1 : 0\r\n\t\r\n}",
-                "Interpreter": 1
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 25,
+                "RadiusTopRight": 5
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
-            }
-          },
-          "BorderStyle": {
-            "Bindings": {
-              "RadiusTopLeft": {
-                "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
-                  "Interpreter": 1
+              "Height": 50.0,
+              "Image": "flag-orange",
+              "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Orange",
+              "RenderingSkip": 0,
+              "Top": 0.0,
+              "Visible": false,
+              "Width": 286.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "AutoSize": true,
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Visible": {
+                  "Formula": {
+                    "Expression": "[DataCorePlugin.GameData.Flag_Checkered]"
+                  },
+                  "Mode": 2
+                }
+              },
+              "BorderStyle": {
+                "Bindings": {
+                  "RadiusTopLeft": {
+                    "Formula": {
+                      "Expression": "if ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
+                      "Interpreter": 1,
+                      "JSExt": 1
+                    },
+                    "Mode": 2
+                  }
                 },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusTopLeft"
-              }
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 25,
+                "RadiusTopRight": 5
+              },
+              "Height": 50.0,
+              "Image": "flag-checkered",
+              "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Checkered",
+              "RenderingSkip": 0,
+              "Top": 0.0,
+              "Visible": false,
+              "Width": 286.0
             },
-            "RadiusBottomLeft": 5,
-            "RadiusBottomRight": 5,
-            "RadiusTopLeft": 25,
-            "RadiusTopRight": 5
-          },
-          "Font": "Roboto",
-          "FontSize": 28.0,
-          "FontWeight": "Bold",
-          "Height": 50.0,
-          "HorizontalAlignment": 1,
-          "IsTextItem": true,
-          "Left": 0.0,
-          "Name": "Sector 1",
-          "Text": "1",
-          "TextColor": "#FF000000",
-          "Top": 0.0,
-          "VerticalAlignment": 1,
-          "Visible": false,
-          "Width": 95.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "BackgroundColor": "#FFFFE04C",
-          "Bindings": {
-            "Visible": {
-              "Formula": {
-                "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn 0\r\n\r\n} else {\r\n\r\n\treturn ( $prop('GameRawData.Graphics.globalYellow2') == 1 ) ? 1 : 0\r\n\t\r\n}",
-                "Interpreter": 1
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
-            }
-          },
-          "BorderStyle": {
-            "RadiusBottomLeft": 5,
-            "RadiusBottomRight": 5,
-            "RadiusTopLeft": 5,
-            "RadiusTopRight": 5
-          },
-          "Font": "Roboto",
-          "FontSize": 28.0,
-          "FontWeight": "Bold",
-          "Height": 50.0,
-          "HorizontalAlignment": 1,
-          "IsTextItem": true,
-          "Left": 95.0,
-          "Name": "Sector 2 ",
-          "Text": "2",
-          "TextColor": "#FF000000",
-          "Top": 0.0,
-          "VerticalAlignment": 1,
-          "Visible": false,
-          "Width": 95.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "BackgroundColor": "#FFFFE04C",
-          "Bindings": {
-            "Visible": {
-              "Formula": {
-                "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn 0\r\n\r\n} else {\r\n\r\n\treturn ( $prop('GameRawData.Graphics.globalYellow3') == 1 ) ? 1 : 0\r\n\t\r\n}",
-                "Interpreter": 1
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
-            }
-          },
-          "BorderStyle": {
-            "RadiusBottomLeft": 5,
-            "RadiusBottomRight": 5,
-            "RadiusTopLeft": 5,
-            "RadiusTopRight": 5
-          },
-          "Font": "Roboto",
-          "FontSize": 28.0,
-          "FontWeight": "Bold",
-          "Height": 50.0,
-          "HorizontalAlignment": 1,
-          "IsTextItem": true,
-          "Left": 191.0,
-          "Name": "Sector 3",
-          "Text": "3",
-          "TextColor": "#FF000000",
-          "Top": 0.0,
-          "VerticalAlignment": 1,
-          "Visible": false,
-          "Width": 95.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "BackgroundColor": "#FFFFE04C",
-          "Bindings": {
-            "Visible": {
-              "Formula": {
-                "Expression": "return ( $prop('Flag_Yellow') || $prop('GameRawData.Graphics.globalYellow') ) ? 1 : 0",
-                "Interpreter": 1
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
-            }
-          },
-          "BorderStyle": {
-            "Bindings": {
-              "RadiusTopLeft": {
-                "Formula": {
-                  "Expression": "const json_settings = readtextfile('./JavascriptExtensions/Lovely-Dashboard_settings.json')\r\nconst settings = JSON.parse(json_settings);\r\n\r\nif ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
-                  "Interpreter": 1
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF00D901",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_flagGreen')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
                 },
-                "Mode": 2,
-                "TargetPropertyName": "RadiusTopLeft"
-              }
-            },
-            "RadiusBottomLeft": 5,
-            "RadiusBottomRight": 5,
-            "RadiusTopLeft": 25,
-            "RadiusTopRight": 5
-          },
-          "Font": "Roboto",
-          "FontSize": 28.0,
-          "FontWeight": "Bold",
-          "Height": 50.0,
-          "HorizontalAlignment": 1,
-          "IsTextItem": true,
-          "Left": 0.0,
-          "Name": "Global Yellow",
-          "Text": " ",
-          "TextColor": "#FF000000",
-          "Top": 0.0,
-          "VerticalAlignment": 1,
-          "Visible": false,
-          "Width": 285.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
-          "Bindings": {
-            "TextColor": {
-              "Formula": {
-                "Expression": "if([DataCorePlugin.GameData.Flag_Orange], 'White', 'Black')"
+                "Visible": {
+                  "Formula": {
+                    "Expression": "[DataCorePlugin.GameData.Flag_Green]"
+                  },
+                  "Mode": 2
+                }
               },
-              "Mode": 2,
-              "TargetPropertyName": "TextColor"
-            },
-            "Visible": {
-              "Formula": {
-                "Expression": "if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\r\n\treturn ($prop('DataCorePlugin.GameRawData.PacketSessionData.m_safetyCarStatus')==1 && $prop('DataCorePlugin.GameRawData.PlayerLapData.m_safetyCarDelta')>=0)\r\n\t\r\n\r\n} else {\r\n\r\n\treturn 0\r\n\t\r\n}",
-                "Interpreter": 1
+              "BorderStyle": {
+                "Bindings": {
+                  "RadiusTopLeft": {
+                    "Formula": {
+                      "Expression": "if ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
+                      "Interpreter": 1,
+                      "JSExt": 1
+                    },
+                    "Mode": 2
+                  }
+                },
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 25,
+                "RadiusTopRight": 5
               },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
+              "Height": 50.0,
+              "IsRectangleItem": true,
+              "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Geen",
+              "RenderingSkip": 0,
+              "Top": 0.0,
+              "Visible": false,
+              "Width": 286.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF00BFFF",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_flagBlue')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "[DataCorePlugin.GameData.Flag_Blue]"
+                  },
+                  "Mode": 2
+                }
+              },
+              "BorderStyle": {
+                "Bindings": {
+                  "RadiusTopLeft": {
+                    "Formula": {
+                      "Expression": "if ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
+                      "Interpreter": 1,
+                      "JSExt": 1
+                    },
+                    "Mode": 2
+                  }
+                },
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 25,
+                "RadiusTopRight": 5
+              },
+              "Height": 50.0,
+              "IsRectangleItem": true,
+              "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Blue",
+              "RenderingSkip": 0,
+              "Top": 0.0,
+              "Visible": false,
+              "Width": 286.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF000000",
+              "Bindings": {
+                "Visible": {
+                  "Formula": {
+                    "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn 0\r\n\r\n} else {\r\n\r\n\tif ($prop('GameRawData.Graphics.globalYellow1')==1 || $prop('GameRawData.Graphics.globalYellow2')==1 || $prop('GameRawData.Graphics.globalYellow3')==1 ) {\r\n\t\treturn 1\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 3
+                  },
+                  "Mode": 2
+                }
+              },
+              "BorderStyle": {
+                "Bindings": {
+                  "RadiusTopLeft": {
+                    "Formula": {
+                      "Expression": "if ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
+                      "Interpreter": 1,
+                      "JSExt": 1
+                    },
+                    "Mode": 2
+                  }
+                },
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 25,
+                "RadiusTopRight": 5
+              },
+              "Height": 50.0,
+              "IsRectangleItem": true,
+              "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Yellow BG",
+              "RenderingSkip": 0,
+              "Top": 0.0,
+              "Visible": false,
+              "Width": 286.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FFFFE04C",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_flagYellow')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn 0\r\n\r\n} else {\r\n\r\n\treturn ( $prop('GameRawData.Graphics.globalYellow1') == 1 ) ? 1 : 0\r\n\t\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 3
+                  },
+                  "Mode": 2
+                }
+              },
+              "BorderStyle": {
+                "Bindings": {
+                  "RadiusTopLeft": {
+                    "Formula": {
+                      "Expression": "if ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
+                      "Interpreter": 1,
+                      "JSExt": 1
+                    },
+                    "Mode": 2
+                  }
+                },
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 25,
+                "RadiusTopRight": 5
+              },
+              "Font": "Roboto",
+              "FontSize": 28.0,
+              "FontWeight": "Bold",
+              "Height": 50.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Sector 1",
+              "RenderingSkip": 0,
+              "Text": "1",
+              "TextColor": "#FF000000",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": false,
+              "Width": 95.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FFFFE04C",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_flagYellow')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn 0\r\n\r\n} else {\r\n\r\n\treturn ( $prop('GameRawData.Graphics.globalYellow2') == 1 ) ? 1 : 0\r\n\t\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 3
+                  },
+                  "Mode": 2
+                }
+              },
+              "BorderStyle": {
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Font": "Roboto",
+              "FontSize": 28.0,
+              "FontWeight": "Bold",
+              "Height": 50.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 95.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Sector 2 ",
+              "RenderingSkip": 0,
+              "Text": "2",
+              "TextColor": "#FF000000",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": false,
+              "Width": 95.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FFFFE04C",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_flagYellow')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn 0\r\n\r\n} else {\r\n\r\n\treturn ( $prop('GameRawData.Graphics.globalYellow3') == 1 ) ? 1 : 0\r\n\t\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 3
+                  },
+                  "Mode": 2
+                }
+              },
+              "BorderStyle": {
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Font": "Roboto",
+              "FontSize": 28.0,
+              "FontWeight": "Bold",
+              "Height": 50.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 191.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Sector 3",
+              "RenderingSkip": 0,
+              "Text": "3",
+              "TextColor": "#FF000000",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": false,
+              "Width": 95.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FFFFE04C",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_flagYellow')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Text": {
+                  "Formula": {
+                    "Expression": "if ( ld_getSim() == 'ACC' ) {\r\n\treturn 'DOUBLE YELLOW';\r\n} else {\r\n\treturn '';\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "if ( ld_getSim() == 'IRacing' ) {\r\n\treturn ( $prop('Flag_Yellow') || $prop('GameRawData.Graphics.globalYellow') ) ? 1 : 0;\r\n} else if ( ld_getSim() == 'ACC' ) {\r\n\treturn ( $prop('Flag_Yellow') && $prop('DataCorePlugin.GameRawData.Graphics.FlagsDetails.IsACC_YELLOW_FLAG') ) ? 1 : 0;\r\n} else {\r\n\treturn $prop('Flag_Yellow');\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 3
+                  },
+                  "Mode": 2
+                }
+              },
+              "BorderStyle": {
+                "Bindings": {
+                  "RadiusTopLeft": {
+                    "Formula": {
+                      "Expression": "if ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
+                      "Interpreter": 1,
+                      "JSExt": 1
+                    },
+                    "Mode": 2
+                  }
+                },
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 25,
+                "RadiusTopRight": 5
+              },
+              "Font": "Roboto",
+              "FontSize": 28.0,
+              "FontWeight": "Bold",
+              "Height": 50.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Global Yellow",
+              "RenderingSkip": 0,
+              "Text": " ",
+              "TextColor": "#FF000000",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": false,
+              "Width": 286.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "if([DataCorePlugin.GameData.Flag_Orange], 'White', 'Black')"
+                  },
+                  "Mode": 2
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\r\n\treturn ($prop('DataCorePlugin.GameRawData.PacketSessionData.m_safetyCarStatus')==1 && $prop('DataCorePlugin.GameRawData.PlayerLapData.m_safetyCarDelta')>=0)\r\n\t\r\n\r\n} else {\r\n\r\n\treturn 0\r\n\t\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 3
+                  },
+                  "Mode": 2
+                }
+              },
+              "BorderStyle": {
+                "Bindings": {
+                  "RadiusTopLeft": {
+                    "Formula": {
+                      "Expression": "if ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
+                      "Interpreter": 1,
+                      "JSExt": 1
+                    },
+                    "Mode": 2
+                  }
+                },
+                "BorderColor": "#FFFFE04C",
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Font": "Roboto",
+              "FontSize": 36.0,
+              "FontWeight": "Bold",
+              "Height": 50.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "SC",
+              "RenderingSkip": 0,
+              "Text": "SC",
+              "TextColor": "#FF000000",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": false,
+              "Width": 286.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "if([DataCorePlugin.GameData.Flag_Orange], 'White', 'Black')"
+                  },
+                  "Mode": 2
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\r\n\treturn ($prop('DataCorePlugin.GameRawData.PacketSessionData.m_safetyCarStatus')==2 && $prop('DataCorePlugin.GameRawData.PlayerLapData.m_safetyCarDelta')>=0)\r\n\t\r\n\r\n} else {\r\n\r\n\treturn 0\r\n\t\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 3
+                  },
+                  "Mode": 2
+                }
+              },
+              "BorderStyle": {
+                "Bindings": {
+                  "RadiusTopLeft": {
+                    "Formula": {
+                      "Expression": "if ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
+                      "Interpreter": 1,
+                      "JSExt": 1
+                    },
+                    "Mode": 2
+                  }
+                },
+                "BorderColor": "#FFFFE04C",
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Font": "Roboto",
+              "FontSize": 36.0,
+              "FontWeight": "Bold",
+              "Height": 50.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "VSC",
+              "RenderingSkip": 0,
+              "Text": "VSC",
+              "TextColor": "#FF000000",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": false,
+              "Width": 286.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "if([DataCorePlugin.GameData.Flag_Orange], 'White', 'Black')"
+                  },
+                  "Mode": 2
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\r\n\treturn (($prop('DataCorePlugin.GameRawData.PacketSessionData.m_safetyCarStatus')==1 || $prop('DataCorePlugin.GameRawData.PlayerLapData.m_safetyCarDelta')==2) && $prop('DataCorePlugin.GameRawData.PlayerLapData.m_safetyCarDelta')<0)\r\n\t\r\n\r\n} else {\r\n\r\n\treturn 0\r\n\t\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 3
+                  },
+                  "Mode": 2
+                }
+              },
+              "BlinkEnabled": true,
+              "BorderStyle": {
+                "Bindings": {
+                  "RadiusTopLeft": {
+                    "Formula": {
+                      "Expression": "if ( !settings || !settings.hasOwnProperty('uiRadius') ) {\r\n\tuiRadius = 25\r\n} else {\r\n\tuiRadius = (settings.uiRadius > 25) ? settings.uiRadius-20 : 5;\r\n}\r\n\r\nreturn uiRadius",
+                      "Interpreter": 1,
+                      "JSExt": 1
+                    },
+                    "Mode": 2
+                  }
+                },
+                "BorderColor": "#FFFFE04C",
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Font": "Roboto",
+              "FontSize": 36.0,
+              "FontWeight": "Bold",
+              "Height": 50.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Stay Positive",
+              "RenderingSkip": 0,
+              "Text": "STAY POSITIVE",
+              "TextColor": "#FF000000",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": false,
+              "Width": 286.0
             }
-          },
-          "BorderStyle": {
-            "BorderColor": "#FFFFE04C",
-            "RadiusBottomLeft": 5,
-            "RadiusBottomRight": 5,
-            "RadiusTopLeft": 5,
-            "RadiusTopRight": 5
-          },
-          "Font": "Roboto",
-          "FontSize": 36.0,
-          "FontWeight": "Bold",
-          "Height": 50.0,
-          "HorizontalAlignment": 1,
-          "IsTextItem": true,
-          "Left": 0.0,
-          "Name": "SC",
-          "Text": "SC",
-          "TextColor": "#FF000000",
-          "Top": 0.0,
-          "VerticalAlignment": 1,
-          "Visible": false,
-          "Width": 286.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
-          "Bindings": {
-            "TextColor": {
-              "Formula": {
-                "Expression": "if([DataCorePlugin.GameData.Flag_Orange], 'White', 'Black')"
-              },
-              "Mode": 2,
-              "TargetPropertyName": "TextColor"
-            },
-            "Visible": {
-              "Formula": {
-                "Expression": "if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\r\n\treturn ($prop('DataCorePlugin.GameRawData.PacketSessionData.m_safetyCarStatus')==2 && $prop('DataCorePlugin.GameRawData.PlayerLapData.m_safetyCarDelta')>=0)\r\n\t\r\n\r\n} else {\r\n\r\n\treturn 0\r\n\t\r\n}",
-                "Interpreter": 1
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
-            }
-          },
-          "BorderStyle": {
-            "BorderColor": "#FFFFE04C",
-            "RadiusBottomLeft": 5,
-            "RadiusBottomRight": 5,
-            "RadiusTopLeft": 5,
-            "RadiusTopRight": 5
-          },
-          "Font": "Roboto",
-          "FontSize": 36.0,
-          "FontWeight": "Bold",
-          "Height": 50.0,
-          "HorizontalAlignment": 1,
-          "IsTextItem": true,
-          "Left": 0.0,
-          "Name": "VSC",
-          "Text": "VSC",
-          "TextColor": "#FF000000",
-          "Top": 0.0,
-          "VerticalAlignment": 1,
-          "Visible": false,
-          "Width": 286.0
-        },
-        {
-          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-          "BackgroundColor": "#00FFFFFF",
-          "Bindings": {
-            "TextColor": {
-              "Formula": {
-                "Expression": "if([DataCorePlugin.GameData.Flag_Orange], 'White', 'Black')"
-              },
-              "Mode": 2,
-              "TargetPropertyName": "TextColor"
-            },
-            "Visible": {
-              "Formula": {
-                "Expression": "if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\r\n\treturn (($prop('DataCorePlugin.GameRawData.PacketSessionData.m_safetyCarStatus')==1 || $prop('DataCorePlugin.GameRawData.PlayerLapData.m_safetyCarDelta')==2) && $prop('DataCorePlugin.GameRawData.PlayerLapData.m_safetyCarDelta')<0)\r\n\t\r\n\r\n} else {\r\n\r\n\treturn 0\r\n\t\r\n}",
-                "Interpreter": 1
-              },
-              "Mode": 2,
-              "TargetPropertyName": "Visible"
-            }
-          },
-          "BlinkEnabled": true,
-          "BorderStyle": {
-            "BorderColor": "#FFFFE04C",
-            "RadiusBottomLeft": 5,
-            "RadiusBottomRight": 5,
-            "RadiusTopLeft": 5,
-            "RadiusTopRight": 5
-          },
-          "Font": "Roboto",
-          "FontSize": 36.0,
-          "FontWeight": "Bold",
-          "Height": 50.0,
-          "HorizontalAlignment": 1,
-          "IsTextItem": true,
-          "Left": 0.0,
-          "Name": "Stay Positive",
-          "Text": "STAY POSITIVE",
-          "TextColor": "#FF000000",
-          "Top": 0.0,
-          "VerticalAlignment": 1,
-          "Visible": false,
-          "Width": 286.0
+          ],
+          "Group": true,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "All Flags",
+          "RenderingSkip": 32,
+          "Repetitions": 0,
+          "Visible": true
         }
       ],
+      "MinimumRefreshIntervalMS": 0.0,
       "Name": "Screen1",
       "OverlayMaxDuration": 0,
       "OverlayMinDuration": 0,
@@ -595,6 +755,7 @@
         "Expression": ""
       },
       "PitScreen": false,
+      "RenderingSkip": 0,
       "ScreenEnabledExpression": {
         "Expression": ""
       },
@@ -607,7 +768,24 @@
   "ShowOnScreenControls": true,
   "SnapToGrid": false,
   "Variables": {
-    "DashboardVariables": []
+    "DashboardVariables": [
+      {
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "dashName"
+      },
+      {
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "trueDarkMode"
+      }
+    ]
   },
   "Version": 2
 }
