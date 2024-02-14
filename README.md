@@ -228,7 +228,7 @@ For all marketing inquiries please contact me directly.
 :envelope: [**marketing@lsr.gg**](mailto:marketing@lsr.gg)
 
 > [!NOTE]
-> Although the Lovely Dashboard is distributed for free, usage of its user interface design (UI) is also subject to the license it is distributed under. Any use in commercial or marketing material, promotional still or animated images and videos is forbidden unless direct consent is given. Please contct me directly if you wish to use the images on any of our material.
+> Although the Lovely Dashboard is distributed for free, usage of its user interface design (UI) is also subject to the license it is distributed under. Any use in commercial or marketing material, promotional still or animated images and videos is forbidden unless direct consent is given. Please contact me directly if you wish to use the images on any of your material.
 
 ---
  
