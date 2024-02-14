@@ -225,10 +225,10 @@ A special thanks to all of you who have supported this project in [one way](http
 ## Marketing Inquiries
 For all marketing inquiries please contact me directly. 
 
-:envelope: [**marketing@ohmylovely.com**](mailto:marketing@ohmylovely.com)
+:envelope: [**marketing@lsr.gg**](mailto:marketing@lsr.gg)
 
 > [!NOTE]
-> Although the Lovely Dashboard is distributed for free, usage of its user interface design (UI) is also subject to the license it is distributed under. Any use in commercial or marketing material, promotional still or animated images and videos is forbidden unless direct consent is given.
+> Although the Lovely Dashboard is distributed for free, usage of its user interface design (UI) is also subject to the license it is distributed under. Any use in commercial or marketing material, promotional still or animated images and videos is forbidden unless direct consent is given. Please contct me directly if you wish to use the images on any of our material.
 
 ---
  
