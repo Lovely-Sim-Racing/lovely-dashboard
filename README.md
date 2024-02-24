@@ -48,11 +48,11 @@ A multifunctional feature packed SimHub Dashboard (DDU) and ecosystem.
 <span><strong>Lovely Partners</strong></span><br/>
 <a href="https://www.simhubdash.com" target="_blank"><img width="80" height="80" alt="SimHub" src="docs/images/icon-simhub.png"></a>
 <a href="https://www.facebook.com/SimDash.pt" target="_blank"><img width="80" height="80" alt="SimDash" src="docs/images/icon-simdash.png"></a>
-<a href="https://lsr.gg/dnr" target="_blank"><img width="100" height="80" alt="Daniel Newman Racing" src="docs/images/icon-dnr.png"></a> 
 <a href="https://www.tonykanaan.com.br/en/esports" target="_blank"><img width="80" height="80" alt="Tony Kanaan" src="docs/images/icon-tony-kanaan.png"></a>
 <a href="https://www.turnracing.com" target="_blank"><img width="80" height="80" alt="Turn Racing" src="docs/images/icon-turn.png"></a>
-<a href="https://gomezsimindustries.com" target="_blank"><img width="80" height="80" alt="Gomez Sim Industries" src="docs/images/icon-gsi.png"></a>
+<a href="https://ascher-racing.com" target="_blank"><img width="80" height="80" alt="Ascher Racing" src="docs/images/icon-ascher.png"></a>
 <a href="https://www.simutec.co.uk" target="_blank"><img width="80" height="80" alt="Simutec" src="docs/images/icon-simutec.png"></a>
+<a href="https://lsr.gg/dnr" target="_blank"><img width="100" height="80" alt="Daniel Newman Racing" src="docs/images/icon-dnr.png"></a> 
 </p>
  
 ---
@@ -236,11 +236,11 @@ For all marketing inquiries please contact me directly.
 <span><strong>Lovely Partners</strong></span><br/>
 <a href="https://www.simhubdash.com" target="_blank"><img width="80" height="80" alt="SimHub" src="docs/images/icon-simhub.png"></a>
 <a href="https://www.facebook.com/SimDash.pt" target="_blank"><img width="80" height="80" alt="SimDash" src="docs/images/icon-simdash.png"></a>
-<a href="https://lsr.gg/dnr" target="_blank"><img width="100" height="80" alt="Daniel Newman Racing" src="docs/images/icon-dnr.png"></a> 
 <a href="https://www.tonykanaan.com.br/en/esports" target="_blank"><img width="80" height="80" alt="Tony Kanaan" src="docs/images/icon-tony-kanaan.png"></a>
 <a href="https://www.turnracing.com" target="_blank"><img width="80" height="80" alt="Turn Racing" src="docs/images/icon-turn.png"></a>
-<a href="https://gomezsimindustries.com" target="_blank"><img width="80" height="80" alt="Gomez Sim Industries" src="docs/images/icon-gsi.png"></a>
+<a href="https://ascher-racing.com" target="_blank"><img width="80" height="80" alt="Ascher Racing" src="docs/images/icon-ascher.png"></a>
 <a href="https://www.simutec.co.uk" target="_blank"><img width="80" height="80" alt="Simutec" src="docs/images/icon-simutec.png"></a>
+<a href="https://lsr.gg/dnr" target="_blank"><img width="100" height="80" alt="Daniel Newman Racing" src="docs/images/icon-dnr.png"></a> 
 </p>
  
 ---
