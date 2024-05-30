@@ -23,7 +23,7 @@ The Ascher Racing steering wheels are considered to be some of the best out ther
 
 The actual sim racing steering wheels also comes with a few advanced features that are now baked into the Lovely Dashboard.
 
-#Video walkthrough
+# Video walkthrough
 <h4 align="center">
 <a href="https://youtu.be/L9o4S-p4258">
 <img src="./images/ascher-lovely-integration.png" /><br/>
@@ -47,7 +47,7 @@ Watch the Ascher Racing + Lovely Dashboard Integration Video</a>
 (⚑) Clutch Paddles sold separately.
 
 
-#Radial Dials
+# Radial Dials
 The **Rotary Dials** in the center of the steering wheel can be used as simple rotaries, but with the advanced features of the Ascher Racing Artura Series, you can convert them into modifier switches. These modifier switches control the output of other buttons or rotaries on the steering wheel, thus giving you a vast number of inputs.
 
 ### Customise the Radial Dials
@@ -55,7 +55,7 @@ You can customise the Labels shown on the screen of the Lovely Dashboard by usin
 
 ![Ascher Racing Artura Radial Dials](./images/radial-dials.png)
 
-#Device Settings
+# Device Settings
 The **Ascher Racing Artura Series** steering wheels allow you to customise a few things on the wheel itself. Now, with the **Lovely Dashboard integration** you can see exactly what you're changing, along with useful information and instructions.
 
 ### Bite Point
