@@ -6,7 +6,7 @@
 
 > [!CAUTION]
 > **REQUIRED!** Ascher Racing Firmware version 1.1b9 (or higher)
-> [**Download Here**](#)
+> [**Download Here**](https://github.com/Lovely-Sim-Racing/lovely-dashboard/releases/tag/v2.7.0)
 
 ---
 
