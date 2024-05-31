@@ -53,6 +53,11 @@ The settings will work for the **Lovely Dashboard**, **Lovely Dashboard XL** and
 	* [rFactor 2](#rfactor2-rfactor-2)
 	* [Formula 1](#f1-formula-1)
 	* [Generic](#generic)
+* Manufacturer Settings
+	* [Ascher Racing](#ascherRacing-ascher-racing)
+	  * Left Dial
+	  * Right Dial
+
 
 ---
 
@@ -196,7 +201,7 @@ When a simulator has more than one light stage, you can enable `trueDarkModeNati
 #### `trueDarkModeHotKey`
 Set a hot-key to enable True Dark Mode. 
 
-- **`Shift+D` (Default)**
+- **`Alt+Shift+D` (Default)**
 
 > [!NOTE]
 > Requires `Settings > Plugins > Keyboard Emulator` & `Keyboard Input` Plugin enabled in Simhub.
@@ -211,7 +216,7 @@ Specify the number of laps to collect tire data.
 #### `tireLapAvgResetKey` (Experimental)
 Set a hot-key to reset the AVG Tire data. 
 
-- **`Shift+A` (Default)** - The hot-key or key-combination of your choice
+- **`Alt+Shift+A` (Default)** - The hot-key or key-combination of your choice
 
 :warning: **Warning:** This is still a bit buggy. If the data does not resume collecting, you will need to restart your DDU/Device.
 
@@ -280,13 +285,19 @@ Set how much time in milliseconds to display the Damage Alert. (eg. 1000 = 1 sec
 The interface changes to a blue color, indicating that you are in the Pit Lane.
 
 - **`0` (Default)** Off
-- `1` (Default) On
+- `1` On
 
 #### `pitLarge`
 Display the large Pit Limiter alert
 
 - **`0` (Default)** Off
-- `1` (Default) On
+- `1` On
+
+#### `ignitionOff`
+Enable the Ignition Off screen for increased immersion
+
+- **`0` (Default)** Off
+- `1` On
 
 ---
 
@@ -635,3 +646,36 @@ Set the active & default MFM pages for each sim seperately.
 * `2` Refuel Calculator (Refuel or Finish Line)
 
 ---
+
+### Manufacturer Settings
+Set the Labels fro teh Rotary Dials on your Ascher Racing Artura Series steering wheel.
+
+### `ascherRacing` Ascher Racing
+
+#### `leftDial`
+* `pos1` **B.BIAS** - Label for position 1
+* `pos2` **TC** - Label for position 2
+* `pos3` **TC2** - Label for position 3
+* `pos4` **ABS** - Label for position 4
+* `pos5` **MAP** - Label for position 5
+* `pos6` **ERS** - Label for position 6
+* `pos7` **DEPLOY** - Label for position 7
+* `pos8` **F-ARB** - Label for position 8
+* `pos9` **R-ARB** - Label for position 9
+* `pos10` **DIFF ENT** - Label for position 10
+* `pos11` **DIFF MID** - Label for position 11
+* `pos12` **DIFF EXT** - Label for position 12
+
+#### `rightDial`
+* `pos1` **DISP** - Label for position 1
+* `pos2` **FAN** - Label for position 2
+* `pos3` **SHKR** - Label for position 3
+* `pos4` **PAGE** - Label for position 4
+* `pos5` **GAME** - Label for position 5
+* `pos6` **SPOT** - Label for position 6
+* `pos7` **CHAT** - Label for position 7
+* `pos8` **BBOX** - Label for position 8
+* `pos9` **CAM** - Label for position 9
+* `pos10` **PIT 5|6** - Label for position 10
+* `pos11` **PIT 3|4** - Label for position 11
+* `pos12` **PIT 1|2** - Label for position 12
