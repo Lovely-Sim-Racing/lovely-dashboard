@@ -648,7 +648,7 @@ Set the active & default MFM pages for each sim seperately.
 ---
 
 ### Manufacturer Settings
-Set the active & default MFM pages for each sim seperately.
+Set the Labels fro teh Rotary Dials on your Ascher Racing Artura Series steering wheel.
 
 ### `ascherRacing` Ascher Racing
 
