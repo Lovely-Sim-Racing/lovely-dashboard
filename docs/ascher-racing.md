@@ -2,6 +2,13 @@
 <img width="426" height="160" alt="Lovely Sim Racing" src="./images/partner-ascher-wordmark.png">
 </p>
 
+
+<h3 align="center" style="background:red; border-radius:8px; color:#fff; padding: 5px;">
+REQUIRED! Ascher Racing Firmware version 1.1b12+ --- <a href="#" style="color:#fff">Download Here</a>
+</h3>
+
+<br/>
+
 ---
 
 <h3 align="center">
