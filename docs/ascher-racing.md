@@ -11,7 +11,7 @@ Get 5% off any purchase from <a href="https://ascher-racing.com">Ascher Racing</
 ---
 
 <h4 align="center"><strong>
-<a href="#video-walkthrough">Video Walkthrough</a> - <a href="#device-compatibility">Device Compatibility</a> - <a href="#radial-dials">Radial Dials</a> - <a href="#device-settings">Device Settings</a>
+<a href="#video-walkthrough">Video Walkthrough</a> - <a href="#device-compatibility">Device Compatibility</a> - <a href="#rotary-dials">Rotary Dials</a> - <a href="#device-settings">Device Settings</a>
 </strong></h4>
 
 ---
@@ -47,13 +47,13 @@ Watch the Ascher Racing + Lovely Dashboard Integration Video</a>
 (⚑) Clutch Paddles sold separately.
 
 
-# Radial Dials
+# Rotary Dials
 The **Rotary Dials** in the center of the steering wheel can be used as simple rotaries, but with the advanced features of the Ascher Racing Artura Series, you can convert them into modifier switches. These modifier switches control the output of other buttons or rotaries on the steering wheel, thus giving you a vast number of inputs.
 
-### Customise the Radial Dials
-You can customise the Labels shown on the screen of the Lovely Dashboard by using the [**Settings Configurator**](https://lsr.gg/config) but you can also purchase the [**Lovey Ascher Racing Sticker Sheet**](https://store.lsr.gg/collections/stickers) for the Ascher Racing Artura Series steering wheel.
+### Customise the Rotary Dials
+You can customise the Labels shown on the screen of the Lovely Dashboard by using the [**Settings Configurator**](https://lsr.gg/config), additionally you can also purchase the [**Lovey Ascher Racing Sticker Sheet**](https://store.lsr.gg/collections/stickers) for the Ascher Racing Artura Series steering wheel.
 
-![Ascher Racing Artura Radial Dials](./images/radial-dials.png)
+![Ascher Racing Artura Rotary Dials](./images/rotary-dials.png)
 
 # Device Settings
 The **Ascher Racing Artura Series** steering wheels allow you to customise a few things on the wheel itself. Now, with the **Lovely Dashboard integration** you can see exactly what you're changing, along with useful information and instructions.
