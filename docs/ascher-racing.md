@@ -5,7 +5,7 @@
 ---
 
 > [!CAUTION]
-> REQUIRED! Ascher Racing Firmware version 1.1b11 
+> **REQUIRED!** Ascher Racing Firmware version 1.1b9 (or higher)
 > [**Download Here**](#)
 
 ---
