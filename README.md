@@ -155,33 +155,33 @@ In extended driving sessions, especially during the late hours, light may be sca
 
 Switching to the **Blue True Dark Mode** during these long low-lit driving stints would decrease the amount of melatonin in our body, maintaining alertness.
 
+*Source: [Sleep Foundation](https://www.sleepfoundation.org/bedroom-environment/what-color-light-helps-you-sleep)*
+
 > [!TIP]
 > To use True Dark Mode, you will need to [enable it in the Settings File](./docs/settings.md#true-dark-mode) and [setup your Hot-Key in Simhub](./docs/actions.md#setup-hot-keys).
 
 ![True Dark Mode in Blue helps maintain alertness](./docs/images/primary-tdm-blue.png)
 
-*Source: [Sleep Foundation](https://www.sleepfoundation.org/bedroom-environment/what-color-light-helps-you-sleep)*
 
----
+## Partnerships
 
-# Manufacturer Partnerships
+### Manufacturer Partnerships
 One of the most important advancements of the Lovely Dashboard ecosystem is the inclusion for native support by Manufacturers. This means that the Lovely Dashboard now includes native functions that work with directly with various devices either to enhance your experience or simply make setting up the device much simpler.
 
-* Ascher Racing
+* [Ascher Racing Integration](./docs/ascher-racing.md)
 * Greywolf Technologies **(COMING SOON)**
 
 #### Ascher Racing - [View the Documentation](./docs/ascher-racing.md)
 
-[![Manufacturer Support](./docs/images/ascher-demo.png)](./)
+[![Manufacturer Support](./docs/images/ascher-demo.png)](./docs/ascher-racing.md)
 
----
+### Branding Partnerships
 
-# Branding Partnerships
-
-## Lovely Dashboard Tony Kanaan Edition
+#### Lovely Dashboard Tony Kanaan Edition
 We have partnered with multiple **IndyCar race winner**, **IndyCar Series Champion**, **Indy 500** & **Daytona 24 winner**, Tony Kanaan, to create a uniquely styled Lovely Dashboard. This dashboard includes all the latest features of the Lovely Dashboard but is styled to match Tony Kanaan's identity along with his personal preferences.
 
 ![Lovely Dashboard TK Edition](./docs/images/tk-edition.png)
+
 
 ## Compatibility
 
