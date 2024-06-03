@@ -52,6 +52,9 @@ function ld_getCarClass(carClassName) {
         case "SF Lights":
             return "SFL";
             break;
+        case "Toyota GR86":
+            return "GR86";
+            break;
 
         // Formula 1
         case "Aston Martin":

@@ -1021,7 +1021,6 @@ function ld_getTrackTurn(trackData) {
     return null;
 }
 
-
 //
 //
 // Generic 
