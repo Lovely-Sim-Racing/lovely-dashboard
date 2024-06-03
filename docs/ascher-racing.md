@@ -61,6 +61,9 @@ You can customise the Labels shown on the screen of the Lovely Dashboard by usin
 
 ![Ascher Racing Artura Rotary Dials](./images/rotary-dials.png)
 
+> [!NOTE]
+> To initialise the Rotary Dials, you must first click the trigger button and then rotate the dial. This is necessary in order to capture the modifier mode. This is required only once per Simhub session, you will not be required to do this again until you restart Simhub.
+
 # Device Settings
 The **Ascher Racing Artura Series** steering wheels allow you to customise a few things on the wheel itself. Now, with the **Lovely Dashboard integration** you can see exactly what you're changing, along with useful information and instructions.
 
