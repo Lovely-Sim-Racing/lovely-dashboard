@@ -1,1 +1,184 @@
-{"Variables":{"DashboardVariables":[{"VariableName":"AutoSizeScale","EvaluateOnlyOnce":false,"OverrideWithParentDashboardVariableWhenAvailable":true,"ValueExpression":{"Expression":""},"EvaluateBeforeScreenRoles":false},{"VariableName":"folderName","EvaluateOnlyOnce":false,"OverrideWithParentDashboardVariableWhenAvailable":true,"ValueExpression":{"Expression":""},"EvaluateBeforeScreenRoles":false}]},"DashboardDebugManager":{},"Version":2,"Id":"f54f6fd3-92a0-45c3-8659-7771b4468286","BaseHeight":460,"BaseWidth":830,"BackgroundColor":"#FF000000","Screens":[{"RenderingSkip":0,"Name":"Screen","InGameScreen":true,"IdleScreen":true,"PitScreen":false,"ScreenId":"0d9a4f95-ddc8-4e88-bab2-3602ed38adf1","AllowOverlays":true,"IsForegroundLayer":false,"IsOverlayLayer":false,"OverlayTriggerExpression":{"Expression":""},"ScreenEnabledExpression":{"Expression":""},"OverlayMaxDuration":0,"OverlayMinDuration":0,"IsBackgroundLayer":false,"BackgroundColor":"#FF000000","Items":[{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.GeneratedStaticMapItem, SimHub.Plugins","AlternateTrackSectorColor":"#FF696969","CursorColor":"#FFFF0000","DisplayScale":1.0,"MapShadow":false,"OverrideColorsWithCarClassColors":true,"KeepMapDefinedClassColorsInSingleClass":false,"ForcePlayerDotBorderContrastWhenUsingCarClassColors":true,"MinimumTrackBorderWidth":0.0,"MinimumTrackWidth":8.0,"OpponentStyle":{"LabelFont":"Roboto","LabelFontSize":20.0,"LabelColor":"#FFFFFFFF","DotColor":"#FFFFFFFF","DotBorderThickness":0.0,"DotBordercolor":"#FF000000","DotRadius":30.0,"Bindings":{"DotRadius":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ( ld_trackData() && ld_trackData()['companion'] ) ? 30/ld_trackData()['companion'][0]['scale'] : 30;"},"Mode":2},"LabelFontSize":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ( ld_trackData() && ld_trackData()['companion'] ) ? 20/ld_trackData()['companion'][0]['scale'] : 20;"},"Mode":2}}},"PlayerStyle":{"LabelFont":"Roboto","LabelFontSize":30.0,"LabelColor":"#FFFFFFFF","DotColor":"#FFFFD700","DotBorderThickness":6.0,"DotBordercolor":"#FF000000","DotRadius":40.0,"Bindings":{"DotRadius":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ( ld_trackData() && ld_trackData()['companion'] ) ? 40/ld_trackData()['companion'][0]['scale'] : 40;"},"Mode":2},"LabelFontSize":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ( ld_trackData() && ld_trackData()['companion'] ) ? 30/ld_trackData()['companion'][0]['scale'] : 30;"},"Mode":2}}},"RenderImageHeight":460.06420395709267,"RenderImageWidth":590.08234855366231,"StartLine":{"Color":"#FFFFFFFF","Enabled":true,"Height":60.0,"Width":10.0},"TrackBorderColor":"#FFFFFFFF","TrackBorderWidth":0.0,"TrackColor":"#FFFFFFFF","TrackWidth":30.0,"BackgroundColor":"#00FFFFFF","Height":460.0,"Left":0.0,"Top":0.0,"Visible":true,"Width":830.0,"Name":"Map","RenderingSkip":0,"MinimumRefreshIntervalMS":0.0,"Bindings":{"TrackWidth":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ( ld_trackData() && ld_trackData()['companion'] ) ? 30/ld_trackData()['companion'][0]['scale'] : 30;"},"Mode":2}}}],"MinimumRefreshIntervalMS":0.0}],"SnapToGrid":false,"HideLabels":false,"ShowForeground":true,"ForegroundOpacity":100.0,"ShowBackground":true,"BackgroundOpacity":100.0,"ShowBoundingRectangles":false,"GridSize":10,"Images":[],"Metadata":{"SimHubVersion":"9.2.14","ScreenCount":1.0,"InGameScreensIndexs":[0],"IdleScreensIndexs":[0],"MainPreviewIndex":0,"IsOverlay":false,"Width":830.0,"Height":460.0,"OverlaySizeWarning":false,"MetadataVersion":2.0,"EnableOnDashboardMessaging":true,"PitScreensIndexs":[]},"ShowOnScreenControls":true,"IsOverlay":false,"EnableClickThroughOverlay":true,"EnableOnDashboardMessaging":true}
+{
+  "BackgroundColor": "#FF000000",
+  "BackgroundOpacity": 100.0,
+  "BaseHeight": 460,
+  "BaseWidth": 830,
+  "DashboardDebugManager": {},
+  "EnableClickThroughOverlay": true,
+  "EnableOnDashboardMessaging": true,
+  "ForegroundOpacity": 100.0,
+  "GridSize": 10,
+  "HideLabels": false,
+  "Id": "f54f6fd3-92a0-45c3-8659-7771b4468286",
+  "Images": [],
+  "IsOverlay": false,
+  "Metadata": {
+    "EnableOnDashboardMessaging": true,
+    "Height": 460.0,
+    "IdleScreensIndexs": [
+      0
+    ],
+    "InGameScreensIndexs": [
+      0
+    ],
+    "IsOverlay": false,
+    "MainPreviewIndex": 0,
+    "MetadataVersion": 2.0,
+    "OverlaySizeWarning": false,
+    "PitScreensIndexs": [],
+    "ScreenCount": 1.0,
+    "SimHubVersion": "9.2.14",
+    "Width": 830.0
+  },
+  "Screens": [
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#FF000000",
+      "IdleScreen": true,
+      "InGameScreen": true,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": false,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.GeneratedStaticMapItem, SimHub.Plugins",
+          "AlternateTrackSectorColor": "#FF696969",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "TrackWidth": {
+              "Formula": {
+                "Expression": "return ( ld_trackData() && ld_trackData()['companion'] ) ? 30/ld_trackData()['companion'][0]['scale'] : 30;",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "CursorColor": "#FFFF0000",
+          "DisplayScale": 1.0,
+          "ForcePlayerDotBorderContrastWhenUsingCarClassColors": true,
+          "Height": 460.0,
+          "KeepMapDefinedClassColorsInSingleClass": false,
+          "Left": 0.0,
+          "MapShadow": false,
+          "MinimumRefreshIntervalMS": 0.0,
+          "MinimumTrackBorderWidth": 0.0,
+          "MinimumTrackWidth": 8.0,
+          "Name": "Map",
+          "OpponentStyle": {
+            "Bindings": {
+              "DotRadius": {
+                "Formula": {
+                  "Expression": "return ( ld_trackData() && ld_trackData()['companion'] ) ? 30/ld_trackData()['companion'][0]['scale'] : 30;",
+                  "Interpreter": 1,
+                  "JSExt": 1
+                },
+                "Mode": 2
+              },
+              "LabelFontSize": {
+                "Formula": {
+                  "Expression": "return ( ld_trackData() && ld_trackData()['companion'] ) ? 20/ld_trackData()['companion'][0]['scale'] : 20;",
+                  "Interpreter": 1,
+                  "JSExt": 1
+                },
+                "Mode": 2
+              }
+            },
+            "DotBorderThickness": 0.0,
+            "DotBordercolor": "#FF000000",
+            "DotColor": "#FFFFFFFF",
+            "DotRadius": 30.0,
+            "LabelColor": "#FFFFFFFF",
+            "LabelFont": "Roboto",
+            "LabelFontSize": 20.0
+          },
+          "OverrideColorsWithCarClassColors": true,
+          "PlayerStyle": {
+            "Bindings": {
+              "DotRadius": {
+                "Formula": {
+                  "Expression": "return ( ld_trackData() && ld_trackData()['companion'] ) ? 40/ld_trackData()['companion'][0]['scale'] : 40;",
+                  "Interpreter": 1,
+                  "JSExt": 1
+                },
+                "Mode": 2
+              },
+              "LabelFontSize": {
+                "Formula": {
+                  "Expression": "return ( ld_trackData() && ld_trackData()['companion'] ) ? 30/ld_trackData()['companion'][0]['scale'] : 30;",
+                  "Interpreter": 1,
+                  "JSExt": 1
+                },
+                "Mode": 2
+              }
+            },
+            "DotBorderThickness": 6.0,
+            "DotBordercolor": "#FF000000",
+            "DotColor": "#FFFFD700",
+            "DotRadius": 40.0,
+            "LabelColor": "#FFFFFFFF",
+            "LabelFont": "Roboto",
+            "LabelFontSize": 30.0
+          },
+          "RenderImageHeight": 460.0642039570927,
+          "RenderImageWidth": 590.0823485536623,
+          "RenderingSkip": 0,
+          "StartLine": {
+            "Color": "#FFFFFFFF",
+            "Enabled": true,
+            "Height": 60.0,
+            "Width": 10.0
+          },
+          "Top": 0.0,
+          "TrackBorderColor": "#FFFFFFFF",
+          "TrackBorderWidth": 0.0,
+          "TrackColor": "#FFFFFFFF",
+          "TrackWidth": 30.0,
+          "Visible": true,
+          "Width": 830.0
+        }
+      ],
+      "MinimumRefreshIntervalMS": 0.0,
+      "Name": "Screen",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": ""
+      },
+      "PitScreen": false,
+      "RenderingSkip": 0,
+      "ScreenEnabledExpression": {
+        "Expression": ""
+      },
+      "ScreenId": "0d9a4f95-ddc8-4e88-bab2-3602ed38adf1"
+    }
+  ],
+  "ShowBackground": true,
+  "ShowBoundingRectangles": false,
+  "ShowForeground": true,
+  "ShowOnScreenControls": true,
+  "SnapToGrid": false,
+  "Variables": {
+    "DashboardVariables": [
+      {
+        "EvaluateBeforeScreenRoles": false,
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "AutoSizeScale"
+      },
+      {
+        "EvaluateBeforeScreenRoles": false,
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "folderName"
+      }
+    ]
+  },
+  "Version": 2
+}
