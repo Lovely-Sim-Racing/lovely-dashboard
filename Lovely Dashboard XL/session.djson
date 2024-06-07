@@ -1,1 +1,1381 @@
-{"Variables":{"DashboardVariables":[{"VariableName":"dashName","EvaluateOnlyOnce":false,"OverrideWithParentDashboardVariableWhenAvailable":true,"ValueExpression":{"Expression":""},"EvaluateBeforeScreenRoles":false},{"VariableName":"folderName","EvaluateOnlyOnce":false,"OverrideWithParentDashboardVariableWhenAvailable":true,"ValueExpression":{"Expression":""},"EvaluateBeforeScreenRoles":false},{"VariableName":"trueDarkMode","EvaluateOnlyOnce":false,"OverrideWithParentDashboardVariableWhenAvailable":true,"ValueExpression":{"Expression":""},"EvaluateBeforeScreenRoles":false}]},"DashboardDebugManager":{},"Version":2,"Id":"c2d35031-e028-4e89-bc56-dd20f49bb157","BaseHeight":80,"BaseWidth":320,"BackgroundColor":"#FF000000","Screens":[{"RenderingSkip":0,"Name":"Session Info","InGameScreen":true,"IdleScreen":false,"PitScreen":false,"ScreenId":"eaa488d4-8a61-464f-b525-54bd7bf03f37","AllowOverlays":true,"IsForegroundLayer":false,"IsOverlayLayer":false,"OverlayTriggerExpression":{"Expression":""},"ScreenEnabledExpression":{"JSExt":3,"Interpreter":1,"Expression":"if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing') {\r\n\r\n\treturn ( $prop('IRacingExtraProperties.iRacing_CurrentSession_IsLimitedSessionLaps') ) ? false : true\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2') {\r\n\t\r\n\treturn ( $prop('DataCorePlugin.GameRawData.mLapsInEvent')>0 && $prop('DataCorePlugin.GameRawData.mSessionDuration')==0 ) ? false : true\r\n\r\n} else {\r\n\treturn true\r\n}"},"OverlayMaxDuration":0,"OverlayMinDuration":0,"IsBackgroundLayer":false,"BackgroundColor":"#FF000000","Items":[{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins","IsRectangleItem":true,"BackgroundColor":"#00FFFFFF","BorderStyle":{"BorderTop":2,"BorderBottom":2,"BorderLeft":2,"BorderRight":2,"RadiusTopLeft":12,"RadiusTopRight":45,"RadiusBottomLeft":12,"RadiusBottomRight":12,"Bindings":{"RadiusTopRight":{"Formula":{"JSExt":3,"Interpreter":1,"Expression":"if ( $prop('variable.dashName') == 'LovelyDashboardXL') {\r\n\r\n\treturn 12\r\n\t\r\n} else {\r\n\t\r\n\treturn ld_getSettings('uiRadius')\r\n\r\n}"},"Mode":2},"BorderColor":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ( ld_getSettings('pitAlert') && $prop('DataCorePlugin.GameData.IsInPitLane') ) ? ld_theme('ld_uiPitLimiter') : ld_theme('ld_uiLine')"},"Mode":2}}},"Height":80.0,"Left":0.0,"Top":0.0,"Visible":true,"Width":320.0,"IsFreezed":true,"Name":"RectangleItem4","RenderingSkip":32,"MinimumRefreshIntervalMS":320.0,"Bindings":{"Height":{"Formula":{"JSExt":3,"Interpreter":1,"Expression":"return ( ld_getSettings('rpmLED') ) ? 70 : 80"},"Mode":2},"Opacity":{"Formula":{"JSExt":3,"Interpreter":1,"Expression":"if ( !ld_getSettings('uiMode') ) {\r\n\treturn 100\r\n} else {\r\n\tswitch ( ld_getSettings('uiMode') ) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}"},"Mode":2},"Top":{"Formula":{"JSExt":3,"Interpreter":1,"Expression":"return ( ld_getSettings('rpmLED') ) ? 5 : 0"},"Mode":2},"Visible":{"Formula":{"JSExt":3,"Interpreter":1,"Expression":"return ( \r\n\t$prop('variable.dashName') == 'LovelyOverlay' ||\r\n\t$prop('variable.dashName') == 'LovelyDashboardCurved'\r\n) ? 0 : 1"},"Mode":2}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins","Group":true,"Repetitions":0,"IsFreezed":true,"Childrens":[{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"Font":"Roboto","FontWeight":"Bold","FontSize":12.0,"Text":"TIME","TextColor":"#FF878787","HorizontalAlignment":2,"VerticalAlignment":1,"BackgroundColor":"#00FFFFFF","Height":14.0,"Left":232.0,"Top":50.0,"Visible":true,"Width":65.0,"IsFreezed":true,"Name":"Label","RenderingSkip":0,"MinimumRefreshIntervalMS":0.0,"Bindings":{"TextColor":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ld_theme('ld_uiLabel')"},"Mode":2}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"Font":"Roboto","FontWeight":"Bold","FontSize":24.0,"Text":"00:00","TextColor":"#FF878787","HorizontalAlignment":2,"VerticalAlignment":2,"BackgroundColor":"#00FFFFFF","Height":35.0,"Left":232.0,"Top":15.0,"Visible":true,"Width":65.0,"IsFreezed":true,"Name":"Clock","RenderingSkip":0,"MinimumRefreshIntervalMS":0.0,"Bindings":{"Text":{"FormatString":"hh\\:mm","Formula":{"JSExt":3,"Interpreter":1,"Expression":"if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing') {\r\n\r\n\treturn secondstotimespan($prop('DataCorePlugin.GameRawData.Telemetry.SessionTimeOfDay'))\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\r\n\treturn secondstotimespan($prop('GameRawData.PacketSessionData.m_timeOfDay') * 60)\r\n\r\n} else {\r\n\r\n\treturn secondstotimespan($prop('DataCorePlugin.GameRawData.Graphics.clock'))\r\n\r\n}\r\n"},"Mode":2},"TextColor":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ld_theme('ld_uiLabel')"},"Mode":2}}}],"Visible":true,"Name":"Clock","RenderingSkip":32,"MinimumRefreshIntervalMS":320.0,"Bindings":{"Visible":{"Formula":{"JSExt":3,"Interpreter":1,"Expression":"if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' || $prop('DataCorePlugin.CurrentGame') == 'RFactor2' || $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa') {\r\n\t\r\n\treturn 0\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing') {\r\n\r\n\treturn ( $prop('DataCorePlugin.GameRawData.Graphics.SessionTimeLeft')=='-1') ? 0 : 1\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\r\n\treturn ( $prop('GameRawData.PacketSessionData.m_sessionTimeLeft') <= 0) ? 0 : 1\r\n\t\r\n} else {\r\n\t\r\n\treturn ( $prop('DataCorePlugin.GameRawData.Graphics.SessionTimeLeft')=='-1') ? 0 : 1\r\n\r\n}"},"Mode":2}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins","Group":true,"Repetitions":0,"IsFreezed":true,"Childrens":[{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"Font":"Roboto","FontWeight":"Bold","FontSize":12.0,"Text":"LAPS","TextColor":"#FF878787","HorizontalAlignment":2,"VerticalAlignment":1,"BackgroundColor":"#00FFFFFF","Height":14.0,"Left":170.0,"Top":50.0,"Visible":true,"Width":55.0,"IsFreezed":true,"Name":"Label","RenderingSkip":0,"MinimumRefreshIntervalMS":0.0,"Bindings":{"Text":{"Formula":{"Expression":"if ([DataCorePlugin.GameData.CurrentLap]>1, 'LAPS', 'LAP')"},"Mode":2},"TextColor":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ld_theme('ld_uiLabel')"},"Mode":2}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"Font":"Roboto","FontWeight":"Bold","FontSize":28.0,"Text":"000","TextColor":"#FFFFFFFF","HorizontalAlignment":2,"VerticalAlignment":2,"BackgroundColor":"#00FFFFFF","Height":35.0,"Left":170.0,"Top":16.0,"Visible":true,"Width":55.0,"IsFreezed":true,"Name":"Lap","RenderingSkip":0,"MinimumRefreshIntervalMS":0.0,"Bindings":{"Text":{"Formula":{"JSExt":0,"Interpreter":1,"Expression":"return $prop('DataCorePlugin.GameData.CurrentLap')"},"Mode":2},"TextColor":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ld_theme('ld_uiTitle')"},"Mode":2}}}],"Visible":true,"Name":"Laps","RenderingSkip":32,"MinimumRefreshIntervalMS":320.0,"Bindings":{"Visible":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ( \r\n\t( $prop('DataCorePlugin.GameRawData.SessionData.SessionInfo.Sessions01.IsLimitedSessionLaps')\r\n\t|| $prop('IRacingExtraProperties.iRacing_CurrentSession_IsLimitedSessionLaps')\r\n\t|| ld_getSim() == \"F1\") &&\r\n\t!ld_isQuali()\r\n\t) ? 0 : 1"},"Mode":2}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.GroupItem, SimHub.Plugins","ChildsPositioning":0,"ChildsPositioningAlignment":0,"GroupPadding":{},"ChildsMargin":{},"ChildAlignmentHorizontal":0,"ChildAlignmentVertical":0,"IsFreezed":true,"Childrens":[{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"Font":"Roboto","FontWeight":"Bold","FontSize":12.0,"Text":"POS","TextColor":"#FF878787","HorizontalAlignment":2,"VerticalAlignment":1,"BackgroundColor":"#00FFFFFF","Height":14.0,"Left":39.0,"Top":35.0,"Visible":true,"Width":35.0,"IsFreezed":true,"Name":"Label","RenderingSkip":0,"MinimumRefreshIntervalMS":0.0,"Bindings":{"TextColor":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ld_theme('ld_uiLabel')"},"Mode":2}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"Font":"Roboto","FontWeight":"Bold","FontSize":24.0,"Text":"/00","TextColor":"#FF878787","HorizontalAlignment":0,"VerticalAlignment":2,"BackgroundColor":"#00FFFFFF","Height":35.0,"Left":36.0,"Top":0.0,"Visible":true,"Width":36.0,"IsFreezed":true,"Name":"PlayersCount","RenderingSkip":0,"MinimumRefreshIntervalMS":0.0,"Bindings":{"Left":{"Formula":{"JSExt":3,"Interpreter":1,"Expression":"return ( $prop('DataCorePlugin.GameData.OpponentsCount') > 9 ) ? 38 : 52"},"Mode":2},"Text":{"FormatString":"0","Formula":{"JSExt":0,"Interpreter":1,"Expression":"return '/' + $prop('DataCorePlugin.GameData.OpponentsCount')"},"Mode":2},"Visible":{"Formula":{"JSExt":3,"Interpreter":1,"Expression":"return ( \r\n\ttimespantoseconds($prop('DataCorePlugin.GameData.SessionTimeLeft')) >= 3600 &&\r\n\t$prop('DataCorePlugin.GameData.OpponentsCount') > 9 &&\r\n\t!$prop('IRacingExtraProperties.iRacing_CurrentSession_IsLimitedSessionLaps') &&\r\n\tld_getSim() != \"F1\"\r\n) ? false : true"},"Mode":2},"TextColor":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ld_theme('ld_uiLabel')"},"Mode":2}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"Font":"Roboto","FontWeight":"Bold","FontSize":28.0,"Text":"00","TextColor":"#FFFFFFFF","HorizontalAlignment":2,"VerticalAlignment":2,"BackgroundColor":"#00FFFFFF","Height":35.0,"Left":0.0,"Top":1.0,"Visible":true,"Width":35.0,"IsFreezed":true,"Name":"Position","RenderingSkip":0,"MinimumRefreshIntervalMS":0.0,"Bindings":{"Left":{"Formula":{"JSExt":3,"Interpreter":1,"Expression":"if ( $prop('OpponentsCount') <= 9 ) {\r\n\r\n\treturn 16\r\n\t\r\n} else {\r\n\r\n\treturn ( \r\n\t\ttimespantoseconds($prop('DataCorePlugin.GameData.SessionTimeLeft')) >= 3600  &&\r\n\t\t!$prop('IRacingExtraProperties.iRacing_CurrentSession_IsLimitedSessionLaps') &&\r\n\t\tld_getSim() != \"F1\"\r\n\t) ? 38 : 0\r\n\r\n}"},"Mode":2},"Text":{"FormatString":"0","Formula":{"JSExt":0,"Interpreter":1,"Expression":"return $prop('DataCorePlugin.GameData.PlayerLeaderboardPosition');"},"Mode":2},"TextColor":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ld_theme('ld_uiTitle')"},"Mode":2}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins","Group":true,"Repetitions":0,"Childrens":[{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"Font":"Roboto","FontWeight":"Bold","FontSize":12.0,"Text":"00","TextColor":"#FF00FF02","HorizontalAlignment":0,"VerticalAlignment":1,"CharWidth":10.0,"BackgroundColor":"#00FFFFFF","Height":14.0,"Left":31.0,"Top":35.0,"Visible":true,"Width":20.0,"Name":"PosGain","RenderingSkip":0,"MinimumRefreshIntervalMS":0.0,"Bindings":{"Text":{"Formula":{"JSExt":0,"Interpreter":1,"Expression":"return Math.abs( driverpositiongain( $prop('DataCorePlugin.GameData.PlayerLeaderboardPosition') ) )"},"Mode":2},"TextColor":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"if ( driverpositiongain($prop('DataCorePlugin.GameData.PlayerLeaderboardPosition')) > 0 ) {\r\n\treturn ld_theme('ld_uiGain');\r\n} else if ( driverpositiongain($prop('DataCorePlugin.GameData.PlayerLeaderboardPosition')) < 0 ) {\r\n\treturn ld_theme('ld_uiLoss');\r\n} else {\r\n\treturn ld_theme('ld_uiLabel');\r\n}"},"Mode":2}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins","Image":"pos-gain-0","AutoSize":true,"BackgroundColor":"#00FFFFFF","Height":6.0,"Left":18.0,"Top":38.0,"Visible":true,"Width":10.0,"Name":"ImageItem","RenderingSkip":0,"MinimumRefreshIntervalMS":0.0,"Bindings":{"Image":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"if ( driverpositiongain( $prop('DataCorePlugin.GameData.PlayerLeaderboardPosition') ) > 0 ) {\r\n\treturn ld_themeImage('pos-gain')\r\n} else if ( driverpositiongain( $prop('DataCorePlugin.GameData.PlayerLeaderboardPosition') ) < 0 ) {\r\n\treturn ld_themeImage('pos-loss')\r\n} else {\r\n\treturn ld_themeImage('pos-same')\r\n}"},"Mode":2}}}],"Visible":true,"Name":"Gain/Loss","RenderingSkip":0,"MinimumRefreshIntervalMS":0.0,"Bindings":{"Visible":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return !ld_isQuali()"},"Mode":2}}}],"BackgroundColor":"#00FFFFFF","Height":50.0,"Left":100.0,"Top":15.0,"Visible":true,"Width":90.0,"Name":"Position","RenderingSkip":32,"MinimumRefreshIntervalMS":320.0,"Bindings":{"Left":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ( \r\n\t( $prop('DataCorePlugin.GameRawData.SessionData.SessionInfo.Sessions01.IsLimitedSessionLaps')\r\n\t|| $prop('IRacingExtraProperties.iRacing_CurrentSession_IsLimitedSessionLaps')\r\n\t|| ld_getSim() == \"F1\") &&\r\n\t!ld_isQuali()\r\n\t) ? 130 : 100"},"Mode":2}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins","Group":true,"Repetitions":0,"IsFreezed":true,"Childrens":[{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"Font":"Roboto","FontWeight":"Bold","FontSize":12.0,"Text":"SESSION","TextColor":"#FF878787","HorizontalAlignment":0,"VerticalAlignment":1,"BackgroundColor":"#00FFFFFF","Height":14.0,"Left":17.0,"Top":50.0,"Visible":true,"Width":120.0,"IsFreezed":true,"Name":"SessionType","RenderingSkip":0,"MinimumRefreshIntervalMS":0.0,"Bindings":{"Text":{"Formula":{"JSExt":3,"Interpreter":1,"Expression":"return ucase($prop('DataCorePlugin.GameData.SessionTypeName'))"},"Mode":2},"TextColor":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ld_theme('ld_uiLabel')"},"Mode":2}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"Font":"Roboto","FontWeight":"Bold","FontSize":24.0,"Text":":00","TextColor":"#FF878787","HorizontalAlignment":0,"VerticalAlignment":2,"BackgroundColor":"#00FFFFFF","Height":35.0,"Left":50.0,"Top":15.0,"Visible":true,"Width":35.0,"IsFreezed":true,"Name":"Countdown < Hour","RenderingSkip":0,"MinimumRefreshIntervalMS":0.0,"Bindings":{"Text":{"FormatString":"0","Formula":{"JSExt":3,"Interpreter":1,"Expression":"return ':'+format($prop('DataCorePlugin.GameData.SessionTimeLeft'), \"ss\")"},"Mode":2},"Visible":{"Formula":{"JSExt":0,"Interpreter":1,"Expression":"if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') && $prop('DataCorePlugin.GameRawData.PacketSessionData.m_sessionType') == 9 ) {\r\n\treturn false\r\n} else {\r\n\treturn ( $prop('DataCorePlugin.GameRawData.Graphics.SessionTimeLeft') != -1 ) ? timespantoseconds($prop('DataCorePlugin.GameData.SessionTimeLeft')) < 3600 : false;\r\n}\r\n\r\n/*\r\nif ([DataCorePlugin.GameRawData.Graphics.SessionTimeLeft]!='-1',\r\n\r\n\ttimespantoseconds([DataCorePlugin.GameData.SessionTimeLeft]) < 3600,\r\n\t0\r\n\t\r\n) */"},"Mode":2},"TextColor":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ld_theme('ld_uiLabel')"},"Mode":2}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"Font":"Roboto","FontWeight":"Bold","FontSize":28.0,"Text":"00","TextColor":"#FFFFFFFF","HorizontalAlignment":0,"VerticalAlignment":2,"BackgroundColor":"#00FFFFFF","Height":35.0,"Left":17.0,"Top":16.0,"Visible":true,"Width":35.0,"IsFreezed":true,"Name":"Countdown < Hour","RenderingSkip":0,"MinimumRefreshIntervalMS":0.0,"Bindings":{"Text":{"FormatString":"0","Formula":{"JSExt":3,"Interpreter":1,"Expression":"return format($prop('DataCorePlugin.GameData.SessionTimeLeft'), \"mm\")"},"Mode":2},"Visible":{"Formula":{"JSExt":0,"Interpreter":1,"Expression":"if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') && $prop('DataCorePlugin.GameRawData.PacketSessionData.m_sessionType') == 9 ) {\r\n\r\n\treturn false\r\n\t\r\n} else {\r\n\t\r\n\treturn ( $prop('DataCorePlugin.GameRawData.Graphics.SessionTimeLeft') != -1 ) ? timespantoseconds($prop('DataCorePlugin.GameData.SessionTimeLeft')) < 3600 : false;\r\n\r\n}\r\n\r\n/*\r\nif ([DataCorePlugin.GameRawData.Graphics.SessionTimeLeft]!='-1',\r\n\r\n\ttimespantoseconds([DataCorePlugin.GameData.SessionTimeLeft]) < 3600,\r\n\t0\r\n\t\r\n) */"},"Mode":2},"TextColor":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ld_theme('ld_uiTitle')"},"Mode":2}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"Font":"Roboto","FontWeight":"Bold","FontSize":24.0,"Text":":00","TextColor":"#FF878787","HorizontalAlignment":0,"VerticalAlignment":2,"BackgroundColor":"#00FFFFFF","Height":35.0,"Left":89.0,"Top":15.0,"Visible":false,"Width":39.0,"IsFreezed":true,"Name":"Countdown > Hour","RenderingSkip":0,"MinimumRefreshIntervalMS":0.0,"Bindings":{"Text":{"FormatString":"0","Formula":{"JSExt":3,"Interpreter":1,"Expression":"return ':'+format($prop('DataCorePlugin.GameData.SessionTimeLeft'), \"ss\")"},"Mode":2},"Visible":{"Formula":{"JSExt":0,"Interpreter":1,"Expression":"if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') && $prop('DataCorePlugin.GameRawData.PacketSessionData.m_sessionType') == 9 ) {\r\n\treturn false\r\n} else {\r\n\treturn ( $prop('DataCorePlugin.GameRawData.Graphics.SessionTimeLeft') != -1 ) ? timespantoseconds($prop('DataCorePlugin.GameData.SessionTimeLeft')) >= 3600 : false;\r\n}\r\n\r\n\r\n/*\r\nif ([DataCorePlugin.GameRawData.Graphics.SessionTimeLeft]!='-1',\r\n\r\n\ttimespantoseconds([DataCorePlugin.GameData.SessionTimeLeft]) >= 3600,\r\n\t0\r\n\r\n)\r\n*/"},"Mode":2},"TextColor":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ld_theme('ld_uiLabel')"},"Mode":2}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"Font":"Roboto","FontWeight":"Bold","FontSize":28.0,"Text":"00:00","TextColor":"#FFFFFFFF","HorizontalAlignment":0,"VerticalAlignment":2,"BackgroundColor":"#00FFFFFF","Height":35.0,"Left":17.0,"Top":16.0,"Visible":false,"Width":75.0,"IsFreezed":true,"Name":"Countdown > Hour","RenderingSkip":0,"MinimumRefreshIntervalMS":0.0,"Bindings":{"Text":{"FormatString":"0","Formula":{"JSExt":3,"Interpreter":1,"Expression":"return format($prop('DataCorePlugin.GameData.SessionTimeLeft'), \"hh\")+':'+format($prop('DataCorePlugin.GameData.SessionTimeLeft'), \"mm\")"},"Mode":2},"Visible":{"Formula":{"JSExt":0,"Interpreter":1,"Expression":"if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') && $prop('DataCorePlugin.GameRawData.PacketSessionData.m_sessionType') == 9 ) {\r\n\r\n\treturn false\r\n\t\r\n} else {\r\n\t\r\n\treturn ( $prop('DataCorePlugin.GameRawData.Graphics.SessionTimeLeft') != -1 ) ? timespantoseconds($prop('DataCorePlugin.GameData.SessionTimeLeft')) >= 3600 : false;\r\n\r\n}\r\n\r\n\r\n\r\n/*\r\nif ([DataCorePlugin.GameRawData.Graphics.SessionTimeLeft]!='-1',\r\n\ttimespantoseconds([DataCorePlugin.GameData.SessionTimeLeft]) >= 3600,\r\n\t0\r\n)\r\n*/"},"Mode":2},"TextColor":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ld_theme('ld_uiTitle')"},"Mode":2}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"Font":"Roboto","FontWeight":"Bold","FontSize":28.0,"Text":"00:00","TextColor":"#FFFFFFFF","HorizontalAlignment":0,"VerticalAlignment":2,"BackgroundColor":"#00FFFFFF","Height":35.0,"Left":17.0,"Top":16.0,"Visible":false,"Width":120.0,"IsFreezed":true,"Name":"Track Time","RenderingSkip":0,"MinimumRefreshIntervalMS":0.0,"Bindings":{"Text":{"FormatString":"hh\\:mm","Formula":{"JSExt":3,"Interpreter":1,"Expression":"if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing') {\r\n\r\n\treturn secondstotimespan($prop('DataCorePlugin.GameRawData.Telemetry.SessionTimeOfDay'))\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\r\n\treturn secondstotimespan($prop('GameRawData.PacketSessionData.m_timeOfDay') * 60)\r\n\r\n} else {\r\n\r\n\treturn secondstotimespan($prop('DataCorePlugin.GameRawData.Graphics.clock'))\r\n\r\n}\r\n"},"Mode":2},"Visible":{"Formula":{"JSExt":3,"Interpreter":1,"Expression":"if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\r\n\treturn ( $prop('GameRawData.PacketSessionData.m_sessionTimeLeft') <= 0) ? 1 : 0\r\n\t\r\n} else {\r\n\t\r\n\treturn ( $prop('DataCorePlugin.GameRawData.Graphics.SessionTimeLeft') == '-1' ) ? 1 : 0 \r\n\r\n}"},"Mode":2},"TextColor":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ld_theme('ld_uiTitle')"},"Mode":2}}}],"Visible":true,"Name":"Session Time","RenderingSkip":32,"MinimumRefreshIntervalMS":320.0,"Bindings":{"Visible":{"Formula":{"JSExt":3,"Interpreter":1,"Expression":"return ( \r\n\t( $prop('DataCorePlugin.GameRawData.SessionData.SessionInfo.Sessions01.IsLimitedSessionLaps')\r\n\t|| $prop('IRacingExtraProperties.iRacing_CurrentSession_IsLimitedSessionLaps')\r\n\t|| ld_getSim() == \"F1\" ) &&\r\n\t!ld_isQuali() || $prop('DataCorePlugin.GameData.SessionTypeName') == 'Offline Testing'\r\n\t) ? 0 : 1"},"Mode":2}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins","Group":true,"Repetitions":0,"IsFreezed":true,"Childrens":[{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"Font":"Roboto","FontWeight":"Bold","FontSize":12.0,"Text":"SESSION","TextColor":"#FF878787","HorizontalAlignment":0,"VerticalAlignment":1,"BackgroundColor":"#00FFFFFF","Height":14.0,"Left":17.0,"Top":50.0,"Visible":true,"Width":120.0,"IsFreezed":true,"Name":"SessionType","RenderingSkip":0,"MinimumRefreshIntervalMS":0.0,"Bindings":{"Text":{"Formula":{"JSExt":3,"Interpreter":1,"Expression":"return ucase($prop('DataCorePlugin.GameData.SessionTypeName'))"},"Mode":2},"TextColor":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ld_theme('ld_uiLabel')"},"Mode":2}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"Font":"Roboto","FontWeight":"Bold","FontSize":24.0,"Text":"/000","TextColor":"#FF878787","HorizontalAlignment":0,"VerticalAlignment":2,"BackgroundColor":"#00FFFFFF","Height":35.0,"Left":65.0,"Top":15.0,"Visible":true,"Width":50.0,"IsFreezed":true,"Name":"Total Laps","RenderingSkip":0,"MinimumRefreshIntervalMS":0.0,"Bindings":{"Text":{"FormatString":"0","Formula":{"JSExt":0,"Interpreter":1,"Expression":"return '/'+$prop('TotalLaps')"},"Mode":2},"TextColor":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ld_theme('ld_uiLabel')"},"Mode":2},"Left":{"Formula":{"JSExt":0,"Interpreter":1,"Expression":"if ( $prop('DataCorePlugin.GameData.CurrentLap') < 10 ) {\r\n\treturn 35;\r\n} else if ( $prop('DataCorePlugin.GameData.CurrentLap') < 100) {\r\n\treturn 50;\r\n} else {\r\n\treturn 65;\r\n}"},"Mode":2}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"Font":"Roboto","FontWeight":"Bold","FontSize":28.0,"Text":"000","TextColor":"#FFFFFFFF","HorizontalAlignment":0,"VerticalAlignment":2,"BackgroundColor":"#00FFFFFF","Height":35.0,"Left":17.0,"Top":16.0,"Visible":true,"Width":50.0,"IsFreezed":true,"Name":"Lap","RenderingSkip":0,"MinimumRefreshIntervalMS":0.0,"Bindings":{"Text":{"FormatString":"0","Formula":{"JSExt":3,"Interpreter":1,"Expression":"return $prop('DataCorePlugin.GameData.CurrentLap')"},"Mode":2},"TextColor":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ld_theme('ld_uiTitle')"},"Mode":2}}}],"Visible":false,"Name":"Session Laps","RenderingSkip":32,"MinimumRefreshIntervalMS":320.0,"Bindings":{"Visible":{"Formula":{"JSExt":3,"Interpreter":1,"Expression":"return ( \r\n\t( $prop('DataCorePlugin.GameRawData.SessionData.SessionInfo.Sessions01.IsLimitedSessionLaps')\r\n\t|| $prop('IRacingExtraProperties.iRacing_CurrentSession_IsLimitedSessionLaps')\r\n\t|| ld_getSim() == \"F1\" ) &&\r\n\t!ld_isQuali()\r\n\t) ? 1 : 0"},"Mode":2}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"Font":"Roboto","FontWeight":"Bold","TextWrapping":2,"FontSize":18.0,"Text":"SESSION","TextColor":"#FF878787","HorizontalAlignment":0,"VerticalAlignment":1,"BackgroundColor":"#00FFFFFF","Height":46.0,"Left":17.0,"Top":16.0,"Visible":false,"Width":120.0,"IsFreezed":true,"Name":"SessionType","RenderingSkip":32,"MinimumRefreshIntervalMS":320.0,"Bindings":{"Text":{"Formula":{"Expression":"ucase([DataCorePlugin.GameData.SessionTypeName])\r\n\r\n"},"Mode":2},"Visible":{"Formula":{"JSExt":3,"Interpreter":1,"Expression":"return ( $prop('DataCorePlugin.GameData.SessionTypeName') == 'Offline Testing' ) ? 1 : 0"},"Mode":2},"TextColor":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ld_theme('ld_uiLabel')"},"Mode":2}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins","Group":true,"Repetitions":0,"IsFreezed":true,"Childrens":[{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"Font":"Roboto","FontWeight":"Bold","FontSize":20.0,"Text":"SG00","TextColor":"#FFFFFFFF","HorizontalAlignment":1,"VerticalAlignment":1,"BackgroundColor":"#FF353535","BorderStyle":{"RadiusTopLeft":6,"RadiusTopRight":6,"RadiusBottomLeft":6,"RadiusBottomRight":6,"Bindings":{"RadiusTopRight":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"if ( $prop('variable.dashName') == 'LovelyDashboardXL') {\r\n\r\n\treturn 6\r\n\t\r\n} else {\r\n\t\r\n\treturn ld_getSettings('uiRadius')-15\r\n\r\n}"},"Mode":2}}},"Height":50.0,"Left":237.0,"Top":15.0,"Visible":true,"BlinkDelay":750.0,"Width":65.0,"Name":"BG","RenderingSkip":0,"MinimumRefreshIntervalMS":0.0,"Bindings":{"BackgroundColor":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ld_theme('ld_uiBgAlt')"},"Mode":2},"TextColor":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ld_theme('ld_uiLabel')"},"Mode":2},"Text":{"Formula":{"JSExt":0,"Interpreter":1,"Expression":"var penalty = $prop('DataCorePlugin.GameRawData.Graphics.Penalty')\r\n\r\nswitch (penalty) {\r\n  case 1: //ACC_DriveThrough_Cutting\r\n  case 7: //ACC_DriveThrough_PitSpeeding\r\n  case 19: //ACC_DriveThrough_IgnoredDriverStint\r\n    return 'DT';\r\n    break;\r\n  case 2: //ACC_StopAndGo_10_Cutting\r\n  case 8: //ACC_StopAndGo_10_PitSpeeding\r\n    return 'SG10';\r\n    break;\r\n  case 3: //ACC_StopAndGo_20_Cutting\r\n  case 9: //ACC_StopAndGo_20_PitSpeeding\r\n    return 'SG20';\r\n    break;\r\n  case 4: //ACC_StopAndGo_30_Cutting\r\n  case 10: //ACC_StopAndGo_30_PitSpeeding\r\n    return 'SG30';\r\n    break;\r\n  case 5: //ACC_Disqualified_Cutting\r\n  case 11: //ACC_Disqualified_PitSpeeding\r\n  case 13: //ACC_Disqualified_IgnoredMandatoryPit\r\n  case 15: //ACC_Disqualified_Trolling\r\n  case 16: //ACC_Disqualified_PitEntry\r\n  case 17: //ACC_Disqualified_PitExit\r\n  case 18: //ACC_Disqualified_Wrongway\r\n  case 20: //ACC_Disqualified_IgnoredDriverStint\r\n  case 21: //ACC_Disqualified_ExceededDriverStintLimit\r\n  case 22: //ACC_Disqualified_Wrongway\r\n    return 'DSQ';\r\n    break;\r\n  default:\r\n  \treturn ''\r\n    break;\r\n}"},"Mode":2}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"Font":"Roboto","FontWeight":"Bold","FontSize":20.0,"Text":"SG00","TextColor":"#FFFFFFFF","HorizontalAlignment":1,"VerticalAlignment":1,"BackgroundColor":"#FFFF0000","BorderStyle":{"RadiusTopLeft":6,"RadiusTopRight":6,"RadiusBottomLeft":6,"RadiusBottomRight":6,"Bindings":{"RadiusTopRight":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"if ( $prop('variable.dashName') == 'LovelyDashboardXL') {\r\n\r\n\treturn 6\r\n\t\r\n} else {\r\n\t\r\n\treturn ld_getSettings('uiRadius')-15\r\n\r\n}"},"Mode":2}}},"Height":50.0,"Left":237.0,"Top":15.0,"Visible":true,"BlinkDelay":750.0,"BlinkEnabled":true,"Width":65.0,"Name":"Penalty","RenderingSkip":0,"MinimumRefreshIntervalMS":0.0,"Bindings":{"BackgroundColor":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ld_theme('ld_uiAlert')"},"Mode":2},"TextColor":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ld_theme('ld_uiAlertText')"},"Mode":2},"Text":{"Formula":{"JSExt":0,"Interpreter":1,"Expression":"var penalty = $prop('DataCorePlugin.GameRawData.Graphics.Penalty')\r\n\r\nswitch (penalty) {\r\n  case 1: //ACC_DriveThrough_Cutting\r\n  case 7: //ACC_DriveThrough_PitSpeeding\r\n  case 19: //ACC_DriveThrough_IgnoredDriverStint\r\n    return 'DT';\r\n    break;\r\n  case 2: //ACC_StopAndGo_10_Cutting\r\n  case 8: //ACC_StopAndGo_10_PitSpeeding\r\n    return 'SG10';\r\n    break;\r\n  case 3: //ACC_StopAndGo_20_Cutting\r\n  case 9: //ACC_StopAndGo_20_PitSpeeding\r\n    return 'SG20';\r\n    break;\r\n  case 4: //ACC_StopAndGo_30_Cutting\r\n  case 10: //ACC_StopAndGo_30_PitSpeeding\r\n    return 'SG30';\r\n    break;\r\n  case 5: //ACC_Disqualified_Cutting\r\n  case 11: //ACC_Disqualified_PitSpeeding\r\n  case 13: //ACC_Disqualified_IgnoredMandatoryPit\r\n  case 15: //ACC_Disqualified_Trolling\r\n  case 16: //ACC_Disqualified_PitEntry\r\n  case 17: //ACC_Disqualified_PitExit\r\n  case 18: //ACC_Disqualified_Wrongway\r\n  case 20: //ACC_Disqualified_IgnoredDriverStint\r\n  case 21: //ACC_Disqualified_ExceededDriverStintLimit\r\n  case 22: //ACC_Disqualified_Wrongway\r\n    return 'DSQ';\r\n    break;\r\n  default:\r\n  \treturn ''\r\n    break;\r\n}"},"Mode":2}}}],"Visible":false,"Name":"ACC Penalty","RenderingSkip":0,"MinimumRefreshIntervalMS":0.0,"Bindings":{"Visible":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ( $prop('DataCorePlugin.GameRawData.Graphics.Penalty') != 0 && ld_getSim() == \"ACC\" ) ? true : false ;"},"Mode":2}}}],"MinimumRefreshIntervalMS":0.0}],"SnapToGrid":false,"HideLabels":true,"ShowForeground":true,"ForegroundOpacity":100.0,"ShowBackground":true,"BackgroundOpacity":100.0,"ShowBoundingRectangles":false,"GridSize":10,"Images":[{"Name":"pos-gain-1","Extension":".png","Modified":false,"Optimized":true,"Length":138,"MD5":"e03cea8b030df1e5b734139c9d7a01fb"},{"Name":"pos-loss-1","Extension":".png","Modified":false,"Optimized":true,"Length":140,"MD5":"f6bf6d30dbe219372352d986b364017f"},{"Name":"pos-same-1","Extension":".png","Modified":false,"Optimized":true,"Length":72,"MD5":"fcf115f047239260d09142b331429bb3"},{"Name":"pos-gain-3","Extension":".png","Modified":false,"Optimized":true,"Length":138,"MD5":"e03cea8b030df1e5b734139c9d7a01fb"},{"Name":"pos-loss-3","Extension":".png","Modified":false,"Optimized":true,"Length":142,"MD5":"684f650840f9567328a5c145ea7104ac"},{"Name":"pos-same-3","Extension":".png","Modified":false,"Optimized":true,"Length":73,"MD5":"14edbdf50f4f2c13efc41a5cf28f324a"},{"Name":"pos-gain-4","Extension":".png","Modified":false,"Optimized":true,"Length":138,"MD5":"e03cea8b030df1e5b734139c9d7a01fb"},{"Name":"pos-loss-4","Extension":".png","Modified":false,"Optimized":true,"Length":142,"MD5":"684f650840f9567328a5c145ea7104ac"},{"Name":"pos-same-4","Extension":".png","Modified":false,"Optimized":true,"Length":72,"MD5":"ee98509220a208755b75463554aff4b6"},{"Name":"pos-gain-0","Extension":".png","Modified":false,"Optimized":true,"Width":10,"Height":6,"Length":133,"MD5":"d653ce8368499a1e9fe793188102ef3d"},{"Name":"pos-loss-0","Extension":".png","Modified":false,"Optimized":true,"Length":140,"MD5":"f6bf6d30dbe219372352d986b364017f"},{"Name":"pos-same-0","Extension":".png","Modified":false,"Optimized":true,"Length":71,"MD5":"2aebf1447058264a62f5ef90a6d9b8d9"},{"Name":"pos-gain-2","Extension":".png","Modified":false,"Optimized":true,"Length":138,"MD5":"e03cea8b030df1e5b734139c9d7a01fb"},{"Name":"pos-loss-2","Extension":".png","Modified":false,"Optimized":true,"Length":142,"MD5":"684f650840f9567328a5c145ea7104ac"},{"Name":"pos-same-2","Extension":".png","Modified":false,"Optimized":true,"Length":73,"MD5":"f5c4a22a2110e2aab353fb7acf03f192"}],"Metadata":{"SimHubVersion":"9.2.7b1","ScreenCount":1.0,"InGameScreensIndexs":[0],"IdleScreensIndexs":[],"MainPreviewIndex":0,"IsOverlay":false,"Width":320.0,"Height":80.0,"OverlaySizeWarning":false,"MetadataVersion":2.0,"EnableOnDashboardMessaging":true,"PitScreensIndexs":[]},"ShowOnScreenControls":true,"IsOverlay":false,"EnableClickThroughOverlay":true,"EnableOnDashboardMessaging":true}
+{
+  "BackgroundColor": "#FF000000",
+  "BackgroundOpacity": 100.0,
+  "BaseHeight": 80,
+  "BaseWidth": 320,
+  "DashboardDebugManager": {},
+  "EnableClickThroughOverlay": true,
+  "EnableOnDashboardMessaging": true,
+  "ForegroundOpacity": 100.0,
+  "GridSize": 10,
+  "HideLabels": true,
+  "Id": "c2d35031-e028-4e89-bc56-dd20f49bb157",
+  "Images": [
+    {
+      "Extension": ".png",
+      "Length": 138,
+      "MD5": "e03cea8b030df1e5b734139c9d7a01fb",
+      "Modified": false,
+      "Name": "pos-gain-1",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Length": 140,
+      "MD5": "f6bf6d30dbe219372352d986b364017f",
+      "Modified": false,
+      "Name": "pos-loss-1",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Length": 72,
+      "MD5": "fcf115f047239260d09142b331429bb3",
+      "Modified": false,
+      "Name": "pos-same-1",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Length": 138,
+      "MD5": "e03cea8b030df1e5b734139c9d7a01fb",
+      "Modified": false,
+      "Name": "pos-gain-3",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Length": 142,
+      "MD5": "684f650840f9567328a5c145ea7104ac",
+      "Modified": false,
+      "Name": "pos-loss-3",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Length": 73,
+      "MD5": "14edbdf50f4f2c13efc41a5cf28f324a",
+      "Modified": false,
+      "Name": "pos-same-3",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Length": 138,
+      "MD5": "e03cea8b030df1e5b734139c9d7a01fb",
+      "Modified": false,
+      "Name": "pos-gain-4",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Length": 142,
+      "MD5": "684f650840f9567328a5c145ea7104ac",
+      "Modified": false,
+      "Name": "pos-loss-4",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Length": 72,
+      "MD5": "ee98509220a208755b75463554aff4b6",
+      "Modified": false,
+      "Name": "pos-same-4",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Height": 6,
+      "Length": 133,
+      "MD5": "d653ce8368499a1e9fe793188102ef3d",
+      "Modified": false,
+      "Name": "pos-gain-0",
+      "Optimized": true,
+      "Width": 10
+    },
+    {
+      "Extension": ".png",
+      "Length": 140,
+      "MD5": "f6bf6d30dbe219372352d986b364017f",
+      "Modified": false,
+      "Name": "pos-loss-0",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Length": 71,
+      "MD5": "2aebf1447058264a62f5ef90a6d9b8d9",
+      "Modified": false,
+      "Name": "pos-same-0",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Length": 138,
+      "MD5": "e03cea8b030df1e5b734139c9d7a01fb",
+      "Modified": false,
+      "Name": "pos-gain-2",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Length": 142,
+      "MD5": "684f650840f9567328a5c145ea7104ac",
+      "Modified": false,
+      "Name": "pos-loss-2",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Length": 73,
+      "MD5": "f5c4a22a2110e2aab353fb7acf03f192",
+      "Modified": false,
+      "Name": "pos-same-2",
+      "Optimized": true
+    }
+  ],
+  "IsOverlay": false,
+  "Metadata": {
+    "EnableOnDashboardMessaging": true,
+    "Height": 80.0,
+    "IdleScreensIndexs": [],
+    "InGameScreensIndexs": [
+      0
+    ],
+    "IsOverlay": false,
+    "MainPreviewIndex": 0,
+    "MetadataVersion": 2.0,
+    "OverlaySizeWarning": false,
+    "PitScreensIndexs": [],
+    "ScreenCount": 1.0,
+    "SimHubVersion": "9.2.7b1",
+    "Width": 320.0
+  },
+  "Screens": [
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#FF000000",
+      "IdleScreen": false,
+      "InGameScreen": true,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": false,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Height": {
+              "Formula": {
+                "Expression": "return ( ld_getSettings('rpmLED') ) ? 70 : 80",
+                "Interpreter": 1,
+                "JSExt": 3
+              },
+              "Mode": 2
+            },
+            "Opacity": {
+              "Formula": {
+                "Expression": "if ( !ld_getSettings('uiMode') ) {\r\n\treturn 100\r\n} else {\r\n\tswitch ( ld_getSettings('uiMode') ) {\r\n\t\tcase 1: return 20 // Low\r\n\t\tcase 2: return 45 // Medium\r\n\t\tcase 3: return 100 // High\r\n\t\tdefault: return 100\r\n\t}\r\n}",
+                "Interpreter": 1,
+                "JSExt": 3
+              },
+              "Mode": 2
+            },
+            "Top": {
+              "Formula": {
+                "Expression": "return ( ld_getSettings('rpmLED') ) ? 5 : 0",
+                "Interpreter": 1,
+                "JSExt": 3
+              },
+              "Mode": 2
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "return ( \r\n\t$prop('variable.dashName') == 'LovelyOverlay' ||\r\n\t$prop('variable.dashName') == 'LovelyDashboardCurved'\r\n) ? 0 : 1",
+                "Interpreter": 1,
+                "JSExt": 3
+              },
+              "Mode": 2
+            }
+          },
+          "BorderStyle": {
+            "Bindings": {
+              "BorderColor": {
+                "Formula": {
+                  "Expression": "return ( ld_getSettings('pitAlert') && $prop('DataCorePlugin.GameData.IsInPitLane') ) ? ld_theme('ld_uiPitLimiter') : ld_theme('ld_uiLine')",
+                  "Interpreter": 1,
+                  "JSExt": 1
+                },
+                "Mode": 2
+              },
+              "RadiusTopRight": {
+                "Formula": {
+                  "Expression": "if ( $prop('variable.dashName') == 'LovelyDashboardXL') {\r\n\r\n\treturn 12\r\n\t\r\n} else {\r\n\t\r\n\treturn ld_getSettings('uiRadius')\r\n\r\n}",
+                  "Interpreter": 1,
+                  "JSExt": 3
+                },
+                "Mode": 2
+              }
+            },
+            "BorderBottom": 2,
+            "BorderLeft": 2,
+            "BorderRight": 2,
+            "BorderTop": 2,
+            "RadiusBottomLeft": 12,
+            "RadiusBottomRight": 12,
+            "RadiusTopLeft": 12,
+            "RadiusTopRight": 45
+          },
+          "Height": 80.0,
+          "IsFreezed": true,
+          "IsRectangleItem": true,
+          "Left": 0.0,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "RectangleItem4",
+          "RenderingSkip": 32,
+          "Top": 0.0,
+          "Visible": true,
+          "Width": 320.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2' || $prop('DataCorePlugin.CurrentGame') == 'RFactor2' || $prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa') {\r\n\t\r\n\treturn 0\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing') {\r\n\r\n\treturn ( $prop('DataCorePlugin.GameRawData.Graphics.SessionTimeLeft')=='-1') ? 0 : 1\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\r\n\treturn ( $prop('GameRawData.PacketSessionData.m_sessionTimeLeft') <= 0) ? 0 : 1\r\n\t\r\n} else {\r\n\t\r\n\treturn ( $prop('DataCorePlugin.GameRawData.Graphics.SessionTimeLeft')=='-1') ? 0 : 1\r\n\r\n}",
+                "Interpreter": 1,
+                "JSExt": 3
+              },
+              "Mode": 2
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiLabel')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 12.0,
+              "FontWeight": "Bold",
+              "Height": 14.0,
+              "HorizontalAlignment": 2,
+              "IsFreezed": true,
+              "IsTextItem": true,
+              "Left": 232.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Label",
+              "RenderingSkip": 0,
+              "Text": "TIME",
+              "TextColor": "#FF878787",
+              "Top": 50.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 65.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "hh\\:mm",
+                  "Formula": {
+                    "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing') {\r\n\r\n\treturn secondstotimespan($prop('DataCorePlugin.GameRawData.Telemetry.SessionTimeOfDay'))\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\r\n\treturn secondstotimespan($prop('GameRawData.PacketSessionData.m_timeOfDay') * 60)\r\n\r\n} else {\r\n\r\n\treturn secondstotimespan($prop('DataCorePlugin.GameRawData.Graphics.clock'))\r\n\r\n}\r\n",
+                    "Interpreter": 1,
+                    "JSExt": 3
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiLabel')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 24.0,
+              "FontWeight": "Bold",
+              "Height": 35.0,
+              "HorizontalAlignment": 2,
+              "IsFreezed": true,
+              "IsTextItem": true,
+              "Left": 232.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Clock",
+              "RenderingSkip": 0,
+              "Text": "00:00",
+              "TextColor": "#FF878787",
+              "Top": 15.0,
+              "VerticalAlignment": 2,
+              "Visible": true,
+              "Width": 65.0
+            }
+          ],
+          "Group": true,
+          "IsFreezed": true,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "Clock",
+          "RenderingSkip": 32,
+          "Repetitions": 0,
+          "Visible": true
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "return ( \r\n\t( $prop('DataCorePlugin.GameRawData.SessionData.SessionInfo.Sessions01.IsLimitedSessionLaps')\r\n\t|| $prop('IRacingExtraProperties.iRacing_CurrentSession_IsLimitedSessionLaps')\r\n\t|| ld_getSim() == \"F1\") &&\r\n\t!ld_isQuali()\r\n\t) ? 0 : 1",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "if ([DataCorePlugin.GameData.CurrentLap]>1, 'LAPS', 'LAP')"
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiLabel')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 12.0,
+              "FontWeight": "Bold",
+              "Height": 14.0,
+              "HorizontalAlignment": 2,
+              "IsFreezed": true,
+              "IsTextItem": true,
+              "Left": 170.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Label",
+              "RenderingSkip": 0,
+              "Text": "LAPS",
+              "TextColor": "#FF878787",
+              "Top": 50.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 55.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "return $prop('DataCorePlugin.GameData.CurrentLap')",
+                    "Interpreter": 1,
+                    "JSExt": 0
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiTitle')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 28.0,
+              "FontWeight": "Bold",
+              "Height": 35.0,
+              "HorizontalAlignment": 2,
+              "IsFreezed": true,
+              "IsTextItem": true,
+              "Left": 170.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Lap",
+              "RenderingSkip": 0,
+              "Text": "000",
+              "TextColor": "#FFFFFFFF",
+              "Top": 16.0,
+              "VerticalAlignment": 2,
+              "Visible": true,
+              "Width": 55.0
+            }
+          ],
+          "Group": true,
+          "IsFreezed": true,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "Laps",
+          "RenderingSkip": 32,
+          "Repetitions": 0,
+          "Visible": true
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.GroupItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Left": {
+              "Formula": {
+                "Expression": "return ( \r\n\t( $prop('DataCorePlugin.GameRawData.SessionData.SessionInfo.Sessions01.IsLimitedSessionLaps')\r\n\t|| $prop('IRacingExtraProperties.iRacing_CurrentSession_IsLimitedSessionLaps')\r\n\t|| ld_getSim() == \"F1\") &&\r\n\t!ld_isQuali()\r\n\t) ? 130 : 100",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "ChildAlignmentHorizontal": 0,
+          "ChildAlignmentVertical": 0,
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiLabel')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 12.0,
+              "FontWeight": "Bold",
+              "Height": 14.0,
+              "HorizontalAlignment": 2,
+              "IsFreezed": true,
+              "IsTextItem": true,
+              "Left": 39.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Label",
+              "RenderingSkip": 0,
+              "Text": "POS",
+              "TextColor": "#FF878787",
+              "Top": 35.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 35.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Left": {
+                  "Formula": {
+                    "Expression": "return ( $prop('DataCorePlugin.GameData.OpponentsCount') > 9 ) ? 38 : 52",
+                    "Interpreter": 1,
+                    "JSExt": 3
+                  },
+                  "Mode": 2
+                },
+                "Text": {
+                  "FormatString": "0",
+                  "Formula": {
+                    "Expression": "return '/' + $prop('DataCorePlugin.GameData.OpponentsCount')",
+                    "Interpreter": 1,
+                    "JSExt": 0
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiLabel')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "return ( \r\n\ttimespantoseconds($prop('DataCorePlugin.GameData.SessionTimeLeft')) >= 3600 &&\r\n\t$prop('DataCorePlugin.GameData.OpponentsCount') > 9 &&\r\n\t!$prop('IRacingExtraProperties.iRacing_CurrentSession_IsLimitedSessionLaps') &&\r\n\tld_getSim() != \"F1\"\r\n) ? false : true",
+                    "Interpreter": 1,
+                    "JSExt": 3
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 24.0,
+              "FontWeight": "Bold",
+              "Height": 35.0,
+              "HorizontalAlignment": 0,
+              "IsFreezed": true,
+              "IsTextItem": true,
+              "Left": 36.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "PlayersCount",
+              "RenderingSkip": 0,
+              "Text": "/00",
+              "TextColor": "#FF878787",
+              "Top": 0.0,
+              "VerticalAlignment": 2,
+              "Visible": true,
+              "Width": 36.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Left": {
+                  "Formula": {
+                    "Expression": "if ( $prop('OpponentsCount') <= 9 ) {\r\n\r\n\treturn 16\r\n\t\r\n} else {\r\n\r\n\treturn ( \r\n\t\ttimespantoseconds($prop('DataCorePlugin.GameData.SessionTimeLeft')) >= 3600  &&\r\n\t\t!$prop('IRacingExtraProperties.iRacing_CurrentSession_IsLimitedSessionLaps') &&\r\n\t\tld_getSim() != \"F1\"\r\n\t) ? 38 : 0\r\n\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 3
+                  },
+                  "Mode": 2
+                },
+                "Text": {
+                  "FormatString": "0",
+                  "Formula": {
+                    "Expression": "return $prop('DataCorePlugin.GameData.PlayerLeaderboardPosition');",
+                    "Interpreter": 1,
+                    "JSExt": 0
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiTitle')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 28.0,
+              "FontWeight": "Bold",
+              "Height": 35.0,
+              "HorizontalAlignment": 2,
+              "IsFreezed": true,
+              "IsTextItem": true,
+              "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Position",
+              "RenderingSkip": 0,
+              "Text": "00",
+              "TextColor": "#FFFFFFFF",
+              "Top": 1.0,
+              "VerticalAlignment": 2,
+              "Visible": true,
+              "Width": 35.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+              "Bindings": {
+                "Visible": {
+                  "Formula": {
+                    "Expression": "return !ld_isQuali()",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Childrens": [
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "Formula": {
+                        "Expression": "return Math.abs( driverpositiongain( $prop('DataCorePlugin.GameData.PlayerLeaderboardPosition') ) )",
+                        "Interpreter": 1,
+                        "JSExt": 0
+                      },
+                      "Mode": 2
+                    },
+                    "TextColor": {
+                      "Formula": {
+                        "Expression": "if ( driverpositiongain($prop('DataCorePlugin.GameData.PlayerLeaderboardPosition')) > 0 ) {\r\n\treturn ld_theme('ld_uiGain');\r\n} else if ( driverpositiongain($prop('DataCorePlugin.GameData.PlayerLeaderboardPosition')) < 0 ) {\r\n\treturn ld_theme('ld_uiLoss');\r\n} else {\r\n\treturn ld_theme('ld_uiLabel');\r\n}",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    }
+                  },
+                  "CharWidth": 10.0,
+                  "Font": "Roboto",
+                  "FontSize": 12.0,
+                  "FontWeight": "Bold",
+                  "Height": 14.0,
+                  "HorizontalAlignment": 0,
+                  "IsTextItem": true,
+                  "Left": 31.0,
+                  "MinimumRefreshIntervalMS": 0.0,
+                  "Name": "PosGain",
+                  "RenderingSkip": 0,
+                  "Text": "00",
+                  "TextColor": "#FF00FF02",
+                  "Top": 35.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 20.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                  "AutoSize": true,
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Image": {
+                      "Formula": {
+                        "Expression": "if ( driverpositiongain( $prop('DataCorePlugin.GameData.PlayerLeaderboardPosition') ) > 0 ) {\r\n\treturn ld_themeImage('pos-gain')\r\n} else if ( driverpositiongain( $prop('DataCorePlugin.GameData.PlayerLeaderboardPosition') ) < 0 ) {\r\n\treturn ld_themeImage('pos-loss')\r\n} else {\r\n\treturn ld_themeImage('pos-same')\r\n}",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    }
+                  },
+                  "Height": 6.0,
+                  "Image": "pos-gain-0",
+                  "Left": 18.0,
+                  "MinimumRefreshIntervalMS": 0.0,
+                  "Name": "ImageItem",
+                  "RenderingSkip": 0,
+                  "Top": 38.0,
+                  "Visible": true,
+                  "Width": 10.0
+                }
+              ],
+              "Group": true,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Gain/Loss",
+              "RenderingSkip": 0,
+              "Repetitions": 0,
+              "Visible": true
+            }
+          ],
+          "ChildsMargin": {},
+          "ChildsPositioning": 0,
+          "ChildsPositioningAlignment": 0,
+          "GroupPadding": {},
+          "Height": 50.0,
+          "IsFreezed": true,
+          "Left": 100.0,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "Position",
+          "RenderingSkip": 32,
+          "Top": 15.0,
+          "Visible": true,
+          "Width": 90.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "return ( \r\n\t( $prop('DataCorePlugin.GameRawData.SessionData.SessionInfo.Sessions01.IsLimitedSessionLaps')\r\n\t|| $prop('IRacingExtraProperties.iRacing_CurrentSession_IsLimitedSessionLaps')\r\n\t|| ld_getSim() == \"F1\" ) &&\r\n\t!ld_isQuali() || $prop('DataCorePlugin.GameData.SessionTypeName') == 'Offline Testing'\r\n\t) ? 0 : 1",
+                "Interpreter": 1,
+                "JSExt": 3
+              },
+              "Mode": 2
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "return ucase($prop('DataCorePlugin.GameData.SessionTypeName'))",
+                    "Interpreter": 1,
+                    "JSExt": 3
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiLabel')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 12.0,
+              "FontWeight": "Bold",
+              "Height": 14.0,
+              "HorizontalAlignment": 0,
+              "IsFreezed": true,
+              "IsTextItem": true,
+              "Left": 17.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "SessionType",
+              "RenderingSkip": 0,
+              "Text": "SESSION",
+              "TextColor": "#FF878787",
+              "Top": 50.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 120.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "0",
+                  "Formula": {
+                    "Expression": "return ':'+format($prop('DataCorePlugin.GameData.SessionTimeLeft'), \"ss\")",
+                    "Interpreter": 1,
+                    "JSExt": 3
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiLabel')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') && $prop('DataCorePlugin.GameRawData.PacketSessionData.m_sessionType') == 9 ) {\r\n\treturn false\r\n} else {\r\n\treturn ( $prop('DataCorePlugin.GameRawData.Graphics.SessionTimeLeft') != -1 ) ? timespantoseconds($prop('DataCorePlugin.GameData.SessionTimeLeft')) < 3600 : false;\r\n}\r\n\r\n/*\r\nif ([DataCorePlugin.GameRawData.Graphics.SessionTimeLeft]!='-1',\r\n\r\n\ttimespantoseconds([DataCorePlugin.GameData.SessionTimeLeft]) < 3600,\r\n\t0\r\n\t\r\n) */",
+                    "Interpreter": 1,
+                    "JSExt": 0
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 24.0,
+              "FontWeight": "Bold",
+              "Height": 35.0,
+              "HorizontalAlignment": 0,
+              "IsFreezed": true,
+              "IsTextItem": true,
+              "Left": 50.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Countdown < Hour",
+              "RenderingSkip": 0,
+              "Text": ":00",
+              "TextColor": "#FF878787",
+              "Top": 15.0,
+              "VerticalAlignment": 2,
+              "Visible": true,
+              "Width": 35.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "0",
+                  "Formula": {
+                    "Expression": "return format($prop('DataCorePlugin.GameData.SessionTimeLeft'), \"mm\")",
+                    "Interpreter": 1,
+                    "JSExt": 3
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiTitle')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') && $prop('DataCorePlugin.GameRawData.PacketSessionData.m_sessionType') == 9 ) {\r\n\r\n\treturn false\r\n\t\r\n} else {\r\n\t\r\n\treturn ( $prop('DataCorePlugin.GameRawData.Graphics.SessionTimeLeft') != -1 ) ? timespantoseconds($prop('DataCorePlugin.GameData.SessionTimeLeft')) < 3600 : false;\r\n\r\n}\r\n\r\n/*\r\nif ([DataCorePlugin.GameRawData.Graphics.SessionTimeLeft]!='-1',\r\n\r\n\ttimespantoseconds([DataCorePlugin.GameData.SessionTimeLeft]) < 3600,\r\n\t0\r\n\t\r\n) */",
+                    "Interpreter": 1,
+                    "JSExt": 0
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 28.0,
+              "FontWeight": "Bold",
+              "Height": 35.0,
+              "HorizontalAlignment": 0,
+              "IsFreezed": true,
+              "IsTextItem": true,
+              "Left": 17.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Countdown < Hour",
+              "RenderingSkip": 0,
+              "Text": "00",
+              "TextColor": "#FFFFFFFF",
+              "Top": 16.0,
+              "VerticalAlignment": 2,
+              "Visible": true,
+              "Width": 35.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "0",
+                  "Formula": {
+                    "Expression": "return ':'+format($prop('DataCorePlugin.GameData.SessionTimeLeft'), \"ss\")",
+                    "Interpreter": 1,
+                    "JSExt": 3
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiLabel')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') && $prop('DataCorePlugin.GameRawData.PacketSessionData.m_sessionType') == 9 ) {\r\n\treturn false\r\n} else {\r\n\treturn ( $prop('DataCorePlugin.GameRawData.Graphics.SessionTimeLeft') != -1 ) ? timespantoseconds($prop('DataCorePlugin.GameData.SessionTimeLeft')) >= 3600 : false;\r\n}\r\n\r\n\r\n/*\r\nif ([DataCorePlugin.GameRawData.Graphics.SessionTimeLeft]!='-1',\r\n\r\n\ttimespantoseconds([DataCorePlugin.GameData.SessionTimeLeft]) >= 3600,\r\n\t0\r\n\r\n)\r\n*/",
+                    "Interpreter": 1,
+                    "JSExt": 0
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 24.0,
+              "FontWeight": "Bold",
+              "Height": 35.0,
+              "HorizontalAlignment": 0,
+              "IsFreezed": true,
+              "IsTextItem": true,
+              "Left": 89.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Countdown > Hour",
+              "RenderingSkip": 0,
+              "Text": ":00",
+              "TextColor": "#FF878787",
+              "Top": 15.0,
+              "VerticalAlignment": 2,
+              "Visible": false,
+              "Width": 39.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "0",
+                  "Formula": {
+                    "Expression": "return format($prop('DataCorePlugin.GameData.SessionTimeLeft'), \"hh\")+':'+format($prop('DataCorePlugin.GameData.SessionTimeLeft'), \"mm\")",
+                    "Interpreter": 1,
+                    "JSExt": 3
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiTitle')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') && $prop('DataCorePlugin.GameRawData.PacketSessionData.m_sessionType') == 9 ) {\r\n\r\n\treturn false\r\n\t\r\n} else {\r\n\t\r\n\treturn ( $prop('DataCorePlugin.GameRawData.Graphics.SessionTimeLeft') != -1 ) ? timespantoseconds($prop('DataCorePlugin.GameData.SessionTimeLeft')) >= 3600 : false;\r\n\r\n}\r\n\r\n\r\n\r\n/*\r\nif ([DataCorePlugin.GameRawData.Graphics.SessionTimeLeft]!='-1',\r\n\ttimespantoseconds([DataCorePlugin.GameData.SessionTimeLeft]) >= 3600,\r\n\t0\r\n)\r\n*/",
+                    "Interpreter": 1,
+                    "JSExt": 0
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 28.0,
+              "FontWeight": "Bold",
+              "Height": 35.0,
+              "HorizontalAlignment": 0,
+              "IsFreezed": true,
+              "IsTextItem": true,
+              "Left": 17.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Countdown > Hour",
+              "RenderingSkip": 0,
+              "Text": "00:00",
+              "TextColor": "#FFFFFFFF",
+              "Top": 16.0,
+              "VerticalAlignment": 2,
+              "Visible": false,
+              "Width": 75.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "hh\\:mm",
+                  "Formula": {
+                    "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing') {\r\n\r\n\treturn secondstotimespan($prop('DataCorePlugin.GameRawData.Telemetry.SessionTimeOfDay'))\r\n\r\n} else if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\r\n\treturn secondstotimespan($prop('GameRawData.PacketSessionData.m_timeOfDay') * 60)\r\n\r\n} else {\r\n\r\n\treturn secondstotimespan($prop('DataCorePlugin.GameRawData.Graphics.clock'))\r\n\r\n}\r\n",
+                    "Interpreter": 1,
+                    "JSExt": 3
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiTitle')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "if ( $prop('DataCorePlugin.CurrentGame').startsWith('F120') ) {\r\n\r\n\treturn ( $prop('GameRawData.PacketSessionData.m_sessionTimeLeft') <= 0) ? 1 : 0\r\n\t\r\n} else {\r\n\t\r\n\treturn ( $prop('DataCorePlugin.GameRawData.Graphics.SessionTimeLeft') == '-1' ) ? 1 : 0 \r\n\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 3
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 28.0,
+              "FontWeight": "Bold",
+              "Height": 35.0,
+              "HorizontalAlignment": 0,
+              "IsFreezed": true,
+              "IsTextItem": true,
+              "Left": 17.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Track Time",
+              "RenderingSkip": 0,
+              "Text": "00:00",
+              "TextColor": "#FFFFFFFF",
+              "Top": 16.0,
+              "VerticalAlignment": 2,
+              "Visible": false,
+              "Width": 120.0
+            }
+          ],
+          "Group": true,
+          "IsFreezed": true,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "Session Time",
+          "RenderingSkip": 32,
+          "Repetitions": 0,
+          "Visible": true
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "return ( \r\n\t( $prop('DataCorePlugin.GameRawData.SessionData.SessionInfo.Sessions01.IsLimitedSessionLaps')\r\n\t|| $prop('IRacingExtraProperties.iRacing_CurrentSession_IsLimitedSessionLaps')\r\n\t|| ld_getSim() == \"F1\" ) &&\r\n\t!ld_isQuali()\r\n\t) ? 1 : 0",
+                "Interpreter": 1,
+                "JSExt": 3
+              },
+              "Mode": 2
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "return ucase($prop('DataCorePlugin.GameData.SessionTypeName'))",
+                    "Interpreter": 1,
+                    "JSExt": 3
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiLabel')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 12.0,
+              "FontWeight": "Bold",
+              "Height": 14.0,
+              "HorizontalAlignment": 0,
+              "IsFreezed": true,
+              "IsTextItem": true,
+              "Left": 17.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "SessionType",
+              "RenderingSkip": 0,
+              "Text": "SESSION",
+              "TextColor": "#FF878787",
+              "Top": 50.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 120.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Left": {
+                  "Formula": {
+                    "Expression": "if ( $prop('DataCorePlugin.GameData.CurrentLap') < 10 ) {\r\n\treturn 35;\r\n} else if ( $prop('DataCorePlugin.GameData.CurrentLap') < 100) {\r\n\treturn 50;\r\n} else {\r\n\treturn 65;\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 0
+                  },
+                  "Mode": 2
+                },
+                "Text": {
+                  "FormatString": "0",
+                  "Formula": {
+                    "Expression": "return '/'+$prop('TotalLaps')",
+                    "Interpreter": 1,
+                    "JSExt": 0
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiLabel')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 24.0,
+              "FontWeight": "Bold",
+              "Height": 35.0,
+              "HorizontalAlignment": 0,
+              "IsFreezed": true,
+              "IsTextItem": true,
+              "Left": 65.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Total Laps",
+              "RenderingSkip": 0,
+              "Text": "/000",
+              "TextColor": "#FF878787",
+              "Top": 15.0,
+              "VerticalAlignment": 2,
+              "Visible": true,
+              "Width": 50.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "0",
+                  "Formula": {
+                    "Expression": "return $prop('DataCorePlugin.GameData.CurrentLap')",
+                    "Interpreter": 1,
+                    "JSExt": 3
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiTitle')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 28.0,
+              "FontWeight": "Bold",
+              "Height": 35.0,
+              "HorizontalAlignment": 0,
+              "IsFreezed": true,
+              "IsTextItem": true,
+              "Left": 17.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Lap",
+              "RenderingSkip": 0,
+              "Text": "000",
+              "TextColor": "#FFFFFFFF",
+              "Top": 16.0,
+              "VerticalAlignment": 2,
+              "Visible": true,
+              "Width": 50.0
+            }
+          ],
+          "Group": true,
+          "IsFreezed": true,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "Session Laps",
+          "RenderingSkip": 32,
+          "Repetitions": 0,
+          "Visible": false
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Text": {
+              "Formula": {
+                "Expression": "ucase([DataCorePlugin.GameData.SessionTypeName])\r\n\r\n"
+              },
+              "Mode": 2
+            },
+            "TextColor": {
+              "Formula": {
+                "Expression": "return ld_theme('ld_uiLabel')",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "return ( $prop('DataCorePlugin.GameData.SessionTypeName') == 'Offline Testing' ) ? 1 : 0",
+                "Interpreter": 1,
+                "JSExt": 3
+              },
+              "Mode": 2
+            }
+          },
+          "Font": "Roboto",
+          "FontSize": 18.0,
+          "FontWeight": "Bold",
+          "Height": 46.0,
+          "HorizontalAlignment": 0,
+          "IsFreezed": true,
+          "IsTextItem": true,
+          "Left": 17.0,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "SessionType",
+          "RenderingSkip": 32,
+          "Text": "SESSION",
+          "TextColor": "#FF878787",
+          "TextWrapping": 2,
+          "Top": 16.0,
+          "VerticalAlignment": 1,
+          "Visible": false,
+          "Width": 120.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "return ( $prop('DataCorePlugin.GameRawData.Graphics.Penalty') != 0 && ld_getSim() == \"ACC\" ) ? true : false ;",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FF353535",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiBgAlt')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Text": {
+                  "Formula": {
+                    "Expression": "var penalty = $prop('DataCorePlugin.GameRawData.Graphics.Penalty')\r\n\r\nswitch (penalty) {\r\n  case 1: //ACC_DriveThrough_Cutting\r\n  case 7: //ACC_DriveThrough_PitSpeeding\r\n  case 19: //ACC_DriveThrough_IgnoredDriverStint\r\n    return 'DT';\r\n    break;\r\n  case 2: //ACC_StopAndGo_10_Cutting\r\n  case 8: //ACC_StopAndGo_10_PitSpeeding\r\n    return 'SG10';\r\n    break;\r\n  case 3: //ACC_StopAndGo_20_Cutting\r\n  case 9: //ACC_StopAndGo_20_PitSpeeding\r\n    return 'SG20';\r\n    break;\r\n  case 4: //ACC_StopAndGo_30_Cutting\r\n  case 10: //ACC_StopAndGo_30_PitSpeeding\r\n    return 'SG30';\r\n    break;\r\n  case 5: //ACC_Disqualified_Cutting\r\n  case 11: //ACC_Disqualified_PitSpeeding\r\n  case 13: //ACC_Disqualified_IgnoredMandatoryPit\r\n  case 15: //ACC_Disqualified_Trolling\r\n  case 16: //ACC_Disqualified_PitEntry\r\n  case 17: //ACC_Disqualified_PitExit\r\n  case 18: //ACC_Disqualified_Wrongway\r\n  case 20: //ACC_Disqualified_IgnoredDriverStint\r\n  case 21: //ACC_Disqualified_ExceededDriverStintLimit\r\n  case 22: //ACC_Disqualified_Wrongway\r\n    return 'DSQ';\r\n    break;\r\n  default:\r\n  \treturn ''\r\n    break;\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 0
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiLabel')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "BlinkDelay": 750.0,
+              "BorderStyle": {
+                "Bindings": {
+                  "RadiusTopRight": {
+                    "Formula": {
+                      "Expression": "if ( $prop('variable.dashName') == 'LovelyDashboardXL') {\r\n\r\n\treturn 6\r\n\t\r\n} else {\r\n\t\r\n\treturn ld_getSettings('uiRadius')-15\r\n\r\n}",
+                      "Interpreter": 1,
+                      "JSExt": 1
+                    },
+                    "Mode": 2
+                  }
+                },
+                "RadiusBottomLeft": 6,
+                "RadiusBottomRight": 6,
+                "RadiusTopLeft": 6,
+                "RadiusTopRight": 6
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 50.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 237.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "BG",
+              "RenderingSkip": 0,
+              "Text": "SG00",
+              "TextColor": "#FFFFFFFF",
+              "Top": 15.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 65.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FFFF0000",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiAlert')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Text": {
+                  "Formula": {
+                    "Expression": "var penalty = $prop('DataCorePlugin.GameRawData.Graphics.Penalty')\r\n\r\nswitch (penalty) {\r\n  case 1: //ACC_DriveThrough_Cutting\r\n  case 7: //ACC_DriveThrough_PitSpeeding\r\n  case 19: //ACC_DriveThrough_IgnoredDriverStint\r\n    return 'DT';\r\n    break;\r\n  case 2: //ACC_StopAndGo_10_Cutting\r\n  case 8: //ACC_StopAndGo_10_PitSpeeding\r\n    return 'SG10';\r\n    break;\r\n  case 3: //ACC_StopAndGo_20_Cutting\r\n  case 9: //ACC_StopAndGo_20_PitSpeeding\r\n    return 'SG20';\r\n    break;\r\n  case 4: //ACC_StopAndGo_30_Cutting\r\n  case 10: //ACC_StopAndGo_30_PitSpeeding\r\n    return 'SG30';\r\n    break;\r\n  case 5: //ACC_Disqualified_Cutting\r\n  case 11: //ACC_Disqualified_PitSpeeding\r\n  case 13: //ACC_Disqualified_IgnoredMandatoryPit\r\n  case 15: //ACC_Disqualified_Trolling\r\n  case 16: //ACC_Disqualified_PitEntry\r\n  case 17: //ACC_Disqualified_PitExit\r\n  case 18: //ACC_Disqualified_Wrongway\r\n  case 20: //ACC_Disqualified_IgnoredDriverStint\r\n  case 21: //ACC_Disqualified_ExceededDriverStintLimit\r\n  case 22: //ACC_Disqualified_Wrongway\r\n    return 'DSQ';\r\n    break;\r\n  default:\r\n  \treturn ''\r\n    break;\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 0
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiAlertText')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "BlinkDelay": 750.0,
+              "BlinkEnabled": true,
+              "BorderStyle": {
+                "Bindings": {
+                  "RadiusTopRight": {
+                    "Formula": {
+                      "Expression": "if ( $prop('variable.dashName') == 'LovelyDashboardXL') {\r\n\r\n\treturn 6\r\n\t\r\n} else {\r\n\t\r\n\treturn ld_getSettings('uiRadius')-15\r\n\r\n}",
+                      "Interpreter": 1,
+                      "JSExt": 1
+                    },
+                    "Mode": 2
+                  }
+                },
+                "RadiusBottomLeft": 6,
+                "RadiusBottomRight": 6,
+                "RadiusTopLeft": 6,
+                "RadiusTopRight": 6
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 50.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 237.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Penalty",
+              "RenderingSkip": 0,
+              "Text": "SG00",
+              "TextColor": "#FFFFFFFF",
+              "Top": 15.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 65.0
+            }
+          ],
+          "Group": true,
+          "IsFreezed": true,
+          "MinimumRefreshIntervalMS": 0.0,
+          "Name": "ACC Penalty",
+          "RenderingSkip": 0,
+          "Repetitions": 0,
+          "Visible": false
+        }
+      ],
+      "MinimumRefreshIntervalMS": 0.0,
+      "Name": "Session Info",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": ""
+      },
+      "PitScreen": false,
+      "RenderingSkip": 0,
+      "ScreenEnabledExpression": {
+        "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing') {\r\n\r\n\treturn ( $prop('IRacingExtraProperties.iRacing_CurrentSession_IsLimitedSessionLaps') ) ? false : true\r\n\t\r\n} else if ( $prop('DataCorePlugin.CurrentGame') == 'Automobilista2') {\r\n\t\r\n\treturn ( $prop('DataCorePlugin.GameRawData.mLapsInEvent')>0 && $prop('DataCorePlugin.GameRawData.mSessionDuration')==0 ) ? false : true\r\n\r\n} else {\r\n\treturn true\r\n}",
+        "Interpreter": 1,
+        "JSExt": 3
+      },
+      "ScreenId": "eaa488d4-8a61-464f-b525-54bd7bf03f37"
+    }
+  ],
+  "ShowBackground": true,
+  "ShowBoundingRectangles": false,
+  "ShowForeground": true,
+  "ShowOnScreenControls": true,
+  "SnapToGrid": false,
+  "Variables": {
+    "DashboardVariables": [
+      {
+        "EvaluateBeforeScreenRoles": false,
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "dashName"
+      },
+      {
+        "EvaluateBeforeScreenRoles": false,
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "folderName"
+      },
+      {
+        "EvaluateBeforeScreenRoles": false,
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "trueDarkMode"
+      }
+    ]
+  },
+  "Version": 2
+}

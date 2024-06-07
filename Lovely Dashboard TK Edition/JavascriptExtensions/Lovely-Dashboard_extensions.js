@@ -1021,7 +1021,6 @@ function ld_getTrackTurn(trackData) {
     return null;
 }
 
-
 //
 //
 // Generic 
@@ -1113,7 +1112,7 @@ function ld_alertDelay(status, delay) {
         } else {
             return 0
         }
-    } else if ( ld_getSim() == 'RFactor2' ) {
+    } else if ( ld_getSim() == 'RFactor2' || ld_getSim() == 'LMU' ) {
         if ( $prop('DataCorePlugin.GameData.CompletedLaps') > 1 && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 < alertDelay && timespantoseconds($prop('DataCorePlugin.GameData.CurrentLapTime'))*1000 != 0) {
             return 1
         } else {

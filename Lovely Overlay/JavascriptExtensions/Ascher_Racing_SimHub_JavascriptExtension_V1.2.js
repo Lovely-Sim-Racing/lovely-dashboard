@@ -29,6 +29,10 @@ If both receivers are available, connect the wheel to the SC2!
 ###################    CHANGELOG    ###################
 #######################################################
 
+V1.2:
+	bug fix:
+	- falsely triggered F64-USB rotary modifier mode
+
 V1.1:
 	bug fix:
 	- Artura PRO-SC rotary modifier modes
@@ -252,9 +256,6 @@ function AR_is_rotary_left_shift_mode_active() {		// check if a shifted input ha
         case "Artura_ULTIMATE":
             checkShiftModeActive(button_ID.Artura_rotary_left_shift_start, "Ascher_Racing_Artura_ULTIMATE");
             break;
-        case "F64-USB":
-            checkShiftModeActive(button_ID.F64_rotary_left_start, "Ascher_Racing_F64");
-            break;	
         case "SC2_Sport_wireless_wheel":
             checkShiftModeActive(button_ID.SC2_rotary_left_shift_start, "Simucube_2_Sport");
             break;
@@ -301,9 +302,6 @@ function AR_is_rotary_right_shift_mode_active() {		// check if a shifted input h
             break;
         case "Artura_ULTIMATE":
             checkShiftModeActive(button_ID.Artura_rotary_right_shift_start, "Ascher_Racing_Artura_ULTIMATE");
-            break;
-        case "F64-USB":
-            checkShiftModeActive(button_ID.F64_rotary_right_start, "Ascher_Racing_F64");
             break;
         case "SC2_Sport_wireless_wheel":
             checkShiftModeActive(button_ID.SC2_rotary_right_shift_start, "Simucube_2_Sport");
