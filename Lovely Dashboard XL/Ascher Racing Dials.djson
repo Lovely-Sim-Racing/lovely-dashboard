@@ -1,1 +1,408 @@
-{"Variables":{"DashboardVariables":[{"VariableName":"folderName","EvaluateOnlyOnce":false,"OverrideWithParentDashboardVariableWhenAvailable":true,"ValueExpression":{"Expression":""},"EvaluateBeforeScreenRoles":true},{"VariableName":"dashName","EvaluateOnlyOnce":false,"OverrideWithParentDashboardVariableWhenAvailable":true,"ValueExpression":{"Expression":""},"EvaluateBeforeScreenRoles":true},{"VariableName":"trueDarkMode","EvaluateOnlyOnce":false,"OverrideWithParentDashboardVariableWhenAvailable":true,"ValueExpression":{"Expression":""},"EvaluateBeforeScreenRoles":false}]},"DashboardDebugManager":{},"Version":2,"Id":"6c7ad109-1463-4ecb-9a2e-e52e42fb6641","BaseHeight":480,"BaseWidth":850,"BackgroundColor":"#FF000000","Screens":[{"RenderingSkip":0,"Name":"Screen","InGameScreen":true,"IdleScreen":true,"PitScreen":false,"ScreenId":"e7a25900-7a29-4650-b833-2742effe654d","AllowOverlays":true,"IsForegroundLayer":false,"IsOverlayLayer":false,"OverlayTriggerExpression":{"Expression":""},"ScreenEnabledExpression":{"Expression":""},"OverlayMaxDuration":0,"OverlayMinDuration":0,"IsBackgroundLayer":false,"BackgroundColor":"#FF000000","Items":[{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins","Group":true,"Repetitions":0,"Childrens":[{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"Font":"Roboto","FontWeight":"Bold","FontSize":60.0,"Text":"TC 0","TextColor":"#FFFFFFFF","HorizontalAlignment":1,"VerticalAlignment":1,"BackgroundColor":"#FF212121","BorderStyle":{"BorderColor":"#FF00BFFF","RadiusTopLeft":5,"RadiusTopRight":5,"RadiusBottomLeft":5,"RadiusBottomRight":5},"Height":240.0,"Left":535.0,"Top":120.0,"Visible":false,"Width":300.0,"Name":"Right Alert","RenderingSkip":0,"MinimumRefreshIntervalMS":0.0,"Bindings":{"Text":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return AR_get_rotary_right_output( rotary_right_text );","PreExpression":"const rotary_right_text = {}\r\nrotary_right_text[0] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos1'];\r\nrotary_right_text[1] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos2'];\r\nrotary_right_text[2] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos3'];\r\nrotary_right_text[3] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos4'];\r\nrotary_right_text[4] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos5'];\r\nrotary_right_text[5] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos6'];\r\nrotary_right_text[6] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos7'];\r\nrotary_right_text[7] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos8'];\r\nrotary_right_text[8] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos9'];\r\nrotary_right_text[9] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos10'];\r\nrotary_right_text[10] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos11'];\r\nrotary_right_text[11] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos12'];"},"Mode":2},"Visible":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ld_changed( alertDelay, AR_get_rotary_right_output( rotary_right_text ) );","PreExpression":"const alertDelay = ld_getSettings('alertDelay');\r\nconst rotary_right_text = {}\r\nrotary_right_text[0] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos1'];\r\nrotary_right_text[1] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos2'];\r\nrotary_right_text[2] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos3'];\r\nrotary_right_text[3] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos4'];\r\nrotary_right_text[4] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos5'];\r\nrotary_right_text[5] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos6'];\r\nrotary_right_text[6] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos7'];\r\nrotary_right_text[7] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos8'];\r\nrotary_right_text[8] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos9'];\r\nrotary_right_text[9] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos10'];\r\nrotary_right_text[10] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos11'];\r\nrotary_right_text[11] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos12'];"},"Mode":2},"BackgroundColor":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ld_theme('ld_uiBgAlt');"},"Mode":2},"TextColor":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ld_theme('ld_uiTitle')"},"Mode":2}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"ShadowColor":"#FF000000","Font":"Roboto","FontWeight":"Bold","TextPadding":{"PaddingBottom":5},"FontSize":18.0,"Text":"RIGHT","TextColor":"#FFFFFFFF","HorizontalAlignment":1,"VerticalAlignment":2,"Rotation":-90.0,"BackgroundColor":"#00FFFFFF","BorderStyle":{"BorderTop":2,"BorderBottom":2,"BorderLeft":2,"BorderRight":2,"RadiusTopLeft":8,"RadiusTopRight":8,"RadiusBottomLeft":8,"RadiusBottomRight":8,"Bindings":{"BorderColor":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ld_theme('ld_uiLine');"},"Mode":2}}},"Height":30.0,"Left":788.0,"Top":225.0,"Visible":true,"Width":110.0,"Name":"Right Rotary","RenderingSkip":0,"MinimumRefreshIntervalMS":0.0,"Bindings":{"Text":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return AR_get_rotary_right_output( rotary_right_text );","PreExpression":"const rotary_right_text = {}\r\nrotary_right_text[0] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos1'];\r\nrotary_right_text[1] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos2'];\r\nrotary_right_text[2] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos3'];\r\nrotary_right_text[3] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos4'];\r\nrotary_right_text[4] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos5'];\r\nrotary_right_text[5] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos6'];\r\nrotary_right_text[6] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos7'];\r\nrotary_right_text[7] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos8'];\r\nrotary_right_text[8] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos9'];\r\nrotary_right_text[9] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos10'];\r\nrotary_right_text[10] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos11'];\r\nrotary_right_text[11] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos12'];"},"Mode":2},"BackgroundColor":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ld_theme('ld_uiBg');"},"Mode":2},"TextColor":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ld_theme('ld_uiTitle');"},"Mode":2}}}],"Visible":true,"Name":"Right Dial","RenderingSkip":1,"MinimumRefreshIntervalMS":10.0,"Bindings":{"Visible":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return AR_is_rotary_right_shift_mode_active();"},"Mode":2}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins","Group":true,"Repetitions":0,"Childrens":[{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"Font":"Roboto","FontWeight":"Bold","FontSize":60.0,"Text":"TC 0","TextColor":"#FFFFFFFF","HorizontalAlignment":1,"VerticalAlignment":1,"BackgroundColor":"#FF212121","BorderStyle":{"BorderColor":"#FF00BFFF","RadiusTopLeft":5,"RadiusTopRight":5,"RadiusBottomLeft":5,"RadiusBottomRight":5},"Height":240.0,"Left":15.0,"Top":120.0,"Visible":false,"Width":300.0,"Name":"Left Alert","RenderingSkip":0,"MinimumRefreshIntervalMS":0.0,"Bindings":{"Text":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return AR_get_rotary_left_output( rotary_left_text );","PreExpression":"const rotary_left_text = {}\r\nrotary_left_text[0] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos1'];\r\nrotary_left_text[1] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos2'];\r\nrotary_left_text[2] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos3'];\r\nrotary_left_text[3] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos4'];\r\nrotary_left_text[4] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos5'];\r\nrotary_left_text[5] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos6'];\r\nrotary_left_text[6] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos7'];\r\nrotary_left_text[7] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos8'];\r\nrotary_left_text[8] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos9'];\r\nrotary_left_text[9] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos10'];\r\nrotary_left_text[10] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos11'];\r\nrotary_left_text[11] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos12'];"},"Mode":2},"Visible":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ld_changed( alertDelay, AR_get_rotary_left_output(rotary_left_text) )","PreExpression":"const alertDelay = ld_getSettings('alertDelay');\r\nconst rotary_left_text = {}\r\nrotary_left_text[0] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos1'];\r\nrotary_left_text[1] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos2'];\r\nrotary_left_text[2] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos3'];\r\nrotary_left_text[3] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos4'];\r\nrotary_left_text[4] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos5'];\r\nrotary_left_text[5] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos6'];\r\nrotary_left_text[6] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos7'];\r\nrotary_left_text[7] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos8'];\r\nrotary_left_text[8] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos9'];\r\nrotary_left_text[9] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos10'];\r\nrotary_left_text[10] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos11'];\r\nrotary_left_text[11] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos12'];"},"Mode":2},"BackgroundColor":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ld_theme('ld_uiBgAlt');"},"Mode":2},"TextColor":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ld_theme('ld_uiTitle')"},"Mode":2}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"ShadowColor":"#FF000000","Font":"Roboto","FontWeight":"Bold","TextPadding":{"PaddingBottom":5},"FontSize":18.0,"Text":"LEFT","TextColor":"#FFFFFFFF","HorizontalAlignment":1,"VerticalAlignment":2,"Rotation":-90.0,"BackgroundColor":"#00FFFFFF","BorderStyle":{"BorderTop":2,"BorderBottom":2,"BorderLeft":2,"BorderRight":2,"RadiusTopLeft":8,"RadiusTopRight":8,"RadiusBottomLeft":8,"RadiusBottomRight":8,"Bindings":{"BorderColor":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ld_theme('ld_uiLine');"},"Mode":2}}},"Height":30.0,"Left":-46.0,"Top":225.0,"Visible":true,"Width":110.0,"Name":"Left Rotary","RenderingSkip":0,"MinimumRefreshIntervalMS":0.0,"Bindings":{"Text":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return AR_get_rotary_left_output( rotary_left_text );","PreExpression":"const rotary_left_text = {}\r\nrotary_left_text[0] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos1'];\r\nrotary_left_text[1] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos2'];\r\nrotary_left_text[2] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos3'];\r\nrotary_left_text[3] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos4'];\r\nrotary_left_text[4] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos5'];\r\nrotary_left_text[5] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos6'];\r\nrotary_left_text[6] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos7'];\r\nrotary_left_text[7] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos8'];\r\nrotary_left_text[8] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos9'];\r\nrotary_left_text[9] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos10'];\r\nrotary_left_text[10] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos11'];\r\nrotary_left_text[11] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos12'];"},"Mode":2},"BackgroundColor":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ld_theme('ld_uiBg');"},"Mode":2},"TextColor":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return ld_theme('ld_uiTitle');"},"Mode":2}}}],"Visible":true,"Name":"Left Dial","RenderingSkip":1,"MinimumRefreshIntervalMS":10.0,"Bindings":{"Visible":{"Formula":{"JSExt":1,"Interpreter":1,"Expression":"return AR_is_rotary_left_shift_mode_active();"},"Mode":2}}}],"MinimumRefreshIntervalMS":0.0}],"SnapToGrid":false,"HideLabels":false,"ShowForeground":true,"ForegroundOpacity":100.0,"ShowBackground":true,"BackgroundOpacity":100.0,"ShowBoundingRectangles":false,"GridSize":10,"Images":[],"Metadata":{"SimHubVersion":"9.2.14","ScreenCount":1.0,"InGameScreensIndexs":[0],"IdleScreensIndexs":[0],"MainPreviewIndex":0,"IsOverlay":false,"Width":850.0,"Height":480.0,"OverlaySizeWarning":false,"MetadataVersion":2.0,"EnableOnDashboardMessaging":true,"PitScreensIndexs":[]},"ShowOnScreenControls":true,"IsOverlay":false,"EnableClickThroughOverlay":true,"EnableOnDashboardMessaging":true}
+{
+  "BackgroundColor": "#FF000000",
+  "BackgroundOpacity": 100.0,
+  "BaseHeight": 480,
+  "BaseWidth": 850,
+  "DashboardDebugManager": {},
+  "EnableClickThroughOverlay": true,
+  "EnableOnDashboardMessaging": true,
+  "ForegroundOpacity": 100.0,
+  "GridSize": 10,
+  "HideLabels": false,
+  "Id": "6c7ad109-1463-4ecb-9a2e-e52e42fb6641",
+  "Images": [],
+  "IsOverlay": false,
+  "Metadata": {
+    "EnableOnDashboardMessaging": true,
+    "Height": 480.0,
+    "IdleScreensIndexs": [
+      0
+    ],
+    "InGameScreensIndexs": [
+      0
+    ],
+    "IsOverlay": false,
+    "MainPreviewIndex": 0,
+    "MetadataVersion": 2.0,
+    "OverlaySizeWarning": false,
+    "PitScreensIndexs": [],
+    "ScreenCount": 1.0,
+    "SimHubVersion": "9.2.14",
+    "Width": 850.0
+  },
+  "Screens": [
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#FF000000",
+      "IdleScreen": true,
+      "InGameScreen": true,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": false,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "return AR_is_rotary_right_shift_mode_active();",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FF212121",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiBgAlt');",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Text": {
+                  "Formula": {
+                    "Expression": "return AR_get_rotary_right_output( rotary_right_text );",
+                    "Interpreter": 1,
+                    "JSExt": 1,
+                    "PreExpression": "const rotary_right_text = {}\r\nrotary_right_text[0] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos1'];\r\nrotary_right_text[1] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos2'];\r\nrotary_right_text[2] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos3'];\r\nrotary_right_text[3] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos4'];\r\nrotary_right_text[4] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos5'];\r\nrotary_right_text[5] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos6'];\r\nrotary_right_text[6] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos7'];\r\nrotary_right_text[7] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos8'];\r\nrotary_right_text[8] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos9'];\r\nrotary_right_text[9] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos10'];\r\nrotary_right_text[10] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos11'];\r\nrotary_right_text[11] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos12'];"
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiTitle')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "return ld_changed( alertDelay, AR_get_rotary_right_output( rotary_right_text ) );",
+                    "Interpreter": 1,
+                    "JSExt": 1,
+                    "PreExpression": "const alertDelay = ld_getSettings('alertDelay');\r\nconst rotary_right_text = {}\r\nrotary_right_text[0] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos1'];\r\nrotary_right_text[1] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos2'];\r\nrotary_right_text[2] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos3'];\r\nrotary_right_text[3] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos4'];\r\nrotary_right_text[4] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos5'];\r\nrotary_right_text[5] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos6'];\r\nrotary_right_text[6] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos7'];\r\nrotary_right_text[7] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos8'];\r\nrotary_right_text[8] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos9'];\r\nrotary_right_text[9] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos10'];\r\nrotary_right_text[10] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos11'];\r\nrotary_right_text[11] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos12'];"
+                  },
+                  "Mode": 2
+                }
+              },
+              "BorderStyle": {
+                "BorderColor": "#FF00BFFF",
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Font": "Roboto",
+              "FontSize": 60.0,
+              "FontWeight": "Bold",
+              "Height": 240.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 535.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Right Alert",
+              "RenderingSkip": 0,
+              "Text": "TC 0",
+              "TextColor": "#FFFFFFFF",
+              "Top": 120.0,
+              "VerticalAlignment": 1,
+              "Visible": false,
+              "Width": 300.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiBg');",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Text": {
+                  "Formula": {
+                    "Expression": "return AR_get_rotary_right_output( rotary_right_text );",
+                    "Interpreter": 1,
+                    "JSExt": 1,
+                    "PreExpression": "const rotary_right_text = {}\r\nrotary_right_text[0] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos1'];\r\nrotary_right_text[1] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos2'];\r\nrotary_right_text[2] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos3'];\r\nrotary_right_text[3] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos4'];\r\nrotary_right_text[4] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos5'];\r\nrotary_right_text[5] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos6'];\r\nrotary_right_text[6] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos7'];\r\nrotary_right_text[7] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos8'];\r\nrotary_right_text[8] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos9'];\r\nrotary_right_text[9] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos10'];\r\nrotary_right_text[10] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos11'];\r\nrotary_right_text[11] = ld_getSettings('manufacturers')['ascherRacing']['rightDial']['pos12'];"
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiTitle');",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "BorderStyle": {
+                "Bindings": {
+                  "BorderColor": {
+                    "Formula": {
+                      "Expression": "return ld_theme('ld_uiLine');",
+                      "Interpreter": 1,
+                      "JSExt": 1
+                    },
+                    "Mode": 2
+                  }
+                },
+                "BorderBottom": 2,
+                "BorderLeft": 2,
+                "BorderRight": 2,
+                "BorderTop": 2,
+                "RadiusBottomLeft": 8,
+                "RadiusBottomRight": 8,
+                "RadiusTopLeft": 8,
+                "RadiusTopRight": 8
+              },
+              "Font": "Roboto",
+              "FontSize": 18.0,
+              "FontWeight": "Bold",
+              "Height": 30.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 788.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Right Rotary",
+              "RenderingSkip": 0,
+              "Rotation": -90.0,
+              "ShadowColor": "#FF000000",
+              "Text": "RIGHT",
+              "TextColor": "#FFFFFFFF",
+              "TextPadding": {
+                "PaddingBottom": 5
+              },
+              "Top": 225.0,
+              "VerticalAlignment": 2,
+              "Visible": true,
+              "Width": 110.0
+            }
+          ],
+          "Group": true,
+          "MinimumRefreshIntervalMS": 10.0,
+          "Name": "Right Dial",
+          "RenderingSkip": 1,
+          "Repetitions": 0,
+          "Visible": true
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "return AR_is_rotary_left_shift_mode_active();",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FF212121",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiBgAlt');",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Text": {
+                  "Formula": {
+                    "Expression": "return AR_get_rotary_left_output( rotary_left_text );",
+                    "Interpreter": 1,
+                    "JSExt": 1,
+                    "PreExpression": "const rotary_left_text = {}\r\nrotary_left_text[0] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos1'];\r\nrotary_left_text[1] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos2'];\r\nrotary_left_text[2] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos3'];\r\nrotary_left_text[3] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos4'];\r\nrotary_left_text[4] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos5'];\r\nrotary_left_text[5] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos6'];\r\nrotary_left_text[6] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos7'];\r\nrotary_left_text[7] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos8'];\r\nrotary_left_text[8] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos9'];\r\nrotary_left_text[9] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos10'];\r\nrotary_left_text[10] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos11'];\r\nrotary_left_text[11] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos12'];"
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiTitle')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "return ld_changed( alertDelay, AR_get_rotary_left_output(rotary_left_text) )",
+                    "Interpreter": 1,
+                    "JSExt": 1,
+                    "PreExpression": "const alertDelay = ld_getSettings('alertDelay');\r\nconst rotary_left_text = {}\r\nrotary_left_text[0] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos1'];\r\nrotary_left_text[1] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos2'];\r\nrotary_left_text[2] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos3'];\r\nrotary_left_text[3] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos4'];\r\nrotary_left_text[4] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos5'];\r\nrotary_left_text[5] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos6'];\r\nrotary_left_text[6] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos7'];\r\nrotary_left_text[7] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos8'];\r\nrotary_left_text[8] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos9'];\r\nrotary_left_text[9] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos10'];\r\nrotary_left_text[10] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos11'];\r\nrotary_left_text[11] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos12'];"
+                  },
+                  "Mode": 2
+                }
+              },
+              "BorderStyle": {
+                "BorderColor": "#FF00BFFF",
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Font": "Roboto",
+              "FontSize": 60.0,
+              "FontWeight": "Bold",
+              "Height": 240.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 15.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Left Alert",
+              "RenderingSkip": 0,
+              "Text": "TC 0",
+              "TextColor": "#FFFFFFFF",
+              "Top": 120.0,
+              "VerticalAlignment": 1,
+              "Visible": false,
+              "Width": 300.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiBg');",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Text": {
+                  "Formula": {
+                    "Expression": "return AR_get_rotary_left_output( rotary_left_text );",
+                    "Interpreter": 1,
+                    "JSExt": 1,
+                    "PreExpression": "const rotary_left_text = {}\r\nrotary_left_text[0] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos1'];\r\nrotary_left_text[1] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos2'];\r\nrotary_left_text[2] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos3'];\r\nrotary_left_text[3] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos4'];\r\nrotary_left_text[4] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos5'];\r\nrotary_left_text[5] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos6'];\r\nrotary_left_text[6] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos7'];\r\nrotary_left_text[7] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos8'];\r\nrotary_left_text[8] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos9'];\r\nrotary_left_text[9] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos10'];\r\nrotary_left_text[10] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos11'];\r\nrotary_left_text[11] = ld_getSettings('manufacturers')['ascherRacing']['leftDial']['pos12'];"
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiTitle');",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "BorderStyle": {
+                "Bindings": {
+                  "BorderColor": {
+                    "Formula": {
+                      "Expression": "return ld_theme('ld_uiLine');",
+                      "Interpreter": 1,
+                      "JSExt": 1
+                    },
+                    "Mode": 2
+                  }
+                },
+                "BorderBottom": 2,
+                "BorderLeft": 2,
+                "BorderRight": 2,
+                "BorderTop": 2,
+                "RadiusBottomLeft": 8,
+                "RadiusBottomRight": 8,
+                "RadiusTopLeft": 8,
+                "RadiusTopRight": 8
+              },
+              "Font": "Roboto",
+              "FontSize": 18.0,
+              "FontWeight": "Bold",
+              "Height": 30.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": -46.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Left Rotary",
+              "RenderingSkip": 0,
+              "Rotation": -90.0,
+              "ShadowColor": "#FF000000",
+              "Text": "LEFT",
+              "TextColor": "#FFFFFFFF",
+              "TextPadding": {
+                "PaddingBottom": 5
+              },
+              "Top": 225.0,
+              "VerticalAlignment": 2,
+              "Visible": true,
+              "Width": 110.0
+            }
+          ],
+          "Group": true,
+          "MinimumRefreshIntervalMS": 10.0,
+          "Name": "Left Dial",
+          "RenderingSkip": 1,
+          "Repetitions": 0,
+          "Visible": true
+        }
+      ],
+      "MinimumRefreshIntervalMS": 0.0,
+      "Name": "Screen",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": ""
+      },
+      "PitScreen": false,
+      "RenderingSkip": 0,
+      "ScreenEnabledExpression": {
+        "Expression": ""
+      },
+      "ScreenId": "e7a25900-7a29-4650-b833-2742effe654d"
+    }
+  ],
+  "ShowBackground": true,
+  "ShowBoundingRectangles": false,
+  "ShowForeground": true,
+  "ShowOnScreenControls": true,
+  "SnapToGrid": false,
+  "Variables": {
+    "DashboardVariables": [
+      {
+        "EvaluateBeforeScreenRoles": true,
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "folderName"
+      },
+      {
+        "EvaluateBeforeScreenRoles": true,
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "dashName"
+      },
+      {
+        "EvaluateBeforeScreenRoles": false,
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "trueDarkMode"
+      }
+    ]
+  },
+  "Version": 2
+}
