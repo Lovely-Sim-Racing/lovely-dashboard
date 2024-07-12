@@ -121,6 +121,14 @@ Display virtual RPM LEDs within the Lovely Dashboard. Ideal for those who do not
 
 ---
 
+#### `estimatedTimeMode`
+Select the Timing Methods used within the Dashboards
+
+- `0` - Standard (Less accurate but matches in-game timings)
+- **`1` (Default)** - Advanced (Advanced - Accurate & works with multi driver events)
+
+---
+
 #### `clutchMode`
 Display the Clutch Value (0-100). This is great for defining the bite point.
 
