@@ -6,7 +6,7 @@
 
 > [!CAUTION]
 > **REQUIRED!** Ascher Racing Firmware version 1.1b9 (or higher)
-> [**Download Here**]([https://github.com/cdemetriadis/lovely-dashboard/releases](https://ascher-racing.com/int/downloads?open=wheels))
+> [**Download Here**](https://ascher-racing.com/int/downloads?open=wheels)
 
 ---
 
