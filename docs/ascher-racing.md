@@ -5,7 +5,7 @@
 ---
 
 > [!CAUTION]
-> **REQUIRED!** Ascher Racing Firmware version 1.1b9 (or higher)
+> **REQUIRED!** Ascher Racing Firmware version 1.2 (or higher)
 > [**Download Here**](https://ascher-racing.com/int/downloads?open=wheels)
 
 ---
