@@ -14,7 +14,7 @@ A multifunctional feature packed SimHub Dashboard (DDU) and ecosystem.
 
 
 <h4 align="center"><strong>
-<a href="#video-guide">Video Guide</a> - <a href="#whats-included">What's Included</a> - <a href="#installing">Installing</a> - <a href="#updating">Updating</a> - <a href="#what-is-true-dark-mode">True Dark Mode</a> - <a href="#manufacturer-partnerships">Manufacturer Partnerships</a> - <a href="#lovely-dashboard-ecosystem">Lovely Ecosystem</a>
+<a href="#video-guide">Video Guide</a> - <a href="#whats-included">What's Included</a> - <a href="#installing">Installing</a> & <a href="#updating">Updating</a></br><a href="#what-is-true-dark-mode">True Dark Mode</a> - <a href="#manufacturer-partnerships">Manufacturer Partnerships</a> - <a href="#lovely-memberships">Memberships</a> - <a href="#lovely-dashboard-ecosystem">Lovely Ecosystem</a>
 </strong></h4>
 
 <br/>
@@ -22,10 +22,9 @@ A multifunctional feature packed SimHub Dashboard (DDU) and ecosystem.
 ---
 
 <br/>
-
 <div align="center">
-<img width="70" alt="Lovely Sim Racing" src="docs/images/member-icon.png"><br/>
-<strong>Become a <a href="#lovely-membership">Lovely Member</a>, get all the perks!</strong><br/>
+<h1><img width="70" alt="Lovely Sim Racing" src="docs/images/member-icon.png"></br>
+Become a <a href="https://lsr.gg/membership">Lovely Member</a>, and unlock all the perks!</h1>
 (Memberships start at €1/mo)
 </div>
 
