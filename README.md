@@ -72,7 +72,7 @@ A multifunctional feature packed SimHub Dashboard (DDU) and ecosystem.
 
 <div align="center">
 <p><img width="80" height="80" alt="Lovely Discord" src="docs/images/icon-discord.png"><br/>
-<strong><em>JOIN over 6400 Lovely Sim Racers on Discord</em></strong><br/>
+<strong><em>JOIN over 8000 Lovely Sim Racers on Discord</em></strong><br/>
 Join the Lovely Sim Racing Discord Server and help develop a better version.<br/>
 👉 <a href="https://lsr.gg/discord"><strong>Lovely Discord Server</strong></a></p>
 </div>
@@ -83,23 +83,16 @@ Join the Lovely Sim Racing Discord Server and help develop a better version.<br/
 
 ## Video Tours & Guides
 <h4 align="center">
-<a href="https://youtube.com/live/mhGbmHBr7g4">
-<img src="docs/images/LSRM - Lovely Dashboard v2.6.0 Walkthrough.png" /><br/>
-Watch the Lovely Dashboard 2.6.0 Walkthrough
+<a href="https://youtu.be/tW6nZ-lHOCw">
+<img src="docs/images/lovely-plugin.png" /><br/>
+Watch the Lovely Plugin walkthrough
 </a>
 </h4>
-
-<h4 align="center">
-<a href="https://youtu.be/QkQtfakUxRk">
-<img src="docs/images/LSRM - Lovely Dashboard Configurator.png" /><br/>
-Watch the Lovely Dashboard Configurator
-</a>
-</h4>
-
 
 ## What's Included
 In the [Releases](https://github.com/cdemetriadis/lovely-dashboard/releases) section, you will find:
 
+1. **Lovely Plugin** - A SimHub Plugin that imporves the Lovely experience & performance and makes setup a breeze!
 1. **Lovely Dashboard** - A custom designed dashboard to use on your phone or dedicated DDU Screen
 2. **Lovely Dashboard Companion** - A custom designed dashboard to use on a secondary display (eg. Steering Wheel)
 1. **Lovely Dashboard TK Edition** - The Lovely Dashboard with Tony Kanaan's personal touch
@@ -115,25 +108,21 @@ In the [Releases](https://github.com/cdemetriadis/lovely-dashboard/releases) sec
 If this is your first time installing the **Lovely Dashboard**, please follow these steps, and make sure you've completed each before proceeding to the next one.
 
 1. Download & Install [**SimHub**](https://www.simhubdash.com) app
-2. Download & Install [**Roboto Font Family**](https://fonts.google.com/specimen/Roboto) by Christian Robertson
-3. Download & Install the [**Lovely Dashboard**](https://github.com/cdemetriadis/lovely-dashboard/releases) you need
+2. Download & Install the [**Lovely Plugin**]([https://fonts.google.com/specimen/Roboto](https://github.com/cdemetriadis/lovely-dashboard/releases))
+3. Download & Install the [**Lovely Dashboard**](https://github.com/cdemetriadis/lovely-dashboard/releases) of your liking
 4. Setup your [**SimHub Action Triggers**](./docs/actions.md) to control the Lovely Dashboard UI
-5. ***Optionally***, you can extend and personalise the Lovely Dashboard by using the [**Settings File**](./docs/settings.md).
 
-### iRacing Extra Properties required
-**For iRACING USE ONLY** you will also want to download and enable Romainrob's plugin. Download **`RSC.iRacingExtraProperties.dll`** and **`RSC.iRacingExtraPorperties.pdb`** from the [**Official Google Drive**](https://drive.google.com/drive/folders/1AiIWHviD4j-_D-zgRrjJU1AFhJ_xmass) and copy them into your Simhub root folder. Restart Simhub, and then in `Simhub > Settings > Plugins` enable the Plugin:
-
-![](./docs/images/simhub-plugins-romainrob.png)
+### Post-it Notes Simhub Plugin (Optional)
+The Post-it Notes SimHub Plugin is deeply integrated into the Lovely Ecosystem, providing beter and more consistent data. It is an optional addition, but it does offer some very important upgrades to how SimHub calculates timing and gaps. Also, if you are an iRacig user, you will to install the Post-it Notes plugin to get infromation about your iRating.
 
 ### Updating
 If you have received a notification on your **Lovely Dashboard** of a new update, please follow the below steps:
 
 1. Download & Install the [**Lovely Dashboard Latest Release**](https://github.com/cdemetriadis/lovely-dashboard/releases)
-2. Read the changelog and if prompted, you may also need to update [**SimHub**](https://www.simhubdash.com) and/or the [**Settings File**](./docs/settings.md)
+2. Read the changelog and if prompted, you may also need to update [**SimHub**](https://www.simhubdash.com) and/or the [**Lovely Plugin**](https://github.com/cdemetriadis/lovely-dashboard/releases)
 
 > [!TIP]
 > :people_holding_hands: **For more information, tips & feedback, please join the [Lovely Discord](https://lsr.gg/discord)**
-
 
 ## Settings
 The Lovely Dashboard is a highly customizable dashboard. You can tailor it to your personal needs and adapt how it functions. To take full advantage of the Lovely Dashboard you'll need to copy the file `Lovely-Dashboard_settings.json` into the `./Simhub/JavascriptExtensions` folder. 
