@@ -81,13 +81,14 @@ Join the Lovely Sim Racing Discord Server and help develop a better version.<br/
 
 ---
 
-## Video Tours & Guides
+## Video Guide
 <h4 align="center">
 <a href="https://youtu.be/tW6nZ-lHOCw">
 <img src="docs/images/lovely-plugin.png" /><br/>
 Watch the Lovely Plugin walkthrough
 </a>
 </h4>
+
 
 ## What's Included
 In the [Releases](https://github.com/cdemetriadis/lovely-dashboard/releases) section, you will find:
@@ -103,19 +104,29 @@ In the [Releases](https://github.com/cdemetriadis/lovely-dashboard/releases) sec
 6. **Lovely Flags** - A "simple" dashboard to display race flags and platform integration
 
 
-## Download & Install
-### First time install
+## Installing
 If this is your first time installing the **Lovely Dashboard**, please follow these steps, and make sure you've completed each before proceeding to the next one.
 
-1. Download & Install [**SimHub**](https://www.simhubdash.com) app
-2. Download & Install the [**Lovely Plugin**]([https://fonts.google.com/specimen/Roboto](https://github.com/cdemetriadis/lovely-dashboard/releases))
-3. Download & Install the [**Lovely Dashboard**](https://github.com/cdemetriadis/lovely-dashboard/releases) of your liking
-4. Setup your [**SimHub Action Triggers**](./docs/actions.md) to control the Lovely Dashboard UI
+### Step 1: Download and install SimHub
+Download & install [**SimHub**](https://www.simhubdash.com) app, just as you would install any other Windows application on your system. Follow the prompts and once it's installed, proceed to the next step.
 
-### Post-it Notes Simhub Plugin (Optional)
-The Post-it Notes SimHub Plugin is deeply integrated into the Lovely Ecosystem, providing beter and more consistent data. It is an optional addition, but it does offer some very important upgrades to how SimHub calculates timing and gaps. Also, if you are an iRacig user, you will to install the Post-it Notes plugin to get infromation about your iRating.
+### Step 2: Download and install the Lovely Plugin
+**Download** the latest **Lovely Plugin** file (`LovelySimRacing.Plugin.dll`) from the [latest releases](https://github.com/cdemetriadis/lovely-dashboard/releases) or the [Lovely Website](https://lsr,gg/dash). Once the file is downloaded, you will need to **copy it into SimHub's root folder**, usually located at `C:\Program Files (x86)\SimHub\`. **Restart SimHub** and enable the Lovley Plugin at the prompt. Finally, **Select "Show in left main menu"**.
+<p align="center">
+<img width="720" height="200" alt="Copy the LovelySimRacing.Plugin.dll file into the Root SimHub folder" src="docs/images/settings-file.png">
+</p>
 
-### Updating
+### Step 3: Download and install the Lovely Dashboard
+Download any Lovely Dashboard that you'd like to use from the [latest releases](https://github.com/cdemetriadis/lovely-dashboard/releases) or the [Lovely Website](https://lsr,gg/dash). Once downloaded, double-click the `.simhubdash` file and follow the insctrucitons.
+
+### Step 4: Setup your controls
+One of the best features of the Lovely Dashbaord is that it has a multitude of options and screens to choose from. To take full advantage of all the Screens and Modules, you will need to assign certain actions to your steering or button box. Please make sure you assign all of the [**SimHub Action Triggers**](./docs/actions.md) in order to control the Lovely Dashboard.
+
+### Step 5: Post-it Notes Simhub Plugin (Optional)
+The Post-it Notes SimHub Plugin is deeply integrated into the Lovely Ecosystem, providing beter and more consistent data. It is an optional addition, but it does offer some very important upgrades to how SimHub calculates timing and gaps. Also, if you are an iRacig user, you will to install the Post-it Notes plugin to get infromation about your iRating. To install it, Download the latest release from the official [Post-it Notes Github Page](https://lsr.gg/postit), and repeat the same process as you did to **install the Lovely Plugin**.
+
+
+## Updating
 If you have received a notification on your **Lovely Dashboard** of a new update, please follow the below steps:
 
 1. Download & Install the [**Lovely Dashboard Latest Release**](https://github.com/cdemetriadis/lovely-dashboard/releases)
@@ -124,14 +135,6 @@ If you have received a notification on your **Lovely Dashboard** of a new update
 > [!TIP]
 > :people_holding_hands: **For more information, tips & feedback, please join the [Lovely Discord](https://lsr.gg/discord)**
 
-## Settings
-The Lovely Dashboard is a highly customizable dashboard. You can tailor it to your personal needs and adapt how it functions. To take full advantage of the Lovely Dashboard you'll need to copy the file `Lovely-Dashboard_settings.json` into the `./Simhub/JavascriptExtensions` folder. 
-
-![Copy the settings file into the JavascriptExtensions folder](docs/images/settings-file.png)
-
-To change your personal settings, you can either edit the file `Lovely-Dashboard_settings.json` directly in any text editor **OR** use the new [**Settings File Configurator**](https://lsr.gg/configurator).
-
-The available settings are outlined in the dedicated [**Settings File**](./docs/settings.md) page.
 
 ## What is True Dark Mode?
 **True Dark Mode** in the Lovely Dashboard is more than just pretty colors. Alongside a new theming architecture responsible for changing the colours and icons, True Dark Mode does more for you than you may think.
