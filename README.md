@@ -41,15 +41,18 @@ A multifunctional feature packed SimHub Dashboard (DDU) and ecosystem.
 
 <p align="center">
 <span><strong>Native Simulator & Platform Support</strong></span><br/>
-<img width="80" height="80" alt="Assetto Corsa Competizione" src="docs/images/icon-acc.png">
-<img width="80" height="80" alt="Assetto Corsa" src="docs/images/icon-ac.png">
-<img width="80" height="80" alt="iRacing" src="docs/images/icon-iracing.png">
-<img width="80" height="80" alt="Automobilista 2" src="docs/images/icon-ams2.png">
-<img width="80" height="80" alt="rFactor 2" src="docs/images/icon-rf2.png">
-<img width="80" height="80" alt="Formula 1" src="docs/images/icon-f1.png">
+<img width="70" alt="Assetto Corsa Competizione" src="docs/images/icon-acc.png">
+<img width="70" alt="Assetto Corsa" src="docs/images/icon-ac.png">
+<img width="70" alt="iRacing" src="docs/images/icon-iracing.png">
+<img width="70" alt="Automobilista 2" src="docs/images/icon-ams2.png">
+<img width="70" alt="rFactor 2" src="docs/images/icon-rf2.png">
+<img width="70" alt="Formula 1" src="docs/images/icon-f1.png">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img width="80" height="80" alt="Low Fuel Motorsport" src="docs/images/icon-lfm.png">
-<img width="80" height="80" alt="Pitskill.io" src="docs/images/icon-pitskill.png"></br>
+<a href="https://lsr.gg/simgrid" target="_blank"><img width="70" alt="SimGrid" src="docs/images/icon-simgrid.png"></a>
+<a href="https://lsr.gg/lfm" target="_blank"><img width="70" alt="Low Fuel Motorsport" src="docs/images/icon-lfm.png"></a>
+<a href="https://lsr.gg/pitskill" target="_blank"><img width="70" alt="Pitskill.io" src="docs/images/icon-pitskill.png"></a>
+<a href="https://lsr.gg/racecraft" target="_blank"><img width="70" alt="Racecraft Online" src="docs/images/icon-racecraft.png"></a>
+</br>
 <span>+ generic support for all simulators that work with SimHub</span>
 </p>
 
@@ -57,15 +60,16 @@ A multifunctional feature packed SimHub Dashboard (DDU) and ecosystem.
  
 <p align="center">
 <span><strong>Lovely Partners</strong></span><br/>
-<a href="https://www.simhubdash.com" target="_blank"><img width="80" height="80" alt="SimHub" src="docs/images/icon-simhub.png"></a>
-<a href="https://www.facebook.com/SimDash.pt" target="_blank"><img width="80" height="80" alt="SimDash" src="docs/images/icon-simdash.png"></a>
-<a href="https://ascher-racing.com" target="_blank"><img width="80" height="80" alt="Ascher Racing" src="docs/images/icon-ascher.png"></a>
-<a href="https://greywolftechnologies.it" target="_blank"><img width="80" height="80" alt="Greywolf Technologies" src="docs/images/icon-greywolf.png"></a>
-<a href="https://www.tonykanaan.com.br/en/esports" target="_blank"><img width="80" height="80" alt="Tony Kanaan" src="docs/images/icon-tony-kanaan.png"></a>
-<a href="https://www.turnracing.com" target="_blank"><img width="80" height="80" alt="Turn Racing" src="docs/images/icon-turn.png"></a>
-<a href="https://www.simutec.co.uk" target="_blank"><img width="80" height="80" alt="Simutec" src="docs/images/icon-simutec.png"></a>
-<a href="https://www.simagic.com" target="_blank"><img width="80" height="80" alt="Simagic" src="docs/images/icon-simagic.png"></a>
-<a href="https://lsr.gg/dnr" target="_blank"><img width="100" height="80" alt="Daniel Newman Racing" src="docs/images/icon-dnr.png"></a> 
+<a href="https://ascher-racing.com" target="_blank"><img height="75" alt="Ascher Racing" src="docs/images/icon-ascher.png"></a>
+<a href="https://www.simhubdash.com" target="_blank"><img height="75" alt="SimHub" src="docs/images/icon-simhub.png"></a>
+<a href="https://www.facebook.com/SimDash.pt" target="_blank"><img height="75" alt="SimDash" src="docs/images/icon-simdash.png"></a>
+<a href="https://greywolftechnologies.it" target="_blank"><img height="75" alt="Greywolf Technologies" src="docs/images/icon-greywolf.png"></a>
+<a href="https://www.tonykanaan.com.br/en/esports" target="_blank"><img height="75" alt="Tony Kanaan" src="docs/images/icon-tony-kanaan.png"></a>
+<a href="https://lsr.gg/dnr" target="_blank"><img height="75" alt="Daniel Newman Racing" src="docs/images/icon-dnr.png"></a> 
+<a href="https://www.turnracing.com" target="_blank"><img height="75" alt="Turn Racing" src="docs/images/icon-turn.png"></a>
+<a href="https://www.simutec.co.uk" target="_blank"><img height="75" alt="Simutec" src="docs/images/icon-simutec.png"></a>
+<a href="https://www.simagic.com" target="_blank"><img height="75" alt="Simagic" src="docs/images/icon-simagic.png"></a>
+<a href="https://lsr.gg/moza" target="_blank"><img height="75" alt="Moza Racing" src="docs/images/icon-moza.png"></a> 
 </p>
  
 ---
@@ -148,9 +152,6 @@ In extended driving sessions, especially during the late hours, light may be sca
 Switching to the **Blue True Dark Mode** during these long low-lit driving stints would decrease the amount of melatonin in our body, maintaining alertness.
 
 *Source: [Sleep Foundation](https://www.sleepfoundation.org/bedroom-environment/what-color-light-helps-you-sleep)*
-
-> [!TIP]
-> To use True Dark Mode, you will need to [enable it in the Settings File](./docs/settings.md#true-dark-mode) and [setup your Hot-Key in Simhub](./docs/actions.md#setup-hot-keys).
 
 ![True Dark Mode in Blue helps maintain alertness](./docs/images/primary-tdm-blue.png)
 
@@ -244,16 +245,14 @@ Available to [**Pro & Gold Lovely Members**](#lovely-membership) only.
 ![Lovely Flags](docs/images/LovelyFlags.gif)	
 
 ## Analytics
-#### The **Lovely Dashboard** uses Google Analytics to collect anonymous data on Product Interactions & Usage. **We do not track or store any personal data. Users are free to opt-in or opt-out via the optional [**Settings File**](./docs/settings.md).**
-
-> [!NOTE]
-> By downloading and installing the settings file, you accept that the Lovely Dashboard will use cookies to collect anonymous data. You have the option to opt-out in the settings file.
+#### The Lovely Dashboard uses Google Analytics to collect anonymous data on Product Interactions & Usage. We do not track or store any personal data. Users are free to opt-in or opt-out via the option in the Lovely Plugin.
 
 
 ## Special Thanks
 A special thanks to all of you who have supported this project in [one way](https://lsr.gg/membership) or [another](https://lsr.gg/store). It could not have been done without you. Special thanks also to these fellas that have contributed to the code:
 
-* **Derrick Moeller & Adam Hoyle** (Lovely Plugin)
+* **Derrick Moeller** (Lovely Plugin)
+* **Adam Hoyle** (Lovely Plugin)
 * **Mike Bowen** (iRacing ERS & MGU)
 * **Steve Mattar** (F1 Support)
 * **Joerg Behrens** (Settings Configurator)
@@ -271,15 +270,16 @@ For all marketing inquiries please contact me directly.
  
 <p align="center">
 <span><strong>Lovely Partners</strong></span><br/>
-<a href="https://www.simhubdash.com" target="_blank"><img width="80" height="80" alt="SimHub" src="docs/images/icon-simhub.png"></a>
-<a href="https://www.facebook.com/SimDash.pt" target="_blank"><img width="80" height="80" alt="SimDash" src="docs/images/icon-simdash.png"></a>
-<a href="https://ascher-racing.com" target="_blank"><img width="80" height="80" alt="Ascher Racing" src="docs/images/icon-ascher.png"></a>
-<a href="https://greywolftechnologies.it" target="_blank"><img width="80" height="80" alt="Greywolf Technologies" src="docs/images/icon-greywolf.png"></a>
-<a href="https://www.tonykanaan.com.br/en/esports" target="_blank"><img width="80" height="80" alt="Tony Kanaan" src="docs/images/icon-tony-kanaan.png"></a>
-<a href="https://www.turnracing.com" target="_blank"><img width="80" height="80" alt="Turn Racing" src="docs/images/icon-turn.png"></a>
-<a href="https://www.simutec.co.uk" target="_blank"><img width="80" height="80" alt="Simutec" src="docs/images/icon-simutec.png"></a>
-<a href="https://www.simagic.com" target="_blank"><img width="80" height="80" alt="Simagic" src="docs/images/icon-simagic.png"></a>
-<a href="https://lsr.gg/dnr" target="_blank"><img width="100" height="80" alt="Daniel Newman Racing" src="docs/images/icon-dnr.png"></a> 
+<a href="https://ascher-racing.com" target="_blank"><img height="75" alt="Ascher Racing" src="docs/images/icon-ascher.png"></a>
+<a href="https://www.simhubdash.com" target="_blank"><img height="75" alt="SimHub" src="docs/images/icon-simhub.png"></a>
+<a href="https://www.facebook.com/SimDash.pt" target="_blank"><img height="75" alt="SimDash" src="docs/images/icon-simdash.png"></a>
+<a href="https://greywolftechnologies.it" target="_blank"><img height="75" alt="Greywolf Technologies" src="docs/images/icon-greywolf.png"></a>
+<a href="https://www.tonykanaan.com.br/en/esports" target="_blank"><img height="75" alt="Tony Kanaan" src="docs/images/icon-tony-kanaan.png"></a>
+<a href="https://lsr.gg/dnr" target="_blank"><img height="75" alt="Daniel Newman Racing" src="docs/images/icon-dnr.png"></a> 
+<a href="https://www.turnracing.com" target="_blank"><img height="75" alt="Turn Racing" src="docs/images/icon-turn.png"></a>
+<a href="https://www.simutec.co.uk" target="_blank"><img height="75" alt="Simutec" src="docs/images/icon-simutec.png"></a>
+<a href="https://www.simagic.com" target="_blank"><img height="75" alt="Simagic" src="docs/images/icon-simagic.png"></a>
+<a href="https://lsr.gg/moza" target="_blank"><img height="75" alt="Moza Racing" src="docs/images/icon-moza.png"></a> 
 </p>
  
 ---
