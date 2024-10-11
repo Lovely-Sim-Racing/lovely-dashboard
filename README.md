@@ -86,7 +86,7 @@ Join the Lovely Sim Racing Discord Server and help develop a better version.<br/
 
 ## Video Guide
 <h4 align="center">
-<a href="https://youtu.be/tW6nZ-lHOCw">
+<a href="https://www.youtube.com/watch?v=tW6nZ-lHOCw">
 <img src="docs/images/lovely-plugin.png" /><br/>
 Watch the Lovely Plugin walkthrough
 </a>
