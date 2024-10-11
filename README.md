@@ -14,7 +14,7 @@ A multifunctional feature packed SimHub Dashboard (DDU) and ecosystem.
 
 
 <h4 align="center"><strong>
-<a href="#video-tours--guides">Video Guides</a> - <a href="#download--install">Download & Install</a> - <a href="#settings">Settings</a> - <a href="#what-is-true-dark-mode">True Dark Mode</a> - <a href="#manufacturer-partnerships">Manufacturer Partnerships</a> - <a href="#lovely-dashboard-ecosystem">Lovely Ecosystem</a>
+<a href="#video-guide">Video Guide</a> - <a href="#whats-included">What's Included</a> - <a href="#installing">Installing</a> - <a href="#updating">Updating</a> - <a href="#what-is-true-dark-mode">True Dark Mode</a> - <a href="#manufacturer-partnerships">Manufacturer Partnerships</a> - <a href="#lovely-dashboard-ecosystem">Lovely Ecosystem</a>
 </strong></h4>
 
 <br/>
