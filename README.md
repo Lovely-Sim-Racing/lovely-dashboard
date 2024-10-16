@@ -114,13 +114,13 @@ If this is your first time installing the **Lovely Dashboard**, please follow th
 Download & install [**SimHub**](https://www.simhubdash.com) app, just as you would install any other Windows application on your system. Follow the prompts and once it's installed, proceed to the next step.
 
 ### Step 2: Download and install the Lovely Plugin
-**Download** the latest **Lovely Plugin** file (`LovelySimRacing.Plugin.dll`) from the [latest releases](https://github.com/cdemetriadis/lovely-dashboard/releases) or the [Lovely Website](https://lsr.gg/dash). Once the file is downloaded, you will need to **copy it into SimHub's root folder**, usually located at `C:\Program Files (x86)\SimHub\`. **Restart SimHub** and enable the Lovley Plugin at the prompt. Finally, **Select "Show in left main menu"**.
+**Download** the latest **Lovely Plugin** file (`LovelySimRacing.Plugin.dll`) from the [Lovely Website](https://lsr.gg/plugin). Once the file is downloaded, you will need to **copy it into SimHub's root folder**, usually located at `C:\Program Files (x86)\SimHub\`. **Restart SimHub** and enable the Lovely Plugin at the prompt. Finally, **Select "Show in left main menu"**.
 <p align="center">
 <img width="720" height="200" alt="Copy the LovelySimRacing.Plugin.dll file into the Root SimHub folder" src="docs/images/settings-file.png">
 </p>
 
 ### Step 3: Download and install the Lovely Dashboard
-Download any Lovely Dashboard that you'd like to use from the [latest releases](https://github.com/cdemetriadis/lovely-dashboard/releases) or the [Lovely Website](https://lsr.gg/dash). Once downloaded, double-click the `.simhubdash` file and follow the insctrucitons.
+Download any Lovely Dashboard that you'd like to use from the [Lovely Website](https://lsr.gg/dash). Once downloaded, double-click the `.simhubdash` file and follow the insctrucitons in SimHub.
 
 ### Step 4: Setup your controls
 One of the best features of the Lovely Dashbaord is that it has a multitude of options and screens to choose from. To take full advantage of all the Screens and Modules, you will need to assign certain actions to your steering or button box. Please make sure you assign all of the [**SimHub Action Triggers**](./docs/actions.md) in order to control the Lovely Dashboard.
@@ -132,8 +132,8 @@ The Post-it Notes SimHub Plugin is deeply integrated into the Lovely Ecosystem, 
 ## Updating
 If you have received a notification on your **Lovely Dashboard** of a new update, please follow the below steps:
 
-1. Download & Install the [**Lovely Dashboard Latest Release**](https://github.com/cdemetriadis/lovely-dashboard/releases)
-2. Read the changelog and if prompted, you may also need to update [**SimHub**](https://www.simhubdash.com) and/or the [**Lovely Plugin**](https://github.com/cdemetriadis/lovely-dashboard/releases)
+1. Download & Install the [**Lovely Dashboard Latest Release**](https://lsr.gg/dash)
+2. Read the changelog and if prompted, you may also need to update [**SimHub**](https://www.simhubdash.com) and/or the [**Lovely Plugin**](https://lsr.gg/plugin)
 
 > [!TIP]
 > :people_holding_hands: **For more information, tips & feedback, please join the [Lovely Discord](https://lsr.gg/discord)**
