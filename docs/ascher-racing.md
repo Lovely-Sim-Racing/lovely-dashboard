@@ -57,7 +57,7 @@ Watch the Ascher Racing + Lovely Dashboard Integration Video</a>
 The **Rotary Dials** in the center of the steering wheel can be used as simple rotaries, but with the advanced features of the Ascher Racing Artura Series, you can convert them into modifier switches. These modifier switches control the output of other buttons or rotaries on the steering wheel, thus giving you a vast number of inputs.
 
 ### Customise the Rotary Dials
-You can customise the Labels shown on the screen of the Lovely Dashboard by using the [**Settings Configurator**](https://lsr.gg/config), additionally you can also purchase the [**Lovey Ascher Racing Sticker Sheet**](https://store.lsr.gg/collections/stickers) for the Ascher Racing Artura Series steering wheel.
+You can customise the Labels shown on the screen of the Lovely Dashboard by using the [**Lovely Plugin**](https://lsr.gg/plugin), additionally you can also purchase the [**Lovey Ascher Racing Sticker Sheet**](https://store.lsr.gg/collections/stickers) for the Ascher Racing Artura Series steering wheel.
 
 > [!TIP]
 > To initialise the Rotary Dials, you must first click the trigger button and then rotate the dial. This is necessary in order to capture the modifier mode. This is required only once per Simhub session, you will not be required to do this again until you restart Simhub.
