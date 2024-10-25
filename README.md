@@ -96,7 +96,7 @@ Watch the Lovely Plugin walkthrough
 ## What's Included
 In the [Releases](https://github.com/cdemetriadis/lovely-dashboard/releases) section, you will find:
 
-1. **Lovely Plugin** - A SimHub Plugin that imporves the Lovely experience & performance and makes setup a breeze!
+1. **Lovely Plugin** - A SimHub Plugin that improves the Lovely experience & performance and makes setup a breeze!
 1. **Lovely Dashboard** - A custom designed dashboard to use on your phone or dedicated DDU Screen
 2. **Lovely Dashboard Companion** - A custom designed dashboard to use on a secondary display (eg. Steering Wheel)
 1. **Lovely Dashboard TK Edition** - The Lovely Dashboard with Tony Kanaan's personal touch
@@ -126,7 +126,7 @@ Download any Lovely Dashboard that you'd like to use from the [Lovely Website](h
 One of the best features of the Lovely Dashbaord is that it has a multitude of options and screens to choose from. To take full advantage of all the Screens and Modules, you will need to assign certain actions to your steering or button box. Please make sure you assign all of the [**SimHub Action Triggers**](./docs/actions.md) in order to control the Lovely Dashboard.
 
 ### Step 5: Post-it Notes Simhub Plugin (Optional)
-The Post-it Notes SimHub Plugin is deeply integrated into the Lovely Ecosystem, providing beter and more consistent data. It is an optional addition, but it does offer some very important upgrades to how SimHub calculates timing and gaps. Also, if you are an iRacig user, you will to install the Post-it Notes plugin to get infromation about your iRating. To install it, Download the latest release from the official [Post-it Notes Github Page](https://lsr.gg/postit), and repeat the same process as you did to **install the Lovely Plugin**.
+The Post-it Notes SimHub Plugin is deeply integrated into the Lovely Ecosystem, providing better and more consistent data. It is an optional addition, but it does offer some very important upgrades to how SimHub calculates timing and gaps. Also, if you are an iRacing user, you will to install the Post-it Notes plugin to get infromation about your iRating. To install it, Download the latest release from the official [Post-it Notes Github Page](https://lsr.gg/postit), and repeat the same process as you did to **install the Lovely Plugin**.
 
 
 ## Updating
