@@ -9,7 +9,7 @@ A multifunctional feature packed SimHub Dashboard (DDU) and ecosystem.
 </p>
 
 <h4 align="center">
-<strong>NEW v3.0.1 - NEW Lovely Plugin!</strong>
+<strong>NEW v3.1.0 / v2.1.0 - NEW Lovely Dashboard UXL!</strong>
 </h4>
 
 
@@ -32,7 +32,7 @@ Become a <a href="https://lsr.gg/membership">Lovely Member</a>, and unlock all t
 
 ---
 
-### The Lovely Dashboard, used by thousands* of sim racers across the world, has become a staple in all of your sim racing setups. From professionals like **Tony Kanaan** all the way to rookies, the Lovely Dashboard delivers the best and most consistent information for all simulators.
+### The Lovely Dashboard, used by thousands* of sim racers across the world, has become a staple in all of your sim racing setups. From professionals like **Tony Kanaan** all the way to rookies, the Lovely Dashboard delivers the best and most consistent information for all simulators. 
 
 <strong>*</strong> Google Analytics: 22k Unique Users Mar 2023 - Mar 2024
 
@@ -45,6 +45,7 @@ Become a <a href="https://lsr.gg/membership">Lovely Member</a>, and unlock all t
 <img width="70" alt="iRacing" src="docs/images/icon-iracing.png">
 <img width="70" alt="Automobilista 2" src="docs/images/icon-ams2.png">
 <img width="70" alt="rFactor 2" src="docs/images/icon-rf2.png">
+<img width="70" alt="Raceroom Racing Experience" src="docs/images/icon-rrre.png">
 <img width="70" alt="Formula 1" src="docs/images/icon-f1.png">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://lsr.gg/simgrid" target="_blank"><img width="70" alt="SimGrid" src="docs/images/icon-simgrid.png"></a>
@@ -75,7 +76,7 @@ Become a <a href="https://lsr.gg/membership">Lovely Member</a>, and unlock all t
 
 <div align="center">
 <p><img width="80" height="80" alt="Lovely Discord" src="docs/images/icon-discord.png"><br/>
-<strong><em>JOIN over 8000 Lovely Sim Racers on Discord</em></strong><br/>
+<strong><em>JOIN over 8500 Lovely Sim Racers on Discord</em></strong><br/>
 Join the Lovely Sim Racing Discord Server and help develop a better version.<br/>
 👉 <a href="https://lsr.gg/discord"><strong>Lovely Discord Server</strong></a></p>
 </div>
@@ -101,6 +102,7 @@ In the [Releases](https://github.com/cdemetriadis/lovely-dashboard/releases) sec
 2. **Lovely Dashboard Companion** - A custom designed dashboard to use on a secondary display (eg. Steering Wheel)
 1. **Lovely Dashboard TK Edition** - The Lovely Dashboard with Tony Kanaan's personal touch
 3. **Lovely Dashboard XL** - An oversized version of the Lovely Dashboard for the new 10" DDU Screens
+3. **Lovely Dashboard UXL** - An Ultra Wide version of the Lovely Dashboard for 1920x480 DDU Screens
 3. **Lovely Dashboard Curved** - A variant of the Lovely Dashboard for curved top DDU's
 4. **Lovely Overlay** - If you're a streamer, you can use this overlay in OBS or any other broadcasting software
 5. **Lovely Tower** - A leader board tower, great for OBS if you're streaming 
@@ -179,7 +181,7 @@ We have partnered with multiple **IndyCar race winner**, **IndyCar Series Champi
 
 ### Screen Size
 * Any device compatible with SimHub Dash
-* Native **5" (850x480)** and **10" (1920x720)** DDU Screens are supported
+* Native **5" (850x480)**, **10" (1920x720)** and **1920x480** DDU Screens are supported
 
 ### Compatible Sims
 The Lovely Dashboard offers native support for many sims, but will work with ANY simulator that offers native data to SimHub.
@@ -191,6 +193,7 @@ The Lovely Dashboard offers native support for many sims, but will work with ANY
 * [iRacing](https://www.iracing.com)
 * [Automobilista 2](https://www.game-automobilista2.com)
 * [rFactor 2](https://www.studio-397.com/rfactor2/)
+* [RaceRoom Racing Experience](https://game.raceroom.com/)
 * [Formula 1](https://www.ea.com/en-gb/games/f1/)
 
 #### Generic Support
@@ -213,8 +216,6 @@ If you were wondering why this is the best SimHub dashboard out there, wonder no
 ### Lovely Dashboard
 ![Basic Feature Set](docs/images/primary-tdm.gif)
 
-![Basic Feature Set](docs/images/AllFeatures.png)
-
 ### Lovely Dashboard Companion 
 ![Lovely Dashboard Companion](docs/images/LovelyDashboardCompanion.png)
 
@@ -229,7 +230,11 @@ Available to [**Pro & Gold Lovely Members**](https://lsr.gg/membership) only.
 
 ### Lovely Dashboard XL (for 10" DDU's)
 
-![Lovely Dashboard XL](docs/images/LovelyDashboardXL.png)
+![Lovely Dashboard XL](docs/images/lovely-dash-xl.png)
+
+### Lovely Dashboard UXL (for 1920x480 DDU's)
+
+![Lovely Dashboard XL](docs/images/lovely-dash-uxl.png)
 
 ### Lovely Overlay
 
