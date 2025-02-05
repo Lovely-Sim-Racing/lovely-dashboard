@@ -1,5 +1,5 @@
 <p align="center">
-<img width="150" height="150" alt="Lovely Sim Racing" src="docs/images/lr-logo-small.png">
+<img width="150" height="150" alt="Lovely Sim Racing" src="docs/images/lr-team-icon.png">
 </p>
 
 <h1 align="center">Lovely SimHub Dashboard</h1>
@@ -38,39 +38,57 @@ Become a <a href="https://lsr.gg/membership">Lovely Member</a>, and unlock all t
 
 ![Basic Feature Set](docs/images/primary-tdm.gif)
 
+
+<br/><br/>
+
 <p align="center">
-<span><strong>Native Simulator & Platform Support</strong></span><br/>
-<img width="70" alt="Assetto Corsa Competizione" src="docs/images/icon-acc.png">
-<img width="70" alt="Assetto Corsa" src="docs/images/icon-ac.png">
-<img width="70" alt="iRacing" src="docs/images/icon-iracing.png">
-<img width="70" alt="Automobilista 2" src="docs/images/icon-ams2.png">
-<img width="70" alt="rFactor 2" src="docs/images/icon-rf2.png">
-<img width="70" alt="Raceroom Racing Experience" src="docs/images/icon-rrre.png">
-<img width="70" alt="Formula 1" src="docs/images/icon-f1.png">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://lsr.gg/simgrid" target="_blank"><img width="70" alt="SimGrid" src="docs/images/icon-simgrid.png"></a>
-<a href="https://lsr.gg/lfm" target="_blank"><img width="70" alt="Low Fuel Motorsport" src="docs/images/icon-lfm.png"></a>
-<a href="https://lsr.gg/pitskill" target="_blank"><img width="70" alt="Pitskill.io" src="docs/images/icon-pitskill.png"></a>
-<a href="https://lsr.gg/racecraft" target="_blank"><img width="70" alt="Racecraft Online" src="docs/images/icon-racecraft.png"></a>
+<span><strong>Simulator Support</strong></span><br/>
+<img width="70" alt="Assetto Corsa Competizione" src="docs/images/sims/icon-acc.png">
+<img width="70" alt="Assetto Corsa" src="docs/images/sims/icon-ac.png">
+<img width="70" alt="Assetto Corsa Evo" src="docs/images/sims/icon-ace.png">
+<img width="70" alt="iRacing" src="docs/images/sims/icon-iracing.png">
+<img width="70" alt="Automobilista 2" src="docs/images/sims/icon-ams2.png">
+<img width="70" alt="rFactor 2" src="docs/images/sims/icon-rf2.png">
+<img width="70" alt="Le Mans Ultimate" src="docs/images/sims/icon-lmu.png">
+<img width="70" alt="Raceroom Racing Experience" src="docs/images/sims/icon-rrre.png">
+<img width="70" alt="Formula 1" src="docs/images/sims/icon-f1.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img width="70" alt="EA WRC" src="docs/images/sims/icon-wrc.png">
+<img width="70" alt="Richard Burns Rally" src="docs/images/sims/icon-rbr.png">
 </br>
 <span>+ generic support for all simulators that work with SimHub</span>
 </p>
 
 ---
+
+<p align="center">
+<span><strong>Platform Support</strong></span><br/>
+<a href="https://lsr.gg/simgrid" target="_blank"><img height="30" alt="SimGrid" src="docs/images/partners/simgrid-mono.png"></a>
+<a href="https://lsr.gg/simgrid" target="_blank"><img height="30" alt="SimGrid" src="docs/images/partners/lfm-mono.png"></a>
+<a href="https://lsr.gg/simgrid" target="_blank"><img height="30" alt="SimGrid" src="docs/images/partners/pitskill-mono.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://lsr.gg/simgrid" target="_blank"><img height="30" alt="SimGrid" src="docs/images/partners/racecraft-mono.png"></a>
+</p>
+
+---
  
 <p align="center">
-<span><strong>Lovely Partners</strong></span><br/>
-<a href="https://lsr.gg/ascher" target="_blank"><img height="75" alt="Ascher Racing" src="docs/images/partners/ascher-mono-light.png"></a><br/>
-<a href="https://lsr.gg/simhub" target="_blank"><img height="75" alt="SimHub" src="docs/images/partners/simhub-mono-light.png"></a>
-<a href="https://lsr.gg/simdash" target="_blank"><img height="75" alt="SimDash" src="docs/images/partners/simdash-mono-light.png"></a><br/>
-<a href="https://lsr.gg/greywolf" target="_blank"><img height="75" alt="Greywolf Technologies" src="docs/images/partners/greywolf-mono-light.png"></a>
-<a href="https://lsr.gg/simucube" target="_blank"><img height="75" alt="Simucube" src="docs/images/partners/simucube-mono-light.png"></a>
-<a href="https://lsr.gg/conspit" target="_blank"><img height="75" alt="Conspit" src="docs/images/partners/conspit-mono-light.png"></a>
-<a href="https://lsr.gg/moza" target="_blank"><img height="75" alt="Moza Racing" src="docs/images/partners/moza-mono-light.png"></a> 
-<a href="https://lsr.gg/p1sim" target="_blank"><img height="75" alt="P1 Sim" src="docs/images/partners/p1sim-mono-light.png"></a>
-<a href="https://lsr.gg/delta" target="_blank"><img height="75" alt="Delta" src="docs/images/partners/delta-mono-light.png"></a> 
-<a href="https://lsr.gg/tkanaan" target="_blank"><img height="75" alt="Tony Kanaan" src="docs/images/partners/tony-kanaan-mono-light.png"></a>
-<a href="https://www.simutec.co.uk" target="_blank"><img height="75" alt="Simutec" src="docs/images/partners/simutec-mono-light.png"></a>
+<span><strong>Title Partner</strong></span><br/>
+<a href="https://lsr.gg/ascher" target="_blank"><img height="50" alt="Ascher Racing" src="docs/images/partners/ascher-mono.png"></a>
+</p>
+<p align="center">
+<span><strong>Principle Partners</strong></span><br/>
+<a href="https://lsr.gg/simhub" target="_blank"><img height="40" alt="SimHub" src="docs/images/partners/simhub-mono.png"></a>
+<a href="https://lsr.gg/simdash" target="_blank"><img height="40" alt="SimDash" src="docs/images/partners/simdash-mono.png"></a>
+</p>
+<p align="center">
+<span><strong>Team Partners</strong></span><br/>
+<a href="https://lsr.gg/greywolf" target="_blank"><img height="35" alt="Greywolf Technologies" src="docs/images/partners/greywolf-mono.png"></a>
+<a href="https://lsr.gg/simucube" target="_blank"><img height="35" alt="Simucube" src="docs/images/partners/simucube-mono.png"></a>
+<a href="https://lsr.gg/conspit" target="_blank"><img height="35" alt="Conspit" src="docs/images/partners/conspit-mono.png"></a>
+<a href="https://lsr.gg/moza" target="_blank"><img height="35" alt="Moza Racing" src="docs/images/partners/moza-mono.png"></a><br/>
+<a href="https://lsr.gg/p1sim" target="_blank"><img height="35" alt="P1 Sim" src="docs/images/partners/p1sim-mono.png"></a>
+<a href="https://lsr.gg/delta" target="_blank"><img height="35" alt="Delta" src="docs/images/partners/delta-mono.png"></a> 
+<a href="https://lsr.gg/tkanaan" target="_blank"><img height="35" alt="Tony Kanaan" src="docs/images/partners/tk-mono.png"></a>
+<a href="https://www.simutec.co.uk" target="_blank"><img height="35" alt="Simutec" src="docs/images/partners/simutec-mono.png"></a>
 </p>
  
 ---
@@ -83,16 +101,6 @@ Join the Lovely Sim Racing Discord Server and help develop a better version.<br/
 </div>
 
 <br/>
-
----
-
-## Video Guide
-<h4 align="center">
-<a href="https://www.youtube.com/watch?v=tW6nZ-lHOCw">
-<img src="docs/images/lovely-plugin.png" /><br/>
-Watch the Lovely Plugin walkthrough
-</a>
-</h4>
 
 
 ## What's Included
@@ -122,7 +130,7 @@ Download & install [**SimHub**](https://www.simhubdash.com) app, just as you wou
 **Download** the latest **Lovely Plugin Installer** from the [Lovely Website](https://lsr.gg/plugin). Once the file is downloaded, you will need to **double click** on the file and follow the instructions on screen. **Restart SimHub** and enable the Lovely Plugin at the prompt. Finally, **Select "Show in left main menu"**.
 
 ### Step 3: Install the Lovely Dashboards
-Within the **Lovely Plugin**, navigate to the **Dashboard Manager** tab, and simply click on the dashboard you wish to install, follow the on-screen instructions.
+Within Simhub > **Lovely Plugin**, navigate to the **Dashboard Manager** tab, and simply click on the dashboard you wish to install, follow the on-screen instructions.
 
 ### Step 4: Setup your controls
 One of the best features of the Lovely Dashbaord is that it has a multitude of options and screens to choose from. To take full advantage of all the Screens and Modules, you will need to assign certain actions to your steering or button box. Please make sure you assign all of the [**SimHub Action Triggers**](https://store.lsr.gg/pages/help-simhub-actions) in order to control the Lovely Dashboard.
@@ -155,12 +163,12 @@ Switching to the **Blue True Dark Mode** during these long low-lit driving stint
 ### Manufacturer Partnerships
 One of the most important advancements of the Lovely Dashboard ecosystem is the inclusion for native support by Manufacturers. This means that the Lovely Dashboard now includes native functions that work with directly with various devices either to enhance your experience or simply make setting up the device much simpler.
 
-* [Ascher Racing Integration](./docs/ascher-racing.md)
+* [Ascher Racing Integration](https://store.lsr.gg/pages/help-ascher-racing)
 * Greywolf Technologies **(COMING SOON)**
 
-#### Ascher Racing - [View the Documentation](./docs/ascher-racing.md)
+#### Ascher Racing - [View the Documentation](https://store.lsr.gg/pages/help-ascher-racing)
 
-[![Manufacturer Support](./docs/images/ascher-demo.png)](./docs/ascher-racing.md)
+![Manufacturer Support](./docs/images/ascher-demo.png)
 
 ### Branding Partnerships
 
@@ -273,28 +281,37 @@ For all marketing inquiries please contact me directly.
 > Although the Lovely Dashboard is distributed for free, usage of its user interface design (UI) is also subject to the license it is distributed under. Any use in commercial or marketing material, promotional still or animated images and videos is forbidden unless direct consent is given. Please contact me directly if you wish to use the images on any of your material.
 
 ---
- 
+<br/><br/>
 <p align="center">
-<span><strong>Lovely Partners</strong></span><br/>
-<a href="https://ascher-racing.com" target="_blank"><img height="75" alt="Ascher Racing" src="docs/images/icon-ascher.png"></a>
-<a href="https://www.simhubdash.com" target="_blank"><img height="75" alt="SimHub" src="docs/images/icon-simhub.png"></a>
-<a href="https://www.facebook.com/SimDash.pt" target="_blank"><img height="75" alt="SimDash" src="docs/images/icon-simdash.png"></a>
-<a href="https://greywolftechnologies.it" target="_blank"><img height="75" alt="Greywolf Technologies" src="docs/images/icon-greywolf.png"></a>
-<a href="https://www.tonykanaan.com.br/en/esports" target="_blank"><img height="75" alt="Tony Kanaan" src="docs/images/icon-tony-kanaan.png"></a>
-<a href="https://lsr.gg/dnr" target="_blank"><img height="75" alt="Daniel Newman Racing" src="docs/images/icon-dnr.png"></a> 
-<a href="https://www.turnracing.com" target="_blank"><img height="75" alt="Turn Racing" src="docs/images/icon-turn.png"></a>
-<a href="https://www.simutec.co.uk" target="_blank"><img height="75" alt="Simutec" src="docs/images/icon-simutec.png"></a>
-<a href="https://www.simagic.com" target="_blank"><img height="75" alt="Simagic" src="docs/images/icon-simagic.png"></a>
-<a href="https://lsr.gg/moza" target="_blank"><img height="75" alt="Moza Racing" src="docs/images/icon-moza.png"></a> 
+<span><strong>Title Partner</strong></span><br/>
+<a href="https://lsr.gg/ascher" target="_blank"><img height="50" alt="Ascher Racing" src="docs/images/partners/ascher-mono.png"></a>
 </p>
- 
+<p align="center">
+<span><strong>Principle Partners</strong></span><br/>
+<a href="https://lsr.gg/simhub" target="_blank"><img height="40" alt="SimHub" src="docs/images/partners/simhub-mono.png"></a>
+<a href="https://lsr.gg/simdash" target="_blank"><img height="40" alt="SimDash" src="docs/images/partners/simdash-mono.png"></a>
+</p>
+<p align="center">
+<span><strong>Team Partners</strong></span><br/>
+<a href="https://lsr.gg/greywolf" target="_blank"><img height="35" alt="Greywolf Technologies" src="docs/images/partners/greywolf-mono.png"></a>
+<a href="https://lsr.gg/simucube" target="_blank"><img height="35" alt="Simucube" src="docs/images/partners/simucube-mono.png"></a>
+<a href="https://lsr.gg/conspit" target="_blank"><img height="35" alt="Conspit" src="docs/images/partners/conspit-mono.png"></a>
+<a href="https://lsr.gg/moza" target="_blank"><img height="35" alt="Moza Racing" src="docs/images/partners/moza-mono.png"></a><br/>
+<a href="https://lsr.gg/p1sim" target="_blank"><img height="35" alt="P1 Sim" src="docs/images/partners/p1sim-mono.png"></a>
+<a href="https://lsr.gg/delta" target="_blank"><img height="35" alt="Delta" src="docs/images/partners/delta-mono.png"></a> 
+<a href="https://lsr.gg/tkanaan" target="_blank"><img height="35" alt="Tony Kanaan" src="docs/images/partners/tk-mono.png"></a>
+<a href="https://www.simutec.co.uk" target="_blank"><img height="35" alt="Simutec" src="docs/images/partners/simutec-mono.png"></a>
+</p>
+<br/><br/> 
 ---
 
 <br/>
 
 ### License
 
-Read the (Software License on the Lovely Website)[https://lsr.gg/license]
+Read the [Software License](https://lsr.gg/license)
+
+All trademarks, logos and brand names are the property of their respective owners. All company, product and service names used in Software are for identification purposes only. Use of these names, trademarks and brands does not imply endorsement.
 
 <br/>
 
