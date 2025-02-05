@@ -9,7 +9,7 @@ A multifunctional feature packed SimHub Dashboard (DDU) and ecosystem.
 </p>
 
 <h4 align="center">
-<strong>v3.1.1 / v2.1.1</strong>
+<strong>v3.2.0 / v2.2.0</strong>
 </h4>
 
 
@@ -60,23 +60,24 @@ Become a <a href="https://lsr.gg/membership">Lovely Member</a>, and unlock all t
  
 <p align="center">
 <span><strong>Lovely Partners</strong></span><br/>
-<a href="https://ascher-racing.com" target="_blank"><img height="75" alt="Ascher Racing" src="docs/images/icon-ascher.png"></a>
-<a href="https://www.simhubdash.com" target="_blank"><img height="75" alt="SimHub" src="docs/images/icon-simhub.png"></a>
-<a href="https://www.facebook.com/SimDash.pt" target="_blank"><img height="75" alt="SimDash" src="docs/images/icon-simdash.png"></a>
-<a href="https://greywolftechnologies.it" target="_blank"><img height="75" alt="Greywolf Technologies" src="docs/images/icon-greywolf.png"></a>
-<a href="https://www.tonykanaan.com.br/en/esports" target="_blank"><img height="75" alt="Tony Kanaan" src="docs/images/icon-tony-kanaan.png"></a>
-<a href="https://lsr.gg/dnr" target="_blank"><img height="75" alt="Daniel Newman Racing" src="docs/images/icon-dnr.png"></a> 
-<a href="https://www.turnracing.com" target="_blank"><img height="75" alt="Turn Racing" src="docs/images/icon-turn.png"></a>
-<a href="https://www.simutec.co.uk" target="_blank"><img height="75" alt="Simutec" src="docs/images/icon-simutec.png"></a>
-<a href="https://www.simagic.com" target="_blank"><img height="75" alt="Simagic" src="docs/images/icon-simagic.png"></a>
-<a href="https://lsr.gg/moza" target="_blank"><img height="75" alt="Moza Racing" src="docs/images/icon-moza.png"></a> 
+<a href="https://lsr.gg/ascher" target="_blank"><img height="75" alt="Ascher Racing" src="docs/images/partners/ascher-mono-light.png"></a><br/>
+<a href="https://lsr.gg/simhub" target="_blank"><img height="75" alt="SimHub" src="docs/images/partners/simhub-mono-light.png"></a>
+<a href="https://lsr.gg/simdash" target="_blank"><img height="75" alt="SimDash" src="docs/images/partners/simdash-mono-light.png"></a><br/>
+<a href="https://lsr.gg/greywolf" target="_blank"><img height="75" alt="Greywolf Technologies" src="docs/images/partners/greywolf-mono-light.png"></a>
+<a href="https://lsr.gg/simucube" target="_blank"><img height="75" alt="Simucube" src="docs/images/partners/simucube-mono-light.png"></a>
+<a href="https://lsr.gg/conspit" target="_blank"><img height="75" alt="Conspit" src="docs/images/partners/conspit-mono-light.png"></a>
+<a href="https://lsr.gg/moza" target="_blank"><img height="75" alt="Moza Racing" src="docs/images/partners/moza-mono-light.png"></a> 
+<a href="https://lsr.gg/p1sim" target="_blank"><img height="75" alt="P1 Sim" src="docs/images/partners/p1sim-mono-light.png"></a>
+<a href="https://lsr.gg/delta" target="_blank"><img height="75" alt="Delta" src="docs/images/partners/delta-mono-light.png"></a> 
+<a href="https://lsr.gg/tkanaan" target="_blank"><img height="75" alt="Tony Kanaan" src="docs/images/partners/tony-kanaan-mono-light.png"></a>
+<a href="https://www.simutec.co.uk" target="_blank"><img height="75" alt="Simutec" src="docs/images/partners/simutec-mono-light.png"></a>
 </p>
  
 ---
 
 <div align="center">
 <p><img width="80" height="80" alt="Lovely Discord" src="docs/images/icon-discord.png"><br/>
-<strong><em>JOIN over 8500 Lovely Sim Racers on Discord</em></strong><br/>
+<strong><em>JOIN over 9500 Lovely Sim Racers on Discord</em></strong><br/>
 Join the Lovely Sim Racing Discord Server and help develop a better version.<br/>
 👉 <a href="https://lsr.gg/discord"><strong>Lovely Discord Server</strong></a></p>
 </div>
@@ -98,15 +99,17 @@ Watch the Lovely Plugin walkthrough
 In the [Releases](https://github.com/cdemetriadis/lovely-dashboard/releases) section, you will find:
 
 1. **Lovely Plugin** - A SimHub Plugin that improves the Lovely experience & performance and makes setup a breeze!
-1. **Lovely Dashboard** - A custom designed dashboard to use on your phone or dedicated DDU Screen
-2. **Lovely Dashboard Companion** - A custom designed dashboard to use on a secondary display (eg. Steering Wheel)
-1. **Lovely Dashboard TK Edition** - The Lovely Dashboard with Tony Kanaan's personal touch
-3. **Lovely Dashboard XL** - An oversized version of the Lovely Dashboard for the new 10" DDU Screens
-3. **Lovely Dashboard UXL** - An Ultra Wide version of the Lovely Dashboard for 1920x480 DDU Screens
-3. **Lovely Dashboard Curved** - A variant of the Lovely Dashboard for curved top DDU's
-4. **Lovely Overlay** - If you're a streamer, you can use this overlay in OBS or any other broadcasting software
-5. **Lovely Tower** - A leader board tower, great for OBS if you're streaming 
-6. **Lovely Flags** - A "simple" dashboard to display race flags and platform integration
+2. **Lovely Dashboard** - A custom designed dashboard to use on your phone or dedicated DDU Screen
+3. **Lovely Dashboard Companion** - A custom designed dashboard to use on a secondary display (eg. Steering Wheel)
+4. **Lovely Dashboard Companion Portrait** - The Companion, but in Portrait mode
+5. **Lovely Dashboard Rallye** - A uber minimal Rallye Dashboard
+6. **Lovely Dashboard TK Edition** - The Lovely Dashboard with Tony Kanaan's personal touch
+7. **Lovely Dashboard XL** - An oversized version of the Lovely Dashboard for the new 10" DDU Screens
+8. **Lovely Dashboard UXL** - An Ultra Wide version of the Lovely Dashboard for 1920x480 DDU Screens
+9. **Lovely Dashboard Curved** - A variant of the Lovely Dashboard for curved top DDU's
+10. **Lovely Overlay** - If you're a streamer, you can use this overlay in OBS or any other broadcasting software
+11. **Lovely Tower** - A leader board tower, great for OBS if you're streaming 
+12. **Lovely Flags** - A "simple" dashboard to display race flags and platform integration
 
 
 ## Installing
@@ -116,26 +119,16 @@ If this is your first time installing the **Lovely Dashboard**, please follow th
 Download & install [**SimHub**](https://www.simhubdash.com) app, just as you would install any other Windows application on your system. Follow the prompts and once it's installed, proceed to the next step.
 
 ### Step 2: Download and install the Lovely Plugin
-**Download** the latest **Lovely Plugin** file (`LovelySimRacing.Plugin.dll`) from the [Lovely Website](https://lsr.gg/plugin). Once the file is downloaded, you will need to **copy it into SimHub's root folder**, usually located at `C:\Program Files (x86)\SimHub\`. **Restart SimHub** and enable the Lovely Plugin at the prompt. Finally, **Select "Show in left main menu"**.
-<p align="center">
-<img width="720" height="200" alt="Copy the LovelySimRacing.Plugin.dll file into the Root SimHub folder" src="docs/images/settings-file.png">
-</p>
+**Download** the latest **Lovely Plugin Installer** from the [Lovely Website](https://lsr.gg/plugin). Once the file is downloaded, you will need to **double click** on the file and follow the instructions on screen. **Restart SimHub** and enable the Lovely Plugin at the prompt. Finally, **Select "Show in left main menu"**.
 
-### Step 3: Download and install the Lovely Dashboard
-Download any Lovely Dashboard that you'd like to use from the [Lovely Website](https://lsr.gg/dash). Once downloaded, double-click the `.simhubdash` file and follow the insctrucitons in SimHub.
+### Step 3: Install the Lovely Dashboards
+Within the **Lovely Plugin**, navigate to the **Dashboard Manager** tab, and simply click on the dashboard you wish to install, follow the on-screen instructions.
 
 ### Step 4: Setup your controls
-One of the best features of the Lovely Dashbaord is that it has a multitude of options and screens to choose from. To take full advantage of all the Screens and Modules, you will need to assign certain actions to your steering or button box. Please make sure you assign all of the [**SimHub Action Triggers**](./docs/actions.md) in order to control the Lovely Dashboard.
-
-### Step 5: Post-it Notes Simhub Plugin (Optional)
-The Post-it Notes SimHub Plugin is deeply integrated into the Lovely Ecosystem, providing better and more consistent data. It is an optional addition, but it does offer some very important upgrades to how SimHub calculates timing and gaps. Also, if you are an iRacing user, you will to install the Post-it Notes plugin to get infromation about your iRating. To install it, Download the latest release from the official [Post-it Notes Github Page](https://lsr.gg/postit), and repeat the same process as you did to **install the Lovely Plugin**.
-
+One of the best features of the Lovely Dashbaord is that it has a multitude of options and screens to choose from. To take full advantage of all the Screens and Modules, you will need to assign certain actions to your steering or button box. Please make sure you assign all of the [**SimHub Action Triggers**](https://store.lsr.gg/pages/help-simhub-actions) in order to control the Lovely Dashboard.
 
 ## Updating
-If you have received a notification on your **Lovely Dashboard** of a new update, please follow the below steps:
-
-1. Download & Install the [**Lovely Dashboard Latest Release**](https://lsr.gg/dash)
-2. Read the changelog and if prompted, you may also need to update [**SimHub**](https://www.simhubdash.com) and/or the [**Lovely Plugin**](https://lsr.gg/plugin)
+If you have received a notification on your **Lovely Dashboard** of a new update, navigate to the **Dashboard Manager** tab and select the dashboard to update.
 
 > [!TIP]
 > :people_holding_hands: **For more information, tips & feedback, please join the [Lovely Discord](https://lsr.gg/discord)**
@@ -190,11 +183,15 @@ The Lovely Dashboard offers native support for many sims, but will work with ANY
 
 * [Assetto Corsa Competizione](https://assettocorsa.gg/assetto-corsa-competizione/)
 * [Assetto Corsa](https://assettocorsa.gg/assetto-corsa/)
+* [Assetto Corsa Evo (Bacic Support)](https://assettocorsa.gg/assetto-corsa-evo/)
 * [iRacing](https://www.iracing.com)
 * [Automobilista 2](https://www.game-automobilista2.com)
 * [rFactor 2](https://www.studio-397.com/rfactor2/)
+* [Le Mans Ultimate](https://lemansultimate.com/)
 * [RaceRoom Racing Experience](https://game.raceroom.com/)
 * [Formula 1](https://www.ea.com/en-gb/games/f1/)
+* [WRC Series](https://www.ea.com/games/ea-sports-wrc/wrc-24)
+* [Richard Burns Rally](https://steamcommunity.com/groups/richardburnsrallypc)
 
 #### Generic Support
 
@@ -219,6 +216,9 @@ If you were wondering why this is the best SimHub dashboard out there, wonder no
 ### Lovely Dashboard Companion 
 ![Lovely Dashboard Companion](docs/images/LovelyDashboardCompanion.png)
 
+### Lovely Dashboard Companion Portrait
+![Lovely Dashboard Companion Portrait](docs/images/LovelyDashboardPortrait.png)
+
 ### Lovely Pit Wall
 Available to [**Pro & Gold Lovely Members**](https://lsr.gg/membership) only.
 
@@ -227,6 +227,9 @@ Available to [**Pro & Gold Lovely Members**](https://lsr.gg/membership) only.
 ### Lovely Dashbaord TK Edition
 
 ![Lovely Dashboard TK Edition](./docs/images/tk-edition.png)
+
+### Lovely Dashboard Rallye 
+![Lovely Dashboard Rallye](docs/images/LovelyDashboardRallye.png)
 
 ### Lovely Dashboard XL (for 10" DDU's)
 
@@ -261,7 +264,6 @@ A special thanks to all of you who have supported this project in [one way](http
 * **Steve Mattar** (F1 Support)
 * **Joerg Behrens** (Settings Configurator)
 
-
 ## Marketing Inquiries
 For all marketing inquiries please contact me directly. 
 
@@ -290,12 +292,10 @@ For all marketing inquiries please contact me directly.
 
 <br/>
 
-### Disclaimer
+### License
 
-All trademarks, logos and brand names are the property of their respective owners. All company, product and service names used in this application are for identification purposes only. Use of these names, trademarks and brands does not imply endorsement unless otherwise stated.
+Read the (Software License on the Lovely Website)[https://lsr.gg/license]
 
 <br/>
 
-![cc-by-nc-sa](https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-nc-sa.svg)
-
-This work is licensed under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-nc-sa/4.0/)
+&copy; 2025 Lovely Sim Racing
