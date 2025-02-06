@@ -107,18 +107,20 @@ Join the Lovely Sim Racing Discord Server and help develop a better version.<br/
 ## What's Included
 In the [Releases](https://github.com/cdemetriadis/lovely-dashboard/releases) section, you will find:
 
-1. **Lovely Plugin** - A SimHub Plugin that improves the Lovely experience & performance and makes setup a breeze!
+1. **Lovely Plugin** - (DLL & Installer) A SimHub Plugin that improves the Lovely experience & performance and makes setup a breeze!
 2. **Lovely Dashboard** - A custom designed dashboard to use on your phone or dedicated DDU Screen
 3. **Lovely Dashboard Companion** - A custom designed dashboard to use on a secondary display (eg. Steering Wheel)
 4. **Lovely Dashboard Companion Portrait** - The Companion, but in Portrait mode
-5. **Lovely Dashboard Rallye** - A uber minimal Rallye Dashboard
 6. **Lovely Dashboard TK Edition** - The Lovely Dashboard with Tony Kanaan's personal touch
+5. **Lovely Dashboard Rallye** - A minimal Rallye Dashboard
+9. **Lovely Dashboard Curved** - A variant of the Lovely Dashboard for curved top DDU's
 7. **Lovely Dashboard XL** - An oversized version of the Lovely Dashboard for the new 10" DDU Screens
 8. **Lovely Dashboard UXL** - An Ultra Wide version of the Lovely Dashboard for 1920x480 DDU Screens
-9. **Lovely Dashboard Curved** - A variant of the Lovely Dashboard for curved top DDU's
 10. **Lovely Overlay** - If you're a streamer, you can use this overlay in OBS or any other broadcasting software
 11. **Lovely Tower** - A leader board tower, great for OBS if you're streaming 
 12. **Lovely Flags** - A "simple" dashboard to display race flags and platform integration
+
+#### [Preview the dashboards](#lovely-dashboard-ecosystem)
 
 
 ## Installing
@@ -234,30 +236,27 @@ Available to [**Pro & Gold Lovely Members**](https://lsr.gg/membership) only.
 ![Lovely Dashboard XL](docs/images/lovely-pitwall-preview.png)
 
 ### Lovely Dashbaord TK Edition
-
 ![Lovely Dashboard TK Edition](./docs/images/tk-edition.png)
 
 ### Lovely Dashboard Rallye 
 ![Lovely Dashboard Rallye](docs/images/LovelyDashboardRallye.png)
 
-### Lovely Dashboard XL (for 10" DDU's)
+### Lovely Dashboard Curved
+![Lovely Dashboard XL](docs/images/lovely-dash-curved.png)
 
+### Lovely Dashboard XL (for 10" DDU's)
 ![Lovely Dashboard XL](docs/images/lovely-dash-xl.png)
 
 ### Lovely Dashboard UXL (for 1920x480 DDU's)
-
 ![Lovely Dashboard XL](docs/images/lovely-dash-uxl.png)
 
 ### Lovely Overlay
-
 ![Lovely Overlay](docs/images/LovelyOverlay.png)
 
 ### Lovely Tower
-
 ![Lovely Tower](docs/images/LovelyTower.png)
 
 ### Lovely Flags
-
 ![Lovely Flags](docs/images/LovelyFlags.gif)	
 
 ## Analytics
