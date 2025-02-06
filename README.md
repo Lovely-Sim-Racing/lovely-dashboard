@@ -75,7 +75,7 @@ Become a <a href="https://lsr.gg/membership">Lovely Member</a>, and unlock all t
 <span><strong>Title Partner</strong></span><br/>
 <a href="https://lsr.gg/ascher" target="_blank"><img height="50" alt="Ascher Racing" src="docs/images/partners/ascher-mono.png"></a>
 </p>
-<p align="center">
+<p align="center"> 	
 <span><strong>Principle Partners</strong></span><br/>
 <a href="https://lsr.gg/simhub" target="_blank"><img height="40" alt="SimHub" src="docs/images/partners/simhub-mono.png"></a>
 <a href="https://lsr.gg/simdash" target="_blank"><img height="40" alt="SimDash" src="docs/images/partners/simdash-mono.png"></a>
@@ -83,8 +83,14 @@ Become a <a href="https://lsr.gg/membership">Lovely Member</a>, and unlock all t
 <p align="center">
 <span><strong>Team Partners</strong></span><br/>
 
-![Greywolf](docs/images/partners/greywolf-mono.png#gh-dark-mode-only)
-![Greywolf](docs/images/partners/greywolf-mono.png#gh-light-mode-only)
+![Greywolf](docs/images/partners/greywolf-mono.png#gh-light-mode-only) 
+![Greywolf](docs/images/partners/greywolf-mono-light.png#gh-dark-mode-only)
+
+![Simucube](docs/images/partners/simucube-mono.png#gh-light-mode-only) 
+![Simucube](docs/images/partners/simucube-mono-light.png#gh-dark-mode-only)
+
+![Conspit](docs/images/partners/conspit-mono.png#gh-light-mode-only) 
+![Conspit](docs/images/partners/conspit-mono-light.png#gh-dark-mode-only)
 
 <a href="https://lsr.gg/greywolf" target="_blank"><img height="35" alt="Greywolf Technologies" src="docs/images/partners/greywolf-mono.png"></a>
 <a href="https://lsr.gg/simucube" target="_blank"><img height="35" alt="Simucube" src="docs/images/partners/simucube-mono.png"></a>
