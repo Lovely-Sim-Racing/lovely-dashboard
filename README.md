@@ -366,23 +366,83 @@ For all marketing inquiries please contact me directly.
 <br/><br/>
 <p align="center">
 <span><strong>Title Partner</strong></span><br/>
-<a href="https://lsr.gg/ascher" target="_blank"><img height="50" alt="Ascher Racing" src="docs/images/partners/ascher-mono.png"></a>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/ascher-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/ascher-mono.png">
+  <img alt="Ascher Racing" src="docs/images/partners/ascher-mono.png">
+</picture>
+
 </p>
-<p align="center">
+<p align="center"> 	
 <span><strong>Principle Partners</strong></span><br/>
-<a href="https://lsr.gg/simhub" target="_blank"><img height="40" alt="SimHub" src="docs/images/partners/simhub-mono.png"></a>
-<a href="https://lsr.gg/simdash" target="_blank"><img height="40" alt="SimDash" src="docs/images/partners/simdash-mono.png"></a>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/simhub-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/simhub-mono.png">
+  <img alt="Simhub" src="docs/images/partners/simhub-mono.png">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/simdash-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/simdash-mono.png">
+  <img alt="SimDash" src="docs/images/partners/simdash-mono.png">
+</picture>
+
 </p>
+
 <p align="center">
 <span><strong>Team Partners</strong></span><br/>
-<a href="https://lsr.gg/greywolf" target="_blank"><img height="35" alt="Greywolf Technologies" src="docs/images/partners/greywolf-mono.png"></a>
-<a href="https://lsr.gg/simucube" target="_blank"><img height="35" alt="Simucube" src="docs/images/partners/simucube-mono.png"></a>
-<a href="https://lsr.gg/conspit" target="_blank"><img height="35" alt="Conspit" src="docs/images/partners/conspit-mono.png"></a>
-<a href="https://lsr.gg/moza" target="_blank"><img height="35" alt="Moza Racing" src="docs/images/partners/moza-mono.png"></a><br/>
-<a href="https://lsr.gg/p1sim" target="_blank"><img height="35" alt="P1 Sim" src="docs/images/partners/p1sim-mono.png"></a>
-<a href="https://lsr.gg/delta" target="_blank"><img height="35" alt="Delta" src="docs/images/partners/delta-mono.png"></a> 
-<a href="https://lsr.gg/tkanaan" target="_blank"><img height="35" alt="Tony Kanaan" src="docs/images/partners/tk-mono.png"></a>
-<a href="https://www.simutec.co.uk" target="_blank"><img height="35" alt="Simutec" src="docs/images/partners/simutec-mono.png"></a>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/greywolf-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/greywolf-mono.png">
+  <img alt="Greywolf Technologies" src="docs/images/partners/greywolf-mono.png">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/simucube-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/simucube-mono.png">
+  <img alt="Simucube" src="docs/images/partners/simucube-mono.png">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/conspit-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/conspit-mono.png">
+  <img alt="Conspit" src="docs/images/partners/conspit-mono.png">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/moza-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/moza-mono.png">
+  <img alt="Moza" src="docs/images/partners/moza-mono.png">
+</picture>
+
+<br/>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/p1sim-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/p1sim-mono.png">
+  <img alt="P1 Sim" src="docs/images/partners/p1sim-mono.png">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/delta-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/delta-mono.png">
+  <img alt="Delta" src="docs/images/partners/delta-mono.png">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/tk-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/tk-mono.png">
+  <img alt="Tony Kanaan" src="docs/images/partners/tk-mono.png">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/simutec-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/simutec-mono.png">
+  <img alt="Simutec" src="docs/images/partners/simutec-mono.png">
+</picture>
+
 </p>
 <br/><br/> 
 ---
