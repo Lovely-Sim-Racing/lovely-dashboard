@@ -144,7 +144,9 @@ Become a <a href="https://lsr.gg/membership">Lovely Member</a>, and unlock all t
   <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/moza-mono.png">
   <img alt="Moza" src="docs/images/partners/moza-mono.png">
 </picture>
+
 <br/>
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/p1sim-mono-light.png">
   <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/p1sim-mono.png">
