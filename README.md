@@ -83,14 +83,11 @@ Become a <a href="https://lsr.gg/membership">Lovely Member</a>, and unlock all t
 <p align="center">
 <span><strong>Team Partners</strong></span><br/>
 
-![Greywolf](docs/images/partners/greywolf-mono.png#gh-light-mode-only) 
-![Greywolf](docs/images/partners/greywolf-mono-light.png#gh-dark-mode-only)
-
-![Simucube](docs/images/partners/simucube-mono.png#gh-light-mode-only) 
-![Simucube](docs/images/partners/simucube-mono-light.png#gh-dark-mode-only)
-
-![Conspit](docs/images/partners/conspit-mono.png#gh-light-mode-only) 
-![Conspit](docs/images/partners/conspit-mono-light.png#gh-dark-mode-only)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/greywolf-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/greywolf-mono.png">
+  <img alt="Greywolf Technologies" src="docs/images/partners/greywolf-mono.png">
+</picture>
 
 <a href="https://lsr.gg/greywolf" target="_blank"><img height="35" alt="Greywolf Technologies" src="docs/images/partners/greywolf-mono.png"></a>
 <a href="https://lsr.gg/simucube" target="_blank"><img height="35" alt="Simucube" src="docs/images/partners/simucube-mono.png"></a>
