@@ -203,6 +203,7 @@ The Lovely Dashboard offers native support for many sims, but will work with ANY
 * [Formula 1](https://www.ea.com/en-gb/games/f1/)
 * [WRC Series](https://www.ea.com/games/ea-sports-wrc/wrc-24)
 * [Richard Burns Rally](https://steamcommunity.com/groups/richardburnsrallypc)
+* [Dirt Rally 2.0](https://dirtrally2.dirtgame.com/)
 
 #### Generic Support
 
