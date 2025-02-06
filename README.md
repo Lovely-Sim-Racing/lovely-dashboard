@@ -82,8 +82,8 @@ Become a <a href="https://lsr.gg/membership">Lovely Member</a>, and unlock all t
 </p>
 <p align="center">
 <span><strong>Team Partners</strong></span><br/>
-<a href="https://lsr.gg/greywolf" target="_blank"><img height="35" alt="Greywolf Technologies" src="docs/images/partners/greywolf-mono.png"></a>
-<a href="https://lsr.gg/simucube" target="_blank"><img height="35" alt="Simucube" src="docs/images/partners/simucube-mono.png"></a>
+<a href="https://lsr.gg/greywolf" target="_blank"><img height="35" alt="Greywolf Technologies" src="docs/images/partners/greywolf-mono.png#gh-dark-mode-only"></a>
+<a href="https://lsr.gg/simucube" target="_blank"><img height="35" alt="Simucube" src="docs/images/partners/simucube-mono.png#gh-light-mode-only"></a>
 <a href="https://lsr.gg/conspit" target="_blank"><img height="35" alt="Conspit" src="docs/images/partners/conspit-mono.png"></a>
 <a href="https://lsr.gg/moza" target="_blank"><img height="35" alt="Moza Racing" src="docs/images/partners/moza-mono.png"></a><br/>
 <a href="https://lsr.gg/p1sim" target="_blank"><img height="35" alt="P1 Sim" src="docs/images/partners/p1sim-mono.png"></a>
