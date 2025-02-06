@@ -63,10 +63,31 @@ Become a <a href="https://lsr.gg/membership">Lovely Member</a>, and unlock all t
 
 <p align="center"> 
 <span><strong>Platform Support</strong></span><br/>
-<a href="https://lsr.gg/simgrid" target="_blank"><img height="30" alt="SimGrid" src="docs/images/partners/simgrid-mono.png"></a>
-<a href="https://lsr.gg/simgrid" target="_blank"><img height="30" alt="SimGrid" src="docs/images/partners/lfm-mono.png"></a>
-<a href="https://lsr.gg/simgrid" target="_blank"><img height="30" alt="SimGrid" src="docs/images/partners/pitskill-mono.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://lsr.gg/simgrid" target="_blank"><img height="30" alt="SimGrid" src="docs/images/partners/racecraft-mono.png"></a>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/simgrid-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/simgrid-mono.png">
+  <img alt="Simgrid" src="docs/images/partners/simgrid-mono.png">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/lfm-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/lfm-mono.png">
+  <img alt="Low Fuel Motorsport" src="docs/images/partners/lfm-mono.png">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/pitskill-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/pitskill-mono.png">
+  <img alt="Pitskill.io" src="docs/images/partners/pitskill-mono.png">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/racecraft-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/racecraft-mono.png">
+  <img alt="Racecraft" src="docs/images/partners/racecraft-mono.png">
+</picture>
+
 </p>
 
 ---
@@ -119,11 +140,11 @@ Become a <a href="https://lsr.gg/membership">Lovely Member</a>, and unlock all t
 </picture>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/moze-mono-light.png">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/moza-mono-light.png">
   <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/moza-mono.png">
   <img alt="Moza" src="docs/images/partners/moza-mono.png">
 </picture>
-
+<br/>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/p1sim-mono-light.png">
   <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/p1sim-mono.png">
