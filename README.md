@@ -61,7 +61,7 @@ Become a <a href="https://lsr.gg/membership">Lovely Member</a>, and unlock all t
 
 ---
 
-<p align="center">
+<p align="center"> 
 <span><strong>Platform Support</strong></span><br/>
 <a href="https://lsr.gg/simgrid" target="_blank"><img height="30" alt="SimGrid" src="docs/images/partners/simgrid-mono.png"></a>
 <a href="https://lsr.gg/simgrid" target="_blank"><img height="30" alt="SimGrid" src="docs/images/partners/lfm-mono.png"></a>
