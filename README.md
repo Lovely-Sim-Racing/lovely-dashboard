@@ -81,7 +81,7 @@ Become a <a href="https://lsr.gg/membership">Lovely Member</a>, and unlock all t
   <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/pitskill-mono.png">
   <img alt="Pitskill.io" src="docs/images/partners/pitskill-mono.png">
 </picture>
-
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/racecraft-mono-light.png">
   <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/racecraft-mono.png">
