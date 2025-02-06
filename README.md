@@ -86,13 +86,8 @@ Become a <a href="https://lsr.gg/membership">Lovely Member</a>, and unlock all t
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/greywolf-mono-light.png">
   <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/greywolf-mono.png">
-  <img alt="Greywolf Technologies" src="docs/images/partners/greywolf-mono.png">
+  <a href="https://lsr.gg/greywolf"><img alt="Greywolf Technologies" src="docs/images/partners/greywolf-mono.png"></a>
 </picture>
-
-<a href="https://lsr.gg/greywolf" target="_blank">
-	<img media="(prefers-color-scheme: dark)" alt="Greywolf Technologies" src="docs/images/partners/greywolf-mono-light.png">
-	<img media="(prefers-color-scheme: light)" alt="Greywolf Technologies" src="docs/images/partners/greywolf-mono.png">
-</a>
 
 <a href="https://lsr.gg/simucube" target="_blank"><img height="35" alt="Simucube" src="docs/images/partners/simucube-mono.png"></a>
 <a href="https://lsr.gg/conspit" target="_blank"><img height="35" alt="Conspit" src="docs/images/partners/conspit-mono.png"></a>
