@@ -51,8 +51,9 @@ Become a <a href="https://lsr.gg/membership">Lovely Member</a>, and unlock all t
 <img width="70" alt="rFactor 2" src="docs/images/sims/icon-rf2.png">
 <img width="70" alt="Le Mans Ultimate" src="docs/images/sims/icon-lmu.png">
 <img width="70" alt="Raceroom Racing Experience" src="docs/images/sims/icon-rrre.png">
-<img width="70" alt="Formula 1" src="docs/images/sims/icon-f1.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img width="70" alt="Formula 1" src="docs/images/sims/icon-f1.png"><br/>
 <img width="70" alt="EA WRC" src="docs/images/sims/icon-wrc.png">
+<img width="70" alt="Dirt Rally 2.0" src="docs/images/sims/icon-dr2.png">
 <img width="70" alt="Richard Burns Rally" src="docs/images/sims/icon-rbr.png">
 </br>
 <span>+ generic support for all simulators that work with SimHub</span>
