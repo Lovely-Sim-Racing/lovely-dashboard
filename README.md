@@ -9,7 +9,7 @@ A multifunctional feature packed SimHub Dashboard (DDU) and ecosystem.
 </p>
 
 <h4 align="center">
-<strong>Plugin v1.3.1.1 & Dashbaords v3.2.1 / v2.2.1</strong>
+<strong>Plugin v1.3.2.0 & Dashb0ards v3.3.0 / v2.3.0</strong>
 </h4>
 
 
@@ -322,6 +322,9 @@ Available to [**Pro & Gold Lovely Members**](https://lsr.gg/membership) only.
 
 ### Lovely Dashboard Rallye 
 ![Lovely Dashboard Rallye](docs/images/LovelyDashboardRallye.png)
+
+### Lovely Dashboard Round 
+![Lovely Dashboard Round](docs/images/lovely-dash-round.png)
 
 ### Lovely Dashboard Curved
 ![Lovely Dashboard XL](docs/images/lovely-dash-curved.png)
