@@ -9,7 +9,7 @@ A multifunctional feature packed SimHub Dashboard (DDU) and ecosystem.
 </p>
 
 <h4 align="center">
-<strong>Plugin v1.3.2.1 & Dashboards v3.3.1/ v3.3.2 / v2.3.1</strong>
+<strong>Plugin v1.3.3.0 & Dashboards v3.4.0/ v2.4.0</strong>
 </h4>
 
 
@@ -51,7 +51,8 @@ Become a <a href="https://lsr.gg/membership">Lovely Member</a>, and unlock all t
 <img width="70" alt="rFactor 2" src="docs/images/sims/icon-rf2.png">
 <img width="70" alt="Le Mans Ultimate" src="docs/images/sims/icon-lmu.png">
 <img width="70" alt="Raceroom Racing Experience" src="docs/images/sims/icon-rrre.png">
-<img width="70" alt="Formula 1" src="docs/images/sims/icon-f1.png"><br/>
+<img width="70" alt="Formula 1" src="docs/images/sims/icon-f1.png">
+<img width="70" alt="Forza Motorsport 8" src="docs/images/sims/icon-fm8.png"><br/>
 <img width="70" alt="EA WRC" src="docs/images/sims/icon-wrc.png">
 <img width="70" alt="Dirt Rally 2.0" src="docs/images/sims/icon-dr2.png">
 <img width="70" alt="Richard Burns Rally" src="docs/images/sims/icon-rbr.png">
@@ -114,6 +115,12 @@ Become a <a href="https://lsr.gg/membership">Lovely Member</a>, and unlock all t
   <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/simdash-mono-light.png">
   <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/simdash-mono.png">
   <img alt="SimDash" src="docs/images/partners/simdash-mono.png">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/atsr-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/atsr-mono.png">
+  <img alt="ATSR" src="docs/images/partners/atsr-mono.png">
 </picture>
 
 </p>
@@ -266,7 +273,7 @@ We have partnered with multiple **IndyCar race winner**, **IndyCar Series Champi
 
 ### Screen Size
 * Any device compatible with SimHub Dash
-* Native **5" (850x480)**, **10" (1920x720)** and **1920x480** DDU Screens are supported
+* Native **5" (850x480)**, **10" (1920x720)**, **1920x480** and **Round DDU Screens** are supported
 
 ### Compatible Sims
 The Lovely Dashboard offers native support for many sims, but will work with ANY simulator that offers native data to SimHub.
@@ -282,6 +289,7 @@ The Lovely Dashboard offers native support for many sims, but will work with ANY
 * [Le Mans Ultimate](https://lemansultimate.com/)
 * [RaceRoom Racing Experience](https://game.raceroom.com/)
 * [Formula 1](https://www.ea.com/en-gb/games/f1/)
+* [Forza Motorsport 8](https://forza.net/)
 * [WRC Series](https://www.ea.com/games/ea-sports-wrc/wrc-24)
 * [Richard Burns Rally](https://steamcommunity.com/groups/richardburnsrallypc)
 * [Dirt Rally 2.0](https://dirtrally2.dirtgame.com/)
@@ -389,6 +397,12 @@ For all marketing inquiries please contact me directly.
   <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/simdash-mono-light.png">
   <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/simdash-mono.png">
   <img alt="SimDash" src="docs/images/partners/simdash-mono.png">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/atsr-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/atsr-mono.png">
+  <img alt="ATSR" src="docs/images/partners/atsr-mono.png">
 </picture>
 
 </p>
