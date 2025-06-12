@@ -9,7 +9,7 @@ A multifunctional feature packed SimHub Dashboard (DDU) and ecosystem.
 </p>
 
 <h4 align="center">
-<strong>Plugin v1.3.3.0 & Dashboards v3.4.0/ v2.4.0</strong>
+<strong>Plugin v1.3.4.0 & Dashboards v3.5.0</strong>
 </h4>
 
 
@@ -141,6 +141,26 @@ Become a <a href="https://lsr.gg/membership">Lovely Member</a>, and unlock all t
 </picture>
 
 <picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/delta-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/delta-mono.png">
+  <img alt="Delta" src="docs/images/partners/delta-mono.png">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/pimax-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/pimax-mono.png">
+  <img alt="Pimax" src="docs/images/partners/pimax-mono.png">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/p1sim-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/p1sim-mono.png">
+  <img alt="P1 Sim" src="docs/images/partners/p1sim-mono.png">
+</picture>
+
+<br/>
+
+<picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/conspit-mono-light.png">
   <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/conspit-mono.png">
   <img alt="Conspit" src="docs/images/partners/conspit-mono.png">
@@ -150,20 +170,6 @@ Become a <a href="https://lsr.gg/membership">Lovely Member</a>, and unlock all t
   <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/moza-mono-light.png">
   <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/moza-mono.png">
   <img alt="Moza" src="docs/images/partners/moza-mono.png">
-</picture>
-
-<br/>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/p1sim-mono-light.png">
-  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/p1sim-mono.png">
-  <img alt="P1 Sim" src="docs/images/partners/p1sim-mono.png">
-</picture>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/delta-mono-light.png">
-  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/delta-mono.png">
-  <img alt="Delta" src="docs/images/partners/delta-mono.png">
 </picture>
 
 <picture>
@@ -179,12 +185,29 @@ Become a <a href="https://lsr.gg/membership">Lovely Member</a>, and unlock all t
 </picture>
 
 </p>
+
+<p align="center"> 	
+<span><strong>Stream & Video Partners</strong></span><br/>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/elgato-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/elgato-mono.png">
+  <img alt="Elgato" src="docs/images/partners/elgato-mono.png">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/ulanzi-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/ulanzi-mono.png">
+  <img alt="SimDash" src="docs/images/partners/ulanzi-mono.png">
+</picture>
+
+</p>
  
 ---
 
 <div align="center">
 <p><img width="80" height="80" alt="Lovely Discord" src="docs/images/icon-discord.png"><br/>
-<strong><em>JOIN over 9500 Lovely Sim Racers on Discord</em></strong><br/>
+<strong><em>JOIN over 12000 Lovely Sim Racers on Discord</em></strong><br/>
 Join the Lovely Sim Racing Discord Server and help develop a better version.<br/>
 👉 <a href="https://lsr.gg/discord"><strong>Lovely Discord Server</strong></a></p>
 </div>
@@ -203,7 +226,8 @@ In the [Releases](https://github.com/cdemetriadis/lovely-dashboard/releases) sec
 5. **Lovely Dashboard Rallye** - A minimal Rallye Dashboard
 9. **Lovely Dashboard Curved** - A variant of the Lovely Dashboard for curved top DDU's
 7. **Lovely Dashboard XL** - An oversized version of the Lovely Dashboard for the new 10" DDU Screens
-8. **Lovely Dashboard UXL** - An Ultra Wide version of the Lovely Dashboard for 1920x480 DDU Screens
+8. **Lovely Dashboard XLC** - A centered variation of the XL
+9. **Lovely Dashboard UXL** - An Ultra Wide version of the Lovely Dashboard for 1920x480 DDU Screens
 10. **Lovely Overlay** - If you're a streamer, you can use this overlay in OBS or any other broadcasting software
 11. **Lovely Tower** - A leader board tower, great for OBS if you're streaming 
 12. **Lovely Flags** - A "simple" dashboard to display race flags and platform integration
@@ -323,7 +347,7 @@ If you were wondering why this is the best SimHub dashboard out there, wonder no
 ### Lovely Pit Wall
 Available to [**Pro & Gold Lovely Members**](https://lsr.gg/membership) only.
 
-![Lovely Dashboard XL](docs/images/lovely-pitwall-preview.png)
+![Lovely Pit Wall](docs/images/lovely-pitwall-preview.png)
 
 ### Lovely Dashbaord TK Edition
 ![Lovely Dashboard TK Edition](./docs/images/tk-edition.png)
@@ -335,13 +359,16 @@ Available to [**Pro & Gold Lovely Members**](https://lsr.gg/membership) only.
 ![Lovely Dashboard Round](docs/images/lovely-dash-round.png)
 
 ### Lovely Dashboard Curved
-![Lovely Dashboard XL](docs/images/lovely-dash-curved.png)
+![Lovely Dashboard Curved](docs/images/lovely-dash-curved.png)
 
 ### Lovely Dashboard XL (for 10" DDU's)
 ![Lovely Dashboard XL](docs/images/lovely-dash-xl.png)
 
+### Lovely Dashboard XLC (for 10" DDU's)
+![Lovely Dashboard XLC](docs/images/lovely-dash-xlc.png)
+
 ### Lovely Dashboard UXL (for 1920x480 DDU's)
-![Lovely Dashboard XL](docs/images/lovely-dash-uxl.png)
+![Lovely Dashboard UXL](docs/images/lovely-dash-uxl.png)
 
 ### Lovely Overlay
 ![Lovely Overlay](docs/images/LovelyOverlay.png)
