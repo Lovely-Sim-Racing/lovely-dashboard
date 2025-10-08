@@ -9,7 +9,7 @@ A multifunctional feature packed SimHub Dashboard (DDU) and ecosystem.
 </p>
 
 <h4 align="center">
-<strong>Plugin v1.3.4.0 & Dashboards v3.5.1</strong>
+<strong>Plugin v2.0.0.0 & Dashboards v3.6.0</strong>
 </h4>
 
 
@@ -219,18 +219,19 @@ Join the Lovely Sim Racing Discord Server and help develop a better version.<br/
 In the [Releases](https://github.com/cdemetriadis/lovely-dashboard/releases) section, you will find:
 
 1. **Lovely Plugin** - (DLL & Installer) A SimHub Plugin that improves the Lovely experience & performance and makes setup a breeze!
-2. **Lovely Dashboard** - A custom designed dashboard to use on your phone or dedicated DDU Screen
-3. **Lovely Dashboard Companion** - A custom designed dashboard to use on a secondary display (eg. Steering Wheel)
-4. **Lovely Dashboard Companion Portrait** - The Companion, but in Portrait mode
-6. **Lovely Dashboard TK Edition** - The Lovely Dashboard with Tony Kanaan's personal touch
-5. **Lovely Dashboard Rallye** - A minimal Rallye Dashboard
-9. **Lovely Dashboard Curved** - A variant of the Lovely Dashboard for curved top DDU's
-7. **Lovely Dashboard XL** - An oversized version of the Lovely Dashboard for the new 10" DDU Screens
-8. **Lovely Dashboard XLC** - A centered variation of the XL
-9. **Lovely Dashboard UXL** - An Ultra Wide version of the Lovely Dashboard for 1920x480 DDU Screens
-10. **Lovely Overlay** - If you're a streamer, you can use this overlay in OBS or any other broadcasting software
-11. **Lovely Tower** - A leader board tower, great for OBS if you're streaming 
-12. **Lovely Flags** - A "simple" dashboard to display race flags and platform integration
+2. **Lovely Dashboard** - (850x480) A custom designed dashboard to use on your phone or dedicated DDU Screen
+3. **Lovely Dashboard Companion** - (850x480) A custom designed dashboard to use on a secondary display (eg. Steering Wheel)
+4. **Lovely Dashboard Companion Portrait** - (480x850) The Companion, but in Portrait mode
+6. **Lovely Dashboard TK Edition** - (850x480) The Lovely Dashboard with Tony Kanaan's personal touch
+5. **Lovely Dashboard Rallye** - (850x480) A minimal Rallye Dashboard
+9. **Lovely Dashboard Curved** - (850x480) A variant of the Lovely Dashboard for curved top DDU's
+7. **Lovely Dashboard XL** - (1280x480) An oversized version of the Lovely Dashboard for the new 10" DDU Screens
+8. **Lovely Dashboard XLC** - (1280x480) A centered variation of the XL
+7. **Lovely Dashboard MXL** - (1280x400) Made for 7.8" DDU's extending the user interface with more information.
+9. **Lovely Dashboard UXL** - (1920x480) An Ultra Wide version of the Lovely Dashboard for DDU Screens
+10. **Lovely Overlay** - (1140x360) If you're a streamer, you can use this overlay in OBS or any other broadcasting software
+11. **Lovely Tower** - (370x850) A leader board tower, great for OBS if you're streaming 
+12. **Lovely Flags** - (850x480) A "simple" dashboard to display race flags and platform integration
 
 #### [Preview the dashboards](#lovely-dashboard-ecosystem)
 
@@ -279,7 +280,8 @@ Switching to the **Blue True Dark Mode** during these long low-lit driving stint
 One of the most important advancements of the Lovely Dashboard ecosystem is the inclusion for native support by Manufacturers. This means that the Lovely Dashboard now includes native functions that work with directly with various devices either to enhance your experience or simply make setting up the device much simpler.
 
 * [Ascher Racing Integration](https://store.lsr.gg/pages/help-ascher-racing)
-* Greywolf Technologies **(COMING SOON)**
+* Greywolf Technologies
+* Soelpec
 
 #### Ascher Racing - [View the Documentation](https://store.lsr.gg/pages/help-ascher-racing)
 
@@ -297,7 +299,7 @@ We have partnered with multiple **IndyCar race winner**, **IndyCar Series Champi
 
 ### Screen Size
 * Any device compatible with SimHub Dash
-* Native **5" (850x480)**, **10" (1920x720)**, **1920x480** and **Round DDU Screens** are supported
+* Native **5" (850x480)**, **10" (1280x480)**, **7.8" (1280x400)**, **1920x480** and **Round DDU Screens** are supported
 
 ### Compatible Sims
 The Lovely Dashboard offers native support for many sims, but will work with ANY simulator that offers native data to SimHub.
@@ -366,6 +368,9 @@ Available to [**Pro & Gold Lovely Members**](https://lsr.gg/membership) only.
 
 ### Lovely Dashboard XLC (for 10" DDU's)
 ![Lovely Dashboard XLC](docs/images/lovely-dash-xlc.png)
+
+### Lovely Dashboard MXL (for 7.8" DDU's)
+![Lovely Dashboard MXL](docs/images/lovely-dash-mxl.png)
 
 ### Lovely Dashboard UXL (for 1920x480 DDU's)
 ![Lovely Dashboard UXL](docs/images/lovely-dash-uxl.png)
