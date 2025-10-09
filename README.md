@@ -9,7 +9,7 @@ A multifunctional feature packed SimHub Dashboard (DDU) and ecosystem.
 </p>
 
 <h4 align="center">
-<strong>Plugin v2.0.0.0 & Dashboards v3.6.0</strong>
+<strong>Plugin v2.0.0.0 & Dashboards v3.6.1</strong>
 </h4>
 
 
