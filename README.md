@@ -44,14 +44,16 @@ Become a <a href="https://lsr.gg/membership">Lovely Member</a>, and unlock all t
 <p align="center">
 <span><strong>Simulator Support</strong></span><br/>
 <img width="70" alt="Assetto Corsa Competizione" src="docs/images/sims/icon-acc.png">
+<img width="70" alt="iRacing" src="docs/images/sims/icon-iracing.png">
+<img width="70" alt="Le Mans Ultimate" src="docs/images/sims/icon-lmu.png">
+<img width="70" alt="Project Motor Racing" src="docs/images/sims/icon-pmr.png">
 <img width="70" alt="Assetto Corsa" src="docs/images/sims/icon-ac.png">
 <img width="70" alt="Assetto Corsa Evo" src="docs/images/sims/icon-ace.png">
-<img width="70" alt="iRacing" src="docs/images/sims/icon-iracing.png">
 <img width="70" alt="Automobilista 2" src="docs/images/sims/icon-ams2.png">
 <img width="70" alt="rFactor 2" src="docs/images/sims/icon-rf2.png">
-<img width="70" alt="Le Mans Ultimate" src="docs/images/sims/icon-lmu.png">
 <img width="70" alt="Raceroom Racing Experience" src="docs/images/sims/icon-rrre.png">
 <img width="70" alt="Formula 1" src="docs/images/sims/icon-f1.png">
+<img width="70" alt="Assetto Corsa Rally" src="docs/images/sims/icon-acr.png">
 <img width="70" alt="Forza Motorsport 8" src="docs/images/sims/icon-fm8.png"><br/>
 <img width="70" alt="EA WRC" src="docs/images/sims/icon-wrc.png">
 <img width="70" alt="Dirt Rally 2.0" src="docs/images/sims/icon-dr2.png">
@@ -141,6 +143,20 @@ Become a <a href="https://lsr.gg/membership">Lovely Member</a>, and unlock all t
 </picture>
 
 <picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/simcore-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/simcore-mono.png">
+  <img alt="Simcore" src="docs/images/partners/simcore-mono.png">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/tk-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/tk-mono.png">
+  <img alt="Tony Kanaan" src="docs/images/partners/tk-mono.png">
+</picture>
+
+<br/>
+
+<picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/pimax-mono-light.png">
   <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/pimax-mono.png">
   <img alt="Pimax" src="docs/images/partners/pimax-mono.png">
@@ -151,8 +167,6 @@ Become a <a href="https://lsr.gg/membership">Lovely Member</a>, and unlock all t
   <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/p1sim-mono.png">
   <img alt="P1 Sim" src="docs/images/partners/p1sim-mono.png">
 </picture>
-
-<br/>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/conspit-mono-light.png">
@@ -167,15 +181,32 @@ Become a <a href="https://lsr.gg/membership">Lovely Member</a>, and unlock all t
 </picture>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/tk-mono-light.png">
-  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/tk-mono.png">
-  <img alt="Tony Kanaan" src="docs/images/partners/tk-mono.png">
-</picture>
-
-<picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/simutec-mono-light.png">
   <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/simutec-mono.png">
   <img alt="Simutec" src="docs/images/partners/simutec-mono.png">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/tanleki-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/tanleki-mono.png">
+  <img alt="Tanleki" src="docs/images/partners/tanleki-mono.png">
+</picture>
+
+</p>
+
+<p align="center"> 	
+<span><strong>Retail Partners</strong></span><br/>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/srs-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/srs-mono.png">
+  <img alt="Sim Race Shop" src="docs/images/partners/srs-mono.png">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/tfsr-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/tfsr-mono.png">
+  <img alt="The French Simracer" src="docs/images/partners/tfsr-mono.png">
 </picture>
 
 </p>
@@ -449,6 +480,38 @@ For all marketing inquiries please contact me directly.
 </picture>
 
 <picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/delta-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/delta-mono.png">
+  <img alt="Delta" src="docs/images/partners/delta-mono.png">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/simcore-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/simcore-mono.png">
+  <img alt="Simcore" src="docs/images/partners/simcore-mono.png">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/tk-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/tk-mono.png">
+  <img alt="Tony Kanaan" src="docs/images/partners/tk-mono.png">
+</picture>
+
+<br/>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/pimax-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/pimax-mono.png">
+  <img alt="Pimax" src="docs/images/partners/pimax-mono.png">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/p1sim-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/p1sim-mono.png">
+  <img alt="P1 Sim" src="docs/images/partners/p1sim-mono.png">
+</picture>
+
+<picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/conspit-mono-light.png">
   <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/conspit-mono.png">
   <img alt="Conspit" src="docs/images/partners/conspit-mono.png">
@@ -460,30 +523,50 @@ For all marketing inquiries please contact me directly.
   <img alt="Moza" src="docs/images/partners/moza-mono.png">
 </picture>
 
-<br/>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/p1sim-mono-light.png">
-  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/p1sim-mono.png">
-  <img alt="P1 Sim" src="docs/images/partners/p1sim-mono.png">
-</picture>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/delta-mono-light.png">
-  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/delta-mono.png">
-  <img alt="Delta" src="docs/images/partners/delta-mono.png">
-</picture>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/tk-mono-light.png">
-  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/tk-mono.png">
-  <img alt="Tony Kanaan" src="docs/images/partners/tk-mono.png">
-</picture>
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/simutec-mono-light.png">
   <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/simutec-mono.png">
   <img alt="Simutec" src="docs/images/partners/simutec-mono.png">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/tanleki-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/tanleki-mono.png">
+  <img alt="Tanleki" src="docs/images/partners/tanleki-mono.png">
+</picture>
+
+</p>
+
+<p align="center"> 	
+<span><strong>Retail Partners</strong></span><br/>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/srs-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/srs-mono.png">
+  <img alt="Sim Race Shop" src="docs/images/partners/srs-mono.png">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/tfsr-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/tfsr-mono.png">
+  <img alt="The French Simracer" src="docs/images/partners/tfsr-mono.png">
+</picture>
+
+</p>
+
+<p align="center"> 	
+<span><strong>Stream & Video Partners</strong></span><br/>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/elgato-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/elgato-mono.png">
+  <img alt="Elgato" src="docs/images/partners/elgato-mono.png">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/ulanzi-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/ulanzi-mono.png">
+  <img alt="SimDash" src="docs/images/partners/ulanzi-mono.png">
 </picture>
 
 </p>
