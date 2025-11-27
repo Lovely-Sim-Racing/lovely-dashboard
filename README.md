@@ -51,10 +51,10 @@ Become a <a href="https://lsr.gg/membership">Lovely Member</a>, and unlock all t
 <img width="70" alt="Assetto Corsa Evo" src="docs/images/sims/icon-ace.png">
 <img width="70" alt="Automobilista 2" src="docs/images/sims/icon-ams2.png">
 <img width="70" alt="rFactor 2" src="docs/images/sims/icon-rf2.png">
-<img width="70" alt="Raceroom Racing Experience" src="docs/images/sims/icon-rrre.png">
+<img width="70" alt="Raceroom Racing Experience" src="docs/images/sims/icon-rrre.png"><br/>
 <img width="70" alt="Formula 1" src="docs/images/sims/icon-f1.png">
 <img width="70" alt="Assetto Corsa Rally" src="docs/images/sims/icon-acr.png">
-<img width="70" alt="Forza Motorsport 8" src="docs/images/sims/icon-fm8.png"><br/>
+<img width="70" alt="Forza Motorsport 8" src="docs/images/sims/icon-fm8.png">
 <img width="70" alt="EA WRC" src="docs/images/sims/icon-wrc.png">
 <img width="70" alt="Dirt Rally 2.0" src="docs/images/sims/icon-dr2.png">
 <img width="70" alt="Richard Burns Rally" src="docs/images/sims/icon-rbr.png">
