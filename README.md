@@ -9,7 +9,7 @@ A multifunctional feature packed SimHub Dashboard (DDU) and ecosystem.
 </p>
 
 <h4 align="center">
-<strong>Plugin v2.3.0.0 & Dashboards v3.6.7 / v1.4.5</strong>
+<strong>Plugin v3.0.0.0 & Dashboards v4.0.0 / v2.0.0</strong>
 </h4>
 
 
@@ -217,6 +217,12 @@ Become a <a href="https://lsr.gg/membership">Lovely Member</a>, and unlock all t
   <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/tfsr-mono-light.png">
   <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/tfsr-mono.png">
   <img alt="The French Simracer" src="docs/images/partners/tfsr-mono.png">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/partners/psr-mono-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/partners/psr-mono.png">
+  <img alt="Printed Sim Racing" src="docs/images/partners/psr-mono.png">
 </picture>
 
 </p>
