@@ -14,8 +14,19 @@ A multifunctional feature packed SimHub Dashboard (DDU) and ecosystem.
 
 
 <h4 align="center"><strong>
-<a href="#video-guide">Video Guide</a> - <a href="#whats-included">What's Included</a> - <a href="#installing">Installing</a> & <a href="#updating">Updating</a></br><a href="#what-is-true-dark-mode">True Dark Mode</a> - <a href="#partnerships">Partnerships</a> - <a href="#lovely-membership">Memberships</a> - <a href="#lovely-dashboard-ecosystem">Lovely Ecosystem</a>
+<a href="#video-guide">Video Guide</a> - <a href="#whats-included">What's Included</a> - <a href="#installing">Installing</a> & <a href="#updating">Updating</a></br><a href="#what-is-teamlinq">TeamLINQ</a> - <a href="#what-is-true-dark-mode">True Dark Mode</a> - <a href="#partnerships">Partnerships</a></br><a href="#lovely-membership">Memberships</a> - <a href="#lovely-dashboard-ecosystem">Lovely Ecosystem</a>
 </strong></h4>
+
+<br/>
+
+<h4 align="center">
+Now with</br>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/teamlinq-logo-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/teamlinq-logo-light.png">
+  <img alt="Simgrid" src="docs/images/teamlinq-logo-dark.png">
+</picture>
+</h4>
 
 <br/>
 
@@ -27,7 +38,6 @@ A multifunctional feature packed SimHub Dashboard (DDU) and ecosystem.
 Become a <a href="https://lsr.gg/membership">Lovely Member</a>, and unlock all the perks!</h1>
 (Memberships start at €1/mo)
 </div>
-
 <br/>
 
 ---
@@ -282,6 +292,14 @@ If you have received a notification on your **Lovely Dashboard** of a new update
 > [!TIP]
 > :people_holding_hands: **For more information, tips & feedback, please join the [Lovely Discord](https://lsr.gg/discord)**
 
+## What is TeamLINQ?
+**Stream your SimHub telemetry to your teammates in real-time.** Experience true race control and manage your team strategy like never before.
+
+TeamLINQ is easy to use. Just press Play to view your teammates telemetry, in real-time, on your Lovely Dashboards, Pit Wall or any other supported SimHub dashboard and plugin.
+
+[Learn more about TeamLINQ](https://lsr.gg/teamlinq)
+
+![True Dark Mode in Blue helps maintain alertness](./docs/images/teamlinq-launch.jpg)
 
 ## What is True Dark Mode?
 **True Dark Mode** in the Lovely Dashboard is more than just pretty colors. Alongside a new theming architecture responsible for changing the colours and icons, True Dark Mode does more for you than you may think.
