@@ -9,7 +9,7 @@ A multifunctional feature packed SimHub Dashboard (DDU) and ecosystem.
 </p>
 
 <h4 align="center">
-<strong>Plugin v3.5.0.0 & Dashboards v4.4.0 / v2.4.0</strong>
+<strong>Plugin v3.6.0.0 & Dashboards v4.5.1 / v2.5.1</strong>
 </h4>
 
 
@@ -42,12 +42,9 @@ Become a <a href="https://lsr.gg/membership">Lovely Member</a>, and unlock all t
 
 ---
 
-### The Lovely Dashboard, used by thousands* of sim racers across the world, has become a staple in all of your sim racing setups. From professionals like **Tony Kanaan** all the way to rookies, the Lovely Dashboard delivers the best and most consistent information for all simulators. 
-
-<strong>*</strong> Google Analytics: 22k Unique Users Mar 2023 - Mar 2024
+### The Lovely Dashboard—the world’s leading Simhub telemetry dashboard—delivers all the data you need in a clean and consistent UI across all simulators. Trusted by professionals like **Tony Kanaan**, **David Perel** and **Tim Heinemann**, as well as sim racers of all skill levels.
 
 ![Basic Feature Set](docs/images/primary-tdm.gif)
-
 
 <br/><br/>
 
@@ -260,19 +257,25 @@ Join the Lovely Sim Racing Discord Server and help develop a better version.<br/
 In the [Releases](https://github.com/cdemetriadis/lovely-dashboard/releases) section, you will find:
 
 1. **Lovely Plugin** - (DLL & Installer) A SimHub Plugin that improves the Lovely experience & performance and makes setup a breeze!
-2. **Lovely Dashboard** - (850x480) A custom designed dashboard to use on your phone or dedicated DDU Screen
-3. **Lovely Dashboard Companion** - (850x480) A custom designed dashboard to use on a secondary display (eg. Steering Wheel)
-4. **Lovely Dashboard Companion Portrait** - (480x850) The Companion, but in Portrait mode
-6. **Lovely Dashboard TK Edition** - (850x480) The Lovely Dashboard with Tony Kanaan's personal touch
-5. **Lovely Dashboard Rallye** - (850x480) A minimal Rallye Dashboard
-9. **Lovely Dashboard Curved** - (850x480) A variant of the Lovely Dashboard for curved top DDU's
-7. **Lovely Dashboard XL** - (1280x480) An oversized version of the Lovely Dashboard for the new 10" DDU Screens
-8. **Lovely Dashboard XLC** - (1280x480) A centered variation of the XL
-7. **Lovely Dashboard MXL** - (1280x400) Made for 7.8" DDU's extending the user interface with more information.
-9. **Lovely Dashboard UXL** - (1920x480) An Ultra Wide version of the Lovely Dashboard for DDU Screens
-10. **Lovely Overlay** - (1140x360) If you're a streamer, you can use this overlay in OBS or any other broadcasting software
-11. **Lovely Tower** - (370x850) A leader board tower, great for OBS if you're streaming 
-12. **Lovely Flags** - (850x480) A "simple" dashboard to display race flags and platform integration
+2. **Lovely Dashboard** - (850x480)
+3. **Lovely Dashboard Square** - (480x480)
+4. **Lovely Dashboard Round** - (480x480)
+5. **Lovely Dashboard Companion** - (850x480)
+6. **Lovely Dashboard Companion Portrait** - (480x850)
+7. **Lovely Dashboard TK Edition** - (850x480)
+8. **Lovely Dashboard Rallye** - (850x480)
+9. **Lovely Dashboard Curved** - (850x480)
+10. **Lovely Dashboard XL** - (1280x480)
+11. **Lovely Dashboard XLC** - (1280x480)
+12. **Lovely Dashboard MXL** - (1280x400)
+13. **Lovely Dashboard UXL** - (1920x480)
+14. **Lovely Dashboard Nano** - (800x286)
+15. **Lovely DisplayDash** - (600x686)
+16. **Lovely Overlay** - (1140x360)
+17. **Lovely Tower** - (370x850)
+18. **Lovely Flags** - (850x480)
+19. **Lovely Flags Round** - (800x800)
+20. **Lovely Flags Square** - (480x480)
 
 #### [Preview the dashboards](#lovely-dashboard-ecosystem)
 
@@ -386,55 +389,7 @@ As of v2.0.0, the **Lovely Dashboard** is no longer locked to any sim. There's a
 ## Lovely Dashboard Ecosystem
 If you were wondering why this is the best SimHub dashboard out there, wonder no more. It's good looking and feature packed but with considered design and proper information architecture. 
 
-### Lovely Dashboard
-![Basic Feature Set](docs/images/primary-tdm.gif)
-
-### Lovely Dashboard Companion 
-![Lovely Dashboard Companion](docs/images/LovelyDashboardCompanion.png)
-
-### Lovely Dashboard Companion Portrait
-![Lovely Dashboard Companion Portrait](docs/images/LovelyDashboardPortrait.png)
-
-### Lovely Pit Wall
-Available to [**Pro & Gold Lovely Members**](https://lsr.gg/membership) only.
-
-![Lovely Pit Wall](docs/images/lovely-pitwall-preview.png)
-
-### Lovely Dashbaord TK Edition
-![Lovely Dashboard TK Edition](./docs/images/tk-edition.png)
-
-### Lovely Dashboard Rallye 
-![Lovely Dashboard Rallye](docs/images/LovelyDashboardRallye.png)
-
-### Lovely Dashboard Round 
-![Lovely Dashboard Round](docs/images/lovely-dash-round.png)
-
-### Lovely Dashboard Curved
-![Lovely Dashboard Curved](docs/images/lovely-dash-curved.png)
-
-### Lovely Dashboard XL (for 10" DDU's)
-![Lovely Dashboard XL](docs/images/lovely-dash-xl.png)
-
-### Lovely Dashboard XLC (for 10" DDU's)
-![Lovely Dashboard XLC](docs/images/lovely-dash-xlc.png)
-
-### Lovely Dashboard MXL (for 7.8" DDU's)
-![Lovely Dashboard MXL](docs/images/lovely-dash-mxl.png)
-
-### Lovely Dashboard UXL (for 1920x480 DDU's)
-![Lovely Dashboard UXL](docs/images/lovely-dash-uxl.png)
-
-### Lovely Overlay
-![Lovely Overlay](docs/images/LovelyOverlay.png)
-
-### Lovely Tower
-![Lovely Tower](docs/images/LovelyTower.png)
-
-### Lovely Flags
-![Lovely Flags](docs/images/LovelyFlags.gif)	
-
-## Analytics
-#### The Lovely Dashboard uses Google Analytics to collect anonymous data on Product Interactions & Usage. We do not track or store any personal data. Users are free to opt-in or opt-out via the option in the Lovely Plugin.
+Fidn out more about the entire lineup on the [Lovely Sim Racig website](https://lsr.gg/dash)
 
 
 ## Special Thanks
@@ -446,10 +401,10 @@ A special thanks to all of you who have supported this project in [one way](http
 * **Steve Mattar** (F1 Support)
 * **Joerg Behrens** (Settings Configurator)
 
-## Marketing Inquiries
-For all marketing inquiries please contact me directly. 
+## Partnership Inquiries
+For all partnership inquiries please contact me directly. 
 
-:envelope: [**marketing@lsr.gg**](mailto:marketing@lsr.gg)
+:envelope: [**partnerships@lsr.gg**](mailto:partnerships@lsr.gg)
 
 > [!NOTE]
 > Although the Lovely Dashboard is distributed for free, usage of its user interface design (UI) is also subject to the license it is distributed under. Any use in commercial or marketing material, promotional still or animated images and videos is forbidden unless direct consent is given. Please contact me directly if you wish to use the images on any of your material.
@@ -607,4 +562,8 @@ All trademarks, logos and brand names are the property of their respective owner
 
 <br/>
 
-&copy; 2025 Lovely Sim Racing
+The LOVELY SIM RACING logo, LR SHIELD icon and LOVELY SIM RACING wording are registered trade marks of Lovely Sim Racing LP
+
+<br/>
+
+&copy; 2026 Lovely Sim Racing LP
