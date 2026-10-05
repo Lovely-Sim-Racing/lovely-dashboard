@@ -22,9 +22,9 @@ A multifunctional feature packed SimHub Dashboard (DDU) and ecosystem.
 <h4 align="center">
 Now with</br>
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/images/teamlinq-logo-dark.png">
-  <source media="(prefers-color-scheme: light)" srcset="docs/images/teamlinq-logo-light.png">
-  <img alt="Simgrid" src="docs/images/teamlinq-logo-dark.png">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/teamlinq-logo-dark-sm.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/teamlinq-logo-light-sm.png">
+  <img alt="TeamLINQ" src="docs/images/teamlinq-logo-dark-sm.png" width="300">
 </picture>
 </h4>
 
@@ -308,7 +308,7 @@ TeamLINQ is easy to use. Just press Play to view your teammates telemetry, in re
 
 [Learn more about TeamLINQ](https://lsr.gg/teamlinq)
 
-![True Dark Mode in Blue helps maintain alertness](./docs/images/teamlinq-launch.jpg)
+![True Dark Mode in Blue helps maintain alertness](./docs/images/teamlinq-featured-image.jpg)
 
 ## What is True Dark Mode?
 **True Dark Mode** in the Lovely Dashboard is more than just pretty colors. Alongside a new theming architecture responsible for changing the colours and icons, True Dark Mode does more for you than you may think.
