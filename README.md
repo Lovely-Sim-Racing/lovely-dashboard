@@ -9,12 +9,12 @@ A multifunctional feature packed SimHub Dashboard (DDU) and ecosystem.
 </p>
 
 <h4 align="center">
-<strong>Plugin v3.6.0.2 & Dashboards v4.6.1 / v2.6.1</strong>
+<strong>Plugin v4.0.0.0 & Dashboards v5.0.0 / Dash Pro v1.0.0 / Pit Wall v3.0.0</strong>
 </h4>
 
 
 <h4 align="center"><strong>
-<a href="#video-guide">Video Guide</a> - <a href="#whats-included">What's Included</a> - <a href="#installing">Installing</a> & <a href="#updating">Updating</a></br><a href="#what-is-teamlinq">TeamLINQ</a> - <a href="#what-is-true-dark-mode">True Dark Mode</a> - <a href="#partnerships">Partnerships</a></br><a href="#lovely-membership">Memberships</a> - <a href="#lovely-dashboard-ecosystem">Lovely Ecosystem</a>
+<a href="#video-guide">Video Guide</a> - <a href="#whats-included">What's Included</a> - <a href="#what-is-lovely-dash-pro">Lovely Dash Pro</a> - <a href="#installing">Installing</a> & <a href="#updating">Updating</a></br><a href="#what-is-teamlinq">TeamLINQ</a> - <a href="#what-is-true-dark-mode">True Dark Mode</a> - <a href="#partnerships">Partnerships</a></br><a href="#lovely-membership">Memberships</a> - <a href="#lovely-dashboard-ecosystem">Lovely Ecosystem</a>
 </strong></h4>
 
 <br/>
@@ -277,6 +277,13 @@ In the [Releases](https://github.com/cdemetriadis/lovely-dashboard/releases) sec
 19. **Lovely Flags Round** - (800x800)
 20. **Lovely Flags Square** - (480x480)
 
+### Member Dashboards
+Available to **Pro & Gold Lovely Members** in the Lovely Plugin's **Dashboard Manager**:
+
+1. **Lovely Dash Pro** - (854x480) - [What is Lovely Dash Pro?](#what-is-lovely-dash-pro)
+2. **Lovely Pit Wall** - (1920x1080)
+3. **Lovely Pit Wall Portrait** - (1080x1920)
+
 #### [Preview the dashboards](#lovely-dashboard-ecosystem)
 
 
@@ -300,6 +307,17 @@ If you have received a notification on your **Lovely Dashboard** of a new update
 
 > [!TIP]
 > :people_holding_hands: **For more information, tips & feedback, please join the [Lovely Discord](https://lsr.gg/discord)**
+
+## What is Lovely Dash Pro?
+**The Lovely Dashboard you design yourself.** Lovely Dash Pro is a fundamental evolution of the Lovely Dashboard: every driver, every sim and every session is different, so you choose what's on screen.
+
+* **Build your own layout** in the Lovely Plugin's visual editor, from 95 modules and 12 full screen pages, with a live preview on your device.
+* **Pages per session**, switching automatically when the session changes, and paged with your own buttons or the touch screen.
+* **A layout per device, sim, class or vehicle.**
+* **Lap Review** after every lap, and fully configurable **Alerts & Notifications**.
+* **Presets**: import, export and share your layouts, or browse the community's presets.
+
+Lovely Dash Pro is available to **Pro & Gold Lovely Members**. [Become a Lovely Member](https://lsr.gg/membership)
 
 ## What is TeamLINQ?
 **Stream your SimHub telemetry to your teammates in real-time.** Experience true race control and manage your team strategy like never before.
@@ -379,7 +397,7 @@ As of v2.0.0, the **Lovely Dashboard** is no longer locked to any sim. There's a
 <br/>
 
 ## Lovely Membership
-**Become a Lovely Member and gain access to exclusive perks!** All **Lovely Members** have access to frequent updates and releases of the Lovely Dashboard, while **Pro & Gold Lovely Members** also have access to the **Lovely Pit Wall**.
+**Become a Lovely Member and gain access to exclusive perks!** All **Lovely Members** have access to frequent updates and releases of the Lovely Dashboard, while **Pro & Gold Lovely Members** also have access to **Lovely Dash Pro** and the **Lovely Pit Wall**.
  
 [![Basic Feature Set](./docs/images/lovely-membership.png)](https://lsr.gg/membership)
 
