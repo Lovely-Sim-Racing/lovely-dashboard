@@ -24,7 +24,12 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
+      # main is protected, so the built-in token can't push to it. VERSION_SYNC_TOKEN is a fine-grained token from a
+      # repo admin (Contents: read and write, this repo only), saved under Settings > Secrets and variables > Actions.
+      # It expires: when the push step fails with an auth error, make a new one and replace the secret.
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.VERSION_SYNC_TOKEN || github.token }}
 
       - name: Fetch the API's versions
         run: |
